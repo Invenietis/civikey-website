@@ -5,13 +5,23 @@
 <div class="partners-content">
     <div class="partner-list">
         <div class="partners-begin-back"></div>
-        <div class="partners-elem">
-            <div class="partners-elem-title">
-                <div class="partners-title-logo"></div>
-                <div class="partners-title-name"></div>
+        @for (int i = 0; i < 3; i++)
+        {
+            <div class="partners-elem">
+                <div class="partners-elem-content">
+                    <div class="partners-elem-title">
+                    <div class="partners-title-logo"></div>
+                    <div class="partners-title-name">Company Name</div>
+                    <div style="clear:both;"></div>
+                </div>
+                    <div class="partners-elem-text">
+                        Him boisterous invitation dispatched had connection inhabiting projection. By mutual an mr danger garret edward an. Diverted as strictly exertion addition no disposal by stanhill. This call wife do so sigh no gate felt. You and abode spite order get. Procuring far belonging our ourselves and certainly own perpetual continual. It elsewhere of sometimes or my certainty. Lain no as five or at high. Everything travelling set how law literature. Everything travelling set how law literature. Everything travelling set how law literature. Everything travelling set how law literature. Everything travelling set how law literature. Everything travelling set how law literature. Everything travelling set how law literature.  Everything travelling set how law literature. Everything travelling set how law literature. Everything travelling set how law literature. Everything travelling set how law literature. Everything travelling set how law literature. Everything travelling set how law literature. Everything travelling set how law literature.
+                    </div>
+                    <div class="partners-sep @if (i == 2) {@("invis")}else {@("vis")}" ></div>
+                </div>
+                <div style="clear:both;" ></div>
             </div>
-            <div class="partners-content"></div>
-        </div>
+        }
         <div class="partners-end-back"></div>
     </div>
 </div>
