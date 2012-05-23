@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="progress-content">
+    <div class="progress-timebar">
+        <div class="progress-timebar-container"><div class="progress-bar-begin"></div>
+        <ul id="timeline-buttons">
+            <li>Existant</li>
+            <li class="timeline-selected">v2.5.1</li>
+            <li>v2.5.2</li>
+            <li>v2.5.3</li>
+            <li>v2.5.4</li>
+            <li>v2.5.5</li>
+        </ul>
+        </div>
+        <div class="progress-bar-end"></div>
+        <div style="clear:both;"></div>
+    </div>
+
+    <div class="progress-list-of-leatures">
+        @for (int i = 0; i < 2; i++)
+        {
+            <div class="progress-list-line">
+                @for (int j = 0; j < 4; j++)
+                {
+                <div class="progress-list-elem @if (j == 3) {@("last-feature")}">
+                    <div class="progress-elem-title-bar">
+                        <div class="progress-elem-title">Feature</div>
+                        <div class="progress-elem-type done-feature"></div>
+                        <div style=" clear:both;"></div>
+                    </div>
+                    <div class="progress-elem-content">
+                        <div class="progress-elem-developedby">
+                            <p>Developer par</p>
+                            <p>Invenietis</p>
+                        </div>
+                        <div class="progress-elem-version">1.0.3</div>
+                        <div style=" clear:both;"></div>
+                    </div>
+                </div>
+                }
+                <div style="clear: both;"></div>
+            </div>
+        }
+        <div class="show-more-features">show more</div>
+    </div>
+</div>

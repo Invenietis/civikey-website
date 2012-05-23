@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CiviKeyModelStoreContainer" CdmEntityContainer="CiviKeyEntities">
+    <EntitySetMapping Name="tCategories">
+      <EntityTypeMapping TypeName="CiviKeyModel.tCategory">
+        <MappingFragment StoreEntitySet="tCategory">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tContacts">
+      <EntityTypeMapping TypeName="CiviKeyModel.tContact">
+        <MappingFragment StoreEntitySet="tContact">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Descr" ColumnName="Descr" />
+          <ScalarProperty Name="Logo" ColumnName="Logo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tContactRelations">
+      <EntityTypeMapping TypeName="CiviKeyModel.tContactRelation">
+        <MappingFragment StoreEntitySet="tContactRelation">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+          <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tDemoes">
+      <EntityTypeMapping TypeName="CiviKeyModel.tDemo">
+        <MappingFragment StoreEntitySet="tDemo">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DemoSource" ColumnName="DemoSource" />
+          <ScalarProperty Name="FeatureId" ColumnName="FeatureId" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tFeatures">
+      <EntityTypeMapping TypeName="CiviKeyModel.tFeature">
+        <MappingFragment StoreEntitySet="tFeature">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Ver" ColumnName="Ver" />
+          <ScalarProperty Name="Progress" ColumnName="Progress" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tNews">
+      <EntityTypeMapping TypeName="CiviKeyModel.tNew">
+        <MappingFragment StoreEntitySet="tNews">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tParticipations">
+      <EntityTypeMapping TypeName="CiviKeyModel.tParticipation">
+        <MappingFragment StoreEntitySet="tParticipation">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+          <ScalarProperty Name="PartType" ColumnName="PartType" />
+          <ScalarProperty Name="Percentage" ColumnName="Percentage" />
+          <ScalarProperty Name="ParticipationDate" ColumnName="ParticipationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tPlugins">
+      <EntityTypeMapping TypeName="CiviKeyModel.tPlugin">
+        <MappingFragment StoreEntitySet="tPlugin">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Descr" ColumnName="Descr" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tSections">
+      <EntityTypeMapping TypeName="CiviKeyModel.tSection">
+        <MappingFragment StoreEntitySet="tSection">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="FeatureId" ColumnName="FeatureId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tTestimonies">
+      <EntityTypeMapping TypeName="CiviKeyModel.tTestimony">
+        <MappingFragment StoreEntitySet="tTestimony">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Author" ColumnName="Author" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Content" ColumnName="Content" />
+          <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="tCategoryFeature" TypeName="CiviKeyModel.tCategoryFeature" StoreEntitySet="tCategoryFeature">
+      <EndProperty Name="tCategory">
+        <ScalarProperty Name="Id" ColumnName="IdCategory" />
+      </EndProperty>
+      <EndProperty Name="tFeature">
+        <ScalarProperty Name="Id" ColumnName="IdFeature" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tParticipationFeature" TypeName="CiviKeyModel.tParticipationFeature" StoreEntitySet="tParticipationFeature">
+      <EndProperty Name="tFeature">
+        <ScalarProperty Name="Id" ColumnName="FeatureId" />
+      </EndProperty>
+      <EndProperty Name="tParticipation">
+        <ScalarProperty Name="Id" ColumnName="ParticipationId" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <AssociationSetMapping Name="tSectionPlugin" TypeName="CiviKeyModel.tSectionPlugin" StoreEntitySet="tSectionPlugin">
+      <EndProperty Name="tPlugin">
+        <ScalarProperty Name="Id" ColumnName="PluginId" />
+      </EndProperty>
+      <EndProperty Name="tSection">
+        <ScalarProperty Name="Id" ColumnName="SectionId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

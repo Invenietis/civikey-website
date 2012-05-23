@@ -1,0 +1,44 @@
+﻿@using CiviKey.Models
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.7.2.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/home.js")" type="text/javascript"></script>
+</head>
+<body>
+    @helper IsSelected(Sections section)
+    {
+        @(section == (ViewBag.Section ?? Sections.Default) ? "selected" : string.Empty)
+    }
+    <div class="page">
+        <div id="header">
+            <div class="header-container">
+                <a href="@Url.Action( "Index","Home")"><img class="header-logo" src="@Url.Content("~/Content/images/logo.png")" /></a>
+                <div class="header-menu-container">
+                <div class="moving-element-container">
+                    <div class="moving-elem"></div>
+                </div>
+                    <ul id="menu">
+                        <li class="@IsSelected(Sections.Project) menuelem" menu-elem="1"><a href="@Url.Action( "Index","Project")">Le projet</a></li>
+                        <li class="@IsSelected(Sections.Progress) menuelem" menu-elem="2"><a href="@Url.Action( "Index","Progress")">Avancement</a></li>
+                        <li class="@IsSelected(Sections.Partners) menuelem" menu-elem="3"><a href="@Url.Action( "Index","Partners")">Partenaires</a></li>
+                        <li class="@IsSelected(Sections.Contact) menuelem" menu-elem="4"><a href="@Url.Action( "Index","Contact")">Contactez-nous</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="main">
+            @RenderBody()
+        </div>
+        <div id="footer">
+            <div class="footer-container">
+                <img class="footer-logo" src="@Url.Content("~/Content/images/logo-invenietis.png")" />
+                <div class="separator"></div>
+                <div class="footer-menu">Le Projet | Avancement | Partenaires | Contactez-nous</div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

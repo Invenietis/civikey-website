@@ -1,0 +1,711 @@
+﻿/*----------------------------------------------------------
+The base color for this template is #5c87b2. If you'd like
+to use a different color start by replacing all instances of
+#5c87b2 with your new color.
+----------------------------------------------------------*/
+a:link
+{
+    color: #fff;
+    text-decoration:none;
+}
+
+a:visited
+{
+    color: #fff;
+    text-decoration:none;
+}
+
+a:hover
+{
+    color: #fff;
+    text-decoration:none;
+}
+
+a:active
+{
+    color: #fff;
+    text-decoration:none;
+}
+
+p, ul
+{
+    margin-bottom: 18px;
+    line-height: 1.6em;
+}
+
+
+/* HEADINGS   
+----------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6
+{
+    font-size: 1.5em;
+    color: #000;
+}
+
+h1
+{
+    font-size: 2em;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+h2
+{
+    padding: 0 0 10px 0;
+}
+
+h3
+{
+    font-size: 1.2em;
+}
+
+h4
+{
+    font-size: 1.1em;
+}
+
+h5, h6
+{
+    font-size: 1em;
+}
+
+
+/* FORM LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+fieldset
+{
+    border: 1px solid #ddd;
+    padding: 0 1.4em 1.4em 1.4em;
+    margin: 0 0 1.5em 0;
+}
+
+legend
+{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+/* TABLE
+----------------------------------------------------------*/
+
+table
+{
+    border: solid 1px #e8eef4;
+    border-collapse: collapse;
+}
+
+table td
+{
+    padding: 5px;
+    border: solid 1px #e8eef4;
+}
+
+table th
+{
+    padding: 6px 5px;
+    text-align: left;
+    background-color: #e8eef4;
+    border: solid 1px #e8eef4;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+.clear
+{
+    clear: both;
+}
+
+.error
+{
+    color: Red;
+}
+
+nav, #menucontainer
+{
+    margin-top: 37px;
+}
+
+div#title
+{
+    display: block;
+    float: left;
+    text-align: left;
+}
+
+#logindisplay
+{
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    margin: 10px;
+    color: White;
+}
+
+#logindisplay a:link
+{
+    color: white;
+}
+
+#logindisplay a:visited
+{
+    color: white;
+}
+
+#logindisplay a:hover
+{
+    color: white;
+    text-decoration: none;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}
+
+/* Styles for editor and display helpers
+----------------------------------------------------------*/
+.display-label, .editor-label
+{
+    margin: 1em 0 0 0;
+}
+
+.display-field, .editor-field
+{
+    margin: 0.5em 0 0 0;
+}
+
+.text-box
+{
+    width: 30em;
+}
+
+.text-box.multi-line
+{
+    height: 6.5em;
+}
+
+.tri-state
+{
+    width: 6em;
+}
+
+body
+{
+    margin: 0px;
+}
+
+#header
+{
+    height: 100px;
+    background-color: #4f4f4f;
+    margin: 0px 0px 30px 0px;
+}
+.header-container, .footer-container
+{
+    width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+    position: relative;
+}
+.header-logo
+{
+    margin-top: 22px;
+    margin-left: 10px;
+    border:0px;
+}
+
+.header-menu-container
+{
+    float: right;
+    background-image: url(/Content/images/menu-back.png);
+    background-repeat: repeat-x;
+    margin-top: 37px;
+}
+
+ul#menu
+{
+    position: relative;
+}
+
+ul#menu li
+{
+    font-family: Estrangelo Edessa;
+    display: inline;
+    list-style: none;
+    font-size: 20px;
+    color: #fff;
+    margin: 0px 20px 0px 20px;
+    cursor: pointer;
+}
+ul
+{
+    margin-left: 0px;
+    padding: 0px;
+}
+#footer
+{
+    height: 100px;
+    background-color: #e4e4e4;
+    margin-top: 30px;
+}
+#main
+{
+    width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+}
+.separator
+{
+    height: 2px;
+    background-color: #999999;
+}
+.footer-logo
+{
+    margin-top: 30px;
+}
+.footer-menu
+{
+    font-family: Sakkal Majalla;
+    font-size: 16px;
+    color: #4f4f4f;
+}
+.home-slider
+{
+    background-image: url('/Content/images/slider-back.png');
+    width: 1005px;
+    height: 326px;
+    margin-left: 10px;
+    position: relative;
+}
+.home-slider-download
+{
+    background-image: url('/Content/images/slider-download-info.png');
+    width: 200px;
+    height: 150px;
+    background-repeat: no-repeat;
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+}
+.home-slider-download-btn
+{
+    background-image: url('/Content/images/download-btn.png');
+    width: 200px;
+    height: 51px;
+    cursor: pointer;
+}
+.home-slider-download-info
+{
+    text-align: right;
+    margin-top: 45px;
+    margin-right: 20px;
+    margin-bottom: 5px;
+}
+.home-slider-download-info p
+{
+    margin: 0px;
+    color: #2e5377;
+    font-family: Bell Gothic Std;
+    font-size: 18px;
+}
+
+.home-main-container
+{
+    height: 165px;
+    margin-top: 25px;
+}
+
+
+.home-main-news
+{
+    width: 460px;
+    height: 165px;
+    float: left;
+    background-image: url('/Content/images/home-news-back.png');
+    background-repeat: no-repeat;
+    padding-left: 50px;
+    padding-right: 90px;
+    font-family: Microsoft Tai Le;
+    text-align: justify;
+}
+.home-main-testimony
+{
+    width: 335px;
+    height: 165px;
+    float: left;
+    background-image: url('/Content/images/home-testimony-back.png');
+    background-repeat: no-repeat;
+    font-family: Microsoft Tai Le;
+    padding-left: 50px;
+    padding-right: 35px;
+}
+.news-title, .testimony-title
+{
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0px;
+    color: #4b4b4b;
+    margin-top: 5px;
+}
+.news-content
+{
+    font-size: 15px;
+    margin: 0px;
+    color: #4b4b4b;
+    line-height: 18px;
+}
+.testimony-content
+{
+    font-size: 15px;
+    margin-top: 30px;
+    color: #4b4b4b;
+    line-height: 18px;
+    background-image: url('/Content/images/testimony-g.png');
+    background-repeat: no-repeat;
+    padding-left: 20px;
+}
+.testimony-author
+{
+    color: #4b4b4b;
+    text-align: right;
+}
+
+.moving-elem
+{
+    height: 3px;
+    width: 100px;
+    background-color: #fff;
+    display: block;
+    position: relative;
+    transition: width 2s;
+    -moz-transition: width 2s; /* Firefox 4 */
+    -webkit-transition: width 2s; /* Safari and Chrome */
+    -o-transition: width 2s; /* Opera */
+    -moz-transition-property: all;/* Firefox 4 */
+    -webkit-transition-property: all;/* Safari and Chrome */
+    -o-transition-property: all;/* Opera */
+    transition-property: all;
+    -moz-transition-duration: .5s;/* Firefox 4 */
+    -webkit-transition-duration: .5s;/* Safari and Chrome */
+    -o-transition-duration: .3s;/* Opera */
+    transition-duration: .3s;
+    -moz-transition-timing-function: ease;/* Firefox 4 */
+    -webkit-transition-timing-function: ease;/* Safari and Chrome */
+    -o-transition-timing-function: ease;/* Opera */
+    transition-timing-function: ease;
+    -moz-transition-delay: 0s;/* Firefox 4 */
+    -webkit-transition-delay: 0s;/* Safari and Chrome */
+    -o-transition-delay: 0s;/* Opera */
+    transition-delay: 0s;
+}
+
+.moving-element-container
+{
+    height:3px;
+}
+
+.project-content
+{
+    position:relative;
+    width:1024px;
+}
+
+.project-leftblock
+{
+    float:left;
+    width:643px;
+    height:330px;
+    background-color:#f4f4f4;
+    border-bottom:1px solid #858585;
+    border-left:1px solid #858585;
+    border-top:1px solid #858585;
+    vertical-align:middle;
+    font-family:Verdana;
+    padding-left:40px;
+    font-size:14px;
+    padding-right:40px;
+    text-align:justify;
+    display: table;
+    
+}
+
+.project-rightblock
+{
+    float:left;
+    width:286px;
+}
+
+.project-leftblock-content
+{
+    vertical-align:middle;
+    display: table-cell;
+}
+
+.project-menuelem
+{
+    height:110px;   
+    background-repeat:no-repeat;
+    text-align:center;
+    cursor:pointer;
+}
+
+.project-menuelem p{
+    font-family:Verdana;
+    font-size:25px;
+    color:#9b9b9b;
+    padding:34px 0px 0px 20px;
+    margin:0px;
+    vertical-align:middle;
+}
+
+.leprojet
+{
+    
+    border-top:1px solid #858585;
+    border-right:1px solid #858585;
+}
+
+.aide
+{
+    
+}
+
+.acteurs
+{
+    
+    border-bottom:1px solid #858585;
+}
+
+.active
+{
+    background-image:url('/Content/images/project-activeelem.png');
+}
+
+.active p
+{
+    color:#f6f6f6;
+}
+.inactive
+{
+    background-image:url('/Content/images/preject-inactivelem.png');
+}
+
+.project-shadow
+{
+    position:absolute;
+    background-image:url('/Content/images/project-shadow.png');
+    width:59px;
+    height:35px;
+    left:-59px;
+    top:297px;
+}
+
+.passiveslide
+{
+    display:none;
+}
+
+.progress-content
+{
+    width:1024px;
+    position:relative;
+}
+
+.progress-timebar-container
+{
+    height:50px;
+    background-color:#e4e4e4;
+    display: inline-block;
+    vertical-align:middle;
+    font-family: Estrangelo Edessa;
+    float:left;
+}
+
+.progress-bar-begin
+{
+    float:left;
+    height:50px;
+    width: 17px;
+    background-color:#4b4b4b;
+    margin-right:7px;
+}
+
+ul#timeline-buttons li
+{
+    display: inline;
+    list-style: none;
+    font-size: 17px;
+    margin: 0px 10px 0px 10px;
+    font-size:30px;
+    cursor: pointer;
+}
+
+ul#timeline-buttons
+{
+    padding-top:16px;
+    width:640px;
+    margin:0px;
+}
+
+.progress-bar-end
+{
+    float:left;
+    width:18px;
+    height:50px;
+    background-image: url('/Content/images/progresstimelinearrow.png');
+}
+
+.timeline-selected
+{
+    color:#509ae3;   
+}
+
+.progress-list-elem
+{
+    float: left;
+    margin-right: 81px;
+    width:195px;
+    height:116px;
+    background-image: url('/Content/images/avancement-ticket.png');
+    cursor:pointer;
+}
+
+.progress-list-line
+{
+    margin-top:40px;
+    position:relative;
+}
+
+.last-feature
+{
+    margin-right:0px;
+}
+
+.progress-elem-title-bar
+{
+    font-family:Estrangelo Edessa;
+    font-size:25px;
+    color:#fff;
+    margin: 22px 0px 0px 6px;
+    position:relative; 
+}
+
+.progress-elem-title
+{
+    float:left;
+}
+
+.progress-elem-type
+{
+    width:35px;
+    height:35px;
+    right:20px;
+    top:-15px;
+    position:absolute;
+}
+
+.done-feature
+{
+    background-image: url('/Content/images/done-type.png');
+}
+
+.doing-feature
+{
+    background-image: url('/Content/images/doing-type.png');
+}
+
+.todo-feature
+{
+    background-image: url('/Content/images/todo-type.png');
+}
+
+.progress-elem-content
+{
+    margin:14px 0px 0px 16px;
+    font-family:Verdana;
+}
+
+.progress-elem-developedby
+{
+    color:#696969;
+    font-size:14px;
+    width: 110px;
+    float:left;
+}
+
+.progress-elem-developedby p
+{
+    margin:0px;
+    line-height: 16px;
+}
+
+.progress-elem-version
+{
+    float:left;
+    width:30px;
+    font-family: Estrangelo Edessa;
+    margin: 10px 0px 0px 13px;
+    font-size: 19px;
+    color: white; 
+}
+
+.show-more-features
+{
+    cursor:pointer;
+    margin-top:30px;
+    text-align:center;
+    color:#4d4d4d;
+    font-family:Verdana;
+}
+
+.partners-content
+{
+    width:1024px;
+    position:relative;
+}
+
+.partners-begin-back
+{
+    width:960px;
+    height:8px;
+    background-image:url('/Content/images/partners-begin-back.png');
+}
+
+.partners-end-back
+{
+    width:960px;
+    height:8px;
+    background-image:url('/Content/images/partners-end-back.png');
+}
+
+partners-elem-title
+{
+    height:
+}
