@@ -3,9 +3,7 @@ bin/
 obj/
 *.user
 *.suo
-[Bb]in
 CiviKey/Web.config
 **/bin/*
 **/obj/*
-*user
-*cache
+CiviKey/Web.config
