@@ -12,7 +12,5 @@ namespace CiviKey.Models
         {
             return this.tFeatures.Single(x => x.Id == featureId).tSections;
         }
-
-
     }
 }

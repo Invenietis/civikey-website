@@ -12,10 +12,16 @@ namespace CiviKey.Controllers
         //
         // GET: /Progress/
 
+        private CiviKeyEntities _entities;
+        public ProgressController( CiviKeyEntities c )
+        {
+            _entities = c;
+        }
+
         public ActionResult Index()
         {
             ViewBag.Section = Sections.Progress;
-            return View();
+            return View(_entities.tFeatures.ToList());
         }
 
     }

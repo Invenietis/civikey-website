@@ -658,6 +658,7 @@ ul#timeline-buttons
     font-size:14px;
     width: 110px;
     float:left;
+    font-weight:bold;
 }
 
 .progress-elem-developedby p
