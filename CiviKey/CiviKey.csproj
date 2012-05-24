@@ -286,6 +286,7 @@
     <Content Include="Views\Progress\Index.cshtml" />
     <Content Include="Views\Partners\Index.cshtml" />
     <Content Include="Views\Progress\_FeatureDisplay.cshtml" />
+    <Content Include="Views\Contact\Index.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

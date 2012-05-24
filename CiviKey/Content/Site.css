@@ -775,3 +775,105 @@ ul#timeline-buttons
     font-family: Estrangelo Edessa;
     font-size:40px;
 }
+
+.contact-title
+{
+    font-family:Verdana;
+    width:770px;
+    background-image:url('/Content/images/contact-title-back.png');
+    height:33px;
+    background-repeat:no-repeat;
+    font-size:14px;
+    margin-left:auto;
+    margin-right:auto;
+    padding-left:30px;
+    background-position:0 2px;
+    line-height:15px;
+    margin-bottom:35px;
+}
+
+.contact-main-content-back
+{
+    height:378px;
+    background-color:#efefef;
+    width:800px;
+    margin-left:auto;
+    margin-right:auto;
+    padding-top:16px;
+}
+
+.contact-main-content
+{
+    background-image: url('/Content/images/contact-main-back.png');
+    width:772px;
+    height:362px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.contact-form-map-container
+{
+    width:690px;
+    padding-left:40px;
+    padding-top:45px;
+}
+
+.contact-form
+{
+    width:345px;
+    min-height:280px;
+    float:left;
+    margin-left:auto;
+    margin-right:auto;
+    font-family:Verdana;
+}
+
+.contact-map
+{
+    width:345px;
+    float:left;
+    min-height:280px;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+label 
+{
+    width:110px;
+    float:left;
+}
+
+.contact-form-elem
+{
+    margin-bottom:20px;
+    font-size:16px;
+    color:#505050;
+}
+
+.contact-form-elem input
+{
+    width:213px;
+    background-color:#eaeaea;
+    border: 1px solid #bebebe;
+}
+
+.contact-form-elem textarea
+{
+    width:209px;
+    background-color:#eaeaea;
+    border: 1px solid #bebebe;
+    height:100px;
+    resize:none;
+}
+
+.contact-form-elem-btn
+{
+    text-align:right;
+    padding-right:17px;
+}
+
+.send-btn
+{
+    border:1px solid #bebebe;
+    background-color:#eaeaea;
+}
