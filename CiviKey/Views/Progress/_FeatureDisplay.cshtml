@@ -1,0 +1,55 @@
+﻿@model CiviKey.ViewModel.FeatureViewModel
+@{
+    string developperName = "";
+}
+@helper GetProgress()
+    {
+    string output;
+    if( Model.Progress == 100 )
+    {
+        output = Model.Version.ToString();
+    }
+    else
+    {
+        output = Model.Progress + "%";
+    }
+    @:@output
+}
+
+@helper GetLogoClass()
+{
+    string output;
+    if( Model.Progress == 100 )
+    {
+        output = "done-feature";
+    }
+    else if( Model.Progress == 0 )
+    {
+        output = "todo-feature";
+    }
+    else
+    {
+        output = "doing-feature";
+    }
+    @:@output   
+}
+
+<div class="progress-elem-title-bar">
+    <div class="progress-elem-title">@Model.Title</div>
+    <div class="progress-elem-type @GetLogoClass()"></div>
+    <div style="clear: both;"></div>
+</div>
+<div class="progress-elem-content">
+    @if( Model.MainDeveloper != null )
+    {
+        <div class="progress-elem-developedby">
+            <p>Developpé par : </p>
+            <p>@Model.MainDeveloper.Name</p>
+        </div>
+    }
+    <div class="progress-elem-version">
+        @GetProgress()
+    </div>
+    <div style="clear: both;">
+    </div>
+</div>

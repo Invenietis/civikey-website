@@ -1,50 +1,61 @@
-﻿@model IList<CiviKey.Models.tFeature>
+﻿@model IList<CiviKey.ViewModel.FeatureViewModel>
+@section js{
+    <script src="@Url.Content( "~/Scripts/progress.js" )" type="text/javascript"></script>
+}
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+    int lineCount = (int)Math.Ceiling( (double)Model.Count / (double)4 );
+    int visibleLinesCount = lineCount;
+    if( lineCount > 2 )
+    {
+        visibleLinesCount = 2;
+    }
+    int lineFeatureCount = Model.Count > 4 ? 4 : Model.Count;
+    int index;
 }
 
 <div class="progress-content">
     <div class="progress-timebar">
-        <div class="progress-timebar-container"><div class="progress-bar-begin"></div>
-        <ul id="timeline-buttons">
-            <li>Existant</li>
-            <li class="timeline-selected">v2.5.1</li>
-            <li>v2.5.2</li>
-            <li>v2.5.3</li>
-            <li>v2.5.4</li>
-            <li>v2.5.5</li>
-        </ul>
+        <div class="progress-timebar-container">
+            <div class="progress-bar-begin">
+            </div>
+            <ul id="timeline-buttons">
+                <li class="timeline-selected">Existant</li>
+                <li><a href="@Url.Action( "Index", "Progress", new { roadmapId = 1 } )" >v2.5.1</a></li>
+                    
+                <li>v2.5.2</li>
+                <li>v2.5.3</li>
+                <li>v2.5.4</li>
+                <li>v2.5.5</li>
+            </ul>
         </div>
-        <div class="progress-bar-end"></div>
-        <div style="clear:both;"></div>
+        <div class="progress-bar-end">
+        </div>
+        <div style="clear: both;">
+        </div>
     </div>
-
-    <div class="progress-list-of-leatures">
-        @for (int i = 0; i < 2; i++)
+    <div class="progress-list-of-features">
+        @for( index = 0; index < lineCount; index++ )
         {
-            <div class="progress-list-line">
-                @for (int j = 0; j < 4; j++)
+            if( Model.Count - index * lineFeatureCount < lineFeatureCount )
+            {
+                lineFeatureCount = Model.Count - index * lineFeatureCount;
+            }
+            <div class="progress-list-line @if( index >= visibleLinesCount )
+                                           {@("hidden-feature")}">
+                @for( int j = 4 * index; j < ( 4 * index + lineFeatureCount ); j++ )
                 {
-                <div class="progress-list-elem @if (j == 3) {@("last-feature")}">
-                    <div class="progress-elem-title-bar">
-                        <div class="progress-elem-title">Feature</div>
-                        <div class="progress-elem-type done-feature"></div>
-                        <div style=" clear:both;"></div>
+                    <div class="progress-list-elem @if( ( j + 1 ) % 4 == 0 )
+                                                   {@("last-feature")}">
+                        @Html.Partial( "_FeatureDisplay", Model[j] )
                     </div>
-                    <div class="progress-elem-content">
-                        <div class="progress-elem-developedby">
-                            <p>Developpé par</p>
-                            <p>Invenietis</p>
-                        </div>
-                        <div class="progress-elem-version">1.0.3</div>
-                        <div style=" clear:both;"></div>
-                    </div>
-                </div>
                 }
-                <div style="clear: both;"></div>
+                <div style="clear: both;">
+                </div>
             </div>
         }
-        <div class="show-more-features">show more</div>
+        <div class="show-more-features">
+            show more</div>
     </div>
 </div>

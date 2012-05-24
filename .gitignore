@@ -7,3 +7,5 @@ obj/
 CiviKey/Web.config
 **/bin/*
 **/obj/*
+*user
+*cache
