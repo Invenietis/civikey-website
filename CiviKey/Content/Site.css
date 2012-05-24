@@ -706,7 +706,67 @@ ul#timeline-buttons
     background-image:url('/Content/images/partners-end-back.png');
 }
 
-partners-elem-title
+.partners-elem-title
 {
-    height:
+    float:left;
+    width:478px;
+    height:129px;
+    background-image: url('/Content/images/partner-back.png');
+}
+
+.partners-elem-content
+{
+    background-color:#4c4c4c;
+    float:left;
+    background-image:  url('/Content/images/partner-content-back.png');
+    background-repeat:repeat-y;
+    background-position: top right;
+    width:960px;
+    min-height:129px;
+}
+
+.partners-elem-text
+{
+    float:left;
+    width:440px;
+    font-family:Verdana;
+    color:#fff;
+    font-size:12px;
+    padding: 10px 22px 20px 20px;
+    text-align:justify;
+    line-height:15px;
+}
+
+.partners-sep.vis
+{
+    background-image: url('/Content/images/partner-sep.png');
+    background-repeat: no-repeat;
+    background-position:right;
+    height:1px;
+    clear:both;
+    margin-bottom:10px;
+}
+
+.partners-sep.invis
+{
+    clear:both;
+}
+
+.partners-title-logo
+{
+    margin:20px 0px 0px 50px;
+    width:90px;
+    height:90px;
+    background-image: url('/Content/images/partner-logo.png');
+    background-repeat:no-repeat;
+    background-position:0px 3px;
+    float:left;
+}
+
+.partners-title-name
+{
+    float:left;
+    margin:47px 0px 0px 25px;
+    font-family: Estrangelo Edessa;
+    font-size:40px;
 }
