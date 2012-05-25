@@ -263,17 +263,22 @@ ul#menu li
     margin: 0px 20px 0px 20px;
     cursor: pointer;
 }
+
 ul
 {
     margin-left: 0px;
     padding: 0px;
 }
+
 #footer
 {
     height: 100px;
     background-color: #e4e4e4;
     margin-top: 30px;
 }
+
+
+
 #main
 {
     width: 1024px;
@@ -296,6 +301,30 @@ ul
     font-size: 16px;
     color: #4f4f4f;
 }
+
+.footer-menu ul
+{
+    margin: 0;
+    height: 25px;
+}
+
+.footer-menu li
+{
+    float: left;
+    list-style-type:none;
+    margin-right: 3px;
+}
+
+.footer-menu a
+{
+    color:#000;
+}
+
+.footer-menu a:hover
+{
+    text-decoration:underline;
+}
+
 .home-slider
 {
     background-image: url('/Content/images/slider-back.png');
