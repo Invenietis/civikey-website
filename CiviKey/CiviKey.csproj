@@ -220,6 +220,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
     <Content Include="README.jQuery.vsdoc.txt" />
+    <Content Include="Scripts\contacts.js" />
     <Content Include="Scripts\progress.js" />
     <Content Include="Scripts\home.js" />
     <Content Include="Scripts\jquery-1.7.2-vsdoc.js" />

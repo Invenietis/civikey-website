@@ -862,7 +862,7 @@ label
     width:209px;
     background-color:#eaeaea;
     border: 1px solid #bebebe;
-    height:100px;
+    height:105px;
     resize:none;
 }
 
@@ -876,4 +876,13 @@ label
 {
     border:1px solid #bebebe;
     background-color:#eaeaea;
+    color:#505050;
+}
+
+#map_canvas
+{
+    width:320px;
+    height:235px;
+    margin-left:20px;
+    border:1px solid #bebebe;
 }
