@@ -1,15 +1,13 @@
 ﻿@model CiviKey.ViewModel.FeatureViewModel
-@{
-    string developperName = "";
-}
-@helper Elipse(string toElipse, int nbChar)
-{
-        if( toElipse.Length > nbChar ) 
+@helper Elipse( string toElipse, int nbChar )
+    {
+        if( toElipse.Length > nbChar )
         {
             toElipse = toElipse.Substring( 0, nbChar );
+            toElipse = toElipse.Trim();
             toElipse += "...";
         }
-        @:@toElipse
+    @:@toElipse
 }
 @helper GetProgress()
     {
@@ -26,23 +24,23 @@
 }
 @helper GetLogoClass()
     {
-    string output;
-    if( Model.Progress == 100 )
-    {
-        output = "done-feature";
-    }
-    else if( Model.Progress == 0 )
-    {
-        output = "todo-feature";
-    }
-    else
-    {
-        output = "doing-feature";
-    }
+        string output;
+        if( Model.Progress == 100 )
+        {
+            output = "done-feature";
+        }
+        else if( Model.Progress == 0 )
+        {
+            output = "todo-feature";
+        }
+        else
+        {
+            output = "doing-feature";
+        }
     @:@output
 }
 <div class="progress-elem-title-bar">
-    <div class="progress-elem-title">@Elipse( Model.Title, 10 )</div>
+    <div class="progress-elem-title">@Elipse( Model.Title, 15 )</div>
     <div class="progress-elem-type @GetLogoClass()">
     </div>
     <div style="clear: both;">
@@ -52,7 +50,7 @@
     @if( Model.MainDeveloper != null )
     {
         <div class="progress-elem-developedby">
-            <p>
+            <p class="progress-elem-developedby-text">
                 Developpé par :
             </p>
             <p>@Model.MainDeveloper.Name</p>
