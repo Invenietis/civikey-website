@@ -3,16 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using CiviKey.Models;
+using CiviKey.Repositories;
 
 namespace CiviKey.ViewModel
 {
     public class FeatureViewModel
     {
         tFeature _model;
-        CiviKeyEntities _c;
-        public FeatureViewModel( CiviKeyEntities c, tFeature model )
+        PartnerRepository _partnerRepo;
+        ContactRepository _contactRepo;
+        ContactRelationRepository _contactRelationRepo;
+        public FeatureViewModel( tFeature model, PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo )
         {
-            _c = c;
+            _contactRelationRepo = contactRelationRepo;
+            _partnerRepo = partnerRepo;
+            _contactRepo = contactRepo;
             _model = model;
             GenerateViewModels( model );
         }
@@ -30,14 +35,14 @@ namespace CiviKey.ViewModel
             _sponsors = new List<ParticipationViewModel>();
             foreach( var participation in model.tParticipations.Where( x => x.PartType == ParticipationType.Sponsoring.ToString() ) )
             {
-                ParticipationViewModel vm = new ParticipationViewModel( _c, participation );
+                ParticipationViewModel vm = new ParticipationViewModel( participation, _partnerRepo, _contactRepo, _contactRelationRepo  );
                 _sponsors.Add( vm );
             }
 
             _developers = new List<ParticipationViewModel>();
             foreach( var participation in model.tParticipations.Where( x => x.PartType == ParticipationType.Development.ToString() ) )
             {
-                ParticipationViewModel vm = new ParticipationViewModel( _c, participation );
+                ParticipationViewModel vm = new ParticipationViewModel( participation, _partnerRepo, _contactRepo,_contactRelationRepo );
                 if( _mainDevelopementParticipation == null ) _mainDevelopementParticipation = vm;
                 if( participation.Percentage > _mainDevelopementParticipation.Percentage ) _mainDevelopementParticipation = vm;
                 _developers.Add( vm );
@@ -60,7 +65,7 @@ namespace CiviKey.ViewModel
             _videos = new List<VideoViewModel>();
             foreach( var video in model.tVideos )
             {
-                _videos.Add( new VideoViewModel( _c, video ) );
+                _videos.Add( new VideoViewModel( video ) );
             }
         }
 

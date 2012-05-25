@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using CiviKey.Models;
 using CiviKey.ViewModel;
+using CiviKey.Repositories;
 
 namespace CiviKey.Controllers
 {
@@ -12,10 +13,15 @@ namespace CiviKey.Controllers
     {
         //
         // GET: /Progress/
-
+        PartnerRepository _partnerRepo;
+        ContactRepository _contactRepo;
+        ContactRelationRepository _contactRelationRepo;
         private CiviKeyEntities _entities;
-        public ProgressController( CiviKeyEntities c )
+        public ProgressController( CiviKeyEntities c, PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo )
         {
+            _partnerRepo = partnerRepo;
+            _contactRepo = contactRepo;
+            _contactRelationRepo = contactRelationRepo;
             _entities = c;
         }
 
@@ -32,7 +38,7 @@ namespace CiviKey.Controllers
 
             foreach( var item in features )
             {
-                _features.Add( new FeatureViewModel( _entities, item ) );
+                _features.Add( new FeatureViewModel( item, _partnerRepo, _contactRepo, _contactRelationRepo ) );
             }
             return View( _features );
         }
