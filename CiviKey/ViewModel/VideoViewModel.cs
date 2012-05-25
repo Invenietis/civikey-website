@@ -8,8 +8,8 @@ namespace CiviKey.ViewModel
 {
     public class VideoViewModel
     {
-        tDemo _model;
-        public VideoViewModel(CiviKeyEntities c, tDemo model)
+        tVideo _model;
+        public VideoViewModel( CiviKeyEntities c, tVideo model )
         {
             _model = model;
         }

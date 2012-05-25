@@ -22,8 +22,8 @@ namespace CiviKey.Models
     
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Descr { get; set; }
-        public string Logo { get; set; }
+        public string Description { get; set; }
+        public string LogoPath { get; set; }
     
         public virtual ICollection<tContactRelation> tContactRelations { get; set; }
         public virtual ICollection<tContactRelation> tContactRelations1 { get; set; }

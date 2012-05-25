@@ -16,20 +16,22 @@ namespace CiviKey.Models
     {
         public tFeature()
         {
-            this.tDemoes = new HashSet<tDemo>();
             this.tSections = new HashSet<tSection>();
+            this.tVideos = new HashSet<tVideo>();
             this.tCategories = new HashSet<tCategory>();
             this.tParticipations = new HashSet<tParticipation>();
         }
     
         public int Id { get; set; }
         public string Title { get; set; }
-        public string Ver { get; set; }
-        public string Progress { get; set; }
+        public string Version { get; set; }
+        public int Progress { get; set; }
         public System.DateTime CreationDate { get; set; }
+        public int IdRoadMap { get; set; }
     
-        public virtual ICollection<tDemo> tDemoes { get; set; }
         public virtual ICollection<tSection> tSections { get; set; }
+        public virtual ICollection<tVideo> tVideos { get; set; }
+        public virtual tRoadMap tRoadMap { get; set; }
         public virtual ICollection<tCategory> tCategories { get; set; }
         public virtual ICollection<tParticipation> tParticipations { get; set; }
     }

@@ -587,6 +587,11 @@ ul#timeline-buttons
     color:#509ae3;   
 }
 
+.timeline-unselected
+{
+    color:#509ae3;   
+}
+
 .progress-list-elem
 {
     float: left;

@@ -21,15 +21,14 @@ namespace CiviKey.Controllers
 
         public ActionResult Index( int? id )
         {
+            ViewBag.Roadmaps = _entities.tRoadMaps.ToList();
             ViewBag.Section = Sections.Progress;
             IList<FeatureViewModel> _features = new List<FeatureViewModel>();
             IQueryable<tFeature> features;
 
-            //TODO : uncomment when the database has a roadmap table
-            //if( id != null ) features = _entities.tFeatures.Where( x => x.RoadMapId == id.Value );
-            //else features = _entities.tFeatures;
+            if( id != null ) features = _entities.tFeatures.Where( x => x.IdRoadMap == id.Value );
+            else features = _entities.tFeatures;
 
-            features = _entities.tFeatures; //To remove when the database has a roadmap table
             foreach( var item in features )
             {
                 _features.Add( new FeatureViewModel( _entities, item ) );

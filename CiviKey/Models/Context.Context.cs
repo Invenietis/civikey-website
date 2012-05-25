@@ -28,12 +28,13 @@ namespace CiviKey.Models
         public DbSet<tCategory> tCategories { get; set; }
         public DbSet<tContact> tContacts { get; set; }
         public DbSet<tContactRelation> tContactRelations { get; set; }
-        public DbSet<tDemo> tDemoes { get; set; }
-        public DbSet<tFeature> tFeatures { get; set; }
         public DbSet<tNew> tNews { get; set; }
         public DbSet<tParticipation> tParticipations { get; set; }
         public DbSet<tPlugin> tPlugins { get; set; }
         public DbSet<tSection> tSections { get; set; }
         public DbSet<tTestimony> tTestimonies { get; set; }
+        public DbSet<tRoadMap> tRoadMaps { get; set; }
+        public DbSet<tVideo> tVideos { get; set; }
+        public DbSet<tFeature> tFeatures { get; set; }
     }
 }

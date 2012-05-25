@@ -58,7 +58,7 @@ namespace CiviKey.ViewModel
             }
 
             _videos = new List<VideoViewModel>();
-            foreach( var video in model.tDemoes )
+            foreach( var video in model.tVideos )
             {
                 _videos.Add( new VideoViewModel( _c, video ) );
             }
@@ -70,9 +70,9 @@ namespace CiviKey.ViewModel
 
         public DateTime CreationDate { get { return _model.CreationDate; } }
         public int Id { get { return _model.Id; } }
-        public int Progress { get { return Int32.Parse( _model.Progress ); } }
+        public int Progress { get { return _model.Progress; } }
         public string Title { get { return _model.Title; } }
-        public Version Version { get { return new Version( _model.Ver ); } }
+        public Version Version { get { return new Version( _model.Version ); } }
 
         IList<CategoryViewModel> _categories;
         public IList<CategoryViewModel> Categories { get { return _categories; } }

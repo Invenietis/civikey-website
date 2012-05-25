@@ -39,6 +39,7 @@ insert into dbo.tRoadMap(Name)values('3.4.5');
 
 insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap) values('AutoClick','1.0.0',100,DATEADD(year,-1,GetDate()),1)
 insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap) values('Prediction','1.0.0',50,DATEADD(year,-1,GetDate()),1)
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap) values('Fonctionnalité de fou','1.0.0',50,DATEADD(year,-1,GetDate()),2)
 
 --Creating sections in the features
 

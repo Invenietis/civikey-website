@@ -12,19 +12,17 @@ using System.Collections.Generic;
 
 namespace CiviKey.Models
 {
-    public partial class tPlugin
+    public partial class tRoadMap
     {
-        public tPlugin()
+        public tRoadMap()
         {
-            this.tSections = new HashSet<tSection>();
+            this.tFeatures = new HashSet<tFeature>();
         }
     
         public int Id { get; set; }
-        public string Title { get; set; }
-        public System.DateTime CreationDate { get; set; }
-        public string Description { get; set; }
+        public string Name { get; set; }
     
-        public virtual ICollection<tSection> tSections { get; set; }
+        public virtual ICollection<tFeature> tFeatures { get; set; }
     }
     
 }
