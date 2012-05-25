@@ -574,6 +574,11 @@ ul#timeline-buttons
     margin:0px;
 }
 
+ul#timeline-buttons a:hover
+{
+    color: #4b8fd1;
+}
+
 .progress-bar-end
 {
     float:left;
@@ -582,7 +587,12 @@ ul#timeline-buttons
     background-image: url('/Content/images/progresstimelinearrow.png');
 }
 
-.timeline-selected
+a.timeline-selected
+{
+    color:#509ae3;   
+}
+
+.timeline-unselected
 {
     color:#509ae3;   
 }

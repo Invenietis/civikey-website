@@ -123,9 +123,6 @@
     <Compile Include="Models\tContactRelation.cs">
       <DependentUpon>Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\tDemo.cs">
-      <DependentUpon>Context.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\tFeature.cs">
       <DependentUpon>Context.tt</DependentUpon>
     </Compile>
@@ -138,10 +135,16 @@
     <Compile Include="Models\tPlugin.cs">
       <DependentUpon>Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\tRoadMap.cs">
+      <DependentUpon>Context.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\tSection.cs">
       <DependentUpon>Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\tTestimony.cs">
+      <DependentUpon>Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tVideo.cs">
       <DependentUpon>Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

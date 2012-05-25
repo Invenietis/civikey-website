@@ -13,21 +13,25 @@
     }
     int lineFeatureCount = Model.Count > 4 ? 4 : Model.Count;
     int index;
+    bool hasExtraFeatures = false;
 }
-
 <div class="progress-content">
     <div class="progress-timebar">
         <div class="progress-timebar-container">
             <div class="progress-bar-begin">
             </div>
             <ul id="timeline-buttons">
-                <li class="timeline-selected">Existant</li>
-                <li><a href="@Url.Action( "Index", "Progress", new { roadmapId = 1 } )" >v2.5.1</a></li>
-                    
-                <li>v2.5.2</li>
-                <li>v2.5.3</li>
-                <li>v2.5.4</li>
-                <li>v2.5.5</li>
+                <li><a href="@Url.Action( "Index", "Progress", new { id = 0 })" class="@if( ViewBag.CurrentRoadmapId == null )
+                                                                                                   {@("timeline-selected")}
+                                                                                                   else
+                                                                                                   {@("timeline-unselected")}">Existant</a></li>   @*@Url.RouteUrl( "Default", new { controller = "Progress", action = "Index" }*@
+                @foreach( CiviKey.Models.tRoadMap item in ViewBag.Roadmaps )
+                {
+                    <li><a href="@Url.Action( "Index", "Progress", new { id = @item.Id } )" class="@if( ViewBag.CurrentRoadmapId == item.Id )
+                                                                                                   {@("timeline-selected")}
+                                                                                                   else if( ViewBag.CurrentRoadmapId != null )
+                                                                                                   {@("timeline-unselected")}">@item.Name</a></li> 
+                }
             </ul>
         </div>
         <div class="progress-bar-end">
@@ -43,7 +47,8 @@
                 lineFeatureCount = Model.Count - index * lineFeatureCount;
             }
             <div class="progress-list-line @if( index >= visibleLinesCount )
-                                           {@("hidden-feature")}">
+                                           {
+                                               hasExtraFeatures = true; @("hidden-feature")}">
                 @for( int j = 4 * index; j < ( 4 * index + lineFeatureCount ); j++ )
                 {
                     <div class="progress-list-elem @if( ( j + 1 ) % 4 == 0 )
@@ -51,11 +56,15 @@
                         @Html.Partial( "_FeatureDisplay", Model[j] )
                     </div>
                 }
-                <div style="clear: both;">
-                </div>
+                
+                    <div style="clear: both;">
+                    </div>
             </div>
         }
+        @if( hasExtraFeatures )
+        {
         <div class="show-more-features">
             show more</div>
+        }
     </div>
 </div>

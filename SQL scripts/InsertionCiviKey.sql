@@ -30,15 +30,16 @@ insert into dbo.tContactRelation(ContactId,EntityId,StartDate,EndDate)values(6,6
 insert into dbo.tContactRelation(ContactId,EntityId,StartDate,EndDate)values(7,7,GetDate(), DATEADD(year,1,GetDate()));
 select * from dbo.tContactRelation
 
-
 --- Creating RoadMap
-insert into dbo.tRoadMap(Name)values('3.4.5');
+insert into dbo.tRoadMap(Name)values('2.5.1');
+insert into dbo.tRoadMap(Name)values('2.5.2');
 
 
 --Creating features
 
 insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap) values('AutoClick','1.0.0',100,DATEADD(year,-1,GetDate()),1)
 insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap) values('Prediction','1.0.0',50,DATEADD(year,-1,GetDate()),1)
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap) values('Fonctionnalité de fou','1.0.0',50,DATEADD(year,-1,GetDate()),2)
 
 --Creating sections in the features
 
@@ -50,6 +51,11 @@ insert into dbo.tSection(Name,FeatureId) values('Affichage',2);
 insert into dbo.tSection(Name,FeatureId) values('Moteur de prédiction',2);
 insert into dbo.tSection(Name,FeatureId) values('Autres',2);
 
+insert into dbo.tSection(Name,FeatureId) values('Affichage',3);
+insert into dbo.tSection(Name,FeatureId) values('Plugin de fou',3);
+insert into dbo.tSection(Name,FeatureId) values('Autres',3);
+
+
 --Creating plugins
 
 insert into dbo.tPlugin(Title,Description,CreationDate) values('AutoClick','Plugin permettant de simuler des clics souris', DateAdd(year,-1,GetDate()))
@@ -59,6 +65,10 @@ insert into dbo.tPlugin(Title,Description,CreationDate) values('PointerDeviceDri
 insert into dbo.tPlugin(Title,Description,CreationDate) values('PredictionDisplayer','Affiche les prédictions', DateAdd(year,-1,GetDate()))
 insert into dbo.tPlugin(Title,Description,CreationDate) values('SimplePredictionEngine','Prédiction de mots via dictionnaire statique', DateAdd(year,-1,GetDate()))
 insert into dbo.tPlugin(Title,Description,CreationDate) values('ComplexPredictionEngine','Prédiction avec Sybille', DateAdd(year,-1,GetDate()))
+
+insert into dbo.tPlugin(Title,Description,CreationDate) values('PredictionDisplayer','Affiche la fonctionnalité de fou', DateAdd(year,-1,GetDate()))
+insert into dbo.tPlugin(Title,Description,CreationDate) values('SimplePredictionEngine','Logique de fou', DateAdd(year,-1,GetDate()))
+insert into dbo.tPlugin(Title,Description,CreationDate) values('ComplexPredictionEngine','Tool', DateAdd(year,-1,GetDate()))
 
 --Linking plugins and features
 
@@ -70,6 +80,10 @@ insert into dbo.tSectionPlugin(SectionId,PluginId) values(4,4)
 insert into dbo.tSectionPlugin(SectionId,PluginId) values(5,5)
 insert into dbo.tSectionPlugin(SectionId,PluginId) values(5,6)
 insert into dbo.tSectionPlugin(SectionId,PluginId) values(6,3) --PointerDeviceDriver used by the prediction engine
+
+insert into dbo.tSectionPlugin(SectionId,PluginId) values(7,7)
+insert into dbo.tSectionPlugin(SectionId,PluginId) values(8,8)
+insert into dbo.tSectionPlugin(SectionId,PluginId) values(9,9) --PointerDeviceDriver used by the autoclick plugin
 
 --Creating Participations
 

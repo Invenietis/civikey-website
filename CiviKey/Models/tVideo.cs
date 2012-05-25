@@ -12,11 +12,11 @@ using System.Collections.Generic;
 
 namespace CiviKey.Models
 {
-    public partial class tDemo
+    public partial class tVideo
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string DemoSource { get; set; }
+        public string VideoSource { get; set; }
         public int FeatureId { get; set; }
         public System.DateTime CreationDate { get; set; }
     
