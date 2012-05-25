@@ -732,12 +732,12 @@
         <EntityTypeShape EntityType="CiviKeyModel.tSection" Width="1.5" PointX="5.25" PointY="8" Height="1.9802864583333317" IsExpanded="true" />
         <EntityTypeShape EntityType="CiviKeyModel.tTestimony" Width="1.5" PointX="7.75" PointY="4.5" Height="1.9802864583333317" IsExpanded="true" />
         <AssociationConnector Association="CiviKeyModel.fk_ContactId" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="2.9090719858805336" />
-          <ConnectorPoint PointX="3" PointY="2.9090719858805336" />
+          <ConnectorPoint PointX="2.25" PointY="2.6535953776041667" />
+          <ConnectorPoint PointX="3" PointY="2.6535953776041667" />
         </AssociationConnector>
         <AssociationConnector Association="CiviKeyModel.fk_EntityId" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="2.3920359929402668" />
-          <ConnectorPoint PointX="3" PointY="2.3920359929402668" />
+          <ConnectorPoint PointX="2.25" PointY="2.2642976888020834" />
+          <ConnectorPoint PointX="3" PointY="2.2642976888020834" />
         </AssociationConnector>
         <AssociationConnector Association="CiviKeyModel.FK_ContactId1" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="2.5910953776041667" />
@@ -751,34 +751,34 @@
         </AssociationConnector>
         <EntityTypeShape EntityType="CiviKeyModel.tRoadMap" Width="1.5" PointX="0.75" PointY="8.625" Height="1.5956835937500031" />
         <EntityTypeShape EntityType="CiviKeyModel.tVideo" Width="1.5" PointX="5.25" PointY="11.25" Height="2.1725878906250031" />
-        <EntityTypeShape EntityType="CiviKeyModel.tFeature" Width="1.5" PointX="3" PointY="4.125" Height="3.1340950520833388" />
+        <EntityTypeShape EntityType="CiviKeyModel.tFeature" Width="1.5" PointX="3" PointY="4.125" Height="3.1340950520833326" IsExpanded="true" />
         <AssociationConnector Association="CiviKeyModel.FK_FeatureId" >
-          <ConnectorPoint PointX="4.5" PointY="7.2025555905448773" />
-          <ConnectorPoint PointX="5.03125" PointY="7.7338055905448773" />
-          <ConnectorPoint PointX="5.03125" PointY="8.7138196145833327" />
+          <ConnectorPoint PointX="4.5" PointY="7.2337094366987174" />
+          <ConnectorPoint PointX="5.0625" PointY="7.7962094366987174" />
+          <ConnectorPoint PointX="5.0625" PointY="8.7138196145833327" />
           <ConnectorPoint PointX="5.25" PointY="8.7138196145833327" />
         </AssociationConnector>
         <AssociationConnector Association="CiviKeyModel.FK_FeatureIdVideo" >
-          <ConnectorPoint PointX="4.4757692307692309" PointY="7.2590950520833388" />
-          <ConnectorPoint PointX="4.875" PointY="7.6583258213141079" />
+          <ConnectorPoint PointX="4.4757692307692309" PointY="7.2590950520833326" />
+          <ConnectorPoint PointX="4.875" PointY="7.6583258213141017" />
           <ConnectorPoint PointX="4.875" PointY="12.3362939453125" />
           <ConnectorPoint PointX="5.25" PointY="12.3362939453125" />
         </AssociationConnector>
         <AssociationConnector Association="CiviKeyModel.FK_IdRoadMap" >
           <ConnectorPoint PointX="2.25" PointY="8.6261528461538468" />
           <ConnectorPoint PointX="2.625" PointY="8.2511528461538468" />
-          <ConnectorPoint PointX="2.625" PointY="5.6920475260416694" />
-          <ConnectorPoint PointX="3" PointY="5.6920475260416694" />
+          <ConnectorPoint PointX="2.625" PointY="4.9772717630208394" />
+          <ConnectorPoint PointX="3" PointY="4.9772717630208394" />
         </AssociationConnector>
         <AssociationConnector Association="CiviKeyModel.tCategoryFeature" >
-          <ConnectorPoint PointX="2.25" PointY="6.3313655598958345" />
-          <ConnectorPoint PointX="2.5416666666666665" PointY="6.3313655598958336" />
-          <ConnectorPoint PointX="2.7083333333333335" PointY="6.3313655598958345" />
-          <ConnectorPoint PointX="3" PointY="6.3313655598958345" />
+          <ConnectorPoint PointX="2.25" PointY="6.047841796875" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="6.0478417968749989" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="6.047841796875" />
+          <ConnectorPoint PointX="3" PointY="6.047841796875" />
         </AssociationConnector>
         <AssociationConnector Association="CiviKeyModel.tParticipationFeature" >
-          <ConnectorPoint PointX="4.5" PointY="5.6899704567307783" />
-          <ConnectorPoint PointX="6" PointY="5.6899704567307783" />
+          <ConnectorPoint PointX="4.5" PointY="5.7055473798076974" />
+          <ConnectorPoint PointX="6" PointY="5.7055473798076974" />
           <ConnectorPoint PointX="6" PointY="4.2398893229166656" />
         </AssociationConnector>
         </Diagram>

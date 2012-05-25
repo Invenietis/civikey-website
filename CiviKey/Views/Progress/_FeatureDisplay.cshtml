@@ -2,22 +2,30 @@
 @{
     string developperName = "";
 }
+@helper Elipse(string toElipse, int nbChar)
+{
+        if( toElipse.Length > nbChar ) 
+        {
+            toElipse = toElipse.Substring( 0, nbChar );
+            toElipse += "...";
+        }
+        @:@toElipse
+}
 @helper GetProgress()
     {
-    string output;
-    if( Model.Progress == 100 )
-    {
-        output = Model.Version.ToString();
-    }
-    else
-    {
-        output = Model.Progress + "%";
-    }
+        string output;
+        if( Model.Progress == 100 )
+        {
+            output = Model.Version.ToString();
+        }
+        else
+        {
+            output = Model.Progress + "%";
+        }
     @:@output
 }
-
 @helper GetLogoClass()
-{
+    {
     string output;
     if( Model.Progress == 100 )
     {
@@ -31,19 +39,22 @@
     {
         output = "doing-feature";
     }
-    @:@output   
+    @:@output
 }
-
 <div class="progress-elem-title-bar">
-    <div class="progress-elem-title">@Model.Title</div>
-    <div class="progress-elem-type @GetLogoClass()"></div>
-    <div style="clear: both;"></div>
+    <div class="progress-elem-title">@Elipse( Model.Title, 10 )</div>
+    <div class="progress-elem-type @GetLogoClass()">
+    </div>
+    <div style="clear: both;">
+    </div>
 </div>
 <div class="progress-elem-content">
     @if( Model.MainDeveloper != null )
     {
         <div class="progress-elem-developedby">
-            <p>Developpé par : </p>
+            <p>
+                Developpé par :
+            </p>
             <p>@Model.MainDeveloper.Name</p>
         </div>
     }

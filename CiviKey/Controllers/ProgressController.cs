@@ -21,12 +21,13 @@ namespace CiviKey.Controllers
 
         public ActionResult Index( int? id )
         {
+            ViewBag.CurrentRoadmapId = id;
             ViewBag.Roadmaps = _entities.tRoadMaps.ToList();
             ViewBag.Section = Sections.Progress;
             IList<FeatureViewModel> _features = new List<FeatureViewModel>();
             IQueryable<tFeature> features;
 
-            if( id != null ) features = _entities.tFeatures.Where( x => x.IdRoadMap == id.Value );
+            if( id != null && id != 0) features = _entities.tFeatures.Where( x => x.IdRoadMap == id.Value );
             else features = _entities.tFeatures;
 
             foreach( var item in features )
