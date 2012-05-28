@@ -9,7 +9,7 @@ namespace CiviKey.ViewModel
     public class VideoViewModel
     {
         tVideo _model;
-        public VideoViewModel( CiviKeyEntities c, tVideo model )
+        public VideoViewModel( tVideo model )
         {
             _model = model;
         }

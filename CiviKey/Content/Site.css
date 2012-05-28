@@ -263,17 +263,22 @@ ul#menu li
     margin: 0px 20px 0px 20px;
     cursor: pointer;
 }
+
 ul
 {
     margin-left: 0px;
     padding: 0px;
 }
+
 #footer
 {
     height: 100px;
     background-color: #e4e4e4;
     margin-top: 30px;
 }
+
+
+
 #main
 {
     width: 1024px;
@@ -296,6 +301,30 @@ ul
     font-size: 16px;
     color: #4f4f4f;
 }
+
+.footer-menu ul
+{
+    margin: 0;
+    height: 25px;
+}
+
+.footer-menu li
+{
+    float: left;
+    list-style-type:none;
+    margin-right: 3px;
+}
+
+.footer-menu a
+{
+    color:#000;
+}
+
+.footer-menu a:hover
+{
+    text-decoration:underline;
+}
+
 .home-slider
 {
     background-image: url('/Content/images/slider-back.png');
@@ -616,16 +645,16 @@ a.timeline-selected
     color:#509ae3;   
 }
 
-.timeline-unselected
+a.timeline-unselected
 {
-    color:#509ae3;   
+    color:#4d4d4d;   
 }
 
 .progress-list-elem
 {
     float: left;
     margin-right: 81px;
-    width:195px;
+    width:185px;
     height:116px;
     background-image: url('/Content/images/avancement-ticket.png');
     cursor:pointer;
@@ -650,14 +679,16 @@ a.timeline-selected
 .progress-elem-title-bar
 {
     font-family:Estrangelo Edessa;
-    font-size:25px;
+    font-size:20px;
     color:#fff;
-    margin: 22px 0px 0px 6px;
+    margin-top: 17px;
     position:relative; 
 }
 
 .progress-elem-title
 {
+    margin-top:5px;
+    margin-left: 10px;
     float:left;
 }
 
@@ -665,8 +696,8 @@ a.timeline-selected
 {
     width:35px;
     height:35px;
-    right:20px;
-    top:-15px;
+    right:10px;
+    top:-10px;
     position:absolute;
 }
 
@@ -687,7 +718,6 @@ a.timeline-selected
 
 .progress-elem-content
 {
-    margin:14px 0px 0px 16px;
     font-family:Verdana;
 }
 
@@ -698,12 +728,20 @@ a.timeline-selected
     width: 110px;
     float:left;
     font-weight:bold;
+    margin-top:20px;
+    margin-left: 15px;
 }
 
 .progress-elem-developedby p
 {
-    margin:0px;
+    margin: 0px;
     line-height: 16px;
+}
+
+.progress-elem-developedby-text
+{
+    
+    font-size: 9px;
 }
 
 .progress-elem-version
@@ -711,7 +749,8 @@ a.timeline-selected
     float:right;
     width:30px;
     font-family: Estrangelo Edessa;
-    margin: 10px 25px 0px 13px;
+    margin-top: 28px;
+    margin-right: 15px;
     font-size: 19px;
     color: white; 
 }

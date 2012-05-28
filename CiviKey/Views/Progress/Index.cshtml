@@ -21,7 +21,7 @@
             <div class="progress-bar-begin">
             </div>
             <ul id="timeline-buttons">
-                <li><a href="@Url.Action( "Index", "Progress", new { id = 0 })" class="@if( ViewBag.CurrentRoadmapId == null )
+                <li><a href="@Url.Action( "Index", "Progress", new { id = 0 })" class="@if( ViewBag.CurrentRoadmapId == null || ViewBag.CurrentRoadmapId == 0)
                                                                                                    {@("timeline-selected")}
                                                                                                    else
                                                                                                    {@("timeline-unselected")}">Existant</a></li>   @*@Url.RouteUrl( "Default", new { controller = "Progress", action = "Index" }*@
@@ -29,7 +29,7 @@
                 {
                     <li><a href="@Url.Action( "Index", "Progress", new { id = @item.Id } )" class="@if( ViewBag.CurrentRoadmapId == item.Id )
                                                                                                    {@("timeline-selected")}
-                                                                                                   else if( ViewBag.CurrentRoadmapId != null )
+                                                                                                   else if( ViewBag.CurrentRoadmapId != null || ViewBag.CurrentRoadmapId != 0 )
                                                                                                    {@("timeline-unselected")}">@item.Name</a></li> 
                 }
             </ul>
@@ -52,7 +52,7 @@
                 @for( int j = 4 * index; j < ( 4 * index + lineFeatureCount ); j++ )
                 {
                     <div class="progress-list-elem @if( ( j + 1 ) % 4 == 0 )
-                                                   {@("last-feature")}">
+                                                   {@("last-feature")}" onclick="location.href='@Url.Action( "Index", "Feature", new { id = @Model[j].Id } )'">
                         @Html.Partial( "_FeatureDisplay", Model[j] )
                     </div>
                 }
