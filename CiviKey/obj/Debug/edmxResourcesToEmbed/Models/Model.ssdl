@@ -5,38 +5,39 @@
     <EntitySet Name="tCategoryFeature" EntityType="CiviKeyModel.Store.tCategoryFeature" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tContact" EntityType="CiviKeyModel.Store.tContact" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tContactRelation" EntityType="CiviKeyModel.Store.tContactRelation" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="tDemo" EntityType="CiviKeyModel.Store.tDemo" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tFeature" EntityType="CiviKeyModel.Store.tFeature" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tNews" EntityType="CiviKeyModel.Store.tNews" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tParticipation" EntityType="CiviKeyModel.Store.tParticipation" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tParticipationFeature" EntityType="CiviKeyModel.Store.tParticipationFeature" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tPlugin" EntityType="CiviKeyModel.Store.tPlugin" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tRoadMap" EntityType="CiviKeyModel.Store.tRoadMap" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tSection" EntityType="CiviKeyModel.Store.tSection" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tSectionPlugin" EntityType="CiviKeyModel.Store.tSectionPlugin" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="tTestimony" EntityType="CiviKeyModel.Store.tTestimony" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="fk_ContactId" Association="CiviKeyModel.Store.fk_ContactId">
+    <EntitySet Name="tVideo" EntityType="CiviKeyModel.Store.tVideo" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_ContactId" Association="CiviKeyModel.Store.FK_ContactId">
       <End Role="tContact" EntitySet="tContact" />
       <End Role="tContactRelation" EntitySet="tContactRelation" />
     </AssociationSet>
-    <AssociationSet Name="FK_ContactId1" Association="CiviKeyModel.Store.FK_ContactId1">
+    <AssociationSet Name="FK_ContactIdParticipation" Association="CiviKeyModel.Store.FK_ContactIdParticipation">
       <End Role="tContactRelation" EntitySet="tContactRelation" />
       <End Role="tParticipation" EntitySet="tParticipation" />
     </AssociationSet>
-    <AssociationSet Name="fk_EntityId" Association="CiviKeyModel.Store.fk_EntityId">
+    <AssociationSet Name="FK_EntityId" Association="CiviKeyModel.Store.FK_EntityId">
       <End Role="tContact" EntitySet="tContact" />
       <End Role="tContactRelation" EntitySet="tContactRelation" />
     </AssociationSet>
-    <AssociationSet Name="fk_FeatureId" Association="CiviKeyModel.Store.fk_FeatureId">
+    <AssociationSet Name="FK_FeatureId" Association="CiviKeyModel.Store.FK_FeatureId">
       <End Role="tFeature" EntitySet="tFeature" />
       <End Role="tSection" EntitySet="tSection" />
-    </AssociationSet>
-    <AssociationSet Name="FK_FeatureId1" Association="CiviKeyModel.Store.FK_FeatureId1">
-      <End Role="tFeature" EntitySet="tFeature" />
-      <End Role="tDemo" EntitySet="tDemo" />
     </AssociationSet>
     <AssociationSet Name="FK_FeatureIdPart" Association="CiviKeyModel.Store.FK_FeatureIdPart">
       <End Role="tFeature" EntitySet="tFeature" />
       <End Role="tParticipationFeature" EntitySet="tParticipationFeature" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FeatureIdVideo" Association="CiviKeyModel.Store.FK_FeatureIdVideo">
+      <End Role="tFeature" EntitySet="tFeature" />
+      <End Role="tVideo" EntitySet="tVideo" />
     </AssociationSet>
     <AssociationSet Name="FK_IdCategory" Association="CiviKeyModel.Store.FK_IdCategory">
       <End Role="tCategory" EntitySet="tCategory" />
@@ -45,6 +46,10 @@
     <AssociationSet Name="FK_IdFeature" Association="CiviKeyModel.Store.FK_IdFeature">
       <End Role="tFeature" EntitySet="tFeature" />
       <End Role="tCategoryFeature" EntitySet="tCategoryFeature" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IdRoadMap" Association="CiviKeyModel.Store.FK_IdRoadMap">
+      <End Role="tRoadMap" EntitySet="tRoadMap" />
+      <End Role="tFeature" EntitySet="tFeature" />
     </AssociationSet>
     <AssociationSet Name="FK_ParticipationId" Association="CiviKeyModel.Store.FK_ParticipationId">
       <End Role="tParticipation" EntitySet="tParticipation" />
@@ -64,7 +69,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="128" />
   </EntityType>
   <EntityType Name="tCategoryFeature">
     <Key>
@@ -79,9 +84,9 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="varchar(max)" Nullable="false" />
-    <Property Name="Descr" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Logo" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LogoPath" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
   <EntityType Name="tContactRelation">
     <Key>
@@ -91,34 +96,25 @@
     <Property Name="ContactId" Type="int" Nullable="false" />
     <Property Name="EntityId" Type="int" Nullable="false" />
     <Property Name="StartDate" Type="smalldatetime" Nullable="false" />
-    <Property Name="EndDate" Type="smalldatetime" Nullable="false" />
-  </EntityType>
-  <EntityType Name="tDemo">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="varchar(max)" Nullable="false" />
-    <Property Name="DemoSource" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="FeatureId" Type="int" Nullable="false" />
-    <Property Name="CreationDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="EndDate" Type="smalldatetime" />
   </EntityType>
   <EntityType Name="tFeature">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Title" Type="varchar(max)" Nullable="false" />
-    <Property Name="Ver" Type="varchar(max)" Nullable="false" />
-    <Property Name="Progress" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Title" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="Version" Type="varchar" Nullable="false" MaxLength="12" />
+    <Property Name="Progress" Type="int" Nullable="false" />
     <Property Name="CreationDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="IdRoadMap" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="tNews">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Title" Type="varchar(max)" Nullable="false" />
+    <Property Name="Title" Type="varchar" Nullable="false" MaxLength="128" />
     <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
     <Property Name="CreationDate" Type="smalldatetime" Nullable="false" />
   </EntityType>
@@ -144,16 +140,23 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Title" Type="varchar(max)" Nullable="false" />
-    <Property Name="Descr" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Title" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
     <Property Name="CreationDate" Type="smalldatetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="tRoadMap">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="32" />
   </EntityType>
   <EntityType Name="tSection">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="varchar(max)" Nullable="false" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="128" />
     <Property Name="FeatureId" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="tSectionPlugin">
@@ -170,11 +173,21 @@
     </Key>
     <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="Author" Type="varchar(max)" Nullable="false" />
-    <Property Name="Title" Type="varchar(max)" Nullable="false" />
+    <Property Name="Title" Type="varchar" Nullable="false" MaxLength="128" />
     <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
     <Property Name="CreationDate" Type="smalldatetime" Nullable="false" />
   </EntityType>
-  <Association Name="fk_ContactId">
+  <EntityType Name="tVideo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="varchar" Nullable="false" MaxLength="128" />
+    <Property Name="VideoSource" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="FeatureId" Type="int" Nullable="false" />
+    <Property Name="CreationDate" Type="smalldatetime" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_ContactId">
     <End Role="tContact" Type="CiviKeyModel.Store.tContact" Multiplicity="1" />
     <End Role="tContactRelation" Type="CiviKeyModel.Store.tContactRelation" Multiplicity="*" />
     <ReferentialConstraint>
@@ -186,7 +199,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_ContactId1">
+  <Association Name="FK_ContactIdParticipation">
     <End Role="tContactRelation" Type="CiviKeyModel.Store.tContactRelation" Multiplicity="1" />
     <End Role="tParticipation" Type="CiviKeyModel.Store.tParticipation" Multiplicity="*" />
     <ReferentialConstraint>
@@ -198,7 +211,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="fk_EntityId">
+  <Association Name="FK_EntityId">
     <End Role="tContact" Type="CiviKeyModel.Store.tContact" Multiplicity="1" />
     <End Role="tContactRelation" Type="CiviKeyModel.Store.tContactRelation" Multiplicity="*" />
     <ReferentialConstraint>
@@ -210,7 +223,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="fk_FeatureId">
+  <Association Name="FK_FeatureId">
     <End Role="tFeature" Type="CiviKeyModel.Store.tFeature" Multiplicity="1" />
     <End Role="tSection" Type="CiviKeyModel.Store.tSection" Multiplicity="*" />
     <ReferentialConstraint>
@@ -218,18 +231,6 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="tSection">
-        <PropertyRef Name="FeatureId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_FeatureId1">
-    <End Role="tFeature" Type="CiviKeyModel.Store.tFeature" Multiplicity="1" />
-    <End Role="tDemo" Type="CiviKeyModel.Store.tDemo" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tFeature">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="tDemo">
         <PropertyRef Name="FeatureId" />
       </Dependent>
     </ReferentialConstraint>
@@ -242,6 +243,18 @@
         <PropertyRef Name="Id" />
       </Principal>
       <Dependent Role="tParticipationFeature">
+        <PropertyRef Name="FeatureId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_FeatureIdVideo">
+    <End Role="tFeature" Type="CiviKeyModel.Store.tFeature" Multiplicity="1" />
+    <End Role="tVideo" Type="CiviKeyModel.Store.tVideo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tFeature">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tVideo">
         <PropertyRef Name="FeatureId" />
       </Dependent>
     </ReferentialConstraint>
@@ -267,6 +280,18 @@
       </Principal>
       <Dependent Role="tCategoryFeature">
         <PropertyRef Name="IdFeature" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IdRoadMap">
+    <End Role="tRoadMap" Type="CiviKeyModel.Store.tRoadMap" Multiplicity="1" />
+    <End Role="tFeature" Type="CiviKeyModel.Store.tFeature" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tRoadMap">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tFeature">
+        <PropertyRef Name="IdRoadMap" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

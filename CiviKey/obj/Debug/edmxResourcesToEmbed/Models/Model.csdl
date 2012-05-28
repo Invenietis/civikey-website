@@ -4,8 +4,6 @@
     <EntitySet Name="tCategories" EntityType="CiviKeyModel.tCategory" />
     <EntitySet Name="tContacts" EntityType="CiviKeyModel.tContact" />
     <EntitySet Name="tContactRelations" EntityType="CiviKeyModel.tContactRelation" />
-    <EntitySet Name="tDemoes" EntityType="CiviKeyModel.tDemo" />
-    <EntitySet Name="tFeatures" EntityType="CiviKeyModel.tFeature" />
     <EntitySet Name="tNews" EntityType="CiviKeyModel.tNew" />
     <EntitySet Name="tParticipations" EntityType="CiviKeyModel.tParticipation" />
     <EntitySet Name="tPlugins" EntityType="CiviKeyModel.tPlugin" />
@@ -23,13 +21,24 @@
       <End Role="tContactRelation" EntitySet="tContactRelations" />
       <End Role="tParticipation" EntitySet="tParticipations" />
     </AssociationSet>
-    <AssociationSet Name="FK_FeatureId1" Association="CiviKeyModel.FK_FeatureId1">
-      <End Role="tFeature" EntitySet="tFeatures" />
-      <End Role="tDemo" EntitySet="tDemoes" />
+    <AssociationSet Name="tSectionPlugin" Association="CiviKeyModel.tSectionPlugin">
+      <End Role="tPlugin" EntitySet="tPlugins" />
+      <End Role="tSection" EntitySet="tSections" />
     </AssociationSet>
-    <AssociationSet Name="fk_FeatureId" Association="CiviKeyModel.fk_FeatureId">
+    <EntitySet Name="tRoadMaps" EntityType="CiviKeyModel.tRoadMap" />
+    <EntitySet Name="tVideos" EntityType="CiviKeyModel.tVideo" />
+    <EntitySet Name="tFeatures" EntityType="CiviKeyModel.tFeature" />
+    <AssociationSet Name="FK_FeatureId" Association="CiviKeyModel.FK_FeatureId">
       <End Role="tFeature" EntitySet="tFeatures" />
       <End Role="tSection" EntitySet="tSections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_FeatureIdVideo" Association="CiviKeyModel.FK_FeatureIdVideo">
+      <End Role="tFeature" EntitySet="tFeatures" />
+      <End Role="tVideo" EntitySet="tVideos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IdRoadMap" Association="CiviKeyModel.FK_IdRoadMap">
+      <End Role="tRoadMap" EntitySet="tRoadMaps" />
+      <End Role="tFeature" EntitySet="tFeatures" />
     </AssociationSet>
     <AssociationSet Name="tCategoryFeature" Association="CiviKeyModel.tCategoryFeature">
       <End Role="tCategory" EntitySet="tCategories" />
@@ -38,10 +47,6 @@
     <AssociationSet Name="tParticipationFeature" Association="CiviKeyModel.tParticipationFeature">
       <End Role="tFeature" EntitySet="tFeatures" />
       <End Role="tParticipation" EntitySet="tParticipations" />
-    </AssociationSet>
-    <AssociationSet Name="tSectionPlugin" Association="CiviKeyModel.tSectionPlugin">
-      <End Role="tPlugin" EntitySet="tPlugins" />
-      <End Role="tSection" EntitySet="tSections" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="tCategory">
@@ -58,10 +63,10 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
-    <Property Name="Descr" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-    <Property Name="Logo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="tContactRelations" Relationship="CiviKeyModel.fk_ContactId" FromRole="tContact" ToRole="tContactRelation" />
     <NavigationProperty Name="tContactRelations1" Relationship="CiviKeyModel.fk_EntityId" FromRole="tContact" ToRole="tContactRelation" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LogoPath" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="tContactRelation">
     <Key>
@@ -75,31 +80,6 @@
     <NavigationProperty Name="tContact" Relationship="CiviKeyModel.fk_ContactId" FromRole="tContactRelation" ToRole="tContact" />
     <NavigationProperty Name="tContact1" Relationship="CiviKeyModel.fk_EntityId" FromRole="tContactRelation" ToRole="tContact" />
     <NavigationProperty Name="tParticipations" Relationship="CiviKeyModel.FK_ContactId1" FromRole="tContactRelation" ToRole="tParticipation" />
-  </EntityType>
-  <EntityType Name="tDemo">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
-    <Property Name="DemoSource" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-    <Property Name="FeatureId" Type="Int32" Nullable="false" />
-    <Property Name="CreationDate" Type="DateTime" Nullable="false" />
-    <NavigationProperty Name="tFeature" Relationship="CiviKeyModel.FK_FeatureId1" FromRole="tDemo" ToRole="tFeature" />
-  </EntityType>
-  <EntityType Name="tFeature">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Title" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
-    <Property Name="Ver" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
-    <Property Name="Progress" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-    <Property Name="CreationDate" Type="DateTime" Nullable="false" />
-    <NavigationProperty Name="tDemoes" Relationship="CiviKeyModel.FK_FeatureId1" FromRole="tFeature" ToRole="tDemo" />
-    <NavigationProperty Name="tSections" Relationship="CiviKeyModel.fk_FeatureId" FromRole="tFeature" ToRole="tSection" />
-    <NavigationProperty Name="tCategories" Relationship="CiviKeyModel.tCategoryFeature" FromRole="tFeature" ToRole="tCategory" />
-    <NavigationProperty Name="tParticipations" Relationship="CiviKeyModel.tParticipationFeature" FromRole="tFeature" ToRole="tParticipation" />
   </EntityType>
   <EntityType Name="tNew">
     <Key>
@@ -128,9 +108,9 @@
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Title" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
-    <Property Name="Descr" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="CreationDate" Type="DateTime" Nullable="false" />
     <NavigationProperty Name="tSections" Relationship="CiviKeyModel.tSectionPlugin" FromRole="tPlugin" ToRole="tSection" />
+    <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="tSection">
     <Key>
@@ -139,8 +119,8 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
     <Property Name="FeatureId" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="tFeature" Relationship="CiviKeyModel.fk_FeatureId" FromRole="tSection" ToRole="tFeature" />
     <NavigationProperty Name="tPlugins" Relationship="CiviKeyModel.tSectionPlugin" FromRole="tSection" ToRole="tPlugin" />
+    <NavigationProperty Name="tFeature" Relationship="CiviKeyModel.FK_FeatureId" FromRole="tSection" ToRole="tFeature" />
   </EntityType>
   <EntityType Name="tTestimony">
     <Key>
@@ -188,21 +168,48 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_FeatureId1">
-    <End Role="tFeature" Type="CiviKeyModel.tFeature" Multiplicity="1" />
-    <End Role="tDemo" Type="CiviKeyModel.tDemo" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="tFeature">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="tDemo">
-        <PropertyRef Name="FeatureId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="fk_FeatureId">
-    <End Role="tFeature" Type="CiviKeyModel.tFeature" Multiplicity="1" />
+  <Association Name="tSectionPlugin">
+    <End Role="tPlugin" Type="CiviKeyModel.tPlugin" Multiplicity="*" />
     <End Role="tSection" Type="CiviKeyModel.tSection" Multiplicity="*" />
+  </Association>
+  <EntityType Name="tRoadMap">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tFeatures" Relationship="CiviKeyModel.FK_IdRoadMap" FromRole="tRoadMap" ToRole="tFeature" />
+  </EntityType>
+  <EntityType Name="tVideo">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="VideoSource" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="Int32" Name="FeatureId" Nullable="false" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+    <NavigationProperty Name="tFeature" Relationship="CiviKeyModel.FK_FeatureIdVideo" FromRole="tVideo" ToRole="tFeature" />
+  </EntityType>
+  <EntityType Name="tFeature">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="Title" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="Version" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="Progress" Nullable="false" />
+    <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+    <Property Type="Int32" Name="IdRoadMap" Nullable="false" />
+    <NavigationProperty Name="tSections" Relationship="CiviKeyModel.FK_FeatureId" FromRole="tFeature" ToRole="tSection" />
+    <NavigationProperty Name="tVideos" Relationship="CiviKeyModel.FK_FeatureIdVideo" FromRole="tFeature" ToRole="tVideo" />
+    <NavigationProperty Name="tRoadMap" Relationship="CiviKeyModel.FK_IdRoadMap" FromRole="tFeature" ToRole="tRoadMap" />
+    <NavigationProperty Name="tCategories" Relationship="CiviKeyModel.tCategoryFeature" FromRole="tFeature" ToRole="tCategory" />
+    <NavigationProperty Name="tParticipations" Relationship="CiviKeyModel.tParticipationFeature" FromRole="tFeature" ToRole="tParticipation" />
+  </EntityType>
+  <Association Name="FK_FeatureId">
+    <End Type="CiviKeyModel.tFeature" Role="tFeature" Multiplicity="1" />
+    <End Type="CiviKeyModel.tSection" Role="tSection" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="tFeature">
         <PropertyRef Name="Id" />
@@ -212,16 +219,36 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_FeatureIdVideo">
+    <End Type="CiviKeyModel.tFeature" Role="tFeature" Multiplicity="1" />
+    <End Type="CiviKeyModel.tVideo" Role="tVideo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tFeature">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tVideo">
+        <PropertyRef Name="FeatureId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IdRoadMap">
+    <End Type="CiviKeyModel.tRoadMap" Role="tRoadMap" Multiplicity="1" />
+    <End Type="CiviKeyModel.tFeature" Role="tFeature" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tRoadMap">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="tFeature">
+        <PropertyRef Name="IdRoadMap" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="tCategoryFeature">
-    <End Role="tCategory" Type="CiviKeyModel.tCategory" Multiplicity="*" />
-    <End Role="tFeature" Type="CiviKeyModel.tFeature" Multiplicity="*" />
+    <End Type="CiviKeyModel.tCategory" Role="tCategory" Multiplicity="*" />
+    <End Type="CiviKeyModel.tFeature" Role="tFeature" Multiplicity="*" />
   </Association>
   <Association Name="tParticipationFeature">
-    <End Role="tFeature" Type="CiviKeyModel.tFeature" Multiplicity="0..1" />
-    <End Role="tParticipation" Type="CiviKeyModel.tParticipation" Multiplicity="*" />
-  </Association>
-  <Association Name="tSectionPlugin">
-    <End Role="tPlugin" Type="CiviKeyModel.tPlugin" Multiplicity="*" />
-    <End Role="tSection" Type="CiviKeyModel.tSection" Multiplicity="*" />
+    <End Type="CiviKeyModel.tFeature" Role="tFeature" Multiplicity="0..1" />
+    <End Type="CiviKeyModel.tParticipation" Role="tParticipation" Multiplicity="*" />
   </Association>
 </Schema>

@@ -3,29 +3,39 @@
 <html>
 <head>
     <title>@ViewBag.Title</title>
-    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
-    <script src="@Url.Content("~/Scripts/jquery-1.7.2.min.js")" type="text/javascript"></script>
-    <script src="@Url.Content("~/Scripts/project.js")" type="text/javascript"></script>
+    @Html.CK().CssByConvention().IncludeCss("Site")
+    @{
+        Html.CK().Scripts().
+            IncludeJS("~/Scripts/jquery-1.7.2.min.js").
+            IncludeJS("~/Scripts/project.js").
+            IncludeJS("~/Scripts/jquery.unobtrusive-ajax.js").
+            IncludeJS("~/Scripts/jquery.validate.js").
+            IncludeJS("~/Scripts/jquery.validate.unobtrusive.js");
+    }
+    
+    @Html.CK().Css().RenderCss()
+    @Html.CK().Scripts().RenderJS()
 </head>
 <body>
     @RenderSection("js", false)
     @helper IsSelected(Sections section)
-    {
+        {
         @(section == (ViewBag.Section ?? Sections.Default) ? "selected" : string.Empty)
     }
+
     <div class="page">
         <div id="header">
             <div class="header-container">
-                <a href="@Url.Action( "Index","Home")"><img class="header-logo" alt="Logo Civikey" src="@Url.Content("~/Content/images/logo.png")" /></a>
+                <a href="@Url.Action("Index", "Home")"><img class="header-logo" alt="Logo Civikey" src="@Url.Content("~/Content/images/logo.png")" /></a>
                 <div class="header-menu-container">
                 <div class="moving-element-container">
-                    <div class="moving-elem"></div>
+                    <div class="moving-elem @ViewBag.Section"></div>
                 </div>
                     <ul id="menu">
-                        <li class="@IsSelected(Sections.Project) menuelem"><a href="@Url.Action( "Index","Project")">Le projet</a></li>
-                        <li class="@IsSelected(Sections.Progress) menuelem"><a href="@Url.Action( "Index","Progress")">Avancement</a></li>
-                        <li class="@IsSelected(Sections.Partners) menuelem"><a href="@Url.Action( "Index","Partners")">Partenaires</a></li>
-                        <li class="@IsSelected(Sections.Contact) menuelem"><a href="@Url.Action( "Index","Contact")">Contactez-nous</a></li>
+                        <li class="@IsSelected(Sections.Project) menuelem"><a href="@Url.Action("Index", "Project")">Le projet</a></li>
+                        <li class="@IsSelected(Sections.Progress) menuelem"><a href="@Url.Action("Index", "Progress")">Avancement</a></li>
+                        <li class="@IsSelected(Sections.Partners) menuelem"><a href="@Url.Action("Index", "Partners")">Partenaires</a></li>
+                        <li class="@IsSelected(Sections.Contact) menuelem"><a href="@Url.Action("Index", "Contact")">Contactez-nous</a></li>
                     </ul>
                 </div>
             </div>

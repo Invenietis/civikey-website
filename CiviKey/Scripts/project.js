@@ -1,53 +1,44 @@
 ﻿$(function () {
-    var actionTerminated=true;
+    var elemsTab = ["leprojet", "aide", "acteurs"];
+    var notActivElem = [1, 2, 0];
 
-    $('.project-menuelem.leprojet').click(function () {
-        if (changeActiveElem("leprojet") && actionTerminated) {
-            actionTerminated = false;
-            $('.project-slide2').fadeOut(function () {
-                $('.project-slide3').fadeOut(function () {
-                    $('.project-slide1').fadeIn(function () {
-                        actionTerminated = true;
-                    });
-                });
-            });
-        }
+    $('.project-menuelem').click(function () {
+        clickedElem = $(this);
+        changeContent(clickedElem);
+
     });
 
-    $('.project-menuelem.aide').click(function () {
-        if (changeActiveElem("aide") && actionTerminated) {
-            actionTerminated = false;
-            $('.project-slide1').fadeOut(function () {
-                $('.project-slide3').fadeOut(function () {
-                    $('.project-slide2').fadeIn(function () {
-                        actionTerminated = true;
-                    });
+    function changeContent(clickedElem) {
+        console.log(notActivElem);
+        if (changeActiveElem(clickedElem)) {
+            detectNotActivElem(clickedElem);
+            $('.project-slide' + notActivElem[0]).fadeOut(function () {
+                $('.project-slide' + notActivElem[1]).fadeOut(function () {
+                    $('.project-slide' + notActivElem[2]).fadeIn();
                 });
             });
         }
-    });
+    }
 
-    $('.project-menuelem.acteurs').click(function () {
-        if (changeActiveElem("acteurs") && actionTerminated) {
-            actionTerminated = false;
-            $('.project-slide2').fadeOut(function () {
-                $('.project-slide1').fadeOut(function () {
-                    $('.project-slide3').fadeIn(function () {
-                        actionTerminated = true;
-                    });
-                });
-            });
+    function detectNotActivElem(activeElem) {
+        var j = 0;
+        for (var i = 0; i < elemsTab.length; i++) {
+            if (clickedElem.attr('id') != elemsTab[i]) {
+                notActivElem[j] = i;
+                j++;
+            } else {
+                notActivElem[notActivElem.length - 1] = i;
+            }
         }
-    })
+    }
 
     function changeActiveElem(clickedElem) {
-        var thisElem = $('.project-menuelem.' + clickedElem);
 
-        if (!thisElem.hasClass('active')&& actionTerminated) {
+        if (!clickedElem.hasClass('active')) {
             $('.project-menuelem').removeClass('active');
             $('.project-menuelem').addClass('inactive');
-            thisElem.removeClass('inactive');
-            thisElem.addClass('active');
+            clickedElem.removeClass('inactive');
+            clickedElem.addClass('active');
             return true;
         } else {
             return false;

@@ -400,7 +400,6 @@ ul
 .moving-elem
 {
     height: 3px;
-    width: 100px;
     background-color: #fff;
     display: block;
     position: relative;
@@ -424,6 +423,31 @@ ul
     -webkit-transition-delay: 0s;/* Safari and Chrome */
     -o-transition-delay: 0s;/* Opera */
     transition-delay: 0s;
+}
+
+.Project
+{
+    width: 112px;
+    left: 0px;
+    display: block;
+}
+
+.Progress
+{
+    width: 140px;
+    left: 116px;
+}
+
+.Partners
+{
+    width: 131px;
+    left: 260px;
+}
+
+.Contact
+{
+    width: 166px;
+    left: 395px;
 }
 
 .moving-element-container
@@ -485,7 +509,7 @@ ul
     vertical-align:middle;
 }
 
-.leprojet
+#leprojet
 {
     
     border-top:1px solid #858585;
@@ -497,7 +521,7 @@ ul
     
 }
 
-.acteurs
+#acteurs
 {
     
     border-bottom:1px solid #858585;
@@ -895,4 +919,39 @@ label
     height:235px;
     margin-left:20px;
     border:1px solid #bebebe;
+}
+
+.mailsent-dialog
+{
+    text-align:center;
+    display:none;
+    position:absolute;
+    width:300px;
+    height:73px;
+    left:50%;
+    right:50%;
+    margin-left:-150px;
+    margin-right:-150px;
+    top:50%;
+    bottom:50%;
+    margin-top:-35px;
+    z-index:99999;
+    background-color: #EAEAEA;
+    border: 1px solid #BEBEBE;
+    font-family:Verdana;
+}
+
+.mailsent-dialog p
+{
+    color:#505050;
+    margin-top:25px;
+}
+
+.dialog-back
+{
+    background-color:red;
+    display:none;
+    position:absolute;
+    width:100%;
+    height:100%;
 }
