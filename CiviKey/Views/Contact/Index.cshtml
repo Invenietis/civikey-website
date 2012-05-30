@@ -33,20 +33,20 @@
                         </div>
                         <div class="contact-form-elem">
                             @Html.LabelFor( m => m.From )
-                            @Html.EditorFor( m => m.From )
-                            @Html.ValidationMessageFor(m => m.From)
+                            @Html.EditorFor(m => m.From, new { title = "test" })
+                            
                         </div>
                         <div class="contact-form-elem">
-                            <label>Sujet :</label> 
+                            @Html.LabelFor( m => m.Subject)
                             @Html.EditorFor(m => m.Subject)
-                            @Html.ValidationMessageFor(m => m.Subject)
                         </div>
                         <div class="contact-form-elem">
-                            <label>Message :</label> 
+                            @Html.LabelFor( m => m.Message)
                             @Html.EditorFor(m => m.Message)
-                            @Html.ValidationMessageFor(m => m.Message)
                         </div>
                         <div class="contact-form-elem-btn">
+                                @*@Html.ValidationMessageFor(m => m.From) @Html.ValidationMessageFor(m => m.Subject) @Html.ValidationMessageFor(m => m.Message)*@
+                                @Html.ValidationSummary()
                             <input type="submit" value="Envoyer" class="send-btn"/>
                         </div>
                     }

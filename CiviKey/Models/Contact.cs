@@ -9,15 +9,15 @@ namespace CiviKey.Models
 {
     public class Contact
     {
-        [Email]
-        [Required]
-        [DataType(System.ComponentModel.DataAnnotations.DataType.EmailAddress)]
-        [Display(Name = "De : ")]
+        [Email(ErrorMessage = "L'email est invalide")]
+        [Required(ErrorMessage = "Email est requis")]
+        [DataType(DataType.EmailAddress), Display(Name = "De : ")]
         public string From { get; set; }
-        [Required]
+
+        [Required(ErrorMessage = "Le sujet est requis"), Display(Name = "Sujet : ")]
         public string Subject { get; set; }
-        [Required]
-        [DataType(System.ComponentModel.DataAnnotations.DataType.MultilineText)]
+
+        [Required(ErrorMessage = "Le message est requis"), DataType(DataType.MultilineText), Display(Name = "Message : ")]
         public string Message { get; set; }
     }
 }

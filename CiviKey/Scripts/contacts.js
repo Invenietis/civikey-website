@@ -26,17 +26,21 @@
     })(marker));
 });
 
-function mailSent(e) {
-    $('.mailsent-dialog').html('<p>Message envoyé avec succès!</p>');
-    $('.mailsent-dialog').fadeIn().delay(800).fadeOut();
-}
+    function mailSent(e) {
+        $('.validation-summary-errors li').html('');
+        $('#From').val('');
+        $('#Subject').val('');
+        $('#Message').val('');
+        $('.mailsent-dialog').html('<p>Message envoyé avec succès!</p>');
+        $('.mailsent-dialog').fadeIn().delay(800).fadeOut();
+    }
 
 
-function mailFailed(e) {
-    $('.mailsent-dialog').html('<p>Vérifiez vôtre adresse mail</p>');
-    $('.mailsent-dialog').fadeIn().delay(1000).fadeOut();
-}
+    function mailFailed(e) {
+        $('.mailsent-dialog').html('<p>Vérifiez vôtre adresse mail</p>');
+        $('.mailsent-dialog').fadeIn().delay(1000).fadeOut();
+    }
 
-$('.page').click(function () {
-    $('.mailsent-dialog').css('display', 'none');
+    $('.page').click(function () {
+        $('.mailsent-dialog').css('display', 'none');
 });

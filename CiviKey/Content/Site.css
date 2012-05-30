@@ -160,11 +160,6 @@ div#title
 
 /* Styles for validation helpers
 -----------------------------------------------------------*/
-.field-validation-error
-{
-    color: #ff0000;
-}
-
 .field-validation-valid
 {
     display: none;
@@ -174,12 +169,6 @@ div#title
 {
     border: 1px solid #ff0000;
     background-color: #ffeeee;
-}
-
-.validation-summary-errors
-{
-    font-weight: bold;
-    color: #ff0000;
 }
 
 .validation-summary-valid
@@ -202,11 +191,6 @@ div#title
 .text-box
 {
     width: 30em;
-}
-
-.text-box.multi-line
-{
-    height: 6.5em;
 }
 
 .tri-state
@@ -266,6 +250,7 @@ ul#menu li
 
 ul
 {
+    list-style:none;
     margin-left: 0px;
     padding: 0px;
 }
@@ -921,6 +906,7 @@ label
     margin-bottom:20px;
     font-size:16px;
     color:#505050;
+    position:relative;
 }
 
 .contact-form-elem input
@@ -993,4 +979,46 @@ label
     position:absolute;
     width:100%;
     height:100%;
+}
+
+.field-validation-error
+{
+    display:block;
+    width: 150px;
+    min-height: 18px;
+    font-size: 14px;
+}
+
+.contact-error-mesage
+{
+    position: absolute;
+    z-index: 100;
+    margin-left: 11px;
+    margin-top: 2px;
+    background-color: white;
+    color:#ff7b6f;
+    top: 0px;
+    right: -130px;
+    text-align: center;
+    border: 1px solid #BEBEBE;
+}
+
+.contact-error-mesage.textarea
+{
+    margin-top:0px;
+}
+
+.validation-summary-errors
+{
+    text-align: left;
+    width: 263px;
+    float: left;
+    font-size: 10px;
+    margin-top: -10px;
+    color:#ff7b6f;
+}
+
+.validation-summary-errors ul
+{
+    margin:0px;
 }
