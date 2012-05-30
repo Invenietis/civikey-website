@@ -3,18 +3,15 @@
 <html>
 <head>
     <title>@ViewBag.Title</title>
-    @Html.CK().CssByConvention().IncludeCss("Site")
+    @Html.CK().Css.ByName().IncludeCss("Site")
     @{
-        Html.CK().Scripts().
-            IncludeJS("~/Scripts/jquery-1.7.2.min.js").
-            IncludeJS("~/Scripts/project.js").
-            IncludeJS("~/Scripts/jquery.unobtrusive-ajax.js").
-            IncludeJS("~/Scripts/jquery.validate.js").
-            IncludeJS("~/Scripts/jquery.validate.unobtrusive.js");
+        Html.CK().Scripts.ByName().
+            IncludeJS( "jquery-1.7.2.min.js").
+            IncludeJS( "project.js" );
     }
     
-    @Html.CK().Css().RenderCss()
-    @Html.CK().Scripts().RenderJS()
+    @Html.CK().Css.RenderCss()
+    @Html.CK().Scripts.RenderJS()
 </head>
 <body>
     @RenderSection("js", false)
