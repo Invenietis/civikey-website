@@ -1,6 +1,10 @@
 ﻿@model CiviKey.Models.Contact
 @{
     ViewBag.Title = "Index";
+    
+    Html.CK().Scripts.ByName().IncludeJS( "jquery.unobtrusive-ajax.js" ).
+                                IncludeJS( "jquery.validate.js").
+                                IncludeJS( "jquery.validate.unobtrusive.js" );
 }
 
 @{
