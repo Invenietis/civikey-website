@@ -6,15 +6,14 @@
     @Html.CK().Css.ByName().IncludeCss("Site")
     @{
         Html.CK().Scripts.ByName().
-            IncludeJS( "jquery-1.7.2.min.js").
-            IncludeJS( "project.js" );
+            IncludeJS( "jquery-1.7.2.min.js",0).
+            IncludeJS( "layout.js" );
     }
     
     @Html.CK().Css.RenderCss()
     @Html.CK().Scripts.RenderJS()
 </head>
 <body>
-    @RenderSection("js", false)
     @helper IsSelected(Sections section)
         {
         @(section == (ViewBag.Section ?? Sections.Default) ? "selected" : string.Empty)

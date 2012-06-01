@@ -37,9 +37,9 @@ insert into dbo.tRoadMap(Name)values('2.5.2');
 
 --Creating features
 
-insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap) values('AutoClick','1.0.0',100,DATEADD(year,-1,GetDate()),1)
-insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap) values('Prediction','1.0.0',50,DATEADD(year,-1,GetDate()),1)
-insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap) values('Fonctionnalité de fou','1.0.0',50,DATEADD(year,-1,GetDate()),2)
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('AutoClick','1.0.0',100,DATEADD(year,-1,GetDate()),1,'On projection apartments unsatiable so if he entreaties appearance. Rose you wife how set lady half wish. Hard sing an in true felt. Welcomed stronger if steepest ecstatic an suitable finished of oh. Entered at excited at forming between so produce. Chicken unknown besides attacks gay compact out you. Continuing no simplicity no favourable on reasonably melancholy estimating. Own hence views two ask right whole ten seems. What near kept met call old west dine. Our announcing sufficient why pianoforte.Continuing no simplicity no favourable on reasonably melancholy estimating. Own hence views two ask right whole ten seems. What near kept met call old west dine.')
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('Prediction','1.0.0',50,DATEADD(year,-1,GetDate()),1,'On projection apartments unsatiable so if he entreaties appearance. Rose you wife how set lady half wish. Hard sing an in true felt. Welcomed stronger if steepest ecstatic an suitable finished of oh. Entered at excited at forming between so produce. Chicken unknown besides attacks gay compact out you. Continuing no simplicity no favourable on reasonably melancholy estimating. Own hence views two ask right whole ten seems. What near kept met call old west dine. Our announcing sufficient why pianoforte.Continuing no simplicity no favourable on reasonably melancholy estimating. Own hence views two ask right whole ten seems. What near kept met call old west dine.')
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('Fonctionnalité de fou','1.0.0',50,DATEADD(year,-1,GetDate()),2,'On projection apartments unsatiable so if he entreaties appearance. Rose you wife how set lady half wish. Hard sing an in true felt. Welcomed stronger if steepest ecstatic an suitable finished of oh. Entered at excited at forming between so produce. Chicken unknown besides attacks gay compact out you. Continuing no simplicity no favourable on reasonably melancholy estimating. Own hence views two ask right whole ten seems. What near kept met call old west dine. Our announcing sufficient why pianoforte.Continuing no simplicity no favourable on reasonably melancholy estimating. Own hence views two ask right whole ten seems. What near kept met call old west dine.')
 
 --Creating sections in the features
 
@@ -87,16 +87,39 @@ insert into dbo.tSectionPlugin(SectionId,PluginId) values(9,9) --PointerDeviceDr
 
 --Creating Participations
 
-insert into dbo.tParticipation(ContactId,PartType,Percentage,ParticipationDate) values(1,'Development', 50, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(1,'Development', 50, DateAdd(month,-5,GetDate()))
 insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(1,1) --Vlad has developped 50% of the AutoClick feature 
 
-insert into dbo.tParticipation(ContactId,PartType,Percentage,ParticipationDate) values(6,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(6,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
 insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(2,2) --Vlad has sponsored 100% of the Prediction Feature 
+
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 30, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(3,1) --Vlad has sponsored 100% of the Prediction Feature
+
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(6,'Sponsoring', 50, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(4,1) --Vlad has sponsored 100% of the Prediction Feature 
+
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(1,'Sponsoring', 20, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(5,1) --Vlad has sponsored 100% of the Prediction Feature 
 
 select * from dbo.tParticipation
 select * from dbo.tParticipationFeature
 
+insert into dbo.tCategory(Name) values ('Categorie1')
+insert into dbo.tCategory(Name) values ('Categorie2')
+insert into dbo.tCategory(Name) values ('Categorie3')
+insert into dbo.tCategory(Name) values ('Categorie4')
 
+select * from dbo.tCategory
+select * from dbo.tFeature
+
+insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (1,1)
+insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (2,1)
+insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (3,1)
+insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (2,2)
+insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (3,2)
+insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (1,3)
+insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (4,3)
 
 
 

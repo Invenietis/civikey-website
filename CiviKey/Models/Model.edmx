@@ -109,6 +109,7 @@
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Title" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="Description" Type="varchar(max)" Nullable="false" />
           <Property Name="Version" Type="varchar" Nullable="false" MaxLength="12" />
           <Property Name="Progress" Type="int" Nullable="false" />
           <Property Name="CreationDate" Type="smalldatetime" Nullable="false" />
@@ -128,7 +129,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="ContactId" Type="int" Nullable="false" />
+          <Property Name="ContactRelationId" Type="int" Nullable="false" />
           <Property Name="PartType" Type="varchar(max)" Nullable="false" />
           <Property Name="Percentage" Type="int" Nullable="false" />
           <Property Name="ParticipationDate" Type="smalldatetime" Nullable="false" />
@@ -212,7 +213,7 @@
               <PropertyRef Name="Id" />
             </Principal>
             <Dependent Role="tParticipation">
-              <PropertyRef Name="ContactId" />
+              <PropertyRef Name="ContactRelationId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -345,7 +346,6 @@
           <EntitySet Name="tContacts" EntityType="CiviKeyModel.tContact" />
           <EntitySet Name="tContactRelations" EntityType="CiviKeyModel.tContactRelation" />
           <EntitySet Name="tNews" EntityType="CiviKeyModel.tNew" />
-          <EntitySet Name="tParticipations" EntityType="CiviKeyModel.tParticipation" />
           <EntitySet Name="tPlugins" EntityType="CiviKeyModel.tPlugin" />
           <EntitySet Name="tSections" EntityType="CiviKeyModel.tSection" />
           <EntitySet Name="tTestimonies" EntityType="CiviKeyModel.tTestimony" />
@@ -357,16 +357,17 @@
             <End Role="tContact" EntitySet="tContacts" />
             <End Role="tContactRelation" EntitySet="tContactRelations" />
           </AssociationSet>
-          <AssociationSet Name="FK_ContactId1" Association="CiviKeyModel.FK_ContactId1">
-            <End Role="tContactRelation" EntitySet="tContactRelations" />
-            <End Role="tParticipation" EntitySet="tParticipations" />
-          </AssociationSet>
           <AssociationSet Name="tSectionPlugin" Association="CiviKeyModel.tSectionPlugin">
             <End Role="tPlugin" EntitySet="tPlugins" />
             <End Role="tSection" EntitySet="tSections" />
           </AssociationSet>
           <EntitySet Name="tRoadMaps" EntityType="CiviKeyModel.tRoadMap" />
           <EntitySet Name="tVideos" EntityType="CiviKeyModel.tVideo" />
+          <EntitySet Name="tParticipations" EntityType="CiviKeyModel.tParticipation" />
+          <AssociationSet Name="FK_ContactIdParticipation" Association="CiviKeyModel.FK_ContactIdParticipation">
+            <End Role="tContactRelation" EntitySet="tContactRelations" />
+            <End Role="tParticipation" EntitySet="tParticipations" />
+          </AssociationSet>
           <EntitySet Name="tFeatures" EntityType="CiviKeyModel.tFeature" />
           <AssociationSet Name="FK_FeatureId" Association="CiviKeyModel.FK_FeatureId">
             <End Role="tFeature" EntitySet="tFeatures" />
@@ -419,8 +420,8 @@
           <Property Name="EndDate" Type="DateTime" Nullable="false" />
           <NavigationProperty Name="tContact" Relationship="CiviKeyModel.fk_ContactId" FromRole="tContactRelation" ToRole="tContact" />
           <NavigationProperty Name="tContact1" Relationship="CiviKeyModel.fk_EntityId" FromRole="tContactRelation" ToRole="tContact" />
-          <NavigationProperty Name="tParticipations" Relationship="CiviKeyModel.FK_ContactId1" FromRole="tContactRelation" ToRole="tParticipation" />
-        </EntityType>
+          <NavigationProperty Name="tParticipations" Relationship="CiviKeyModel.FK_ContactIdParticipation" FromRole="tContactRelation" ToRole="tParticipation" />
+          </EntityType>
         <EntityType Name="tNew">
           <Key>
             <PropertyRef Name="Id" />
@@ -429,18 +430,6 @@
           <Property Name="Title" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
           <Property Name="Content" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
           <Property Name="CreationDate" Type="DateTime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="tParticipation">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="ContactId" Type="Int32" Nullable="false" />
-          <Property Name="PartType" Type="String" Nullable="false" MaxLength="Max" Unicode="false" FixedLength="false" />
-          <Property Name="Percentage" Type="Int32" Nullable="false" />
-          <Property Name="ParticipationDate" Type="DateTime" Nullable="false" />
-          <NavigationProperty Name="tContactRelation" Relationship="CiviKeyModel.FK_ContactId1" FromRole="tParticipation" ToRole="tContactRelation" />
-          <NavigationProperty Name="tFeature" Relationship="CiviKeyModel.tParticipationFeature" FromRole="tParticipation" ToRole="tFeature" />
         </EntityType>
         <EntityType Name="tPlugin">
           <Key>
@@ -496,18 +485,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_ContactId1">
-          <End Role="tContactRelation" Type="CiviKeyModel.tContactRelation" Multiplicity="1" />
-          <End Role="tParticipation" Type="CiviKeyModel.tParticipation" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tContactRelation">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="tParticipation">
-              <PropertyRef Name="ContactId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="tSectionPlugin">
           <End Role="tPlugin" Type="CiviKeyModel.tPlugin" Multiplicity="*" />
           <End Role="tSection" Type="CiviKeyModel.tSection" Multiplicity="*" />
@@ -531,12 +508,37 @@
           <Property Type="DateTime" Name="CreationDate" Nullable="false" />
           <NavigationProperty Name="tFeature" Relationship="CiviKeyModel.FK_FeatureIdVideo" FromRole="tVideo" ToRole="tFeature" />
         </EntityType>
+        <EntityType Name="tParticipation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ContactRelationId" Nullable="false" />
+          <Property Type="String" Name="PartType" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Percentage" Nullable="false" />
+          <Property Type="DateTime" Name="ParticipationDate" Nullable="false" />
+          <NavigationProperty Name="tContactRelation" Relationship="CiviKeyModel.FK_ContactIdParticipation" FromRole="tParticipation" ToRole="tContactRelation" />
+          <NavigationProperty Name="tFeature" Relationship="CiviKeyModel.tParticipationFeature" FromRole="tParticipation" ToRole="tFeature" />
+        </EntityType>
+        <Association Name="FK_ContactIdParticipation">
+          <End Type="CiviKeyModel.tContactRelation" Role="tContactRelation" Multiplicity="1" />
+          <End Type="CiviKeyModel.tParticipation" Role="tParticipation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tContactRelation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tParticipation">
+              <PropertyRef Name="ContactRelationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityType Name="tFeature">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="Title" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Version" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="Progress" Nullable="false" />
           <Property Type="DateTime" Name="CreationDate" Nullable="false" />
@@ -620,13 +622,6 @@
             <ScalarProperty Name="Content" ColumnName="Content" />
             <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
           </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tParticipations"><EntityTypeMapping TypeName="CiviKeyModel.tParticipation"><MappingFragment StoreEntitySet="tParticipation">
-            <ScalarProperty Name="Id" ColumnName="Id" />
-            <ScalarProperty Name="ContactId" ColumnName="ContactId" />
-            <ScalarProperty Name="PartType" ColumnName="PartType" />
-            <ScalarProperty Name="Percentage" ColumnName="Percentage" />
-            <ScalarProperty Name="ParticipationDate" ColumnName="ParticipationDate" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
           <EntitySetMapping Name="tPlugins"><EntityTypeMapping TypeName="CiviKeyModel.tPlugin"><MappingFragment StoreEntitySet="tPlugin">
             <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
@@ -672,6 +667,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tParticipations">
+            <EntityTypeMapping TypeName="CiviKeyModel.tParticipation">
+              <MappingFragment StoreEntitySet="tParticipation">
+                <ScalarProperty Name="ParticipationDate" ColumnName="ParticipationDate" />
+                <ScalarProperty Name="Percentage" ColumnName="Percentage" />
+                <ScalarProperty Name="PartType" ColumnName="PartType" />
+                <ScalarProperty Name="ContactRelationId" ColumnName="ContactRelationId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="tFeatures">
             <EntityTypeMapping TypeName="CiviKeyModel.tFeature">
               <MappingFragment StoreEntitySet="tFeature">
@@ -679,6 +685,7 @@
                 <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
                 <ScalarProperty Name="Progress" ColumnName="Progress" />
                 <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
@@ -727,21 +734,16 @@
         <EntityTypeShape EntityType="CiviKeyModel.tContact" Width="1.5" PointX="0.75" PointY="2" Height="2.1725878906249996" IsExpanded="true" />
         <EntityTypeShape EntityType="CiviKeyModel.tContactRelation" Width="1.5" PointX="3" PointY="0.75" Height="2.5571907552083335" IsExpanded="true" />
         <EntityTypeShape EntityType="CiviKeyModel.tNew" Width="1.5" PointX="7.75" PointY="1.5" Height="1.7879850260416665" IsExpanded="true" />
-        <EntityTypeShape EntityType="CiviKeyModel.tParticipation" Width="1.5" PointX="5.25" PointY="1.875" Height="2.3648893229166674" IsExpanded="true" />
         <EntityTypeShape EntityType="CiviKeyModel.tPlugin" Width="1.5" PointX="3" PointY="9" Height="1.9802864583333317" IsExpanded="true" />
         <EntityTypeShape EntityType="CiviKeyModel.tSection" Width="1.5" PointX="5.25" PointY="8" Height="1.9802864583333317" IsExpanded="true" />
         <EntityTypeShape EntityType="CiviKeyModel.tTestimony" Width="1.5" PointX="7.75" PointY="4.5" Height="1.9802864583333317" IsExpanded="true" />
         <AssociationConnector Association="CiviKeyModel.fk_ContactId" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="2.6535953776041667" />
-          <ConnectorPoint PointX="3" PointY="2.6535953776041667" />
+          <ConnectorPoint PointX="2.25" PointY="2.8955874697367348" />
+          <ConnectorPoint PointX="3" PointY="2.8955874697367348" />
         </AssociationConnector>
         <AssociationConnector Association="CiviKeyModel.fk_EntityId" ManuallyRouted="false">
-          <ConnectorPoint PointX="2.25" PointY="2.2642976888020834" />
-          <ConnectorPoint PointX="3" PointY="2.2642976888020834" />
-        </AssociationConnector>
-        <AssociationConnector Association="CiviKeyModel.FK_ContactId1" ManuallyRouted="false">
-          <ConnectorPoint PointX="4.5" PointY="2.5910953776041667" />
-          <ConnectorPoint PointX="5.25" PointY="2.5910953776041667" />
+          <ConnectorPoint PointX="2.25" PointY="2.3852937348683674" />
+          <ConnectorPoint PointX="3" PointY="2.3852937348683674" />
         </AssociationConnector>
         <AssociationConnector Association="CiviKeyModel.tSectionPlugin" ManuallyRouted="false">
           <ConnectorPoint PointX="4.5" PointY="9.4901432291666659" />
@@ -751,35 +753,39 @@
         </AssociationConnector>
         <EntityTypeShape EntityType="CiviKeyModel.tRoadMap" Width="1.5" PointX="0.75" PointY="8.625" Height="1.5956835937500031" />
         <EntityTypeShape EntityType="CiviKeyModel.tVideo" Width="1.5" PointX="5.25" PointY="11.25" Height="2.1725878906250031" />
-        <EntityTypeShape EntityType="CiviKeyModel.tFeature" Width="1.5" PointX="3" PointY="4.125" Height="3.1340950520833326" IsExpanded="true" />
+        <EntityTypeShape EntityType="CiviKeyModel.tParticipation" Width="1.5" PointX="5.25" PointY="2.875" Height="2.3648893229166674" />
+        <AssociationConnector Association="CiviKeyModel.FK_ContactIdParticipation" >
+          <ConnectorPoint PointX="4.5" PointY="3.0910953776041667" />
+          <ConnectorPoint PointX="5.25" PointY="3.0910953776041667" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="CiviKeyModel.tFeature" Width="1.5" PointX="3" PointY="4.125" Height="3.3263964843750031" />
         <AssociationConnector Association="CiviKeyModel.FK_FeatureId" >
-          <ConnectorPoint PointX="4.5" PointY="7.2337094366987174" />
-          <ConnectorPoint PointX="5.0625" PointY="7.7962094366987174" />
-          <ConnectorPoint PointX="5.0625" PointY="8.7138196145833327" />
-          <ConnectorPoint PointX="5.25" PointY="8.7138196145833327" />
+          <ConnectorPoint PointX="4.5" PointY="7.3948570228365416" />
+          <ConnectorPoint PointX="5.03125" PointY="7.9261070228365416" />
+          <ConnectorPoint PointX="5.03125" PointY="7.7800971538461541" />
+          <ConnectorPoint PointX="5.2511528461538459" PointY="8" />
         </AssociationConnector>
         <AssociationConnector Association="CiviKeyModel.FK_FeatureIdVideo" >
-          <ConnectorPoint PointX="4.4757692307692309" PointY="7.2590950520833326" />
-          <ConnectorPoint PointX="4.875" PointY="7.6583258213141017" />
+          <ConnectorPoint PointX="4.4757692307692309" PointY="7.4513964843750031" />
+          <ConnectorPoint PointX="4.875" PointY="7.8506272536057722" />
           <ConnectorPoint PointX="4.875" PointY="12.3362939453125" />
           <ConnectorPoint PointX="5.25" PointY="12.3362939453125" />
         </AssociationConnector>
         <AssociationConnector Association="CiviKeyModel.FK_IdRoadMap" >
           <ConnectorPoint PointX="2.25" PointY="8.6261528461538468" />
           <ConnectorPoint PointX="2.625" PointY="8.2511528461538468" />
-          <ConnectorPoint PointX="2.625" PointY="4.9772717630208394" />
-          <ConnectorPoint PointX="3" PointY="4.9772717630208394" />
+          <ConnectorPoint PointX="2.625" PointY="5.7881982421875016" />
+          <ConnectorPoint PointX="3" PointY="5.7881982421875016" />
         </AssociationConnector>
         <AssociationConnector Association="CiviKeyModel.tCategoryFeature" >
-          <ConnectorPoint PointX="2.25" PointY="6.047841796875" />
-          <ConnectorPoint PointX="2.5416666666666665" PointY="6.0478417968749989" />
-          <ConnectorPoint PointX="2.7083333333333335" PointY="6.047841796875" />
-          <ConnectorPoint PointX="3" PointY="6.047841796875" />
+          <ConnectorPoint PointX="2.25" PointY="6.3794409179687506" />
+          <ConnectorPoint PointX="2.5416666666666665" PointY="6.37944091796875" />
+          <ConnectorPoint PointX="2.7083333333333335" PointY="6.3794409179687506" />
+          <ConnectorPoint PointX="3" PointY="6.3794409179687506" />
         </AssociationConnector>
         <AssociationConnector Association="CiviKeyModel.tParticipationFeature" >
-          <ConnectorPoint PointX="4.5" PointY="5.7055473798076974" />
-          <ConnectorPoint PointX="6" PointY="5.7055473798076974" />
-          <ConnectorPoint PointX="6" PointY="4.2398893229166656" />
+          <ConnectorPoint PointX="4.5" PointY="4.6824446614583328" />
+          <ConnectorPoint PointX="5.25" PointY="4.6824446614583328" />
         </AssociationConnector>
         </Diagram>
     </Diagrams>

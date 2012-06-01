@@ -639,7 +639,7 @@ a.timeline-unselected
 {
     float: left;
     margin-right: 81px;
-    width:185px;
+    width:195px;
     height:116px;
     background-image: url('/Content/images/avancement-ticket.png');
     cursor:pointer;
@@ -681,7 +681,7 @@ a.timeline-unselected
 {
     width:35px;
     height:35px;
-    right:10px;
+    right:20px;
     top:-10px;
     position:absolute;
 }
@@ -735,7 +735,7 @@ a.timeline-unselected
     width:30px;
     font-family: Estrangelo Edessa;
     margin-top: 28px;
-    margin-right: 15px;
+    margin-right: 25px;
     font-size: 19px;
     color: white; 
 }
@@ -807,7 +807,7 @@ a.timeline-unselected
     background-position:right;
     height:1px;
     clear:both;
-    margin-bottom:10px;
+    margin:5px 0px 5px 0px;
 }
 
 .partners-sep.invis
@@ -1021,4 +1021,85 @@ label
 .validation-summary-errors ul
 {
     margin:0px;
+}
+
+.feature-content
+{
+    width:620px;
+    height:410px;
+    background-color:#e4e4e4;
+    border: 1px solid #e4e4e4;
+}
+
+.feature-title
+{
+    width:602px;
+    height:60px;
+    margin: 10px 0px 0px 10px;
+    background-image: url('/Content/images/feature-title-back.png');
+}
+
+.feature-title-logo
+{
+    width:60px;
+    height:60px;
+    float:left;
+}
+
+.feature-title-text
+{
+    height:50px;
+    width:530px;
+    float:left;
+    padding-top:10px;
+    padding-right:12px;
+    text-align:right;
+    font-family:Arial;
+    font-size:36px;
+}
+
+.feature-info
+{
+    width:600px;
+    height:300px;
+    padding-top:20px;
+    margin:10px 0px 0px 10px;
+    background-color:#f2f2f2;
+    overflow-y:scroll;
+}
+
+.feature-section-title
+{
+    background-image:url('/Content/images/feature-section-title.png');
+    padding:0px 0px 0px 20px;
+    font-family:Arial;
+    font-size:20px;
+    margin-left:15px;
+    background-repeat:no-repeat;
+    background-position: 0px 5px;
+    color:#509be4;
+}
+
+.feature-description-text
+{
+    width:520px;
+    margin-left:35px;
+    text-align:justify;
+    font-family:arial;
+    font-size:12px;
+    margin-top:10px;
+    color:#4b4b4b;
+    margin-bottom:15px;
+}
+
+.feature-description-text.category
+{
+    font-size:13px;
+}
+
+.feature-demo
+{
+    width:202px;
+    height:117px;
+    background-image: url('/Content/images/demo-vignette.png');
 }

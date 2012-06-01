@@ -2,5 +2,49 @@
 @{
     ViewBag.Title = "Index";
 }
+@Html.CK().Scripts.ByName().IncludeJS( "feature.js" )
 
-<h2>Fiche de la feature N°@Model.Id</h2>
+
+<script type="text/javascript">
+    $(function () {
+        var param = JSON.parse('@Html.Raw(Json.Encode(Model.Sponsors))');
+        var options = {
+            width:520,
+            height:4,
+            parent: ".js-sponsor"
+        }
+        document.CK.setSponsorHtml(param, options);
+    });
+</script>
+<div class="feature-content">
+    <div class="feature-title">
+        <div class="feature-title-logo"></div>
+        <div class="feature-title-text">@Model.Title</div>
+        <div style="clear:both;"></div>
+    </div>
+    <div class="feature-info">
+        <div class="feature-section-title">Description</div>
+        <div class="feature-description-text">@Model.Description</div>
+        <div class="feature-section-title">Categories</div>
+        <div class="feature-description-text category">
+        @for (int i = 0; i < Model.Categories.Count;i++ )
+        {
+            string Output;
+            if (i != Model.Categories.Count-1)
+            {
+                Output = Model.Categories.ElementAt(i).Name + ", ";
+            }else{
+                Output = Model.Categories.ElementAt(i).Name;
+            }
+            @Output
+        }
+        </div>
+        <div class="feature-section-title">Demo</div>
+        <div class="feature-description-text category">
+            <a href="#"><div class="feature-demo"></div></a>
+        </div>
+        <div class="feature-section-title">Sponsorise par</div>
+        <div class="feature-description-text js-sponsor">
+        </div>
+    </div>
+</div>

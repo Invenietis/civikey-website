@@ -72,6 +72,7 @@ create table tFeature
 (
 	Id int not null primary key identity(1,1),
 	Title varchar(128) not null,
+	Description varchar(max) not null,
 	Version varchar(12) not null,
 	Progress int not null,
 	CreationDate smalldatetime not null,
@@ -107,11 +108,11 @@ create table tCategory
 create table tParticipation
 (
 	Id int not null primary key identity(1,1),
-	ContactId int not null,
+	ContactRelationId int not null,
 	PartType varchar(max) not null,
 	Percentage int not null,
 	ParticipationDate smalldatetime not null,
-	constraint FK_ContactIdParticipation foreign key (ContactId) references tContactRelation(Id)
+	constraint FK_ContactIdParticipation foreign key (ContactRelationId) references tContactRelation(Id)
 )
 
 create table tCategoryFeature

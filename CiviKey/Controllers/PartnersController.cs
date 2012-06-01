@@ -4,18 +4,36 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using CiviKey.Models;
+using CiviKey.ViewModel;
+using CiviKey.Repositories;
 
 namespace CiviKey.Controllers
 {
     public class PartnersController : Controller
     {
-        //
-        // GET: /Partners/
+        private ContactRelationRepository _entities;
+        
+
+        public PartnersController(ContactRelationRepository c)
+        {
+            _entities = c;
+        }
 
         public ActionResult Index()
         {
+            IList<tContact> contactList;
+            IList<ContactViewModel> contactViewModel = new List<ContactViewModel>();
             ViewBag.Section = Sections.Partners;
-            return View();
+
+
+            contactList = _entities.GetContactList();
+            
+            foreach (tContact i in contactList)
+            {
+                contactViewModel.Add(new ContactViewModel(i));
+            }
+
+            return View(contactViewModel);
         }
 
     }
