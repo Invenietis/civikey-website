@@ -78,6 +78,7 @@ namespace CiviKey.ViewModel
         public int Progress { get { return _model.Progress; } }
         public string Title { get { return _model.Title; } }
         public Version Version { get { return new Version( _model.Version ); } }
+        public string Description { get { return _model.Description; } }
 
         IList<CategoryViewModel> _categories;
         public IList<CategoryViewModel> Categories { get { return _categories; } }

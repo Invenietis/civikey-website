@@ -4,7 +4,8 @@
     
     Html.CK().Scripts.ByName().IncludeJS( "jquery.unobtrusive-ajax.js" ).
                                 IncludeJS( "jquery.validate.js").
-                                IncludeJS( "jquery.validate.unobtrusive.js" );
+                                IncludeJS( "jquery.validate.unobtrusive.js" ).
+                                IncludeJS( "contacts.js" );
 }
 
 @{
@@ -16,7 +17,7 @@
     };
 }
 
-<script src="@Url.Content("~/Scripts/contacts.js")" type="text/javascript"></script>
+<script src="@Url.Content("~/Scripts/")" type="text/javascript"></script>
 
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCDAqSfJYM4GCTbN-dl-JLE4ux3XP7FdHs&sensor=true"></script>
 <div class="mailsent-dialog"></div>
@@ -37,20 +38,20 @@
                         </div>
                         <div class="contact-form-elem">
                             @Html.LabelFor( m => m.From )
-                            @Html.EditorFor( m => m.From )
-                            @Html.ValidationMessageFor(m => m.From)
+                            @Html.EditorFor(m => m.From, new { title = "test" })
+                            
                         </div>
                         <div class="contact-form-elem">
-                            <label>Sujet :</label> 
+                            @Html.LabelFor( m => m.Subject)
                             @Html.EditorFor(m => m.Subject)
-                            @Html.ValidationMessageFor(m => m.Subject)
                         </div>
                         <div class="contact-form-elem">
-                            <label>Message :</label> 
+                            @Html.LabelFor( m => m.Message)
                             @Html.EditorFor(m => m.Message)
-                            @Html.ValidationMessageFor(m => m.Message)
                         </div>
                         <div class="contact-form-elem-btn">
+                                @*@Html.ValidationMessageFor(m => m.From) @Html.ValidationMessageFor(m => m.Subject) @Html.ValidationMessageFor(m => m.Message)*@
+                                @Html.ValidationSummary()
                             <input type="submit" value="Envoyer" class="send-btn"/>
                         </div>
                     }

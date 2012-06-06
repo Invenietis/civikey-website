@@ -15,7 +15,7 @@ namespace CiviKey.Models
     public partial class tParticipation
     {
         public int Id { get; set; }
-        public int ContactId { get; set; }
+        public int ContactRelationId { get; set; }
         public string PartType { get; set; }
         public int Percentage { get; set; }
         public System.DateTime ParticipationDate { get; set; }

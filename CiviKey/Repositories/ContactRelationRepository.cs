@@ -14,7 +14,7 @@ namespace CiviKey.Repositories
             _c = c;
         }
 
-        public IQueryable<tContactRelation> All { get { return _c.tContactRelations; } }
+        public IQueryable<tContactRelation> All { get { return _c.tContactRelations ; } }
 
         public tContactRelation ContactRelationFromContactRelationId( int contactRelationId )
         {
@@ -27,10 +27,15 @@ namespace CiviKey.Repositories
             tParticipation participation = _c.tParticipations.Where( x => x.Id == participationId ).FirstOrDefault();
             if( participation != null )
             {
-                contactRelationId = participation.ContactId; //WARNING : that participation.ContactId is a ContactRelationId !
+                contactRelationId = participation.ContactRelationId; //WARNING : that participation.ContactId is a ContactRelationId !
                 return ContactRelationFromContactRelationId( contactRelationId );
             }
             return null;
+        }
+
+        internal IList<tContact> GetContactList()
+        {
+            return All.Where(x=>x.ContactId==x.EntityId).Select(y=>y.tContact).ToList();
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿@model IList<CiviKey.ViewModel.FeatureViewModel>
-@section js{
-    <script src="@Url.Content( "~/Scripts/progress.js" )" type="text/javascript"></script>
-}
+@Html.CK().Scripts.ByName().IncludeJS("progress.js")
+
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
