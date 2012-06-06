@@ -7,3 +7,4 @@ CiviKey/Web.config
 **/bin/*
 **/obj/*
 **/packages/*
+packages/*

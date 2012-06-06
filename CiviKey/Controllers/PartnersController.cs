@@ -33,6 +33,17 @@ namespace CiviKey.Controllers
                 contactViewModel.Add(new ContactViewModel(i));
             }
 
+            Random rng = new Random();
+            int n = contactViewModel.Count;
+            while( n > 1 )
+            {
+                n--;
+                int k = rng.Next( n + 1 );
+                ContactViewModel value = contactViewModel[k];
+                contactViewModel[k] = contactViewModel[n];
+                contactViewModel[n] = value;
+            }  
+
             return View(contactViewModel);
         }
 

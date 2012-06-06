@@ -14,9 +14,11 @@ insert into dbo.tContact(Name,Description,LogoPath)values('Jean-Loup','','');
 insert into dbo.tContact(Name,Description,LogoPath)values('Philippe Lepadellec','','');
 insert into dbo.tContact(Name,Description,LogoPath)values('François Bessaguet','',''); --4
 
-insert into dbo.tContact(Name,Description,LogoPath)values('Invenietis','SSII',''); --5
-insert into dbo.tContact(Name,Description,LogoPath)values('Steria','Financeur de folie',''); --6
-insert into dbo.tContact(Name,Description,LogoPath)values('Alcatel','Aloé vera',''); --7
+insert into dbo.tContact(Name,Description,LogoPath)values('Invenietis','<p>Invenietis, SSII créé en 2006, est impliquée dans le projet CiviKey depuis son lancement à INTECH INFO en Septembre de la même année.</br>L''entreprise porte ce projet bénévolement en réalisant la majorité des développements. Elle suit également des étudiants désirant développer de nouvelles fonctionnalités pour le CiviKey, pour les aider dans leur démarche.</p>',''); --5
+insert into dbo.tContact(Name,Description,LogoPath)values('Fondation Steria','La fondation Stéria',''); --6
+insert into dbo.tContact(Name,Description,LogoPath)values('Alcatel-Lucent','Société Alcatel-Lucent',''); --7
+insert into dbo.tContact(Name,Description,LogoPath)values('INTECH INFO','Ecole d''ingénierie informatique membre du groupe ESIEA.',''); --8
+insert into dbo.tContact(Name,Description,LogoPath)values('PFNT','La PlateForme des Nouvelles Technologies de l''hôpital de Garches',''); --9
 
 --Linking contacts to their organization
 
@@ -28,6 +30,9 @@ insert into dbo.tContactRelation(ContactId,EntityId,StartDate,EndDate)values(3,7
 insert into dbo.tContactRelation(ContactId,EntityId,StartDate,EndDate)values(5,5,GetDate(), DATEADD(year,1,GetDate()));
 insert into dbo.tContactRelation(ContactId,EntityId,StartDate,EndDate)values(6,6,GetDate(), DATEADD(year,1,GetDate()));
 insert into dbo.tContactRelation(ContactId,EntityId,StartDate,EndDate)values(7,7,GetDate(), DATEADD(year,1,GetDate()));
+
+insert into dbo.tContactRelation(ContactId,EntityId,StartDate,EndDate)values(8,8,GetDate(), DATEADD(year,1,GetDate()));
+insert into dbo.tContactRelation(ContactId,EntityId,StartDate,EndDate)values(9,9,GetDate(), DATEADD(year,1,GetDate()));
 select * from dbo.tContactRelation
 
 --- Creating RoadMap
