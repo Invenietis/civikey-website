@@ -6,4 +6,4 @@ obj/
 CiviKey/Web.config
 **/bin/*
 **/obj/*
-CiviKey/Web.config
+**/packages/*
