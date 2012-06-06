@@ -1,0 +1,40 @@
+﻿@model IList<CiviKey.ViewModel.FeatureViewModel>
+@{
+    int lineCount = (int)Math.Ceiling( (double)Model.Count / (double)4 );
+    int visibleLinesCount = lineCount;
+    if( lineCount > 2 )
+    {
+        visibleLinesCount = 2;
+    }
+    int lineFeatureCount = Model.Count > 4 ? 4 : Model.Count;
+    int index;
+    bool hasExtraFeatures = false;
+}
+<div class="progress-list-of-features">
+    @for( index = 0; index < lineCount; index++ )
+    {
+        if( Model.Count - index * lineFeatureCount < lineFeatureCount )
+        {
+            lineFeatureCount = Model.Count - index * lineFeatureCount;
+        }
+        <div class="progress-list-line @if( index >= visibleLinesCount )
+                                        {
+                                            hasExtraFeatures = true; @("hidden-feature")}">
+            @for( int j = 4 * index; j < ( 4 * index + lineFeatureCount ); j++ )
+            {
+                <div class="progress-list-elem @if( ( j + 1 ) % 4 == 0 )
+                                                {@("last-feature")}" onclick="location.href='@Url.Action( "Index", "Feature", new { id = @Model[j].Id } )'">
+                    @Html.Partial( "_FeatureDisplay", Model[j] )
+                </div>
+            }
+                
+                <div style="clear: both;">
+                </div>
+        </div>
+    }
+    @if( hasExtraFeatures )
+    {
+    <div class="show-more-features">
+        show more</div>
+    }
+</div>

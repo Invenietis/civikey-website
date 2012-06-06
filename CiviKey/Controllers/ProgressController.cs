@@ -30,10 +30,31 @@ namespace CiviKey.Controllers
             ViewBag.CurrentRoadmapId = id;
             ViewBag.Roadmaps = _entities.tRoadMaps.ToList();
             ViewBag.Section = Sections.Progress;
+            //IList<FeatureViewModel> _features = new List<FeatureViewModel>();
+            //IQueryable<tFeature> features;
+
+            //if( id != null && id != 0) features = _entities.tFeatures.Where( x => x.IdRoadMap == id.Value );
+            //else features = _entities.tFeatures;
+
+            IList<FeatureViewModel> _features = new List<FeatureViewModel>();
+            IQueryable<tFeature> features;
+            features = _entities.tFeatures;
+            foreach( var item in features )
+            {
+                _features.Add( new FeatureViewModel( item, _partnerRepo, _contactRepo, _contactRelationRepo ) );
+            }
+            return View( _features );
+        }
+
+        public ActionResult GetFeatureView( int? id )
+        {
+            ViewBag.CurrentRoadmapId = id;
+            ViewBag.Roadmaps = _entities.tRoadMaps.ToList();
+            ViewBag.Section = Sections.Progress;
             IList<FeatureViewModel> _features = new List<FeatureViewModel>();
             IQueryable<tFeature> features;
 
-            if( id != null && id != 0) features = _entities.tFeatures.Where( x => x.IdRoadMap == id.Value );
+            if( id != null && id != 0 ) features = _entities.tFeatures.Where( x => x.IdRoadMap == id.Value );
             else features = _entities.tFeatures;
 
             foreach( var item in features )

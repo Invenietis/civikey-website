@@ -15,6 +15,8 @@
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>false</UseIISExpress>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -43,11 +45,11 @@
     <Reference Include="CK.JSManager">
       <HintPath>..\packages\CK.JSManager.1.0.2\lib\net40\CK.JSManager.dll</HintPath>
     </Reference>
-    <Reference Include="CK.Web">
-      <HintPath>..\packages\CK.Web.1.0.4\lib\net40\CK.Web.dll</HintPath>
+    <Reference Include="CK.Web, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CK.Web.1.0.8\lib\net40\CK.Web.dll</HintPath>
     </Reference>
-    <Reference Include="CK.Web.Mvc">
-      <HintPath>..\packages\CK.Web.Mvc.1.0.5\lib\net40\CK.Web.Mvc.dll</HintPath>
+    <Reference Include="CK.Web.Mvc, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\CK.Web.Mvc.1.0.8\lib\net40\CK.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework">
       <HintPath>..\packages\EntityFramework.4.3.1\lib\net40\EntityFramework.dll</HintPath>
@@ -299,6 +301,7 @@
     <Content Include="Views\Progress\_FeatureDisplay.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Feature\Index.cshtml" />
+    <Content Include="Views\Progress\_FeatureList.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
@@ -330,4 +333,5 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <Import Project="$(SolutionDir)\.nuget\nuget.targets" />
 </Project>
