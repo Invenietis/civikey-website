@@ -1,6 +1,5 @@
 ﻿@model IList<CiviKey.ViewModel.FeatureViewModel>
-@Html.CK().Scripts.ByName().IncludeJS("progress.js")
-
+@Html.CK().Scripts.ByName().IncludeJS( "progress.js" ).IncludeJS( "jquery.unobtrusive-ajax.js" )
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -11,28 +10,24 @@
         <div class="progress-timebar-container">
             <div class="progress-bar-begin">
             </div>
-           <ul id="timeline-buttons">
-                <li>@*<a href="@Url.Action( "Index", "Progress", new { id = 0 })" class="@if( ViewBag.CurrentRoadmapId == null || ViewBag.CurrentRoadmapId == 0)
-                                                                                                   {@("timeline-selected")}
-                                                                                                   else
-                                                                                                   {@("timeline-unselected")}">Existant</a></li>*@
-                    @*@Url.RouteUrl( "Default", new { controller = "Progress", action = "Index" }*@
-                    @Ajax.ActionLink( "Existant", "GetFeatureView", new { id = 0 }, new AjaxOptions{
-                       InsertionMode = InsertionMode.Replace,
-                       UpdateTargetId = "featureList"
-                   } ) 
-               </li>
+            <ul id="timeline-buttons">
+                <li>
+                    @Ajax.ActionLink( "Existant", "GetFeatureView", new { id = 0 }, new AjaxOptions
+               {
+                   InsertionMode = InsertionMode.Replace,
+                   UpdateTargetId = "featureList",
+                   OnSuccess = "document.CK.AjaxCallbacks.onProgressGetFeatureViewSuccess"
+               }, new { @class = "timeline-feature-link roadmap-0 timeline-selected" } )
+                </li>
                 @foreach( CiviKey.Models.tRoadMap item in ViewBag.Roadmaps )
                 {
                     <li>
                         @Ajax.ActionLink( item.Name, "GetFeatureView", new { id = @item.Id }, new AjaxOptions
-                   {
-                       InsertionMode = InsertionMode.Replace,
-                       UpdateTargetId = "featureList"
-                   },new{@class = ""} ) @*<a href="@Url.Action( "Index", "Progress", new { id = @item.Id } )" class="@if( ViewBag.CurrentRoadmapId == item.Id )
-                                                                                                   {@("timeline-selected")}
-                                                                                                   else if( ViewBag.CurrentRoadmapId != null || ViewBag.CurrentRoadmapId != 0 )
-                                                                                                   {@("timeline-unselected")}">@item.Name</a></li> *@
+                        {
+                            InsertionMode = InsertionMode.Replace,
+                            UpdateTargetId = "featureList",
+                            OnSuccess = "document.CK.AjaxCallbacks.onProgressGetFeatureViewSuccess"
+                        }, new { @class = "timeline-feature-link roadmap-" + item.Id } )
                     </li>
                 }
             </ul>
@@ -43,6 +38,6 @@
         </div>
     </div>
     <div id="featureList">
-        @Html.Partial( "_FeatureList", Model );
+        @Html.Partial( "_FeatureList", Model )
     </div>
 </div>

@@ -27,14 +27,9 @@ namespace CiviKey.Controllers
 
         public ActionResult Index( int? id )
         {
-            ViewBag.CurrentRoadmapId = id;
+            ViewBag.CurrentRoadmapId = id != null ? id : 0;
             ViewBag.Roadmaps = _entities.tRoadMaps.ToList();
             ViewBag.Section = Sections.Progress;
-            //IList<FeatureViewModel> _features = new List<FeatureViewModel>();
-            //IQueryable<tFeature> features;
-
-            //if( id != null && id != 0) features = _entities.tFeatures.Where( x => x.IdRoadMap == id.Value );
-            //else features = _entities.tFeatures;
 
             IList<FeatureViewModel> _features = new List<FeatureViewModel>();
             IQueryable<tFeature> features;
@@ -61,7 +56,7 @@ namespace CiviKey.Controllers
             {
                 _features.Add( new FeatureViewModel( item, _partnerRepo, _contactRepo, _contactRelationRepo ) );
             }
-            return View( _features );
+            return PartialView( "_FeatureList", _features );
         }
     }
 }

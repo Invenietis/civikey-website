@@ -233,6 +233,7 @@
     <Content Include="Global.asax" />
     <Content Include="README.jQuery.vsdoc.txt" />
     <Content Include="Scripts\contacts.js" />
+    <Content Include="Scripts\setSponsor-1.0.0.js" />
     <Content Include="Scripts\feature.js" />
     <Content Include="Scripts\layout.js" />
     <Content Include="Scripts\progress.js" />

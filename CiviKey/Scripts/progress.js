@@ -12,6 +12,5 @@
     $(".timeline-buttons").mouseleave(function () {
         $(this).removeClass("hover");
     });
-
 });
 

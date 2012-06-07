@@ -15,38 +15,6 @@ setSponosorHtml
     setSponsorHtml(param,options); //and thats ALL :)
 
 */
+$(function () {
 
-document.CK = {
-    setSponsorHtml: function (param, options) {
-        var fontSize = 15;
-        var parentDivHeight = options.height + fontSize * 2;
-        var parentDivWidth = options.width;
-        var newWidth;
-        var totalPercentage = 0;
-        var colors = new Array('#4b4b4b', '#7bb2e8', '#ffb10a', '#78ff0a', '#ff00ea');
-
-        for (var i = 0; i < param.length; i++) {
-            totalPercentage = totalPercentage + param[i].Percentage;
-        }
-
-        $(options.parent).html('<div class="jsponsor-container" style="width:' + parentDivWidth + 'px; font-family:Verdana; font-size:' + fontSize + 'px;" ><div class="jsponsor-first-lvl" style="margin-bottom:5px; width:' + parentDivWidth + 'px; height:' + fontSize + 'px;"></div><div class="jsponsor-bar" style="width:' + parentDivWidth + 'px; height:' + options.height + 'px;"></div><div class="jsponsor-second-lvl" style="margin-top:5px; width:' + parentDivWidth + 'px; height:' + fontSize + 'px;"></div>');
-
-        for (var i = 0; i < param.length; i++) {
-            newWidth = (options.width * (param[i].Percentage / totalPercentage * 100)) / 100;
-            if (i % 2 == 0) {
-                $('.jsponsor-first-lvl').append('<div style="float:left; width:' + newWidth + 'px; color:' + colors[i] + '"; ">' + param[i].Name + " " + param[i].Percentage / totalPercentage*100 + "%" + '</div>');
-                $('.jsponsor-bar').append('<div style="float:left; width:' + newWidth + 'px; height:' + options.height + 'px; background-color:' + colors[i] + '"></div>');
-                $('.jsponsor-second-lvl').append('<div style="float:left; width:' + newWidth + 'px; height:' + fontSize + 'px;"></div>');
-            } else {
-                $('.jsponsor-first-lvl').append('<div style="float:left; width:' + newWidth + 'px; height:' + fontSize + 'px;"></div>');
-                $('.jsponsor-bar').append('<div style="float:left; width:' + newWidth + 'px; height:' + options.height + 'px; background-color:' + colors[i] + '"></div>');
-                $('.jsponsor-second-lvl').append('<div style="float:left; width:' + newWidth + 'px; color:' + colors[i] + '">' + param[i].Name + " " + param[i].Percentage / totalPercentage * 100 + "%" + '</div>');
-            }
-        }
-
-        $('.jsponsor-first-lvl').append('<div style="clear:both;"></div>');
-        $('.jsponsor-bar').append('<div style="clear:both;"></div>');
-        $('.jsponsor-second-lvl').append('<div style="clear:both;"></div>');
-    }
-
-}
+});

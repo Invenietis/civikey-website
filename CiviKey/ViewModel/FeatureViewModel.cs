@@ -24,8 +24,6 @@ namespace CiviKey.ViewModel
 
         private void GenerateViewModels( tFeature model )
         {
-            _model.tParticipations.Where( x => x.PartType == "Developpement" ).ToList();
-
             _categories = new List<CategoryViewModel>();
             foreach( var category in model.tCategories )
             {
@@ -85,6 +83,8 @@ namespace CiviKey.ViewModel
 
         IList<VideoViewModel> _videos;
         public IList<VideoViewModel> Videos { get { return _videos; } }
+
+        public int RoadmapId { get { return _model.IdRoadMap; } }
 
         IList<ParticipationViewModel> _developers;
         public IList<ParticipationViewModel> Developers { get { return _developers; } }

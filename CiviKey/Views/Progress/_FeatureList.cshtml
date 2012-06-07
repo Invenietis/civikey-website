@@ -10,7 +10,7 @@
     int index;
     bool hasExtraFeatures = false;
 }
-<div class="progress-list-of-features">
+<div class="progress-list-of-features" data-id="@ViewBag.CurrentRoadmapId">
     @for( index = 0; index < lineCount; index++ )
     {
         if( Model.Count - index * lineFeatureCount < lineFeatureCount )
