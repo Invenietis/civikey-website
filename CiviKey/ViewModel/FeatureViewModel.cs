@@ -24,28 +24,27 @@ namespace CiviKey.ViewModel
 
         private void GenerateViewModels( tFeature model )
         {
-            _model.tParticipations.Where( x => x.PartType == "Developpement" ).ToList();
+            //_model.tParticipations.Where( x => x.PartType == "Developpement" ).ToList();
 
-            _categories = new List<CategoryViewModel>();
-            foreach( var category in model.tCategories )
-            {
-                _categories.Add( new CategoryViewModel( category ) );
-            }
+            _categories = model.tCategories.Select(c => new CategoryViewModel(c)).ToList();
 
-            _sponsors = new List<ParticipationViewModel>();
-            foreach( var participation in model.tParticipations.Where( x => x.PartType == ParticipationType.Sponsoring.ToString() ) )
-            {
-                ParticipationViewModel vm = new ParticipationViewModel( participation, _partnerRepo, _contactRepo, _contactRelationRepo  );
-                _sponsors.Add( vm );
-            }
+            _sponsors = model.tParticipations.Where(x => x.PartType == ParticipationType.Sponsoring.ToString())
+                .Select(p => new ParticipationViewModel(p, _partnerRepo, _contactRepo, _contactRelationRepo))
+                .ToList();
 
-            _developers = new List<ParticipationViewModel>();
+            _sections = model.tSections.Select(s => new SectionViewModel(s)).ToList();
+            _videos = model.tVideos.Select(v => new VideoViewModel(v)).ToList();
+
+            //_developers = new List<ParticipationViewModel>();
+            Participations = new Dictionary<int, IList<ParticipationViewModel>>();
             foreach( var participation in model.tParticipations.Where( x => x.PartType == ParticipationType.Development.ToString() ) )
             {
                 ParticipationViewModel vm = new ParticipationViewModel( participation, _partnerRepo, _contactRepo,_contactRelationRepo );
                 if( _mainDevelopementParticipation == null ) _mainDevelopementParticipation = vm;
                 if( participation.Percentage > _mainDevelopementParticipation.Percentage ) _mainDevelopementParticipation = vm;
-                _developers.Add( vm );
+                //_developers.Add( vm );
+                var existings = FindOrCreateCompany(participation.tContactRelation.EntityId);
+                existings.Add(vm);
             }
 
             //Getting the company of the person that has participated the most in the project.
@@ -55,18 +54,17 @@ namespace CiviKey.ViewModel
                 if( !_mainDevelopementParticipation.Contact.IsOrganization ) _mainDevelopingCompany = _mainDevelopementParticipation.Contact.Organization;
                 else _mainDevelopingCompany = _mainDevelopementParticipation.Contact;
             }
+        }
 
-            _sections = new List<SectionViewModel>();
-            foreach( var section in model.tSections )
+        IList<ParticipationViewModel> FindOrCreateCompany(int companyId)
+        {
+            IList<ParticipationViewModel> contacts = null;
+            if (!Participations.TryGetValue(companyId, out contacts))
             {
-                _sections.Add( new SectionViewModel( section ) );
+                contacts = new List<ParticipationViewModel>();
+                Participations.Add(companyId, contacts);
             }
-
-            _videos = new List<VideoViewModel>();
-            foreach( var video in model.tVideos )
-            {
-                _videos.Add( new VideoViewModel( video ) );
-            }
+            return contacts;
         }
 
         ParticipationViewModel _mainDevelopementParticipation;
@@ -86,8 +84,10 @@ namespace CiviKey.ViewModel
         IList<VideoViewModel> _videos;
         public IList<VideoViewModel> Videos { get { return _videos; } }
 
-        IList<ParticipationViewModel> _developers;
-        public IList<ParticipationViewModel> Developers { get { return _developers; } }
+        //IList<ParticipationViewModel> _developers;
+        //public IList<ParticipationViewModel> Developers { get { return _developers; } }
+
+        public IDictionary<int, IList<ParticipationViewModel>> Participations { get; private set; }
 
         IList<ParticipationViewModel> _sponsors;
         public IList<ParticipationViewModel> Sponsors { get { return _sponsors; } }

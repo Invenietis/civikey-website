@@ -34,7 +34,7 @@ document.CK = {
         for (var i = 0; i < param.length; i++) {
             newWidth = (options.width * (param[i].Percentage / totalPercentage * 100)) / 100;
             if (i % 2 == 0) {
-                $('.jsponsor-first-lvl').append('<div style="float:left; width:' + newWidth + 'px; color:' + colors[i] + '"; ">' + param[i].Name + " " + param[i].Percentage / totalPercentage*100 + "%" + '</div>');
+                $('.jsponsor-first-lvl').append('<div style="float:left; width:' + newWidth + 'px; color:' + colors[i] + '"; ">' + param[i].Name + " " + param[i].Percentage / totalPercentage * 100 + "%" + '</div>');
                 $('.jsponsor-bar').append('<div style="float:left; width:' + newWidth + 'px; height:' + options.height + 'px; background-color:' + colors[i] + '"></div>');
                 $('.jsponsor-second-lvl').append('<div style="float:left; width:' + newWidth + 'px; height:' + fontSize + 'px;"></div>');
             } else {
@@ -47,6 +47,42 @@ document.CK = {
         $('.jsponsor-first-lvl').append('<div style="clear:both;"></div>');
         $('.jsponsor-bar').append('<div style="clear:both;"></div>');
         $('.jsponsor-second-lvl').append('<div style="clear:both;"></div>');
+    },
+
+    setVideoSlider: function (video) {
+        var selectedElem = -1;
+
+        $('.feature-demo').click(function () {
+            elemId = $(this).attr('id').charAt(1);
+            if (selectedElem == -1) {
+                $('.feature-demo').css('border-color', '#fff');
+                $('#video source').attr('src', '/Content/video/' + video[elemId].VideoSource);
+                $(this).css('border-color', '#509BE4');
+                $('#video').slideDown(function () {
+                    $('.feature-info').animate({ scrollTop: ($('.content-before-video').height() + $('.feature-demo').height() + 75) }, 'fast');
+                });
+                selectedElem = elemId;
+                $('#video video')[0].load();
+                $('#video video')[0].play();
+            } else if (elemId != selectedElem) {
+                $('.feature-demo').css('border-color', '#fff');
+                $(this).css('border-color', '#509BE4');
+                $('#video video')[0].pause();
+                $('#video source').attr('src', '/Content/video/' + video[elemId].VideoSource);
+                $('.feature-info').animate({ scrollTop: ($('.content-before-video').height() + $('.feature-demo').height() + 75) }, 'fast');
+                $('#video video')[0].load();
+                $('#video video')[0].play();
+                selectedElem = elemId;
+            }
+        });
+
+        $('.close').click(function () {
+            $('.feature-demo').css('border-color', '#fff');
+            $('#video video')[0].pause();
+            selectedElem = -1;
+            $('#video').slideUp();
+
+        });
     }
 
 }

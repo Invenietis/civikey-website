@@ -20,5 +20,10 @@ namespace CiviKey.ViewModel
 
         public int Percentage { get { return _model.Percentage; } }
         public string Name { get { return Contact.Name; } }
+
+        public override string ToString()
+        {
+            return Contact.Name;
+        }
     }
 }

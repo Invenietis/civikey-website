@@ -43,6 +43,7 @@ create table tPlugin
 (
 	Id int not null primary key identity(1,1),
 	Title varchar(128) not null,
+	Version varchar(12) not null,
 	Description nvarchar(max) not null,
 	CreationDate smalldatetime not null
 );

@@ -2,17 +2,21 @@
 @{
     ViewBag.Title = "Index";
 }
-@Html.CK().Scripts.ByName().IncludeJS( "feature.js" )
+@Html.CK().Scripts.ByName().IncludeJS("feature.js")
 
 
 <script type="text/javascript">
     $(function () {
         var param = JSON.parse('@Html.Raw(Json.Encode(Model.Sponsors))');
+        var videoSource = JSON.parse('@Html.Raw(Json.Encode(Model.Videos))');
+
         var options = {
-            width:520,
-            height:4,
+            width: 520,
+            height: 4,
             parent: ".js-sponsor"
         }
+
+        document.CK.setVideoSlider(videoSource);
         document.CK.setSponsorHtml(param, options);
     });
 </script>
@@ -23,28 +27,41 @@
         <div style="clear:both;"></div>
     </div>
     <div class="feature-info">
-        <div class="feature-section-title">Description</div>
-        <div class="feature-description-text">@Model.Description</div>
-        <div class="feature-section-title">Categories</div>
-        <div class="feature-description-text category">
-        @for (int i = 0; i < Model.Categories.Count;i++ )
-        {
-            string Output;
-            if (i != Model.Categories.Count-1)
-            {
-                Output = Model.Categories.ElementAt(i).Name + ", ";
-            }else{
-                Output = Model.Categories.ElementAt(i).Name;
-            }
-            @Output
-        }
+        <div class="content-before-video">
+            <div class="feature-section-title">Description</div>
+            <div class="feature-description-text">@Model.Description</div>
+            <div class="feature-section-title">Categories</div>
+            <div class="feature-description-text category">
+            @string.Join(", ", Model.Categories.Select(c => c.Name))
+            </div>
         </div>
         <div class="feature-section-title">Demo</div>
-        <div class="feature-description-text category">
-            <a href="#"><div class="feature-demo"></div></a>
+        <div class="feature-description-text demovideo">
+        @for (int i = 0; i < Model.Videos.Count; i++)
+        {
+            <div class="feature-demo" id="b@(i)"></div>
+        }
+        <div style="clear: both"></div>
+        <div id="video">
+            <div class="close"></div>
+            <video width="520" controls="controls">
+                <source src="" type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
         </div>
+        </div>
+        
         <div class="feature-section-title">Sponsorise par</div>
         <div class="feature-description-text js-sponsor">
+        </div>
+        <div class="feature-section-title">Develope par</div>
+        <div class="feature-description-text development">
+        @foreach (var participation in Model.Participations)
+        {
+            <div class="development-company">   
+                @participation.Value[0].Contact.Organization.Name : @string.Join(", ", participation.Value)
+            </div>
+        }
         </div>
     </div>
 </div>

@@ -58,17 +58,17 @@ insert into dbo.tSection(Name,FeatureId) values('Autres',3);
 
 --Creating plugins
 
-insert into dbo.tPlugin(Title,Description,CreationDate) values('AutoClick','Plugin permettant de simuler des clics souris', DateAdd(year,-1,GetDate()))
-insert into dbo.tPlugin(Title,Description,CreationDate) values('MouseWatcher','Plugin permettant de compter le temps d''inaction de la souris', DateAdd(year,-1,GetDate()))
-insert into dbo.tPlugin(Title,Description,CreationDate) values('PointerDeviceDriver','Plugin permettant d''écouter les evenements souris', DateAdd(year,-1,GetDate()))
+insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('AutoClick','1.0.0','Plugin permettant de simuler des clics souris', DateAdd(year,-1,GetDate()))
+insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('MouseWatcher','1.0.0','Plugin permettant de compter le temps d''inaction de la souris', DateAdd(year,-1,GetDate()))
+insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('PointerDeviceDriver','1.0.0','Plugin permettant d''écouter les evenements souris', DateAdd(year,-1,GetDate()))
 
-insert into dbo.tPlugin(Title,Description,CreationDate) values('PredictionDisplayer','Affiche les prédictions', DateAdd(year,-1,GetDate()))
-insert into dbo.tPlugin(Title,Description,CreationDate) values('SimplePredictionEngine','Prédiction de mots via dictionnaire statique', DateAdd(year,-1,GetDate()))
-insert into dbo.tPlugin(Title,Description,CreationDate) values('ComplexPredictionEngine','Prédiction avec Sybille', DateAdd(year,-1,GetDate()))
+insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('PredictionDisplayer','1.0.0','Affiche les prédictions', DateAdd(year,-1,GetDate()))
+insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('SimplePredictionEngine','1.0.0','Prédiction de mots via dictionnaire statique', DateAdd(year,-1,GetDate()))
+insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('ComplexPredictionEngine','1.0.0','Prédiction avec Sybille', DateAdd(year,-1,GetDate()))
 
-insert into dbo.tPlugin(Title,Description,CreationDate) values('PredictionDisplayer','Affiche la fonctionnalité de fou', DateAdd(year,-1,GetDate()))
-insert into dbo.tPlugin(Title,Description,CreationDate) values('SimplePredictionEngine','Logique de fou', DateAdd(year,-1,GetDate()))
-insert into dbo.tPlugin(Title,Description,CreationDate) values('ComplexPredictionEngine','Tool', DateAdd(year,-1,GetDate()))
+insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('PredictionDisplayer','1.0.0','Affiche la fonctionnalité de fou', DateAdd(year,-1,GetDate()))
+insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('SimplePredictionEngine','1.0.0','Logique de fou', DateAdd(year,-1,GetDate()))
+insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('ComplexPredictionEngine','1.0.0','Tool', DateAdd(year,-1,GetDate()))
 
 --Linking plugins and features
 
@@ -94,13 +94,16 @@ insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,Participati
 insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(2,2) --Vlad has sponsored 100% of the Prediction Feature 
 
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 30, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(3,1) --Vlad has sponsored 100% of the Prediction Feature
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(3,1) --Alcatel has sponsored 30% of the AutoClick
 
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(6,'Sponsoring', 50, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(4,1) --Vlad has sponsored 100% of the Prediction Feature 
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(4,1) --Steria has sponsored 50% of the AutoClick 
 
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(1,'Sponsoring', 20, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(5,1) --Vlad has sponsored 100% of the Prediction Feature 
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(5,1) --Vlad has sponsored 20% of the AutoClick 
+
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(2,'Development', 50, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(6,1) --Jean-Loup has developped 50% of the AutoClick feature 
 
 select * from dbo.tParticipation
 select * from dbo.tParticipationFeature
@@ -121,7 +124,8 @@ insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (3,2)
 insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (1,3)
 insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (4,3)
 
-
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',1,DateAdd(month,-5,GetDate()),'iPhone.mp4')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',1,DateAdd(month,-5,GetDate()),'iPhone2.mp4')
 
 
 
