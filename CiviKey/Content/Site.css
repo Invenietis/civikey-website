@@ -611,7 +611,6 @@ ul#timeline-buttons li
 ul#timeline-buttons
 {
     padding-top:16px;
-    width:640px;
     margin:0px;
 }
 
@@ -1139,13 +1138,12 @@ label
 .close
 {
     position:absolute;
-    width:15px;
-    height:12px;
-    right:10px;
-    top:10px;
+    width:20px;
+    height:20px;
     background-image:url('/Content/images/close.png');
     cursor:pointer;
-    z-index:100;
+    background-repeat:no-repeat;
+    right:0px;
 }
 
 .feature-dialog .ui-dialog-titlebar
@@ -1155,7 +1153,14 @@ label
 
 #dialog-container
 {
-    padding: 0; 
+    padding: 0px 5px 0px 0px; 
     height: auto;   
     overflow: hidden;
+}
+
+.video-bar
+{
+    text-align:right;
+    position:relative;
+    height:20px;
 }
