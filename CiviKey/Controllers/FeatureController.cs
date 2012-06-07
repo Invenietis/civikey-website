@@ -33,7 +33,7 @@ namespace CiviKey.Controllers
             if( model != null )
             {
                 vm = new FeatureViewModel( model, _partnerRepo, _contactRepo, _contactRelationRepo );
-                return View( vm );
+                return PartialView( vm );
             }
             return null; //TODO : get the proper pattern to reroute towards a 404 error
         }

@@ -1,5 +1,6 @@
 ﻿@model IList<CiviKey.ViewModel.FeatureViewModel>
-@Html.CK().Scripts.ByName().IncludeJS( "progress.js" ).IncludeJS( "jquery.unobtrusive-ajax.js" )
+@Html.CK().Scripts.ByName().IncludeJS( "progress.js" ).IncludeJS( "jquery.unobtrusive-ajax.js" ).IncludeJS( "jquery-ui-1.8.19.min.js" ).IncludeJS( "setSponsor-1.0.0.js" ).IncludeJS( "feature.js" )
+@Html.CK().Css.IncludeCss( "Content/themes/base/jquery.ui.dialog.css" ).IncludeCss( "Content/themes/base/jquery.ui.css" ).IncludeCss( "Content/themes/base/jquery.ui.core.css" ).IncludeCss( "Content/themes/base/jquery.ui.theme.css" )
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -10,6 +11,7 @@
         <div class="progress-timebar-container">
             <div class="progress-bar-begin">
             </div>
+            <div id="dialog-container"></div>
             <ul id="timeline-buttons">
                 <li>
                     @Ajax.ActionLink( "Existant", "GetFeatureView", new { id = 0 }, new AjaxOptions
@@ -23,11 +25,11 @@
                 {
                     <li>
                         @Ajax.ActionLink( item.Name, "GetFeatureView", new { id = @item.Id }, new AjaxOptions
-                        {
-                            InsertionMode = InsertionMode.Replace,
-                            UpdateTargetId = "featureList",
-                            OnSuccess = "document.CK.AjaxCallbacks.onProgressGetFeatureViewSuccess"
-                        }, new { @class = "timeline-feature-link roadmap-" + item.Id } )
+                   {
+                       InsertionMode = InsertionMode.Replace,
+                       UpdateTargetId = "featureList",
+                       OnSuccess = "document.CK.AjaxCallbacks.onProgressGetFeatureViewSuccess"
+                   }, new { @class = "timeline-feature-link roadmap-" + item.Id } )
                     </li>
                 }
             </ul>

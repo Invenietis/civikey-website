@@ -22,8 +22,8 @@
                                             hasExtraFeatures = true; @("hidden-feature")}">
             @for( int j = 4 * index; j < ( 4 * index + lineFeatureCount ); j++ )
             {
-                <div class="progress-list-elem @if( ( j + 1 ) % 4 == 0 )
-                                                {@("last-feature")}" onclick="location.href='@Url.Action( "Index", "Feature", new { id = @Model[j].Id } )'">
+                <div class="progress-list-elem @if( ( j + 1 ) % 4 == 0 ) 
+                                                {@("last-feature")}" data-id="@Model[j].Id">
                     @Html.Partial( "_FeatureDisplay", Model[j] )
                 </div>
             }
@@ -38,3 +38,5 @@
         show more</div>
     }
 </div>
+
+@*onclick="location.href='@Url.Action( "Index", "Feature", new { id = @Model[j].Id } )'"*@

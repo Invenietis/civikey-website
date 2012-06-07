@@ -1039,7 +1039,7 @@ label
 .feature-content
 {
     width:620px;
-    height:510px;
+    height:600px;
     background-color:#e4e4e4;
     border: 1px solid #e4e4e4;
     margin: auto;
@@ -1075,7 +1075,7 @@ label
 .feature-info
 {
     width:600px;
-    height:400px;
+    height:490px;
     padding-top:20px;
     margin:10px 0px 0px 10px;
     background-color:#f2f2f2;
@@ -1116,4 +1116,16 @@ label
     width:202px;
     height:117px;
     background-image: url('/Content/images/demo-vignette.png');
+}
+
+.feature-dialog .ui-dialog-titlebar
+{
+     padding: 0;
+}
+
+#dialog-container
+{
+    padding: 0; 
+    height: auto;   
+    overflow: hidden;
 }

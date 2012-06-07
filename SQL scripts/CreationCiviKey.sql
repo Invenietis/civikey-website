@@ -41,8 +41,8 @@ create table tRoadMap
 create table tPlugin
 (
 	Id int not null primary key identity(1,1),
-	Version varchar(32) not null,
 	Title varchar(128) not null,
+	Version varchar(32) not null,
 	Description nvarchar(max) not null,
 	CreationDate smalldatetime not null
 );

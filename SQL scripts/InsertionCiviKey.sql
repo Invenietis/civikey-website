@@ -14,7 +14,7 @@ insert into dbo.tContact(Name,Description,LogoPath)values('Jean-Loup','','');
 insert into dbo.tContact(Name,Description,LogoPath)values('Philippe Lepadellec','','');
 insert into dbo.tContact(Name,Description,LogoPath)values('François Bessaguet','',''); --4
 
-insert into dbo.tContact(Name,Description,LogoPath)values('Invenietis','<p>Invenietis, SSII créé en 2006, est impliquée dans le projet CiviKey depuis son lancement à INTECH INFO en Septembre de la même année.</br>L''entreprise porte ce projet bénévolement en réalisant la majorité des développements. Elle suit également des étudiants désirant développer de nouvelles fonctionnalités pour le CiviKey, pour les aider dans leur démarche.</p>',''); --5
+insert into dbo.tContact(Name,Description,LogoPath)values('Invenietis','<p>Invenietis, SSII créée en 2006, est impliquée dans le projet CiviKey depuis son lancement à INTECH INFO en Septembre de la même année.</br>L''entreprise porte ce projet bénévolement en réalisant la majorité des développements. Elle suit également des étudiants désirant développer de nouvelles fonctionnalités pour le CiviKey, pour les aider dans leur démarche.</p>',''); --5
 insert into dbo.tContact(Name,Description,LogoPath)values('Fondation Steria','La fondation Stéria',''); --6
 insert into dbo.tContact(Name,Description,LogoPath)values('Alcatel-Lucent','Société Alcatel-Lucent',''); --7
 insert into dbo.tContact(Name,Description,LogoPath)values('INTECH INFO','Ecole d''ingénierie informatique membre du groupe ESIEA.',''); --8
@@ -42,9 +42,9 @@ insert into dbo.tRoadMap(Name)values('2.5.2');
 
 --Creating features
 
-insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('AutoClick','1.0.0',100,DATEADD(year,-1,GetDate()),1,'On projection apartments unsatiable so if he entreaties appearance. Rose you wife how set lady half wish. Hard sing an in true felt. Welcomed stronger if steepest ecstatic an suitable finished of oh. Entered at excited at forming between so produce. Chicken unknown besides attacks gay compact out you. Continuing no simplicity no favourable on reasonably melancholy estimating. Own hence views two ask right whole ten seems. What near kept met call old west dine. Our announcing sufficient why pianoforte.Continuing no simplicity no favourable on reasonably melancholy estimating. Own hence views two ask right whole ten seems. What near kept met call old west dine.')
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('AutoClick','1.0.0',100,DATEADD(year,-1,GetDate()),1,'<p>Cette fonctionnalité permet de simuler des clics souris, sans avoir a utiliser de contacteur, l''immobilité de la souris pendant un temps configurable lance le clic automatiquement. <br/> Un cartouche permet de selectionner le type de clic que l''on veut effectuer : clic gauche, clic droit, double clic ou encore glisser-déposer.<br/> Pour plus d''informations, regardez le screencast ci-dessous.</p><p>Cette fonctionnalité permet de simuler des clics souris, sans avoir a utiliser de contacteur, l''immobilité de la souris pendant un temps configurable lance le clic automatiquement. <br/> Un cartouche permet de selectionner le type de clic que l''on veut effectuer : clic gauche, clic droit, double clic ou encore glisser-déposer.<br/> Pour plus d''informations, regardez le screencast ci-dessous.</p>')
 insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('Prediction','1.0.0',50,DATEADD(year,-1,GetDate()),1,'On projection apartments unsatiable so if he entreaties appearance. Rose you wife how set lady half wish. Hard sing an in true felt. Welcomed stronger if steepest ecstatic an suitable finished of oh. Entered at excited at forming between so produce. Chicken unknown besides attacks gay compact out you. Continuing no simplicity no favourable on reasonably melancholy estimating. Own hence views two ask right whole ten seems. What near kept met call old west dine. Our announcing sufficient why pianoforte.Continuing no simplicity no favourable on reasonably melancholy estimating. Own hence views two ask right whole ten seems. What near kept met call old west dine.')
-insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('Fonctionnalité de fou','1.0.0',50,DATEADD(year,-1,GetDate()),2,'On projection apartments unsatiable so if he entreaties appearance. Rose you wife how set lady half wish. Hard sing an in true felt. Welcomed stronger if steepest ecstatic an suitable finished of oh. Entered at excited at forming between so produce. Chicken unknown besides attacks gay compact out you. Continuing no simplicity no favourable on reasonably melancholy estimating. Own hence views two ask right whole ten seems. What near kept met call old west dine. Our announcing sufficient why pianoforte.Continuing no simplicity no favourable on reasonably melancholy estimating. Own hence views two ask right whole ten seems. What near kept met call old west dine.')
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('Défilement','1.0.0',50,DATEADD(year,-1,GetDate()),2,'Le principe de défilement')
 
 --Creating sections in the features
 
@@ -63,17 +63,17 @@ insert into dbo.tSection(Name,FeatureId) values('Autres',3);
 
 --Creating plugins
 
-insert into dbo.tPlugin(Title,Description,CreationDate) values('AutoClick','Plugin permettant de simuler des clics souris', DateAdd(year,-1,GetDate()))
-insert into dbo.tPlugin(Title,Description,CreationDate) values('MouseWatcher','Plugin permettant de compter le temps d''inaction de la souris', DateAdd(year,-1,GetDate()))
-insert into dbo.tPlugin(Title,Description,CreationDate) values('PointerDeviceDriver','Plugin permettant d''écouter les evenements souris', DateAdd(year,-1,GetDate()))
+insert into dbo.tPlugin(Title,Version, Description,CreationDate) values('AutoClick','1.0.0','<p>Ce plugin permet de simuler des clics souris, sans avoir a utiliser de contacteur, l''immobilité de la souris pendant un temps configurable lance le clic automatiquement. <br/> Un cartouche permet de selectionner le type de clic que l''on veut effectuer : clic gauche, clic droit, double clic ou encore glisser-déposer.<br/> Pour plus d''informations, regardez le screencast ci-dessous.</p>', DateAdd(year,-1,GetDate()))
+insert into dbo.tPlugin(Title,Version, Description,CreationDate) values('MouseWatcher','1.0.0','Plugin permettant de compter le temps d''inaction de la souris', DateAdd(year,-1,GetDate()))
+insert into dbo.tPlugin(Title,Version, Description,CreationDate) values('PointerDeviceDriver','1.0.0','Plugin permettant d''écouter les evenements souris', DateAdd(year,-1,GetDate()))
 
-insert into dbo.tPlugin(Title,Description,CreationDate) values('PredictionDisplayer','Affiche les prédictions', DateAdd(year,-1,GetDate()))
-insert into dbo.tPlugin(Title,Description,CreationDate) values('SimplePredictionEngine','Prédiction de mots via dictionnaire statique', DateAdd(year,-1,GetDate()))
-insert into dbo.tPlugin(Title,Description,CreationDate) values('ComplexPredictionEngine','Prédiction avec Sybille', DateAdd(year,-1,GetDate()))
+insert into dbo.tPlugin(Title,Version, Description,CreationDate) values('PredictionDisplayer','1.0.0','Affiche les prédictions', DateAdd(year,-1,GetDate()))
+insert into dbo.tPlugin(Title,Version, Description,CreationDate) values('SimplePredictionEngine','1.0.0','Prédiction de mots via dictionnaire statique', DateAdd(year,-1,GetDate()))
+insert into dbo.tPlugin(Title,Version, Description,CreationDate) values('ComplexPredictionEngine','1.0.0','Prédiction avec Sybille', DateAdd(year,-1,GetDate()))
 
-insert into dbo.tPlugin(Title,Description,CreationDate) values('PredictionDisplayer','Affiche la fonctionnalité de fou', DateAdd(year,-1,GetDate()))
-insert into dbo.tPlugin(Title,Description,CreationDate) values('SimplePredictionEngine','Logique de fou', DateAdd(year,-1,GetDate()))
-insert into dbo.tPlugin(Title,Description,CreationDate) values('ComplexPredictionEngine','Tool', DateAdd(year,-1,GetDate()))
+insert into dbo.tPlugin(Title,Version, Description,CreationDate) values('PredictionDisplayer','1.0.0','Affiche la fonctionnalité de fou', DateAdd(year,-1,GetDate()))
+insert into dbo.tPlugin(Title,Version, Description,CreationDate) values('SimplePredictionEngine','1.0.0','Logique de fou', DateAdd(year,-1,GetDate()))
+insert into dbo.tPlugin(Title,Version, Description,CreationDate) values('ComplexPredictionEngine','1.0.0','Tool', DateAdd(year,-1,GetDate()))
 
 --Linking plugins and features
 
