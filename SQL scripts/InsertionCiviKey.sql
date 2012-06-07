@@ -14,9 +14,11 @@ insert into dbo.tContact(Name,Description,LogoPath)values('Jean-Loup','','');
 insert into dbo.tContact(Name,Description,LogoPath)values('Philippe Lepadellec','','');
 insert into dbo.tContact(Name,Description,LogoPath)values('François Bessaguet','',''); --4
 
-insert into dbo.tContact(Name,Description,LogoPath)values('Invenietis','SSII',''); --5
-insert into dbo.tContact(Name,Description,LogoPath)values('Steria','Financeur de folie',''); --6
-insert into dbo.tContact(Name,Description,LogoPath)values('Alcatel','Aloé vera',''); --7
+insert into dbo.tContact(Name,Description,LogoPath)values('Invenietis','<p>Invenietis, SSII créée en 2006, est impliquée dans le projet CiviKey depuis son lancement à INTECH INFO en Septembre de la même année.</br>L''entreprise porte ce projet bénévolement en réalisant la majorité des développements. Elle suit également des étudiants désirant développer de nouvelles fonctionnalités pour le CiviKey, pour les aider dans leur démarche.</p>',''); --5
+insert into dbo.tContact(Name,Description,LogoPath)values('Fondation Steria','La fondation Stéria',''); --6
+insert into dbo.tContact(Name,Description,LogoPath)values('Alcatel-Lucent','Société Alcatel-Lucent',''); --7
+insert into dbo.tContact(Name,Description,LogoPath)values('INTECH INFO','Ecole d''ingénierie informatique membre du groupe ESIEA.',''); --8
+insert into dbo.tContact(Name,Description,LogoPath)values('PFNT','La PlateForme des Nouvelles Technologies de l''hôpital de Garches',''); --9
 
 --Linking contacts to their organization
 
@@ -28,6 +30,9 @@ insert into dbo.tContactRelation(ContactId,EntityId,StartDate,EndDate)values(3,7
 insert into dbo.tContactRelation(ContactId,EntityId,StartDate,EndDate)values(5,5,GetDate(), DATEADD(year,1,GetDate()));
 insert into dbo.tContactRelation(ContactId,EntityId,StartDate,EndDate)values(6,6,GetDate(), DATEADD(year,1,GetDate()));
 insert into dbo.tContactRelation(ContactId,EntityId,StartDate,EndDate)values(7,7,GetDate(), DATEADD(year,1,GetDate()));
+
+insert into dbo.tContactRelation(ContactId,EntityId,StartDate,EndDate)values(8,8,GetDate(), DATEADD(year,1,GetDate()));
+insert into dbo.tContactRelation(ContactId,EntityId,StartDate,EndDate)values(9,9,GetDate(), DATEADD(year,1,GetDate()));
 select * from dbo.tContactRelation
 
 --- Creating RoadMap
@@ -37,9 +42,9 @@ insert into dbo.tRoadMap(Name)values('2.5.2');
 
 --Creating features
 
-insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('AutoClick','1.0.0',100,DATEADD(year,-1,GetDate()),1,'On projection apartments unsatiable so if he entreaties appearance. Rose you wife how set lady half wish. Hard sing an in true felt. Welcomed stronger if steepest ecstatic an suitable finished of oh. Entered at excited at forming between so produce. Chicken unknown besides attacks gay compact out you. Continuing no simplicity no favourable on reasonably melancholy estimating. Own hence views two ask right whole ten seems. What near kept met call old west dine. Our announcing sufficient why pianoforte.Continuing no simplicity no favourable on reasonably melancholy estimating. Own hence views two ask right whole ten seems. What near kept met call old west dine.')
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('AutoClick','1.0.0',100,DATEADD(year,-1,GetDate()),1,'<p>Cette fonctionnalité permet de simuler des clics souris, sans avoir a utiliser de contacteur, l''immobilité de la souris pendant un temps configurable lance le clic automatiquement. <br/> Un cartouche permet de selectionner le type de clic que l''on veut effectuer : clic gauche, clic droit, double clic ou encore glisser-déposer.<br/> Pour plus d''informations, regardez le screencast ci-dessous.</p><p>Cette fonctionnalité permet de simuler des clics souris, sans avoir a utiliser de contacteur, l''immobilité de la souris pendant un temps configurable lance le clic automatiquement. <br/> Un cartouche permet de selectionner le type de clic que l''on veut effectuer : clic gauche, clic droit, double clic ou encore glisser-déposer.<br/> Pour plus d''informations, regardez le screencast ci-dessous.</p>')
 insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('Prediction','1.0.0',50,DATEADD(year,-1,GetDate()),1,'On projection apartments unsatiable so if he entreaties appearance. Rose you wife how set lady half wish. Hard sing an in true felt. Welcomed stronger if steepest ecstatic an suitable finished of oh. Entered at excited at forming between so produce. Chicken unknown besides attacks gay compact out you. Continuing no simplicity no favourable on reasonably melancholy estimating. Own hence views two ask right whole ten seems. What near kept met call old west dine. Our announcing sufficient why pianoforte.Continuing no simplicity no favourable on reasonably melancholy estimating. Own hence views two ask right whole ten seems. What near kept met call old west dine.')
-insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('Fonctionnalité de fou','1.0.0',50,DATEADD(year,-1,GetDate()),2,'On projection apartments unsatiable so if he entreaties appearance. Rose you wife how set lady half wish. Hard sing an in true felt. Welcomed stronger if steepest ecstatic an suitable finished of oh. Entered at excited at forming between so produce. Chicken unknown besides attacks gay compact out you. Continuing no simplicity no favourable on reasonably melancholy estimating. Own hence views two ask right whole ten seems. What near kept met call old west dine. Our announcing sufficient why pianoforte.Continuing no simplicity no favourable on reasonably melancholy estimating. Own hence views two ask right whole ten seems. What near kept met call old west dine.')
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('Défilement','1.0.0',50,DATEADD(year,-1,GetDate()),2,'Le principe de défilement')
 
 --Creating sections in the features
 

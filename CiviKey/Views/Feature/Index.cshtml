@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Index";
 }
-@Html.CK().Scripts.ByName().IncludeJS("feature.js")
+@Html.CK().Scripts.ByName().IncludeJS( "setSponsor-1.0.0" ).IncludeJS( "feature.js" )
 
 
 <script type="text/javascript">
@@ -29,7 +29,7 @@
     <div class="feature-info">
         <div class="content-before-video">
             <div class="feature-section-title">Description</div>
-            <div class="feature-description-text">@Model.Description</div>
+        <div class="feature-description-text">@Html.Raw(Model.Description)</div>
             <div class="feature-section-title">Categories</div>
             <div class="feature-description-text category">
             @string.Join(", ", Model.Categories.Select(c => c.Name))
@@ -50,7 +50,7 @@
             </video>
         </div>
         </div>
-        
+        <div class="feature-section-title">Sponsorisé par</div>
         <div class="feature-section-title">Sponsorise par</div>
         <div class="feature-description-text js-sponsor">
         </div>

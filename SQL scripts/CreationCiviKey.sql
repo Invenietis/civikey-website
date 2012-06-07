@@ -1,4 +1,3 @@
-use CiviKey;
 
 drop table tVideo;
 drop table tTestimony;
