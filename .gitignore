@@ -8,3 +8,7 @@ CiviKey/Web.config
 **/obj/*
 CiviKey/Web.config
 CiviKey/Web.config
+**/packages/*
+packages/*
+**/bin/*
+.nuget/*
