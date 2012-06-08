@@ -4,10 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CiviKey", "CiviKey\CiviKey.csproj", "{A6601716-C516-4E24-909B-7E1C2E7B0693}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{8DBB919D-8F2F-4731-97C3-57D4A0FE4D41}"
-	ProjectSection(SolutionItems) = preProject
-		.nuget\NuGet.exe = .nuget\NuGet.exe
-		.nuget\NuGet.targets = .nuget\NuGet.targets
-	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
