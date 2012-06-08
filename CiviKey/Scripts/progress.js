@@ -25,7 +25,8 @@
             modal: true,
             show: 'fade',
             resizable: false,
-            hide: { effect: 'fade', duration: 200 }
+            hide: { effect: 'fade', duration: 200 },
+            close: function (e, ui) { $('#video iframe').attr('src', ""); }
         }).load("/Feature/Index/" + featureId);
     });
 });

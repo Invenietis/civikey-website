@@ -1151,12 +1151,13 @@ label
      padding: 0;
 }
 
-#dialog-container
+#dialog-container, .timeline-container
 {
     padding: 0px 5px 0px 0px; 
     height: auto;   
     overflow: hidden;
 }
+
 
 .video-bar
 {

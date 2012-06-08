@@ -6,12 +6,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     
 }
+<div id="dialog-container"></div>
 <div class="progress-content">
     <div class="progress-timebar">
         <div class="progress-timebar-container">
             <div class="progress-bar-begin">
             </div>
-            <div id="dialog-container">
+            
+            <div class="timeline-container">
             <ul id="timeline-buttons">
                 <li>
                     @Ajax.ActionLink( "Existant", "GetFeatureView", new { id = 0 }, new AjaxOptions
