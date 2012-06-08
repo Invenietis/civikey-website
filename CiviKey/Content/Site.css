@@ -36,19 +36,6 @@ p, ul
 
 /* HEADINGS   
 ----------------------------------------------------------*/
-h1, h2, h3, h4, h5, h6
-{
-    font-size: 1.5em;
-    color: #000;
-}
-
-h1
-{
-    font-size: 2em;
-    padding-bottom: 0;
-    margin-bottom: 0;
-}
-
 h2
 {
     padding: 0 0 10px 0;
@@ -1087,10 +1074,11 @@ label
     padding:0px 0px 0px 20px;
     font-family:Arial;
     font-size:20px;
-    margin-left:15px;
+    margin: 0px 0px 0px 15px;
     background-repeat:no-repeat;
     background-position: 0px 5px;
     color:#509be4;
+    font-weight:normal;
 }
 
 .feature-description-text
@@ -1164,4 +1152,9 @@ label
     text-align:right;
     position:relative;
     height:20px;
+}
+
+.partners-elem-text p
+{
+    margin:0px;
 }

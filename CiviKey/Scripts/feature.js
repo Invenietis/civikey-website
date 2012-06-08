@@ -26,14 +26,14 @@ $(function () {
                 $('#video iframe').attr('src', video[elemId].VideoSource);
                 $(this).css('border-color', '#509BE4');
                 $('#video').slideDown(function () {
-                    $('.feature-info').animate({ scrollTop: ($('.content-before-video').height() + $('.feature-demo').height() + 75) }, 'fast');
+                    $('.feature-info').animate({ scrollTop: ($('.content-before-video').height() + $('.feature-demo').height() +85) }, 'fast');
                 });
                 selectedElem = elemId;
             } else if (elemId != selectedElem) {
                 $('.feature-demo').css('border-color', '#fff');
                 $(this).css('border-color', '#509BE4');
                 $('#video iframe').attr('src', video[elemId].VideoSource + '&output=embed');
-                $('.feature-info').animate({ scrollTop: ($('.content-before-video').height() + $('.feature-demo').height() + 75) }, 'fast');
+                $('.feature-info').animate({ scrollTop: ($('.content-before-video').height() + $('.feature-demo').height() + 85) }, 'fast');
                 selectedElem = elemId;
             }
         });
