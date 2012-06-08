@@ -129,8 +129,8 @@ insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (3,2)
 insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (1,3)
 insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (4,3)
 
-insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',1,DateAdd(month,-5,GetDate()),'iPhone.mp4')
-insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',1,DateAdd(month,-5,GetDate()),'iPhone2.mp4')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',1,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/fzzjgBAaWZw?rel=0')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',1,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/7VSR4_tAYvw?rel=0')
 
 
 
