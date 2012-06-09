@@ -46,6 +46,10 @@ insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Descripti
 insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('Prediction','1.0.0',50,DATEADD(year,-1,GetDate()),1,'On projection apartments unsatiable so if he entreaties appearance. Rose you wife how set lady half wish. Hard sing an in true felt. Welcomed stronger if steepest ecstatic an suitable finished of oh. Entered at excited at forming between so produce. Chicken unknown besides attacks gay compact out you. Continuing no simplicity no favourable on reasonably melancholy estimating. Own hence views two ask right whole ten seems. What near kept met call old west dine. Our announcing sufficient why pianoforte.Continuing no simplicity no favourable on reasonably melancholy estimating. Own hence views two ask right whole ten seems. What near kept met call old west dine.')
 insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('Défilement','1.0.0',50,DATEADD(year,-1,GetDate()),2,'Le principe de défilement')
 
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('Défilement','1.0.0',50,DATEADD(year,-1,GetDate()),2,'Le principe de défilement')
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('Défilement','1.0.0',50,DATEADD(year,-1,GetDate()),2,'Le principe de défilement')
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('Défilement','1.0.0',50,DATEADD(year,-1,GetDate()),2,'Le principe de défilement')
+
 --Creating sections in the features
 
 insert into dbo.tSection(Name,FeatureId) values('Affichage & selection de clic',1);

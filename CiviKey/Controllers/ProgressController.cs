@@ -15,48 +15,40 @@ namespace CiviKey.Controllers
         // GET: /Progress/
         PartnerRepository _partnerRepo;
         ContactRepository _contactRepo;
+        RoadmapRepository _roadmapRepo;
+        FeatureRepository _featureRepo;
         ContactRelationRepository _contactRelationRepo;
-        private CiviKeyEntities _entities;
-        public ProgressController( CiviKeyEntities c, PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo )
+        public ProgressController( RoadmapRepository roadmapRepo, FeatureRepository featureRepo, PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo )
         {
+            _roadmapRepo = roadmapRepo;
+            _featureRepo = featureRepo;
             _partnerRepo = partnerRepo;
             _contactRepo = contactRepo;
             _contactRelationRepo = contactRelationRepo;
-            _entities = c;
         }
 
-        public ActionResult Index( int? id )
+        public ActionResult Index()
         {
-            ViewBag.CurrentRoadmapId = id != null ? id : 0;
-            ViewBag.Roadmaps = _entities.tRoadMaps.ToList();
+            ViewBag.CurrentRoadmapId = 0;
+            ViewBag.Roadmaps = _roadmapRepo.All.ToList().Reverse<tRoadMap>();
             ViewBag.Section = Sections.Progress;
 
-            IList<FeatureViewModel> _features = new List<FeatureViewModel>();
-            IQueryable<tFeature> features;
-            features = _entities.tFeatures;
-            foreach( var item in features )
-            {
-                _features.Add( new FeatureViewModel( item, _partnerRepo, _contactRepo, _contactRelationRepo ) );
-            }
-            return View( _features );
+            RoadmapViewModel vm = new RoadmapViewModel( _featureRepo.All.ToList(), _partnerRepo, _contactRepo, _contactRelationRepo );
+            return View( vm );
         }
 
         public ActionResult GetFeatureView( int? id )
         {
             ViewBag.CurrentRoadmapId = id;
-            ViewBag.Roadmaps = _entities.tRoadMaps.ToList();
+            ViewBag.Roadmaps = _roadmapRepo.All.ToList().Reverse<tRoadMap>();
             ViewBag.Section = Sections.Progress;
-            IList<FeatureViewModel> _features = new List<FeatureViewModel>();
-            IQueryable<tFeature> features;
+            RoadmapViewModel vm;
+            if( id.HasValue && id != 0)
+                vm = new RoadmapViewModel( _roadmapRepo.All.Where( x => x.Id == id.Value ).FirstOrDefault(), _partnerRepo,_contactRepo, _contactRelationRepo);
+            else
+                vm = new RoadmapViewModel( _featureRepo.All.ToList(), _partnerRepo, _contactRepo, _contactRelationRepo );
 
-            if( id != null && id != 0 ) features = _entities.tFeatures.Where( x => x.IdRoadMap == id.Value );
-            else features = _entities.tFeatures;
-
-            foreach( var item in features )
-            {
-                _features.Add( new FeatureViewModel( item, _partnerRepo, _contactRepo, _contactRelationRepo ) );
-            }
-            return PartialView( "_FeatureList", _features );
+            return PartialView( "_FeatureList", vm );
         }
     }
 }

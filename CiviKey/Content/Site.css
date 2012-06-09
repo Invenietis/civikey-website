@@ -1,4 +1,20 @@
-﻿/*----------------------------------------------------------
+﻿html
+{
+    height: 100%;    
+}
+
+body{
+    height: 100%;  
+    background-color: #e4e4e4;  
+}
+
+#main-background
+{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    background-color: #fff;
+}
+/*----------------------------------------------------------
 The base color for this template is #5c87b2. If you'd like
 to use a different color start by replacing all instances of
 #5c87b2 with your new color.
@@ -52,6 +68,7 @@ h1
 h2
 {
     padding: 0 0 10px 0;
+    font-family: Estrangelo Edessa;
 }
 
 h3
@@ -72,6 +89,19 @@ h5, h6
 
 /* FORM LAYOUT ELEMENTS   
 ----------------------------------------------------------*/
+
+.feature-seperator
+{
+    width: auto;
+    height: 1px;
+    background: #515151;
+}
+
+hr
+{
+    margin: 0px;
+    padding: 0px;
+}
 
 fieldset
 {
@@ -207,7 +237,6 @@ body
 {
     height: 100px;
     background-color: #4f4f4f;
-    margin: 0px 0px 30px 0px;
 }
 .header-container, .footer-container
 {
@@ -257,9 +286,7 @@ ul
 
 #footer
 {
-    height: 100px;
     background-color: #e4e4e4;
-    margin-top: 30px;
 }
 
 
@@ -271,15 +298,20 @@ ul
     margin-right: auto;
     position: relative;
 }
-.separator
+
+.seperator
 {
-    height: 2px;
+    height: 1px;
     background-color: #999999;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
+
 .footer-logo
 {
-    margin-top: 30px;
+    margin-top: 12px;
 }
+
 .footer-menu
 {
     font-family: Sakkal Majalla;
@@ -570,38 +602,84 @@ ul
     display:none;
 }
 
+/****************************************************************************************/
+/*Progress*/
+
+.release-info-container
+{
+    margin-left: 10px;
+    float: right;
+    background-color: #4f4f4f; 
+    color: #fff;
+    font-family: Estrangelo Edessa;
+    text-align: center;
+}
+
+.release-info-container h3
+{
+    color: #fff;
+    font-family: Estrangelo Edessa;
+    text-align: center;
+    margin:0 1px 0 1px;
+}
+
+
 .progress-content
 {
     width:1024px;
     position:relative;
 }
 
+#featureList
+{
+    width: 80%;
+    float: left;
+}
+
+.progress-list-of-features
+{
+    width: 80%;
+    float: left;
+}
+
+.progress-list-of-features h2
+{
+    margin: 0;
+    margin-top: 20px;
+    padding: 0px;
+}
+
+.feature-seperator
+{
+    margin-bottom: 10px;
+}
+
+.progress-timebar
+{
+    float: left;
+    margin-right: 15px;
+    width: 11%;
+}
+
 .progress-timebar-container
 {
-    height:50px;
     background-color:#e4e4e4;
-    display: inline-block;
-    vertical-align:middle;
+    text-align:center;
     font-family: Estrangelo Edessa;
-    float:left;
 }
 
 .progress-bar-begin
 {
-    float:left;
-    height:50px;
-    width: 17px;
+    height:17px;
     background-color:#4b4b4b;
-    margin-right:7px;
 }
 
 ul#timeline-buttons li
 {
-    display: inline;
     list-style: none;
     font-size: 17px;
-    margin: 0px 25px 0px 0px;
-    font-size:30px;
+    padding: 10px;
+    font-size: 30px;
     cursor: pointer;
     color: #4f4f4f;
 }
@@ -610,6 +688,7 @@ ul#timeline-buttons
 {
     padding-top:5px;
     margin:0px;
+    line-height: 20px;
 }
 
 ul#timeline-buttons a:hover
@@ -648,7 +727,7 @@ a.timeline-unselected
 .progress-list-elem
 {
     float: left;
-    margin-right: 81px;
+    margin-right: 35px;
     width:195px;
     height:116px;
     background-image: url('/Content/images/avancement-ticket.png');
@@ -657,7 +736,7 @@ a.timeline-unselected
 
 .progress-list-line
 {
-    margin-top:40px;
+    margin-top:10px;
     position:relative;
 }
 
