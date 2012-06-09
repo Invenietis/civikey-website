@@ -3,12 +3,19 @@
     ViewBag.Title = "Index";
 }
 @Html.CK().Scripts.ByName().IncludeJS( "setSponsor-1.0.0" ).IncludeJS( "feature.js" )
-
-
+@*@helper GetDeveloppers( IList<CiviKey.ViewModel.ParticipationViewModel> participations )
+    {
+    IList<string> developperNames = new List<string>();
+    foreach( var item in participations )
+    {
+        developperNames.Add( item.ContactRelation.Contact.Name );
+    }
+    @:@developperNames
+}*@
 <script type="text/javascript">
     $(function () {
-        var param = JSON.parse('@Html.Raw(Json.Encode(Model.Sponsors))');
-        var videoSource = JSON.parse('@Html.Raw(Json.Encode(Model.Videos))');
+        var param = JSON.parse('@Html.Raw( Json.Encode( Model.Sponsors ) )');
+        var videoSource = JSON.parse('@Html.Raw( Json.Encode( Model.Videos ) )');
 
         var options = {
             width: 520,
@@ -22,44 +29,54 @@
 </script>
 <div class="feature-content">
     <div class="feature-title">
-        <div class="feature-title-logo"></div>
+        <div class="feature-title-logo">
+        </div>
         <div class="feature-title-text">@Model.Title</div>
-        <div style="clear:both;"></div>
+        <div style="clear: both;">
+        </div>
     </div>
     <div class="feature-info">
         <div class="content-before-video">
-            <div class="feature-section-title">Description</div>
-        <div class="feature-description-text">@Html.Raw(Model.Description)</div>
-            <div class="feature-section-title">Categories</div>
+            <div class="feature-section-title">
+                Description</div>
+            <div class="feature-description-text">@Html.Raw( Model.Description )</div>
+            <div class="feature-section-title">
+                Categories</div>
             <div class="feature-description-text category">
-            @string.Join(", ", Model.Categories.Select(c => c.Name))
+                @string.Join( ", ", Model.Categories.Select( c => c.Name ) )
             </div>
         </div>
-        <div class="feature-section-title">Demo</div>
+        <div class="feature-section-title">
+            Demo</div>
         <div class="feature-description-text demovideo">
-        @for (int i = 0; i < Model.Videos.Count; i++)
-        {
-            <div class="feature-demo" id="b@(i)"></div>
-        }
-        <div style="clear: both"></div>
-        <div id="video">
-            <div class="video-bar">
-            <div class="close"></div>
+            @for( int i = 0; i < Model.Videos.Count; i++ )
+            {
+                <div class="feature-demo" id="b@(i)">
+                </div>
+            }
+            <div style="clear: both">
             </div>
-            <iframe width="520" height="390" src="" frameborder="0"></iframe>
+            <div id="video">
+                <div class="video-bar">
+                    <div class="close">
+                    </div>
+                </div>
+                <iframe width="520" height="390" src="" frameborder="0"></iframe>
+            </div>
         </div>
-        </div>
-        <div class="feature-section-title">Sponsorisé par</div>
+        <div class="feature-section-title">
+            Sponsorisé par</div>
         <div class="feature-description-text js-sponsor">
         </div>
-        <div class="feature-section-title">Developpé par</div>
+        <div class="feature-section-title">
+            Developpé par</div>
         <div class="feature-description-text development">
-        @foreach (var participation in Model.Participations)
-        {
-            <div class="development-company">   
-                @participation.Value[0].Contact.Organization.Name : @string.Join(", ", participation.Value)
-            </div>
-        }
+            @foreach( var participation in Model.Participations )
+            {
+                <div class="development-company">
+                    @participation.Value[0].ContactRelation.Contact.Name (@participation.Value[0].ContactRelation.Organization.Name)
+                </div>
+            }
         </div>
     </div>
 </div>

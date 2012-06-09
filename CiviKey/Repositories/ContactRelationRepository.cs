@@ -14,8 +14,12 @@ namespace CiviKey.Repositories
             _c = c;
         }
 
-        public IQueryable<tContactRelation> All { get { return _c.tContactRelations ; } }
+        public IQueryable<tContact> OrganizationsFromContactId( int contactId )
+        {
+            return _c.tContactRelations.Where( y => y.ContactId == contactId ).Select(x => x.tContact);
+        }
 
+        public IQueryable<tContactRelation> All { get { return _c.tContactRelations; } }
         public tContactRelation ContactRelationFromContactRelationId( int contactRelationId )
         {
             return _c.tContactRelations.Where( x => x.Id == contactRelationId ).FirstOrDefault();
@@ -35,7 +39,7 @@ namespace CiviKey.Repositories
 
         internal IList<tContact> GetContactList()
         {
-            return All.Where(x=>x.ContactId==x.EntityId).Select(y=>y.tContact).ToList();
+            return All.Where( x => x.ContactId == x.EntityId ).Select( y => y.tContact ).ToList();
         }
     }
 }

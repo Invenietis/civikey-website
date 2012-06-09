@@ -14,6 +14,12 @@ namespace CiviKey.Repositories
             _c = c;
         }
 
+        public IQueryable<tContact> AllContactsFromEntityId( int entityId )
+        {
+            IList<int> contactsIdList = _c.tContactRelations.Where(x=>x.EntityId == entityId && x.ContactId != entityId).Select(x=>x.ContactId).ToList();
+            return _c.tContacts.Where( x => contactsIdList.Contains( x.Id ) );
+        }
+
         public IQueryable<tContact> All { get { return _c.tContacts; } }
 
         public tContact ContactFromContactId (int contactId )
