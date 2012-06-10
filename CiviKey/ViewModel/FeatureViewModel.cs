@@ -34,6 +34,7 @@ namespace CiviKey.ViewModel
             _sections = model.tSections.Select( s => new SectionViewModel( s ) ).ToList();
             _videos = model.tVideos.Select( v => new VideoViewModel( v ) ).ToList();
 
+            //TODO :  a vérifier, je ne retrouve pas Jean-Loup dans le developpement de l'object explorer
             Participations = new Dictionary<int, IList<ParticipationViewModel>>();
             foreach( var participation in model.tParticipations.Where( x => x.PartType == ParticipationType.Development.ToString() ) )
             {

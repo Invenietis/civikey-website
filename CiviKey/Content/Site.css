@@ -607,7 +607,6 @@ ul
 
 .release-info-container
 {
-    margin-left: 10px;
     float: right;
     background-color: #4f4f4f; 
     color: #fff;
@@ -657,7 +656,7 @@ ul
 .progress-timebar
 {
     float: left;
-    margin-right: 15px;
+    margin-right: 60px;
     width: 11%;
 }
 
