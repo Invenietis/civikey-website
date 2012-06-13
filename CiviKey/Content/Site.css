@@ -594,19 +594,22 @@ ul
 
 .release-info-container
 {
+    background-color: #E4E4E4;
     float: right;
-    background-color: #4f4f4f; 
+    margin: 0px 0px 0px 30px;
     color: #fff;
     font-family: Estrangelo Edessa;
     text-align: center;
+    width:139px;
 }
 
-.release-info-container h3
+.release-info-container p
 {
-    color: #fff;
+    color: #4b4b4b;
     font-family: Estrangelo Edessa;
     text-align: center;
-    margin:0 1px 0 1px;
+    margin:15px 1px 0px 1px;
+    font-size: 21px;
 }
 
 
@@ -618,13 +621,13 @@ ul
 
 #featureList
 {
-    width: 80%;
+    width: 83%;
     float: left;
 }
 
 .progress-list-of-features
 {
-    width: 80%;
+    width: 680px;
     float: left;
 }
 
@@ -643,7 +646,7 @@ ul
 .progress-timebar
 {
     float: left;
-    margin-right: 60px;
+    margin-right: 30px;
     width: 11%;
 }
 
@@ -722,7 +725,7 @@ a.timeline-unselected
 
 .progress-list-line
 {
-    margin-top:10px;
+    margin:20px 0px 20px 16px;
     position:relative;
 }
 
@@ -1227,7 +1230,6 @@ label
     padding: 0px 5px 0px 0px; 
     height: auto; 
     overflow: hidden;
-    margin-top: 10px
 }
 
 
@@ -1246,4 +1248,39 @@ label
 ul#menu li.menuelem.selected
 {
     color:#4d98df;
+}
+
+.progress-list-of-features h2
+{
+    background-color:#e4e4e4;
+    color:#4b4b4b;
+    margin:0px 0px 10px 0px;
+    padding: 5px 0px 0px 5px;
+    font-family:Estrangelo Edessa;
+    font-weight:normal;
+    cursor:pointer;
+}
+
+.roadmap-telecharger
+{
+    border-top: 10px solid #fff;
+    text-align:left;
+    font-size:19px;
+    padding: 7px 0px 5px 8px;
+    background-image:url('/Content/images/feature-download.png');
+    background-repeat:no-repeat;
+    background-position:right;
+    color:#4b4b4b;
+    cursor:pointer;
+    background-color:#e4e4e4;
+}
+
+.feature-download-btn
+{
+    width:139px;
+    height:45px;
+    background-image:url('/Content/images/feature-download-btn.png');
+    cursor:pointer;
+    background-repeat:no-repeat;
+    background-position:center;
 }
