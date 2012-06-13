@@ -231,7 +231,7 @@ ul#menu li
     list-style: none;
     font-size: 20px;
     color: #fff;
-    margin: 0px 20px 0px 20px;
+    padding: 22px 20px 0px 20px;
     cursor: pointer;
 }
 
@@ -435,20 +435,20 @@ ul
 
 .Progress
 {
-    width: 140px;
+    width: 124px;
     left: 116px;
 }
 
 .Partners
 {
     width: 131px;
-    left: 260px;
+    left: 244px;
 }
 
 .Contact
 {
     width: 166px;
-    left: 395px;
+    left: 379px;
 }
 
 .moving-element-container
@@ -1157,4 +1157,9 @@ label
 .partners-elem-text p
 {
     margin:0px;
+}
+
+ul#menu li.menuelem.selected
+{
+    color:#4d98df;
 }
