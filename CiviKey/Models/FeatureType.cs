@@ -7,10 +7,9 @@ namespace CiviKey.Models
 {
     public enum FeatureType
     {
-        None = 0,
-        New = 1,
-        Update = 2,
-        Available = 3,
-        Unavailable = 4
+        Unavailable = 4,
+        Update = 3,
+        New = 2,
+        Available = 1
     }
 }

@@ -20,5 +20,18 @@ namespace CiviKey.Repositories
         {
             return All.Where( x => x.Id == roadmapId ).FirstOrDefault();
         }
+
+        public tRoadMap GetLastRoadmap()
+        {
+            tRoadMap lastRoadmap = null;
+            foreach( var roadmap in All )
+            {
+                if( lastRoadmap == null || new Version( lastRoadmap.Name ) < new Version( roadmap.Name ) )
+                {
+                    lastRoadmap = roadmap;
+                }
+            }
+            return lastRoadmap;
+        }
     }
 }

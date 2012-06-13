@@ -23,7 +23,7 @@
             {
                 <div class="progress-list-elem @if( ( j + 1 ) % 3 == 0 )
                                                {@("last-feature")}" data-id="@Model.ElementAt(j).Id">
-                    @Html.Partial( "_FeatureDisplay", Model.ElementAt(j) )
+                    @Html.Partial( "_FeatureView", Model.ElementAt(j) )
                 </div>
             }
             <div style="clear: both;">
