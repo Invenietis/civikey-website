@@ -29,6 +29,7 @@ namespace CiviKey.Models
         public int Progress { get; set; }
         public System.DateTime CreationDate { get; set; }
         public int IdRoadMap { get; set; }
+        public int Type { get; set; }
     
         public virtual ICollection<tSection> tSections { get; set; }
         public virtual ICollection<tVideo> tVideos { get; set; }
