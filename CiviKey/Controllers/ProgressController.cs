@@ -33,7 +33,7 @@ namespace CiviKey.Controllers
             ViewBag.Roadmaps = _roadmapRepo.All.ToList().Reverse<tRoadMap>();
             ViewBag.Section = Sections.Progress;
 
-            RoadmapViewModel vm = new RoadmapViewModel( _featureRepo.All.ToList(), _partnerRepo, _contactRepo, _contactRelationRepo );
+            CategorizedRoadmapViewModel vm = new CategorizedRoadmapViewModel( _roadmapRepo.GetLastRoadmap().tFeatures, _partnerRepo, _contactRepo, _contactRelationRepo );
             return View( vm );
         }
 
@@ -42,13 +42,16 @@ namespace CiviKey.Controllers
             ViewBag.CurrentRoadmapId = id;
             ViewBag.Roadmaps = _roadmapRepo.All.ToList().Reverse<tRoadMap>();
             ViewBag.Section = Sections.Progress;
-            RoadmapViewModel vm;
-            if( id.HasValue && id != 0)
-                vm = new RoadmapViewModel( _roadmapRepo.All.Where( x => x.Id == id.Value ).FirstOrDefault(), _partnerRepo,_contactRepo, _contactRelationRepo);
-            else
-                vm = new RoadmapViewModel( _featureRepo.All.ToList(), _partnerRepo, _contactRepo, _contactRelationRepo );
+            
+            if( id.HasValue && id != 0 )
+            {
+                RoadmapViewModel rvm = new RoadmapViewModel( _roadmapRepo.GetRoadmapFromId(id.Value), _partnerRepo, _contactRepo, _contactRelationRepo );
+                return PartialView( "_RoadmapView", rvm );
+            }
 
-            return PartialView( "_FeatureList", vm );
+            CategorizedRoadmapViewModel cvm = new CategorizedRoadmapViewModel( _roadmapRepo.GetLastRoadmap().tFeatures, _partnerRepo, _contactRepo, _contactRelationRepo );
+            return PartialView( "_CategorizedRoadmapView", cvm );
+            
         }
     }
 }

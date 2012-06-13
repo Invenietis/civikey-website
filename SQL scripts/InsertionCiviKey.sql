@@ -1,4 +1,4 @@
---DBCC CHECKIDENT (tContact, reseed, 0)
+ï»¿--DBCC CHECKIDENT (tContact, reseed, 0)
 --DBCC CHECKIDENT (tContactRelation, reseed, 0)
 --DBCC CHECKIDENT (tParticipation, reseed, 0)
 
@@ -12,13 +12,13 @@
 insert into dbo.tContact(Name,Description,LogoPath)values('Vlad Sargu','','');--1
 insert into dbo.tContact(Name,Description,LogoPath)values('Jean-Loup Kahloun','','');
 insert into dbo.tContact(Name,Description,LogoPath)values('Philippe Lepadellec','','');
-insert into dbo.tContact(Name,Description,LogoPath)values('François Bessaguet','',''); --4
+insert into dbo.tContact(Name,Description,LogoPath)values('FranÃ§ois Bessaguet','',''); --4
 
-insert into dbo.tContact(Name,Description,LogoPath)values('Invenietis','<p>Invenietis, SSII créée en 2006, est impliquée dans le projet CiviKey depuis son lancement à INTECH INFO en Septembre de la même année.</br>L''entreprise porte ce projet bénévolement en réalisant la majorité des développements. Elle suit également des étudiants désirant développer de nouvelles fonctionnalités pour le CiviKey, pour les aider dans leur démarche.</p>',''); --5
-insert into dbo.tContact(Name,Description,LogoPath)values('Fondation Steria','La fondation Stéria',''); --6
-insert into dbo.tContact(Name,Description,LogoPath)values('Alcatel-Lucent','Société Alcatel-Lucent',''); --7
-insert into dbo.tContact(Name,Description,LogoPath)values('INTECH INFO','Ecole d''ingénierie informatique membre du groupe ESIEA.',''); --8
-insert into dbo.tContact(Name,Description,LogoPath)values('PFNT','La PlateForme des Nouvelles Technologies de l''hôpital de Garches',''); --9
+insert into dbo.tContact(Name,Description,LogoPath)values('Invenietis','<p>Invenietis, SSII crÃ©Ã©e en 2006, est impliquÃ©e dans le projet CiviKey depuis son lancement Ã  INTECH INFO en Septembre de la mÃªme annÃ©e.</br>L''entreprise porte ce projet bÃ©nÃ©volement en rÃ©alisant la majoritÃ© des dÃ©veloppements. Elle suit Ã©galement des Ã©tudiants dÃ©sirant dÃ©velopper de nouvelles fonctionnalitÃ©s pour le CiviKey, pour les aider dans leur dÃ©marche.</p>',''); --5
+insert into dbo.tContact(Name,Description,LogoPath)values('Fondation Steria','La fondation StÃ©ria',''); --6
+insert into dbo.tContact(Name,Description,LogoPath)values('Alcatel-Lucent','SociÃ©tÃ© Alcatel-Lucent',''); --7
+insert into dbo.tContact(Name,Description,LogoPath)values('INTECH INFO','Ecole d''ingÃ©nierie informatique membre du groupe ESIEA.',''); --8
+insert into dbo.tContact(Name,Description,LogoPath)values('PFNT','La PlateForme des Nouvelles Technologies de l''hÃ´pital de Garches',''); --9
 insert into dbo.tContact(Name,Description,LogoPath)values('Antoine Blanchet','',''); --10
 insert into dbo.tContact(Name,Description,LogoPath)values('Isaac Duplan','',''); --11
 insert into dbo.tContact(Name,Description,LogoPath)values('Objectif Aide','L''association Objectf Aide',''); --12
@@ -49,10 +49,10 @@ insert into dbo.tRoadMap(Name)values('2.5.1');
 
 
 --Creating features
-insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('AutoClick','1.0.0',100,DATEADD(year,-1,GetDate()),1,'<p>Cette fonctionnalité permet de simuler des clics souris, sans avoir a utiliser de contacteur, l''immobilité de la souris pendant un temps configurable lance le clic automatiquement. <br/> Un cartouche permet de selectionner le type de clic que l''on veut effectuer : clic gauche, clic droit, double clic ou encore glisser-déposer.<br/> Pour plus d''informations, regardez le screencast ci-dessous.</p><p>Cette fonctionnalité permet de simuler des clics souris, sans avoir a utiliser de contacteur, l''immobilité de la souris pendant un temps configurable lance le clic automatiquement. <br/> Un cartouche permet de selectionner le type de clic que l''on veut effectuer : clic gauche, clic droit, double clic ou encore glisser-déposer.<br/> Pour plus d''informations, regardez le screencast ci-dessous.</p>')
-insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('Clavier','1.0.0',100,DATEADD(year,-1,GetDate()),1,'<p>Le clavier de CiviKey, celui-ci affiche un clavier configuré via un fichier xml. En editant ce fichier, on peut ajouter ou modifier des touches, pour leur faire envoyer le texte souhaité. <br/>La couleur des touches est modifiable. <br/> Autre fonctionnalités : <br/> le clavier peut être configuré pour se minimiser au bout d''un temps défini d''inaction, minimisant l''espace pris par le clavier sur l''écran.</p>')
-insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('Object Explorer','1.0.0',100,DATEADD(year,-1,GetDate()),1,'<p>Outil de configuration de CiviKey, reservé aux utilisateurs confirmés, il permet de décider du lancement automatique d''une fonctionnalité, et de visualiser l''état du système.</p>')
-insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('Automatic update','1.0.0',100,DATEADD(year,-1,GetDate()),1,'<p>Mise à jour automatique de CiviKey.</p>')
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type) values('AutoClick','1.0.0',100,DATEADD(year,-1,GetDate()),1,'<p>Cette fonctionnalitÃ© permet de simuler des clics souris, sans avoir a utiliser de contacteur, l''immobilitÃ© de la souris pendant un temps configurable lance le clic automatiquement. <br/> Un cartouche permet de selectionner le type de clic que l''on veut effectuer : clic gauche, clic droit, double clic ou encore glisser-dÃ©poser.<br/> Pour plus d''informations, regardez le screencast ci-dessous.</p><p>Cette fonctionnalitÃ© permet de simuler des clics souris, sans avoir a utiliser de contacteur, l''immobilitÃ© de la souris pendant un temps configurable lance le clic automatiquement. <br/> Un cartouche permet de selectionner le type de clic que l''on veut effectuer : clic gauche, clic droit, double clic ou encore glisser-dÃ©poser.<br/> Pour plus d''informations, regardez le screencast ci-dessous.</p>', 2)
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type) values('Clavier','1.0.0',100,DATEADD(year,-1,GetDate()),1,'<p>Le clavier de CiviKey, celui-ci affiche un clavier configurÃ© via un fichier xml. En editant ce fichier, on peut ajouter ou modifier des touches, pour leur faire envoyer le texte souhaitÃ©. <br/>La couleur des touches est modifiable. <br/> Autre fonctionnalitÃ©s : <br/> le clavier peut Ãªtre configurÃ© pour se minimiser au bout d''un temps dÃ©fini d''inaction, minimisant l''espace pris par le clavier sur l''Ã©cran.</p>', 2)
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type) values('Object Explorer','1.0.0',100,DATEADD(year,-1,GetDate()),1,'<p>Outil de configuration de CiviKey, reservÃ© aux utilisateurs confirmÃ©s, il permet de dÃ©cider du lancement automatique d''une fonctionnalitÃ©, et de visualiser l''Ã©tat du systÃ¨me.</p>', 2)
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type) values('Automatic update','1.0.0',100,DATEADD(year,-1,GetDate()),1,'<p>Mise Ã  jour automatique de CiviKey.</p>', 2)
 --OK
 --Creating sections in the features
 
@@ -72,14 +72,14 @@ insert into dbo.tSection(Name,FeatureId) values('Plugin principal',4); --8
 
 insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('AutoClick','1.0.0','Plugin permettant de simuler des clics souris', DateAdd(year,-1,GetDate())) --1
 insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('MouseWatcher','1.0.0','Plugin permettant de compter le temps d''inaction de la souris', DateAdd(year,-1,GetDate())) --2
-insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('PointerDeviceDriver','1.0.0','Plugin permettant d''écouter les evenements souris', DateAdd(year,-1,GetDate())) --3
+insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('PointerDeviceDriver','1.0.0','Plugin permettant d''Ã©couter les evenements souris', DateAdd(year,-1,GetDate())) --3
 
-insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('CK.KeyboardContext','1.0.0','Le modèle de claviers', DateAdd(year,-1,GetDate())) --4
+insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('CK.KeyboardContext','1.0.0','Le modÃ¨le de claviers', DateAdd(year,-1,GetDate())) --4
 insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('Simple skin','1.0.0','Le plugin d''affichage basique de CiviKey', DateAdd(year,-1,GetDate())) --5
 insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('Simple skin editor','1.0.0','Edition des styles de touches du clavier', DateAdd(year,-1,GetDate())) --6
 
-insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('Object Explorer','1.0.0','Plugin principal de la fonctionnalité Object Explorer', DateAdd(year,-1,GetDate())) --7
-insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('Update Checker','1.0.0','Plugin principal de la fonctionnalité Automatic update', DateAdd(year,-1,GetDate())) --8
+insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('Object Explorer','1.0.0','Plugin principal de la fonctionnalitÃ© Object Explorer', DateAdd(year,-1,GetDate())) --7
+insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('Update Checker','1.0.0','Plugin principal de la fonctionnalitÃ© Automatic update', DateAdd(year,-1,GetDate())) --8
 --OK
 --Linking plugins and features
 
@@ -126,8 +126,8 @@ insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(9,4) --A
 --OK
 --Creating categories
 insert into dbo.tCategory(Name) values ('Aide au clic') --1
-insert into dbo.tCategory(Name) values ('Aide à la saisie') --2
-insert into dbo.tCategory(Name) values ('Aide au déplacement du pointeur') --3
+insert into dbo.tCategory(Name) values ('Aide Ã  la saisie') --2
+insert into dbo.tCategory(Name) values ('Aide au dÃ©placement du pointeur') --3
 insert into dbo.tCategory(Name) values ('Aide visuelle') --4
 insert into dbo.tCategory(Name) values ('Noyau') --5
 --OK
@@ -155,23 +155,23 @@ insert into dbo.tRoadMap(Name)values('2.5.2'); ---------------------------------
 --Creating features
 --Old features
 --5
-insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('AutoClick','1.0.0',100,DATEADD(year,-1,GetDate()),2,'<p>Cette fonctionnalité permet de simuler des clics souris, sans avoir a utiliser de contacteur, l''immobilité de la souris pendant un temps configurable lance le clic automatiquement. <br/> Un cartouche permet de selectionner le type de clic que l''on veut effectuer : clic gauche, clic droit, double clic ou encore glisser-déposer.<br/> Pour plus d''informations, regardez le screencast ci-dessous.</p><p>Cette fonctionnalité permet de simuler des clics souris, sans avoir a utiliser de contacteur, l''immobilité de la souris pendant un temps configurable lance le clic automatiquement. <br/> Un cartouche permet de selectionner le type de clic que l''on veut effectuer : clic gauche, clic droit, double clic ou encore glisser-déposer.<br/> Pour plus d''informations, regardez le screencast ci-dessous.</p>')
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type) values('AutoClick','1.0.0',100,DATEADD(year,-1,GetDate()),2,'<p>Cette fonctionnalitÃ© permet de simuler des clics souris, sans avoir a utiliser de contacteur, l''immobilitÃ© de la souris pendant un temps configurable lance le clic automatiquement. <br/> Un cartouche permet de selectionner le type de clic que l''on veut effectuer : clic gauche, clic droit, double clic ou encore glisser-dÃ©poser.<br/> Pour plus d''informations, regardez le screencast ci-dessous.</p><p>Cette fonctionnalitÃ© permet de simuler des clics souris, sans avoir a utiliser de contacteur, l''immobilitÃ© de la souris pendant un temps configurable lance le clic automatiquement. <br/> Un cartouche permet de selectionner le type de clic que l''on veut effectuer : clic gauche, clic droit, double clic ou encore glisser-dÃ©poser.<br/> Pour plus d''informations, regardez le screencast ci-dessous.</p>', 3)
 --6
-insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('Clavier','1.0.0',50,DATEADD(year,-1,GetDate()),2,'<p>Le clavier de CiviKey, celui-ci affiche un clavier configuré via un fichier xml. En editant ce fichier, on peut ajouter ou modifier des touches, pour leur faire envoyer le texte souhaité. <br/>La couleur des touches est modifiable. <br/> Autre fonctionnalités : <br/> le clavier peut être configuré pour se minimiser au bout d''un temps défini d''inaction, minimisant l''espace pris par le clavier sur l''écran.</p>')
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type) values('Clavier','1.0.0',50,DATEADD(year,-1,GetDate()),2,'<p>Le clavier de CiviKey, celui-ci affiche un clavier configurÃ© via un fichier xml. En editant ce fichier, on peut ajouter ou modifier des touches, pour leur faire envoyer le texte souhaitÃ©. <br/>La couleur des touches est modifiable. <br/> Autre fonctionnalitÃ©s : <br/> le clavier peut Ãªtre configurÃ© pour se minimiser au bout d''un temps dÃ©fini d''inaction, minimisant l''espace pris par le clavier sur l''Ã©cran.</p>', 1)
 --7
-insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('Object Explorer','1.0.0',50,DATEADD(year,-1,GetDate()),2,'<p>Outil de configuration de CiviKey, reservé aux utilisateurs confirmés, il permet de décider du lancement automatique d''une fonctionnalité, et de visualiser l''état du système.</p>')
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type) values('Object Explorer','1.0.0',50,DATEADD(year,-1,GetDate()),2,'<p>Outil de configuration de CiviKey, reservÃ© aux utilisateurs confirmÃ©s, il permet de dÃ©cider du lancement automatique d''une fonctionnalitÃ©, et de visualiser l''Ã©tat du systÃ¨me.</p>', 1)
 --8
-insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('Automatic update','1.0.0',50,DATEADD(year,-1,GetDate()),2,'<p>Mise à jour automatique de CiviKey.</p>')
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type) values('Automatic update','1.0.0',50,DATEADD(year,-1,GetDate()),2,'<p>Mise Ã  jour automatique de CiviKey.</p>', 3)
 
 --New features
 --9
-insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('Prédiction','1.0.0',100,DATEADD(year,-1,GetDate()),2,'<p>Cette fonctionnalité affiche les mots les plus probables considérant les touches selectionnées précédemment via le clavier CiviKey. Cette prédiction s''adapte à l''utilisateur, en permettant d''enregistrer d''autres mots. Elle augmente automatiquement la pondération des mots les plus utilisés.</p>')
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type) values('PrÃ©diction','1.0.0',100,DATEADD(year,-1,GetDate()),2,'<p>Cette fonctionnalitÃ© affiche les mots les plus probables considÃ©rant les touches selectionnÃ©es prÃ©cÃ©demment via le clavier CiviKey. Cette prÃ©diction s''adapte Ã  l''utilisateur, en permettant d''enregistrer d''autres mots. Elle augmente automatiquement la pondÃ©ration des mots les plus utilisÃ©s.</p>', 2)
 --10
-insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('Défilement clavier','1.0.0',50,DATEADD(year,-1,GetDate()),2,'<p>Les touches du clavier sont ''allumés'' l''une après l''autre, pour permettre à un utilsiateur équipé d''un simple contacteur d''activer des touches du clavier CiviKey. Permet de défiler sur la panel contenant la prédiction de mots.</p>')
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type) values('DÃ©filement clavier','1.0.0',50,DATEADD(year,-1,GetDate()),2,'<p>Les touches du clavier sont ''allumÃ©s'' l''une aprÃ¨s l''autre, pour permettre Ã  un utilsiateur Ã©quipÃ© d''un simple contacteur d''activer des touches du clavier CiviKey. Permet de dÃ©filer sur la panel contenant la prÃ©diction de mots.</p>', 2)
 --11
-insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('Défilement souris','1.0.0',50,DATEADD(year,-1,GetDate()),2,'<p>Permet à un utilisateur équipé d''un simple contacteur de déplacer la souris, via un système de défilement sur les différentes zones de l''écran. Peut-être associé à l''auto clic pour lancer différents types de clics.</p>')
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type) values('DÃ©filement souris','1.0.0',50,DATEADD(year,-1,GetDate()),2,'<p>Permet Ã  un utilisateur Ã©quipÃ© d''un simple contacteur de dÃ©placer la souris, via un systÃ¨me de dÃ©filement sur les diffÃ©rentes zones de l''Ã©cran. Peut-Ãªtre associÃ© Ã  l''auto clic pour lancer diffÃ©rents types de clics.</p>', 2)
 --12
-insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description) values('Assistant création','1.0.0',50,DATEADD(year,-1,GetDate()),2,'<p>Permet de créer de nouveaux claviers, en choisissant les touches, leur taille et leur disposition.</p>')
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type) values('Assistant crÃ©ation','1.0.0',50,DATEADD(year,-1,GetDate()),2,'<p>Permet de crÃ©er de nouveaux claviers, en choisissant les touches, leur taille et leur disposition.</p>', 2)
 
 --Creating sections in the features
 --Old features
@@ -189,15 +189,15 @@ insert into dbo.tSection(Name,FeatureId) values('Plugin principal',8); --16
 
 --New features
 insert into dbo.tSection(Name,FeatureId) values('Affichage',9); --17
-insert into dbo.tSection(Name,FeatureId) values('Moteur de prédiction',9); --18
+insert into dbo.tSection(Name,FeatureId) values('Moteur de prÃ©diction',9); --18
 insert into dbo.tSection(Name,FeatureId) values('Autres',9); --19
 
 insert into dbo.tSection(Name,FeatureId) values('Affichage',10); --20
-insert into dbo.tSection(Name,FeatureId) values('Logique de défilement',10); --21
+insert into dbo.tSection(Name,FeatureId) values('Logique de dÃ©filement',10); --21
 insert into dbo.tSection(Name,FeatureId) values('Autres',10); --22
 
 insert into dbo.tSection(Name,FeatureId) values('Affichage',11); --23
-insert into dbo.tSection(Name,FeatureId) values('Logique de défilement',11); --24
+insert into dbo.tSection(Name,FeatureId) values('Logique de dÃ©filement',11); --24
 insert into dbo.tSection(Name,FeatureId) values('Autres',11); --25
 
 insert into dbo.tSection(Name,FeatureId) values('Affichage',12); --26
@@ -207,14 +207,14 @@ insert into dbo.tSection(Name,FeatureId) values('Autres',12); --27
 
 --insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('AutoClick','1.0.0','Plugin permettant de simuler des clics souris', DateAdd(year,-1,GetDate())) --1
 --insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('MouseWatcher','1.0.0','Plugin permettant de compter le temps d''inaction de la souris', DateAdd(year,-1,GetDate())) --2
---insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('PointerDeviceDriver','1.0.0','Plugin permettant d''écouter les evenements souris', DateAdd(year,-1,GetDate())) --3
+--insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('PointerDeviceDriver','1.0.0','Plugin permettant d''Ã©couter les evenements souris', DateAdd(year,-1,GetDate())) --3
 
---insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('CK.KeyboardContext','1.0.0','Le modèle de claviers', DateAdd(year,-1,GetDate())) --4
+--insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('CK.KeyboardContext','1.0.0','Le modÃ¨le de claviers', DateAdd(year,-1,GetDate())) --4
 --insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('Simple skin','1.0.0','Le plugin d''affichage basique de CiviKey', DateAdd(year,-1,GetDate())) --5
 --insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('Simple skin editor','1.0.0','Edition des styles de touches du clavier', DateAdd(year,-1,GetDate())) --6
 
---insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('Object Explorer','1.0.0','Plugin principal de la fonctionnalité Object Explorer', DateAdd(year,-1,GetDate())) --7
---insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('Update Checker','1.0.0','Plugin principal de la fonctionnalité Automatic update', DateAdd(year,-1,GetDate())) --8
+--insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('Object Explorer','1.0.0','Plugin principal de la fonctionnalitÃ© Object Explorer', DateAdd(year,-1,GetDate())) --7
+--insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('Update Checker','1.0.0','Plugin principal de la fonctionnalitÃ© Automatic update', DateAdd(year,-1,GetDate())) --8
 
 --Linking plugins and features
 
@@ -234,11 +234,11 @@ insert into dbo.tSection(Name,FeatureId) values('Autres',12); --27
 
 --10
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Sponsoring', 50, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(10,9) --Invenietis has sponsored 50% of the Prédiction Feature 
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(10,9) --Invenietis has sponsored 50% of the PrÃ©diction Feature 
 
 --11
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 50, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(11,9) --Alcatel has sponsored 50% of the Prédiction Feature
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(11,9) --Alcatel has sponsored 50% of the PrÃ©diction Feature
 
 --12
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
@@ -265,9 +265,9 @@ insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (5,7) --OE - noy
 insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (5,8) --Update checker - noyau
 
 insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (2,9) --Prediction
-insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (2,10) --Défilement clavier 
-insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (3,11) --Défilement souris
-insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (5,12) --Assistant création
+insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (2,10) --DÃ©filement clavier 
+insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (3,11) --DÃ©filement souris
+insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (5,12) --Assistant crÃ©ation
 --OK
 --Old features
 insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',5,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/fzzjgBAaWZw?rel=0')

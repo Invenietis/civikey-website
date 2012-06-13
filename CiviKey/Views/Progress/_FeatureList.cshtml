@@ -1,3 +1,5 @@
+
+C:\Code\Dev4\civikey-website>@git.exe %*
 ﻿@model CiviKey.ViewModel.RoadmapViewModel
 @{
     int lineCount = (int)Math.Ceiling( (double)Model.Features.Count / (double)4 );
@@ -56,3 +58,9 @@
 </div>
     }
 }
+
+C:\Code\Dev4\civikey-website>@set ErrorLevel=%ErrorLevel%
+
+C:\Code\Dev4\civikey-website>@rem Restore the original console codepage.
+
+C:\Code\Dev4\civikey-website>@chcp %cp_oem% > nul < nul

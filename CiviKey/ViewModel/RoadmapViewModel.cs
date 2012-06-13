@@ -10,30 +10,89 @@ namespace CiviKey.ViewModel
     public class RoadmapViewModel
     {
         ICollection<FeatureViewModel> _features;
+        ICollection<FeatureViewModel> _newFeatures;
+        ICollection<FeatureViewModel> _updatedFeatures;
+        ICollection<FeatureViewModel> _availableFeatures;
+        ICollection<FeatureViewModel> _unavailableFeatures;
         string _name;
 
         public RoadmapViewModel( tRoadMap model, PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo )
+            : this( model.tFeatures, partnerRepo, contactRepo, contactRelationRepo, model.Name )
         {
-            _name = model.Name;
-            _features = new List<FeatureViewModel>();
-            foreach( tFeature feature in model.tFeatures )
-            {
-                _features.Add( new FeatureViewModel( feature, partnerRepo, contactRepo, contactRelationRepo ) );
-            }
         }
 
+        /// <summary>
+        /// This constructor sets "All" as roadmap name.
+        /// </summary>
+        /// <param name="features"></param>
+        /// <param name="partnerRepo"></param>
+        /// <param name="contactRepo"></param>
+        /// <param name="contactRelationRepo"></param>
         public RoadmapViewModel( ICollection<tFeature> features, PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo )
+            : this( features, partnerRepo, contactRepo, contactRelationRepo, "All" )
         {
-            _name = "All";
+        }
+
+
+        public RoadmapViewModel( ICollection<tFeature> features, PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo, string name )
+        {
+            //If we are showing the "All" roadmap, listing all of CiviKey's feature at the moment, we have to take 
+            //if( name == "All" )
+            //{
+            //    HashSet<string> featureNames = new HashSet<string>();
+            //    foreach( var item in features.Select( x => x.Title ) )
+            //    {
+            //        featureNames.Add( item );
+            //    }
+
+            //    ICollection<tFeature> trimmedFeatures = new List<tFeature>();
+            //    foreach( var featureName in featureNames )
+            //    {
+            //        tFeature feature = features.Where( x => x.Title == featureName ).OrderByDescending( y => y.Type ).First();
+            //        trimmedFeatures.Add( feature );
+            //    }
+            //    features = trimmedFeatures;
+            //}
+
+            _name = name;
+            PopulateCollections( partnerRepo, contactRepo, contactRelationRepo, features );
+        }
+
+        private void PopulateCollections( PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo, ICollection<tFeature> features )
+        {
             _features = new List<FeatureViewModel>();
+            _newFeatures = new List<FeatureViewModel>();
+            _updatedFeatures = new List<FeatureViewModel>();
+            _availableFeatures = new List<FeatureViewModel>();
+            _unavailableFeatures = new List<FeatureViewModel>();
+
             foreach( tFeature feature in features )
             {
-                _features.Add( new FeatureViewModel( feature, partnerRepo, contactRepo, contactRelationRepo ) );
+                FeatureViewModel vm = new FeatureViewModel( feature, partnerRepo, contactRepo, contactRelationRepo );
+                _features.Add( vm );
+                switch( vm.Type )
+                {
+                    case FeatureType.New:
+                        _newFeatures.Add( vm );
+                        break;
+                    case FeatureType.Update:
+                        _updatedFeatures.Add( vm );
+                        break;
+                    case FeatureType.Available:
+                        _availableFeatures.Add( vm );
+                        break;
+                    default:
+                        _unavailableFeatures.Add( vm );
+                        break;
+                }
             }
         }
-
 
         public string Name { get { return _name; } }
         public ICollection<FeatureViewModel> Features { get { return _features; } }
+        public ICollection<FeatureViewModel> NewFeatures { get { return _newFeatures; } }
+        public ICollection<FeatureViewModel> UpdatedFeatures { get { return _updatedFeatures; } }
+        public ICollection<FeatureViewModel> AvailableFeatures { get { return _availableFeatures; } }
+        public ICollection<FeatureViewModel> UnavailableFeatures { get { return _unavailableFeatures; } }
     }
 }

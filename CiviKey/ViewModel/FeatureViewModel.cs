@@ -22,26 +22,56 @@ namespace CiviKey.ViewModel
             GenerateViewModels( model );
         }
 
+        ParticipationViewModel _mainDevelopementParticipation;
+        ContactViewModel _mainDevelopingCompany;
+        public ContactViewModel MainDeveloper { get { return _mainDevelopingCompany; } }
+
+        public DateTime CreationDate { get { return _model.CreationDate; } }
+        public int Id { get { return _model.Id; } }
+        public int Progress { get { return _model.Progress; } }
+        public string Title { get { return _model.Title; } }
+        public Version Version { get { return new Version( _model.Version ); } }
+        public string Description { get { return _model.Description; } }
+        FeatureType _featureType;
+        public FeatureType Type { get { return _featureType; } }
+
+        IList<CategoryViewModel> _categories;
+        public IList<CategoryViewModel> Categories { get { return _categories; } }
+
+        IList<VideoViewModel> _videos;
+        public IList<VideoViewModel> Videos { get { return _videos; } }
+
+        IList<ParticipationViewModel> _developers;
+        public IList<ParticipationViewModel> Developers { get { return _developers; } }
+
+        public IDictionary<int, IList<ParticipationViewModel>> Participations { get; private set; }
+
+        IList<ParticipationViewModel> _sponsors;
+        public IList<ParticipationViewModel> Sponsors { get { return _sponsors; } }
+
+        IList<SectionViewModel> _sections;
+        public IList<SectionViewModel> Sections { get { return _sections; } }
+
         private void GenerateViewModels( tFeature model )
         {
+            if( !Enum.TryParse( model.Type.ToString(), out _featureType ) ) _featureType = 0;
 
             _categories = model.tCategories.Select( c => new CategoryViewModel( c ) ).ToList();
 
             _sponsors = model.tParticipations.Where( x => x.PartType == ParticipationType.Sponsoring.ToString() )
-                .Select( p => new ParticipationViewModel(this, p, _partnerRepo, _contactRepo, _contactRelationRepo ) )
+                .Select( p => new ParticipationViewModel( this, p, _partnerRepo, _contactRepo, _contactRelationRepo ) )
                 .ToList();
 
             _sections = model.tSections.Select( s => new SectionViewModel( s ) ).ToList();
             _videos = model.tVideos.Select( v => new VideoViewModel( v ) ).ToList();
 
-            //TODO :  a vérifier, je ne retrouve pas Jean-Loup dans le developpement de l'object explorer
             Participations = new Dictionary<int, IList<ParticipationViewModel>>();
             foreach( var participation in model.tParticipations.Where( x => x.PartType == ParticipationType.Development.ToString() ) )
             {
-                ParticipationViewModel vm = new ParticipationViewModel(this, participation, _partnerRepo, _contactRepo, _contactRelationRepo );
+                ParticipationViewModel vm = new ParticipationViewModel( this, participation, _partnerRepo, _contactRepo, _contactRelationRepo );
                 if( _mainDevelopementParticipation == null ) _mainDevelopementParticipation = vm;
                 if( participation.Percentage > _mainDevelopementParticipation.Percentage ) _mainDevelopementParticipation = vm;
-                
+
                 var existings = FindOrCreateCompany( participation.tContactRelation.EntityId );
                 existings.Add( vm );
             }
@@ -65,34 +95,6 @@ namespace CiviKey.ViewModel
             }
             return contacts;
         }
-
-        ParticipationViewModel _mainDevelopementParticipation;
-        ContactViewModel _mainDevelopingCompany;
-        public ContactViewModel MainDeveloper { get { return _mainDevelopingCompany; } }
-
-        public DateTime CreationDate { get { return _model.CreationDate; } }
-        public int Id { get { return _model.Id; } }
-        public int Progress { get { return _model.Progress; } }
-        public string Title { get { return _model.Title; } }
-        public Version Version { get { return new Version( _model.Version ); } }
-        public string Description { get { return _model.Description; } }
-
-        IList<CategoryViewModel> _categories;
-        public IList<CategoryViewModel> Categories { get { return _categories; } }
-
-        IList<VideoViewModel> _videos;
-        public IList<VideoViewModel> Videos { get { return _videos; } }
-
-        IList<ParticipationViewModel> _developers;
-        public IList<ParticipationViewModel> Developers { get { return _developers; } }
-
-        public IDictionary<int, IList<ParticipationViewModel>> Participations { get; private set; }
-
-        IList<ParticipationViewModel> _sponsors;
-        public IList<ParticipationViewModel> Sponsors { get { return _sponsors; } }
-
-        IList<SectionViewModel> _sections;
-        public IList<SectionViewModel> Sections { get { return _sections; } }
 
     }
 }

@@ -111,6 +111,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\FeatureType.cs" />
     <Compile Include="Models\Model.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -161,6 +162,7 @@
     <Compile Include="ViewModel\CategoryViewModel.cs" />
     <Compile Include="ViewModel\ContactRelationViewModel.cs" />
     <Compile Include="ViewModel\ContactViewModel.cs" />
+    <Compile Include="ViewModel\CategorizedRoadmapViewModel.cs" />
     <Compile Include="ViewModel\RoadmapViewModel.cs" />
     <Compile Include="ViewModel\FeatureViewModel.cs" />
     <Compile Include="ViewModel\ParticipationViewModel.cs" />
@@ -304,11 +306,13 @@
     <Content Include="Views\Project\Index.cshtml" />
     <Content Include="Views\Progress\Index.cshtml" />
     <Content Include="Views\Partners\Index.cshtml" />
-    <Content Include="Views\Progress\_FeatureDisplay.cshtml" />
+    <Content Include="Views\Progress\_FeatureView.cshtml" />
     <Content Include="Views\Contact\Index.cshtml" />
     <Content Include="Views\Feature\Index.cshtml" />
-    <Content Include="Views\Progress\_FeatureList.cshtml" />
+    <Content Include="Views\Progress\_RoadmapView.cshtml" />
     <Content Include="Views\Partners\_ContactDisplay.cshtml" />
+    <Content Include="Views\Progress\_FeatureCategoryView.cshtml" />
+    <Content Include="Views\Progress\_CategorizedRoadmapView.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
