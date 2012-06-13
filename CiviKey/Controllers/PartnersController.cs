@@ -12,11 +12,18 @@ namespace CiviKey.Controllers
     public class PartnersController : Controller
     {
         private ContactRelationRepository _entities;
-        
 
-        public PartnersController(ContactRelationRepository c)
+        PartnerRepository _partnerRepo;
+        ContactRepository _contactRepo;
+        ContactRelationRepository _contactRelationRepo;
+
+
+        public PartnersController( ContactRelationRepository c, PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo )
         {
             _entities = c;
+            _partnerRepo = partnerRepo;
+            _contactRepo = contactRepo;
+            _contactRelationRepo = contactRelationRepo;
         }
 
         public ActionResult Index()
@@ -27,10 +34,10 @@ namespace CiviKey.Controllers
 
 
             contactList = _entities.GetContactList();
-            
-            foreach (tContact i in contactList)
+
+            foreach( tContact contact in contactList )
             {
-                contactViewModel.Add(new ContactViewModel(i));
+                contactViewModel.Add( new ContactViewModel( contact, _partnerRepo, _contactRepo, _contactRelationRepo ) );
             }
 
             Random rng = new Random();
@@ -42,9 +49,9 @@ namespace CiviKey.Controllers
                 ContactViewModel value = contactViewModel[k];
                 contactViewModel[k] = contactViewModel[n];
                 contactViewModel[n] = value;
-            }  
+            }
 
-            return View(contactViewModel);
+            return View( contactViewModel );
         }
 
     }

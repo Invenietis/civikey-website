@@ -23,8 +23,8 @@ namespace CiviKey.Models
         public string Name { get; set; }
         public int FeatureId { get; set; }
     
-        public virtual ICollection<tPlugin> tPlugins { get; set; }
         public virtual tFeature tFeature { get; set; }
+        public virtual ICollection<tPlugin> tPlugins { get; set; }
     }
     
 }

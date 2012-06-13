@@ -23,10 +23,10 @@ namespace CiviKey.Models
         public int ContactId { get; set; }
         public int EntityId { get; set; }
         public System.DateTime StartDate { get; set; }
-        public System.DateTime EndDate { get; set; }
+        public Nullable<System.DateTime> EndDate { get; set; }
     
         public virtual tContact tContact { get; set; }
-        public virtual tContact tContact1 { get; set; }
+        public virtual tContact tOrganization { get; set; }
         public virtual ICollection<tParticipation> tParticipations { get; set; }
     }
     
