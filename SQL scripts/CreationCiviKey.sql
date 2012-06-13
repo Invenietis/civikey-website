@@ -1,4 +1,4 @@
-
+﻿
 drop table tVideo;
 drop table tTestimony;
 drop table tSectionPlugin;
