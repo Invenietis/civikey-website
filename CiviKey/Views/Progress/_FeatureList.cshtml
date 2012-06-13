@@ -1,58 +1,24 @@
 ﻿@model CiviKey.ViewModel.RoadmapViewModel
-@{
-    int lineCount = (int)Math.Ceiling( (double)Model.Features.Count / (double)4 );
-    int visibleLinesCount = lineCount;
-    if( lineCount > 2 )
-    {
-        visibleLinesCount = 2;
-    }
-    int lineFeatureCount = Model.Features.Count > 3 ? 3 : Model.Features.Count;
-    int index;
-    bool hasExtraFeatures = false;
-}
-
+           
 @*Feature display part*@
 <div class="progress-list-of-features" data-id="@ViewBag.CurrentRoadmapId">
     <h2>Nouvelles fonctionnalités</h2>
-    @for( index = 0; index < lineCount; index++ )
-    {
-        if( Model.Features.Count - index * lineFeatureCount < lineFeatureCount )
-        {
-            lineFeatureCount = Model.Features.Count - index * lineFeatureCount;
-        }
-        <div class="progress-list-line @if( index >= visibleLinesCount )
-                                       {
-                                           hasExtraFeatures = true; @("hidden-feature")}">
-            @for( int j = 3 * index; j < ( 3 * index + lineFeatureCount ); j++ )
-            {
-                <div class="progress-list-elem @if( ( j + 1 ) % 3 == 0 )
-                                               {@("last-feature")}" data-id="@Model.Features.ElementAt(j).Id">
-                    @Html.Partial( "_FeatureDisplay", Model.Features.ElementAt(j) )
-                </div>
-            }
-            <div style="clear: both;">
-            </div>
-        </div>
-    }
-    @if( hasExtraFeatures )
-    {
-        <div class="show-more-features">
-            show more</div>
-    }
-    
+    @Html.Partial( "_FeatureCategory", Model.NewFeatures )
     <h2>Fonctionnalités améliorées</h2>
+    @Html.Partial( "_FeatureCategory", Model.UpdatedFeatures )
     <h2>Fonctionnalités disponibles</h2>
+    @Html.Partial( "_FeatureCategory", Model.AvailableFeatures )
     <h2>Fonctionnalités non disponibles</h2>
+    @Html.Partial( "_FeatureCategory", Model.UnavailableFeatures )
 </div>
 
 @* Version Download part *@
 @{
     if( Model.Name != "All" )
     {
-    
-<div class="release-info-container">
-    <p>Version @Model.Name</p>
+        <div class="release-info-container">
+            <p>Version @Model.Name</p>
     <div class="feature-download-btn"></div>
-</div>
+        </div>
     }
 }
