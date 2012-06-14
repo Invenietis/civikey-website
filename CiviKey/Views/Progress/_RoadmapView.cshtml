@@ -2,24 +2,61 @@
 @{
     @*Feature display part*@
     <div class="progress-list-of-features" data-id="@ViewBag.CurrentRoadmapId">
-        <h2>Nouvelles fonctionnalités</h2>
-        <div class="feature-seperator"></div>
-        @Html.Partial( "_FeatureCategoryView", Model.NewFeatures )
-        <h2>Fonctionnalités améliorées</h2>
-        <div class="feature-seperator"></div>
-        @Html.Partial( "_FeatureCategoryView", Model.UpdatedFeatures )
-        <h2>Fonctionnalités disponibles</h2>
-        <div class="feature-seperator"></div>
-        @Html.Partial( "_FeatureCategoryView", Model.AvailableFeatures )
-        <h2>Fonctionnalités non disponibles</h2>
-        <div class="feature-seperator"></div>
-        @Html.Partial( "_FeatureCategoryView", Model.UnavailableFeatures )
+    <div class="accordion" id="accordion2">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+                            Nouvelles fonctionnalités
+                        </h2>
+                    </div>
+                    <div id="collapseOne" class="accordion-body collapse in" style=" height:0px;">
+                        <div class="accordion-inner">
+                            @Html.Partial( "_FeatureCategoryView", Model.NewFeatures )</div>
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                            Fonctionnalités améliorées
+                        </h2>
+                    </div>
+                    <div id="collapseTwo" class="accordion-body collapse in" style=" height:0px;">
+                        <div class="accordion-inner">
+                            @Html.Partial( "_FeatureCategoryView", Model.UpdatedFeatures ) </div>
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
+                            Fonctionnalités disponibles
+                        </h2>
+                    </div>
+                    <div id="collapseThree" class="accordion-body collapse in" style=" height:0px;">
+                        <div class="accordion-inner">
+                            @Html.Partial( "_FeatureCategoryView", Model.AvailableFeatures ) </div>
+                    </div>
+                </div>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
+                            Fonctionnalités non disponibles
+                        </h2>
+                    </div>
+                    <div id="collapseFour" class="accordion-body collapse in" style=" height:0px;">
+                        <div class="accordion-inner">
+                            @Html.Partial( "_FeatureCategoryView", Model.AvailableFeatures ) </div>
+                    </div>
+                </div>
+            </div>
     </div>
+    <script type="text/javascript">
+        $('.collapse').collapse({hide: true});
+        //$('#accordion2').collapse({ toggle: false });
+    </script>
 
     @* Version Download part *@
     <div class="release-info-container">
-        <h3>Téléchargement</h3>
         <p>Version @Model.Name</p>
-        <input type="button" value="Télécharger" />
+        <div class="feature-download-btn"></div>
     </div>
 }

@@ -596,11 +596,15 @@ ul
 {
     background-color: #E4E4E4;
     float: right;
-    margin: 0px 0px 0px 30px;
+    margin: 0px 0px 0px 0px;
     color: #fff;
     font-family: Estrangelo Edessa;
     text-align: center;
-    width:139px;
+    width:160px;
+    height:100px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
 }
 
 .release-info-container p
@@ -631,7 +635,7 @@ ul
     float: left;
 }
 
-.progress-list-of-features h2
+.progress-list-of-features a
 {
     margin: 0;
     margin-top: 20px;
@@ -1254,7 +1258,6 @@ ul#menu li.menuelem.selected
 {
     background-color:#e4e4e4;
     color:#4b4b4b;
-    margin:0px 0px 10px 0px;
     padding: 5px 0px 0px 5px;
     font-family:Estrangelo Edessa;
     font-weight:normal;
@@ -1277,10 +1280,42 @@ ul#menu li.menuelem.selected
 
 .feature-download-btn
 {
-    width:139px;
+    width:160px;
     height:45px;
     background-image:url('/Content/images/feature-download-btn.png');
     cursor:pointer;
     background-repeat:no-repeat;
     background-position:center;
+}
+
+.partners-title
+{
+    font-family:Verdana;
+    width:1000px;
+    height:18px;
+    background-image:url('/Content/images/contact-title-back.png');
+    background-repeat:no-repeat;
+    font-size:14px;
+    margin-left:auto;
+    margin-right:auto;
+    padding-left:30px;
+    background-position:0 2px;
+    line-height:15px;
+    margin-bottom:35px;
+}
+
+.progress-title
+{
+    font-family:Verdana;
+    width:1000px;
+    height:33px;
+    background-image:url('/Content/images/contact-title-back.png');
+    background-repeat:no-repeat;
+    font-size:14px;
+    margin-left:auto;
+    margin-right:auto;
+    padding-left:30px;
+    background-position:0 2px;
+    line-height:15px;
+    margin-bottom:35px;
 }
