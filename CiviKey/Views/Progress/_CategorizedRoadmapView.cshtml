@@ -1,0 +1,14 @@
+﻿@model CiviKey.ViewModel.CategorizedRoadmapViewModel
+@{
+    @*Feature display part*@
+    <div class="progress-list-of-features" data-id="@ViewBag.CurrentRoadmapId">
+        @{
+            foreach( string categoryName in Model.CategorizedFeatures.Keys )
+            {
+                <h2>@categoryName</h2>
+                <div class="feature-seperator"></div>
+                @Html.Partial( "_FeatureCategoryView", Model.CategorizedFeatures[categoryName] )
+            }
+        }
+    </div>
+}

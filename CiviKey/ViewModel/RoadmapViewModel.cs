@@ -17,10 +17,17 @@ namespace CiviKey.ViewModel
         string _name;
 
         public RoadmapViewModel( tRoadMap model, PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo )
-        :this(model.tFeatures, partnerRepo, contactRepo, contactRelationRepo, model.Name)
+            : this( model.tFeatures, partnerRepo, contactRepo, contactRelationRepo, model.Name )
         {
         }
 
+        /// <summary>
+        /// This constructor sets "All" as roadmap name.
+        /// </summary>
+        /// <param name="features"></param>
+        /// <param name="partnerRepo"></param>
+        /// <param name="contactRepo"></param>
+        /// <param name="contactRelationRepo"></param>
         public RoadmapViewModel( ICollection<tFeature> features, PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo )
             : this( features, partnerRepo, contactRepo, contactRelationRepo, "All" )
         {
@@ -29,6 +36,24 @@ namespace CiviKey.ViewModel
 
         public RoadmapViewModel( ICollection<tFeature> features, PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo, string name )
         {
+            //If we are showing the "All" roadmap, listing all of CiviKey's feature at the moment, we have to take 
+            //if( name == "All" )
+            //{
+            //    HashSet<string> featureNames = new HashSet<string>();
+            //    foreach( var item in features.Select( x => x.Title ) )
+            //    {
+            //        featureNames.Add( item );
+            //    }
+
+            //    ICollection<tFeature> trimmedFeatures = new List<tFeature>();
+            //    foreach( var featureName in featureNames )
+            //    {
+            //        tFeature feature = features.Where( x => x.Title == featureName ).OrderByDescending( y => y.Type ).First();
+            //        trimmedFeatures.Add( feature );
+            //    }
+            //    features = trimmedFeatures;
+            //}
+
             _name = name;
             PopulateCollections( partnerRepo, contactRepo, contactRelationRepo, features );
         }

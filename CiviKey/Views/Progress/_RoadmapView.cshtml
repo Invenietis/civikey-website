@@ -1,0 +1,25 @@
+﻿@model CiviKey.ViewModel.RoadmapViewModel
+@{
+    @*Feature display part*@
+    <div class="progress-list-of-features" data-id="@ViewBag.CurrentRoadmapId">
+        <h2>Nouvelles fonctionnalités</h2>
+        <div class="feature-seperator"></div>
+        @Html.Partial( "_FeatureCategoryView", Model.NewFeatures )
+        <h2>Fonctionnalités améliorées</h2>
+        <div class="feature-seperator"></div>
+        @Html.Partial( "_FeatureCategoryView", Model.UpdatedFeatures )
+        <h2>Fonctionnalités disponibles</h2>
+        <div class="feature-seperator"></div>
+        @Html.Partial( "_FeatureCategoryView", Model.AvailableFeatures )
+        <h2>Fonctionnalités non disponibles</h2>
+        <div class="feature-seperator"></div>
+        @Html.Partial( "_FeatureCategoryView", Model.UnavailableFeatures )
+    </div>
+
+    @* Version Download part *@
+    <div class="release-info-container">
+        <h3>Téléchargement</h3>
+        <p>Version @Model.Name</p>
+        <input type="button" value="Télécharger" />
+    </div>
+}
