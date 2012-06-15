@@ -1,13 +1,4 @@
-﻿--DBCC CHECKIDENT (tContact, reseed, 0)
---DBCC CHECKIDENT (tContactRelation, reseed, 0)
---DBCC CHECKIDENT (tParticipation, reseed, 0)
-
---delete from dbo.tContact
---delete from dbo.tContactRelation
---delete from dbo.tParticipation
---delete from dbo.tParticipationFeature
-
---Creating contacts
+﻿--Creating contacts
 
 insert into dbo.tContact(Name,Description,LogoPath)values('Vlad Sargu','','');--1
 insert into dbo.tContact(Name,Description,LogoPath)values('Jean-Loup Kahloun','','');
@@ -45,7 +36,7 @@ insert into dbo.tContactRelation(ContactId,EntityId,StartDate,EndDate)values(13,
 --OK
 																									--TODO : handle dates
 --- Creating RoadMap
-insert into dbo.tRoadMap(Name)values('2.5.1', 1);
+insert into dbo.tRoadMap(Name, HasRelease)values('2.5.1', 1);
 
 
 --Creating features
@@ -150,7 +141,7 @@ insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tuto
 insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',4,DateAdd(month,-5,GetDate()),'fzzjgBAaWZw')
 insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',4,DateAdd(month,-5,GetDate()),'7VSR4_tAYvw')
 --OK
-insert into dbo.tRoadMap(Name)values('2.5.2', 1); ---------------------------------------------------------------------------------------------------------------------------------------2nd roadmap
+insert into dbo.tRoadMap(Name, HasRelease)values('2.5.2', 1); ---------------------------------------------------------------------------------------------------------------------------------------2nd roadmap
 
 --Creating features
 --Old features
@@ -296,8 +287,6 @@ insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tuto
 
 insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',12,DateAdd(month,-5,GetDate()),'fzzjgBAaWZw')
 insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',12,DateAdd(month,-5,GetDate()),'7VSR4_tAYvw')
-
-insert into dbo.tRoadMap(Name)values('2.5.3', 0);
 
 
 
