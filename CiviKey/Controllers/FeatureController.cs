@@ -29,6 +29,7 @@ namespace CiviKey.Controllers
         {
             FeatureViewModel vm;
             ViewBag.Section = Sections.Progress;
+            
             tFeature model = _entities.tFeatures.Where( x => x.Id == id ).FirstOrDefault();
             if( model != null )
             {

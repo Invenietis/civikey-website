@@ -15,9 +15,10 @@ namespace CiviKey.ViewModel
         ICollection<FeatureViewModel> _availableFeatures;
         ICollection<FeatureViewModel> _unavailableFeatures;
         string _name;
+        bool _hasRelease;
 
         public RoadmapViewModel( tRoadMap model, PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo )
-            : this( model.tFeatures, partnerRepo, contactRepo, contactRelationRepo, model.Name )
+            : this( model.tFeatures, partnerRepo, contactRepo, contactRelationRepo, model.Name, model.HasRelease )
         {
         }
 
@@ -29,31 +30,13 @@ namespace CiviKey.ViewModel
         /// <param name="contactRepo"></param>
         /// <param name="contactRelationRepo"></param>
         public RoadmapViewModel( ICollection<tFeature> features, PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo )
-            : this( features, partnerRepo, contactRepo, contactRelationRepo, "All" )
+            : this( features, partnerRepo, contactRepo, contactRelationRepo, "All", false )
         {
         }
 
-
-        public RoadmapViewModel( ICollection<tFeature> features, PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo, string name )
+        public RoadmapViewModel( ICollection<tFeature> features, PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo, string name, bool hasRelease )
         {
-            //If we are showing the "All" roadmap, listing all of CiviKey's feature at the moment, we have to take 
-            //if( name == "All" )
-            //{
-            //    HashSet<string> featureNames = new HashSet<string>();
-            //    foreach( var item in features.Select( x => x.Title ) )
-            //    {
-            //        featureNames.Add( item );
-            //    }
-
-            //    ICollection<tFeature> trimmedFeatures = new List<tFeature>();
-            //    foreach( var featureName in featureNames )
-            //    {
-            //        tFeature feature = features.Where( x => x.Title == featureName ).OrderByDescending( y => y.Type ).First();
-            //        trimmedFeatures.Add( feature );
-            //    }
-            //    features = trimmedFeatures;
-            //}
-
+            _hasRelease = hasRelease;
             _name = name;
             PopulateCollections( partnerRepo, contactRepo, contactRelationRepo, features );
         }
@@ -89,6 +72,7 @@ namespace CiviKey.ViewModel
         }
 
         public string Name { get { return _name; } }
+        public bool HasRelease { get { return _hasRelease; } }
         public ICollection<FeatureViewModel> Features { get { return _features; } }
         public ICollection<FeatureViewModel> NewFeatures { get { return _newFeatures; } }
         public ICollection<FeatureViewModel> UpdatedFeatures { get { return _updatedFeatures; } }

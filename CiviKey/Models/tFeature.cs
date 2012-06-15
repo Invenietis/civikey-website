@@ -33,9 +33,9 @@ namespace CiviKey.Models
     
         public virtual ICollection<tSection> tSections { get; set; }
         public virtual ICollection<tVideo> tVideos { get; set; }
-        public virtual tRoadMap tRoadMap { get; set; }
         public virtual ICollection<tCategory> tCategories { get; set; }
         public virtual ICollection<tParticipation> tParticipations { get; set; }
+        public virtual tRoadMap tRoadMap { get; set; }
     }
     
 }

@@ -31,10 +31,10 @@ namespace CiviKey.Models
         public DbSet<tNew> tNews { get; set; }
         public DbSet<tParticipation> tParticipations { get; set; }
         public DbSet<tPlugin> tPlugins { get; set; }
-        public DbSet<tRoadMap> tRoadMaps { get; set; }
         public DbSet<tSection> tSections { get; set; }
         public DbSet<tTestimony> tTestimonies { get; set; }
         public DbSet<tVideo> tVideos { get; set; }
         public DbSet<tFeature> tFeatures { get; set; }
+        public DbSet<tRoadMap> tRoadMaps { get; set; }
     }
 }

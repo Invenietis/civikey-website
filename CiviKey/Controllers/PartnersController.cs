@@ -51,6 +51,7 @@ namespace CiviKey.Controllers
                 contactViewModel[n] = value;
             }
 
+            ViewBag.Title = "CiviKey - Partenaires";
             return View( contactViewModel );
         }
 

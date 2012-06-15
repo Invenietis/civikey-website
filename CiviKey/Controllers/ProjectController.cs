@@ -15,6 +15,7 @@ namespace CiviKey.Controllers
         public ActionResult Index()
         {
             ViewBag.Section = Sections.Project;
+            ViewBag.Title = "CiviKey - Le projet";
             return View();
         }
 

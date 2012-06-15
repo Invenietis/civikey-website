@@ -1,17 +1,5 @@
 ﻿@model CiviKey.ViewModel.FeatureViewModel
-@{
-    ViewBag.Title = "Index";
-}
 @Html.CK().Scripts.ByName().IncludeJS( "setSponsor-1.0.0" ).IncludeJS( "feature.js" )
-@*@helper GetDeveloppers( IList<CiviKey.ViewModel.ParticipationViewModel> participations )
-    {
-    IList<string> developperNames = new List<string>();
-    foreach( var item in participations )
-    {
-        developperNames.Add( item.ContactRelation.Contact.Name );
-    }
-    @:@developperNames
-}*@
 <script type="text/javascript">
     $(function () {
         var param = JSON.parse('@Html.Raw( Json.Encode( Model.Sponsors ) )');
@@ -48,7 +36,8 @@
         <div class="feature-description-text demovideo">
             @for( int i = 0; i < Model.Videos.Count; i++ )
             {
-                <div class="feature-demo" id="b@(i)">
+                <div class="feature-demo"  id="b@(i)">
+                    <img alt="video de démonstration" class="feature-demo-image"src="http://img.youtube.com/vi/@Model.Videos.ElementAt( i ).VideoSource/mqdefault.jpg" />
                 </div>
             }
             <div style="clear: both">
@@ -61,17 +50,26 @@
                 <iframe width="520" height="390" src="" frameborder="0"></iframe>
             </div>
         </div>
-        <h1 class="feature-section-title">Sponsorisé par</h1>
-        <div class="feature-description-text js-sponsor">
-        </div>
-        <h1 class="feature-section-title">Developpé par</h1>
-        <div class="feature-description-text development">
-            @foreach( var participation in Model.Participations )
+         @{
+            if( Model.Participations.Count > 0)
             {
-                <div class="development-company">
-                    @participation.Value[0].ContactRelation.Contact.Name (@participation.Value[0].ContactRelation.Organization.Name)
+                <h1 class="feature-section-title">Sponsorisé par</h1>
+                <div class="feature-description-text js-sponsor">
                 </div>
             }
-        </div>
+             
+            if( Model.Participations.Count > 0)
+            {
+                <h1 class="feature-section-title">Developpé par</h1>
+                <div class="feature-description-text development">
+                    @foreach( var participation in Model.Participations )
+                    {
+                        <div class="development-company">
+                            @participation.Value[0].ContactRelation.Contact.Name (@participation.Value[0].ContactRelation.Organization.Name)
+                        </div>
+                    }
+                </div>
+            }
+        }
     </div>
 </div>

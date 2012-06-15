@@ -12,3 +12,4 @@ CiviKey/Web.config
 packages/*
 **/bin/*
 .nuget/*
+*/obj/**

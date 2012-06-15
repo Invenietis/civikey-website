@@ -36,6 +36,7 @@ create table tRoadMap
 (
 	Id int not null primary key identity(1,1),
 	Name varchar(32) not null,
+	HasRelease bit not null
 )
 
 create table tPlugin
