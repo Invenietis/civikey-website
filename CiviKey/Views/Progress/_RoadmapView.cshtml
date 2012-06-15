@@ -1,62 +1,79 @@
-﻿@model CiviKey.ViewModel.RoadmapViewModel
+﻿﻿@model CiviKey.ViewModel.RoadmapViewModel
 @{
-    @*Feature display part*@
+@*Feature display part*@
     <div class="progress-list-of-features" data-id="@ViewBag.CurrentRoadmapId">
-    <div class="accordion" id="accordion2">
+        <div class="accordion" id="accordion2">
+            @if( Model.NewFeatures.Count > 0 )
+            {
                 <div class="accordion-group">
                     <div class="accordion-heading">
                         <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
-                            Nouvelles fonctionnalités
+                            Nouvelles fonctionnalités (@Model.NewFeatures.Count)
                         </h2>
                     </div>
-                    <div id="collapseOne" class="accordion-body collapse in" style=" height:0px;">
+                    <div id="collapseOne" class="accordion-body collapse in" style="height: 0px;">
                         <div class="accordion-inner">
                             @Html.Partial( "_FeatureCategoryView", Model.NewFeatures )</div>
                     </div>
                 </div>
+            }
+            @if( Model.UpdatedFeatures.Count > 0 )
+            {
                 <div class="accordion-group">
                     <div class="accordion-heading">
                         <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
-                            Fonctionnalités améliorées
+                            Fonctionnalités améliorées (@Model.UpdatedFeatures.Count)
                         </h2>
                     </div>
-                    <div id="collapseTwo" class="accordion-body collapse in" style=" height:0px;">
+                    <div id="collapseTwo" class="accordion-body collapse in" style="height: 0px;">
                         <div class="accordion-inner">
-                            @Html.Partial( "_FeatureCategoryView", Model.UpdatedFeatures ) </div>
+                            @Html.Partial( "_FeatureCategoryView", Model.UpdatedFeatures )
+                        </div>
                     </div>
                 </div>
+            }
+            @if( Model.AvailableFeatures.Count > 0 )
+            {
                 <div class="accordion-group">
                     <div class="accordion-heading">
                         <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
-                            Fonctionnalités disponibles
+                            Fonctionnalités disponibles (@Model.AvailableFeatures.Count)
                         </h2>
                     </div>
-                    <div id="collapseThree" class="accordion-body collapse in" style=" height:0px;">
+                    <div id="collapseThree" class="accordion-body collapse in" style="height: 0px;">
                         <div class="accordion-inner">
-                            @Html.Partial( "_FeatureCategoryView", Model.AvailableFeatures ) </div>
+                            @Html.Partial( "_FeatureCategoryView", Model.AvailableFeatures )
+                        </div>
                     </div>
                 </div>
+            }
+            @if( Model.UnavailableFeatures.Count > 0 )
+            {
                 <div class="accordion-group">
                     <div class="accordion-heading">
                         <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
-                            Fonctionnalités non disponibles
+                            Fonctionnalités non disponibles (@Model.UnavailableFeatures.Count)
                         </h2>
                     </div>
-                    <div id="collapseFour" class="accordion-body collapse in" style=" height:0px;">
+                    <div id="collapseFour" class="accordion-body collapse in" style="height: 0px;">
                         <div class="accordion-inner">
-                            @Html.Partial( "_FeatureCategoryView", Model.AvailableFeatures ) </div>
+                            @Html.Partial( "_FeatureCategoryView", Model.AvailableFeatures )
+                        </div>
                     </div>
                 </div>
-            </div>
+            }
+        </div>
     </div>
     <script type="text/javascript">
-        $('.collapse').collapse({hide: true});
+        $('.collapse').collapse({ hide: true });
         //$('#accordion2').collapse({ toggle: false });
     </script>
 
-    @* Version Download part *@
+@* Version Download part *@
     <div class="release-info-container">
-        <p>Version @Model.Name</p>
-        <div class="feature-download-btn"></div>
+        <p>
+            Version @Model.Name</p>
+        <div class="feature-download-btn">
+        </div>
     </div>
 }

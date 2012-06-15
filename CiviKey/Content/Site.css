@@ -233,6 +233,11 @@ body
     height: 100px;
     position: relative;
 }
+.footer-container
+{
+    padding-bottom: 12px;
+}
+
 .header-logo
 {
     margin-top: 22px;
@@ -290,8 +295,8 @@ ul
 {
     height: 1px;
     background-color: #999999;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: 8px;
+    margin-bottom: 8px;
 }
 
 .footer-logo
@@ -521,7 +526,6 @@ ul
 
 .project-leftblock-content
 {
-    vertical-align:middle;
     display: table-cell;
 }
 
@@ -595,8 +599,8 @@ ul
 .release-info-container
 {
     background-color: #E4E4E4;
-    float: right;
-    margin: 0px 0px 0px 0px;
+    float: left;
+    margin: 0px 0px 0px 30px;
     color: #fff;
     font-family: Estrangelo Edessa;
     text-align: center;
@@ -625,14 +629,21 @@ ul
 
 #featureList
 {
-    width: 83%;
+    width: 86%;
     float: left;
 }
 
+
+
 .progress-list-of-features
 {
-    width: 680px;
+    width: 690px;
     float: left;
+}
+
+.categorized-progress-list
+{
+    width: 100%;
 }
 
 .progress-list-of-features a
@@ -671,9 +682,9 @@ ul#timeline-buttons li
 {
     list-style: none;
     font-size: 17px;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     font-size: 30px;
-    cursor: pointer;
     color: #4f4f4f;
 }
 
@@ -720,11 +731,16 @@ a.timeline-unselected
 .progress-list-elem
 {
     float: left;
-    margin-right: 35px;
+    margin-right: 40px;
     width:195px;
     height:116px;
     background-image: url('/Content/images/avancement-ticket.png');
     cursor:pointer;
+}
+
+.categorized-progress-list .progress-list-elem
+{
+    margin-right: 25px;
 }
 
 .progress-list-line
@@ -735,7 +751,7 @@ a.timeline-unselected
 
 .last-feature
 {
-    margin-right:0px;
+    margin-right:0px !important;
 }
 
 .hidden-feature
@@ -746,7 +762,7 @@ a.timeline-unselected
 .progress-elem-title-bar
 {
     font-family:Estrangelo Edessa;
-    font-size:20px;
+    font-size:18px;
     color:#fff;
     margin-top: 17px;
     position:relative; 
@@ -1147,6 +1163,7 @@ label
     width:600px;
     /*height:490px;*/
     padding-top:20px;
+    padding-bottom:20px;
     margin:10px 0px 0px 10px;
     background-color:#f2f2f2;
     overflow-y:auto;
@@ -1190,13 +1207,18 @@ label
     width:202px;
     height:117px;
     border: 3px solid #fff;
-    background-image: url('/Content/images/demo-vignette.png');
+}
+
+.feature-demo-image
+{
+    width: 202px;
+    height: 118px;
 }
 
 .feature-description-text.development
 {
     font-family:Verdana;
-    font-size:15px;   
+    font-size:15px;
 }
 
 #video

@@ -158,6 +158,7 @@
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="HasRelease" Type="bit" Nullable="false" />
         </EntityType>
         <EntityType Name="tSection">
           <Key>
@@ -350,7 +351,6 @@
           <EntitySet Name="tNews" EntityType="CiviKeyModel.tNew" />
           <EntitySet Name="tParticipations" EntityType="CiviKeyModel.tParticipation" />
           <EntitySet Name="tPlugins" EntityType="CiviKeyModel.tPlugin" />
-          <EntitySet Name="tRoadMaps" EntityType="CiviKeyModel.tRoadMap" />
           <EntitySet Name="tSections" EntityType="CiviKeyModel.tSection" />
           <EntitySet Name="tTestimonies" EntityType="CiviKeyModel.tTestimony" />
           <EntitySet Name="tVideos" EntityType="CiviKeyModel.tVideo" />
@@ -379,10 +379,6 @@
             <End Role="tFeature" EntitySet="tFeatures" />
             <End Role="tVideo" EntitySet="tVideos" />
           </AssociationSet>
-          <AssociationSet Name="FK_IdRoadMap" Association="CiviKeyModel.FK_IdRoadMap">
-            <End Role="tRoadMap" EntitySet="tRoadMaps" />
-            <End Role="tFeature" EntitySet="tFeatures" />
-          </AssociationSet>
           <AssociationSet Name="tCategoryFeature" Association="CiviKeyModel.tCategoryFeature">
             <End Role="tCategory" EntitySet="tCategories" />
             <End Role="tFeature" EntitySet="tFeatures" />
@@ -390,6 +386,11 @@
           <AssociationSet Name="tParticipationFeature" Association="CiviKeyModel.tParticipationFeature">
             <End Role="tFeature" EntitySet="tFeatures" />
             <End Role="tParticipation" EntitySet="tParticipations" />
+          </AssociationSet>
+          <EntitySet Name="tRoadMaps" EntityType="CiviKeyModel.tRoadMap" />
+          <AssociationSet Name="FK_IdRoadMap" Association="CiviKeyModel.FK_IdRoadMap">
+            <End Role="tRoadMap" EntitySet="tRoadMaps" />
+            <End Role="tFeature" EntitySet="tFeatures" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="tCategory">
@@ -455,14 +456,6 @@
           <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Type="DateTime" Name="CreationDate" Nullable="false" />
           <NavigationProperty Name="tSections" Relationship="CiviKeyModel.tSectionPlugin" FromRole="tPlugin" ToRole="tSection" />
-        </EntityType>
-        <EntityType Name="tRoadMap">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="tFeatures" Relationship="CiviKeyModel.FK_IdRoadMap" FromRole="tRoadMap" ToRole="tFeature" />
         </EntityType>
         <EntityType Name="tSection">
           <Key>
@@ -549,9 +542,9 @@
           <Property Type="Int32" Name="Type" Nullable="false" />
           <NavigationProperty Name="tSections" Relationship="CiviKeyModel.FK_FeatureId" FromRole="tFeature" ToRole="tSection" />
           <NavigationProperty Name="tVideos" Relationship="CiviKeyModel.FK_FeatureIdVideo" FromRole="tFeature" ToRole="tVideo" />
-          <NavigationProperty Name="tRoadMap" Relationship="CiviKeyModel.FK_IdRoadMap" FromRole="tFeature" ToRole="tRoadMap" />
           <NavigationProperty Name="tCategories" Relationship="CiviKeyModel.tCategoryFeature" FromRole="tFeature" ToRole="tCategory" />
           <NavigationProperty Name="tParticipations" Relationship="CiviKeyModel.tParticipationFeature" FromRole="tFeature" ToRole="tParticipation" />
+          <NavigationProperty Name="tRoadMap" Relationship="CiviKeyModel.FK_IdRoadMap" FromRole="tFeature" ToRole="tRoadMap" />
         </EntityType>
         <Association Name="FK_FeatureId">
           <End Type="CiviKeyModel.tFeature" Role="tFeature" Multiplicity="1" />
@@ -577,6 +570,23 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="tCategoryFeature">
+          <End Type="CiviKeyModel.tCategory" Role="tCategory" Multiplicity="*" />
+          <End Type="CiviKeyModel.tFeature" Role="tFeature" Multiplicity="*" />
+        </Association>
+        <Association Name="tParticipationFeature">
+          <End Type="CiviKeyModel.tFeature" Role="tFeature" Multiplicity="0..1" />
+          <End Type="CiviKeyModel.tParticipation" Role="tParticipation" Multiplicity="*" />
+        </Association>
+        <EntityType Name="tRoadMap">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="HasRelease" Nullable="false" />
+          <NavigationProperty Name="tFeatures" Relationship="CiviKeyModel.FK_IdRoadMap" FromRole="tRoadMap" ToRole="tFeature" />
+        </EntityType>
         <Association Name="FK_IdRoadMap">
           <End Type="CiviKeyModel.tRoadMap" Role="tRoadMap" Multiplicity="1" />
           <End Type="CiviKeyModel.tFeature" Role="tFeature" Multiplicity="*" />
@@ -588,14 +598,6 @@
               <PropertyRef Name="IdRoadMap" />
             </Dependent>
           </ReferentialConstraint>
-        </Association>
-        <Association Name="tCategoryFeature">
-          <End Type="CiviKeyModel.tCategory" Role="tCategory" Multiplicity="*" />
-          <End Type="CiviKeyModel.tFeature" Role="tFeature" Multiplicity="*" />
-        </Association>
-        <Association Name="tParticipationFeature">
-          <End Type="CiviKeyModel.tFeature" Role="tFeature" Multiplicity="0..1" />
-          <End Type="CiviKeyModel.tParticipation" Role="tParticipation" Multiplicity="*" />
         </Association>
         </Schema>
     </edmx:ConceptualModels>
@@ -660,14 +662,6 @@
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Version" ColumnName="Version" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tRoadMaps">
-            <EntityTypeMapping TypeName="CiviKeyModel.tRoadMap">
-              <MappingFragment StoreEntitySet="tRoadMap">
-                <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
@@ -742,6 +736,15 @@
             </EndProperty>
             <Condition ColumnName="FeatureId" IsNull="false" />
           </AssociationSetMapping>
+          <EntitySetMapping Name="tRoadMaps">
+            <EntityTypeMapping TypeName="CiviKeyModel.tRoadMap">
+              <MappingFragment StoreEntitySet="tRoadMap">
+                <ScalarProperty Name="HasRelease" ColumnName="HasRelease" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -770,7 +773,6 @@
         <EntityTypeShape EntityType="CiviKeyModel.tNew" Width="1.5" PointX="7.75" PointY="1.375" Height="1.7879850260416674" />
         <EntityTypeShape EntityType="CiviKeyModel.tParticipation" Width="1.5" PointX="5.25" PointY="4.625" Height="2.3648893229166674" />
         <EntityTypeShape EntityType="CiviKeyModel.tPlugin" Width="1.5" PointX="3" PointY="0.75" Height="2.1725878906250031" />
-        <EntityTypeShape EntityType="CiviKeyModel.tRoadMap" Width="1.5" PointX="0.75" PointY="2" Height="1.5956835937500031" />
         <EntityTypeShape EntityType="CiviKeyModel.tSection" Width="1.5" PointX="5.25" PointY="1.875" Height="1.9802864583333388" />
         <EntityTypeShape EntityType="CiviKeyModel.tTestimony" Width="1.5" PointX="7.75" PointY="4.375" Height="1.9802864583333388" />
         <EntityTypeShape EntityType="CiviKeyModel.tVideo" Width="1.5" PointX="5.25" PointY="10.625" Height="2.172587890624996" />
@@ -795,40 +797,33 @@
         </AssociationConnector>
         <EntityTypeShape EntityType="CiviKeyModel.tFeature" Width="1.5" PointX="8" PointY="7.5" Height="3.5186979166666674" />
         <AssociationConnector Association="CiviKeyModel.FK_FeatureId" >
-          <ConnectorPoint PointX="9.40625" PointY="7.5" />
-          <ConnectorPoint PointX="9.40625" PointY="3.5403857421875005" />
-          <ConnectorPoint PointX="6.75" PointY="3.5403857421875005" />
+          <ConnectorPoint PointX="9.45703203125" PointY="7.5" />
+          <ConnectorPoint PointX="9.45703203125" PointY="3.5403857421875031" />
+          <ConnectorPoint PointX="6.75" PointY="3.5403857421875031" />
         </AssociationConnector>
         <AssociationConnector Association="CiviKeyModel.FK_FeatureIdVideo" >
           <ConnectorPoint PointX="8" PointY="10.821848958333334" />
           <ConnectorPoint PointX="6.75" PointY="10.821848958333334" />
         </AssociationConnector>
-        <AssociationConnector Association="CiviKeyModel.FK_IdRoadMap" >
-          <ConnectorPoint PointX="2.25" PointY="2.797841796875" />
-          <ConnectorPoint PointX="2.75" PointY="2.797841796875" />
-          <ConnectorPoint PointX="2.75" PointY="7.125" />
-          <ConnectorPoint PointX="3.6666666666666665" PointY="7.1249999999999991" />
-          <ConnectorPoint PointX="3.8333333333333335" PointY="7.125" />
-          <ConnectorPoint PointX="4.916666666666667" PointY="7.1249999999999991" />
-          <ConnectorPoint PointX="5.083333333333333" PointY="7.125" />
-          <ConnectorPoint PointX="8.671873" PointY="7.125" />
-          <ConnectorPoint PointX="8.671873" PointY="7.5" />
-        </AssociationConnector>
         <AssociationConnector Association="CiviKeyModel.tCategoryFeature" >
           <ConnectorPoint PointX="2.25" PointY="5.4037228307291665" />
-          <ConnectorPoint PointX="2.6666666666666665" PointY="5.4037228307291656" />
-          <ConnectorPoint PointX="2.8333333333333335" PointY="5.4037228307291665" />
           <ConnectorPoint PointX="5" PointY="5.4037228307291665" />
-          <ConnectorPoint PointX="5" PointY="7.3648893229166656" />
-          <ConnectorPoint PointX="8.3046845" PointY="7.3648893229166656" />
-          <ConnectorPoint PointX="8.3046845" PointY="7.5" />
+          <ConnectorPoint PointX="5" PointY="7.2398893229166674" />
+          <ConnectorPoint PointX="8.6445275312499987" PointY="7.2398893229166674" />
+          <ConnectorPoint PointX="8.6445275312499987" PointY="7.5" />
         </AssociationConnector>
         <AssociationConnector Association="CiviKeyModel.tParticipationFeature" >
-          <ConnectorPoint PointX="9.3749975" PointY="7.5" />
-          <ConnectorPoint PointX="9.3749975" PointY="6.7038378906250022" />
-          <ConnectorPoint PointX="6.75" PointY="6.7038378906250022" />
+          <ConnectorPoint PointX="9.353513515625" PointY="7.5" />
+          <ConnectorPoint PointX="9.353513515625" PointY="6.7038378906250031" />
+          <ConnectorPoint PointX="6.75" PointY="6.7038378906250031" />
         </AssociationConnector>
-      </Diagram>
+        <EntityTypeShape EntityType="CiviKeyModel.tRoadMap" Width="1.5" PointX="10.375" PointY="0.875" Height="1.7879850260416674" />
+        <AssociationConnector Association="CiviKeyModel.FK_IdRoadMap" >
+          <ConnectorPoint PointX="11.125" PointY="2.6629850260416674" />
+          <ConnectorPoint PointX="11.125" PointY="9.2593489583333337" />
+          <ConnectorPoint PointX="9.5" PointY="9.2593489583333337" />
+        </AssociationConnector>
+        </Diagram>
     </Diagrams>
   </Designer>
 </edmx:Edmx>

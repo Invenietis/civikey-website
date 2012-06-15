@@ -18,8 +18,7 @@ namespace CiviKey.Controllers
         public ActionResult Index()
         {
             ViewBag.Section = Sections.Default;
-            ViewBag.Message = "Welcome to ASP.NET MVC!";
-
+            ViewBag.Title = "CiviKey - Accueil";
             return View();
         }
     }

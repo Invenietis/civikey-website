@@ -17,6 +17,7 @@ namespace CiviKey.Controllers
         {
             ViewBag.Section = Sections.Contact;
             ViewBag.Email = System.Configuration.ConfigurationManager.AppSettings["contactmail"];
+            ViewBag.Title = "CiviKey - Contactez-nous";
             return View();
         }
 

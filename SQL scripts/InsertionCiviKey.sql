@@ -1,23 +1,14 @@
-﻿--DBCC CHECKIDENT (tContact, reseed, 0)
---DBCC CHECKIDENT (tContactRelation, reseed, 0)
---DBCC CHECKIDENT (tParticipation, reseed, 0)
-
---delete from dbo.tContact
---delete from dbo.tContactRelation
---delete from dbo.tParticipation
---delete from dbo.tParticipationFeature
-
---Creating contacts
+﻿--Creating contacts
 
 insert into dbo.tContact(Name,Description,LogoPath)values('Vlad Sargu','','');--1
 insert into dbo.tContact(Name,Description,LogoPath)values('Jean-Loup Kahloun','','');
 insert into dbo.tContact(Name,Description,LogoPath)values('Philippe Lepadellec','','');
 insert into dbo.tContact(Name,Description,LogoPath)values('François Bessaguet','',''); --4
 
-insert into dbo.tContact(Name,Description,LogoPath)values('Invenietis','<p>Invenietis, SSII créée en 2006, est impliquée dans le projet CiviKey depuis son lancement à INTECH INFO en Septembre de la même année.</br>L''entreprise porte ce projet bénévolement en réalisant la majorité des développements. Elle suit également des étudiants désirant développer de nouvelles fonctionnalités pour le CiviKey, pour les aider dans leur démarche.</p>',''); --5
+insert into dbo.tContact(Name,Description,LogoPath)values('Invenietis','<p>Invenietis, SSII créée en 2006, est impliquée dans le projet CiviKey depuis son lancement à IN''TECH INFO en Septembre de la même année.</br>L''entreprise porte ce projet bénévolement en réalisant la majorité des développements. Elle suit également des étudiants désirant développer de nouvelles fonctionnalités pour le CiviKey, pour les aider dans leur démarche.</p>',''); --5
 insert into dbo.tContact(Name,Description,LogoPath)values('Fondation Steria','La fondation Stéria',''); --6
 insert into dbo.tContact(Name,Description,LogoPath)values('Alcatel-Lucent','Société Alcatel-Lucent',''); --7
-insert into dbo.tContact(Name,Description,LogoPath)values('INTECH INFO','Ecole d''ingénierie informatique membre du groupe ESIEA.',''); --8
+insert into dbo.tContact(Name,Description,LogoPath)values('IN''TECH INFO','Ecole d''ingénierie informatique membre du groupe ESIEA.',''); --8
 insert into dbo.tContact(Name,Description,LogoPath)values('PFNT','La PlateForme des Nouvelles Technologies de l''hôpital de Garches',''); --9
 insert into dbo.tContact(Name,Description,LogoPath)values('Antoine Blanchet','',''); --10
 insert into dbo.tContact(Name,Description,LogoPath)values('Isaac Duplan','',''); --11
@@ -45,7 +36,7 @@ insert into dbo.tContactRelation(ContactId,EntityId,StartDate,EndDate)values(13,
 --OK
 																									--TODO : handle dates
 --- Creating RoadMap
-insert into dbo.tRoadMap(Name)values('2.5.1');
+insert into dbo.tRoadMap(Name, HasRelease)values('2.5.1', 1);
 
 
 --Creating features
@@ -138,19 +129,19 @@ insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (4,2) --Clavier 
 insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (5,3) --OE - noyau
 insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (5,4) --Update checker - noyau
 --OK
-insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',1,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/fzzjgBAaWZw?rel=0')
-insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',1,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/7VSR4_tAYvw?rel=0')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',1,DateAdd(month,-5,GetDate()),'fzzjgBAaWZw')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',1,DateAdd(month,-5,GetDate()),'7VSR4_tAYvw')
 
-insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',2,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/fzzjgBAaWZw?rel=0')
-insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',2,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/7VSR4_tAYvw?rel=0')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',2,DateAdd(month,-5,GetDate()),'fzzjgBAaWZw')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',2,DateAdd(month,-5,GetDate()),'7VSR4_tAYvw')
 
-insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',3,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/fzzjgBAaWZw?rel=0')
-insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',3,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/7VSR4_tAYvw?rel=0')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',3,DateAdd(month,-5,GetDate()),'fzzjgBAaWZw')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',3,DateAdd(month,-5,GetDate()),'7VSR4_tAYvw')
 
-insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',4,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/fzzjgBAaWZw?rel=0')
-insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',4,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/7VSR4_tAYvw?rel=0')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',4,DateAdd(month,-5,GetDate()),'fzzjgBAaWZw')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',4,DateAdd(month,-5,GetDate()),'7VSR4_tAYvw')
 --OK
-insert into dbo.tRoadMap(Name)values('2.5.2'); ---------------------------------------------------------------------------------------------------------------------------------------2nd roadmap
+insert into dbo.tRoadMap(Name, HasRelease)values('2.5.2', 1); ---------------------------------------------------------------------------------------------------------------------------------------2nd roadmap
 
 --Creating features
 --Old features
@@ -261,6 +252,7 @@ insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(15,12) -
 insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (1,5) --Autoclick - clic
 insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (2,6) --Clavier - saisie
 insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (4,6) --Clavier - aide visuelle
+insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (5,6) --Clavier - noyau - TO REMOVE
 insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (5,7) --OE - noyau
 insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (5,8) --Update checker - noyau
 
@@ -270,31 +262,31 @@ insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (3,11) --Défile
 insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (5,12) --Assistant création
 --OK
 --Old features
-insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',5,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/fzzjgBAaWZw?rel=0')
-insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',5,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/7VSR4_tAYvw?rel=0')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',5,DateAdd(month,-5,GetDate()),'fzzjgBAaWZw')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',5,DateAdd(month,-5,GetDate()),'7VSR4_tAYvw')
 
-insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',6,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/fzzjgBAaWZw?rel=0')
-insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',6,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/7VSR4_tAYvw?rel=0')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',6,DateAdd(month,-5,GetDate()),'fzzjgBAaWZw')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',6,DateAdd(month,-5,GetDate()),'7VSR4_tAYvw')
 
-insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',7,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/fzzjgBAaWZw?rel=0')
-insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',7,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/7VSR4_tAYvw?rel=0')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',7,DateAdd(month,-5,GetDate()),'fzzjgBAaWZw')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',7,DateAdd(month,-5,GetDate()),'7VSR4_tAYvw')
 
-insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',8,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/fzzjgBAaWZw?rel=0')
-insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',8,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/7VSR4_tAYvw?rel=0')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',8,DateAdd(month,-5,GetDate()),'fzzjgBAaWZw')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',8,DateAdd(month,-5,GetDate()),'7VSR4_tAYvw')
 
 
 --New features
-insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',9,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/fzzjgBAaWZw?rel=0')
-insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',9,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/7VSR4_tAYvw?rel=0')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',9,DateAdd(month,-5,GetDate()),'fzzjgBAaWZw')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',9,DateAdd(month,-5,GetDate()),'7VSR4_tAYvw')
 
-insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',10,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/fzzjgBAaWZw?rel=0')
-insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',10,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/7VSR4_tAYvw?rel=0')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',10,DateAdd(month,-5,GetDate()),'fzzjgBAaWZw')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',10,DateAdd(month,-5,GetDate()),'7VSR4_tAYvw')
 
-insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',11,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/fzzjgBAaWZw?rel=0')
-insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',11,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/7VSR4_tAYvw?rel=0')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',11,DateAdd(month,-5,GetDate()),'fzzjgBAaWZw')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',11,DateAdd(month,-5,GetDate()),'7VSR4_tAYvw')
 
-insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',12,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/fzzjgBAaWZw?rel=0')
-insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',12,DateAdd(month,-5,GetDate()),'http://www.youtube.com/embed/7VSR4_tAYvw?rel=0')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',12,DateAdd(month,-5,GetDate()),'fzzjgBAaWZw')
+insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',12,DateAdd(month,-5,GetDate()),'7VSR4_tAYvw')
 
 
 

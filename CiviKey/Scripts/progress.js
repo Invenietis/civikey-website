@@ -21,7 +21,7 @@
             autoOpen: false,
             width: 622,
             draggable: true,
-            modal: false,
+            modal: true,
             show: 'fade',
             resizable: false,
             hide: { effect: 'fade', duration: 200 },
@@ -29,8 +29,8 @@
                 $('#video iframe').attr('src', "");
             },
             open: function () {
-                $(".feature-dialog").css("top", $("#header").css("height"));
-                $(".feature-dialog").css("left", $("body").width() - $(".feature-dialog").width() - 10);
+//                $(".feature-dialog").css("top", $("#header").css("height"));
+//                $(".feature-dialog").css("left", $("body").width() - $(".feature-dialog").width() - 10);
             },
             dragStop: function (event, ui) {
                 if ($(".feature-dialog").css("top").toString().charAt(0) === '-') {
