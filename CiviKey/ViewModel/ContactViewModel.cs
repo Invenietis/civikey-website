@@ -17,6 +17,8 @@ namespace CiviKey.ViewModel
             _contact = contactRepo.ContactFromContactId( model.Id );
             Organizations = new List<ContactViewModel>();
             IsOrganization = model.Id == _contact.Id;
+            LogoPath = _contact.LogoPath;
+
             if( !IsOrganization )
             {
                 _organizations = contactRelationRepo.OrganizationsFromContactId( model.Id );
@@ -26,11 +28,16 @@ namespace CiviKey.ViewModel
                     Organizations.Add( new ContactViewModel( organization, partnerRepo, contactRepo, contactRelationRepo ) );
                 }
             }
+            else if( String.IsNullOrEmpty( LogoPath ) )
+            {
+                LogoPath = "partner-logo.png";
+            }
         }
-
+        
         public IList<ContactViewModel> Organizations { get; private set; }
-        public string Name { get { return _contact.Name; } }
         public string Description { get { return _contact.Description; } }
+        public string Name { get { return _contact.Name; } }
         public bool IsOrganization { get; private set; }
+        public string LogoPath { get; set; }
     }
 }

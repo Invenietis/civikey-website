@@ -1,5 +1,7 @@
-﻿@{
-    Html.CK().Scripts.ByName().IncludeJS( "home.js" );
+﻿@model IList<CiviKey.ViewModel.NewsViewModel>
+@{
+    Html.CK().Scripts.ByName().IncludeJS( "home.js" ).IncludeJS("bootstrap.min.js");
+    Html.CK().Css.ByName().IncludeCss( "bootstrap.min.css" );
 }
 <div class="home-slider">
     <div class="home-slider-download">
@@ -12,12 +14,22 @@
 </div>
 <div class="home-main-container">
     <div class="home-main-news">
-        <p class="news-title">Lancement du site !</p>
-        <p class="news-content"><br />Le site CiviKey est maintenant en ligne ! N'hésitez pas a parcourir ses différentes pages pour vous informer sur ce projet gratuit et open-source.</p>
+        <div id="home-carousel" class="carousel slide">
+          <!-- Carousel items -->
+          <div class="carousel-inner">
+            @{
+                for( int i = 0; i < @Model.Count; i++ )
+                {
+                    <div class="item @if(i == 0){@("active")}">@Html.Partial("_NewsView", Model.ElementAt(i))</div>
+                }
+            }
+          </div>
+          <!-- Carousel nav -->
+          <a class="carousel-control left" href="#home-carousel" data-slide="prev">&lsaquo;</a>
+          <a class="carousel-control right" href="#home-carousel" data-slide="next">&rsaquo;</a>
+        </div>
     </div>
-    <div class="home-main-testimony">
-        <p class="testimony-title">Un avenir radieux</p>
-        <p class="testimony-content">Depuis quelques mois, le projet CiviKey prend de l'ampleur, je lui prédis un avenir radieux !</p>
-        <p class="testimony-author">Lorem ipsum</p>
+    <div id="home-main-testimony">
+    <div id="testimony-container"></div>
     </div>
 </div>

@@ -1,5 +1,13 @@
 ﻿--Creating contacts
 
+insert into dbo.tTestimony (Author,Title,Content,CreationDate ) values('Lorem ipsum', 'un avenir radieux', 'Depuis quelques mois, le projet CiviKey prend de l''ampleur, je lui prédis un avenir radieux !', GetDate());
+insert into dbo.tTestimony (Author,Title,Content,CreationDate ) values('Lourem Ipsim', 'un projet suivi', 'CiviKey fait l''objet de projets étudiant chaque année. C''est un projet suivi de très près par notre école', GetDate());
+insert into dbo.tTestimony (Author,Title,Content,CreationDate ) values('louroum ipsem', 'un autre témoignage', 'Ceci est un autre témoignage', GetDate());
+
+insert into dbo.tNews (Title,Content,CreationDate ) values('Le site CiviKey est en ligne !', 'Le site CiviKey est maintenant en ligne ! N''hésitez pas a parcourir ses différentes pages pour vous informer sur ce projet gratuit et open-source.', GetDate());
+insert into dbo.tNews (Title,Content,CreationDate ) values('La Roadmap 2012 est lancée', 'Notre partenariat avec Alcatel-Lucent nous a permis de nous lancer sur le développement de la roadmap 2012, qui se terminera avec la mise à disposition de la version 2.5.2 de CiviKey <br/> détails sur la page Roadmaps.', GetDate());
+
+
 insert into dbo.tContact(Name,Description,LogoPath)values('Vlad Sargu','','');--1
 insert into dbo.tContact(Name,Description,LogoPath)values('Jean-Loup Kahloun','','');
 insert into dbo.tContact(Name,Description,LogoPath)values('Philippe Lepadellec','','');

@@ -31,7 +31,7 @@ namespace CiviKey.Repositories
             tParticipation participation = _c.tParticipations.Where( x => x.Id == participationId ).FirstOrDefault();
             if( participation != null )
             {
-                contactRelationId = participation.ContactRelationId; //WARNING : that participation.ContactId is a ContactRelationId !
+                contactRelationId = participation.ContactRelationId;
                 return ContactRelationFromContactRelationId( contactRelationId );
             }
             return null;
