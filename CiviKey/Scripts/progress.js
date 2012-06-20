@@ -19,7 +19,8 @@
         $("#dialog-container").dialog({
             dialogClass: 'feature-dialog',
             autoOpen: false,
-            width: 622,
+            width: 623,
+            height: 800,
             draggable: true,
             modal: true,
             show: 'fade',
@@ -28,10 +29,6 @@
             close: function (e, ui) {
                 $('#video iframe').attr('src', "");
             },
-            open: function () {
-//                $(".feature-dialog").css("top", $("#header").css("height"));
-//                $(".feature-dialog").css("left", $("body").width() - $(".feature-dialog").width() - 10);
-            },
             dragStop: function (event, ui) {
                 if ($(".feature-dialog").css("top").toString().charAt(0) === '-') {
                     $(".feature-dialog").css("top", 0);
@@ -39,6 +36,9 @@
             }
         }).load("/Feature/Index/" + featureId, function () {
             $("#dialog-container").dialog('open');
+            if ($(".feature-info").height() > 600) {
+                $(".feature-info").height(600);
+            }
         });
     });
 });

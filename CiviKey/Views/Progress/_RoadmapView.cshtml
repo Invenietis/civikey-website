@@ -70,10 +70,13 @@
     </script>
 
 @* Version Download part *@
-    <div class="release-info-container">
-        <p>
-            Version @Model.Name</p>
-        <div class="feature-download-btn">
+    if(Model.HasRelease)
+    {
+        <div class="release-info-container">
+            <p>Version @Model.Name</p>
+            <div class="feature-download-btn">
+                <a href="#" class="progress-download-link" title="Téléchargement">&nbsp</a>
+            </div>
         </div>
-    </div>
+    }
 }

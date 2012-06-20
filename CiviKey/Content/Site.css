@@ -256,6 +256,7 @@ body
 ul#menu
 {
     position: relative;
+    margin-top: 18px;
 }
 
 ul#menu li
@@ -280,8 +281,6 @@ ul
 {
     background-color: #e4e4e4;
 }
-
-
 
 #main
 {
@@ -380,7 +379,6 @@ ul
     margin-top: 25px;
 }
 
-
 .home-main-news
 {
     width: 460px;
@@ -393,7 +391,7 @@ ul
     font-family: Microsoft Tai Le;
     text-align: justify;
 }
-.home-main-testimony
+#home-main-testimony
 {
     width: 335px;
     height: 165px;
@@ -404,7 +402,31 @@ ul
     padding-left: 50px;
     padding-right: 35px;
 }
-.news-title, .testimony-title
+
+
+/*----------------Home carousel-----------------------*/ 
+#home-carousel .carousel-control.right
+{
+    top: 150px;
+}
+
+#home-carousel .carousel-control.left
+{
+    left: 395px;
+    top: 150px;
+}
+
+#home-carousel .carousel-control
+{
+    font-size: 25px;
+    line-height: 18px;
+    width: 20px;
+    height: 20px;
+}
+/*----------------Home carousel-----------------------*/
+
+
+.news-title, #testimony-title
 {
     font-size: 25px;
     font-weight: bold;
@@ -419,6 +441,14 @@ ul
     color: #4b4b4b;
     line-height: 18px;
 }
+.news-date
+{
+    font-size: 10px;
+    margin: 0px;
+    padding: 0;
+    line-height: 0px;
+}
+
 .testimony-content
 {
     font-size: 15px;
@@ -564,19 +594,25 @@ ul
     border-bottom:1px solid #858585;
 }
 
-.active
+
+
+/*---------------------Page le projet - carousel--------------------*/
+.project-content .active
 {
     background-image:url('/Content/images/project-activeelem.png');
 }
 
-.active p
+.project-content .active p
 {
     color:#f6f6f6;
 }
-.inactive
+.project-content .inactive
 {
     background-image:url('/Content/images/preject-inactivelem.png');
 }
+/*---------------------Page le projet - carousel--------------------*/
+
+
 
 .project-shadow
 {
@@ -838,6 +874,13 @@ a.timeline-unselected
     color: white; 
 }
 
+.progress-download-link
+{
+    width: 160px;
+    height: 50px;
+    display: block;
+}
+
 .show-more-features
 {
     cursor:pointer;
@@ -913,12 +956,11 @@ a.timeline-unselected
     clear:both;
 }
 
-.partners-title-logo
+.partners-title-logo img
 {
     margin:20px 0px 0px 50px;
     width:90px;
     height:90px;
-    background-image: url('/Content/images/partner-logo.png');
     background-repeat:no-repeat;
     background-position:0px 3px;
     float:left;
@@ -1151,7 +1193,7 @@ label
     height:50px;
     width:530px;
     float:left;
-    padding-top:10px;
+    padding-top:20px;
     padding-right:12px;
     text-align:right;
     font-family:Arial;

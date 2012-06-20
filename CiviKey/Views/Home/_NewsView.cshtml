@@ -1,0 +1,8 @@
+﻿@model CiviKey.ViewModel.NewsViewModel
+@{
+    ViewBag.Title = "_TestimonyView";
+}
+    <p class="news-title">@Html.Raw(@Model.Title)</p>
+    <p class="news-date">@Model.CreationDate.ToShortDateString()</p>
+    <div style="clear:both"></div>
+    <p class="news-content"><br />@Html.Raw(Model.Content)</p>
