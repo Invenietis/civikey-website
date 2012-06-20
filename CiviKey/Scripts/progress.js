@@ -1,4 +1,15 @@
 ﻿$(function () {
+    $('.accordion-heading').live('click',function () {
+        elem = $('.collapse-image',this);
+        if (elem.hasClass('colapsed')) {
+            elem.removeClass('colapsed');
+            elem.addClass('expended');
+        } else {
+            elem.removeClass('expended');
+            elem.addClass('colapsed');
+        }
+    });
+
     $(".show-more-features").click(function () {
         $(".hidden-feature").removeClass("hidden-feature");
         $(this).hide();

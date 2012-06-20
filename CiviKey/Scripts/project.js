@@ -15,6 +15,7 @@
             $('.project-slide' + notActivElem[0]).fadeOut(function () {
                 $('.project-slide' + notActivElem[1]).fadeOut(function () {
                     $('.project-slide' + notActivElem[2]).fadeIn();
+                    changeContentHeight();
                 });
             });
         }
@@ -42,6 +43,15 @@
             return true;
         } else {
             return false;
+        }
+    }
+
+    function changeContentHeight() {
+        var shadowHeight = $('.project-shadow').height();
+        var content = $('.project-leftblock-content').height();
+        if (content != 0) {
+            $('.project-slider').height(content);
+            $('.project-shadow').css('top', content - shadowHeight);
         }
     }
 });

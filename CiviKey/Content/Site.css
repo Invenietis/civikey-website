@@ -532,11 +532,9 @@ ul
 .project-leftblock
 {
     float:left;
-    width:643px;
+    width:656px;
     height:330px;
     background-color:#f4f4f4;
-    border-bottom:1px solid #858585;
-    border-left:1px solid #858585;
     border-top:1px solid #858585;
     vertical-align:middle;
     font-family:Verdana;
@@ -588,11 +586,6 @@ ul
     
 }
 
-#acteurs
-{
-    
-    border-bottom:1px solid #858585;
-}
 
 
 
@@ -621,7 +614,11 @@ ul
     width:59px;
     height:35px;
     left:-59px;
-    top:297px;
+    top:295px;
+    transition: height 2s;
+    -webkit-transition: all .5s ease;
+       -moz-transition: all .5s ease;
+            transition: all .5s ease;
 }
 
 .passiveslide
@@ -1061,7 +1058,7 @@ label
     width:209px;
     background-color:#eaeaea;
     border: 1px solid #bebebe;
-    height:105px;
+    height:110px;
     resize:none;
 }
 
@@ -1193,7 +1190,7 @@ label
     height:50px;
     width:530px;
     float:left;
-    padding-top:20px;
+    padding-top:10px;
     padding-right:12px;
     text-align:right;
     font-family:Arial;
@@ -1382,4 +1379,47 @@ ul#menu li.menuelem.selected
     background-position:0 2px;
     line-height:15px;
     margin-bottom:35px;
+}
+
+.project-slider
+{
+    overflow:hidden;
+    height:330px;
+    background-image: url('/Content/images/project-repeat-bar.png');
+    background-position:right;
+    background-repeat:repeat-y;
+    border-right: 1px solid #858585;
+    border-bottom:1px solid #858585;
+    border-left:1px solid #858585;
+    background-color:#f4f4f4;
+    transition: height 2s;
+    -webkit-transition: all .5s ease;
+       -moz-transition: all .5s ease;
+            transition: all .5s ease;
+}
+
+.accordion-heading img
+{
+    float: left;
+    margin: 9px 9px 0px 9px;
+}
+
+.collapse-image
+{
+    margin:10px;
+    width:21px;
+    height:21px;
+    float:right;
+}
+
+.colapsed
+{
+    background-image:url('/Content/images/expander-arrow.png');
+    background-repeat:no-repeat;
+}
+
+.expended
+{
+    background-image:url('/Content/images/expander-arrow-turned.png');
+    background-repeat:no-repeat; 
 }
