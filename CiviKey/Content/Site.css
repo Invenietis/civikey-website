@@ -22,25 +22,21 @@ to use a different color start by replacing all instances of
 ----------------------------------------------------------*/
 a:link
 {
-    color: #fff;
     text-decoration:none;
 }
 
 a:visited
 {
-    color: #fff;
     text-decoration:none;
 }
 
 a:hover
 {
-    color: #fff;
     text-decoration:none;
 }
 
 a:active
 {
-    color: #fff;
     text-decoration:none;
 }
 
@@ -1334,7 +1330,6 @@ label
 
 ul#menu li.menuelem.selected
 {
-    color:#4d98df;
 }
 
 .progress-list-of-features h2
@@ -1443,4 +1438,42 @@ ul#menu li.menuelem.selected
 {
     background-image:url('/Content/images/expander-arrow-turned.png');
     background-repeat:no-repeat; 
+}
+
+.partner-page-left
+{
+    font-family:Verdana;
+    color:#4B4B4B;
+    width: 20%;
+    float:left;
+    padding-right:30px;
+    font-size:15px;
+}
+
+.partner-page-right
+{
+    font-size:15px;
+    font-family:Verdana;
+    padding-left:30px;
+    color:#4B4B4B;
+    width:70%;
+    float:left;
+    text-align:justify;
+    border-left:1px solid #E4E4E4;
+}
+
+.partner-page-image
+{
+    width:100%;
+}
+
+.partner-page-info p
+{
+    margin:0px;
+}
+
+.partner-page-info
+{
+    padding-bottom:20px;
+    border-bottom:1px solid #e4e4e4;
 }
