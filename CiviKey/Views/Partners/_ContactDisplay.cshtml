@@ -1,16 +1,15 @@
 ﻿@model CiviKey.ViewModel.ContactViewModel
-
-<div class="partners-elem-title">
-    <div class="partners-title-logo">
-        <a href="@Url.Action( "GetPartnerPage", "Partners", new { name = Model.Name.Replace(' ', '-').Replace("'","").ToLowerInvariant() } )">
+           
+<a style="display: block;" href="@Url.Action( "GetPartnerPage", "Partners", new { name = Model.Name.Replace( ' ', '-' ).Replace( "'", "" ).ToLowerInvariant() } )">
+    <div class="partners-elem-title">
+        <div class="partners-title-logo">
             <img src="/Content/images/PartnerLogo/@Model.LogoPath" alt="Logo" />
-        </a>
+        </div>
+        <div class="partners-title-name">@Model.Name</div>
+        <div style="clear: both;">
+        </div>
     </div>
-    <div class="partners-title-name">@Model.Name</div>
-    <div style="clear:both;"></div>
-</div>
+</a>
 <div class="partners-elem-text">
-    @Html.Raw(Model.Description)
+    @Html.Raw( Model.Description )
 </div>
-    
-

@@ -8,9 +8,14 @@
             url: 'Home/GetTestimonyView',
             data: { currentTestimonyId: $("#testimony-title").attr("data-id") },
             success: function (data) {
-                $("#testimony-container").fadeOut(1000, function () {
-                    $(this).html(data).fadeIn();
-                });
+                if ($("#testimony-title").attr("data-id") == undefined) {
+                    $("#testimony-container").html(data);
+                }
+                else {
+                    $("#testimony-container").fadeOut(1000, function () {
+                        $(this).html(data).fadeIn();
+                    });
+                }
             }
         });
     }

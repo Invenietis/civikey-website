@@ -31,7 +31,7 @@
             dialogClass: 'feature-dialog',
             autoOpen: false,
             width: 623,
-            height: 800,
+//            height: 800,
             draggable: true,
             modal: true,
             show: 'fade',
@@ -47,9 +47,9 @@
             }
         }).load("/Feature/Index/" + featureId, function () {
             $("#dialog-container").dialog('open');
-            if ($(".feature-info").height() > 600) {
-                $(".feature-info").height(600);
-            }
+//            if ($(".feature-info").height() > 600) {
+//                $(".feature-info").height(600);
+//            }
         });
     });
 });
