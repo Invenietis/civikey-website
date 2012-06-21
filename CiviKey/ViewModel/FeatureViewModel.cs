@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using CiviKey.Models;
 using CiviKey.Repositories;
+using System.Diagnostics;
 
 namespace CiviKey.ViewModel
 {
@@ -44,7 +45,7 @@ namespace CiviKey.ViewModel
         IList<ParticipationViewModel> _developers;
         public IList<ParticipationViewModel> Developers { get { return _developers; } }
 
-        public IDictionary<int, IList<ParticipationViewModel>> Participations { get; private set; }
+        public IDictionary<ContactViewModel, IList<ParticipationViewModel>> Participations { get; private set; }
 
         IList<ParticipationViewModel> _sponsors;
         public IList<ParticipationViewModel> Sponsors { get { return _sponsors; } }
@@ -65,14 +66,14 @@ namespace CiviKey.ViewModel
             _sections = model.tSections.Select( s => new SectionViewModel( s ) ).ToList();
             _videos = model.tVideos.Select( v => new VideoViewModel( v ) ).ToList();
 
-            Participations = new Dictionary<int, IList<ParticipationViewModel>>();
+            Participations = new Dictionary<ContactViewModel, IList<ParticipationViewModel>>();
             foreach( var participation in model.tParticipations.Where( x => x.PartType == ParticipationType.Development.ToString() ) )
             {
                 ParticipationViewModel vm = new ParticipationViewModel( this, participation, _partnerRepo, _contactRepo, _contactRelationRepo );
                 if( _mainDevelopementParticipation == null ) _mainDevelopementParticipation = vm;
                 if( participation.Percentage > _mainDevelopementParticipation.Percentage ) _mainDevelopementParticipation = vm;
 
-                var existings = FindOrCreateCompany( participation.tContactRelation.EntityId );
+                var existings = FindOrCreateCompany( new ContactViewModel(participation.tContactRelation.tOrganization, _partnerRepo, _contactRepo, _contactRelationRepo) );
                 existings.Add( vm );
             }
 
@@ -85,13 +86,14 @@ namespace CiviKey.ViewModel
             }
         }
 
-        IList<ParticipationViewModel> FindOrCreateCompany( int companyId )
+        IList<ParticipationViewModel> FindOrCreateCompany( ContactViewModel company )
         {
+            Debug.Assert( company.IsOrganization );
             IList<ParticipationViewModel> contacts = null;
-            if( !Participations.TryGetValue( companyId, out contacts ) )
+            if( !Participations.TryGetValue( company, out contacts ) )
             {
                 contacts = new List<ParticipationViewModel>();
-                Participations.Add( companyId, contacts );
+                Participations.Add( company, contacts );
             }
             return contacts;
         }

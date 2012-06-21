@@ -7,7 +7,7 @@ using CiviKey.Repositories;
 
 namespace CiviKey.ViewModel
 {
-    public class ContactViewModel
+    public class ContactViewModel : IEquatable<ContactViewModel>
     {
         tContact _contact;
         IQueryable<tContact> _organizations;
@@ -41,5 +41,15 @@ namespace CiviKey.ViewModel
         public string Name { get { return _contact.Name; } }
         public bool IsOrganization { get; private set; }
         public string LogoPath { get; set; }
+
+        public bool Equals( ContactViewModel other )
+        {
+            return other.Id == this.Id;
+        }
+
+        public override int GetHashCode()
+        {
+            return this.Id.GetHashCode();
+        }
     }
 }
