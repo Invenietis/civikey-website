@@ -1,13 +1,15 @@
 ﻿$(function () {
-    $('.accordion-heading').live('click',function () {
-        elem = $('.collapse-image',this);
-        if (elem.hasClass('colapsed')) {
-            elem.removeClass('colapsed');
-            elem.addClass('expended');
-        } else {
-            elem.removeClass('expended');
-            elem.addClass('colapsed');
-        }
+
+    $('.accordion-group').on('hide', function () {
+        var elem = $('.collapse-image', this);
+        elem.removeClass('expended');
+        elem.addClass('colapsed');
+    });
+
+    $('.accordion-group').on('show', function () {
+        var elem = $('.collapse-image', this);
+        elem.removeClass('colapsed');
+        elem.addClass('expended');
     });
 
     $(".show-more-features").click(function () {

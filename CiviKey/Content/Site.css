@@ -10,6 +10,7 @@ body{
 
 #main-background
 {
+    min-height:500px;
     padding-top: 30px;
     padding-bottom: 30px;
     background-color: #fff;
@@ -614,7 +615,7 @@ ul
     width:59px;
     height:35px;
     left:-59px;
-    top:295px;
+    top:350px;
     transition: height 2s;
     -webkit-transition: all .5s ease;
        -moz-transition: all .5s ease;
@@ -1359,7 +1360,7 @@ ul#menu li.menuelem.selected
     background-position:center;
 }
 
-.partners-title
+.partners-title, .project-title
 {
     font-family:Verdana;
     width:1000px;
@@ -1379,15 +1380,14 @@ ul#menu li.menuelem.selected
 {
     font-family:Verdana;
     width:1000px;
-    height:33px;
     background-image:url('/Content/images/contact-title-back.png');
-    background-repeat:no-repeat;
+    background-repeat: repeat-y;
     font-size:14px;
     margin-left:auto;
     margin-right:auto;
     padding-left:30px;
     background-position:0 2px;
-    line-height:15px;
+    line-height:18px;
     margin-bottom:35px;
 }
 
