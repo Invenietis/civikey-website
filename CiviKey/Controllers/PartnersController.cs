@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using CiviKey.Models;
 using CiviKey.ViewModel;
 using CiviKey.Repositories;
+using System.IO;
 
 namespace CiviKey.Controllers
 {
@@ -53,6 +54,14 @@ namespace CiviKey.Controllers
 
             ViewBag.Title = "CiviKey - Partenaires";
             return View( contactViewModel );
+        }
+
+        public ActionResult GetPartnerPage( string name )
+        {
+            ViewEngineResult result = ViewEngines.Engines.FindView( ControllerContext, Path.Combine("Views", name), null );
+            if( result.View == null ) return RedirectToAction("Index");
+
+            return View( result.View );
         }
 
     }

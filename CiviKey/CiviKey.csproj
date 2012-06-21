@@ -320,6 +320,8 @@
     <Content Include="Views\Progress\_CategorizedRoadmapView.cshtml" />
     <Content Include="Views\Home\_TestimonyView.cshtml" />
     <Content Include="Views\Home\_NewsView.cshtml" />
+    <Content Include="Views\Partners\Views\Steria.cshtml" />
+    <Content Include="Views\Partners\Views\Invenietis.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

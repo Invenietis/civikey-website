@@ -27,6 +27,12 @@ namespace CiviKey
             routes.IgnoreRoute( "{resource}.axd/{*pathInfo}" );
 
             routes.MapRoute(
+                "Partners", // Route name
+                "partners/{name}", // URL with parameters
+                new { controller = "Partners", action = "GetPartnerPage" } // Parameter defaults
+            );
+
+            routes.MapRoute(
                 "Default", // Route name
                 "{controller}/{action}/{id}", // URL with parameters
                 new { controller = "Home", action = "Index", id = UrlParameter.Optional } // Parameter defaults

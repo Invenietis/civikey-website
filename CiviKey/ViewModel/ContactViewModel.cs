@@ -18,6 +18,7 @@ namespace CiviKey.ViewModel
             Organizations = new List<ContactViewModel>();
             IsOrganization = model.Id == _contact.Id;
             LogoPath = _contact.LogoPath;
+            
 
             if( !IsOrganization )
             {
@@ -33,7 +34,8 @@ namespace CiviKey.ViewModel
                 LogoPath = "partner-logo.png";
             }
         }
-        
+
+        public int Id { get { return _contact.Id; } }
         public IList<ContactViewModel> Organizations { get; private set; }
         public string Description { get { return _contact.Description; } }
         public string Name { get { return _contact.Name; } }
