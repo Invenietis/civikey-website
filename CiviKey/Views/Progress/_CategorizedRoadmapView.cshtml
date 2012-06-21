@@ -5,18 +5,20 @@
         <div class="accordion" id="accordion2">
         @{
            int i = 0;
-            foreach( string categoryName in Model.CategorizedFeatures.Keys )
+            foreach( CiviKey.ViewModel.CategoryViewModel category in Model.CategorizedFeatures.Keys )
             {
                i++;
-               <div class="accordion-group">
-                   <div class="accordion-heading">
-                       <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse@(i)">
-                           @categoryName (@Model.CategorizedFeatures[categoryName].Count)
-                       </h2>
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                    <div class="collapse-image colapsed"></div>
+                    <img src="@Url.Content("~/Content/images/CategoryIcon/"+@category.IconName)" />
+                        <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse@(i)">
+                           @category.Name (@Model.CategorizedFeatures[category].Count)
+                        </h2>
                    </div>
                    <div id="collapse@(i)" class="accordion-body collapse in" style=" height:0px;">
                        <div class="accordion-inner">
-                           @Html.Partial("_FeatureCategoryView", Model.CategorizedFeatures[categoryName])
+                           @Html.Partial("_FeatureCategoryView", Model.CategorizedFeatures[category])
                        </div>
                    </div>
                </div> 

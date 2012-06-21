@@ -75,6 +75,7 @@
           </Key>
           <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="IconName" Type="varchar" MaxLength="128" />
         </EntityType>
         <EntityType Name="tCategoryFeature">
           <Key>
@@ -400,6 +401,7 @@
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="Name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tFeatures" Relationship="CiviKeyModel.tCategoryFeature" FromRole="tCategory" ToRole="tFeature" />
+          <Property Type="String" Name="IconName" MaxLength="128" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="tContact">
           <Key>
@@ -608,6 +610,7 @@
           <EntitySetMapping Name="tCategories">
             <EntityTypeMapping TypeName="CiviKeyModel.tCategory">
               <MappingFragment StoreEntitySet="tCategory">
+                <ScalarProperty Name="IconName" ColumnName="IconName" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>

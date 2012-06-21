@@ -104,7 +104,8 @@ create table tSectionPlugin
 create table tCategory
 (
 	Id int not null primary key identity(1,1),
-	Name varchar(128) not null
+	Name varchar(128) not null,
+	IconName varchar(128)
 );
 
 create table tParticipation

@@ -124,11 +124,11 @@ insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,Participati
 insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(9,4) --Antoine Raquillet has developed 50% of the Automatic Update
 --OK
 --Creating categories
-insert into dbo.tCategory(Name) values ('Aide au clic') --1
-insert into dbo.tCategory(Name) values ('Aide à la saisie') --2
-insert into dbo.tCategory(Name) values ('Aide au déplacement du pointeur') --3
-insert into dbo.tCategory(Name) values ('Aide visuelle') --4
-insert into dbo.tCategory(Name) values ('Noyau') --5
+insert into dbo.tCategory(Name,IconName) values ('Aide au clic','mouse_pointer_24x24.png') --1
+insert into dbo.tCategory(Name,IconName) values ('Aide à la saisie','keyboard_24x24.png') --2
+insert into dbo.tCategory(Name,IconName) values ('Aide au déplacement du pointeur','move_24x24.png') --3
+insert into dbo.tCategory(Name,IconName) values ('Aide visuelle','zoom_in_24x24.png') --4
+insert into dbo.tCategory(Name,IconName) values ('Noyau','gear_wheel_24x24.png') --5
 --OK
 --Linking feature to categories
 insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (1,1) --Autoclick - clic

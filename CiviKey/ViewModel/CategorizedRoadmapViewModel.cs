@@ -9,7 +9,7 @@ namespace CiviKey.ViewModel
 {
     public class CategorizedRoadmapViewModel
     {
-        Dictionary<string, ICollection<FeatureViewModel>> _categorizedFeatures;
+        Dictionary<CategoryViewModel, ICollection<FeatureViewModel>> _categorizedFeatures;
         string _name;
         ICollection<FeatureViewModel> _features;
 
@@ -32,11 +32,11 @@ namespace CiviKey.ViewModel
 
         public CategorizedRoadmapViewModel( ICollection<tFeature> features, PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo, string name )
         {
-            _categorizedFeatures = new Dictionary<string, ICollection<FeatureViewModel>>();
+            _categorizedFeatures = new Dictionary<CategoryViewModel, ICollection<FeatureViewModel>>();
             _name = name;
             PopulateCollections( partnerRepo, contactRepo, contactRelationRepo, features );
         }
-
+                
         private void PopulateCollections( PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo, ICollection<tFeature> features )
         {
             _features = new List<FeatureViewModel>();
@@ -47,14 +47,14 @@ namespace CiviKey.ViewModel
 
                 foreach( CategoryViewModel cat in vm.Categories )
                 {
-                    if( !_categorizedFeatures.ContainsKey( cat.Name ) ) _categorizedFeatures.Add( cat.Name, new List<FeatureViewModel>() );
-                    _categorizedFeatures[cat.Name].Add( vm );
+                    if (!_categorizedFeatures.ContainsKey(cat)) _categorizedFeatures.Add(cat, new List<FeatureViewModel>());
+                    _categorizedFeatures[cat].Add( vm );
                 }
             }
         }
 
         public string Name { get { return _name; } }
         public ICollection<FeatureViewModel> Features { get { return _features; } }
-        public Dictionary<string, ICollection<FeatureViewModel>> CategorizedFeatures { get { return _categorizedFeatures; } }
+        public Dictionary<CategoryViewModel, ICollection<FeatureViewModel>> CategorizedFeatures { get { return _categorizedFeatures; } }
     }
 }

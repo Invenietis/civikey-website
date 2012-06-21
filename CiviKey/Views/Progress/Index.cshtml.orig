@@ -1,0 +1,55 @@
+﻿@model CiviKey.ViewModel.CategorizedRoadmapViewModel
+<<<<<<< HEAD
+@Html.CK().Scripts.ByName().IncludeJS("progress.js").IncludeJS("jquery.unobtrusive-ajax.js").IncludeJS("jquery-ui-1.8.19.min.js").IncludeJS("setSponsor-1.0.0.js").IncludeJS("feature.js")
+@Html.CK().Css.IncludeCss("Content/themes/base/jquery.ui.dialog.css").IncludeCss("Content/themes/base/jquery.ui.core.css").IncludeCss("Content/themes/base/jquery.ui.theme.css")
+=======
+@Html.CK().Scripts.ByName().IncludeJS("progress.js").IncludeJS("jquery.unobtrusive-ajax.js").IncludeJS("jquery-ui-1.8.19.min.js").IncludeJS("setSponsor-1.0.0.js").IncludeJS("feature.js").IncludeJS("bootstrap.min.js")
+@Html.CK().Css.IncludeCss("Content/themes/base/jquery.ui.dialog.css").IncludeCss("Content/themes/base/jquery.ui.core.css").IncludeCss("Content/themes/base/jquery.ui.theme.css").IncludeCss("Content/themes/base/bootstrap.css")
+>>>>>>> origin/develop
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+<div id="dialog-container">
+</div>
+<div class="progress-content">
+    <div class="progress-title">
+        Cette page affiche l'avancement du projet, vous pouvez selectionner les différentes versions du CiviKey pour afficher les fonctionnalités qui les composent. Vous pouvez également cliquer sur chaque fonctionnalité pour afficher les informations la concernant.
+    </div>
+    <div class="progress-timebar">
+        <div class="progress-timebar-container">
+            <div class="timeline-container">
+                <ul id="timeline-buttons">
+                    <li>
+                        @Ajax.ActionLink( "Existant", "GetFeatureView", new { id = 0 }, new AjaxOptions
+                        {
+                            InsertionMode = InsertionMode.Replace,
+                            UpdateTargetId = "featureList",
+                            OnSuccess = "document.CK.AjaxCallbacks.onProgressGetFeatureViewSuccess"
+                        }, new { @class = "timeline-feature-link roadmap-0 timeline-selected" } )
+                    </li>
+                    @foreach( CiviKey.Models.tRoadMap item in ViewBag.Roadmaps )
+                    {
+                        <li>
+                            @Ajax.ActionLink( item.Name, "GetFeatureView", new { id = @item.Id }, new AjaxOptions
+                            {
+                                InsertionMode = InsertionMode.Replace,
+                                UpdateTargetId = "featureList",
+                                OnSuccess = "document.CK.AjaxCallbacks.onProgressGetFeatureViewSuccess"
+                            }, new { @class = "timeline-feature-link roadmap-" + item.Id } )
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div class="progress-bar-begin">
+        </div>
+        <div style="clear: both;">
+        </div>
+    </div>
+    <div id="featureList">
+        @Html.Partial( "_CategorizedRoadmapView", Model )
+    </div>
+    <div style="clear: both;">
+    </div>
+</div>

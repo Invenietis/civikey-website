@@ -4,10 +4,12 @@
 <head>
     <title>@ViewBag.Title</title>
     @Html.CK().Css.ByName().IncludeCss("Site")
+    @Html.CK().Css.IncludeCss("Content/themes/base/bootstrap.css")
     @{
         Html.CK().Scripts.ByName().
             IncludeJS( "jquery-1.7.2.min.js",0).
-            IncludeJS( "layout.js",1 );
+            IncludeJS("layout.js", 1).
+            IncludeJS("bootstrap-collapse.js");
     }
     
     @Html.CK().Css.RenderCss()
