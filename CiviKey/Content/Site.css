@@ -129,6 +129,17 @@ table th
 
 /* MISC  
 ----------------------------------------------------------*/
+.bold
+{
+    font-weight: bold;
+}
+
+.italic
+{
+    font-style: italic;
+}
+
+
 .clear
 {
     clear: both;
@@ -978,7 +989,7 @@ a.timeline-unselected
 {
     color: Black;
     float:left;
-    margin:47px 0px 0px 25px;
+    margin:47px 0px 0px 13px;
     font-family: Estrangelo Edessa;
     font-size:40px;
 }
