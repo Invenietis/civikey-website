@@ -13,15 +13,13 @@
         {
             lineFeatureCount = Model.Count - index * lineFeatureCount;
         }
-        <div class="progress-list-line">
-            @for( int j = 3 * index; j < ( 3 * index + lineFeatureCount ); j++ )
-            {
-                <div class="progress-list-elem @if( ( j + 1 ) % lineCountMax == 0 || j + 1 == Model.Count )
-                                               {@("last-feature")}" data-id="@Model.ElementAt(j).Id">
-                    @Html.Partial( "_FeatureView", Model.ElementAt(j) )
-                </div>
-            }
-            <div style="clear: both;">
+        for( int j = 3 * index; j < ( 3 * index + lineFeatureCount ); j++ )
+        {
+            <div class="progress-list-elem @if( ( j + 1 ) % lineCountMax == 0 || j + 1 == Model.Count )
+                                            {@("last-feature")}" data-id="@Model.ElementAt(j).Id">
+                @Html.Partial( "_FeatureView", Model.ElementAt(j) )
             </div>
-        </div>
+        }
+            
     }
+    <div style="clear: both;"></div>

@@ -4769,7 +4769,10 @@ a.badge:hover {
   cursor: pointer;
 }
 
-.accordion-inner {
+.accordion-inner 
+{
+    padding-right:20px;
+    padding-bottom:20px;
   border-top: 1px solid #e5e5e5;
 }
 
