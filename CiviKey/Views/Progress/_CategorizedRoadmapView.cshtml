@@ -4,7 +4,7 @@
     <div class="progress-list-of-features" data-id="@ViewBag.CurrentRoadmapId">
         <div class="accordion" id="accordion2">
             @{
-           int i = 100;
+           int i = 0;
             foreach( CiviKey.ViewModel.CategoryViewModel category in Model.CategorizedFeatures.Keys )
             {
                 i++;
@@ -12,12 +12,12 @@
                     <div class="accordion-heading">
                         <div class="collapse-image colapsed">
                         </div>
-                        <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse@((char)i)">
+                        <img src="@Url.Content("~/Content/images/CategoryIcon/"+@category.IconName)" />
                         <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" data-target="#collapse@(i)">
                             @category.Name (@Model.CategorizedFeatures[category].Count)
                         </h2>
                     </div>
-                   <div id="collapse@((char)i)" class="accordion-body collapse">
+                   <div id="collapse@(i)" class="accordion-body collapse">
                         <div class="accordion-inner">
                             @Html.Partial( "_FeatureCategoryView", Model.CategorizedFeatures[category] )
                         </div>
