@@ -1,4 +1,4 @@
-﻿﻿@model CiviKey.ViewModel.RoadmapViewModel
+﻿@model CiviKey.ViewModel.RoadmapViewModel
 @{
 @*Feature display part*@
     <div class="progress-list-of-features" data-id="@ViewBag.CurrentRoadmapId">
@@ -14,7 +14,7 @@
                             Nouvelles fonctionnalités (@Model.NewFeatures.Count)
                         </h2>
                     </div>
-                    <div id="collapseOne" class="accordion-body collapse in" style="height: 0px;">
+                    <div id="collapseOne" class="accordion-body collapse">
                         <div class="accordion-inner">
                             @Html.Partial( "_FeatureCategoryView", Model.NewFeatures )</div>
                     </div>
@@ -31,7 +31,7 @@
                             Fonctionnalités améliorées (@Model.UpdatedFeatures.Count)
                         </h2>
                     </div>
-                    <div id="collapseTwo" class="accordion-body collapse in">
+                    <div id="collapseTwo" class="accordion-body collapse">
                         <div class="accordion-inner">
                             @Html.Partial( "_FeatureCategoryView", Model.UpdatedFeatures )
                         </div>
@@ -49,7 +49,7 @@
                             Fonctionnalités disponibles (@Model.AvailableFeatures.Count)
                         </h2>
                     </div>
-                    <div id="collapseThree" class="accordion-body collapse in" style="height: 0px;">
+                    <div id="collapseThree" class="accordion-body collapse">
                         <div class="accordion-inner">
                             @Html.Partial( "_FeatureCategoryView", Model.AvailableFeatures )
                         </div>
@@ -67,7 +67,7 @@
                             Fonctionnalités non disponibles (@Model.UnavailableFeatures.Count)
                         </h2>
                     </div>
-                    <div id="collapseFour" class="accordion-body collapse in" style="height: 0px;">
+                    <div id="collapseFour" class="accordion-body collapse">
                         <div class="accordion-inner">
                             @Html.Partial( "_FeatureCategoryView", Model.AvailableFeatures )
                         </div>
