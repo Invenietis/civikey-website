@@ -1,25 +1,11 @@
 ﻿@model ICollection<CiviKey.ViewModel.FeatureViewModel>
 @{
-    int lineCountMax = ViewBag.LineCountMax;
-    if( lineCountMax == 0 ) {lineCountMax = 3;}
-
-    int lineCount = (int)Math.Ceiling( (double)Model.Count / (double)lineCountMax );
-    int lineFeatureCount = Model.Count > lineCountMax ? lineCountMax : Model.Count;
-    int index;
 }
-@for( index = 0; index < lineCount; index++ )
-    {
-        if( Model.Count - index * lineFeatureCount < lineFeatureCount )
-        {
-            lineFeatureCount = Model.Count - index * lineFeatureCount;
-        }
-        for( int j = 3 * index; j < ( 3 * index + lineFeatureCount ); j++ )
-        {
-            <div class="progress-list-elem @if( ( j + 1 ) % lineCountMax == 0 || j + 1 == Model.Count )
-                                            {@("last-feature")}" data-id="@Model.ElementAt(j).Id">
-                @Html.Partial( "_FeatureView", Model.ElementAt(j) )
-            </div>
-        }
-            
-    }
-    <div style="clear: both;"></div>
+@foreach( var item in Model )
+{
+    <div class="progress-list-elem" data-id="@item.Id">
+        @Html.Partial( "_FeatureView", item )
+    </div>
+}
+<div style="clear: both;">
+</div>

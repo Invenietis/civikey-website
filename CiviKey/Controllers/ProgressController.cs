@@ -32,15 +32,10 @@ namespace CiviKey.Controllers
             ViewBag.Roadmaps = _roadmapRepo.All.ToList().Reverse<tRoadMap>();
             ViewBag.Section = Sections.Progress;
             ViewBag.Title = "CiviKey - Avancement";
-            ViewBag.RoadmapViewType = "classic";
-            RoadmapViewModel rvm = new RoadmapViewModel( _roadmapRepo.GetLastReleasedRoadmap(), _partnerRepo, _contactRepo, _contactRelationRepo );
-            if( ViewBag.RoadmapViewType == "categorized" )
-            {
-                ViewBag.LineCountMax = 4;
-                return View( rvm );
-            }
+            
+            ViewBag.RoadmapViewType = "categorized";
 
-            ViewBag.LineCountMax = 3;
+            RoadmapViewModel rvm = new RoadmapViewModel( _roadmapRepo.GetLastReleasedRoadmap(), _partnerRepo, _contactRepo, _contactRelationRepo );
             return View( rvm );
         }
 
@@ -52,13 +47,7 @@ namespace CiviKey.Controllers
             ViewBag.RoadmapViewType = type;
             RoadmapViewModel rvm = new RoadmapViewModel( _roadmapRepo.GetRoadmapFromId( id ), _partnerRepo, _contactRepo, _contactRelationRepo );
 
-            if( type == "categorized" )
-            {
-                ViewBag.LineCountMax = 4;
-                return PartialView( "_CategorizedRoadmapView", rvm );
-            }
-
-            ViewBag.LineCountMax = 3;
+            if( type == "categorized" ) return PartialView( "_CategorizedRoadmapView", rvm );
             return PartialView( "_RoadmapView", rvm );
         }
     }
