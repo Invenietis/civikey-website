@@ -6,6 +6,19 @@
             $('.collapse').collapse({ hide: true });
             $(".timeline-feature-link").removeClass("timeline-selected");
             $(".timeline-feature-link.roadmap-" + roadmapId).addClass("timeline-selected");
+        },
+        onProgressCategoryChangeSuccess: function () {
+            $(".timeline-feature-link").each(function (index, el) {
+                el.href
+                if (el.href.indexOf("classic") != -1) {
+                    var newHref = el.href.replace("classic", "categorized");
+                    el.href = newHref;
+                }
+                else if (el.href.indexOf("categorized") != -1) {
+                    var newHref = el.href.replace("categorized", "classic");
+                    el.href = newHref;
+                }
+            });
         }
     };
 

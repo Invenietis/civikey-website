@@ -151,7 +151,7 @@ insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tuto
 insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',4,DateAdd(month,-5,GetDate()),'fzzjgBAaWZw')
 insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial2',4,DateAdd(month,-5,GetDate()),'7VSR4_tAYvw')
 --OK
-insert into dbo.tRoadMap(Name, HasRelease)values('2.5.2', 1); ---------------------------------------------------------------------------------------------------------------------------------------2nd roadmap
+insert into dbo.tRoadMap(Name, HasRelease)values('2.5.2', 0); ---------------------------------------------------------------------------------------------------------------------------------------2nd roadmap
 
 --Creating features
 --Old features

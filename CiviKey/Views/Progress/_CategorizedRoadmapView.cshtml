@@ -3,44 +3,61 @@
 @*Feature display part*@
     <div class="progress-list-of-features" data-id="@ViewBag.CurrentRoadmapId">
         <div class="accordion" id="accordion2">
-        @{
+            @{
             int i = 0;
             foreach( CiviKey.ViewModel.CategoryViewModel category in Model.CategorizedFeatures.Keys )
             {
                 i++;
                 <div class="accordion-group">
                     <div class="accordion-heading">
-                    <div class="collapse-image colapsed"></div>
-                    <img src="@Url.Content( "~/Content/images/CategoryIcon/" + @category.IconName )" alt="@category.Name logo" />
+                        <div class="collapse-image colapsed">
+                        </div>
+                        <img src="@Url.Content( "~/Content/images/CategoryIcon/" + @category.IconName )" alt="@category.Name logo" />
                         <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" data-target="#collapse@(i)">
-                           @category.Name (@Model.CategorizedFeatures[category].Count)
+                            @category.Name (@Model.CategorizedFeatures[category].Count)
                         </h2>
-                   </div>
-                   <div id="collapse@(i)" class="accordion-body collapse in">
-                       <div class="accordion-inner">
-                           @Html.Partial( "_FeatureCategoryView", Model.CategorizedFeatures[category] )
-                       </div>
-                   </div>
-               </div> 
+                    </div>
+                    <div id="collapse@(i)" class="accordion-body collapse in">
+                        <div class="accordion-inner">
+                            @Html.Partial( "_FeatureCategoryView", Model.CategorizedFeatures[category] )
+                        </div>
+                    </div>
+                </div> 
             }
-        }
+            }
         </div>
     </div>
     
     <script type="text/javascript">
-            $('.collapse').collapse({ hide: true });
+        $('.collapse').collapse({ hide: true });
     </script>
     
-    @* Version Download part *@
+@* Version Download part *@
     <div class="release-info-container @if( !Model.HasRelease )
                                        {@("disabled")}">
-        <p>Version @Model.Name</p>
+        <p>
+            Version @Model.Name</p>
         <div class="feature-download-btn">
             <a href="#" class="progress-download-link" title="Téléchargement">&nbsp;</a>
         </div>
         @if( !Model.HasRelease )
         {
-            <p>En cours de développement</p>
+            <p>
+                En cours de développement</p>
         }
+    </div>
+    <div class="mode-toggle-container">
+        @*@Ajax.ActionLink( "Categories", "GetFeatureView", new { id = Model.Id, type = "categorized" }, new AjaxOptions
+                            {
+                                InsertionMode = InsertionMode.Replace,
+                                UpdateTargetId = "featureList",
+                                OnSuccess = "document.CK.AjaxCallbacks.onProgressCategoryChangeSuccess"
+                            }, new { @class = "" } )
+        @Ajax.ActionLink( "Classique", "GetFeatureView", new { id = Model.Id, type = "classic" }, new AjaxOptions
+                            {
+                                InsertionMode = InsertionMode.Replace,
+                                UpdateTargetId = "featureList",
+                                OnSuccess = "document.CK.AjaxCallbacks.onProgressCategoryChangeSuccess"
+                            }, new { @class = "" } )*@
     </div>
 }

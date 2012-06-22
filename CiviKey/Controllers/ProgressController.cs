@@ -45,6 +45,7 @@ namespace CiviKey.Controllers
             ViewBag.Roadmaps = _roadmapRepo.All.ToList().Reverse<tRoadMap>();
             ViewBag.Section = Sections.Progress;
             ViewBag.RoadmapViewType = type;
+
             RoadmapViewModel rvm = new RoadmapViewModel( _roadmapRepo.GetRoadmapFromId( id ), _partnerRepo, _contactRepo, _contactRelationRepo );
 
             if( type == "categorized" ) return PartialView( "_CategorizedRoadmapView", rvm );
