@@ -29,33 +29,37 @@ namespace CiviKey.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.CurrentRoadmapId = 0;
             ViewBag.Roadmaps = _roadmapRepo.All.ToList().Reverse<tRoadMap>();
             ViewBag.Section = Sections.Progress;
-
-            CategorizedRoadmapViewModel vm = new CategorizedRoadmapViewModel( _roadmapRepo.GetLastRoadmap().tFeatures, _partnerRepo, _contactRepo, _contactRelationRepo );
-            ViewBag.LineCountMax = 4;
             ViewBag.Title = "CiviKey - Avancement";
-            return View( vm );
+            ViewBag.RoadmapViewType = "classic";
+            RoadmapViewModel rvm = new RoadmapViewModel( _roadmapRepo.GetLastReleasedRoadmap(), _partnerRepo, _contactRepo, _contactRelationRepo );
+            if( ViewBag.RoadmapViewType == "categorized" )
+            {
+                ViewBag.LineCountMax = 4;
+                return View( rvm );
+            }
+
+            ViewBag.LineCountMax = 3;
+            return View( rvm );
         }
 
-        public ActionResult GetFeatureView( int? id )
+        public ActionResult GetFeatureView( int id, string type )
         {
             ViewBag.CurrentRoadmapId = id;
             ViewBag.Roadmaps = _roadmapRepo.All.ToList().Reverse<tRoadMap>();
             ViewBag.Section = Sections.Progress;
-            
-            if( id.HasValue && id != 0 )
+            ViewBag.RoadmapViewType = type;
+            RoadmapViewModel rvm = new RoadmapViewModel( _roadmapRepo.GetRoadmapFromId( id ), _partnerRepo, _contactRepo, _contactRelationRepo );
+
+            if( type == "categorized" )
             {
-                ViewBag.LineCountMax = 3;
-                RoadmapViewModel rvm = new RoadmapViewModel( _roadmapRepo.GetRoadmapFromId(id.Value), _partnerRepo, _contactRepo, _contactRelationRepo );
-                return PartialView( "_RoadmapView", rvm );
+                ViewBag.LineCountMax = 4;
+                return PartialView( "_CategorizedRoadmapView", rvm );
             }
 
-            ViewBag.LineCountMax = 4;
-            CategorizedRoadmapViewModel cvm = new CategorizedRoadmapViewModel( _roadmapRepo.GetLastRoadmap().tFeatures, _partnerRepo, _contactRepo, _contactRelationRepo );
-            return PartialView( "_CategorizedRoadmapView", cvm );
-            
+            ViewBag.LineCountMax = 3;
+            return PartialView( "_RoadmapView", rvm );
         }
     }
 }

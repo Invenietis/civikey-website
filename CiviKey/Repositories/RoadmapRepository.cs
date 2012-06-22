@@ -21,12 +21,12 @@ namespace CiviKey.Repositories
             return All.Where( x => x.Id == roadmapId ).FirstOrDefault();
         }
 
-        public tRoadMap GetLastRoadmap()
+        public tRoadMap GetLastReleasedRoadmap()
         {
             tRoadMap lastRoadmap = null;
             foreach( var roadmap in All )
             {
-                if( lastRoadmap == null || new Version( lastRoadmap.Name ) < new Version( roadmap.Name ) )
+                if( lastRoadmap == null || ( roadmap.HasRelease && new Version( lastRoadmap.Name ) < new Version( roadmap.Name ) ) )
                 {
                     lastRoadmap = roadmap;
                 }

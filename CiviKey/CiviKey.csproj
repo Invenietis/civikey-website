@@ -242,6 +242,7 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
     <Content Include="README.jQuery.vsdoc.txt" />
+    <Content Include="Scripts\bootstrap-collapse.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\contacts.js" />
     <Content Include="Scripts\setSponsor-1.0.0.js" />
@@ -321,10 +322,8 @@
     <Content Include="Views\Progress\_CategorizedRoadmapView.cshtml" />
     <Content Include="Views\Home\_TestimonyView.cshtml" />
     <Content Include="Views\Home\_NewsView.cshtml" />
-    <Content Include="Views\Partners\Views\Invenietis.cshtml" />
     <Content Include="Views\Partners\Views\Alcatel-lucent.cshtml" />
     <Content Include="Views\Partners\Views\Fondation-Steria.cshtml" />
-    <Content Include="Views\Partners\Views\Objectif-aide.cshtml" />
     <Content Include="Views\Partners\Views\PFNT.cshtml" />
     <Content Include="Views\Partners\Views\Fondation-garches.cshtml" />
   </ItemGroup>

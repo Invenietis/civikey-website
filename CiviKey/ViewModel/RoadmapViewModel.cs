@@ -14,31 +14,14 @@ namespace CiviKey.ViewModel
         ICollection<FeatureViewModel> _updatedFeatures;
         ICollection<FeatureViewModel> _availableFeatures;
         ICollection<FeatureViewModel> _unavailableFeatures;
-        string _name;
-        bool _hasRelease;
+        Dictionary<CategoryViewModel, ICollection<FeatureViewModel>> _categorizedFeatures;
+        tRoadMap _model;
 
         public RoadmapViewModel( tRoadMap model, PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo )
-            : this( model.tFeatures, partnerRepo, contactRepo, contactRelationRepo, model.Name, model.HasRelease )
         {
-        }
-
-        /// <summary>
-        /// This constructor sets "All" as roadmap name.
-        /// </summary>
-        /// <param name="features"></param>
-        /// <param name="partnerRepo"></param>
-        /// <param name="contactRepo"></param>
-        /// <param name="contactRelationRepo"></param>
-        public RoadmapViewModel( ICollection<tFeature> features, PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo )
-            : this( features, partnerRepo, contactRepo, contactRelationRepo, "All", false )
-        {
-        }
-
-        public RoadmapViewModel( ICollection<tFeature> features, PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo, string name, bool hasRelease )
-        {
-            _hasRelease = hasRelease;
-            _name = name;
-            PopulateCollections( partnerRepo, contactRepo, contactRelationRepo, features );
+            _model = model;
+            _categorizedFeatures = new Dictionary<CategoryViewModel, ICollection<FeatureViewModel>>();
+            PopulateCollections( partnerRepo, contactRepo, contactRelationRepo, model.tFeatures );
         }
 
         private void PopulateCollections( PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo, ICollection<tFeature> features )
@@ -53,6 +36,7 @@ namespace CiviKey.ViewModel
             {
                 FeatureViewModel vm = new FeatureViewModel( feature, partnerRepo, contactRepo, contactRelationRepo );
                 _features.Add( vm );
+                
                 switch( vm.Type )
                 {
                     case FeatureType.New:
@@ -68,15 +52,23 @@ namespace CiviKey.ViewModel
                         _unavailableFeatures.Add( vm );
                         break;
                 }
+
+                foreach( CategoryViewModel cat in vm.Categories )
+                {
+                    if( !_categorizedFeatures.ContainsKey( cat ) ) _categorizedFeatures.Add( cat, new List<FeatureViewModel>() );
+                    _categorizedFeatures[cat].Add( vm );
+                }
             }
         }
 
-        public string Name { get { return _name; } }
-        public bool HasRelease { get { return _hasRelease; } }
+        public string Name { get { return _model.Name; } }
+        public bool HasRelease { get { return _model.HasRelease; } }
+        public int Id { get { return _model.Id; } }
         public ICollection<FeatureViewModel> Features { get { return _features; } }
         public ICollection<FeatureViewModel> NewFeatures { get { return _newFeatures; } }
         public ICollection<FeatureViewModel> UpdatedFeatures { get { return _updatedFeatures; } }
         public ICollection<FeatureViewModel> AvailableFeatures { get { return _availableFeatures; } }
         public ICollection<FeatureViewModel> UnavailableFeatures { get { return _unavailableFeatures; } }
+        public Dictionary<CategoryViewModel, ICollection<FeatureViewModel>> CategorizedFeatures { get { return _categorizedFeatures; } }
     }
 }

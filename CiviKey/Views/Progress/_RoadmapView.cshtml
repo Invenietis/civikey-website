@@ -29,7 +29,7 @@
                             Fonctionnalités améliorées (@Model.UpdatedFeatures.Count)
                         </h2>
                     </div>
-                    <div id="collapseTwo" class="accordion-body collapse in" style="height: 0px;">
+                    <div id="collapseTwo" class="accordion-body collapse in">
                         <div class="accordion-inner">
                             @Html.Partial( "_FeatureCategoryView", Model.UpdatedFeatures )
                         </div>
@@ -73,18 +73,18 @@
         </div>
     </div>
     <script type="text/javascript">
-        $('.collapse').collapse({ hide: true });
+//        $('.collapse').collapse({ hide: true });
         //$('#accordion2').collapse({ toggle: false });
     </script>
 
 @* Version Download part *@
-    if(Model.HasRelease)
-    {
-        <div class="release-info-container">
-            <p>Version @Model.Name</p>
-            <div class="feature-download-btn">
-                <a href="#" class="progress-download-link" title="Téléchargement">&nbsp</a>
-            </div>
+    <div class="release-info-container @if(!Model.HasRelease){@("disabled")}">
+        <p>Version @Model.Name</p>
+        <div class="feature-download-btn">
+            <a href="#" class="progress-download-link" title="Téléchargement">&nbsp</a>
         </div>
-    }
+        @if(!Model.HasRelease){
+            <p>En cours de développement</p>
+        }
+    </div>
 }

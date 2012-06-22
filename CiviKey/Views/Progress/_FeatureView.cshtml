@@ -1,14 +1,4 @@
 ﻿@model CiviKey.ViewModel.FeatureViewModel
-@helper Elipse( string toElipse, int nbChar )
-    {
-        if( toElipse.Length > nbChar )
-        {
-            toElipse = toElipse.Substring( 0, nbChar );
-            toElipse = toElipse.Trim();
-            toElipse += "...";
-        }
-    @:@toElipse
-}
 @helper GetProgress()
     {
         string output;
@@ -41,7 +31,7 @@
 }
 <div class="progress-elem-title-bar">
     <div class="progress-elem-title">@Model.Title</div>
-    <div class="progress-elem-type @GetLogoClass()">
+    <div class="progress-elem-type">
     </div>
     <div style="clear: both;">
     </div>
