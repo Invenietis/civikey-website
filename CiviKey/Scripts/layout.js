@@ -3,7 +3,6 @@
     document.CK.AjaxCallbacks = {
         onProgressGetFeatureViewSuccess: function () {
             var roadmapId = $(".progress-list-of-features")[0].getAttribute("data-id");
-
             $(".timeline-feature-link").removeClass("timeline-selected");
             $(".timeline-feature-link.roadmap-" + roadmapId).addClass("timeline-selected");
         }
