@@ -639,16 +639,46 @@ ul
 /****************************************************************************************/
 /*Progress*/
 
+.roadmap-hasrelease
+{
+    font-size: 30px;
+}
+
+.mode-toggle-img
+{
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin-left: 67px;
+    margin-top: 5px;
+}
+
+#mode-toggle-classic
+{
+    background-image: url(/Content/images/CategoryIcon/tag_24x24.png);
+}
+
+#mode-toggle-category
+{
+    background: url(/Content/images/CategoryIcon/file_24x24.png);
+}
+
+.release-info-main-container
+{
+    float: right;
+}
+
 .release-info-container
 {
+    padding-top: 8px;
+    padding-bottom: 8px;
     background-color: #E4E4E4;
-    float: left;
-    margin: 0px 0px 0px 30px;
+    margin: 0px 0px 20px 20px;
     color: #fff;
     font-family: Estrangelo Edessa;
     text-align: center;
     width:160px;
-    height:100px;
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
@@ -659,8 +689,10 @@ ul
     color: #4b4b4b;
     font-family: Estrangelo Edessa;
     text-align: center;
-    margin:15px 1px 0px 1px;
+    margin:0px;
+    margin-top: 2px;
     font-size: 21px;
+    line-height: 18px;
 }
 
 
@@ -727,7 +759,7 @@ ul#timeline-buttons li
     font-size: 17px;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 30px;
+    font-size: 22px;
     color: #4f4f4f;
 }
 

@@ -17,7 +17,8 @@
                 <ul id="timeline-buttons">
                     @foreach( CiviKey.Models.tRoadMap item in ViewBag.Roadmaps )
                     {
-                        string additionalClass = item.Id == Model.Id ? "timeline-selected" : "";
+                        string additionalClass = item.Id == Model.Id ? "timeline-selected " : " ";
+                        additionalClass += item.HasRelease ? "roadmap-hasrelease " : " "; 
                         <li>
                             @Ajax.ActionLink( item.Name, "GetFeatureView", new { id = @item.Id, type = ViewBag.RoadmapViewType }, new AjaxOptions
                             {

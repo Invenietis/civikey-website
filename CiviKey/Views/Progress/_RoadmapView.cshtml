@@ -76,12 +76,9 @@
             }
         </div>
     </div>
-    <script type="text/javascript">
-        //        $('.collapse').collapse({ hide: true });
-        //$('#accordion2').collapse({ toggle: false });
-    </script>
 
 @* Version Download part *@
+    <div class="release-info-main-container">
     <div class="release-info-container @if( !Model.HasRelease )
                                        {@("disabled")}">
         <p>
@@ -95,18 +92,21 @@
                 En cours de développement</p>
         }
     </div>
-    <div class="mode-toggle-container">
-       @* @Ajax.ActionLink( "Categories", "GetFeatureView", new { id = Model.Id, type = "categorized" }, new AjaxOptions
-   {
-       InsertionMode = InsertionMode.Replace,
-       UpdateTargetId = "featureList",
-       OnSuccess = "document.CK.AjaxCallbacks.onProgressCategoryChangeSuccess"
-   }, new { @class = "" } )
-        @Ajax.ActionLink( "Classique", "GetFeatureView", new { id = Model.Id, type = "classic" }, new AjaxOptions
-   {
-       InsertionMode = InsertionMode.Replace,
-       UpdateTargetId = "featureList",
-       OnSuccess = "document.CK.AjaxCallbacks.onProgressCategoryChangeSuccess"
-   }, new { @class = "" } )*@
+    <div class="mode-toggle-container release-info-container">
+        <p>Changer de vue</p>
+        <a href="#" title="Classer par type d'aide" id="mode-toggle-category" class="mode-toggle-img">&nbsp</a>
+    </div>
     </div>
 }
+
+
+<script type="text/javascript">
+    (function () {
+        $("#mode-toggle-category").click(function () {
+            $.get("/Progress/GetFeatureView/@ViewBag.CurrentRoadmapId?type=categorized", function (data) {
+                $("#featureList").html(data);
+                document.CK.AjaxCallbacks.onProgressCategoryChangeSuccess("categorized");
+            })
+        });
+    } ())
+</script>  

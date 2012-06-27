@@ -6,16 +6,13 @@
             $(".timeline-feature-link").removeClass("timeline-selected");
             $(".timeline-feature-link.roadmap-" + roadmapId).addClass("timeline-selected");
         },
-        onProgressCategoryChangeSuccess: function () {
+        onProgressCategoryChangeSuccess: function (type) {
             $(".timeline-feature-link").each(function (index, el) {
-                el.href
-                if (el.href.indexOf("classic") != -1) {
-                    var newHref = el.href.replace("classic", "categorized");
-                    el.href = newHref;
+                if (type == 'classic') {
+                    el.href = el.href.replace("categorized", "classic");
                 }
-                else if (el.href.indexOf("categorized") != -1) {
-                    var newHref = el.href.replace("categorized", "classic");
-                    el.href = newHref;
+                else if (type == 'categorized') {
+                    el.href = el.href.replace("classic", "categorized");
                 }
             });
         }

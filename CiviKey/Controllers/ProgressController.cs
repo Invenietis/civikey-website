@@ -34,8 +34,11 @@ namespace CiviKey.Controllers
             ViewBag.Title = "CiviKey - Avancement";
             
             ViewBag.RoadmapViewType = "categorized";
+            
+            tRoadMap r = _roadmapRepo.GetLastReleasedRoadmap();
+            ViewBag.CurrentRoadmapId = r.Id;
 
-            RoadmapViewModel rvm = new RoadmapViewModel( _roadmapRepo.GetLastReleasedRoadmap(), _partnerRepo, _contactRepo, _contactRelationRepo );
+            RoadmapViewModel rvm = new RoadmapViewModel( r, _partnerRepo, _contactRepo, _contactRelationRepo );
             return View( rvm );
         }
 
