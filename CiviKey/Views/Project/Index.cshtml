@@ -48,15 +48,19 @@
                 {
                     
                             <div class="@if(i == 0){@("active")} item">
-                            <img src="/Content/images/PartnerLogo/@Model[i].LogoPath" alt="Logo" />
-                            @if ((i + 1) < Model.Count)
-                            {
-                                <img src="/Content/images/PartnerLogo/@Model[i + 1].LogoPath" alt="Logo" />
-                            }
-                            @if ((i + 2) < Model.Count)
-                            {
-                                <img src="/Content/images/PartnerLogo/@Model[i + 2].LogoPath" alt="Logo" />
-                            }
+                            <div style="text-align:center; height:130px;">
+                                <img src="@Url.Content("~/Content/images/project-partner-separator.png")"/>
+                                <img src="/Content/images/PartnerProjectPage/@Model[i].LogoPath" alt="Logo" style="margin-right:20px;" />
+                                @if ((i + 1) < Model.Count)
+                                {
+                                    <img src="/Content/images/PartnerProjectPage/@Model[i + 1].LogoPath" alt="Logo" />
+                                }
+                                @if ((i + 2) < Model.Count)
+                                {
+                                    <img src="/Content/images/PartnerProjectPage/@Model[i + 2].LogoPath" style="margin-left:20px;" alt="Logo" />
+                                }
+                                <img src="@Url.Content("~/Content/images/project-partner-separator.png")"/>
+                            </div>
                             </div>
                 }
                 </div>

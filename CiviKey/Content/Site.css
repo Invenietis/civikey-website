@@ -980,10 +980,6 @@ a.timeline-unselected
 
 .partners-title-logo img
 {
-    margin:20px 0px 0px 0px;
-    width:90px;
-    height:90px;
-    background-repeat:no-repeat;
 }
 
 .partners-title-name
@@ -1508,5 +1504,17 @@ ul#menu li.menuelem.selected
 #clavier-img .carousel-control.right
 {
     right: 80px;
+    top:47%;
+}
+
+#pratners-logo .carousel-control.left
+{
+    left: -2px;
+    top:47%;
+}
+
+#pratners-logo .carousel-control.right
+{
+    right: -2px;
     top:47%;
 }
