@@ -563,6 +563,8 @@ ul
 .project-leftblock-content
 {
     display: table-cell;
+    padding-top:20px;
+    padding-bottom:20px;
 }
 
 .project-menuelem
@@ -598,12 +600,12 @@ ul
 
 
 /*---------------------Page le projet - carousel--------------------*/
-.project-content .active
+.project-content .active-proj
 {
     background-image:url('/Content/images/project-activeelem.png');
 }
 
-.project-content .active p
+.project-content .active-proj p
 {
     color:#f6f6f6;
 }
@@ -622,7 +624,7 @@ ul
     width:59px;
     height:35px;
     left:-59px;
-    top:350px;
+    top:640px;
     transition: height 2s;
     -webkit-transition: all .5s ease;
        -moz-transition: all .5s ease;
@@ -1400,7 +1402,7 @@ ul#menu li.menuelem.selected
 .project-slider
 {
     overflow:hidden;
-    height:330px;
+    height:620px;
     background-image: url('/Content/images/project-repeat-bar.png');
     background-position:right;
     background-repeat:repeat-y;
@@ -1476,4 +1478,32 @@ ul#menu li.menuelem.selected
 {
     padding-bottom:20px;
     border-bottom:1px solid #e4e4e4;
+}
+
+.project-civikey-architecture
+{
+   padding-bottom: 20px;
+}
+
+.project-images
+{
+    text-align:center;
+}
+
+.item img
+{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+#clavier-img .carousel-control.left
+{
+    left: 80px;
+    top:47%;
+}
+
+#clavier-img .carousel-control.right
+{
+    right: 80px;
+    top:47%;
 }
