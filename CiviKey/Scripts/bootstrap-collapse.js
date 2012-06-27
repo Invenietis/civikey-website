@@ -110,7 +110,7 @@
 
       $.support.transition && this.$element.hasClass('collapse') ?
         this.$element.one($.support.transition.end, complete) :
-        complete()
+        setTimeout(complete, 1)
     }
 
   , toggle: function () {
