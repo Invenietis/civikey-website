@@ -1,12 +1,12 @@
 ﻿$(function () {
 
-    $('.accordion-group').on('hide', function () {
+    $('.accordion-group').live('hide', function () {
         var elem = $('.collapse-image', this);
         elem.removeClass('expended');
         elem.addClass('colapsed');
     });
 
-    $('.accordion-group').on('show', function () {
+    $('.accordion-group').live('show', function () {
         var elem = $('.collapse-image', this);
         elem.removeClass('colapsed');
         elem.addClass('expended');

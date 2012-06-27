@@ -33,7 +33,7 @@ namespace CiviKey.Controllers
             ViewBag.Section = Sections.Progress;
             ViewBag.Title = "CiviKey - Avancement";
             
-            ViewBag.RoadmapViewType = "categorized";
+            ViewBag.RoadmapViewType = "classic";
             
             tRoadMap r = _roadmapRepo.GetLastReleasedRoadmap();
             ViewBag.CurrentRoadmapId = r.Id;

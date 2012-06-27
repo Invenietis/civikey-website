@@ -31,8 +31,6 @@ namespace CiviKey.Controllers
             ViewBag.Title = "CiviKey - Le projet";
             IList<tContact> contactList;
             IList<ContactViewModel> contactViewModel = new List<ContactViewModel>();
-            ViewBag.Section = Sections.Partners;
-
 
             contactList = _entities.GetContactList();
 
