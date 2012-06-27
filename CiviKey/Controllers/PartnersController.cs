@@ -41,7 +41,7 @@ namespace CiviKey.Controllers
                 contactViewModel.Add( new ContactViewModel( contact, _partnerRepo, _contactRepo, _contactRelationRepo ) );
             }
 
-            Random rng = new Random();
+            Random rng = new Random(DateTime.Now.Hour);
             int n = contactViewModel.Count;
             while( n > 1 )
             {
