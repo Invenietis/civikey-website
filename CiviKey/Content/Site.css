@@ -842,12 +842,10 @@ a.timeline-unselected
 
 .doing-feature
 {
-    background-image: url('/Content/images/doing-type.png');
 }
 
 .todo-feature
 {
-    background-image: url('/Content/images/todo-type.png');
 }
 
 .progress-elem-content
