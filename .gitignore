@@ -13,3 +13,4 @@ packages/*
 **/bin/*
 .nuget/*
 */obj/**
+CiviKey/CiviKey.zip
