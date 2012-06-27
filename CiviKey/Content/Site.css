@@ -969,21 +969,26 @@ a.timeline-unselected
     clear:both;
 }
 
+.partners-title-logo
+{
+    display: none;
+    float: right;
+    margin-right: 40px;
+}
+
 .partners-title-logo img
 {
-    margin:20px 0px 0px 50px;
+    margin:20px 0px 0px 0px;
     width:90px;
     height:90px;
     background-repeat:no-repeat;
-    background-position:0px 3px;
-    float:left;
 }
 
 .partners-title-name
 {
     color: Black;
     float:left;
-    margin:47px 0px 0px 13px;
+    margin:47px 0px 0px 30px;
     font-family: Estrangelo Edessa;
     font-size:40px;
 }
