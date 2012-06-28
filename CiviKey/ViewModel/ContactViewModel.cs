@@ -18,7 +18,6 @@ namespace CiviKey.ViewModel
             Organizations = new List<ContactViewModel>();
             IsOrganization = model.Id == _contact.Id;
             LogoPath = _contact.LogoPath;
-            
 
             if( !IsOrganization )
             {
@@ -38,6 +37,13 @@ namespace CiviKey.ViewModel
         public int Id { get { return _contact.Id; } }
         public IList<ContactViewModel> Organizations { get; private set; }
         public string Description { get { return _contact.Description; } }
+
+        //Must be synchronized with the GetContactIdFromSafeName stored procedure, in order to find the corresponding name.
+        public string SafeName 
+        { 
+            get { return Name.Replace( ' ', '-' ).Replace( "'", "" ).ToLowerInvariant(); } 
+        }
+
         public string Name { get { return _contact.Name; } }
         public bool IsOrganization { get; private set; }
         public string LogoPath { get; set; }

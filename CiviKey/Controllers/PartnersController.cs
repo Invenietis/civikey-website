@@ -41,7 +41,7 @@ namespace CiviKey.Controllers
                 contactViewModel.Add( new ContactViewModel( contact, _partnerRepo, _contactRepo, _contactRelationRepo ) );
             }
 
-            Random rng = new Random(DateTime.Now.Hour);
+            Random rng = new Random( DateTime.Now.Hour );
             int n = contactViewModel.Count;
             while( n > 1 )
             {
@@ -56,10 +56,23 @@ namespace CiviKey.Controllers
             return View( contactViewModel );
         }
 
-        public ActionResult GetPartnerPage( string name )
+        public ActionResult GetPartnerPage( string safeName )
         {
-            ViewEngineResult result = ViewEngines.Engines.FindView( ControllerContext, Path.Combine("Views", name), null );
-            if( result.View == null ) return RedirectToAction("Index");
+
+            ViewEngineResult result = ViewEngines.Engines.FindView( ControllerContext, Path.Combine( "Views", safeName ), null );
+            if( result.View == null )
+            {
+                tContact contact = _contactRepo.ContactFromContactSafeName( safeName );
+                if( contact != null )
+                {
+                    string websiteUrl = contact.WebsiteUrl;
+                    if( !String.IsNullOrEmpty( websiteUrl ) )
+                    {
+                        return Redirect( websiteUrl );
+                    }
+                }
+                return RedirectToAction( "Index" );
+            }
 
             return View( result.View );
         }

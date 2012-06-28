@@ -10,6 +10,7 @@
 using System;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.Data.Objects;
 
 namespace CiviKey.Models
 {
@@ -26,7 +27,6 @@ namespace CiviKey.Models
         }
     
         public DbSet<tCategory> tCategories { get; set; }
-        public DbSet<tContact> tContacts { get; set; }
         public DbSet<tContactRelation> tContactRelations { get; set; }
         public DbSet<tNew> tNews { get; set; }
         public DbSet<tParticipation> tParticipations { get; set; }
@@ -36,5 +36,15 @@ namespace CiviKey.Models
         public DbSet<tVideo> tVideos { get; set; }
         public DbSet<tFeature> tFeatures { get; set; }
         public DbSet<tRoadMap> tRoadMaps { get; set; }
+        public DbSet<tContact> tContacts { get; set; }
+    
+        public virtual ObjectResult<Nullable<int>> GetContactIdFromSafeName(string safeName)
+        {
+            var safeNameParameter = safeName != null ?
+                new ObjectParameter("safeName", safeName) :
+                new ObjectParameter("safeName", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<int>>("GetContactIdFromSafeName", safeNameParameter);
+        }
     }
 }

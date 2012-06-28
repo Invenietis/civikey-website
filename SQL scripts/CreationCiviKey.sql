@@ -13,8 +13,16 @@ drop table tCategoryFeature;
 drop table tCategory;
 drop table tFeature;
 drop table tRoadMap;
-
-
+--Stored procedures
+if exists (select * from dbo.sysobjects where id = object_id(N'dbo.GetContactIdFromSafeName') and OBJECTPROPERTY(id, N'IsProcedure') = 1)
+	drop procedure dbo.GetContactIdFromSafeName
+GO
+CREATE PROCEDURE [dbo].[GetContactIdFromSafeName]
+      @safeName nvarchar(128)
+      AS
+      SELECT Id FROM tContact
+      WHERE LOWER(REPLACE(REPLACE(Name, '''',''),' ','-')) = @safeName;
+GO
 create table tNews
 (
 	Id int not null primary key identity(1,1),
@@ -53,7 +61,8 @@ create table tContact
 	Id int not null primary key identity(1,1),
 	Name varchar(128) not null,
 	Description nvarchar(max) not null,
-	LogoPath nvarchar(max) not null
+	LogoPath nvarchar(max) not null,
+	WebsiteUrl nvarchar(256) not null
 );
 
 create table tContactRelation

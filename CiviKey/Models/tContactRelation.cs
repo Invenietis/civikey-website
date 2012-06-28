@@ -25,9 +25,9 @@ namespace CiviKey.Models
         public System.DateTime StartDate { get; set; }
         public Nullable<System.DateTime> EndDate { get; set; }
     
+        public virtual ICollection<tParticipation> tParticipations { get; set; }
         public virtual tContact tContact { get; set; }
         public virtual tContact tOrganization { get; set; }
-        public virtual ICollection<tParticipation> tParticipations { get; set; }
     }
     
 }

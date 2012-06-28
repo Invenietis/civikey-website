@@ -93,6 +93,7 @@
           <Property Name="Name" Type="varchar" Nullable="false" MaxLength="128" />
           <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
           <Property Name="LogoPath" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="WebsiteUrl" Type="nvarchar" Nullable="false" MaxLength="256" />
         </EntityType>
         <EntityType Name="tContactRelation">
           <Key>
@@ -341,13 +342,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="GetContactIdFromSafeName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="safeName" Type="nvarchar" Mode="In" />
+        </Function>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="CiviKeyModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="CiviKeyEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="tCategories" EntityType="CiviKeyModel.tCategory" />
-          <EntitySet Name="tContacts" EntityType="CiviKeyModel.tContact" />
           <EntitySet Name="tContactRelations" EntityType="CiviKeyModel.tContactRelation" />
           <EntitySet Name="tNews" EntityType="CiviKeyModel.tNew" />
           <EntitySet Name="tParticipations" EntityType="CiviKeyModel.tParticipation" />
@@ -355,14 +358,6 @@
           <EntitySet Name="tSections" EntityType="CiviKeyModel.tSection" />
           <EntitySet Name="tTestimonies" EntityType="CiviKeyModel.tTestimony" />
           <EntitySet Name="tVideos" EntityType="CiviKeyModel.tVideo" />
-          <AssociationSet Name="FK_ContactId" Association="CiviKeyModel.FK_ContactId">
-            <End Role="tContact" EntitySet="tContacts" />
-            <End Role="tContactRelation" EntitySet="tContactRelations" />
-          </AssociationSet>
-          <AssociationSet Name="FK_EntityId" Association="CiviKeyModel.FK_EntityId">
-            <End Role="tContact" EntitySet="tContacts" />
-            <End Role="tContactRelation" EntitySet="tContactRelations" />
-          </AssociationSet>
           <AssociationSet Name="FK_ContactIdParticipation" Association="CiviKeyModel.FK_ContactIdParticipation">
             <End Role="tContactRelation" EntitySet="tContactRelations" />
             <End Role="tParticipation" EntitySet="tParticipations" />
@@ -393,7 +388,19 @@
             <End Role="tRoadMap" EntitySet="tRoadMaps" />
             <End Role="tFeature" EntitySet="tFeatures" />
           </AssociationSet>
-        </EntityContainer>
+          <EntitySet Name="tContacts" EntityType="CiviKeyModel.tContact" />
+          <AssociationSet Name="FK_ContactId" Association="CiviKeyModel.FK_ContactId">
+            <End Role="tContact" EntitySet="tContacts" />
+            <End Role="tContactRelation" EntitySet="tContactRelations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntityId" Association="CiviKeyModel.FK_EntityId">
+            <End Role="tContact" EntitySet="tContacts" />
+            <End Role="tContactRelation" EntitySet="tContactRelations" />
+          </AssociationSet>
+          <FunctionImport Name="GetContactIdFromSafeName" ReturnType="Collection(Int32)">
+            <Parameter Name="safeName" Mode="In" Type="String" />
+          </FunctionImport>
+          </EntityContainer>
         <EntityType Name="tCategory">
           <Key>
             <PropertyRef Name="Id" />
@@ -402,17 +409,6 @@
           <Property Type="String" Name="Name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="tFeatures" Relationship="CiviKeyModel.tCategoryFeature" FromRole="tCategory" ToRole="tFeature" />
           <Property Type="String" Name="IconName" MaxLength="128" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <EntityType Name="tContact">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="LogoPath" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <NavigationProperty Name="tContactRelations" Relationship="CiviKeyModel.FK_ContactId" FromRole="tContact" ToRole="tContactRelation" />
-          <NavigationProperty Name="tContactRelations1" Relationship="CiviKeyModel.FK_EntityId" FromRole="tContact" ToRole="tContactRelation" />
         </EntityType>
         <EntityType Name="tContactRelation">
           <Key>
@@ -423,10 +419,10 @@
           <Property Type="Int32" Name="EntityId" Nullable="false" />
           <Property Type="DateTime" Name="StartDate" Nullable="false" />
           <Property Type="DateTime" Name="EndDate" />
+          <NavigationProperty Name="tParticipations" Relationship="CiviKeyModel.FK_ContactIdParticipation" FromRole="tContactRelation" ToRole="tParticipation" />
           <NavigationProperty Name="tContact" Relationship="CiviKeyModel.FK_ContactId" FromRole="tContactRelation" ToRole="tContact" />
           <NavigationProperty Name="tOrganization" Relationship="CiviKeyModel.FK_EntityId" FromRole="tContactRelation" ToRole="tContact" />
-          <NavigationProperty Name="tParticipations" Relationship="CiviKeyModel.FK_ContactIdParticipation" FromRole="tContactRelation" ToRole="tParticipation" />
-        </EntityType>
+          </EntityType>
         <EntityType Name="tNew">
           <Key>
             <PropertyRef Name="Id" />
@@ -490,30 +486,6 @@
           <Property Type="DateTime" Name="CreationDate" Nullable="false" />
           <NavigationProperty Name="tFeature" Relationship="CiviKeyModel.FK_FeatureIdVideo" FromRole="tVideo" ToRole="tFeature" />
         </EntityType>
-        <Association Name="FK_ContactId">
-          <End Type="CiviKeyModel.tContact" Role="tContact" Multiplicity="1" />
-          <End Type="CiviKeyModel.tContactRelation" Role="tContactRelation" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tContact">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="tContactRelation">
-              <PropertyRef Name="ContactId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_EntityId">
-          <End Type="CiviKeyModel.tContact" Role="tContact" Multiplicity="1" />
-          <End Type="CiviKeyModel.tContactRelation" Role="tContactRelation" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="tContact">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="tContactRelation">
-              <PropertyRef Name="EntityId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_ContactIdParticipation">
           <End Type="CiviKeyModel.tContactRelation" Role="tContactRelation" Multiplicity="1" />
           <End Type="CiviKeyModel.tParticipation" Role="tParticipation" Multiplicity="*" />
@@ -601,6 +573,42 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="tContact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LogoPath" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WebsiteUrl" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tContactRelations" Relationship="CiviKeyModel.FK_ContactId" FromRole="tContact" ToRole="tContactRelation" />
+          <NavigationProperty Name="tContactRelations1" Relationship="CiviKeyModel.FK_EntityId" FromRole="tContact" ToRole="tContactRelation" />
+        </EntityType>
+        <Association Name="FK_ContactId">
+          <End Type="CiviKeyModel.tContact" Role="tContact" Multiplicity="1" />
+          <End Type="CiviKeyModel.tContactRelation" Role="tContactRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tContact">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tContactRelation">
+              <PropertyRef Name="ContactId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntityId">
+          <End Type="CiviKeyModel.tContact" Role="tContact" Multiplicity="1" />
+          <End Type="CiviKeyModel.tContactRelation" Role="tContactRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tContact">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tContactRelation">
+              <PropertyRef Name="EntityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -611,16 +619,6 @@
             <EntityTypeMapping TypeName="CiviKeyModel.tCategory">
               <MappingFragment StoreEntitySet="tCategory">
                 <ScalarProperty Name="IconName" ColumnName="IconName" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Id" ColumnName="Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="tContacts">
-            <EntityTypeMapping TypeName="CiviKeyModel.tContact">
-              <MappingFragment StoreEntitySet="tContact">
-                <ScalarProperty Name="LogoPath" ColumnName="LogoPath" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
@@ -748,6 +746,18 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="tContacts">
+            <EntityTypeMapping TypeName="CiviKeyModel.tContact">
+              <MappingFragment StoreEntitySet="tContact">
+                <ScalarProperty Name="WebsiteUrl" ColumnName="WebsiteUrl" />
+                <ScalarProperty Name="LogoPath" ColumnName="LogoPath" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetContactIdFromSafeName" FunctionName="CiviKeyModel.Store.GetContactIdFromSafeName" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -771,7 +781,6 @@
     <Diagrams>
       <Diagram Name="Model">
         <EntityTypeShape EntityType="CiviKeyModel.tCategory" Width="1.5" PointX="0.75" PointY="5" Height="1.5956835937500031" />
-        <EntityTypeShape EntityType="CiviKeyModel.tContact" Width="1.5" PointX="0.75" PointY="8.75" Height="2.172587890624996" />
         <EntityTypeShape EntityType="CiviKeyModel.tContactRelation" Width="1.5" PointX="3" PointY="8.5" Height="2.5571907552083388" />
         <EntityTypeShape EntityType="CiviKeyModel.tNew" Width="1.5" PointX="7.75" PointY="1.375" Height="1.7879850260416674" />
         <EntityTypeShape EntityType="CiviKeyModel.tParticipation" Width="1.5" PointX="5.25" PointY="4.625" Height="2.3648893229166674" />
@@ -779,20 +788,10 @@
         <EntityTypeShape EntityType="CiviKeyModel.tSection" Width="1.5" PointX="5.25" PointY="1.875" Height="1.9802864583333388" />
         <EntityTypeShape EntityType="CiviKeyModel.tTestimony" Width="1.5" PointX="7.75" PointY="4.375" Height="1.9802864583333388" />
         <EntityTypeShape EntityType="CiviKeyModel.tVideo" Width="1.5" PointX="5.25" PointY="10.625" Height="2.172587890624996" />
-        <AssociationConnector Association="CiviKeyModel.FK_ContactId" >
-          <ConnectorPoint PointX="2.25" PointY="9.836293945312498" />
-          <ConnectorPoint PointX="3" PointY="9.836293945312498" />
-        </AssociationConnector>
-        <AssociationConnector Association="CiviKeyModel.FK_EntityId" >
-          <ConnectorPoint PointX="2.25" PointY="9.230646972656249" />
-          <ConnectorPoint PointX="3" PointY="9.230646972656249" />
-        </AssociationConnector>
         <AssociationConnector Association="CiviKeyModel.FK_ContactIdParticipation" >
           <ConnectorPoint PointX="3.75" PointY="8.5" />
-          <ConnectorPoint PointX="3.75" PointY="5.8074446614583328" />
-          <ConnectorPoint PointX="4.916666666666667" PointY="5.8074446614583319" />
-          <ConnectorPoint PointX="5.083333333333333" PointY="5.8074446614583328" />
-          <ConnectorPoint PointX="5.25" PointY="5.8074446614583328" />
+          <ConnectorPoint PointX="3.75" PointY="5.3748352994791668" />
+          <ConnectorPoint PointX="5.25" PointY="5.3748352994791668" />
         </AssociationConnector>
         <AssociationConnector Association="CiviKeyModel.tSectionPlugin" >
           <ConnectorPoint PointX="4.5" PointY="2.3987939453125016" />
@@ -809,11 +808,13 @@
           <ConnectorPoint PointX="6.75" PointY="10.821848958333334" />
         </AssociationConnector>
         <AssociationConnector Association="CiviKeyModel.tCategoryFeature" >
-          <ConnectorPoint PointX="2.25" PointY="5.4037228307291665" />
-          <ConnectorPoint PointX="5" PointY="5.4037228307291665" />
+          <ConnectorPoint PointX="2.25" PointY="6.1246705989583337" />
+          <ConnectorPoint PointX="3.6666666666666665" PointY="6.1246705989583328" />
+          <ConnectorPoint PointX="3.8333333333333335" PointY="6.1246705989583337" />
+          <ConnectorPoint PointX="5" PointY="6.1246705989583337" />
           <ConnectorPoint PointX="5" PointY="7.2398893229166674" />
-          <ConnectorPoint PointX="8.6445275312499987" PointY="7.2398893229166674" />
-          <ConnectorPoint PointX="8.6445275312499987" PointY="7.5" />
+          <ConnectorPoint PointX="8.75" PointY="7.2398893229166674" />
+          <ConnectorPoint PointX="8.75" PointY="7.5" />
         </AssociationConnector>
         <AssociationConnector Association="CiviKeyModel.tParticipationFeature" >
           <ConnectorPoint PointX="9.353513515625" PointY="7.5" />
@@ -825,6 +826,15 @@
           <ConnectorPoint PointX="11.125" PointY="2.6629850260416674" />
           <ConnectorPoint PointX="11.125" PointY="9.2593489583333337" />
           <ConnectorPoint PointX="9.5" PointY="9.2593489583333337" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="CiviKeyModel.tContact" Width="1.5" PointX="0.75" PointY="8.625" Height="2.3648893229166674" />
+        <AssociationConnector Association="CiviKeyModel.FK_ContactId" >
+          <ConnectorPoint PointX="2.25" PointY="9.8074446614583337" />
+          <ConnectorPoint PointX="3" PointY="9.8074446614583337" />
+        </AssociationConnector>
+        <AssociationConnector Association="CiviKeyModel.FK_EntityId" >
+          <ConnectorPoint PointX="2.25" PointY="9.1537223307291669" />
+          <ConnectorPoint PointX="3" PointY="9.1537223307291669" />
         </AssociationConnector>
         </Diagram>
     </Diagrams>

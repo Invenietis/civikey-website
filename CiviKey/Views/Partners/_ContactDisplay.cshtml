@@ -1,6 +1,6 @@
 ﻿@model CiviKey.ViewModel.ContactViewModel
            
-<a style="display: block;" href="@Url.Action( "GetPartnerPage", "Partners", new { name = Model.Name.Replace( ' ', '-' ).Replace( "'", "" ).ToLowerInvariant() } )">
+<a style="display: block;" target="_blank" href="@Url.Action( "GetPartnerPage", "Partners", new { safeName = Model.SafeName } )">
     <div class="partners-elem-title">
         <div class="partners-title-name">@Model.Name</div>
         <div class="partners-title-logo">

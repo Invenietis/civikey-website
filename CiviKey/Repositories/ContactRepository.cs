@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using CiviKey.Models;
+using System.Data.Objects;
 
 namespace CiviKey.Repositories
 {
@@ -25,6 +26,15 @@ namespace CiviKey.Repositories
         public tContact ContactFromContactId (int contactId )
         {
             return _c.tContacts.Where( x => x.Id == contactId ).FirstOrDefault();
+        }
+
+        public tContact ContactFromContactSafeName( string safeName )
+        {
+            ObjectResult<int?> obj = _c.GetContactIdFromSafeName( safeName );
+            IList<int?> ids = obj.ToList();
+            int? id = ids.FirstOrDefault();
+            if( id.HasValue ) return _c.tContacts.Where( x => x.Id == id.Value ).FirstOrDefault();
+            return null;
         }
 
         public tContact ContactFromContactRelationId( int contactRelationId )

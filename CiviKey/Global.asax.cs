@@ -28,7 +28,7 @@ namespace CiviKey
 
             routes.MapRoute(
                 "Partners", // Route name
-                "partners/{name}", // URL with parameters
+                "partners/{safeName}", // URL with parameters
                 new { controller = "Partners", action = "GetPartnerPage" } // Parameter defaults
             );
 
