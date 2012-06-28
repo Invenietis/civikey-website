@@ -23,6 +23,7 @@ insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('Isaac Dupl
 insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('Objectif Aide','L''association Objectf Aide','objectif-aide.png','http://www.objectif-aide.org/'); --12
 insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('Antoine Raquillet','','',''); --13
 insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('Fondation Garches','<p>La Fondation Garches a pris la succession de l’Institut Garches, qui avait vu le jour en 1988 à l’initiative des médecins de l’Hôpital Raymond Poincaré, avec le soutien de quelques entreprises. Créée par l’Institut Garches en 2005, avec le soutien du Ministère en charge de la recherche, et d’emblée reconnue d’utilité publique, la Fondation Garches a été la première fondation de recherche à caractère scientifique dans le domaine du Handicap.</p>','fondation-garches.png', 'http://www.handicap.org'); --14
+insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('Olivier Spinelli','','', ''); --15
 
 --Linking contacts to their organization
 
@@ -42,6 +43,7 @@ insert into dbo.tContactRelation(ContactId,EntityId,StartDate,EndDate)values(11,
 insert into dbo.tContactRelation(ContactId,EntityId,StartDate,EndDate)values(12,12,GetDate(), DATEADD(year,1,GetDate()));--12 Objectif Aide
 insert into dbo.tContactRelation(ContactId,EntityId,StartDate,EndDate)values(13,5,GetDate(), DATEADD(year,1,GetDate()));--13 Antoine Raquillet --> Inv
 insert into dbo.tContactRelation(ContactId,EntityId,StartDate,EndDate)values(14,14,GetDate(), DATEADD(year,1,GetDate()));--14 Fondation Garches
+insert into dbo.tContactRelation(ContactId,EntityId,StartDate,EndDate)values(15,5,GetDate(), DATEADD(year,1,GetDate()));--14 Olivier Spinelli --> inv
 
 --OK
 																									--TODO : handle dates
@@ -249,13 +251,13 @@ insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(8,4) --J
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(13,'Development', 50, DateAdd(month,-5,GetDate()))
 insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(9,4) --Antoine Raquillet has developed 50% of the Automatic Update
 
-insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(13,'Development', 60, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(15,'Development', 60, DateAdd(month,-5,GetDate()))
 insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(10,5) --Olivier Spinelli has developed 60% of the Kernel
 
-insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(13,'Development', 20, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(10,'Development', 20, DateAdd(month,-5,GetDate()))
 insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(11,5) --Antoine Blanchet has developed 20% of the Kernel
 
-insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(13,'Development', 20, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(2,'Development', 20, DateAdd(month,-5,GetDate()))
 insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(12,5) --Jean-loup Kahloun has developed 20% of the Kernel
 
 --OK
@@ -288,13 +290,13 @@ insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(20,9) --
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(13,'Development', 50, DateAdd(month,-5,GetDate()))
 insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(21,9) --Antoine Raquillet has developed 50% of the Automatic Update
 
-insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(13,'Development', 60, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(15,'Development', 60, DateAdd(month,-5,GetDate()))
 insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(22,10) --Olivier Spinelli has developed 60% of the Kernel
 
-insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(13,'Development', 20, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(10,'Development', 20, DateAdd(month,-5,GetDate()))
 insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(23,10) --Antoine Blanchet has developed 20% of the Kernel
 
-insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(13,'Development', 20, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(2,'Development', 20, DateAdd(month,-5,GetDate()))
 insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(24,10) --Jean-loup Kahloun has developed 20% of the Kernel
 
 -- 2.6
@@ -326,13 +328,13 @@ insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(32,14) -
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(13,'Development', 50, DateAdd(month,-5,GetDate()))
 insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(33,14) --Antoine Raquillet has developed 50% of the Automatic Update
 
-insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(13,'Development', 60, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(15,'Development', 60, DateAdd(month,-5,GetDate()))
 insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(34,15) --Olivier Spinelli has developed 60% of the Kernel
 
-insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(13,'Development', 20, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(10,'Development', 20, DateAdd(month,-5,GetDate()))
 insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(35,15) --Antoine Blanchet has developed 20% of the Kernel
 
-insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(13,'Development', 20, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(2,'Development', 20, DateAdd(month,-5,GetDate()))
 insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(36,15) --Jean-loup Kahloun has developed 20% of the Kernel
 
 --Creating categories

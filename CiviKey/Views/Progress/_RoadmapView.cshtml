@@ -9,7 +9,7 @@
                     <div class="accordion-heading">
                         <div class="collapse-image colapsed">
                         </div>
-                        <img src="@Url.Content( "~/Content/images/CategoryIcon/add_24x24.png" )" />
+                        <img class="category-img" src="@Url.Content( "~/Content/images/CategoryIcon/add_24x24.png" )" />
                         <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
                             Nouvelles fonctionnalités (@Model.NewFeatures.Count)
                         </h2>
@@ -26,7 +26,7 @@
                     <div class="accordion-heading">
                         <div class="collapse-image colapsed">
                         </div>
-                        <img src="@Url.Content( "~/Content/images/CategoryIcon/up_arrow_24x24.png" )" />
+                        <img class="category-img" src="@Url.Content( "~/Content/images/CategoryIcon/up_arrow_24x24.png" )" />
                         <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
                             Fonctionnalités améliorées (@Model.UpdatedFeatures.Count)
                         </h2>
@@ -44,7 +44,7 @@
                     <div class="accordion-heading">
                         <div class="collapse-image colapsed">
                         </div>
-                        <img src="@Url.Content( "~/Content/images/CategoryIcon/check_mark_24x24.png" )" />
+                        <img class="category-img" src="@Url.Content( "~/Content/images/CategoryIcon/check_mark_24x24.png" )" />
                         <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
                             Fonctionnalités disponibles (@Model.AvailableFeatures.Count)
                         </h2>
@@ -62,7 +62,7 @@
                     <div class="accordion-heading">
                         <div class="collapse-image colapsed">
                         </div>
-                        <img src="@Url.Content( "~/Content/images/CategoryIcon/delete_24x24.png" )" />
+                        <img class="category-img" src="@Url.Content( "~/Content/images/CategoryIcon/delete_24x24.png" )" />
                         <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
                             Fonctionnalités non disponibles (@Model.UnavailableFeatures.Count)
                         </h2>
@@ -83,14 +83,16 @@
                                        {@("disabled")}">
         <p>
             Version @Model.Name</p>
-        <div class="feature-download-btn">
-            <a href="#" class="progress-download-link" title="Téléchargement">&nbsp</a>
-        </div>
         @if( !Model.HasRelease )
-        {
-            <p>
-                En cours de développement</p>
-        }
+            {
+                <p class="roadmap-progress-p">En cours de développement</p>
+            }
+            else
+            {
+                <div class="feature-download-btn">
+                    <a href="#" class="progress-download-link" title="Téléchargement">&nbsp;</a>
+                </div>
+            }
     </div>
     <div class="mode-toggle-container release-info-container">
         <p>Changer de vue</p>
@@ -108,5 +110,8 @@
                 document.CK.AjaxCallbacks.onProgressCategoryChangeSuccess("categorized");
             })
         });
+
+
+        $(".collapse").collapse({ toggle: false });
     } ())
 </script>  

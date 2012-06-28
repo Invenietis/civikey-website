@@ -21,6 +21,15 @@
         $(this).removeClass("hover");
     });
 
+    $(".collapse-image").live("click", function () {
+        var targetId = $(".accordion-toggle", $(this).parent()).attr("href");
+        $(targetId).collapse("toggle");
+    });
+
+    $(".category-img").live("click", function () {
+        var targetId = $(".accordion-toggle", $(this).parent()).attr("href");
+        $(targetId).collapse("toggle");
+    });
 
     $(".progress-list-elem").live("click", function () {
         var featureId = this.getAttribute("data-id");
@@ -28,7 +37,6 @@
             dialogClass: 'feature-dialog',
             autoOpen: false,
             width: 623,
-//            height: 800,
             draggable: true,
             modal: true,
             show: 'fade',
@@ -44,9 +52,6 @@
             }
         }).load("/Feature/Index/" + featureId, function () {
             $("#dialog-container").dialog('open');
-//            if ($(".feature-info").height() > 600) {
-//                $(".feature-info").height(600);
-//            }
         });
     });
 });

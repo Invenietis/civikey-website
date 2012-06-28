@@ -31,10 +31,10 @@
                     <div class="moving-elem @ViewBag.Section"></div>
                 </div>
                     <ul id="menu">
-                        <a href="@Url.Action("Index", "Project")"><li class="@IsSelected(Sections.Project) menuelem">Le projet</li></a>
-                        <a href="@Url.Action("Index", "Progress")"><li class="@IsSelected(Sections.Progress) menuelem">Roadmaps</li></a>
-                        <a href="@Url.Action("Index", "Partners")"><li class="@IsSelected(Sections.Partners) menuelem">Partenaires</li></a>
-                        <a href="@Url.Action("Index", "Contact")"><li class="@IsSelected(Sections.Contact) menuelem">Contactez-nous</li></a>
+                        <li class="@IsSelected(Sections.Project) menuelem"><a href="@Url.Action("Index", "Project")">Le projet</a></li>
+                        <li class="@IsSelected(Sections.Progress) menuelem"><a href="@Url.Action("Index", "Progress")">Roadmaps</a></li>
+                        <li class="@IsSelected(Sections.Partners) menuelem"><a href="@Url.Action("Index", "Partners")">Partenaires</a></li>
+                        <li class="@IsSelected(Sections.Contact) menuelem"><a href="@Url.Action("Index", "Contact")">Contactez-nous</a></li>
                     </ul>
                 </div>
             </div>

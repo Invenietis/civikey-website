@@ -272,6 +272,13 @@ ul#menu li
     font-family: Estrangelo Edessa;
     display: inline;
     list-style: none;
+    padding: 22px 20px 0px 20px;
+    cursor: pointer;
+}
+
+ul#menu li a
+{
+    font-family: Estrangelo Edessa;
     font-size: 20px;
     color: #fff;
     padding: 22px 20px 0px 20px;
@@ -696,11 +703,15 @@ ul
     line-height: 18px;
 }
 
+.release-info-container p.roadmap-progress-p
+{
+    font-size: 13px;
+}
 
 .progress-content
 {
-    width:1024px;
-    position:relative;
+    width: 1024px;
+    position: relative;
 }
 
 #featureList
@@ -708,8 +719,6 @@ ul
     width: 86%;
     float: left;
 }
-
-
 
 .progress-list-of-features
 {
@@ -757,10 +766,9 @@ ul
 ul#timeline-buttons li
 {
     list-style: none;
-    font-size: 17px;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 22px;
+    font-size: 18px;
     color: #4f4f4f;
 }
 
@@ -1362,8 +1370,9 @@ label
     margin:0px;
 }
 
-ul#menu li.menuelem.selected
+ul#menu li.menuelem.selected a
 {
+    color: #b7b7b7;
 }
 
 .progress-list-of-features h2
@@ -1457,8 +1466,8 @@ ul#menu li.menuelem.selected
 .collapse-image
 {
     margin:10px;
-    width:21px;
-    height:21px;
+    width:24px;
+    height:24px;
     float:right;
 }
 

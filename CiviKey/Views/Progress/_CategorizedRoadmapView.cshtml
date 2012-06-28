@@ -12,7 +12,7 @@
                     <div class="accordion-heading">
                         <div class="collapse-image colapsed">
                         </div>
-                        <img src="@Url.Content( "~/Content/images/CategoryIcon/" + @category.IconName )" />
+                        <img class="category-img" src="@Url.Content( "~/Content/images/CategoryIcon/" + @category.IconName )" />
                         <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" data-target="#collapse@(i)">
                             @category.Name (@Model.CategorizedFeatures[category].Count)
                         </h2>
@@ -34,12 +34,15 @@
         <div class="release-info-container @if( !Model.HasRelease )
                                            {@("disabled")}">
             <p>Version @Model.Name</p>
-            <div class="feature-download-btn">
-                <a href="#" class="progress-download-link" title="Téléchargement">&nbsp;</a>
-            </div>
             @if( !Model.HasRelease )
             {
-                <p>En cours de développement</p>
+                <p class="roadmap-progress-p">En cours de développement</p>
+            }
+            else
+            {
+                <div class="feature-download-btn">
+                    <a href="#" class="progress-download-link" title="Téléchargement">&nbsp;</a>
+                </div>
             }
         </div>
         
@@ -58,5 +61,7 @@
                 document.CK.AjaxCallbacks.onProgressCategoryChangeSuccess("classic");
             })
         });
+
+        $(".collapse").collapse({toggle: false});
     } ())
 </script>    
