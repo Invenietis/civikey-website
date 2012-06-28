@@ -27,10 +27,40 @@ namespace CiviKey
             routes.IgnoreRoute( "{resource}.axd/{*pathInfo}" );
 
             routes.MapRoute(
-                "Partners", // Route name
-                "partners/{safeName}", // URL with parameters
+                "Contact",
+                "contactez-nous",
+                new { controller = "Contact", action = "Index" }
+                );
+
+            routes.MapRoute(
+                "Project",
+                "le-projet",
+                new { controller = "Project", action = "Index" }
+                );
+
+            routes.MapRoute(
+                "ProgressSpecific",
+                "roadmaps/{version}/{type}",
+                new { controller = "Progress", action = "GetSpecificView", type = "classic" }
+                );
+
+            routes.MapRoute(
+                "Progress",
+                "roadmaps",
+                new { controller = "Progress", action = "Index" }
+                );
+
+            routes.MapRoute(
+                "PartnerPage", // Route name
+                "partenaires/{safeName}", // URL with parameters
                 new { controller = "Partners", action = "GetPartnerPage" } // Parameter defaults
             );
+
+            routes.MapRoute(
+               "Partners", // Route name
+               "partenaires", // URL with parameters
+               new { controller = "Partners", action = "Index" } // Parameter defaults
+           );
 
             routes.MapRoute(
                 "Default", // Route name

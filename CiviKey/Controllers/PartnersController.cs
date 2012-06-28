@@ -58,7 +58,6 @@ namespace CiviKey.Controllers
 
         public ActionResult GetPartnerPage( string safeName )
         {
-
             ViewEngineResult result = ViewEngines.Engines.FindView( ControllerContext, Path.Combine( "Views", safeName ), null );
             if( result.View == null )
             {
@@ -73,9 +72,7 @@ namespace CiviKey.Controllers
                 }
                 return RedirectToAction( "Index" );
             }
-
             return View( result.View );
         }
-
     }
 }

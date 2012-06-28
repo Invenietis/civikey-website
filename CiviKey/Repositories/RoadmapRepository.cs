@@ -21,6 +21,11 @@ namespace CiviKey.Repositories
             return All.Where( x => x.Id == roadmapId ).FirstOrDefault();
         }
 
+        public tRoadMap GetRoadmapFromVersion( string version )
+        {
+            return All.Where( x => x.Name == version ).SingleOrDefault();
+        }
+
         public tRoadMap GetLastReleasedRoadmap()
         {
             tRoadMap lastRoadmap = null;

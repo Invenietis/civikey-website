@@ -647,6 +647,11 @@ ul
 /****************************************************************************************/
 /*Progress*/
 
+.category-img, .collapse-image
+{
+    cursor: pointer;
+}
+
 .roadmap-hasrelease
 {
     font-size: 30px;

@@ -32,14 +32,30 @@ namespace CiviKey.Controllers
             ViewBag.Roadmaps = _roadmapRepo.All.ToList().Reverse<tRoadMap>();
             ViewBag.Section = Sections.Progress;
             ViewBag.Title = "CiviKey - Avancement";
-            
+
             ViewBag.RoadmapViewType = "classic";
-            
+
             tRoadMap r = _roadmapRepo.GetLastReleasedRoadmap();
             ViewBag.CurrentRoadmapId = r.Id;
 
             RoadmapViewModel rvm = new RoadmapViewModel( r, _partnerRepo, _contactRepo, _contactRelationRepo );
-            return View( rvm );
+            return View("Index", rvm );
+        }
+
+        public ActionResult GetSpecificView( string version, string type )
+        {
+            ViewBag.Roadmaps = _roadmapRepo.All.ToList().Reverse<tRoadMap>();
+            ViewBag.Section = Sections.Progress;
+            ViewBag.Title = "CiviKey - Avancement";
+
+            ViewBag.RoadmapViewType = type;
+
+            tRoadMap r = _roadmapRepo.GetRoadmapFromVersion( version );
+            if( r == null ) return Index();
+
+            ViewBag.CurrentRoadmapId = r.Id;
+            RoadmapViewModel rvm = new RoadmapViewModel( r, _partnerRepo, _contactRepo, _contactRelationRepo );
+            return View("Index", rvm );
         }
 
         public ActionResult GetFeatureView( int id, string type )
