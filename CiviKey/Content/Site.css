@@ -241,6 +241,15 @@ body
     height: 100px;
     position: relative;
 }
+
+.header-container > a
+{
+    display: block;
+    height: 100px;
+    width: 200px;
+    float: left;
+}
+
 .footer-container
 {
     padding-bottom: 12px;
@@ -859,14 +868,14 @@ a.timeline-unselected
     font-family:Estrangelo Edessa;
     font-size:18px;
     color:#fff;
-    margin-top: 6px;
     position:relative; 
 }
 
 .progress-elem-title
 {
-    margin-top:5px;
+    margin-top:10px;
     margin-left: 10px;
+    margin-right: 10px;
     float:left;
 }
 
@@ -874,9 +883,7 @@ a.timeline-unselected
 {
     width:35px;
     height:35px;
-    right:0px;
-    top: -7px;
-    position: absolute;
+    float: right;
 }
 
 .done-feature
@@ -925,10 +932,11 @@ a.timeline-unselected
     float:right;
     width:30px;
     font-family: Estrangelo Edessa;
-    margin-top: 43px;
-    margin-right: 5px;
+    margin-top: 33px;
+    margin-right: 8px;
     font-size: 14px;
     color: #4D4D4D; 
+    text-align: center;
 }
 
 .progress-download-link
