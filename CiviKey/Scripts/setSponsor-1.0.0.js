@@ -33,13 +33,13 @@ $(function () {
         for (var i = 0; i < param.length; i++) {
             newWidth = (options.width * (param[i].Percentage / totalPercentage * 100)) / 100;
             if (i % 2 == 0) {
-                $('.jsponsor-first-lvl').append('<div style="float:left; width:' + newWidth + 'px; color:' + colors[i] + ';" >' + param[i].Name + " " + param[i].Percentage / totalPercentage * 100 + '%' + '</div>');
+                $('.jsponsor-first-lvl').append('<div style="float:left; width:' + newWidth + 'px; color:' + colors[i] + ';" >' + param[i].Name + " " + ((param[i].Percentage / totalPercentage * 100)| 0) + '%' + '</div>');
                 $('.jsponsor-bar').append('<div style="float:left; width:' + newWidth + 'px; height:' + options.height + 'px; background-color:' + colors[i] + '"></div>');
                 $('.jsponsor-second-lvl').append('<div style="float:left; width:' + newWidth + 'px; height:' + fontSize + 'px;"></div>');
             } else {
                 $('.jsponsor-first-lvl').append('<div style="float:left; width:' + newWidth + 'px; height:' + fontSize + 'px;"></div>');
                 $('.jsponsor-bar').append('<div style="float:left; width:' + newWidth + 'px; height:' + options.height + 'px; background-color:' + colors[i] + '"></div>');
-                $('.jsponsor-second-lvl').append('<div style="float:left; width:' + newWidth + 'px; color:' + colors[i] + '">' + param[i].Name + " " + param[i].Percentage / totalPercentage * 100 + '%' + '</div>');
+                $('.jsponsor-second-lvl').append('<div style="float:left; width:' + newWidth + 'px; color:' + colors[i] + '">' + param[i].Name + " " + ((param[i].Percentage / totalPercentage * 100) | 0) + '%' + '</div>');
             }
         }
 

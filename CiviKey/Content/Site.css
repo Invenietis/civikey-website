@@ -552,19 +552,16 @@ ul
     height:330px;
     background-color:#f4f4f4;
     border-top:1px solid #858585;
-    vertical-align:middle;
     font-family:Verdana;
     padding-left:40px;
     font-size:14px;
     padding-right:40px;
     text-align:justify;
-    display: table;
-    
 }
 
 .project-rightblock
 {
-    float:left;
+    float:right;
     width:286px;
 }
 
@@ -877,15 +874,14 @@ a.timeline-unselected
 {
     width:35px;
     height:35px;
-    right:10px;
-    top:-10px;
-    float:right;
-    margin-top: -11px;
+    right:0px;
+    top: -7px;
+    position: absolute;
 }
 
 .done-feature
 {
-    background-image: url('/Content/images/done-type.png');
+    background-image: url('/Content/images/done-type-green.png');
 }
 
 .doing-feature
@@ -1034,7 +1030,7 @@ a.timeline-unselected
     float:left;
     margin:47px 0px 0px 30px;
     font-family: Estrangelo Edessa;
-    font-size:40px;
+    font-size:39px;
 }
 
 .contact-title

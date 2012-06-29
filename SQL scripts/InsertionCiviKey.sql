@@ -15,12 +15,12 @@ insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('François 
 
 insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('Invenietis','<p>Invenietis, SSII créée en 2006, est impliquée dans le projet CiviKey depuis son lancement à IN''TECH INFO en Septembre de la même année.</br>L''entreprise porte ce projet bénévolement en réalisant la majorité des développements. Elle suit également des étudiants désirant développer de nouvelles fonctionnalités pour le CiviKey, pour les aider dans leur démarche.</p>','invenietis.png', 'http://www.invenietis.com'); --5
 insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('Fondation Steria','<p>La Fondation Steria – Institut de France s’inscrit dans la politique de solidarité du Groupe Steria, qui a pour objectif de favoriser l’autonomie de publics en difficulté en leur donnant accès à l’éducation, à l’informatique et à un métier. La Fondation est née d’une démarche participative de collaborateurs de Steria en France. Elle a pour objectif de contribuer à la réduction de la fracture numérique.</p>','fondation-steria.png','http://www.fondationsteria.org'); --6
-insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('Alcatel-Lucent','Société Alcatel-Lucent','alcatel-lucent.png', 'www.alcatel-lucent.com'); --7
+insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('Alcatel-Lucent','Société Alcatel-Lucent','alcatel-lucent.png', 'http://www.alcatel-lucent.com'); --7
 insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('IN''TECH INFO','<p>Différents groupes d''élèves se sont succédés à IN''TECH INFO pour travailler sur le Civikey depuis sa création. L''école a toujours voulu accompagner et faire vivre ce projet à vocation humaine. Il est une magnifique vitrine de leur savoir faire et des compétences mises en oeuvre. Ce travail d''équipe entre différentes entités correspond parfaitement à la pédagogie de projets développée à IN''TECH INFO qui souhaite continuer à collaborer à la réussite de ce projet encore de nombreuses années.</p>','intech-info.png', 'http://www.intechinfo.fr'); --8
 insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('PFNT','<p>La Plate-Forme Nouvelles Technologies (PFNT) de l’hôpital Raymond Poincaré est une unité de conseil, de démonstration, de formation et de recherche dans le domaine des Nouvelles Technologies appliquées aux personnes en situation de handicap. Initialement uniquement tournée vers la robotique d’assistance (en 1995), elle s’est peu à peu ouverte à d’autres technologies de l’information et de la communication, comme l’informatique, la Communication Améliorée et Alternative (CAA) et la domotique.</p>','pfnt.png', 'http://www.handicap.org'); --9
 insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('Antoine Blanchet','','',''); --10
 insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('Isaac Duplan','','',''); --11
-insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('Objectif Aide','L''association Objectf Aide','objectif-aide.png','http://www.objectif-aide.org/'); --12
+insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('Objectif Aide','<p>[10:42:14] Julien MATHON: Objectif Aide est une association de loi 1901 à but non lucratif. Sa mission est de sensibiliser les personnes à la solidarité en menant des actions à caractère social, culturel ou humanitaire.<br/>Fort de sa motivation, le collectif organise chaque année un concours photographique sur un thème original et utile. Ce concours laisse ensuite place à une exposition en Île-de-France pour sensibiliser, grâce à la force des images, les Franciliens aux problèmes que rencontre notre société.</p>','objectif-aide.png','http://www.objectif-aide.org/'); --12
 insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('Antoine Raquillet','','',''); --13
 insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('Fondation Garches','<p>La Fondation Garches a pris la succession de l’Institut Garches, qui avait vu le jour en 1988 à l’initiative des médecins de l’Hôpital Raymond Poincaré, avec le soutien de quelques entreprises. Créée par l’Institut Garches en 2005, avec le soutien du Ministère en charge de la recherche, et d’emblée reconnue d’utilité publique, la Fondation Garches a été la première fondation de recherche à caractère scientifique dans le domaine du Handicap.</p>','fondation-garches.png', 'http://www.handicap.org'); --14
 insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('Olivier Spinelli','','', ''); --15
@@ -50,16 +50,17 @@ insert into dbo.tContactRelation(ContactId,EntityId,StartDate,EndDate)values(15,
 --- Creating RoadMap
 insert into dbo.tRoadMap(Name, HasRelease)values('2.5.1', 1);
 insert into dbo.tRoadMap(Name, HasRelease)values('2.5.2', 1);
-insert into dbo.tRoadMap(Name, HasRelease)values('2.6', 0); --futur
+insert into dbo.tRoadMap(Name, HasRelease)values('2.6.0', 0); --futur
 
 --Creating features
+--2.5.1
 insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type) values('AutoClick','1.0.0',100,DATEADD(year,-1,GetDate()),1,'<p>Cette fonctionnalité permet de simuler des clics souris, sans avoir a utiliser de contacteur, l''immobilité de la souris pendant un temps configurable lance le clic automatiquement. <br/> Un cartouche permet de selectionner le type de clic que l''on veut effectuer : clic gauche, clic droit, double clic ou encore glisser-déposer.<br/> Pour plus d''informations, regardez le screencast ci-dessous.</p><p>Cette fonctionnalité permet de simuler des clics souris, sans avoir a utiliser de contacteur, l''immobilité de la souris pendant un temps configurable lance le clic automatiquement. <br/> Un cartouche permet de selectionner le type de clic que l''on veut effectuer : clic gauche, clic droit, double clic ou encore glisser-déposer.<br/> Pour plus d''informations, regardez le screencast ci-dessous.</p>', 2)
 insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type) values('Clavier','1.0.0',100,DATEADD(year,-1,GetDate()),1,'<p>Le clavier de CiviKey, celui-ci affiche un clavier configuré via un fichier xml. En editant ce fichier, on peut ajouter ou modifier des touches, pour leur faire envoyer le texte souhaité. <br/>La couleur des touches est modifiable. <br/> Autre fonctionnalités : <br/> le clavier peut être configuré pour se minimiser au bout d''un temps défini d''inaction, minimisant l''espace pris par le clavier sur l''écran.</p>', 2)
 insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type) values('Object Explorer','1.0.0',100,DATEADD(year,-1,GetDate()),1,'<p>Outil de configuration de CiviKey, reservé aux utilisateurs confirmés, il permet de décider du lancement automatique d''une fonctionnalité, et de visualiser l''état du système.</p>', 2)
 insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type) values('Automatic update','1.0.0',100,DATEADD(year,-1,GetDate()),1,'<p>Mise à jour automatique de CiviKey.</p>', 2)
 insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type) values('Noyau','1.0.0',100,DATEADD(year,-1,GetDate()),1,'<p>Le noyau de CiviKey. C''est lui qui assure la modularité de CiviKey en gérant le lancement et l''arret des différentes fonctionnalités. <br/> Utilise le .NET Framework 3.5.</p>', 2)
 --OK
---2.5.5
+--2.5.2
 --6
 insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type) values('AutoClick','1.0.0',100,DATEADD(year,-1,GetDate()),2,'<p>Cette fonctionnalité permet de simuler des clics souris, sans avoir a utiliser de contacteur, l''immobilité de la souris pendant un temps configurable lance le clic automatiquement. <br/> Un cartouche permet de selectionner le type de clic que l''on veut effectuer : clic gauche, clic droit, double clic ou encore glisser-déposer.<br/> Pour plus d''informations, regardez le screencast ci-dessous.</p><p>Cette fonctionnalité permet de simuler des clics souris, sans avoir a utiliser de contacteur, l''immobilité de la souris pendant un temps configurable lance le clic automatiquement. <br/> Un cartouche permet de selectionner le type de clic que l''on veut effectuer : clic gauche, clic droit, double clic ou encore glisser-déposer.<br/> Pour plus d''informations, regardez le screencast ci-dessous.</p>', 1)
 --7
@@ -90,7 +91,10 @@ insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Descripti
 insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type) values('Défilement souris','1.0.0',0,DATEADD(year,-1,GetDate()),3,'<p>Permet à un utilisateur équipé d''un simple contacteur de déplacer la souris, via un système de défilement sur les différentes zones de l''écran. Peut-être associé à l''auto clic pour lancer différents types de clics.</p>', 2)
 --19
 insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type) values('Assistant création','1.0.0',0,DATEADD(year,-1,GetDate()),3,'<p>Permet de créer de nouveaux claviers, en choisissant les touches, leur taille et leur disposition.</p>', 2)
-
+--20
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type) values('Assistant 1er démarrage','1.0.0',0,DATEADD(year,-1,GetDate()),3,'<p>Assistant de configuration de CiviKey au premier lancement d''un nouvel utilisateur.<br/>Permet de choisir les fonctionnalités à lancer au démarrage de l''application</p>', 2)
+--21
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type) values('Aide en ligne','1.0.0',0,DATEADD(year,-1,GetDate()),3,'<p>Intégration de point d''information sur les différentes fonctionnalités, pour expliquer le fonctionnement de chacune.</p>', 2)
 -------------------------STOPPED HERE
 
 --Creating sections in the features
@@ -180,6 +184,7 @@ insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('Update C
 insert into dbo.tPlugin(Title,Version,Description,CreationDate) values('CK-Core','1.0.0','Noyau, framework .NET 4.0', DateAdd(year,-1,GetDate())) --27
 
 
+
 --Linking plugins and features
 insert into dbo.tSectionPlugin(SectionId,PluginId) values(1,1) --AutoClick
 insert into dbo.tSectionPlugin(SectionId,PluginId) values(2,2) --MouseWatcher
@@ -224,118 +229,204 @@ insert into dbo.tSectionPlugin(SectionId,PluginId) values(24,26) --Update checke
 insert into dbo.tSectionPlugin(SectionId,PluginId) values(25,27) --Noyau --> Noyau
 --Creating Participations
 
+--AC
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(2,'Development', 100, DateAdd(month,-5,GetDate()))
 insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(1,1) --Jean-Loup has developped 100% of the AutoClick feature 
 
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
 insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(2,1) --Invenietis has sponsored 100% of the AutoClick Feature 
 
+--Skin
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(10,'Development', 100, DateAdd(month,-5,GetDate()))
 insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(3,2) --Antoine has developped 100% of the Clavier
 
-insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 50, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(4,2) --Alcatel has sponsored 50% of the Clavier
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(4,2) --Alcatel has sponsored 100% of the Clavier
 
-insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Sponsoring', 50, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(5,2) --Invenietis has sponsored 50% of the Clavier
-
+--OE
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(10,'Development', 60, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(6,3) --Antoine has developed 60% of the OE 
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(5,3) --Antoine has developed 60% of the OE 
 
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(2,'Development', 40, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(7,3) --Jean-Loup has developed 40% of the OE
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(6,3) --Jean-Loup has developed 40% of the OE
 
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(7,3) --Alcatel has sponsored 100% of the OE
+
+--AutoUpdate
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(2,'Development', 50, DateAdd(month,-5,GetDate()))
 insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(8,4) --Jean-Loup has developed 50% of the Automatic update
 
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(13,'Development', 50, DateAdd(month,-5,GetDate()))
 insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(9,4) --Antoine Raquillet has developed 50% of the Automatic Update
 
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(10,4) --Alcatel has sponsored 100% of the AutomaticUpdate
+
+--Kernel
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(15,'Development', 60, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(10,5) --Olivier Spinelli has developed 60% of the Kernel
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(11,5) --Olivier Spinelli has developed 60% of the Kernel
 
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(10,'Development', 20, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(11,5) --Antoine Blanchet has developed 20% of the Kernel
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(12,5) --Antoine Blanchet has developed 20% of the Kernel
 
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(2,'Development', 20, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(12,5) --Jean-loup Kahloun has developed 20% of the Kernel
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(13,5) --Jean-loup Kahloun has developed 20% of the Kernel
+
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 30, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(14,5) --Alcatel has sponsored 30% of the Kernel
+
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(6,'Sponsoring', 30, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(15,5) --Steria has sponsored 30% of the Kernel
+
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Sponsoring', 30, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(16,5) --Invenietis has sponsored 30% of the Kernel
 
 --OK
 --2.5.2
-
+--AC
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(2,'Development', 100, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(13,6) --Jean-Loup has developped 100% of the AutoClick feature 
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(17,6) --Jean-Loup has developped 100% of the AutoClick feature 
 
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(14,6) --Invenietis has sponsored 100% of the AutoClick Feature 
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(18,6) --Invenietis has sponsored 100% of the AutoClick Feature 
 
+--Skin
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(10,'Development', 100, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(15,7) --Antoine has developped 100% of the Clavier
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(19,7) --Antoine has developped 100% of the Clavier
 
-insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 50, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(16,7) --Alcatel has sponsored 50% of the Clavier
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(20,7) --Alcatel has sponsored 100% of the Clavier
 
-insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Sponsoring', 50, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(17,7) --Invenietis has sponsored 50% of the Clavier
-
+--OE
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(10,'Development', 60, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(18,8) --Antoine has developed 60% of the OE 
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(21,8) --Antoine has developed 60% of the OE 
 
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(2,'Development', 40, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(19,8) --Jean-Loup has developed 40% of the OE
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(22,8) --Jean-Loup has developed 40% of the OE
 
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(23,8) --Alcatel has sponsored 100% of the OE
+
+--AutoUpdate
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(2,'Development', 50, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(20,9) --Jean-Loup has developed 50% of the Automatic update
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(24,9) --Jean-Loup has developed 50% of the Automatic update
 
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(13,'Development', 50, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(21,9) --Antoine Raquillet has developed 50% of the Automatic Update
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(25,9) --Antoine Raquillet has developed 50% of the Automatic Update
 
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(26,9) --Alcatel has sponsored 100% of the AutomaticUpdate
+
+--Kernel
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(15,'Development', 60, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(22,10) --Olivier Spinelli has developed 60% of the Kernel
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(27,10) --Olivier Spinelli has developed 60% of the Kernel
 
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(10,'Development', 20, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(23,10) --Antoine Blanchet has developed 20% of the Kernel
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(28,10) --Antoine Blanchet has developed 20% of the Kernel
 
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(2,'Development', 20, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(24,10) --Jean-loup Kahloun has developed 20% of the Kernel
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(29,10) --Jean-loup Kahloun has developed 20% of the Kernel
+
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 30, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(30,10) --Alcatel has sponsored 30% of the Kernel
+
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(6,'Sponsoring', 30, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(31,10) --Steria has sponsored 30% of the Kernel
+
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Sponsoring', 30, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(32,10) --Invenietis has sponsored 30% of the Kernel
 
 -- 2.6
-
+--AC
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(2,'Development', 100, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(25,11) --Jean-Loup has developped 100% of the AutoClick feature 
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(33,11) --Jean-Loup has developped 100% of the AutoClick feature 
 
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(26,11) --Invenietis has sponsored 100% of the AutoClick Feature 
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(34,11) --Invenietis has sponsored 100% of the AutoClick Feature 
 
+--Skin
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(10,'Development', 100, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(27,12) --Antoine has developped 100% of the Clavier
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(35,12) --Antoine has developped 100% of the Clavier
 
-insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 50, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(28,12) --Alcatel has sponsored 50% of the Clavier
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(36,12) --Alcatel has sponsored 100% of the Clavier
 
-insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Sponsoring', 50, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(29,12) --Invenietis has sponsored 50% of the Clavier
-
+--OE
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(10,'Development', 60, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(30,13) --Antoine has developed 60% of the OE 
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(37,13) --Antoine has developed 60% of the OE 
 
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(2,'Development', 40, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(31,13) --Jean-Loup has developed 40% of the OE
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(38,13) --Jean-Loup has developed 40% of the OE
 
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(39,13) --Alcatel has sponsored 100% of the OE
+
+--AutoUpdate
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(2,'Development', 50, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(32,14) --Jean-Loup has developed 50% of the Automatic update
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(40,14) --Jean-Loup has developed 50% of the Automatic update
 
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(13,'Development', 50, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(33,14) --Antoine Raquillet has developed 50% of the Automatic Update
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(41,14) --Antoine Raquillet has developed 50% of the Automatic Update
 
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(42,14) --Alcatel has sponsored 100% of the AutomaticUpdate
+
+--Kernel
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(15,'Development', 60, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(34,15) --Olivier Spinelli has developed 60% of the Kernel
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(43,15) --Olivier Spinelli has developed 60% of the Kernel
 
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(10,'Development', 20, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(35,15) --Antoine Blanchet has developed 20% of the Kernel
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(44,15) --Antoine Blanchet has developed 20% of the Kernel
 
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(2,'Development', 20, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(36,15) --Jean-loup Kahloun has developed 20% of the Kernel
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(45,15) --Jean-loup Kahloun has developed 20% of the Kernel
+
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 30, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(46,15) --Alcatel has sponsored 30% of the Kernel
+
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(6,'Sponsoring', 30, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(47,15) --Steria has sponsored 30% of the Kernel
+
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Sponsoring', 30, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(48,15) --Invenietis has sponsored 30% of the Kernel
+
+
+-- 2.6.0 : Après signature de la convention :
+--Prediction
+--insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 30, DateAdd(month,-5,GetDate()))
+--insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(49,16) --Alcatel has sponsored 50% of the Prediction
+
+--insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Sponsoring', 30, DateAdd(month,-5,GetDate()))
+--insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(50,16) --Invenietis has sponsored 50% of the Prediction
+
+
+--Defilement clavier
+--insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
+--insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(51,17) --Alcatel has sponsored 50% of the defilement clavier
+
+
+--Défilement souris
+--insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
+--insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(52,18) --Alcatel has sponsored 50% of the defilement souris
+
+--assistant creation
+--insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
+--insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(53,19) --Alcatel has sponsored 50% of the assistant creation
+
+--Assistant 1er demarrage
+--insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 50, DateAdd(month,-5,GetDate()))
+--insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(54,20) --Alcatel has sponsored 50% of the Assistant 1er demarrage
+
+--insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Sponsoring', 50, DateAdd(month,-5,GetDate()))
+--insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(55,20) --Invenietis has sponsored 50% of the Assistant 1er demarrage
+
+--Aide en ligne
+--insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 50, DateAdd(month,-5,GetDate()))
+--insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(56,21) --Alcatel has sponsored 50% of the online help
+
+--insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Sponsoring', 50, DateAdd(month,-5,GetDate()))
+--insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(57,21) --Invenietis has sponsored 50% of the online help
 
 --Creating categories
 insert into dbo.tCategory(Name,IconName) values ('Aide au clic','mouse_pointer_24x24.png') --1
@@ -368,10 +459,12 @@ insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (5,13) --OE - no
 insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (5,14) --Update checker - noyau
 insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (5,15) --Noyau - noyau
 --new
-insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (2,16) --Prediction
-insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (2,17) --Défilement clavier 
-insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (3,18) --Défilement souris
-insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (5,19) --Assistant création
+insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (2,16) --Prediction - saisie
+insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (2,17) --Défilement clavier - saisie
+insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (3,18) --Défilement souris - aide au déplacement du pointeur
+insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (5,19) --Assistant création - noyau
+insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (5,20) --Assistant 1er démarrage - noyau
+insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (5,21) --Aide en ligne - noyau
 
 --Video
 insert into dbo.tVideo (Name,FeatureId, CreationDate, VideoSource) values ('Tutorial',1,DateAdd(month,-5,GetDate()),'fzzjgBAaWZw') --AutoClick 2.5.1
