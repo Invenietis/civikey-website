@@ -653,6 +653,11 @@ ul
 /****************************************************************************************/
 /*Progress*/
 
+.accordion-body
+{
+    width: 100%;
+}
+
 .category-img, .collapse-image
 {
     cursor: pointer;
@@ -774,13 +779,20 @@ ul
     background-color:#4b4b4b;
 }
 
+.roadmap-in-progress-img
+{
+    width: 15px;
+    margin-bottom: 5px;
+}
 ul#timeline-buttons li
 {
     list-style: none;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 18px;
+    font-size: 30px;
     color: #4f4f4f;
+    text-align: left;
+    padding-left: 25px;
 }
 
 ul#timeline-buttons
@@ -808,11 +820,6 @@ ul#timeline-buttons li a
     color: #4f4f4f;
 }
 
-ul#timeline-buttons li a
-{
-    color: #4f4f4f;
-}
-
 ul#timeline-buttons li a.timeline-selected
 {
     color:#509ae3;   
@@ -832,6 +839,7 @@ a.timeline-unselected
     height:90px;
     background-image: url('/Content/images/avancement-ticket.png');
     cursor:pointer;
+    display: block;
 }
 
 .progress-list-elem:hover
@@ -981,6 +989,23 @@ a.timeline-unselected
     width:478px;
     height:129px;
     background-image: url('/Content/images/partner-back.png');
+    position: relative;
+}
+
+.partners-elem-link
+{
+    float: left;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.partners-elem-link.logo
+{
+    position: absolute;
+    right:0;
+    width: auto;
+    margin-right: 40px;
 }
 
 .partners-elem-content
@@ -1023,7 +1048,7 @@ a.timeline-unselected
 
 .partners-title-logo
 {
-    display: none;
+    /*display: none;*/
     float: right;
     margin-right: 40px;
 }

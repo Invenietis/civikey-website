@@ -101,6 +101,7 @@
     </Compile>
     <Compile Include="Models\CivikeyEntities.cs" />
     <Compile Include="Models\Contact.cs" />
+    <Compile Include="Models\ContactExtentions.cs" />
     <Compile Include="Models\Context.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -112,6 +113,7 @@
       <DependentUpon>Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\FeatureType.cs" />
+    <Compile Include="Models\Helpers.cs" />
     <Compile Include="Models\Model.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

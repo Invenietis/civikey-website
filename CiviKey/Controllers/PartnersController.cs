@@ -18,7 +18,6 @@ namespace CiviKey.Controllers
         ContactRepository _contactRepo;
         ContactRelationRepository _contactRelationRepo;
 
-
         public PartnersController( ContactRelationRepository c, PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo )
         {
             _entities = c;
@@ -29,36 +28,35 @@ namespace CiviKey.Controllers
 
         public ActionResult Index()
         {
-            IList<tContact> contactList;
-            IList<ContactViewModel> contactViewModel = new List<ContactViewModel>();
+            IList<tContact> organisationList;
+            IList<ContactViewModel> organizationViewModels = new List<ContactViewModel>();
             ViewBag.Section = Sections.Partners;
 
+            organisationList = _entities.GetOrganizationList();
 
-            contactList = _entities.GetContactList();
-
-            foreach( tContact contact in contactList )
+            foreach( tContact contact in organisationList )
             {
-                contactViewModel.Add( new ContactViewModel( contact, _partnerRepo, _contactRepo, _contactRelationRepo ) );
+                organizationViewModels.Add( new ContactViewModel( contact, _partnerRepo, _contactRepo, _contactRelationRepo, Helpers.GetPartnerSpecificView(ControllerContext, contact.SafeName).View != null ) );
             }
 
             Random rng = new Random( DateTime.Now.Hour );
-            int n = contactViewModel.Count;
+            int n = organizationViewModels.Count;
             while( n > 1 )
             {
                 n--;
                 int k = rng.Next( n + 1 );
-                ContactViewModel value = contactViewModel[k];
-                contactViewModel[k] = contactViewModel[n];
-                contactViewModel[n] = value;
+                ContactViewModel value = organizationViewModels[k];
+                organizationViewModels[k] = organizationViewModels[n];
+                organizationViewModels[n] = value;
             }
 
             ViewBag.Title = "CiviKey - Partenaires";
-            return View( contactViewModel );
+            return View( organizationViewModels );
         }
 
         public ActionResult GetPartnerPage( string safeName )
         {
-            ViewEngineResult result = ViewEngines.Engines.FindView( ControllerContext, Path.Combine( "Views", safeName ), null );
+            ViewEngineResult result = Helpers.GetPartnerSpecificView( ControllerContext, safeName );
             if( result.View == null )
             {
                 tContact contact = _contactRepo.ContactFromContactSafeName( safeName );

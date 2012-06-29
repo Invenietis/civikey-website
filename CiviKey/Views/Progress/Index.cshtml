@@ -9,7 +9,7 @@
 </div>
 <div class="progress-content">
     <div class="progress-title">
-        Cette page présente les versions disponibles et à venir de CiviKey. La colonne de gauche vous permet de naviguer entre les différentes versions. Les versions en petits caractères sont en cours de développement.
+        Cette page présente les versions disponibles et à venir de CiviKey. La colonne de gauche vous permet de naviguer entre les différentes versions.
     </div>
     <div class="progress-timebar">
         <div class="progress-timebar-container">
@@ -26,6 +26,10 @@
                                 UpdateTargetId = "featureList",
                                 OnSuccess = "document.CK.AjaxCallbacks.onProgressGetFeatureViewSuccess"
                             }, new { @class = string.Format("timeline-feature-link roadmap-{0} {1}", item.Id, additionalClass) } )
+                            @if( !item.HasRelease )
+                            {
+                                <img class="roadmap-in-progress-img" src="/Content/images/in-progress.png" title="roadmap en cours de développement" alt="roadmap en cours de développement" />
+                            }
                         </li>
                     }
                 </ul>
@@ -49,3 +53,5 @@
     <div style="clear: both;">
     </div>
 </div>
+
+

@@ -37,7 +37,7 @@ namespace CiviKey.Repositories
             return null;
         }
 
-        internal IList<tContact> GetContactList()
+        internal IList<tContact> GetOrganizationList()
         {
             return All.Where( x => x.ContactId == x.EntityId ).Select( y => y.tContact ).ToList();
         }

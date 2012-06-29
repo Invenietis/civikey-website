@@ -32,7 +32,7 @@ namespace CiviKey.Controllers
             IList<tContact> contactList;
             IList<ContactViewModel> contactViewModel = new List<ContactViewModel>();
 
-            contactList = _entities.GetContactList();
+            contactList = _entities.GetOrganizationList();
 
             foreach (tContact contact in contactList)
             {
