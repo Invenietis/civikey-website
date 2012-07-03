@@ -41,7 +41,7 @@
     {
         <div class="progress-elem-developedby">
             <p class="progress-elem-developedby-text">
-                Developpé par :
+                @if(Model.Progress == 100){@("Developpé par :")} else{@("En développement par :")}
             </p>
             <p>@Model.MainDeveloper.Name</p>
         </div>

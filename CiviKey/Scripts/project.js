@@ -1,21 +1,22 @@
 ﻿$(function () {
-    var elemsTab = ["leprojet", "aide", "acteurs"];
-    var notActivElem = [1, 2, 0];
+    var elemsTab = ["before-civikey", "virtual-keyboard", "contributors", "partners"];
+    var notActivElem = [1, 2, 3, 0];
+    changeContentHeight();
 
     $('.project-menuelem').click(function () {
         clickedElem = $(this);
         changeContent(clickedElem);
-
     });
 
     function changeContent(clickedElem) {
-        console.log(notActivElem);
         if (changeActiveElem(clickedElem)) {
             detectNotActivElem(clickedElem);
             $('.project-slide' + notActivElem[0]).fadeOut(function () {
                 $('.project-slide' + notActivElem[1]).fadeOut(function () {
-                    $('.project-slide' + notActivElem[2]).fadeIn();
-                    changeContentHeight();
+                    $('.project-slide' + notActivElem[2]).fadeOut(function () {
+                        $('.project-slide' + notActivElem[3]).fadeIn();
+                        changeContentHeight();
+                    });
                 });
             });
         }
@@ -51,7 +52,7 @@
         var content = $('.project-leftblock-content').height();
         var height;
         if (content != 0) {
-            $('.project-slider').height(content+30);
+            $('.project-slider').height(content + 30);
             $('.project-shadow').css('top', content + 50);
         }
     }

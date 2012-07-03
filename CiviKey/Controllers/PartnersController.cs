@@ -39,17 +39,6 @@ namespace CiviKey.Controllers
                 organizationViewModels.Add( new ContactViewModel( contact, _partnerRepo, _contactRepo, _contactRelationRepo, Helpers.GetPartnerSpecificView(ControllerContext, contact.SafeName).View != null ) );
             }
 
-            Random rng = new Random( DateTime.Now.Hour );
-            int n = organizationViewModels.Count;
-            while( n > 1 )
-            {
-                n--;
-                int k = rng.Next( n + 1 );
-                ContactViewModel value = organizationViewModels[k];
-                organizationViewModels[k] = organizationViewModels[n];
-                organizationViewModels[n] = value;
-            }
-
             ViewBag.Title = "CiviKey - Partenaires";
             return View( organizationViewModels );
         }

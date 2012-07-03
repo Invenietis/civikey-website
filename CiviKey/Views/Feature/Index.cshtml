@@ -2,8 +2,8 @@
 @Html.CK().Scripts.ByName().IncludeJS( "setSponsor-1.0.0" ).IncludeJS( "feature.js" )
 <script type="text/javascript">
     $(function () {
-        var param = JSON.parse('@Html.Raw( Json.Encode( Model.Sponsors ) )');
-        var videoSource = JSON.parse('@Html.Raw( Json.Encode( Model.Videos ) )');
+        var param = window.JSON.parse('@Html.Raw( Json.Encode( Model.Sponsors ) )');
+        var videoSource = window.JSON.parse('@Html.Raw( Json.Encode( Model.Videos ) )');
 
         var options = {
             width: 520,
@@ -68,7 +68,7 @@
                     @foreach( var participation in Model.Participations )
                     {
                         <div class="development-company">
-                            @participation.Key.Name : 
+                          @*  @if(!participation.Key.IsOrganization) {@participation.Key.Name @(" :") }
                             @for( int i = 0; i < participation.Value.Count; i++ )
                             {
                                 @participation.Value[i].Name 
@@ -79,6 +79,19 @@
                                     -
                                     </text>
                                 }
+                            }*@
+
+                            @participation.Key.Name @(" :")
+                            @{
+                                int percent = 0;
+                            
+                                for( int i = 0; i < participation.Value.Count; i++ )
+                                {
+
+                                    percent += participation.Value[i].Percentage;
+                                
+                                }
+                                @String.Format( " {0}%", percent )
                             }
                         </div>
                     }

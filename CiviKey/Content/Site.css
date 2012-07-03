@@ -570,6 +570,7 @@ ul
 
 .project-rightblock
 {
+    border-top: 1px solid #858585;
     float:right;
     width:286px;
 }
@@ -591,11 +592,11 @@ ul
 
 .project-menuelem p{
     font-family:Verdana;
-    font-size:25px;
+    font-size:15px;
     color:#9b9b9b;
-    padding:34px 0px 0px 20px;
+    padding:35px 0px 0px 0px;
     margin:0px;
-    vertical-align:middle;
+    margin-left: 24px;
 }
 
 #leprojet
@@ -661,11 +662,6 @@ ul
 .category-img, .collapse-image
 {
     cursor: pointer;
-}
-
-.roadmap-hasrelease
-{
-    font-size: 30px;
 }
 
 .mode-toggle-img
@@ -789,7 +785,7 @@ ul#timeline-buttons li
     list-style: none;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 30px;
+    font-size: 28px;
     color: #4f4f4f;
     text-align: left;
     padding-left: 25px;
@@ -907,6 +903,11 @@ a.timeline-unselected
 {
 }
 
+.sponsor-percent
+{
+    font-size: 11px;
+}
+
 .progress-elem-content
 {
     font-family:Verdana;
@@ -916,7 +917,7 @@ a.timeline-unselected
 {
     color:#696969;
     font-size:14px;
-    width: 110px;
+    /*width: 110px;*/
     float:left;
     font-weight:bold;
     margin-top:10px;
@@ -961,6 +962,11 @@ a.timeline-unselected
     text-align:center;
     color:#4d4d4d;
     font-family:Verdana;
+}
+
+.classic-li
+{
+    line-height: 1.6em;
 }
 
 .partners-content
