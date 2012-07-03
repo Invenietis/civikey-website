@@ -41,12 +41,13 @@ namespace CiviKey.Controllers
         {
             ICollection<tTestimony> testimonies = _testiRepo.All;
 
-            tTestimony foundTestimony;
+            tTestimony foundTestimony = null;
+            if( testimonies.Count == 0 ) return null;
             do
             {
                 int index = _rand.Next( 0, testimonies.Count );
                 foundTestimony = testimonies.ElementAt( index );
-            } while( foundTestimony == null || ( currentTestimonyId.HasValue && foundTestimony.Id == currentTestimonyId ) );
+            } while( foundTestimony == null || ( currentTestimonyId.HasValue && foundTestimony.Id == currentTestimonyId ) && testimonies.Count > 1);
 
             ViewBag.currentTestimonyId = foundTestimony.Id;
 

@@ -399,32 +399,31 @@ ul
 
 .home-main-container
 {
-    height: 165px;
+    height: 200px;
     margin-top: 25px;
 }
 
 .home-main-news
 {
     width: 460px;
-    height: 165px;
+    height: 200px;
     float: left;
     background-image: url('/Content/images/home-news-back.png');
     background-repeat: no-repeat;
     padding-left: 50px;
-    padding-right: 90px;
+    padding-right: 40px;
     font-family: Microsoft Tai Le;
     text-align: justify;
 }
 #home-main-testimony
 {
-    width: 335px;
-    height: 165px;
+    width: 420px;
+    height: 200px;
     float: left;
     background-image: url('/Content/images/home-testimony-back.png');
     background-repeat: no-repeat;
     font-family: Microsoft Tai Le;
     padding-left: 50px;
-    padding-right: 35px;
 }
 
 
@@ -475,8 +474,8 @@ ul
 
 .testimony-content
 {
-    font-size: 15px;
-    margin-top: 30px;
+    font-size: 11px;
+    margin-top: 3px;
     color: #4b4b4b;
     line-height: 18px;
     background-image: url('/Content/images/testimony-g.png');
@@ -487,6 +486,7 @@ ul
 {
     color: #4b4b4b;
     text-align: right;
+    font-size: 
 }
 
 .moving-elem

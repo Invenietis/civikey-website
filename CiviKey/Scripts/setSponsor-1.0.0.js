@@ -22,7 +22,7 @@ $(function () {
         var parentDivWidth = options.width;
         var newWidth;
         var totalPercentage = 0;
-        var colors = new Array('#4b4b4b', '#7bb2e8', '#ffb10a', '#88ff0a', '#ff00ea');
+        var colors = new Array('#4b4b4b', '#7bb2e8', '#ffb10a', '#1e8434', '#cd09bd');
 
         for (var i = 0; i < param.length; i++) {
             totalPercentage = totalPercentage + param[i].Percentage;
