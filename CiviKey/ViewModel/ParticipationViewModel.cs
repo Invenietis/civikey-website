@@ -10,11 +10,9 @@ namespace CiviKey.ViewModel
     public class ParticipationViewModel
     {
         tParticipation _model;
-        FeatureViewModel _feature;
-        public ParticipationViewModel( FeatureViewModel feature, tParticipation model, PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo )
+        public ParticipationViewModel( tParticipation model, PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo )
         {
             _model = model;
-            _feature = feature;
             ContactRelation = new ContactRelationViewModel( _model.tContactRelation, partnerRepo, contactRepo, contactRelationRepo );
         }
 

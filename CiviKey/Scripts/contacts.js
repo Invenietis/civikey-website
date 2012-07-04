@@ -4,6 +4,7 @@
         content: "Invenietis</br>10 rue Mercoeur</br>75011"
     });
     var myOptions = {
+        //48.838488,2.170841
         center: new google.maps.LatLng(48.857473, 2.384012),
         zoom: 15,
         mapTypeControl: false,
@@ -37,7 +38,7 @@
 
 
     function mailFailed(e) {
-        $('.mailsent-dialog').html('<p>Vérifiez vôtre adresse mail</p>');
+        $('.mailsent-dialog').html('<p>Vérifiez votre adresse mail</p>');
         $('.mailsent-dialog').fadeIn().delay(1000).fadeOut();
     }
 

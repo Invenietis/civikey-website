@@ -16,26 +16,46 @@ namespace CiviKey.Controllers
         public ActionResult Index()
         {
             ViewBag.Section = Sections.Contact;
-            ViewBag.Email = System.Configuration.ConfigurationManager.AppSettings["contactmail"];
+            ViewBag.Email = ViewBag.FonctionalEmail = System.Configuration.ConfigurationManager.AppSettings["fonctionalcontactmail"];
+            ViewBag.TechEmail = System.Configuration.ConfigurationManager.AppSettings["techcontactmail"];
             ViewBag.Title = "CiviKey - Contactez-nous";
             return View();
         }
 
         [HttpPost]
-        public JsonResult Send(Contact contact)
+        public JsonResult Send( Contact contact, bool techQuestion )
         {
+            string contactMail = System.Configuration.ConfigurationManager.AppSettings["fonctionalcontactmail"];
+
+            if( techQuestion )
+            {
+                string techcontact = System.Configuration.ConfigurationManager.AppSettings["techcontactmail"];
+                contactMail = String.IsNullOrWhiteSpace( techcontact ) ? contactMail : techcontact;
+            }
+
+            if( String.IsNullOrWhiteSpace( contactMail ) ) return Json( new { success = false } );
 
             MailMessage mail = new MailMessage();
-            mail.From = new MailAddress(contact.From);
-            mail.To.Add(System.Configuration.ConfigurationManager.AppSettings["contactmail"]);
+            mail.From = new MailAddress( contact.From );
+            mail.To.Add( contactMail );
 
             mail.Subject = contact.Subject;
             mail.Body = contact.Message;
 
             SmtpClient smtp = new SmtpClient();
-            smtp.Send(mail);
+            smtp.Send( mail );
 
-            return Json(new { success = true });
+            return Json( new { success = true } );
+        }
+
+        public ActionResult GetMailForm( string type )
+        {
+            if( type == "tech" )
+                ViewBag.Email = System.Configuration.ConfigurationManager.AppSettings["techcontactmail"];
+            else
+                ViewBag.Email = System.Configuration.ConfigurationManager.AppSettings["fonctionalcontactmail"];
+
+            return PartialView( "_MailView" );
         }
     }
 }

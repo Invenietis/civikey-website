@@ -326,10 +326,10 @@
     <Content Include="Views\Progress\_CategorizedRoadmapView.cshtml" />
     <Content Include="Views\Home\_TestimonyView.cshtml" />
     <Content Include="Views\Home\_NewsView.cshtml" />
-    <Content Include="Views\Partners\Views\Alcatel-lucent.cshtml" />
     <Content Include="Views\Partners\Views\Fondation-Steria.cshtml" />
     <Content Include="Views\Partners\Views\PFNT.cshtml" />
     <Content Include="Views\Partners\Views\Fondation-garches.cshtml" />
+    <Content Include="Views\Contact\_MailView.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

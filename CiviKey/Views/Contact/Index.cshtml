@@ -2,66 +2,73 @@
 @{
     
     Html.CK().Scripts.ByName().IncludeJS( "jquery.unobtrusive-ajax.js" ).
-                                IncludeJS( "jquery.validate.js").
+                                IncludeJS( "jquery.validate.js" ).
                                 IncludeJS( "jquery.validate.unobtrusive.js" ).
                                 IncludeJS( "contacts.js" );
 }
-
-@{
-    AjaxOptions option = new AjaxOptions
-    {
-        OnSuccess = "mailSent()",
-        OnFailure = "mailFailed()",
-        
-    };
-}
-
-<script src="@Url.Content("~/Scripts/")" type="text/javascript"></script>
-
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCDAqSfJYM4GCTbN-dl-JLE4ux3XP7FdHs&sensor=true"></script>
-<div class="mailsent-dialog"></div>
+<div class="mailsent-dialog">
+</div>
 <div class="contact-content">
-    <div class="contact-title">
-        Pour toute question sur l’utilisation de Civikey, si vous voulez participer au projet ou pour toute nouvelle idée de développement, n’hesitez pas à utiliser le formulaire ci-dessous pour nous contacter.
+    <div class="contact-title-container">
+        <div class="contact-title">
+            <p>
+                Pour toute question sur l’utilisation de Civikey, si vous voulez participer au projet
+                ou pour toute nouvelle idée de développement, n’hesitez pas à utiliser le formulaire
+                ci-dessous pour nous contacter. Selectionnez tout d'abord le type de question que
+                vous voulez poser :
+            </p>
+        </div>
+        <div class="contact-selector-div">
+            <input style="float: left;" class="contact-mailType" type="radio" name="mailType"
+                id="func" value="Fonctionnelle" checked="true" title="Question sur l'utilisation de CiviKey" />
+            <label for="func" class="contact-mail-text">
+                Question sur l'utilisation ou les fonctionnalités de CiviKey
+            </label>
+            <input style="float: left;" class="contact-mailType" type="radio" name="mailType"
+                id="tech" value="Technique" title="Question technique" />
+            <label for="tech" class="contact-mail-text">
+                Question technique
+            </label>
+            <div style="clear: both;">
+            </div>
+        </div>
     </div>
-
-
     <div class="contact-main-content-back">
         <div class="contact-main-content">
             <div class="contact-form-map-container">
                 <div class="contact-form">
-                    @using(Ajax.BeginForm("Send", "Contact", option))
-                    {
-                        <div class="contact-form-elem">
-                            <label>A :</label> @ViewBag.Email
-                        </div>
-                        <div class="contact-form-elem">
-                            @Html.LabelFor( m => m.From )
-                            @Html.EditorFor(m => m.From, new { title = "test" })
-                            
-                        </div>
-                        <div class="contact-form-elem">
-                            @Html.LabelFor( m => m.Subject)
-                            @Html.EditorFor(m => m.Subject)
-                        </div>
-                        <div class="contact-form-elem">
-                            @Html.LabelFor( m => m.Message)
-                            @Html.EditorFor(m => m.Message)
-                        </div>
-                        <div class="contact-form-elem-btn">
-                                @*@Html.ValidationMessageFor(m => m.From) @Html.ValidationMessageFor(m => m.Subject) @Html.ValidationMessageFor(m => m.Message)*@
-                                @Html.ValidationSummary()
-                            <input type="submit" value="Envoyer" class="send-btn"/>
-                        </div>
-                    }
+                    @Html.Partial( "_MailView", Model )
                 </div>
                 <div class="contact-map">
-                    <div id="map_canvas"></div>
+                    <div id="map_canvas">
+                    </div>
                 </div>
-                <div style="clear:both;"></div>
+                <div style="clear: both;">
+                </div>
             </div>
         </div>
     </div>
-
-
 </div>
+<script type="text/javascript">
+    (function () {
+        $(".contact-mailType").change(function (value) {
+            if (value) {
+                if ($(this).attr("id") == "tech") {
+                    $.get("/Contact/GetMailForm?type=tech", function (data) {
+                        $(".contact-form").html(data);
+                        $("#techQuestion").attr("value", true);
+                    })
+                }
+                else if ($(this).attr("id") == "func") {
+                    $.get("/Contact/GetMailForm?type=func", function (data) {
+                        $(".contact-form").html(data);
+                        $("#techQuestion").attr("value", false);
+                    })
+                }
+            }
+        });
+
+
+    } ());
+</script>

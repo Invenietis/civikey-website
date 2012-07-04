@@ -239,7 +239,7 @@ body
     margin-left: auto;
     margin-right: auto;
     height: 100px;
-    position: relative;
+    /*position: relative;*/
 }
 
 .header-container > a
@@ -694,7 +694,7 @@ ul
     padding-top: 8px;
     padding-bottom: 8px;
     background-color: #E4E4E4;
-    margin: 0px 0px 20px 20px;
+    margin: 0px 0px 5px 0px;
     color: #fff;
     font-family: Estrangelo Edessa;
     text-align: center;
@@ -1072,20 +1072,32 @@ a.timeline-unselected
     font-size:39px;
 }
 
+.contact-title-container
+{
+    width:770px;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:35px;
+}
+
+.contact-title-container > div
+{
+     padding-left:30px;
+}
+
 .contact-title
 {
     font-family:Verdana;
-    width:770px;
     background-image:url('/Content/images/contact-title-back.png');
-    height:33px;
-    background-repeat:no-repeat;
+    background-repeat:repeat-y;
     font-size:14px;
-    margin-left:auto;
-    margin-right:auto;
-    padding-left:30px;
     background-position:0 2px;
     line-height:15px;
-    margin-bottom:35px;
+}
+
+.contact-title p
+{
+    margin:0px;
 }
 
 .contact-main-content-back
@@ -1116,7 +1128,7 @@ a.timeline-unselected
 
 .contact-form
 {
-    width:345px;
+    /*width:345px;*/
     min-height:280px;
     float:left;
     margin-left:auto;
@@ -1126,11 +1138,27 @@ a.timeline-unselected
 
 .contact-map
 {
+    display: none;
     width:345px;
     float:left;
     min-height:280px;
     margin-left:auto;
     margin-right:auto;
+}
+
+.contact-mail-text
+{
+    margin: 0;
+    padding-left: 5px;
+    padding: 0;
+    width: 250px;
+    margin-left: 8px;
+    margin-right: 50px;
+}
+
+.contact-selector-div
+{
+    margin-top: 20px;
 }
 
 label 
@@ -1149,14 +1177,14 @@ label
 
 .contact-form-elem input
 {
-    width:213px;
+    /*width:213px;*/
     background-color:#eaeaea;
     border: 1px solid #bebebe;
 }
 
 .contact-form-elem textarea
 {
-    width:209px;
+    /*width:209px;*/
     background-color:#eaeaea;
     border: 1px solid #bebebe;
     height:110px;
@@ -1415,6 +1443,45 @@ ul#menu li.menuelem.selected a
     color: #b7b7b7;
 }
 
+.roadmap-sponsors-div
+{
+    font-family: Estrangelo Edessa;
+    font-weight:normal;
+    background-color: #E4E4E4;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+.roadmap-sponsors-div img
+{
+    float: left;
+}
+
+.roadmap-sponsors-div p
+{
+    margin: 0px;
+    margin-top:5px;
+    margin-left:5px;
+    padding: 5px;
+    float: left;
+}
+.roadmap-sponsors-div p.sponsor-p
+{
+    padding: 0px;
+    margin-top:5px;
+    margin-bottom: 5px;
+    margin-left: 5px;
+}
+.roadmap-sponsors-div .roadmap-sponsor
+{
+    float : left;
+    margin-right: 15px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
 .progress-list-of-features h2
 {
     background-color:#e4e4e4;
@@ -1423,20 +1490,6 @@ ul#menu li.menuelem.selected a
     font-family:Estrangelo Edessa;
     font-weight:normal;
     cursor:pointer;
-}
-
-.roadmap-telecharger
-{
-    border-top: 10px solid #fff;
-    text-align:left;
-    font-size:19px;
-    padding: 7px 0px 5px 8px;
-    background-image:url('/Content/images/feature-download.png');
-    background-repeat:no-repeat;
-    background-position:right;
-    color:#4b4b4b;
-    cursor:pointer;
-    background-color:#e4e4e4;
 }
 
 .feature-download-btn
@@ -1449,18 +1502,30 @@ ul#menu li.menuelem.selected a
     background-position:center;
 }
 
+.roadmap-telecharger
+{
+    border-top: 10px solid #fff;
+    text-align:left;
+    font-size:19px;
+    padding: 7px 0px 5px 8px;
+    background-image:url('/Content/images/feature-download.png');
+    background-repeat:repeat-y;
+    background-position:right;
+    color:#4b4b4b;
+    cursor:pointer;
+    background-color:#e4e4e4;
+}
+
 .partners-title, .project-title
 {
     font-family:Verdana;
-    width:1000px;
-    height:18px;
     background-image:url('/Content/images/contact-title-back.png');
-    background-repeat:no-repeat;
+    background-repeat:repeat-y;
     font-size:14px;
     margin-left:auto;
     margin-right:auto;
     padding-left:30px;
-    background-position:0 2px;
+    background-position:0 3px;
     line-height:15px;
     margin-bottom:35px;
 }
@@ -1493,8 +1558,8 @@ ul#menu li.menuelem.selected a
     background-color:#f4f4f4;
     transition: height 2s;
     -webkit-transition: all .5s ease;
-       -moz-transition: all .5s ease;
-            transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
 }
 
 .accordion-heading img

@@ -15,16 +15,17 @@ namespace CiviKey.ViewModel
         ICollection<FeatureViewModel> _availableFeatures;
         ICollection<FeatureViewModel> _unavailableFeatures;
         Dictionary<CategoryViewModel, ICollection<FeatureViewModel>> _categorizedFeatures;
+        IList<ParticipationViewModel> _sponsors;
         tRoadMap _model;
 
         public RoadmapViewModel( tRoadMap model, PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo )
         {
             _model = model;
             _categorizedFeatures = new Dictionary<CategoryViewModel, ICollection<FeatureViewModel>>();
-            PopulateCollections( partnerRepo, contactRepo, contactRelationRepo, model.tFeatures );
+            PopulateCollections( partnerRepo, contactRepo, contactRelationRepo, model.tFeatures, model.tParticipations );
         }
 
-        private void PopulateCollections( PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo, ICollection<tFeature> features )
+        private void PopulateCollections( PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo, ICollection<tFeature> features, ICollection<tParticipation> participations )
         {
             _features = new List<FeatureViewModel>();
             _newFeatures = new List<FeatureViewModel>();
@@ -36,7 +37,7 @@ namespace CiviKey.ViewModel
             {
                 FeatureViewModel vm = new FeatureViewModel( feature, partnerRepo, contactRepo, contactRelationRepo );
                 _features.Add( vm );
-                
+
                 switch( vm.Type )
                 {
                     case FeatureType.New:
@@ -59,6 +60,10 @@ namespace CiviKey.ViewModel
                     _categorizedFeatures[cat].Add( vm );
                 }
             }
+
+            _sponsors = participations.Where( x => x.PartType == ParticipationType.Sponsoring.ToString() )
+            .Select( p => new ParticipationViewModel( p, partnerRepo, contactRepo, contactRelationRepo ) )
+            .ToList();
         }
 
         public string Name { get { return _model.Name; } }
@@ -70,5 +75,6 @@ namespace CiviKey.ViewModel
         public ICollection<FeatureViewModel> AvailableFeatures { get { return _availableFeatures; } }
         public ICollection<FeatureViewModel> UnavailableFeatures { get { return _unavailableFeatures; } }
         public Dictionary<CategoryViewModel, ICollection<FeatureViewModel>> CategorizedFeatures { get { return _categorizedFeatures; } }
+        public IList<ParticipationViewModel> Sponsors { get { return _sponsors; } }
     }
 }

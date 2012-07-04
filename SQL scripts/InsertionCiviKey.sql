@@ -1,8 +1,6 @@
 ﻿--Creating contacts
 
-insert into dbo.tTestimony (Author,Title,Content,CreationDate ) values('Dominique Lambert - Présidente de la Fondation Steria', 'un avenir radieux', '"La Fondation Steria est fière d''accompagner le civikey, depuis l''attribution en 2004 du prix de la bourse de la Fondation à l''équipe étudiante d''Intech Info, jusqu''à l''animation de la communauté Open source aux côtés d''Invenietis et la plate-forme nouvelles technologies de l''hôpital de Garches.  Beaucoup plus qu''un simple clavier virtuel, le civikey est à la pointe de l''innovation  pour venir en aide aux personnes en situation de handicap grâce à la puissance de la technologie et l''esprit communautaire de l''Open Source"', GetDate());
-insert into dbo.tTestimony (Author,Title,Content,CreationDate ) values('Lourem Ipsim', 'un projet suivi', 'CiviKey fait l''objet de projets étudiant chaque année. C''est un projet suivi de très près par notre école', GetDate());
-insert into dbo.tTestimony (Author,Title,Content,CreationDate ) values('louroum ipsem', 'un autre témoignage', 'Ceci est un autre témoignage', GetDate());
+insert into dbo.tTestimony (Author,Title,Content,CreationDate ) values('Dominique Lambert - Présidente de la Fondation Steria', 'A la pointe de l''innovation', '"La Fondation Steria est fière d''accompagner le civikey, depuis l''attribution en 2004 du prix de la bourse de la Fondation à l''équipe étudiante d''Intech Info, jusqu''à l''animation de la communauté Open source aux côtés d''Invenietis et la plate-forme nouvelles technologies de l''hôpital de Garches.  Beaucoup plus qu''un simple clavier virtuel, le civikey est à la pointe de l''innovation  pour venir en aide aux personnes en situation de handicap grâce à la puissance de la technologie et l''esprit communautaire de l''Open Source"', GetDate());
 
 insert into dbo.tNews (Title,Content,CreationDate ) values('Le site CiviKey est en ligne !', 'Le site CiviKey est maintenant en ligne ! N''hésitez pas a parcourir ses différentes pages pour vous informer sur ce projet gratuit et open-source.', GetDate());
 insert into dbo.tNews (Title,Content,CreationDate ) values('La Roadmap 2012 est lancée', 'Notre partenariat avec Alcatel-Lucent nous a permis de nous lancer sur le développement de la roadmap 2012, qui se terminera avec la mise à disposition de la version 2.5.2 de CiviKey <br/> détails sur la page Roadmaps.', GetDate());
@@ -406,49 +404,64 @@ insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(51,15) -
 
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Development', 100, DateAdd(month,-5,GetDate()))
 insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(52,16) --Invenietis has developed 100% of the Prediction
---insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 30, DateAdd(month,-5,GetDate()))
---insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(49,16) --Alcatel has sponsored 50% of the Prediction
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 30, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(53,16) --Alcatel has sponsored 50% of the Prediction
 
---insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Sponsoring', 30, DateAdd(month,-5,GetDate()))
---insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(50,16) --Invenietis has sponsored 50% of the Prediction
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Sponsoring', 30, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(54,16) --Invenietis has sponsored 50% of the Prediction
 
 
 --Defilement clavier
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Development', 100, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(53,17) --Invenietis has developed 100% of the defilement clavier
---insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
---insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(51,17) --Alcatel has sponsored 50% of the defilement clavier
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(55,17) --Invenietis has developed 100% of the defilement clavier
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(56,17) --Alcatel has sponsored 50% of the defilement clavier
 
 
 --Défilement souris
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Development', 100, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(54,18) --Invenietis has developed 100% of the defilement souris
---insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
---insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(52,18) --Alcatel has sponsored 50% of the defilement souris
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(57,18) --Invenietis has developed 100% of the defilement souris
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(58,18) --Alcatel has sponsored 50% of the defilement souris
 
 --assistant creation
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Development', 100, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(55,19) --Invenietis has developed 100% of the assistant creation
---insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
---insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(53,19) --Alcatel has sponsored 50% of the assistant creation
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(59,19) --Invenietis has developed 100% of the assistant creation
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(60,19) --Alcatel has sponsored 50% of the assistant creation
 
 --Assistant 1er demarrage
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Development', 100, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(56,20) --Invenietis has developed 100% of the Assistant 1er demarrage
---insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 50, DateAdd(month,-5,GetDate()))
---insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(54,20) --Alcatel has sponsored 50% of the Assistant 1er demarrage
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(61,20) --Invenietis has developed 100% of the Assistant 1er demarrage
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 50, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(62,20) --Alcatel has sponsored 50% of the Assistant 1er demarrage
 
---insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Sponsoring', 50, DateAdd(month,-5,GetDate()))
---insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(55,20) --Invenietis has sponsored 50% of the Assistant 1er demarrage
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Sponsoring', 50, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(63,20) --Invenietis has sponsored 50% of the Assistant 1er demarrage
 
 --Aide en ligne
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Development', 100, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(57,21) --Invenietis has developed 100% of the online help
---insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 50, DateAdd(month,-5,GetDate()))
---insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(56,21) --Alcatel has sponsored 50% of the online help
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(64,21) --Invenietis has developed 100% of the online help
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 50, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(65,21) --Alcatel has sponsored 50% of the online help
 
---insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Sponsoring', 50, DateAdd(month,-5,GetDate()))
---insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(57,21) --Invenietis has sponsored 50% of the online help
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Sponsoring', 50, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(66,21) --Invenietis has sponsored 50% of the online help
+
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 60, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(67,3) --Alcatel has sponsored 60% of the 2.6.0 roadmap
+
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(68,2) --Alcatel has sponsored 100% of the 2.5.2 roadmap
+
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 60, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(69,1) --Alcatel has sponsored 60% of the 2.5.1 roadmap
+
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(14,'Sponsoring', 20, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(70,1) --Garches has sponsored 20% of the 2.5.1 roadmap
+
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(6,'Sponsoring', 20, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(71,1) --Steria has sponsored 20% of the 2.5.1 roadmap
 
 --Creating categories
 insert into dbo.tCategory(Name,IconName) values ('Aide au clic','mouse_pointer_24x24.png') --1

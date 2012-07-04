@@ -22,6 +22,7 @@ namespace CiviKey.Models
     
         public virtual tContactRelation tContactRelation { get; set; }
         public virtual tFeature tFeature { get; set; }
+        public virtual tRoadMap tRoadMap { get; set; }
     }
     
 }

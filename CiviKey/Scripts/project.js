@@ -1,6 +1,6 @@
 ﻿$(function () {
-    var elemsTab = ["before-civikey", "virtual-keyboard", "contributors", "partners"];
-    var notActivElem = [1, 2, 3, 0];
+    var elemsTab = ["project", "contributors", "partners"]; //"before-civikey", "virtual-keyboard", 
+    var notActivElem = [1,2, 0]; //1, 2, 3,0 
     changeContentHeight();
 
     $('.project-menuelem').click(function () {
@@ -13,11 +13,11 @@
             detectNotActivElem(clickedElem);
             $('.project-slide' + notActivElem[0]).fadeOut(function () {
                 $('.project-slide' + notActivElem[1]).fadeOut(function () {
-                    $('.project-slide' + notActivElem[2]).fadeOut(function () {
-                        $('.project-slide' + notActivElem[3]).fadeIn();
+//                    $('.project-slide' + notActivElem[2]).fadeOut(function () {
+                        $('.project-slide' + notActivElem[2]).fadeIn();
                         changeContentHeight();
                     });
-                });
+//                });
             });
         }
     }

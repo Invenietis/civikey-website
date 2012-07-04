@@ -60,7 +60,7 @@ namespace CiviKey.ViewModel
             _categories = model.tCategories.Select( c => new CategoryViewModel( c ) ).ToList();
 
             _sponsors = model.tParticipations.Where( x => x.PartType == ParticipationType.Sponsoring.ToString() )
-                .Select( p => new ParticipationViewModel( this, p, _partnerRepo, _contactRepo, _contactRelationRepo ) )
+                .Select( p => new ParticipationViewModel( p, _partnerRepo, _contactRepo, _contactRelationRepo ) )
                 .ToList();
 
             _sections = model.tSections.Select( s => new SectionViewModel( s ) ).ToList();
@@ -69,7 +69,7 @@ namespace CiviKey.ViewModel
             Participations = new Dictionary<ContactViewModel, IList<ParticipationViewModel>>();
             foreach( var participation in model.tParticipations.Where( x => x.PartType == ParticipationType.Development.ToString() ) )
             {
-                ParticipationViewModel vm = new ParticipationViewModel( this, participation, _partnerRepo, _contactRepo, _contactRelationRepo );
+                ParticipationViewModel vm = new ParticipationViewModel( participation, _partnerRepo, _contactRepo, _contactRelationRepo );
                 if( _mainDevelopementParticipation == null ) _mainDevelopementParticipation = vm;
                 if( participation.Percentage > _mainDevelopementParticipation.Percentage ) _mainDevelopementParticipation = vm;
 

@@ -17,6 +17,7 @@ namespace CiviKey.Models
         public tRoadMap()
         {
             this.tFeatures = new HashSet<tFeature>();
+            this.tParticipations = new HashSet<tParticipation>();
         }
     
         public int Id { get; set; }
@@ -24,6 +25,7 @@ namespace CiviKey.Models
         public bool HasRelease { get; set; }
     
         public virtual ICollection<tFeature> tFeatures { get; set; }
+        public virtual ICollection<tParticipation> tParticipations { get; set; }
     }
     
 }

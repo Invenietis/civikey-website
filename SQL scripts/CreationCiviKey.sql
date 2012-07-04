@@ -5,6 +5,7 @@ drop table tSectionPlugin;
 drop table tSection;
 drop table tPlugin;
 drop table tParticipationFeature;
+drop table tParticipationRoadmap;
 drop table tParticipation;
 drop table tNews;
 drop table tContactRelation;
@@ -152,4 +153,12 @@ create table tParticipationFeature
 	FeatureId int not null,
 	constraint FK_ParticipationId foreign key (ParticipationId) references tParticipation(Id),
 	constraint FK_FeatureIdPart foreign key (FeatureId) references tFeature (Id)
+)
+
+create table tParticipationRoadmap
+(
+	ParticipationId int not null primary key,
+	RoadmapId int not null,
+	constraint FK_ParticipationRoadmapId foreign key (ParticipationId) references tParticipation(Id),
+	constraint FK_RoadmapIdPart foreign key (RoadmapId) references tRoadMap (Id)
 )
