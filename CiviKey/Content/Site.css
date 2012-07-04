@@ -873,21 +873,24 @@ a.timeline-unselected
     font-size:18px;
     color:#fff;
     position:relative; 
+    height: 35px;
+    min-width: 175px;
 }
 
 .progress-elem-title
 {
-    margin-top:10px;
+    padding-top:10px;
     margin-left: 10px;
     margin-right: 10px;
-    float:left;
 }
 
 .progress-elem-type
 {
     width:35px;
     height:35px;
-    float: right;
+    position: absolute;
+    right: 0px;
+    top: 0px;
 }
 
 .done-feature
@@ -911,13 +914,15 @@ a.timeline-unselected
 .progress-elem-content
 {
     font-family:Verdana;
+    min-height: 55px;
+    position: relative;
+    min-width: 175px;
 }
 
 .progress-elem-developedby
 {
     color:#696969;
     font-size:14px;
-    /*width: 110px;*/
     float:left;
     font-weight:bold;
     margin-top:10px;
@@ -938,7 +943,6 @@ a.timeline-unselected
 
 .progress-elem-version
 {
-    float:right;
     width:30px;
     font-family: Estrangelo Edessa;
     margin-top: 33px;
@@ -946,6 +950,9 @@ a.timeline-unselected
     font-size: 14px;
     color: #4D4D4D; 
     text-align: center;
+    position: absolute;
+    bottom: 3px;
+    right: 0px;
 }
 
 .progress-download-link
