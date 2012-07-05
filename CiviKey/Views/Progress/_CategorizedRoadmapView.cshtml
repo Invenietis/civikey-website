@@ -2,6 +2,29 @@
 @{
 @*Feature display part*@
     <div class="progress-list-of-features" data-id="@ViewBag.CurrentRoadmapId">
+        @if( Model.Sponsors.Count > 0 )
+        {
+            <div class="roadmap-sponsors-div">
+                <div>
+                    <p>
+                        Roadmap sponsorisée par :
+                    </p>
+                </div>
+                <div style="float: right; margin-left: 10px; margin-right:10px;">
+                    @foreach( var participation in Model.Sponsors )
+                    {
+                        <div class="roadmap-sponsor">
+                            <img src="/Content/images/PartnerProjectPage/@participation.ContactRelation.Contact.LogoPath" style="height: 32px; " alt="logo-@participation.ContactRelation.Contact.Name" title="@participation.ContactRelation.Contact.Name" />
+                            <p class="sponsor-p">@participation.ContactRelation.Contact.Name @(" : ")
+                                @participation.Percentage @("%")</p>
+                        </div>
+                    }
+                    <div style="clear: both;">
+                    </div>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+        }
         <div class="accordion" id="accordion2">
             @{
                 int i = 0;
