@@ -1127,14 +1127,13 @@ a.timeline-unselected
 
 .contact-form-map-container
 {
-    width:690px;
     padding-left:40px;
+    padding-right:40px;
     padding-top:45px;
 }
 
 .contact-form
 {
-    /*width:345px;*/
     min-height:280px;
     float:left;
     margin-left:auto;
@@ -1144,11 +1143,10 @@ a.timeline-unselected
 
 .contact-map
 {
-    /*display: none;*/
     width:345px;
     float:left;
     min-height:280px;
-    margin-left:auto;
+    margin-left:20px;
     margin-right:auto;
 }
 
@@ -1200,7 +1198,6 @@ label
 .contact-form-elem-btn
 {
     text-align:right;
-    padding-right:17px;
 }
 
 .send-btn

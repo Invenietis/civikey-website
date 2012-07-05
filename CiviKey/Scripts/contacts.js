@@ -5,7 +5,7 @@
     };
 
     ContactMap.pfntinfowindow = new google.maps.InfoWindow({
-        content: "PFNT"
+        content: "PFNT<br/>104, Bd Raymond Poincaré<br/>92380 Garches"
     });
 
     ContactMap.invinfowindow = new google.maps.InfoWindow({
