@@ -1,34 +1,39 @@
 ﻿@model IList<CiviKey.ViewModel.NewsViewModel>
 @{
-    Html.CK().Scripts.ByName().IncludeJS("home.js");
+    Html.CK().Scripts.ByName().IncludeJS( "home.js" );
 }
 <div class="home-slider">
     <div class="home-slider-download">
         <div class="home-slider-download-info">
-            <p>Projet Open source et gratuit</p>
-            <p>Dernière version : 2.5.1.15</p>
+            <p>
+                Projet Open source et gratuit</p>
+            <p>
+                Dernière version : 2.5.1.15</p>
         </div>
-        <div class="home-slider-download-btn"></div>
+        <div class="home-slider-download-btn">
+        </div>
     </div>
 </div>
 <div class="home-main-container">
     <div class="home-main-news">
         <div id="home-carousel" class="carousel slide">
-          <!-- Carousel items -->
-          <div class="carousel-inner">
-            @{
-                for( int i = 0; i < @Model.Count; i++ )
-                {
-                    <div class="item @if(i == 0){@("active")}">@Html.Partial("_NewsView", Model.ElementAt(i))</div>
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+                @{
+                    for( int i = 0; i < @Model.Count; i++ )
+                    {
+                    <div class="item @if( i == 0 )
+                                     {@("active")}">@Html.Partial( "_NewsView", Model.ElementAt( i ) )</div>
+                    }
                 }
-            }
-          </div>
-          <!-- Carousel nav -->
-          <a class="carousel-control left" href="#home-carousel" data-slide="prev">&lsaquo;</a>
-          <a class="carousel-control right" href="#home-carousel" data-slide="next">&rsaquo;</a>
+            </div>
+            <!-- Carousel nav -->
+            <a class="carousel-control left" href="#home-carousel" data-slide="prev">&lsaquo;</a>
+            <a class="carousel-control right" href="#home-carousel" data-slide="next">&rsaquo;</a>
         </div>
     </div>
     <div id="home-main-testimony">
-    <div id="testimony-container"></div>
+        <div id="testimony-container">
+        </div>
     </div>
 </div>

@@ -52,7 +52,7 @@ p, ul
 h2
 {
     padding: 0 0 10px 0;
-    font-family: Estrangelo Edessa;
+    font-family:  Verdana;
 }
 
 h3
@@ -278,7 +278,7 @@ ul#menu
 
 ul#menu li
 {
-    font-family: Estrangelo Edessa;
+    font-family:  Verdana;
     display: inline;
     list-style: none;
     padding: 22px 20px 0px 20px;
@@ -287,8 +287,8 @@ ul#menu li
 
 ul#menu li a
 {
-    font-family: Estrangelo Edessa;
-    font-size: 20px;
+    font-family:  Verdana;
+    font-size: 15px;
     color: #fff;
     padding: 22px 20px 0px 20px;
     cursor: pointer;
@@ -329,7 +329,7 @@ ul
 
 .footer-menu
 {
-    font-family: Sakkal Majalla;
+    font-family: Sakkal Majalla, Verdana;
     font-size: 16px;
     color: #4f4f4f;
 }
@@ -373,7 +373,7 @@ ul
     background-repeat: no-repeat;
     position: absolute;
     right: 30px;
-    bottom: 30px;
+    bottom: 15px;
 }
 .home-slider-download-btn
 {
@@ -393,8 +393,8 @@ ul
 {
     margin: 0px;
     color: #2e5377;
-    font-family: Estrangelo Edessa;
-    font-size: 15px;
+    font-family:  Verdana;
+    font-size: 11px;
 }
 
 .home-main-container
@@ -412,7 +412,7 @@ ul
     background-repeat: no-repeat;
     padding-left: 50px;
     padding-right: 40px;
-    font-family: Microsoft Tai Le;
+    font-family: Microsoft Tai Le, Verdana;
     text-align: justify;
 }
 #home-main-testimony
@@ -696,7 +696,7 @@ ul
     background-color: #E4E4E4;
     margin: 0px 0px 5px 0px;
     color: #fff;
-    font-family: Estrangelo Edessa;
+    font-family:  Verdana;
     text-align: center;
     width:160px;
     -webkit-border-radius: 4px;
@@ -707,17 +707,17 @@ ul
 .release-info-container p
 {
     color: #4b4b4b;
-    font-family: Estrangelo Edessa;
+    font-family:  Verdana;
     text-align: center;
     margin:0px;
     margin-top: 2px;
-    font-size: 21px;
-    line-height: 18px;
+    font-size: 16px;
+    line-height: 20px;
 }
 
 .release-info-container p.roadmap-progress-p
 {
-    font-size: 13px;
+    font-size: 9px;
 }
 
 .progress-content
@@ -766,7 +766,7 @@ ul
 {
     background-color:#e4e4e4;
     text-align:center;
-    font-family: Estrangelo Edessa;
+    font-family:  Verdana;
 }
 
 .progress-bar-begin
@@ -785,7 +785,7 @@ ul#timeline-buttons li
     list-style: none;
     padding-top: 10px;
     padding-bottom: 10px;
-    font-size: 28px;
+    font-size: 20px;
     color: #4f4f4f;
     text-align: left;
     padding-left: 25px;
@@ -869,8 +869,8 @@ a.timeline-unselected
 
 .progress-elem-title-bar
 {
-    font-family:Estrangelo Edessa;
-    font-size:18px;
+    font-family: Verdana;
+    font-size:16px;
     color:#fff;
     position:relative; 
     height: 35px;
@@ -881,7 +881,7 @@ a.timeline-unselected
 {
     padding-top:10px;
     margin-left: 10px;
-    margin-right: 10px;
+    margin-right: 35px;
 }
 
 .progress-elem-type
@@ -943,8 +943,7 @@ a.timeline-unselected
 
 .progress-elem-version
 {
-    width:30px;
-    font-family: Estrangelo Edessa;
+    font-family:  Verdana;
     margin-top: 33px;
     margin-right: 8px;
     font-size: 14px;
@@ -1075,8 +1074,8 @@ a.timeline-unselected
     color: Black;
     float:left;
     margin:47px 0px 0px 30px;
-    font-family: Estrangelo Edessa;
-    font-size:39px;
+    font-family:  Verdana;
+    font-size:30px;
 }
 
 .contact-title-container
@@ -1329,7 +1328,7 @@ label
     padding-top:10px;
     padding-right:12px;
     text-align:right;
-    font-family:Arial;
+    font-family:Arial, Verdana;
     font-size:36px;
 }
 
@@ -1348,7 +1347,7 @@ label
 {
     background-image:url('/Content/images/feature-section-title.png');
     padding:0px 0px 0px 20px;
-    font-family:Arial;
+    font-family:Arial, Verdana;
     font-size:20px;
     margin: 0px 0px 0px 15px;
     background-repeat:no-repeat;
@@ -1362,7 +1361,7 @@ label
     width:520px;
     margin-left:35px;
     text-align:justify;
-    font-family:arial;
+    font-family:arial, Verdana;
     font-size:12px;
     margin-top:10px;
     color:#4b4b4b;
@@ -1452,7 +1451,7 @@ ul#menu li.menuelem.selected a
 
 .roadmap-sponsors-div
 {
-    font-family: Estrangelo Edessa;
+    font-family:  Verdana;
     font-weight:normal;
     background-color: #E4E4E4;
     -webkit-border-radius: 4px;
@@ -1480,6 +1479,7 @@ ul#menu li.menuelem.selected a
     margin-top:5px;
     margin-bottom: 5px;
     margin-left: 5px;
+	font-size: 12px;
 }
 .roadmap-sponsors-div .roadmap-sponsor
 {
@@ -1494,7 +1494,7 @@ ul#menu li.menuelem.selected a
     background-color:#e4e4e4;
     color:#4b4b4b;
     padding: 5px 0px 0px 5px;
-    font-family:Estrangelo Edessa;
+    font-family: Verdana;
     font-weight:normal;
     cursor:pointer;
 }
@@ -1573,6 +1573,17 @@ ul#menu li.menuelem.selected a
 {
     float: left;
     margin: 9px 9px 0px 9px;
+}
+
+.accordion-heading
+{
+
+}
+
+.accordion-heading h2.accordion-toggle
+{
+    font-size: 20px;
+	padding-top: 8px;
 }
 
 .collapse-image

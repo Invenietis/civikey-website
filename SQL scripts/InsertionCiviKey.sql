@@ -454,14 +454,14 @@ insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(67,3) --
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
 insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(68,2) --Alcatel has sponsored 100% of the 2.5.2 roadmap
 
-insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 60, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(69,1) --Alcatel has sponsored 60% of the 2.5.1 roadmap
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 70, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(69,1) --Alcatel has sponsored 70% of the 2.5.1 roadmap
 
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(14,'Sponsoring', 20, DateAdd(month,-5,GetDate()))
 insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(70,1) --Garches has sponsored 20% of the 2.5.1 roadmap
 
-insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(6,'Sponsoring', 20, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(71,1) --Steria has sponsored 20% of the 2.5.1 roadmap
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(6,'Sponsoring', 10, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(71,1) --Steria has sponsored 10% of the 2.5.1 roadmap
 
 --Creating categories
 insert into dbo.tCategory(Name,IconName) values ('Aide au clic','mouse_pointer_24x24.png') --1
