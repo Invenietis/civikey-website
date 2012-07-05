@@ -1,47 +1,90 @@
 ﻿$(function () {
-    var myLatlng = new google.maps.LatLng(48.857473, 2.384012);
-    var infowindow = new google.maps.InfoWindow({
+    var ContactMap = {
+        invLatlng: new google.maps.LatLng(48.857473, 2.384012),
+        pfntLatlng: new google.maps.LatLng(48.838488, 2.170841)
+    };
+
+    ContactMap.pfntinfowindow = new google.maps.InfoWindow({
+        content: "PFNT"
+    });
+
+    ContactMap.invinfowindow = new google.maps.InfoWindow({
         content: "Invenietis</br>10 rue Mercoeur</br>75011"
     });
-    var myOptions = {
-        //48.838488,2.170841
-        center: new google.maps.LatLng(48.857473, 2.384012),
+
+    ContactMap.myOptions = {
+        center: ContactMap.pfntLatlng,
         zoom: 15,
         mapTypeControl: false,
         mapTypeId: google.maps.MapTypeId.ROADMAP
     };
 
-    var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+    ContactMap.map = new google.maps.Map(document.getElementById("map_canvas"), ContactMap.myOptions);
 
-    var marker = new google.maps.Marker({
-        position: myLatlng,
+    ContactMap.invmarker = new google.maps.Marker({
+        position: ContactMap.invLatlng,
         title: 'Invenietis',
         zoomControl: true,
-        map: map
+        map: ContactMap.map
     });
 
-    google.maps.event.addListener(marker, 'click', (function (marker) {
+    ContactMap.pfntmarker = new google.maps.Marker({
+        position: ContactMap.pfntLatlng,
+        title: 'PFNT',
+        zoomControl: true,
+        map: ContactMap.map
+    });
+
+    google.maps.event.addListener(ContactMap.invmarker, 'click', (function (marker) {
         return function () {
-            infowindow.open(map, marker);
+            ContactMap.invinfowindow.open(ContactMap.map, marker);
         }
-    })(marker));
+    })(ContactMap.invmarker));
+
+    google.maps.event.addListener(ContactMap.pfntmarker, 'click', (function (marker) {
+        return function () {
+            ContactMap.pfntinfowindow.open(ContactMap.map, marker);
+        }
+    })(ContactMap.pfntmarker));
+
+
+    $(".contact-mailType").change(function (value) {
+        if (value) {
+            if ($(this).attr("id") == "tech") {
+                $.get("/Contact/GetMailForm?type=tech", function (data) {
+                    $(".contact-form").html(data);
+                    $("#techQuestion").attr("value", true);
+                    ContactMap.map.setCenter(ContactMap.invLatlng);
+                })
+            }
+            else if ($(this).attr("id") == "func") {
+                $.get("/Contact/GetMailForm?type=func", function (data) {
+                    $(".contact-form").html(data);
+                    $("#techQuestion").attr("value", false);
+                    ContactMap.map.setCenter(ContactMap.pfntLatlng);
+                })
+            }
+        }
+    });
+
 });
 
-    function mailSent(e) {
-        $('.validation-summary-errors li').html('');
-        $('#From').val('');
-        $('#Subject').val('');
-        $('#Message').val('');
-        $('.mailsent-dialog').html('<p>Message envoyé avec succès!</p>');
-        $('.mailsent-dialog').fadeIn().delay(800).fadeOut();
-    }
+function mailSent(e) {
+    $('.validation-summary-errors li').html('');
+    $('#From').val('');
+    $('#Subject').val('');
+    $('#Message').val('');
+    $('.mailsent-dialog').html('<p>Message envoyé avec succès!</p>');
+    $('.mailsent-dialog').fadeIn().delay(800).fadeOut();
+}
 
 
-    function mailFailed(e) {
-        $('.mailsent-dialog').html('<p>Vérifiez votre adresse mail</p>');
-        $('.mailsent-dialog').fadeIn().delay(1000).fadeOut();
-    }
+function mailFailed(e) {
+    $('.mailsent-dialog').html('<p>Vérifiez votre adresse mail</p>');
+    $('.mailsent-dialog').fadeIn().delay(1000).fadeOut();
+}
 
-    $('.page').click(function () {
-        $('.mailsent-dialog').css('display', 'none');
+$('.page').click(function () {
+    $('.mailsent-dialog').css('display', 'none');
 });
+

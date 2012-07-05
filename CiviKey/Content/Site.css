@@ -1144,7 +1144,7 @@ a.timeline-unselected
 
 .contact-map
 {
-    display: none;
+    /*display: none;*/
     width:345px;
     float:left;
     min-height:280px;
@@ -1167,7 +1167,7 @@ a.timeline-unselected
     margin-top: 20px;
 }
 
-label 
+label
 {
     width:110px;
     float:left;
@@ -1183,14 +1183,14 @@ label
 
 .contact-form-elem input
 {
-    /*width:213px;*/
+    width:213px;
     background-color:#eaeaea;
     border: 1px solid #bebebe;
 }
 
 .contact-form-elem textarea
 {
-    /*width:209px;*/
+    width:209px;
     background-color:#eaeaea;
     border: 1px solid #bebebe;
     height:110px;

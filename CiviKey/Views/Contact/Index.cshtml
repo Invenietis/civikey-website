@@ -50,25 +50,3 @@
         </div>
     </div>
 </div>
-<script type="text/javascript">
-    (function () {
-        $(".contact-mailType").change(function (value) {
-            if (value) {
-                if ($(this).attr("id") == "tech") {
-                    $.get("/Contact/GetMailForm?type=tech", function (data) {
-                        $(".contact-form").html(data);
-                        $("#techQuestion").attr("value", true);
-                    })
-                }
-                else if ($(this).attr("id") == "func") {
-                    $.get("/Contact/GetMailForm?type=func", function (data) {
-                        $(".contact-form").html(data);
-                        $("#techQuestion").attr("value", false);
-                    })
-                }
-            }
-        });
-
-
-    } ());
-</script>
