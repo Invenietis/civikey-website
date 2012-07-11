@@ -15,7 +15,7 @@ insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('Invenietis
 insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('Fondation Steria','<p>La Fondation Steria – Institut de France s’inscrit dans la politique de solidarité du Groupe Steria, qui a pour objectif de favoriser l’autonomie de publics en difficulté en leur donnant accès à l’éducation, à l’informatique et à un métier. La Fondation est née d’une démarche participative de collaborateurs de Steria en France. Elle a pour objectif de contribuer à la réduction de la fracture numérique.</p>','fondation-steria.png','http://www.fondationsteria.org'); --6
 insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('Alcatel-Lucent','Société Alcatel-Lucent','alcatel-lucent.png', 'http://www.alcatel-lucent.com'); --7
 insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('IN''TECH INFO','<p>Différents groupes d''élèves se sont succédés à IN''TECH INFO pour travailler sur le Civikey depuis sa création. L''école a toujours voulu accompagner et faire vivre ce projet à vocation humaine. Il est une magnifique vitrine de leur savoir faire et des compétences mises en oeuvre. Ce travail d''équipe entre différentes entités correspond parfaitement à la pédagogie de projets développée à IN''TECH INFO qui souhaite continuer à collaborer à la réussite de ce projet encore de nombreuses années.</p>','intech-info.png', 'http://www.intechinfo.fr'); --8
-insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('PFNT','<p>La Plate-Forme Nouvelles Technologies (PFNT) de l’hôpital Raymond Poincaré est une unité de conseil, de démonstration, de formation et de recherche dans le domaine des Nouvelles Technologies appliquées aux personnes en situation de handicap. Initialement uniquement tournée vers la robotique d’assistance (en 1995), elle s’est peu à peu ouverte à d’autres technologies de l’information et de la communication, comme l’informatique, la Communication Améliorée et Alternative (CAA) et la domotique.</p>','pfnt.png', 'http://www.handicap.org'); --9
+insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('PFNT','<p>La Plate-Forme Nouvelles Technologies (PFNT) de l’hôpital Raymond Poincaré est une unité de conseil, de démonstration, de formation et de recherche dans le domaine des Nouvelles Technologies appliquées aux personnes en situation de handicap. Initialement uniquement tournée vers la robotique d’assistance (en 1995), elle s’est peu à peu ouverte à d’autres technologies de l’information et de la communication, comme l’informatique, la Communication Améliorée et Alternative (CAA) et la domotique.</p>','pfnt.png', 'http://www.handicap.org/?La-Plate-Forme-Nouvelles'); --9
 insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('Antoine Blanchet','','',''); --10
 insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('Isaac Duplan','','',''); --11
 insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('Objectif Aide','<p>Objectif Aide est une association de loi 1901 à but non lucratif. Sa mission est de sensibiliser les personnes à la solidarité en menant des actions à caractère social, culturel ou humanitaire.<br/>Fort de sa motivation, le collectif organise chaque année un concours photographique sur un thème original et utile. Ce concours laisse ensuite place à une exposition en Île-de-France pour sensibiliser, grâce à la force des images, les Franciliens aux problèmes que rencontre notre société.</p>','objectif-aide.png','http://www.objectif-aide.org/'); --12
@@ -48,7 +48,7 @@ insert into dbo.tContactRelation(ContactId,EntityId,StartDate,EndDate)values(15,
 --- Creating RoadMap
 insert into dbo.tRoadMap(Name, HasRelease)values('2.5.1', 1);
 insert into dbo.tRoadMap(Name, HasRelease)values('2.5.2', 1);
-insert into dbo.tRoadMap(Name, HasRelease)values('2.6.0', 0); --futur
+insert into dbo.tRoadMap(Name, HasRelease)values('2.5.X', 0); --futur
 
 --Creating features
 --2.5.1
@@ -448,20 +448,38 @@ insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(65,21) -
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Sponsoring', 50, DateAdd(month,-5,GetDate()))
 insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(66,21) --Invenietis has sponsored 50% of the online help
 
-insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 60, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(67,3) --Alcatel has sponsored 60% of the 2.6.0 roadmap
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 0, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(67,3) --Alcatel has sponsored 0% of the 2.6.0 roadmap
+
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(9,'Sponsoring', 60, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(68,3) --PFNT has sponsored 0% of the 2.6.0 roadmap
+
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(14,'Sponsoring', 60, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(69,3) --Garches has sponsored 0% of the 2.6.0 roadmap
 
 insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 100, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(68,2) --Alcatel has sponsored 100% of the 2.5.2 roadmap
+insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(70,2) --Alcatel has sponsored 100% of the 2.5.2 roadmap
 
-insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 70, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(69,1) --Alcatel has sponsored 70% of the 2.5.1 roadmap
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(9,'Sponsoring', 0, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(71,2) --PFNT has sponsored 0% of the 2.5.2 roadmap
 
-insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(14,'Sponsoring', 20, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(70,1) --Garches has sponsored 20% of the 2.5.1 roadmap
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(14,'Sponsoring', 0, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(72,2) --Garches has sponsored 0% of the 2.5.2 roadmap
 
-insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(6,'Sponsoring', 10, DateAdd(month,-5,GetDate()))
-insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(71,1) --Steria has sponsored 10% of the 2.5.1 roadmap
+
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(7,'Sponsoring', 0, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(73,1) --Alcatel has sponsored 0% of the 2.5.1 roadmap
+
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(14,'Sponsoring', 0, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(74,1) --Garches has sponsored 0% of the 2.5.1 roadmap
+
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(6,'Sponsoring', 0, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(75,1) --Steria has sponsored 0% of the 2.5.1 roadmap
+
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(9,'Sponsoring', 0, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(76,1) --PFNT has sponsored 0% of the 2.5.1 roadmap
+
+
 
 --Creating categories
 insert into dbo.tCategory(Name,IconName) values ('Aide au clic','mouse_pointer_24x24.png') --1

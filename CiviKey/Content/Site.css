@@ -377,7 +377,7 @@ ul
 }
 .home-slider-download-btn
 {
-    background-image: url('/Content/images/download-btn.png');
+    background-image: url('/Content/images/download-btn-beta.png');
     width: 200px;
     height: 51px;
     cursor: pointer;
@@ -558,7 +558,7 @@ ul
 {
     float:left;
     width:656px;
-    height:330px;
+    /*height:330px;*/
     background-color:#f4f4f4;
     border-top:1px solid #858585;
     font-family:Verdana;
@@ -975,6 +975,19 @@ a.timeline-unselected
     line-height: 1.6em;
 }
 
+.parters-elem
+{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.partner-list-container
+{
+    width: 709px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .partners-content
 {
     width:1024px;
@@ -983,24 +996,26 @@ a.timeline-unselected
 
 .partners-begin-back
 {
-    width:960px;
-    height:8px;
-    background-image:url('/Content/images/partners-begin-back.png');
+    width:709px;
+    /*height:8px;*/
+    height:10px;
+    background-color: #4C4C4C;
+    /*background-image:url('/Content/images/partners-begin-back.png');*/
 }
 
 .partners-end-back
 {
-    width:960px;
+    width:709px;
     height:8px;
-    background-image:url('/Content/images/partners-end-back.png');
+    /*background-image:url('/Content/images/partners-end-back.png');*/
 }
 
 .partners-elem-title
 {
     float:left;
-    width:478px;
-    height:129px;
-    background-image: url('/Content/images/partner-back.png');
+    width:689px;
+    height:114px;
+    background-image: url('/Content/images/partner-back-simple-large.png');
     position: relative;
 }
 
@@ -1022,17 +1037,22 @@ a.timeline-unselected
 
 .partners-elem-content
 {
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    
     background-color:#4c4c4c;
     float:left;
-    background-image:  url('/Content/images/partner-content-back.png');
-    background-repeat:repeat-y;
+    /*background-image:  url('/Content/images/partner-content-back.png');*/
+    /*background-repeat:repeat-y;*/
     background-position: top right;
-    width:960px;
-    min-height:129px;
+    width:689px;
+    /*min-height:129px;*/
 }
 
 .partners-elem-text
 {
+    display: none;
     float:left;
     width:440px;
     font-family:Verdana;
@@ -1045,8 +1065,9 @@ a.timeline-unselected
 
 .partners-sep.vis
 {
-    background-image: url('/Content/images/partner-sep.png');
-    background-repeat: no-repeat;
+    display: none;   
+    /*background-image: url('/Content/images/partner-sep.png');*/
+    /*background-repeat: no-repeat;*/
     background-position:right;
     height:1px;
     clear:both;
@@ -1072,10 +1093,10 @@ a.timeline-unselected
 .partners-title-name
 {
     color: Black;
-    float:left;
-    margin:47px 0px 0px 30px;
-    font-family:  Verdana;
-    font-size:30px;
+    float: left;
+    margin: 40px 0px 0px 30px;
+    font-family: Verdana;
+    font-size: 30px;
 }
 
 .contact-title-container
@@ -1500,7 +1521,7 @@ ul#menu li.menuelem.selected a
 {
     width:160px;
     height:45px;
-    background-image:url('/Content/images/feature-download-btn.png');
+    background-image:url('/Content/images/feature-download-btn-beta.png');
     cursor:pointer;
     background-repeat:no-repeat;
     background-position:center;
@@ -1512,7 +1533,7 @@ ul#menu li.menuelem.selected a
     text-align:left;
     font-size:19px;
     padding: 7px 0px 5px 8px;
-    background-image:url('/Content/images/feature-download.png');
+    background-image:url('/Content/images/feature-download-btn-beta.png');
     background-repeat:repeat-y;
     background-position:right;
     color:#4b4b4b;

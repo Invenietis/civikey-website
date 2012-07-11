@@ -15,9 +15,9 @@
                     @foreach( var participation in Model.Sponsors )
                     {
                         <div class="roadmap-sponsor">
-                            <img src="/Content/images/PartnerProjectPage/@participation.ContactRelation.Contact.LogoPath" style="height: 32px; " alt="logo-@participation.ContactRelation.Contact.Name" title="@participation.ContactRelation.Contact.Name" />
-                            <p class="sponsor-p">@participation.ContactRelation.Contact.Name @(" : ")
-                                @("X %")</p>  @*@participation.Percentage*@
+                            <img src="/Content/images/PartnerLogo/small/@participation.ContactRelation.Contact.LogoPath" style="height: 32px; " alt="logo-@participation.ContactRelation.Contact.Name" title="@participation.ContactRelation.Contact.Name" />
+                            <p class="sponsor-p">@participation.ContactRelation.Contact.Name</p>
+                            <div style="clear:both;"></div>
                         </div>
                     }
                     <div style="clear: both;">
@@ -33,7 +33,7 @@
                     <div class="accordion-heading">
                         <div class="collapse-image colapsed">
                         </div>
-                        <img class="category-img" src="@Url.Content( "~/Content/images/CategoryIcon/add_24x24.png" )" />
+                        <img class="category-img" src="@Url.Content( "~/Content/images/CategoryIcon/add_24x24.png" )" alt="nouvelles fonctionnalités" />
                         <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
                             Nouvelles fonctionnalités (@Model.NewFeatures.Count)
                         </h2>
@@ -50,7 +50,7 @@
                     <div class="accordion-heading">
                         <div class="collapse-image colapsed">
                         </div>
-                        <img class="category-img" src="@Url.Content( "~/Content/images/CategoryIcon/up_arrow_24x24.png" )" />
+                        <img class="category-img" src="@Url.Content( "~/Content/images/CategoryIcon/up_arrow_24x24.png")" alt="fonctionnalités améliorées" />
                         <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
                             Fonctionnalités améliorées (@Model.UpdatedFeatures.Count)
                         </h2>
@@ -68,7 +68,7 @@
                     <div class="accordion-heading">
                         <div class="collapse-image colapsed">
                         </div>
-                        <img class="category-img" src="@Url.Content( "~/Content/images/CategoryIcon/check_mark_24x24.png" )" />
+                        <img class="category-img" src="@Url.Content( "~/Content/images/CategoryIcon/check_mark_24x24.png" )" alt="fonctionnalités portées sur cette version" />
                         <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
                             Fonctionnalités disponibles (@Model.AvailableFeatures.Count)
                         </h2>
@@ -86,7 +86,7 @@
                     <div class="accordion-heading">
                         <div class="collapse-image colapsed">
                         </div>
-                        <img class="category-img" src="@Url.Content( "~/Content/images/CategoryIcon/delete_24x24.png" )" />
+                        <img class="category-img" src="@Url.Content( "~/Content/images/CategoryIcon/delete_24x24.png" )" alt="fonctionnalités supprimées"/>
                         <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseFour">
                             Fonctionnalités non disponibles (@Model.UnavailableFeatures.Count)
                         </h2>
@@ -123,7 +123,7 @@
             <p>
                 Changer de vue</p>
             <a href="#" title="Classer par type d'aide" id="mode-toggle-category" class="mode-toggle-img">
-                &nbsp</a>
+                &nbsp;</a>
         </div>
     </div>
 }

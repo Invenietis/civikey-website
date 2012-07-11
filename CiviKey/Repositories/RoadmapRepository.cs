@@ -14,7 +14,7 @@ namespace CiviKey.Repositories
             _c = c;
         }
 
-        public IQueryable<tRoadMap> All { get { return _c.tRoadMaps; } }
+        public IQueryable<tRoadMap> All { get { return _c.tRoadMaps.OrderBy( x => x.Name ); } }
 
         public tRoadMap GetRoadmapFromId( int roadmapId )
         {
@@ -31,7 +31,7 @@ namespace CiviKey.Repositories
             tRoadMap lastRoadmap = null;
             foreach( var roadmap in All )
             {
-                if( lastRoadmap == null || ( roadmap.HasRelease && new Version( lastRoadmap.Name ) < new Version( roadmap.Name ) ) )
+                if( lastRoadmap == null || ( roadmap.HasRelease && lastRoadmap.CompareTo( roadmap ) < 0 ) )
                 {
                     lastRoadmap = roadmap;
                 }

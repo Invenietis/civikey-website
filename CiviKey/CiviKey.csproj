@@ -120,6 +120,7 @@
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\ParticipationType.cs" />
+    <Compile Include="Models\RoadmapExtensions.cs" />
     <Compile Include="Models\Sections.cs" />
     <Compile Include="Models\tCategory.cs">
       <DependentUpon>Context.tt</DependentUpon>
@@ -292,6 +293,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Partners\Views\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -326,9 +328,6 @@
     <Content Include="Views\Progress\_CategorizedRoadmapView.cshtml" />
     <Content Include="Views\Home\_TestimonyView.cshtml" />
     <Content Include="Views\Home\_NewsView.cshtml" />
-    <Content Include="Views\Partners\Views\Fondation-Steria.cshtml" />
-    <Content Include="Views\Partners\Views\PFNT.cshtml" />
-    <Content Include="Views\Partners\Views\Fondation-garches.cshtml" />
     <Content Include="Views\Contact\_MailView.cshtml" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

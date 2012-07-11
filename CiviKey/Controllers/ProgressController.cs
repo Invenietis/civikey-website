@@ -42,6 +42,14 @@ namespace CiviKey.Controllers
             return View("Index", rvm );
         }
 
+        protected override void OnActionExecuting( ActionExecutingContext filterContext )
+        {
+            // fix bug with cache
+            filterContext.HttpContext.Response.Cache.SetCacheability( HttpCacheability.NoCache );
+
+            base.OnActionExecuting( filterContext );
+        }
+
         public ActionResult GetSpecificView( string version, string type )
         {
             ViewBag.Roadmaps = _roadmapRepo.All.ToList().Reverse<tRoadMap>();

@@ -14,9 +14,8 @@
                     @foreach( var participation in Model.Sponsors )
                     {
                         <div class="roadmap-sponsor">
-                            <img src="/Content/images/PartnerProjectPage/@participation.ContactRelation.Contact.LogoPath" style="height: 32px; " alt="logo-@participation.ContactRelation.Contact.Name" title="@participation.ContactRelation.Contact.Name" />
-                            <p class="sponsor-p">@participation.ContactRelation.Contact.Name @(" : ")
-                                @("X %")</p>  @*@participation.Percentage*@
+                            <img src="/Content/images/ParnterLogo/small/@participation.ContactRelation.Contact.LogoPath" style="height: 32px; " alt="logo-@participation.ContactRelation.Contact.Name" title="@participation.ContactRelation.Contact.Name" />
+                            <p class="sponsor-p">@participation.ContactRelation.Contact.Name</p>
                         </div>
                     }
                     <div style="clear: both;">
@@ -35,7 +34,7 @@
                     <div class="accordion-heading">
                         <div class="collapse-image colapsed">
                         </div>
-                        <img class="category-img" src="@Url.Content( "~/Content/images/CategoryIcon/" + @category.IconName )" />
+                        <img class="category-img" src="@Url.Content( "~/Content/images/CategoryIcon/" + category.IconName )" alt="@category.IconName"/>
                         <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" data-target="#collapse@(i)">
                             @category.Name (@Model.CategorizedFeatures[category].Count)
                         </h2>
@@ -71,7 +70,7 @@
         
         <div class="mode-toggle-container release-info-container">
             <p>Changer de vue</p>
-            <a href="#" title="Classer par nouveautés" id="mode-toggle-classic" class="mode-toggle-img">&nbsp</a>
+            <a href="#" title="Classer par nouveautés" id="mode-toggle-classic" class="mode-toggle-img">&nbsp;</a>
         </div>
     </div>
 }

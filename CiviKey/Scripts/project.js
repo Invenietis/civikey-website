@@ -9,17 +9,17 @@
     });
 
     function changeContent(clickedElem) {
-        if (changeActiveElem(clickedElem)) {
-            detectNotActivElem(clickedElem);
-            $('.project-slide' + notActivElem[0]).fadeOut(function () {
-                $('.project-slide' + notActivElem[1]).fadeOut(function () {
+//        if (changeActiveElem(clickedElem)) {
+//            detectNotActivElem(clickedElem);
+//            $('.project-slide' + notActivElem[0]).fadeOut(function () {
+//                $('.project-slide' + notActivElem[1]).fadeOut(function () {
 //                    $('.project-slide' + notActivElem[2]).fadeOut(function () {
-                        $('.project-slide' + notActivElem[2]).fadeIn();
-                        changeContentHeight();
-                    });
+//                        $('.project-slide' + notActivElem[2]).fadeIn();
+//                        changeContentHeight();
+//                    });
 //                });
-            });
-        }
+//            });
+//        }
     }
 
     function detectNotActivElem(activeElem) {
