@@ -12,9 +12,11 @@
                     $("#testimony-container").html(data);
                 }
                 else {
-                    $("#testimony-container").fadeOut(1000, function () {
-                        $(this).html(data).fadeIn();
-                    });
+                    if ($($(data)[0]).attr("data-id") !== $("#testimony-title").attr("data-id")) {
+                        $("#testimony-container").fadeOut(1000, function () {
+                            $(this).html(data).fadeIn();
+                        });
+                    }
                 }
             }
         });

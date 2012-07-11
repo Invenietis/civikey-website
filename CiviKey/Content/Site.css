@@ -233,6 +233,15 @@ body
     height: 100px;
     background-color: #4f4f4f;
 }
+
+.beta-disclaimer
+{
+    background:url("/Content/images/beta-disclaimer.png");
+    height: 100px;
+    width: 100px;
+    position: absolute;
+}
+
 .header-container, .footer-container
 {
     width: 1024px;
@@ -430,13 +439,13 @@ ul
 /*----------------Home carousel-----------------------*/ 
 #home-carousel .carousel-control.right
 {
-    top: 150px;
+    top: 170px;
 }
 
 #home-carousel .carousel-control.left
 {
     left: 395px;
-    top: 150px;
+    top: 170px;
 }
 
 #home-carousel .carousel-control
@@ -1551,7 +1560,7 @@ ul#menu li.menuelem.selected a
     margin-right:auto;
     padding-left:30px;
     background-position:0 3px;
-    line-height:15px;
+    line-height:20px;
     margin-bottom:35px;
 }
 
