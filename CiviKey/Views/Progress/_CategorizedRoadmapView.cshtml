@@ -5,23 +5,20 @@
         @if( Model.Sponsors.Count > 0 )
         {
             <div class="roadmap-sponsors-div">
-                <div>
-                    <p>
-                        Roadmap sponsorisée par :
-                    </p>
-                </div>
-                <div style="float: right; margin-left: 10px; margin-right:10px;">
+                <span>Roadmap sponsorisée par : </span>
+                <div style="float: right; margin-left: 10px; margin-right: 10px;">
                     @foreach( var participation in Model.Sponsors )
                     {
                         <div class="roadmap-sponsor">
-                            <img src="/Content/images/ParnterLogo/small/@participation.ContactRelation.Contact.LogoPath" style="height: 32px; " alt="logo-@participation.ContactRelation.Contact.Name" title="@participation.ContactRelation.Contact.Name" />
-                            <p class="sponsor-p">@participation.ContactRelation.Contact.Name</p>
+                            <img src="/Content/images/PartnerLogo/small/@participation.ContactRelation.Contact.LogoPath" style="height: 32px; " alt="logo-@participation.ContactRelation.Contact.Name" title="@participation.ContactRelation.Contact.Name" />
+                            <span class="sponsor-p">@participation.ContactRelation.Contact.Name</span>
                         </div>
                     }
                     <div style="clear: both;">
                     </div>
                 </div>
-                <div style="clear: both;"></div>
+                <div style="clear: both;">
+                </div>
             </div>
         }
         <div class="accordion" id="accordion2">
@@ -39,7 +36,7 @@
                             @category.Name (@Model.CategorizedFeatures[category].Count)
                         </h2>
                     </div>
-                   <div id="collapse@(i)" class="accordion-body collapse">
+                    <div id="collapse@(i)" class="accordion-body collapse">
                         <div class="accordion-inner">
                             @Html.Partial( "_FeatureCategoryView", Model.CategorizedFeatures[category] )
                         </div>
@@ -55,10 +52,12 @@
     <div class="release-info-main-container">
         <div class="release-info-container @if( !Model.HasRelease )
                                            {@("disabled")}">
-            <p>Version @Model.Name</p>
+            <p>
+                Version @Model.Name</p>
             @if( !Model.HasRelease )
             {
-                <p class="roadmap-progress-p">En cours de développement</p>
+                <p class="roadmap-progress-p">
+                    En cours de développement</p>
             }
             else
             {
@@ -67,14 +66,14 @@
                 </div>
             }
         </div>
-        
         <div class="mode-toggle-container release-info-container">
-            <p>Changer de vue</p>
-            <a href="#" title="Classer par nouveautés" id="mode-toggle-classic" class="mode-toggle-img">&nbsp;</a>
+            <p>
+                Changer de vue</p>
+            <a href="#" title="Classer par nouveautés" id="mode-toggle-classic" class="mode-toggle-img">
+                &nbsp;</a>
         </div>
     </div>
 }
-
 <script type="text/javascript">
     (function () {
         $("#mode-toggle-classic").click(function () {
@@ -84,6 +83,6 @@
             })
         });
 
-        $(".collapse").collapse({toggle: false});
+        $(".collapse").collapse({ toggle: false });
     } ())
-</script>    
+</script>

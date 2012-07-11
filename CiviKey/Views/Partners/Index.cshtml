@@ -20,16 +20,21 @@
                 <div class="partners-elem">
                     <div class="partners-elem-content">
                         @Html.Partial( "_ContactDisplay", Model[i] )
+                        </div>
                         <div class="partners-sep @if( i == Model.Count - 1 )
                                                  { @("invis") }
                                                  else
                                                  { @("vis") }" >
-                        </div>
                     </div>
-                    <div style="clear: both;">
-                    </div>
+@*                    <div style="clear: both;">*@
+                    @*</div>*@
                 </div>
+                if( i % 2 != 0 )
+                {
+                    <div class="youpiyaaa" style="clear:both;"></div>
+                }
             }
+            <div style="clear:both;"></div>
             <div class="partners-end-back">
             </div>
         </div>

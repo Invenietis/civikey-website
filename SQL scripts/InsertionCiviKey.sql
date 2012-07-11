@@ -3,7 +3,7 @@
 insert into dbo.tTestimony (Author,Title,Content,CreationDate ) values('Dominique Lambert - Présidente de la Fondation Steria', 'A la pointe de l''innovation', '"La Fondation Steria est fière d''accompagner le civikey, depuis l''attribution en 2004 du prix de la bourse de la Fondation à l''équipe étudiante d''Intech Info, jusqu''à l''animation de la communauté Open source aux côtés d''Invenietis et la plate-forme nouvelles technologies de l''hôpital de Garches.  Beaucoup plus qu''un simple clavier virtuel, le civikey est à la pointe de l''innovation  pour venir en aide aux personnes en situation de handicap grâce à la puissance de la technologie et l''esprit communautaire de l''Open Source"', GetDate());
 
 insert into dbo.tNews (Title,Content,CreationDate ) values('Le site CiviKey est en ligne !', 'Le site CiviKey est maintenant en ligne ! N''hésitez pas a parcourir ses différentes pages pour vous informer sur ce projet gratuit et open-source.', GetDate());
-insert into dbo.tNews (Title,Content,CreationDate ) values('La Roadmap 2012 est lancée', 'Notre partenariat avec Alcatel-Lucent nous a permis de nous lancer sur le développement de la roadmap 2012, qui se terminera avec la mise à disposition de la version 2.5.2 de CiviKey <br/> détails sur la page Roadmaps.', GetDate());
+insert into dbo.tNews (Title,Content,CreationDate ) values('La Roadmap 2012 est lancée', 'Notre partenariat avec Alcatel-Lucent nous a permis de nous lancer sur le développement de la roadmap 2012, qui se terminera avec la mise à disposition de la version 2.5.3 de CiviKey <br/> détails sur la page Roadmaps.', GetDate());
 
 
 insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('Vlad Sargu','','','');--1

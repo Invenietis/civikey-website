@@ -6,18 +6,15 @@
         @if( Model.Sponsors.Count > 0 )
         {
             <div class="roadmap-sponsors-div">
-                <div>
-                    <p>
-                        Roadmap sponsorisée par :
-                    </p>
-                </div>
+                <span>
+                    Roadmap sponsorisée par :
+                </span>
                 <div style="float: right; margin-left: 10px; margin-right:10px;">
                     @foreach( var participation in Model.Sponsors )
                     {
                         <div class="roadmap-sponsor">
                             <img src="/Content/images/PartnerLogo/small/@participation.ContactRelation.Contact.LogoPath" style="height: 32px; " alt="logo-@participation.ContactRelation.Contact.Name" title="@participation.ContactRelation.Contact.Name" />
-                            <p class="sponsor-p">@participation.ContactRelation.Contact.Name</p>
-                            <div style="clear:both;"></div>
+                            <span class="sponsor-p">@participation.ContactRelation.Contact.Name</span>
                         </div>
                     }
                     <div style="clear: both;">
