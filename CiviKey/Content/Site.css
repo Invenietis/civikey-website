@@ -240,6 +240,8 @@ body
     height: 100px;
     width: 100px;
     position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .header-container, .footer-container
@@ -495,7 +497,7 @@ ul
 {
     color: #4b4b4b;
     text-align: right;
-    font-size: 
+    font-size: 12px;
 }
 
 .moving-elem
@@ -638,22 +640,6 @@ ul
     background-image:url('/Content/images/preject-inactivelem.png');
 }
 /*---------------------Page le projet - carousel--------------------*/
-
-
-
-.project-shadow
-{
-    position:absolute;
-    background-image:url('/Content/images/project-shadow.png');
-    width:59px;
-    height:35px;
-    left:-59px;
-    top:640px;
-    transition: height 2s;
-    -webkit-transition: all .5s ease;
-       -moz-transition: all .5s ease;
-            transition: all .5s ease;
-}
 
 .passiveslide
 {
@@ -838,26 +824,26 @@ a.timeline-unselected
 .progress-list-elem
 {
     margin:20px 0px 0px 20px;
-    border-radius:5px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;  
     float: left;
     min-width:175px;
-    height:90px;
-    background-image: url('/Content/images/avancement-ticket.png');
+    background-color: #E4E4E4;
     cursor:pointer;
     display: block;
 }
 
 .progress-list-elem:hover
 {
-    -webkit-box-shadow: inset 0 1px 1px;
-    rgba(0, 0, 0, 0.075);
-    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
-    -webkit-transition: border linear 0.2s, box-shadow linear 0.2s;
-    -moz-transition: border linear 0.2s, box-shadow linear 0.2s;
-    -ms-transition: border linear 0.2s, box-shadow linear 0.2s;
-    -o-transition: border linear 0.2s, box-shadow linear 0.2s;
-    transition: border linear 0.2s, box-shadow linear 0.2s;
+    -moz-box-shadow: 0px 0px 4px #000000;
+    -webkit-box-shadow: 0px 0px 4px #000000;
+    box-shadow: 0px 0px 4px #000000;
+    -webkit-transition: border linear 0.2s, box-shadow linear 0.3s;
+    -moz-transition: border linear 0.2s, box-shadow linear 0.3s;
+    -ms-transition: border linear 0.2s, box-shadow linear 0.3s;
+    -o-transition: border linear 0.2s, box-shadow linear 0.3s;
+    transition: border linear 0.2s, box-shadow linear 0.3s;
 }
 
 .progress-list-line
@@ -880,17 +866,26 @@ a.timeline-unselected
 {
     font-family: Verdana;
     font-size:16px;
-    color:#fff;
     position:relative; 
     height: 35px;
     min-width: 175px;
+ 
+}
+
+.progress-elem-progress-p
+{
+  padding: 0px;
+  margin: 0px;  
+  font-size:10px;
+   margin-bottom: 2px;
+   margin-top: 2px;
 }
 
 .progress-elem-title
 {
     padding-top:10px;
     margin-left: 10px;
-    margin-right: 35px;
+    margin-right: 45px;
 }
 
 .progress-elem-type
@@ -900,11 +895,19 @@ a.timeline-unselected
     position: absolute;
     right: 0px;
     top: 0px;
+    text-align: right;
+    padding-right: 7px;
+}
+
+.progress-elem-type > img
+{
+    vertical-align: top;
 }
 
 .done-feature
 {
     background-image: url('/Content/images/done-type-green.png');
+    background-repeat: no-repeat;
 }
 
 .doing-feature
@@ -1488,26 +1491,28 @@ ul#menu li.menuelem.selected a
 
 .roadmap-sponsors-div img
 {
-    float: left;
 }
 
 .roadmap-sponsors-div span
 {
     margin: 0px;
-    margin-top:5px;
-    margin-left:5px;
-    padding: 5px;
-    float: left;
+    margin-top:8px;
+    margin-right:10px;
+    padding: 0px;
+    font-size: 13px;
 }
+.progress-list-of-features > .roadmap-sponsors-div > p
+{
+    font-size: 11px;
+    padding: 0;
+    margin: 0;
+    margin-left: 5px;    
+}
+
 .roadmap-sponsors-div span.sponsor-p
 {
-    padding: 0px;
-    margin-top:5px;
-    margin-bottom: 5px;
-    margin-left: 5px;
-	font-size: 12px;
-	display: block;
 }
+
 .roadmap-sponsors-div .roadmap-sponsor
 {
     float : left;
@@ -1561,7 +1566,7 @@ ul#menu li.menuelem.selected a
     padding-left:30px;
     background-position:0 3px;
     line-height:20px;
-    margin-bottom:35px;
+    margin-bottom:30px;
 }
 
 .progress-title

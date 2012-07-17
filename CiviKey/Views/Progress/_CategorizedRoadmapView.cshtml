@@ -5,8 +5,8 @@
         @if( Model.Sponsors.Count > 0 )
         {
             <div class="roadmap-sponsors-div">
-                <span>Roadmap sponsorisée par : </span>
-                <div style="float: right; margin-left: 10px; margin-right: 10px;">
+                <p> Entités participant à cette roadmap : </p>
+                <div style="padding-top:5px; padding-bottom:5px;width:100%; margin-left: 10px; margin-right:10px;">
                     @foreach( var participation in Model.Sponsors )
                     {
                         <div class="roadmap-sponsor">
@@ -14,8 +14,6 @@
                             <span class="sponsor-p">@participation.ContactRelation.Contact.Name</span>
                         </div>
                     }
-                    <div style="clear: both;">
-                    </div>
                 </div>
                 <div style="clear: both;">
                 </div>
@@ -50,8 +48,7 @@
     
 @* Version Download part *@
     <div class="release-info-main-container">
-        <div class="release-info-container @if( !Model.HasRelease )
-                                           {@("disabled")}">
+        <div class="release-info-container">
             <p>
                 Version @Model.Name</p>
             @if( !Model.HasRelease )
@@ -62,7 +59,7 @@
             else
             {
                 <div class="feature-download-btn">
-                    <a href="#" class="progress-download-link" title="Téléchargement">&nbsp;</a>
+                    <a href="/Content/downloads/@Model.DownloadFileName" class="progress-download-link" title="Téléchargement">&nbsp;</a>
                 </div>
             }
         </div>

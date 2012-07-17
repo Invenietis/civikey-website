@@ -48,12 +48,10 @@
     }
 
     function changeContentHeight() {
-        var shadowHeight = $('.project-shadow').height();
         var content = $('.project-leftblock-content').height();
         var height;
         if (content != 0) {
             $('.project-slider').height(content + 30);
-            $('.project-shadow').css('top', content + 50);
         }
     }
 

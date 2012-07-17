@@ -1,26 +1,20 @@
 ﻿@model CiviKey.ViewModel.RoadmapViewModel
 @{
 @*Feature display part*@
-        
     <div class="progress-list-of-features" data-id="@ViewBag.CurrentRoadmapId">
         @if( Model.Sponsors.Count > 0 )
         {
             <div class="roadmap-sponsors-div">
-                <span>
-                    Roadmap sponsorisée par :
-                </span>
-                <div style="float: right; margin-left: 10px; margin-right:10px;">
+                <p> Entités participant à cette roadmap : </p>
+                <div style="padding-top:5px; padding-bottom:5px;width:100%; margin-left: 10px; margin-right:10px;">
                     @foreach( var participation in Model.Sponsors )
                     {
-                        <div class="roadmap-sponsor">
                             <img src="/Content/images/PartnerLogo/small/@participation.ContactRelation.Contact.LogoPath" style="height: 32px; " alt="logo-@participation.ContactRelation.Contact.Name" title="@participation.ContactRelation.Contact.Name" />
                             <span class="sponsor-p">@participation.ContactRelation.Contact.Name</span>
-                        </div>
                     }
-                    <div style="clear: both;">
-                    </div>
                 </div>
-                <div style="clear: both;"></div>
+                <div style="clear: both;">
+                </div>
             </div>
         }
         <div class="accordion" id="accordion2">
@@ -47,7 +41,7 @@
                     <div class="accordion-heading">
                         <div class="collapse-image colapsed">
                         </div>
-                        <img class="category-img" src="@Url.Content( "~/Content/images/CategoryIcon/up_arrow_24x24.png")" alt="fonctionnalités améliorées" />
+                        <img class="category-img" src="@Url.Content( "~/Content/images/CategoryIcon/up_arrow_24x24.png" )" alt="fonctionnalités améliorées" />
                         <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
                             Fonctionnalités améliorées (@Model.UpdatedFeatures.Count)
                         </h2>
@@ -112,7 +106,7 @@
             else
             {
                 <div class="feature-download-btn">
-                    <a href="#" class="progress-download-link" title="Téléchargement">&nbsp;</a>
+                    <a href="/Content/downloads/@Model.DownloadFileName" class="progress-download-link" title="Téléchargement">&nbsp;</a>
                 </div>
             }
         </div>

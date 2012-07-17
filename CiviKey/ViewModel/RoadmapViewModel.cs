@@ -4,11 +4,13 @@ using System.Linq;
 using System.Web;
 using CiviKey.Models;
 using CiviKey.Repositories;
+using System.IO;
 
 namespace CiviKey.ViewModel
 {
     public class RoadmapViewModel
     {
+        string _downloadFileName;
         ICollection<FeatureViewModel> _features;
         ICollection<FeatureViewModel> _newFeatures;
         ICollection<FeatureViewModel> _updatedFeatures;
@@ -23,6 +25,34 @@ namespace CiviKey.ViewModel
             _model = model;
             _categorizedFeatures = new Dictionary<CategoryViewModel, ICollection<FeatureViewModel>>();
             PopulateCollections( partnerRepo, contactRepo, contactRelationRepo, model.tFeatures, model.tParticipations );
+            RetrieveDownloadFileName();
+        }
+
+        private void RetrieveDownloadFileName()
+        {
+            _downloadFileName = "";
+            Version roadmapVersion = Helpers.GetVersionFromRoadmapName( Name );
+            if( HasRelease && roadmapVersion != null )
+            {
+
+                IEnumerable<string> downloadDirectory = Directory.EnumerateFiles( Path.Combine( HttpRuntime.AppDomainAppPath, "Content", "downloads" ) );
+                IList<Version> availableVersions = new List<Version>();
+                Version foundVersion = null;
+
+                foreach( string filePath in downloadDirectory )
+                {
+                    string fileName = Path.GetFileName( filePath );
+                    Version version = Helpers.GetVersionFromFileName( fileName );
+                    if( version != null && version.Major == roadmapVersion.Major && version.Minor == roadmapVersion.Minor && version.Build == roadmapVersion.Build )
+                    {
+                        if( foundVersion == null || version.Revision > foundVersion.Revision )
+                        {
+                            _downloadFileName = fileName;
+                            foundVersion = version;
+                        }
+                    }
+                }
+            }
         }
 
         private void PopulateCollections( PartnerRepository partnerRepo, ContactRepository contactRepo, ContactRelationRepository contactRelationRepo, ICollection<tFeature> features, ICollection<tParticipation> participations )
@@ -69,6 +99,8 @@ namespace CiviKey.ViewModel
         public string Name { get { return _model.Name; } }
         public bool HasRelease { get { return _model.HasRelease; } }
         public int Id { get { return _model.Id; } }
+        public string DownloadFileName { get { return _downloadFileName; } }
+
         public ICollection<FeatureViewModel> Features { get { return _features; } }
         public ICollection<FeatureViewModel> NewFeatures { get { return _newFeatures; } }
         public ICollection<FeatureViewModel> UpdatedFeatures { get { return _updatedFeatures; } }

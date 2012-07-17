@@ -12,44 +12,34 @@
         }
     @:@output
 }
-@helper GetLogoClass()
+@helper GetProgressImagePath()
     {
         string output;
-        if( Model.Progress == 100 )
+        if( Model.Progress == 0 )
         {
-            output = "done-feature";
-        }
-        else if( Model.Progress == 0 )
-        {
-            output = "todo-feature";
+            output = "/Content/images/empty-progressbar.png";
         }
         else
         {
-            output = "doing-feature";
+            output = "/Content/images/progressbar.png";
         }
     @:@output
 }
 <div class="progress-elem-title-bar">
     <div style="clear:both;"></div>
     <div class="progress-elem-title">@Model.Title</div>
-    <div class="progress-elem-type @GetLogoClass()">
-    </div>
-    <div style="clear: both;">
-    </div>
-</div>
-<div class="progress-elem-content">
-    @if( Model.MainDeveloper != null )
+   @if( Model.Progress == 100 )
     {
-        <div class="progress-elem-developedby">
-            <p class="progress-elem-developedby-text">
-                @if(Model.Progress == 100){@("Developpé par :")} else{@("En développement par :")}
-            </p>
-            <p>@Model.MainDeveloper.Name</p>
-        </div>
+        <div class="progress-elem-type done-feature">
+        </div> 
     }
-    <div class="progress-elem-version">
-        @GetProgress()
-    </div>
+    else 
+    {
+        <div class="progress-elem-type">
+            <p class="progress-elem-progress-p">@Model.Progress%</p>
+            <img src="@GetProgressImagePath()" alt="progression" />
+        </div>
+    }   
     <div style="clear: both;">
     </div>
 </div>

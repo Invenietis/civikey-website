@@ -168,6 +168,7 @@
     <Compile Include="ViewModel\ContactRelationViewModel.cs" />
     <Compile Include="ViewModel\ContactViewModel.cs" />
     <Compile Include="ViewModel\CategorizedRoadmapViewModel.cs" />
+    <Compile Include="ViewModel\HomeViewModel.cs" />
     <Compile Include="ViewModel\NewsViewModel.cs" />
     <Compile Include="ViewModel\RoadmapViewModel.cs" />
     <Compile Include="ViewModel\FeatureViewModel.cs" />
@@ -347,7 +348,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>51241</DevelopmentServerPort>
+          <DevelopmentServerPort>55647</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

@@ -1,6 +1,22 @@
-﻿@model IList<CiviKey.ViewModel.NewsViewModel>
+﻿@model CiviKey.ViewModel.HomeViewModel
 @{
     Html.CK().Scripts.ByName().IncludeJS( "home.js" );
+
+    string lastRoadmapDownloadableVersion;
+    string lastRoadmapDownloadFilePath;
+    
+    if( String.IsNullOrWhiteSpace( Model.LastRoadmap.DownloadFileName ) )
+    {
+        lastRoadmapDownloadableVersion = Model.LastRoadmap.Name;
+        lastRoadmapDownloadFilePath = "#";
+    }
+    else
+    {
+        lastRoadmapDownloadableVersion = CiviKey.Models.Helpers.GetVersionFromFileName( Model.LastRoadmap.DownloadFileName ).ToString();
+        lastRoadmapDownloadFilePath = "/Content/downloads/" + Model.LastRoadmap.DownloadFileName;
+    }
+    
+    
 }
 <div class="home-slider">
     <div class="home-slider-download">
@@ -8,9 +24,10 @@
             <p>
                 Projet Open source et gratuit</p>
             <p>
-                Dernière version : 2.5.1.15</p>
+                Dernière version :  @lastRoadmapDownloadableVersion</p>
         </div>
         <div class="home-slider-download-btn">
+            <a href="@lastRoadmapDownloadFilePath" title="download CiviKey" style="width: 200px; height: 50px; display: block;"></a>
         </div>
     </div>
 </div>
@@ -20,10 +37,10 @@
             <!-- Carousel items -->
             <div class="carousel-inner">
                 @{
-                    for( int i = 0; i < @Model.Count; i++ )
+                    for( int i = 0; i < @Model.News.Count; i++ )
                     {
                     <div class="item @if( i == 0 )
-                                     {@("active")}">@Html.Partial( "_NewsView", Model.ElementAt( i ) )</div>
+                                     {@("active")}">@Html.Partial( "_NewsView", Model.News.ElementAt( i ) )</div>
                     }
                 }
             </div>

@@ -14,13 +14,20 @@ namespace CiviKey.Controllers
         Random _rand;
         TestimonyRepository _testiRepo;
         NewsRepository _newsRepo;
+        RoadmapRepository _roadmapRepo;
+        PartnerRepository _partnerRepo;
+        ContactRepository _contactRepo;
+        ContactRelationRepository _contactRelationRepo;
 
-        public HomeController( TestimonyRepository testiRepo, NewsRepository newsRepo )
+        public HomeController( ContactRelationRepository contactRelationRepo, ContactRepository contactRepo, PartnerRepository partnerRepo, RoadmapRepository roadmapRepo, TestimonyRepository testiRepo, NewsRepository newsRepo )
         {
+            _contactRelationRepo = contactRelationRepo;
+            _contactRepo = contactRepo;
+            _partnerRepo = partnerRepo;
+            _roadmapRepo = roadmapRepo;
             _testiRepo = testiRepo;
             _newsRepo = newsRepo;
             _rand = new Random( DateTime.Now.Millisecond );
-
         }
 
         public ActionResult Index()
@@ -34,7 +41,10 @@ namespace CiviKey.Controllers
                 newsVms.Add( new NewsViewModel( news.ElementAt( i ) ) );
             }
 
-            return View( newsVms );
+            RoadmapViewModel rvm = new RoadmapViewModel( _roadmapRepo.GetLastReleasedRoadmap(), _partnerRepo, _contactRepo, _contactRelationRepo );
+            HomeViewModel h = new HomeViewModel( rvm, newsVms );
+
+            return View( h );
         }
 
         public ActionResult GetTestimonyView( int? currentTestimonyId )
@@ -47,7 +57,7 @@ namespace CiviKey.Controllers
             {
                 int index = _rand.Next( 0, testimonies.Count );
                 foundTestimony = testimonies.ElementAt( index );
-            } while( foundTestimony == null || ( currentTestimonyId.HasValue && foundTestimony.Id == currentTestimonyId ) && testimonies.Count > 1);
+            } while( foundTestimony == null || ( currentTestimonyId.HasValue && foundTestimony.Id == currentTestimonyId ) && testimonies.Count > 1 );
 
             ViewBag.currentTestimonyId = foundTestimony.Id;
 

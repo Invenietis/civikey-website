@@ -1,6 +1,6 @@
 ﻿--Creating contacts
 
-insert into dbo.tTestimony (Author,Title,Content,CreationDate ) values('Dominique Lambert - Présidente de la Fondation Steria', 'A la pointe de l''innovation', '"La Fondation Steria est fière d''accompagner le civikey, depuis l''attribution en 2004 du prix de la bourse de la Fondation à l''équipe étudiante d''Intech Info, jusqu''à l''animation de la communauté Open source aux côtés d''Invenietis et la plate-forme nouvelles technologies de l''hôpital de Garches.  Beaucoup plus qu''un simple clavier virtuel, le civikey est à la pointe de l''innovation  pour venir en aide aux personnes en situation de handicap grâce à la puissance de la technologie et l''esprit communautaire de l''Open Source"', GetDate());
+insert into dbo.tTestimony (Author,Title,Content,CreationDate ) values('Dominique Lambert <br/> Déléguée Générale de la Fondation Steria - Institut de France', 'A la pointe de l''innovation', '"La Fondation Steria est fière d''accompagner le civikey, depuis l''attribution en 2004 du prix de la bourse de la Fondation à l''équipe étudiante d''Intech Info, jusqu''à l''animation de la communauté Open source aux côtés d''Invenietis et la plate-forme nouvelles technologies de l''hôpital de Garches.  Beaucoup plus qu''un simple clavier virtuel, le civikey est à la pointe de l''innovation  pour venir en aide aux personnes en situation de handicap grâce à la puissance de la technologie et l''esprit communautaire de l''Open Source"', GetDate());
 
 insert into dbo.tNews (Title,Content,CreationDate ) values('Le site CiviKey est en ligne !', 'Une première version du site CiviKey est maintenant en ligne !<br/>Celui-ci sera amélioré au fur et à mesure de l''avancement de ce projet open-source et gratuit. <br/>N''hésitez pas a parcourir ses différentes pages pour vous informer sur les développements en cours.', GetDate());
 insert into dbo.tNews (Title,Content,CreationDate ) values('La Roadmap 2012 est lancée', 'Notre partenariat avec Alcatel-Lucent nous a permis de nous lancer sur le développement de la roadmap 2012, qui se terminera avec la mise à disposition de la version 2.5.3 de CiviKey <br/> détails sur la page Roadmaps.', GetDate());
@@ -47,7 +47,7 @@ insert into dbo.tContactRelation(ContactId,EntityId,StartDate,EndDate)values(15,
 																									--TODO : handle dates
 --- Creating RoadMap
 insert into dbo.tRoadMap(Name, HasRelease)values('2.5.1', 1);
-insert into dbo.tRoadMap(Name, HasRelease)values('2.5.2', 1);
+insert into dbo.tRoadMap(Name, HasRelease)values('2.5.2', 0);
 insert into dbo.tRoadMap(Name, HasRelease)values('2.5.X', 0); --futur
 
 --Creating features
@@ -92,7 +92,7 @@ insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Descripti
 --20
 insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type) values('Assistant 1er démarrage','1.0.0',0,DATEADD(year,-1,GetDate()),3,'<p>Assistant de configuration de CiviKey au premier lancement d''un nouvel utilisateur.<br/>Permet de choisir les fonctionnalités à lancer au démarrage de l''application</p>', 2)
 --21
-insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type) values('Aide en ligne','1.0.0',0,DATEADD(year,-1,GetDate()),3,'<p>Intégration de point d''information sur les différentes fonctionnalités, pour expliquer le fonctionnement de chacune.</p>', 2)
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type) values('Aide en ligne','1.0.0',50,DATEADD(year,-1,GetDate()),3,'<p>Intégration de point d''information sur les différentes fonctionnalités, pour expliquer le fonctionnement de chacune.</p>', 2)
 -------------------------STOPPED HERE
 
 --Creating sections in the features

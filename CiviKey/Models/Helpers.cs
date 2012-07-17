@@ -15,7 +15,7 @@ namespace CiviKey.Models
         }
 
 
-        public static Version GetVersionFromRoadmapName( string name)
+        public static Version GetVersionFromRoadmapName( string name )
         {
             bool isTrimmed;
             return GetVersionFromRoadmapName( name, out isTrimmed );
@@ -23,7 +23,7 @@ namespace CiviKey.Models
 
         public static Version GetVersionFromRoadmapName( string name, out bool isTrimmed )
         {
-            Version version;
+            Version version = null;
             isTrimmed = false;
             if( !Version.TryParse( name, out version ) )
             {
@@ -34,6 +34,24 @@ namespace CiviKey.Models
                 }
                 isTrimmed = true;
             }
+            return version;
+        }
+
+        /// <summary>
+        /// This methods gets a fileName following this pattern : x-x-versionNumber.exe
+        /// and retrives a version object from it.
+        /// </summary>
+        /// <param name="fileName"></param>
+        /// <returns></returns>
+        public static Version GetVersionFromFileName( string fileName )
+        {
+            if( String.IsNullOrWhiteSpace( fileName ) ) return null;
+
+            string versionString = fileName.Substring( fileName.LastIndexOf( '-' ) + 1 );
+            versionString = Path.GetFileNameWithoutExtension( versionString );
+            Version version = null;
+            Version.TryParse( versionString, out version );
+
             return version;
         }
     }

@@ -24,7 +24,7 @@
 
     <div class="page">
         <div id="header">
-            <div class="beta-disclaimer"></div>
+       @*     <div class="beta-disclaimer"></div>*@
             <div class="header-container">
                 <a href="@Url.Action("Index", "Home")"><img class="header-logo" alt="Logo Civikey" src="@Url.Content("~/Content/images/logo.png")" /></a>
                 <div class="header-menu-container">
@@ -42,9 +42,6 @@
         </div>
         <div id="main-background">
             <div id="main">
-                @* <!--[if lte IE 8]>
-                    <div><p style="color : red;">Ce site n'est pas optimisé pour Internet Explorer en dessous de sa version 8. Nous vous conseillons fortement de changer de navigateur pour continuer de parcourir le site CiviKey.</p></div>
-                <![endif]--> *@
                 @RenderBody()
             </div>
         </div>
