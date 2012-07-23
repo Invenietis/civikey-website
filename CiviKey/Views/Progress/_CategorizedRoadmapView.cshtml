@@ -10,7 +10,7 @@
                     @foreach( var participation in Model.Sponsors )
                     {
                         <div class="roadmap-sponsor">
-                            <img src="/Content/images/PartnerLogo/small/@participation.ContactRelation.Contact.LogoPath" style="height: 32px; " alt="logo-@participation.ContactRelation.Contact.Name" title="@participation.ContactRelation.Contact.Name" />
+                            <img src="@Url.Content("~/Content/images/PartnerLogo/small/" + participation.ContactRelation.Contact.LogoPath )" style="height: 32px; " alt="logo-@participation.ContactRelation.Contact.Name" title="@participation.ContactRelation.Contact.Name" />
                             <span class="sponsor-p">@participation.ContactRelation.Contact.Name</span>
                         </div>
                     }
@@ -74,7 +74,7 @@
 <script type="text/javascript">
     (function () {
         $("#mode-toggle-classic").click(function () {
-            $.get("/Progress/GetFeatureView/@ViewBag.CurrentRoadmapId?type=classic", function (data) {
+            $.get('@Url.Action("GetFeatureView", "Progress" )' + '/' + '@ViewBag.CurrentRoadmapId?type=classic', function (data) {
                 $("#featureList").html(data);
                 document.CK.AjaxCallbacks.onProgressCategoryChangeSuccess("classic");
             })

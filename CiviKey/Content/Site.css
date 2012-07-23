@@ -236,7 +236,7 @@ body
 
 .beta-disclaimer
 {
-    background:url("/Content/images/beta-disclaimer.png");
+    background:url("images/beta-disclaimer.png");
     height: 100px;
     width: 100px;
     position: absolute;
@@ -276,7 +276,7 @@ body
 .header-menu-container
 {
     float: right;
-    background-image: url(/Content/images/menu-back.png);
+    background-image: url(images/menu-back.png);
     background-repeat: repeat-x;
     margin-top: 37px;
 }
@@ -370,7 +370,7 @@ ul
 
 .home-slider
 {
-    background-image: url('/Content/images/slider-back.png');
+    background-image: url('images/slider-back.png');
     width: 1005px;
     height: 326px;
     margin-left: 10px;
@@ -378,7 +378,7 @@ ul
 }
 .home-slider-download
 {
-    background-image: url('/Content/images/slider-download-info.png');
+    background-image: url('images/slider-download-info.png');
     width: 200px;
     height: 150px;
     background-repeat: no-repeat;
@@ -388,7 +388,7 @@ ul
 }
 .home-slider-download-btn
 {
-    background-image: url('/Content/images/download-btn-beta.png');
+    background-image: url('images/download-btn-beta.png');
     width: 200px;
     height: 51px;
     cursor: pointer;
@@ -419,7 +419,7 @@ ul
     width: 460px;
     height: 200px;
     float: left;
-    background-image: url('/Content/images/home-news-back.png');
+    background-image: url('images/home-news-back.png');
     background-repeat: no-repeat;
     padding-left: 50px;
     padding-right: 40px;
@@ -431,7 +431,7 @@ ul
     width: 420px;
     height: 200px;
     float: left;
-    background-image: url('/Content/images/home-testimony-back.png');
+    background-image: url('images/home-testimony-back.png');
     background-repeat: no-repeat;
     font-family: Microsoft Tai Le;
     padding-left: 50px;
@@ -489,7 +489,7 @@ ul
     margin-top: 3px;
     color: #4b4b4b;
     line-height: 18px;
-    background-image: url('/Content/images/testimony-g.png');
+    background-image: url('images/testimony-g.png');
     background-repeat: no-repeat;
     padding-left: 20px;
 }
@@ -628,7 +628,7 @@ ul
 /*---------------------Page le projet - carousel--------------------*/
 .project-content .active-proj
 {
-    background-image:url('/Content/images/project-activeelem.png');
+    background-image:url('images/project-activeelem.png');
 }
 
 .project-content .active-proj p
@@ -637,7 +637,7 @@ ul
 }
 .project-content .inactive
 {
-    background-image:url('/Content/images/preject-inactivelem.png');
+    background-image:url('images/preject-inactivelem.png');
 }
 /*---------------------Page le projet - carousel--------------------*/
 
@@ -671,12 +671,12 @@ ul
 
 #mode-toggle-classic
 {
-    background-image: url(/Content/images/CategoryIcon/tag_24x24.png);
+    background-image: url(images/CategoryIcon/tag_24x24.png);
 }
 
 #mode-toggle-category
 {
-    background: url(/Content/images/CategoryIcon/file_24x24.png);
+    background: url(images/CategoryIcon/file_24x24.png);
 }
 
 .release-info-main-container
@@ -803,7 +803,7 @@ ul#timeline-buttons a:hover
     float:left;
     width:18px;
     height:50px;
-    background-image: url('/Content/images/progresstimelinearrow.png');
+    background-image: url('images/progresstimelinearrow.png');
 }
 
 ul#timeline-buttons li a
@@ -906,7 +906,7 @@ a.timeline-unselected
 
 .done-feature
 {
-    background-image: url('/Content/images/done-type-green.png');
+    background-image: url('images/done-type-green.png');
     background-repeat: no-repeat;
 }
 
@@ -1012,14 +1012,14 @@ a.timeline-unselected
     /*height:8px;*/
     height:10px;
     /*background-color: #4C4C4C;*/
-    /*background-image:url('/Content/images/partners-begin-back.png');*/
+    /*background-image:url('images/partners-begin-back.png');*/
 }
 
 .partners-end-back
 {
     width:709px;
     height:8px;
-    /*background-image:url('/Content/images/partners-end-back.png');*/
+    /*background-image:url('images/partners-end-back.png');*/
 }
 
 .partners-elem-title
@@ -1027,7 +1027,7 @@ a.timeline-unselected
     float:left;
     width:469px;
     height:114px;
-    background-image: url('/Content/images/partner-back-simple.png');
+    background-image: url('images/partner-back-simple.png');
     position: relative;
 }
 
@@ -1055,7 +1055,7 @@ a.timeline-unselected
     
     /*background-color:#4c4c4c;*/
     float:left;
-    /*background-image:  url('/Content/images/partner-content-back.png');*/
+    /*background-image:  url('images/partner-content-back.png');*/
     /*background-repeat:repeat-y;*/
     /*background-position: top right;*/
     /*min-height:129px;*/
@@ -1077,7 +1077,7 @@ a.timeline-unselected
 .partners-sep.vis
 {
     display: none;   
-    /*background-image: url('/Content/images/partner-sep.png');*/
+    /*background-image: url('images/partner-sep.png');*/
     /*background-repeat: no-repeat;*/
     background-position:right;
     height:1px;
@@ -1126,7 +1126,7 @@ a.timeline-unselected
 .contact-title
 {
     font-family:Verdana;
-    background-image:url('/Content/images/contact-title-back.png');
+    background-image:url('images/contact-title-back.png');
     background-repeat:repeat-y;
     font-size:14px;
     background-position:0 2px;
@@ -1150,7 +1150,7 @@ a.timeline-unselected
 
 .contact-main-content
 {
-    background-image: url('/Content/images/contact-main-back.png');
+    background-image: url('images/contact-main-back.png');
     width:772px;
     height:362px;
     margin-left:auto;
@@ -1339,7 +1339,7 @@ label
     width:602px;
     height:60px;
     margin: 10px 0px 0px 10px;
-    background-image: url('/Content/images/feature-title-back.png');
+    background-image: url('images/feature-title-back.png');
 }
 
 .feature-title-logo
@@ -1374,7 +1374,7 @@ label
 
 .feature-section-title
 {
-    background-image:url('/Content/images/feature-section-title.png');
+    background-image:url('images/feature-section-title.png');
     padding:0px 0px 0px 20px;
     font-family:Arial, Verdana;
     font-size:20px;
@@ -1437,7 +1437,7 @@ label
     position:absolute;
     width:20px;
     height:20px;
-    background-image:url('/Content/images/close.png');
+    background-image:url('images/close.png');
     cursor:pointer;
     background-repeat:no-repeat;
     right:0px;
@@ -1535,7 +1535,7 @@ ul#menu li.menuelem.selected a
 {
     width:160px;
     height:45px;
-    background-image:url('/Content/images/feature-download-btn-beta.png');
+    background-image:url('images/feature-download-btn-beta.png');
     cursor:pointer;
     background-repeat:no-repeat;
     background-position:center;
@@ -1547,7 +1547,7 @@ ul#menu li.menuelem.selected a
     text-align:left;
     font-size:19px;
     padding: 7px 0px 5px 8px;
-    background-image:url('/Content/images/feature-download-btn-beta.png');
+    background-image:url('images/feature-download-btn-beta.png');
     background-repeat:repeat-y;
     background-position:right;
     color:#4b4b4b;
@@ -1558,7 +1558,7 @@ ul#menu li.menuelem.selected a
 .partners-title, .project-title
 {
     font-family:Verdana;
-    background-image:url('/Content/images/contact-title-back.png');
+    background-image:url('images/contact-title-back.png');
     background-repeat:repeat-y;
     font-size:14px;
     margin-left:auto;
@@ -1573,7 +1573,7 @@ ul#menu li.menuelem.selected a
 {
     font-family:Verdana;
     width:1000px;
-    background-image:url('/Content/images/contact-title-back.png');
+    background-image:url('images/contact-title-back.png');
     background-repeat: repeat-y;
     font-size:14px;
     margin-left:auto;
@@ -1588,7 +1588,7 @@ ul#menu li.menuelem.selected a
 {
     overflow:hidden;
     height:620px;
-    background-image: url('/Content/images/project-repeat-bar.png');
+    background-image: url('images/project-repeat-bar.png');
     background-position:right;
     background-repeat:repeat-y;
     border-right: 1px solid #858585;
@@ -1628,13 +1628,13 @@ ul#menu li.menuelem.selected a
 
 .colapsed
 {
-    background-image:url('/Content/images/expander-arrow.png');
+    background-image:url('images/expander-arrow.png');
     background-repeat:no-repeat;
 }
 
 .expended
 {
-    background-image:url('/Content/images/expander-arrow-turned.png');
+    background-image:url('images/expander-arrow-turned.png');
     background-repeat:no-repeat; 
 }
 

@@ -3,7 +3,7 @@
 }
 @foreach( var item in Model )
 {
-    <div class="progress-list-elem" data-id="@item.Id">
+    <div class="progress-list-elem" data-route="@Url.Action( "Index", "Feature", new { id = item.Id } )">
         @Html.Partial( "_FeatureView", item )
     </div>
 }

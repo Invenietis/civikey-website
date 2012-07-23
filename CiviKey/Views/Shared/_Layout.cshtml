@@ -3,9 +3,12 @@
 <html>
 <head>
     <title>@ViewBag.Title</title>
-    @Html.CK().Css.ByName().IncludeCss("Site")
-    @Html.CK().Css.IncludeCss("/Content/themes/base/bootstrap.css")
+    <meta name="description" content="@RenderSection("Description", required: true )" />
+
     @{
+        Html.CK().Css.ByName()
+            .IncludeCss("Site")
+            .IncludeCss("themes/base/bootstrap.css");
         Html.CK().Scripts.ByName().
             IncludeJS( "jquery-1.7.2.min.js",0).
             IncludeJS("layout.js", 1).
@@ -17,7 +20,7 @@
     @Html.CK().Scripts.RenderJS()
 </head>
 <body>
-    @helper IsSelected(Sections section)
+    @helper IsSelected( Sections section )
         {
         @(section == (ViewBag.Section ?? Sections.Default) ? "selected" : string.Empty)
     }

@@ -1,8 +1,5 @@
 ﻿@model CiviKey.ViewModel.TestimonyViewModel
-@{
-    ViewBag.Title = "_TestimonyView";
-}
 
-    <p id="testimony-title" data-id="@Model.Id">@Model.Title</p>
-    <p class="testimony-content">@Html.Raw(Model.Content)</p>
-    <p class="testimony-author">@Html.Raw(Model.Author)</p>
+<p id="testimony-title" data-id="@Model.Id">@Model.Title</p>
+<p class="testimony-content">@Html.Raw(Model.Content)</p>
+<p class="testimony-author">@Html.Raw(Model.Author)</p>

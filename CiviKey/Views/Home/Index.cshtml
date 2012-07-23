@@ -13,7 +13,7 @@
     else
     {
         lastRoadmapDownloadableVersion = CiviKey.Models.Helpers.GetVersionFromFileName( Model.LastRoadmap.DownloadFileName ).ToString();
-        lastRoadmapDownloadFilePath = "/Content/downloads/" + Model.LastRoadmap.DownloadFileName;
+        lastRoadmapDownloadFilePath = Url.Content( "~/Content/downloads/" + Model.LastRoadmap.DownloadFileName );
     }
     
     

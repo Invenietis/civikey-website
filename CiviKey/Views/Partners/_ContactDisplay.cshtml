@@ -6,7 +6,7 @@
             <span class="partners-title-name">@Model.Name</span>
         </a>
         <a class="partners-elem-link logo" @if(!Model.HasSpecificPartnerPage){@("target='_blank'")} href="@Url.RouteUrl( "PartnerPage", new { safeName = Model.SafeName } )">
-            <img src="/Content/images/PartnerPageLogo/@Model.LogoPath" alt="Logo" />
+            <img src="@Url.Content("~/Content/images/PartnerPageLogo/" + Model.LogoPath)" alt="Logo" />
         </a>
         <div style="clear: both;">
         </div>

@@ -32,7 +32,7 @@
     });
 
     $(".progress-list-elem").live("click", function () {
-        var featureId = this.getAttribute("data-id");
+        var featureRoute = this.getAttribute("data-route");
         $("#dialog-container").dialog({
             dialogClass: 'feature-dialog',
             autoOpen: false,
@@ -50,7 +50,7 @@
                     $(".feature-dialog").css("top", 0);
                 }
             }
-        }).load("/Feature/Index/" + featureId, function () {
+        }).load(featureRoute, function () {
             $("#dialog-container").dialog('open');
         });
     });

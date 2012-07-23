@@ -9,6 +9,7 @@ using CK.Web.Mvc.Unity;
 using CK.Web.Unity;
 using CiviKey.Models;
 using CiviKey.Repositories;
+using CK.Web.Resources;
 
 namespace CiviKey
 {
@@ -84,6 +85,9 @@ namespace CiviKey
             c.RegisterType<ParticipationRepository>( new UnityPerWebRequestLifetimeManager() );
             c.RegisterType<PartnerRepository>( new UnityPerWebRequestLifetimeManager() );
             DependencyResolver.SetResolver( new UnityDependencyResolver( c ) );
+#if RELEASE
+            ResourceConfiguration.DebugMode = false;
+#endif
         }
     }
 }

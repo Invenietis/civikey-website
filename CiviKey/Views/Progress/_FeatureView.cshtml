@@ -17,11 +17,11 @@
         string output;
         if( Model.Progress == 0 )
         {
-            output = "/Content/images/empty-progressbar.png";
+            output = Url.Content("~/Content/images/empty-progressbar.png");
         }
         else
         {
-            output = "/Content/images/progressbar.png";
+            output = Url.Content("~/Content/images/progressbar.png");
         }
     @:@output
 }
