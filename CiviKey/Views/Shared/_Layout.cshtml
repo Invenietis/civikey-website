@@ -2,15 +2,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+    @{
+        string description = RenderSection("Description", required: true).ToHtmlString();
+    }
+
     <title>@ViewBag.Title</title>
-    <meta name="description" content="@RenderSection("Description", required: true )" />
+    <link rel="SHORTCUT ICON" href="@Url.Action("Index","Home",null, Request.Url.Scheme)@Url.Content("Content/images/favicon.ico")"/>
+    <meta name="description" content="@description" />
+    <meta name="keywords" content="todo : find some keywords to add" />
+
+    <meta property="og:description" content="@description" />
+    <meta property="og:title" content="@ViewBag.Title" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="@Url.Action("Index","Home",null, Request.Url.Scheme)" />
+    <meta property="og:image" content="@Url.Action("Index","Home",null, Request.Url.Scheme)@Url.Content("Content/images/logo.png")" />
+    <meta property="og:site_name" content="CiviKey"/>
 
     @{
         Html.CK().Css.ByName()
             .IncludeCss("Site")
             .IncludeCss("themes/base/bootstrap.css");
         Html.CK().Scripts.ByName().
-            IncludeJS( "jquery-1.7.2.min.js",0).
+            IncludeJS("jquery-1.7.2.min.js", 0).
             IncludeJS("layout.js", 1).
             IncludeJS("bootstrap-collapse.js").
             IncludeJS("bootstrap.js");
@@ -20,7 +33,23 @@
     @Html.CK().Scripts.RenderJS()
 </head>
 <body>
-    @helper IsSelected( Sections section )
+    <div id="fb-root"></div>
+    <script>    
+    
+    //Facebook like button
+    (function (d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ro_RO/all.js#xfbml=1";
+        fjs.parentNode.insertBefore(js, fjs);
+    } (document, 'script', 'facebook-jssdk'));
+
+    //Twitter share button
+    !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } } (document, "script", "twitter-wjs");
+    </script>
+
+    @helper IsSelected(Sections section)
         {
         @(section == (ViewBag.Section ?? Sections.Default) ? "selected" : string.Empty)
     }
@@ -55,14 +84,16 @@
                 <div class="seperator"></div>
                 <div class="footer-menu">
                     <ul>
-                        <li><a href="@Url.Action("Index","Project")">Le Projet</a></li>
+                        <li><a href="@Url.Action("Index", "Project")">Le Projet</a></li>
                         <li>|</li>
-                        <li><a href="@Url.Action("Index","Progress")">Roadmaps</a></li>
+                        <li><a href="@Url.Action("Index", "Progress")">Roadmaps</a></li>
                         <li>|</li>
-                        <li><a href="@Url.Action("Index","Partners")">Partenaires</a></li>
+                        <li><a href="@Url.Action("Index", "Partners")">Partenaires</a></li>
                         <li>|</li>
                         <li><a href="@Url.Action("Index","Contact")">Contactez-nous</a></li>
                     </ul>
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-lang="fr">Tweeter</a>
+                    <div class="fb-like" data-href="@Url.Action("Index","Home",null, Request.Url.Scheme)" data-send="false" data-width="0" data-show-faces="false"></div>
                     <div style="clear:both"></div>
                 </div>
             </div>

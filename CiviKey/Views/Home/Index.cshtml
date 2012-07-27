@@ -1,4 +1,10 @@
 ﻿@model CiviKey.ViewModel.HomeViewModel
+                 
+
+
+@section Description{
+    Page d'accuile
+}
 @{
     Html.CK().Scripts.ByName().IncludeJS( "home.js" );
 
@@ -18,6 +24,7 @@
     
     
 }
+
 <div class="home-slider">
     <div class="home-slider-download">
         <div class="home-slider-download-info">
@@ -53,4 +60,5 @@
         <div id="testimony-container">
         </div>
     </div>
+    <div style="clear:both"></div>
 </div>

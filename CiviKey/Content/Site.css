@@ -347,6 +347,7 @@ ul
 
 .footer-menu ul
 {
+    display:inline;
     margin: 0;
     height: 25px;
 }
@@ -410,7 +411,7 @@ ul
 
 .home-main-container
 {
-    height: 200px;
+    min-height: 200px;
     margin-top: 25px;
 }
 
@@ -429,7 +430,7 @@ ul
 #home-main-testimony
 {
     width: 420px;
-    height: 200px;
+    min-height: 200px;
     float: left;
     background-image: url('images/home-testimony-back.png');
     background-repeat: no-repeat;
@@ -498,6 +499,7 @@ ul
     color: #4b4b4b;
     text-align: right;
     font-size: 12px;
+    margin:0px;
 }
 
 .moving-elem
@@ -1714,4 +1716,15 @@ ul#menu li.menuelem.selected a
 {
     right: -2px;
     top:47%;
+}
+
+.fb-like
+{
+    float:right;
+    margin-right:10px;
+}
+
+.twitter-share-button
+{
+    float:right;
 }
