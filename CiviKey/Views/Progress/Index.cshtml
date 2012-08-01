@@ -6,7 +6,38 @@
     Page Roadmaps
 }
 
+@if (Model.SelectedFeature != null)
+{
+    <script type="text/javascript">
+
+        $(function () {
+            $("#dialog-container").dialog({
+                dialogClass: 'feature-dialog',
+                autoOpen: false,
+                width: 623,
+                draggable: true,
+                modal: true,
+                show: 'fade',
+                resizable: false,
+                hide: { effect: 'fade', duration: 200 },
+                close: function (e, ui) {
+                    $('#video iframe').attr('src', "");
+                },
+                dragStop: function (event, ui) {
+                    if ($(".feature-dialog").css("top").toString().charAt(0) === '-') {
+                        $(".feature-dialog").css("top", 0);
+                    }
+                }
+            });
+            $("#dialog-container").dialog('open');
+        });
+    </script>
+}
 <div id="dialog-container">
+@if (Model.SelectedFeature != null)
+{
+    @Html.Partial("~/Views/Feature/Index.cshtml", Model.SelectedFeature)
+}
 </div>
 <div class="progress-content">
     <div class="progress-title">
@@ -16,20 +47,20 @@
         <div class="progress-timebar-container">
             <div class="timeline-container">
                 <ul id="timeline-buttons">
-                    @foreach( CiviKey.Models.tRoadMap item in ViewBag.Roadmaps )
+                    @foreach (CiviKey.Models.tRoadMap item in ViewBag.Roadmaps)
                     {
                         string additionalClass = item.Id == Model.Id ? "timeline-selected " : " ";
                         additionalClass += item.HasRelease ? "roadmap-hasrelease " : " "; 
                         <li>
-                            @Ajax.ActionLink( item.Name, "GetFeatureView", new { id = @item.Id, type = ViewBag.RoadmapViewType }, new AjaxOptions
+                            @Ajax.ActionLink(item.Name, "GetFeatureView", new { id = @item.Id, type = ViewBag.RoadmapViewType }, new AjaxOptions
+                       {
+                           InsertionMode = InsertionMode.Replace,
+                           UpdateTargetId = "featureList",
+                           OnSuccess = "document.CK.AjaxCallbacks.onProgressGetFeatureViewSuccess"
+                       }, new { @class = string.Format("timeline-feature-link roadmap-{0} {1}", item.Id, additionalClass) })
+                            @if (!item.HasRelease)
                             {
-                                InsertionMode = InsertionMode.Replace,
-                                UpdateTargetId = "featureList",
-                                OnSuccess = "document.CK.AjaxCallbacks.onProgressGetFeatureViewSuccess"
-                            }, new { @class = string.Format("timeline-feature-link roadmap-{0} {1}", item.Id, additionalClass) } )
-                            @if( !item.HasRelease )
-                            {
-                                <img class="roadmap-in-progress-img" src="/Content/images/in-progress.png" title="roadmap en cours de développement" alt="roadmap en cours de développement" />
+                                <img class="roadmap-in-progress-img" src="@Url.Content("~/Content/images/in-progress.png")" title="roadmap en cours de développement" alt="roadmap en cours de développement" />
                             }
                         </li>
                     }
@@ -42,13 +73,13 @@
         </div>
     </div>
     <div id="featureList">
-    @if( ViewBag.RoadmapViewType == "classic" )
+    @if (ViewBag.RoadmapViewType == "classic")
     {
-        @Html.Partial( "_RoadmapView", Model )
+        @Html.Partial("_RoadmapView", Model)
     }
     else
     {
-        @Html.Partial( "_CategorizedRoadmapView", Model )
+        @Html.Partial("_CategorizedRoadmapView", Model)
     }
     </div>
     <div style="clear: both;">

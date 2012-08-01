@@ -33,6 +33,7 @@ namespace CiviKey.ViewModel
         public string Title { get { return _model.Title; } }
         public Version Version { get { return new Version( _model.Version ); } }
         public string Description { get { return _model.Description; } }
+        public string RoadMapVersion { get; set; }
         FeatureType _featureType;
         public FeatureType Type { get { return _featureType; } }
 

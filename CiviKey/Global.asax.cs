@@ -46,6 +46,12 @@ namespace CiviKey
                 );
 
             routes.MapRoute(
+                "Feature",
+                "roadmaps/{version}/feature/{name}",
+                new { controller = "Progress", action = "Index"}
+                );
+
+            routes.MapRoute(
                 "Progress",
                 "roadmaps",
                 new { controller = "Progress", action = "Index" }
