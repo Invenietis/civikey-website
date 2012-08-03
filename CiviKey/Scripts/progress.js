@@ -86,5 +86,5 @@
             History.pushState(state, this.getAttribute('data-title'), Civi.getFeatureUrl(this.getAttribute('data-title')));
         });
     });
-})();
+});
 

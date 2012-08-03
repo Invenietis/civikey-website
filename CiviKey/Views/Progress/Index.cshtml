@@ -8,12 +8,14 @@
 
 <script type="text/javascript">
 
-    Civi.getFeatureUrl = function (featureTitle) {
+    Civi.getFeatureUrl = function (featureTitle, roadmapVersion) {
         var roadmapUrl = '@Url.RouteUrl("Progress", new {}, Request.Url.Scheme)';
         var featureUrl = '@Url.RouteUrl("Feature", new { version = "version", name = "title" }, Request.Url.Scheme)';
 
         if (typeof featureTitle !== 'undefined') {
-            var roadmapVersion = $('.timeline-selected').text();
+            if (typeof roadmapVersion === 'undefined') {
+                roadmapVersion = $('.timeline-selected').text();
+            }
             return featureUrl.replace('version', roadmapVersion).replace('title', featureTitle);
         }
         return roadmapUrl;
@@ -28,7 +30,7 @@
                 type: 'feature',
                 route: '@Url.Action( "Index", "Feature", new { id = Model.SelectedFeature.Id } )'
             };
-            History.pushState(state, "", Civi.getFeatureUrl('@Model.SelectedFeature.Title'));
+            History.pushState(state, "", Civi.getFeatureUrl('@Model.SelectedFeature.Title', '@Model.SelectedFeature.RoadMapVersion'));
         });
     </script>
 }

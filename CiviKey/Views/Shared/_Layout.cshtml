@@ -1,6 +1,6 @@
 ﻿@using CiviKey.Models
 <!DOCTYPE html>
-<html>
+<html xmlns:fb="http://ogp.me/ns/fb#">
 <head>
     @{
         string description = RenderSection("Description", required: true).ToHtmlString();
@@ -17,6 +17,9 @@
     <meta property="og:url" content="@Url.Action("Index","Home",null, Request.Url.Scheme)" />
     <meta property="og:image" content="@Url.Action("Index","Home",null, Request.Url.Scheme)@Url.Content("Content/images/logo.png")" />
     <meta property="og:site_name" content="CiviKey"/>
+    <script>
+        Civi = window.Civi || {};
+    </script>
 
     @{
         Html.CK().Css.ByName()
@@ -33,22 +36,6 @@
     @Html.CK().Css.RenderCss()
 </head>
 <body>
-    <div id="fb-root"></div>
-    <script>
-    Civi = window.Civi || {};
-    //Facebook like button
-    (function (d, s, id) {
-        var js, fjs = d.getElementsByTagName(s)[0];
-        if (d.getElementById(id)) return;
-        js = d.createElement(s); js.id = id;
-        js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1";
-        fjs.parentNode.insertBefore(js, fjs);
-    } (document, 'script', 'facebook-jssdk'));
-
-    //Twitter share button
-    !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } } (document, "script", "twitter-wjs");
-    </script>
-
     @helper IsSelected(Sections section)
         {
         @(section == (ViewBag.Section ?? Sections.Default) ? "selected" : string.Empty)
@@ -99,5 +86,21 @@
             </div>
         </div>
     </div>
+    <div id="fb-root"></div>
+    <script>
+        $(function () {
+            //Facebook like button
+            (function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1";
+                fjs.parentNode.insertBefore(js, fjs);
+            } (document, 'script', 'facebook-jssdk'));
+
+            //Twitter share button
+            !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } } (document, "script", "twitter-wjs");
+        });
+    </script>
 </body>
 </html>
