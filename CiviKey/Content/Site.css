@@ -1728,3 +1728,32 @@ ul#menu li.menuelem.selected a
 {
     float:right;
 }
+
+input[type="radio"], input[type="checkbox"] 
+{
+    display: none;
+}
+
+input[type="radio"] + label, input[type="checkbox"] + label 
+{
+    background:url('images/checkbox_empty.png');
+    padding:0;
+    display: inline-block;
+    appearance:none;
+    -moz-appearance:none;
+    -webkit-appearance:none;
+    width:20px;
+    height:20px;
+    vertical-align:middle;
+    background-repeat:no-repeat;
+    padding-left:30px;
+    width:250px;
+}
+
+input[type="radio"]:checked + label, input[type="checkbox"]:checked + label 
+{
+    background:url('images/checkbox_full.png');
+    padding-left:30px;
+    background-repeat:no-repeat;
+    width:250px;
+}
