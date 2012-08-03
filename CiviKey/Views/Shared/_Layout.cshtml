@@ -29,13 +29,13 @@
             IncludeJS("bootstrap.js");
     }
     
-    @Html.CK().Css.RenderCss()
     @Html.CK().Scripts.RenderJS()
+    @Html.CK().Css.RenderCss()
 </head>
 <body>
     <div id="fb-root"></div>
-    <script>    
-    
+    <script>
+    Civi = window.Civi || {};
     //Facebook like button
     (function (d, s, id) {
         var js, fjs = d.getElementsByTagName(s)[0];

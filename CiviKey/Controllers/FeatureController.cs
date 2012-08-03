@@ -29,11 +29,14 @@ namespace CiviKey.Controllers
         {
             FeatureViewModel vm;
             ViewBag.Section = Sections.Progress;
-            
+            string version;
+
+            version = _entities.tFeatures.Where(x => x.Id == id).FirstOrDefault().tRoadMap.Name;
             tFeature model = _entities.tFeatures.Where( x => x.Id == id ).FirstOrDefault();
             if( model != null )
             {
                 vm = new FeatureViewModel( model, _partnerRepo, _contactRepo, _contactRelationRepo );
+                vm.RoadMapVersion = version;
                 return PartialView( vm );
             }
             return null; //TODO : get the proper pattern to reroute towards a 404 error
