@@ -24,6 +24,13 @@
     
     
 }
+<script>
+    function addGaqPush() {
+        if (typeof _gaq === "object") {
+            _gaq.push(['_trackEvent', 'Download', 'zip', '@lastRoadmapDownloadFilePath']);
+        }
+    }
+</script>
 
 <div class="home-slider">
     <div class="home-slider-download">
@@ -34,7 +41,7 @@
                 Dernière version :  @lastRoadmapDownloadableVersion</p>
         </div>
         <div class="home-slider-download-btn">
-            <a href="@lastRoadmapDownloadFilePath" title="download CiviKey" style="width: 200px; height: 50px; display: block;"></a>
+            <a href="@lastRoadmapDownloadFilePath" title="download CiviKey" style="width: 200px; height: 50px; display: block;" onclick="Civi.addGaqPush('Download', 'zip','@lastRoadmapDownloadFilePath' )"></a>
         </div>
     </div>
 </div>

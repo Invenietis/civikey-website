@@ -764,12 +764,30 @@ ul
     background-color:#e4e4e4;
     text-align:center;
     font-family:  Verdana;
+    -webkit-border-radius: 0px 0px 4px 4px;
+    -moz-border-radius: 0px 0px 4px 4px;
+    border-radius: 0px 0px 4px 4px;
 }
 
 .progress-bar-begin
 {
-    height:17px;
-    background-color:#4b4b4b;
+    background-color: #4B4B4B;
+    -webkit-border-radius: 4px 4px 0px 0px;
+    -moz-border-radius: 4px 4px 0px 0px;
+    border-radius: 4px 4px 0px 0px;
+    height:25px;
+}
+
+.progress-bar-begin p
+{
+    color: #E4E4E4;
+    font-size: 14px;
+    margin:0px;
+    font-size:13px;
+    padding-top:2px;
+    font-family:Verdana;
+    text-align:center;
+    
 }
 
 .roadmap-in-progress-img
@@ -780,8 +798,7 @@ ul
 ul#timeline-buttons li
 {
     list-style: none;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-bottom: 15px;
     font-size: 20px;
     color: #4f4f4f;
     text-align: left;
@@ -790,7 +807,7 @@ ul#timeline-buttons li
 
 ul#timeline-buttons
 {
-    padding-top:5px;
+    padding-top:10px;
     margin:0px;
     line-height: 20px;
 }
@@ -825,10 +842,10 @@ a.timeline-unselected
 
 .progress-list-elem
 {
-    margin:20px 0px 0px 20px;
-    -moz-border-radius: 8px;
-    -webkit-border-radius: 8px;
-    border-radius: 8px;  
+    margin:10px 0px 0px 10px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;  
     float: left;
     min-width:175px;
     background-color: #E4E4E4;
@@ -1618,11 +1635,13 @@ ul#menu li.menuelem.selected a
 {
     font-size: 20px;
 	padding-top: 8px;
+	padding-bottom:12px;
 }
 
 .collapse-image
 {
-    margin:10px;
+    margin-top: 12px;
+    margin-right: 10px;
     width:24px;
     height:24px;
     float:right;
@@ -1721,12 +1740,13 @@ ul#menu li.menuelem.selected a
 .fb-like
 {
     float:right;
-    margin-right:10px;
+    margin-right:5px;
 }
 
 .twitter-share-button
 {
     float:right;
+    margin-top:2px;
 }
 
 input[type="radio"], input[type="checkbox"] 
@@ -1756,4 +1776,24 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label
     padding-left:30px;
     background-repeat:no-repeat;
     width:250px;
+}
+
+.road-map-sponsors-title
+{
+    background-color: #4B4B4B;
+    -webkit-border-radius: 4px 4px 0px 0px;
+    -moz-border-radius: 4px 4px 0px 0px;
+    border-radius: 4px 4px 0px 0px;
+    height:25px;
+    margin-bottom:5px;
+}
+
+.road-map-sponsors-title p
+{
+    color: #E4E4E4;
+    font-size: 14px;
+    margin:0px;
+    font-size:13px;
+    padding-top:2px;
+    padding-left:6px;
 }

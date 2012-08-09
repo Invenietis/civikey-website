@@ -21,6 +21,11 @@
         return roadmapUrl;
     };
 
+    $(function () {
+
+        $("[rel=inprocess]").tooltip({ 'placement': 'right', 'trigger': 'hover' });
+    });
+
 </script>
 @if (Model.SelectedFeature != null)
 {
@@ -31,6 +36,7 @@
                 route: '@Url.Action( "Index", "Feature", new { id = Model.SelectedFeature.Id } )'
             };
             History.pushState(state, "", Civi.getFeatureUrl('@Model.SelectedFeature.Title', '@Model.SelectedFeature.RoadMapVersion'));
+            Civi.addGaqPush('Feature', 'Feature-open', this.getAtribute('data-title'));
         });
     </script>
 }
@@ -40,7 +46,11 @@
     <div class="progress-title">
         Cette page présente les versions disponibles et à venir de CiviKey. La colonne de gauche vous permet de naviguer entre les différentes versions.
     </div>
+
     <div class="progress-timebar">
+        <div class="progress-bar-begin">
+        <p>Versions</p>
+        </div>
         <div class="progress-timebar-container">
             <div class="timeline-container">
                 <ul id="timeline-buttons">
@@ -57,15 +67,14 @@
                        }, new { @class = string.Format("timeline-feature-link roadmap-{0} {1}", item.Id, additionalClass) })
                             @if (!item.HasRelease)
                             {
-                                <img class="roadmap-in-progress-img" src="@Url.Content("~/Content/images/in-progress.png")" title="roadmap en cours de développement" alt="roadmap en cours de développement" />
+                                <img class="roadmap-in-progress-img" src="@Url.Content("~/Content/images/in-progress.png")" title="en cours de développement" alt="roadmap en cours de développement"  rel="inprocess"/>
                             }
                         </li>
                     }
                 </ul>
             </div>
         </div>
-        <div class="progress-bar-begin">
-        </div>
+        
         <div style="clear: both;">
         </div>
     </div>
@@ -82,5 +91,3 @@
     <div style="clear: both;">
     </div>
 </div>
-
-

@@ -4747,7 +4747,7 @@ a.badge:hover {
 
 .accordion-group 
 {
-  margin-bottom: 2px;
+  margin-bottom: 5px;
   border: 1px solid #e5e5e5;
   -webkit-border-radius: 4px;
      -moz-border-radius: 4px;
@@ -4772,7 +4772,7 @@ a.badge:hover {
 .accordion-inner 
 {
     padding-right:20px;
-    padding-bottom:20px;
+    padding-bottom:10px;
   border-top: 1px solid #e5e5e5;
 }
 

@@ -84,6 +84,7 @@
                 route: this.getAttribute("data-requestroute")
             };
             History.pushState(state, this.getAttribute('data-title'), Civi.getFeatureUrl(this.getAttribute('data-title')));
+            Civi.addGaqPush('Feature', 'Feature-open', this.getAttribute('data-title'));
         });
     });
 });
