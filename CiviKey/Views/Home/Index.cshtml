@@ -33,17 +33,20 @@
 </script>
 
 <div class="home-slider">
-    <div class="home-slider-download">
-        <div class="home-slider-download-info">
-            <p>
-                Projet Open source et gratuit</p>
-            <p>
-                Dernière version :  @lastRoadmapDownloadableVersion</p>
-        </div>
-        <div class="home-slider-download-btn">
-            <a href="@lastRoadmapDownloadFilePath" title="download CiviKey" style="width: 200px; height: 50px; display: block;" onclick="Civi.addGaqPush('Download', 'zip','@lastRoadmapDownloadFilePath' )"></a>
-        </div>
+    <div class="home-slider-right">
+    <ul class="slider-menu-block">
+        <li class="selected slider-menu-elem"><a href="" class="selected">Test 1</a></li>
+        <li class="slider-menu-elem"><a href="#">Test 2</a></li>
+        <li class="slider-menu-elem"><a href="">Test 3</a></li>
+        <li class="slider-menu-elem"><a href="">Test 4</a></li>
+    </ul>
     </div>
+</div>
+<div class="home-download-container-top">
+</div>
+<div class="home-download-container-bottom">
+    <a class="btn btn-large btn-primary" href="@lastRoadmapDownloadFilePath"><i class="icon-thumbs-up icon-white" style="margin-right:5px;"></i>Télécharger pour Windows</a>
+    <p>Version @lastRoadmapDownloadableVersion</p>
 </div>
 <div class="home-main-container">
     <div class="home-main-news">
