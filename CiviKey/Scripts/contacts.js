@@ -51,14 +51,14 @@
     $(".contact-mailType").change(function (value) {
         if (value) {
             if ($(this).attr("id") == "tech") {
-                $.get("/Contact/GetMailForm?type=tech", function (data) {
+                $.get(Civi.globalUrl+"/Contact/GetMailForm?type=tech", function (data) {
                     $(".contact-form").html(data);
                     $("#techQuestion").attr("value", true);
                     ContactMap.map.setCenter(ContactMap.invLatlng);
                 })
             }
             else if ($(this).attr("id") == "func") {
-                $.get("/Contact/GetMailForm?type=func", function (data) {
+                $.get(Civi.globalUrl+"/Contact/GetMailForm?type=func", function (data) {
                     $(".contact-form").html(data);
                     $("#techQuestion").attr("value", false);
                     ContactMap.map.setCenter(ContactMap.pfntLatlng);

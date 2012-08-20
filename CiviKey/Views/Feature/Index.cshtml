@@ -1,5 +1,6 @@
 ﻿@model CiviKey.ViewModel.FeatureViewModel
 @Html.CK().Scripts.ByName().IncludeJS( "setSponsor-1.0.0" ).IncludeJS( "feature.js" )
+<div id="fb-root"></div>
 <script type="text/javascript">
     $(function () {
         var param = window.JSON.parse('@Html.Raw( Json.Encode( Model.Sponsors ) )');
@@ -13,19 +14,36 @@
 
         document.CK.setVideoSlider(videoSource);
         document.CK.setSponsorHtml(param, options);
+
+        //facebook
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1";
+            fjs.parentNode.insertBefore(js, fjs);
+        } (document, 'script', 'facebook-jssdk'));
+
+        //twitter
+        !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } } (document, "script", "twitter-wjs");
     });
+
+    
+
 </script>
 <div class="feature-content">
     <div class="feature-title">
         <div class="feature-title-logo">
         </div>
-        <div class="feature-title-text">@Model.Title</div>
+        <div class="feature-title-text" data-title="@Model.Title" data-version="@Model.RoadMapVersion">@Model.Title</div>
         <div style="clear: both;">
         </div>
     </div>
     <div class="feature-info">
         <div class="content-before-video">
-            <h1 class="feature-section-title">Description</h1>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="@Url.RouteUrl("Feature", new { version = Model.RoadMapVersion, name = Model.Title }, Request.Url.Scheme)" data-lang="fr">Tweeter</a>
+            <div class="fb-like" data-href="@Url.RouteUrl("Feature", new { version = Model.RoadMapVersion, name = Model.Title }, Request.Url.Scheme)" data-send="false" data-layout="button_count" data-width="0" data-show-faces="false"></div>
+            <h1 class="feature-section-title" >Description</h1>
             <div class="feature-description-text">@Html.Raw( Model.Description )</div>
             <h1 class="feature-section-title">Categories</h1>
             <div class="feature-description-text category">

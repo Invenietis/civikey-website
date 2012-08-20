@@ -108,5 +108,6 @@ namespace CiviKey.ViewModel
         public ICollection<FeatureViewModel> UnavailableFeatures { get { return _unavailableFeatures; } }
         public Dictionary<CategoryViewModel, ICollection<FeatureViewModel>> CategorizedFeatures { get { return _categorizedFeatures; } }
         public IList<ParticipationViewModel> Sponsors { get { return _sponsors; } }
+        public FeatureViewModel SelectedFeature { get; set; }
     }
 }

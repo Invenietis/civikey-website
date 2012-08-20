@@ -27,5 +27,18 @@
         interval: 2000
     })
     $('.carousel').carousel('pause');
+
+
+    var selectedSlideId;
+    var slideHeight;
+    $('.slider-menu-elem').click(function () {
+        if (!$(this).hasClass('selected')) {
+            $('.slider-menu-elem').removeClass('selected');
+            $(this).addClass('selected');
+            slideHeight = $('.slider-image').height();
+            selectedSlideId = $(this).data('id');
+            $('.home-slider-left-container').css('top', -slideHeight * selectedSlideId);
+        }
+    });
 });
 
