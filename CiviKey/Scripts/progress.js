@@ -87,5 +87,8 @@
             Civi.addGaqPush('Feature', 'Feature-open', this.getAttribute('data-title'));
         });
     });
+
+
+    $("[rel=inprocess]").tooltip({ 'placement': 'right', 'trigger': 'hover' });
 });
 

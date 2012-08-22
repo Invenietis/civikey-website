@@ -94,7 +94,7 @@
 
 @* Version Download part *@
     <div class="release-info-main-container">
-        <div class="release-info-container @if( !Model.HasRelease )
+        @*<div class="release-info-container @if( !Model.HasRelease )
                                            {@("disabled")}">
             <p>
                 Version @Model.Name</p>
@@ -105,11 +105,13 @@
             }
             else
             {
+                
+                <a class="btn btn-primary" href="/Content/downloads/@Model.DownloadFileName"><i class="icon-thumbs-up icon-white" style="margin-right:5px;"></i>Télécharger</a>
                 <div class="feature-download-btn">
                     <a href="/Content/downloads/@Model.DownloadFileName" class="progress-download-link" title="Téléchargement">&nbsp;</a>
                 </div>
             }
-        </div>
+        </div>*@
         <div class="mode-toggle-container release-info-container">
             <p>
                 Changer de vue</p>

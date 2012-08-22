@@ -21,11 +21,6 @@
         return roadmapUrl;
     };
 
-    $(function () {
-
-        $("[rel=inprocess]").tooltip({ 'placement': 'right', 'trigger': 'hover' });
-    });
-
 </script>
 @if (Model.SelectedFeature != null)
 {
@@ -36,7 +31,7 @@
                 route: '@Url.Action( "Index", "Feature", new { id = Model.SelectedFeature.Id } )'
             };
             History.pushState(state, "", Civi.getFeatureUrl('@Model.SelectedFeature.Title', '@Model.SelectedFeature.RoadMapVersion'));
-            Civi.addGaqPush('Feature', 'Feature-open', this.getAtribute('data-title'));
+            Civi.addGaqPush('Feature', 'Feature-open', '@Model.SelectedFeature.Title');
         });
     </script>
 }
