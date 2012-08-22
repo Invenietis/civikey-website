@@ -40,15 +40,15 @@ namespace CiviKey
                 );
 
             routes.MapRoute(
-                "ProgressSpecific",
-                "roadmaps/{version}/{type}",
-                new { controller = "Progress", action = "GetSpecificView", type = "classic" }
+                "Feature",
+                "roadmaps/{version}/feature/{name}",
+                new { controller = "Progress", action = "Index" }
                 );
 
             routes.MapRoute(
-                "Feature",
-                "roadmaps/{version}/feature/{name}",
-                new { controller = "Progress", action = "Index"}
+                "ProgressSpecific",
+                "roadmaps/{type}/{version}",
+                new { controller = "Progress", action = "GetSpecificView", type = "classic" }
                 );
 
             routes.MapRoute(

@@ -106,7 +106,7 @@
     (function () {
         $("#mode-toggle-category").click(function () {
             $("[rel=byHelpType]").tooltip('hide');
-            $.get('@Url.Action("GetFeatureView", "Progress")' + '?version=@Model.Name&type=categorized', function (data) {
+            $.get('@Html.Raw(Url.RouteUrl( new {action = "GetFeatureView", controller = "Progress", version = @Model.Name, type="categorized"}))', function (data) {
                 $("#featureList").html(data);
                 document.CK.AjaxCallbacks.onProgressCategoryChangeSuccess("categorized");
             })

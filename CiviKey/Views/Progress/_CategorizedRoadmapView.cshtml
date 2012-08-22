@@ -5,12 +5,14 @@
         @if( Model.Sponsors.Count > 0 )
         {
             <div class="roadmap-sponsors-div">
-                <div class="road-map-sponsors-title"><p> Entités participant à cette roadmap : </p></div>
-                <div style="padding-top:5px; padding-bottom:10px;width:100%; margin-left: 10px; margin-right:10px;">
+                <div class="road-map-sponsors-title">
+                    <p>Entités participant à cette roadmap : </p>
+                </div>
+                <div style="padding-top: 5px; padding-bottom: 10px; width: 100%; margin-left: 10px; margin-right: 10px;">
                     @foreach( var participation in Model.Sponsors )
                     {
-                            <img src="@Url.Content("~/Content/images/PartnerLogo/small/" + participation.ContactRelation.Contact.LogoPath )" style="height: 32px; " alt="logo-@participation.ContactRelation.Contact.Name" title="@participation.ContactRelation.Contact.Name" />
-                            <span class="sponsor-p">@participation.ContactRelation.Contact.Name</span>
+                        <img src="@Url.Content( "~/Content/images/PartnerLogo/small/" + participation.ContactRelation.Contact.LogoPath )" style="height: 32px; " alt="logo-@participation.ContactRelation.Contact.Name" title="@participation.ContactRelation.Contact.Name" />
+                        <span class="sponsor-p">@participation.ContactRelation.Contact.Name</span>
                     }
                 </div>
                 <div style="clear: both;">
@@ -48,9 +50,9 @@
     <div class="release-info-main-container">
         <div class="mode-toggle-container release-info-container">
             <p>
-                Changer de vue</p>
-            <a href="#" title="Classer par nouveautés" id="mode-toggle-classic" class="mode-toggle-img" rel="byNewType">
-                &nbsp;</a>
+                Changer de vue
+            </p>
+            <a href="#" title="Classer par nouveautés" id="mode-toggle-classic" class="mode-toggle-img" rel="byNewType">&nbsp;</a>
         </div>
     </div>
 }
@@ -58,7 +60,7 @@
     (function () {
         $("#mode-toggle-classic").click(function () {
             $("[rel=byNewType]").tooltip('hide');
-            $.get('@Url.Action("GetFeatureView", "Progress")' + '?version=@Model.Name&type=classic', function (data) {
+            $.get('@Html.Raw( Url.RouteUrl(new {action = "GetFeatureView", controller = "Progress", version = @Model.Name, type = "classic" } ) )', function (data) {
                 $("#featureList").html(data);
                 document.CK.AjaxCallbacks.onProgressCategoryChangeSuccess("classic");
             })
@@ -67,5 +69,5 @@
         $(".collapse").collapse({ toggle: false });
 
         $("[rel=byNewType]").tooltip({ 'placement': 'right', 'trigger': 'hover' });
-    } ())
+    }())
 </script>

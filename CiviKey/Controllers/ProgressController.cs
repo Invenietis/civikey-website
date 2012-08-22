@@ -9,6 +9,13 @@ using CiviKey.Repositories;
 
 namespace CiviKey.Controllers
 {
+    public enum ProgressDisplayTypes
+    {
+        classic,
+        categorized
+    }
+
+
     public class ProgressController : Controller
     {
         //
@@ -27,16 +34,21 @@ namespace CiviKey.Controllers
             _contactRelationRepo = contactRelationRepo;
         }
 
-        public ActionResult Index( string version, string name )
+        private void ConfigureViewBag( int id, string type )
         {
+            ProgressDisplayTypes progressType;
+            if( !Enum.TryParse<ProgressDisplayTypes>( type, out progressType) ) progressType = ProgressDisplayTypes.classic;
             ViewBag.Roadmaps = _roadmapRepo.All.ToList().Reverse<tRoadMap>();
             ViewBag.Section = Sections.Progress;
             ViewBag.Title = "CiviKey - Avancement";
+            ViewBag.RoadmapViewType = progressType.ToString();
+            ViewBag.CurrentRoadmapId = id;
+        }
 
-            ViewBag.RoadmapViewType = "classic";
-
+        public ActionResult Index( string version, string name, string type )
+        {
             tRoadMap r = _roadmapRepo.GetLastReleasedRoadmap();
-            ViewBag.CurrentRoadmapId = r.Id;
+            ConfigureViewBag( r.Id, type );
 
             RoadmapViewModel rvm = new RoadmapViewModel( r, _partnerRepo, _contactRepo, _contactRelationRepo );
 
@@ -58,42 +70,33 @@ namespace CiviKey.Controllers
             return View( "Index", rvm );
         }
 
-        protected override void OnActionExecuting( ActionExecutingContext filterContext )
-        {
-            // fix bug with cache
-            filterContext.HttpContext.Response.Cache.SetCacheability( HttpCacheability.NoCache );
-
-            base.OnActionExecuting( filterContext );
-        }
-
         public ActionResult GetSpecificView( string version, string type )
         {
-            ViewBag.Roadmaps = _roadmapRepo.All.ToList().Reverse<tRoadMap>();
-            ViewBag.Section = Sections.Progress;
-            ViewBag.Title = "CiviKey - Avancement";
+            RoadmapViewModel rvm = new RoadmapViewModel( _roadmapRepo.GetRoadmapFromVersion( version ), _partnerRepo, _contactRepo, _contactRelationRepo );
+            if( rvm == null ) return Index( null, null, null );
 
-            ViewBag.RoadmapViewType = type;
+            ConfigureViewBag( rvm.Id, type );
 
-            tRoadMap r = _roadmapRepo.GetRoadmapFromVersion( version );
-            if( r == null ) return Index( null, null );
-
-            ViewBag.CurrentRoadmapId = r.Id;
-            RoadmapViewModel rvm = new RoadmapViewModel( r, _partnerRepo, _contactRepo, _contactRelationRepo );
             return View( "Index", rvm );
         }
 
         public ActionResult GetFeatureView( string version, string type )
         {
             RoadmapViewModel rvm = new RoadmapViewModel( _roadmapRepo.GetRoadmapFromVersion( version ), _partnerRepo, _contactRepo, _contactRelationRepo );
-            if( rvm == null ) return Index( null, null );
+            if( rvm == null ) return Index( null, null, null );
 
-            ViewBag.CurrentRoadmapId = rvm.Id;
-            ViewBag.Roadmaps = _roadmapRepo.All.ToList().Reverse<tRoadMap>();
-            ViewBag.Section = Sections.Progress;
-            ViewBag.RoadmapViewType = type;
+            ConfigureViewBag( rvm.Id, type );
 
             if( type == "categorized" ) return PartialView( "_CategorizedRoadmapView", rvm );
             return PartialView( "_RoadmapView", rvm );
+        }
+
+        protected override void OnActionExecuting( ActionExecutingContext filterContext )
+        {
+            // fix bug with cache
+            filterContext.HttpContext.Response.Cache.SetCacheability( HttpCacheability.NoCache );
+
+            base.OnActionExecuting( filterContext );
         }
     }
 }
