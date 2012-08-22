@@ -54,7 +54,7 @@
                         string additionalClass = item.Id == Model.Id ? "timeline-selected " : " ";
                         additionalClass += item.HasRelease ? "roadmap-hasrelease " : " "; 
                         <li>
-                            @Ajax.ActionLink(item.Name, "GetFeatureView", new { id = @item.Id, type = ViewBag.RoadmapViewType }, new AjaxOptions
+                            @Ajax.ActionLink(item.Name, "GetFeatureView", new { version = @item.Name, type = ViewBag.RoadmapViewType }, new AjaxOptions
                        {
                            InsertionMode = InsertionMode.Replace,
                            UpdateTargetId = "featureList",

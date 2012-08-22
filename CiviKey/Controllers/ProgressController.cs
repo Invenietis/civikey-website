@@ -27,7 +27,7 @@ namespace CiviKey.Controllers
             _contactRelationRepo = contactRelationRepo;
         }
 
-        public ActionResult Index(string version, string name)
+        public ActionResult Index( string version, string name )
         {
             ViewBag.Roadmaps = _roadmapRepo.All.ToList().Reverse<tRoadMap>();
             ViewBag.Section = Sections.Progress;
@@ -38,24 +38,24 @@ namespace CiviKey.Controllers
             tRoadMap r = _roadmapRepo.GetLastReleasedRoadmap();
             ViewBag.CurrentRoadmapId = r.Id;
 
-            RoadmapViewModel rvm = new RoadmapViewModel(r, _partnerRepo, _contactRepo, _contactRelationRepo);
+            RoadmapViewModel rvm = new RoadmapViewModel( r, _partnerRepo, _contactRepo, _contactRelationRepo );
 
-            if (version != null && name != null)
+            if( version != null && name != null )
             {
-                tRoadMap roadVersion = _roadmapRepo.GetRoadmapFromVersion(version);
-                if (roadVersion != null)
+                tRoadMap roadVersion = _roadmapRepo.GetRoadmapFromVersion( version );
+                if( roadVersion != null )
                 {
-                    tFeature tf = roadVersion.tFeatures.Where(x => x.Title.ToLower().Contains(name.ToLower())).FirstOrDefault();
-                    if (tf != null)
+                    tFeature tf = roadVersion.tFeatures.Where( x => x.Title.ToLower().Contains( name.ToLower() ) ).FirstOrDefault();
+                    if( tf != null )
                     {
-                        FeatureViewModel fvm = new FeatureViewModel(tf, _partnerRepo, _contactRepo, _contactRelationRepo);
+                        FeatureViewModel fvm = new FeatureViewModel( tf, _partnerRepo, _contactRepo, _contactRelationRepo );
                         fvm.RoadMapVersion = version;
                         rvm.SelectedFeature = fvm;
                     }
                 }
             }
 
-            return View("Index", rvm );
+            return View( "Index", rvm );
         }
 
         protected override void OnActionExecuting( ActionExecutingContext filterContext )
@@ -75,21 +75,22 @@ namespace CiviKey.Controllers
             ViewBag.RoadmapViewType = type;
 
             tRoadMap r = _roadmapRepo.GetRoadmapFromVersion( version );
-            if( r == null ) return Index(null,null);
+            if( r == null ) return Index( null, null );
 
             ViewBag.CurrentRoadmapId = r.Id;
             RoadmapViewModel rvm = new RoadmapViewModel( r, _partnerRepo, _contactRepo, _contactRelationRepo );
-            return View("Index", rvm );
+            return View( "Index", rvm );
         }
 
-        public ActionResult GetFeatureView( int id, string type )
+        public ActionResult GetFeatureView( string version, string type )
         {
-            ViewBag.CurrentRoadmapId = id;
+            RoadmapViewModel rvm = new RoadmapViewModel( _roadmapRepo.GetRoadmapFromVersion( version ), _partnerRepo, _contactRepo, _contactRelationRepo );
+            if( rvm == null ) return Index( null, null );
+
+            ViewBag.CurrentRoadmapId = rvm.Id;
             ViewBag.Roadmaps = _roadmapRepo.All.ToList().Reverse<tRoadMap>();
             ViewBag.Section = Sections.Progress;
             ViewBag.RoadmapViewType = type;
-
-            RoadmapViewModel rvm = new RoadmapViewModel( _roadmapRepo.GetRoadmapFromId( id ), _partnerRepo, _contactRepo, _contactRelationRepo );
 
             if( type == "categorized" ) return PartialView( "_CategorizedRoadmapView", rvm );
             return PartialView( "_RoadmapView", rvm );

@@ -46,21 +46,6 @@
     
 @* Version Download part *@
     <div class="release-info-main-container">
-        <div class="release-info-container">
-            <p>
-                Version @Model.Name</p>
-            @if( !Model.HasRelease )
-            {
-                <p class="roadmap-progress-p">
-                    En cours de développement</p>
-            }
-            else
-            {
-                <div class="feature-download-btn">
-                    <a href="/Content/downloads/@Model.DownloadFileName" class="progress-download-link" title="Téléchargement">&nbsp;</a>
-                </div>
-            }
-        </div>
         <div class="mode-toggle-container release-info-container">
             <p>
                 Changer de vue</p>
@@ -73,7 +58,7 @@
     (function () {
         $("#mode-toggle-classic").click(function () {
             $("[rel=byNewType]").tooltip('hide');
-            $.get('@Url.Action("GetFeatureView", "Progress" )' + '/' + '@ViewBag.CurrentRoadmapId?type=classic', function (data) {
+            $.get('@Url.Action("GetFeatureView", "Progress")' + '?version=@Model.Name&type=classic', function (data) {
                 $("#featureList").html(data);
                 document.CK.AjaxCallbacks.onProgressCategoryChangeSuccess("classic");
             })
