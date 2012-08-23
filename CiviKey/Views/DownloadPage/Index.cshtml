@@ -50,7 +50,7 @@ Page de téléchargement
                         </div>
                 }
             }
-            <div class="release-note-description-wrapper">
+            <div class="release-note-description-wrapper @if( i == 0 ){@("release-note-short-wrapper")}">
                 <p>
                     @Html.Raw( rn.HtmlContent )
                 </p>

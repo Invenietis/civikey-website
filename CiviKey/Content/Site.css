@@ -2005,6 +2005,12 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label
 .release-note-content > .release-note-description-wrapper
 {
     float: left; 
+    
+}
+
+.release-note-content > .release-note-short-wrapper
+{
+    width: 700px;    
 }
 
 /*----------------------------------End DownloadPage------------------------------*/
