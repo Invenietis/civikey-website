@@ -13,7 +13,14 @@ namespace CiviKey.Models
         {
             get
             {
-                return _version ?? ( _version = string.Concat( tRoadMap.Name, '.', RevisionNumber ) );
+                if(_version == null)
+                {
+                    if( RevisionNumber != 0 )
+                        _version = string.Concat( tRoadMap.Name, '.', RevisionNumber );
+                    else
+                        _version = tRoadMap.Name;
+                }
+                return _version;
             }
         }
 	}
