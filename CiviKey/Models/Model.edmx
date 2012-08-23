@@ -16,6 +16,7 @@
           <EntitySet Name="tParticipationFeature" EntityType="CiviKeyModel.Store.tParticipationFeature" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tParticipationRoadmap" EntityType="CiviKeyModel.Store.tParticipationRoadmap" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tPlugin" EntityType="CiviKeyModel.Store.tPlugin" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tReleaseNote" EntityType="CiviKeyModel.Store.tReleaseNote" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tRoadMap" EntityType="CiviKeyModel.Store.tRoadMap" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tSection" EntityType="CiviKeyModel.Store.tSection" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="tSectionPlugin" EntityType="CiviKeyModel.Store.tSectionPlugin" store:Type="Tables" Schema="dbo" />
@@ -68,6 +69,10 @@
           <AssociationSet Name="FK_PluginId" Association="CiviKeyModel.Store.FK_PluginId">
             <End Role="tPlugin" EntitySet="tPlugin" />
             <End Role="tSectionPlugin" EntitySet="tSectionPlugin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReleaseNoteRoadmapID" Association="CiviKeyModel.Store.FK_ReleaseNoteRoadmapID">
+            <End Role="tRoadMap" EntitySet="tRoadMap" />
+            <End Role="tReleaseNote" EntitySet="tReleaseNote" />
           </AssociationSet>
           <AssociationSet Name="FK_RoadmapIdPart" Association="CiviKeyModel.Store.FK_RoadmapIdPart">
             <End Role="tRoadMap" EntitySet="tRoadMap" />
@@ -169,6 +174,16 @@
           <Property Name="Version" Type="varchar" Nullable="false" MaxLength="12" />
           <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
           <Property Name="CreationDate" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tReleaseNote">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoadmapId" Type="int" Nullable="false" />
+          <Property Name="RevisionNumber" Type="int" Nullable="false" />
+          <Property Name="HtmlContent" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ReleaseDate" Type="smalldatetime" Nullable="false" />
         </EntityType>
         <EntityType Name="tRoadMap">
           <Key>
@@ -358,6 +373,18 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_ReleaseNoteRoadmapID">
+          <End Role="tRoadMap" Type="CiviKeyModel.Store.tRoadMap" Multiplicity="1" />
+          <End Role="tReleaseNote" Type="CiviKeyModel.Store.tReleaseNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tRoadMap">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tReleaseNote">
+              <PropertyRef Name="RoadmapId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_RoadmapIdPart">
           <End Role="tRoadMap" Type="CiviKeyModel.Store.tRoadMap" Multiplicity="1" />
           <End Role="tParticipationRoadmap" Type="CiviKeyModel.Store.tParticipationRoadmap" Multiplicity="*" />
@@ -444,6 +471,11 @@
             <End Role="tParticipation" EntitySet="tParticipations" />
             <End Role="tRoadMap" EntitySet="tRoadMaps" />
           </AssociationSet>
+          <EntitySet Name="tReleaseNotes" EntityType="CiviKeyModel.tReleaseNote" />
+          <AssociationSet Name="FK_ReleaseNoteRoadmapID" Association="CiviKeyModel.FK_ReleaseNoteRoadmapID">
+            <End Role="tRoadMap" EntitySet="tRoadMaps" />
+            <End Role="tReleaseNote" EntitySet="tReleaseNotes" />
+          </AssociationSet>
           </EntityContainer>
         <EntityType Name="tCategory">
           <Key>
@@ -461,8 +493,8 @@
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="ContactId" Nullable="false" />
           <Property Type="Int32" Name="EntityId" Nullable="false" />
-          <Property Type="DateTime" Name="StartDate" Nullable="false" />
-          <Property Type="DateTime" Name="EndDate" />
+          <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="EndDate" Precision="0" />
           <NavigationProperty Name="tParticipations" Relationship="CiviKeyModel.FK_ContactIdParticipation" FromRole="tContactRelation" ToRole="tParticipation" />
           <NavigationProperty Name="tContact" Relationship="CiviKeyModel.FK_ContactId" FromRole="tContactRelation" ToRole="tContact" />
           <NavigationProperty Name="tOrganization" Relationship="CiviKeyModel.FK_EntityId" FromRole="tContactRelation" ToRole="tContact" />
@@ -474,7 +506,7 @@
           <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="Title" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Content" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="tParticipation">
           <Key>
@@ -484,7 +516,7 @@
           <Property Type="Int32" Name="ContactRelationId" Nullable="false" />
           <Property Type="String" Name="PartType" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="Percentage" Nullable="false" />
-          <Property Type="DateTime" Name="ParticipationDate" Nullable="false" />
+          <Property Type="DateTime" Name="ParticipationDate" Nullable="false" Precision="0" />
           <NavigationProperty Name="tContactRelation" Relationship="CiviKeyModel.FK_ContactIdParticipation" FromRole="tParticipation" ToRole="tContactRelation" />
           <NavigationProperty Name="tFeature" Relationship="CiviKeyModel.tParticipationFeature" FromRole="tParticipation" ToRole="tFeature" />
           <NavigationProperty Name="tRoadMap" Relationship="CiviKeyModel.tParticipationRoadmap" FromRole="tParticipation" ToRole="tRoadMap" />
@@ -497,7 +529,7 @@
           <Property Type="String" Name="Title" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Version" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="0" />
           <NavigationProperty Name="tSections" Relationship="CiviKeyModel.tSectionPlugin" FromRole="tPlugin" ToRole="tSection" />
         </EntityType>
         <EntityType Name="tSection">
@@ -518,7 +550,7 @@
           <Property Type="String" Name="Author" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Title" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Content" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
-          <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="0" />
         </EntityType>
         <EntityType Name="tVideo">
           <Key>
@@ -528,7 +560,7 @@
           <Property Type="String" Name="Name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="VideoSource" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="FeatureId" Nullable="false" />
-          <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="0" />
           <NavigationProperty Name="tFeature" Relationship="CiviKeyModel.FK_FeatureIdVideo" FromRole="tVideo" ToRole="tFeature" />
         </EntityType>
         <Association Name="FK_ContactIdParticipation">
@@ -556,7 +588,7 @@
           <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="Version" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="Progress" Nullable="false" />
-          <Property Type="DateTime" Name="CreationDate" Nullable="false" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="0" />
           <Property Type="Int32" Name="IdRoadMap" Nullable="false" />
           <Property Type="Int32" Name="Type" Nullable="false" />
           <NavigationProperty Name="tSections" Relationship="CiviKeyModel.FK_FeatureId" FromRole="tFeature" ToRole="tSection" />
@@ -606,6 +638,7 @@
           <Property Type="Boolean" Name="HasRelease" Nullable="false" />
           <NavigationProperty Name="tFeatures" Relationship="CiviKeyModel.FK_IdRoadMap" FromRole="tRoadMap" ToRole="tFeature" />
           <NavigationProperty Name="tParticipations" Relationship="CiviKeyModel.tParticipationRoadmap" FromRole="tRoadMap" ToRole="tParticipation" />
+          <NavigationProperty Name="tReleaseNotes" Relationship="CiviKeyModel.FK_ReleaseNoteRoadmapID" FromRole="tRoadMap" ToRole="tReleaseNote" />
         </EntityType>
         <Association Name="FK_IdRoadMap">
           <End Type="CiviKeyModel.tRoadMap" Role="tRoadMap" Multiplicity="1" />
@@ -658,6 +691,29 @@
         <Association Name="tParticipationRoadmap">
           <End Type="CiviKeyModel.tParticipation" Role="tParticipation" Multiplicity="*" />
           <End Type="CiviKeyModel.tRoadMap" Role="tRoadMap" Multiplicity="0..1" />
+        </Association>
+        <EntityType Name="tReleaseNote">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="RoadmapId" Nullable="false" />
+          <Property Type="Int32" Name="RevisionNumber" Nullable="false" />
+          <NavigationProperty Name="tRoadMap" Relationship="CiviKeyModel.FK_ReleaseNoteRoadmapID" FromRole="tReleaseNote" ToRole="tRoadMap" />
+          <Property Type="String" Name="HtmlContent" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ReleaseDate" Nullable="false" Precision="0" />
+        </EntityType>
+        <Association Name="FK_ReleaseNoteRoadmapID">
+          <End Type="CiviKeyModel.tRoadMap" Role="tRoadMap" Multiplicity="1" />
+          <End Type="CiviKeyModel.tReleaseNote" Role="tReleaseNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tRoadMap">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tReleaseNote">
+              <PropertyRef Name="RoadmapId" />
+            </Dependent>
+          </ReferentialConstraint>
         </Association>
         </Schema>
     </edmx:ConceptualModels>
@@ -817,6 +873,17 @@
             </EndProperty>
             <Condition ColumnName="RoadmapId" IsNull="false" />
           </AssociationSetMapping>
+          <EntitySetMapping Name="tReleaseNotes">
+            <EntityTypeMapping TypeName="CiviKeyModel.tReleaseNote">
+              <MappingFragment StoreEntitySet="tReleaseNote">
+                <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
+                <ScalarProperty Name="HtmlContent" ColumnName="HtmlContent" />
+                <ScalarProperty Name="RevisionNumber" ColumnName="RevisionNumber" />
+                <ScalarProperty Name="RoadmapId" ColumnName="RoadmapId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -902,6 +969,8 @@
           <ConnectorPoint PointX="10.7187475" PointY="6.5776350325520863" />
           <ConnectorPoint PointX="10.7187475" PointY="2.8552864583333331" />
         </AssociationConnector>
+        <EntityTypeShape EntityType="CiviKeyModel.tReleaseNote" Width="1.5" PointX="12.25" PointY="5" />
+        <AssociationConnector Association="CiviKeyModel.FK_ReleaseNoteRoadmapID" />
         </Diagram>
     </Diagrams>
   </Designer>

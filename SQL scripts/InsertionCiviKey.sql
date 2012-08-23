@@ -561,6 +561,13 @@ insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (5,21) --Aide en
 
 
 
+--v2
+insert into dbo.tReleaseNote values(2,1,'<ul><li>Possibilité d''afficher ou de cacher la fenêtre de configuration directement depuis le clavier virtuel</li><li>Possibilité de lancer le clavier directement au premier niveau de la fenêtre de configuration</li></ul>', GetDate())
+insert into dbo.tReleaseNote values(2,0,'<ul><li>Passage sur le framework .NET 4.0</li><li>Réparation du mécanisme de mise à jour automatique</li><li>L''intégralité de l''application est maintenant en Français</li></ul>', GetDate())
+
+
+
+
 
 
 

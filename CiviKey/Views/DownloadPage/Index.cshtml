@@ -1,0 +1,64 @@
+﻿@model CiviKey.ViewModel.DownloadPageViewModel
+@section Description{
+Page de téléchargement
+}
+@{
+    string lastRoadmapDownloadableVersion;
+    string lastRoadmapDownloadFilePath;
+
+    if( String.IsNullOrWhiteSpace( Model.LastRoadmap.DownloadFileName ) )
+    {
+        lastRoadmapDownloadableVersion = Model.LastRoadmap.Name;
+        lastRoadmapDownloadFilePath = "#";
+    }
+    else
+    {
+        lastRoadmapDownloadableVersion = CiviKey.Models.Helpers.GetVersionFromFileName( Model.LastRoadmap.DownloadFileName ).ToString();
+        lastRoadmapDownloadFilePath = Url.Content( "~/Content/downloads/" + Model.LastRoadmap.DownloadFileName );
+    }
+
+    CiviKey.ViewModel.ReleaseNoteViewModel rn;
+    ViewBag.Title = "CiviKey - Téléchargement";
+
+    <script>
+        function addGaqPush() {
+            if (typeof _gaq === "object") {
+                _gaq.push(['_trackEvent', 'Download', 'zip', '@lastRoadmapDownloadFilePath']);
+            }
+        }
+    </script>
+    
+    <div class="download-title">
+        Cette page permet de télécharger CiviKey et de voir les modifications qui ont été apportées à l'application durant les dernières mises à jour.
+    </div>
+
+    for( int i = 0; i < Model.ReleaseNotes.Count; i++ )
+    {
+        rn = Model.ReleaseNotes[i];
+    <div class="release-note-container">
+        <div class="release-note-title-container">
+            <h2 class="release-note-title">Version @rn.Version</h2>
+            <p class="release-note-release-info">Mise en ligne le @rn.ReleaseDate.ToShortDateString()</p>
+        </div>
+        <div class="release-note-content">
+            @{
+                if( i == 0 )
+                {
+                        <div class="release-note-download-link-container">
+                            <p>Téléchargement : </p>
+                            <a class="btn btn-large btn-primary" href="@lastRoadmapDownloadFilePath"><i class="icon-thumbs-up icon-white" style="margin-right: 5px;"></i>Télécharger pour Windows</a>
+                        </div>
+                }
+            }
+            <div class="release-note-description-wrapper">
+                <p>
+                    @Html.Raw( rn.HtmlContent )
+                </p>
+            </div>
+            <div style="clear: both"></div>
+        </div>
+    </div>
+    }    
+}
+
+

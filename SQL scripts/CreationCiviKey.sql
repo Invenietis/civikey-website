@@ -162,3 +162,21 @@ create table tParticipationRoadmap
 	constraint FK_ParticipationRoadmapId foreign key (ParticipationId) references tParticipation(Id),
 	constraint FK_RoadmapIdPart foreign key (RoadmapId) references tRoadMap (Id)
 )
+
+--- V2
+create table dbo.tReleaseNote
+(
+	Id int not null primary key identity(1,1),
+	RoadmapId int not null ,
+	RevisionNumber int not null,
+	HtmlContent nvarchar(max) not null,
+	ReleaseDate smalldatetime not null,
+	constraint FK_ReleaseNoteRoadmapID foreign key (RoadmapId) references tRoadMap(Id),
+	constraint UC_ReleaseNote UNIQUE (RoadmapId,RevisionNumber)
+)
+
+
+
+
+
+

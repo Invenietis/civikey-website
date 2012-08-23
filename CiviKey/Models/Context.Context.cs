@@ -37,6 +37,7 @@ namespace CiviKey.Models
         public DbSet<tFeature> tFeatures { get; set; }
         public DbSet<tRoadMap> tRoadMaps { get; set; }
         public DbSet<tContact> tContacts { get; set; }
+        public DbSet<tReleaseNote> tReleaseNotes { get; set; }
     
         public virtual ObjectResult<Nullable<int>> GetContactIdFromSafeName(string safeName)
         {

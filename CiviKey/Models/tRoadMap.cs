@@ -18,6 +18,7 @@ namespace CiviKey.Models
         {
             this.tFeatures = new HashSet<tFeature>();
             this.tParticipations = new HashSet<tParticipation>();
+            this.tReleaseNotes = new HashSet<tReleaseNote>();
         }
     
         public int Id { get; set; }
@@ -26,6 +27,7 @@ namespace CiviKey.Models
     
         public virtual ICollection<tFeature> tFeatures { get; set; }
         public virtual ICollection<tParticipation> tParticipations { get; set; }
+        public virtual ICollection<tReleaseNote> tReleaseNotes { get; set; }
     }
     
 }
