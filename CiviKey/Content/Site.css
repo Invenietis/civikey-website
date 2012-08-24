@@ -14,6 +14,7 @@ body{
     padding-top: 30px;
     padding-bottom: 30px;
     background-color: #fff;
+    width:100%;
 }
 /*----------------------------------------------------------
 The base color for this template is #5c87b2. If you'd like
@@ -378,9 +379,6 @@ ul
     margin-left: 10px;
     position: relative;
     overflow:hidden;
-    -moz-box-shadow: inset 0 0 7px 3px rgba(0,0,0,0.3);
-    -webkit-box-shadow: inset 0 0 7px 3px rgba(0,0,0,0.3);
-    box-shadow: inset 0 0 7px 3px rgba(0,0,0,0.3);
 }
 
 .home-slider-over-shadow
@@ -414,8 +412,6 @@ ul
 
 .home-slider-left-container
 {
-    width:560px;
-    margin: 0px auto;
     height:325px;
     position:relative;
     transition: top 0.5s;
@@ -757,6 +753,7 @@ ul
     margin-top: 2px;
     font-size: 16px;
     line-height: 20px;
+    margin-bottom:10px;
 }
 
 .release-info-container p.roadmap-progress-p
@@ -1908,6 +1905,9 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label
     list-style:none;
     outline: 0;
     cursor:pointer;
+    background-repeat: no-repeat;
+    background-image:url('images/home-slider-icons.png');
+    background-position: 20px 0px;
 }
 
 .slider-menu-elem a
@@ -1945,7 +1945,6 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label
 
 .slider-image
 {
-    width:560px;
     height:325px;
     padding: 0;
     margin: 0;
@@ -1953,5 +1952,123 @@ input[type="radio"]:checked + label, input[type="checkbox"]:checked + label
 
 .slider-image img
 {
-    margin-top:71px;
+}
+
+.home-slider-shadow-top
+{
+    height: 9px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.2)), to(transparent));
+    background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.2), transparent);
+    background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0.2), transparent);
+    background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0.2), transparent);
+    background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0.2), transparent);
+    background-image: linear-gradient(top, rgba(0, 0, 0, 0.2), transparent);
+    z-index:5;
+}
+
+.home-slider-shadow-bottom
+{
+    width: 100%;
+    height: 9px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: 5;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(rgba(0, 0, 0, 0.2)));
+    background-image: -webkit-linear-gradient(top, transparent, rgba(0, 0, 0, 0.2));
+    background-image: -moz-linear-gradient(top, transparent, rgba(0, 0, 0, 0.2));
+    background-image: -o-linear-gradient(top, transparent, rgba(0, 0, 0, 0.2));
+    background-image: -ms-linear-gradient(top, transparent, rgba(0, 0, 0, 0.2));
+    background-image: linear-gradient(top, transparent, rgba(0, 0, 0, 0.2));
+}
+
+.home-slider-shadow-left
+{
+    height:100%;
+    width:9px;
+    position:absolute;
+    left:0;
+    z-index:5;
+    background-image: -webkit-gradient(linear, left center, right cente, from(transparent), to(rgba(0, 0, 0, 0.2)));
+    background-image: -webkit-linear-gradient(right, transparent, rgba(0, 0, 0, 0.2));
+    background-image: -moz-linear-gradient(right, transparent, rgba(0, 0, 0, 0.2));
+    background-image: -o-linear-gradient(right, transparent, rgba(0, 0, 0, 0.2));
+    background-image: -ms-linear-gradient(right, transparent, rgba(0, 0, 0, 0.2));
+    background-image: linear-gradient(right, transparent, rgba(0, 0, 0, 0.2));
+}
+
+.home-slider-shadow-right
+{
+    height:100%;
+    width:9px;
+    position:absolute;
+    right:0;
+    z-index:5;
+    background-image: -webkit-gradient(linear, left center, right cente, from(transparent), to(rgba(0, 0, 0, 0.2)));
+    background-image: -webkit-linear-gradient(left, transparent, rgba(0, 0, 0, 0.2));
+    background-image: -moz-linear-gradient(left, transparent, rgba(0, 0, 0, 0.2));
+    background-image: -o-linear-gradient(left, transparent, rgba(0, 0, 0, 0.2));
+    background-image: -ms-linear-gradient(left, transparent, rgba(0, 0, 0, 0.2));
+    background-image: linear-gradient(left, transparent, rgba(0, 0, 0, 0.2));
+}
+
+#slide-clavier
+{
+    background-position: 20px -40px;
+}
+
+#slide-autoclick
+{
+    background-position: 20px -120px;
+}
+
+.slide-text
+{
+    margin-top:40px;
+    position:absolute;
+}
+
+.slide-text-top
+{
+    width:300px;
+    height:80px;
+    padding-left: 20px;
+    padding-top: 5px;
+}
+
+.slide-text-bottom
+{
+    width:300px;
+    height:80px;
+    padding-left: 20px;
+    display:table-cell; vertical-align:middle;
+}
+
+.slide-text-bottom p
+{
+    margin:0;
+    font-family: Arial;
+    color:#fff;
+    font-size:15px;
+    line-height:18px;
+}
+
+.slide-text-top p
+{
+    font-size:46px;
+    margin:0;
+    font-family:Tahoma;
+}
+
+.slide-text-autoclick
+{
+    color:#336699;
+}
+
+.slide-text-clavier
+{
+    color:#2cb500;
 }
