@@ -26,36 +26,47 @@
                 _gaq.push(['_trackEvent', 'Download', 'zip', '@lastRoadmapDownloadFilePath']);
             }
         }
+
+        $(function(){
+            $('.release-note-description-wrapper li').prepend('<i class="icon-ok" style="margin-right:5px;"></i>');
+        });
     </script>
-    
-    <div class="release-note-download-link-container">
-        <div class="release-note-download-link-inner-container">
-            <a class="btn btn-large btn-primary" id="download-page-btn-download" href="@lastRoadmapDownloadFilePath"><i class="icon-thumbs-up icon-white" style="margin-right: 5px;"></i>Télécharger pour Windows</a>
-            <p>Téléchargement : Version @lastRoadmapDownloadableVersion</p>
-        </div>
+<div class="download-content">
+    <img class="windows-compatibility" src="@Url.Content("~/Content/images/FR-w7-comp_rgb_S.png")">
+    <div class="project-title">
+        Cette page décrit le but du projet CiviKey.
+        <br />
+        Très bientôt, elle décrira également son historique, ses partenaires et son avenir.
+        @*: son architecture, son but, ses acteurs et son historique.*@
     </div>
     <div class="release-note-list">
         <div class="release-note-list-description">
             <p>Liste des améliorations apportées à CiviKey : </p>
         </div>
-        @for( int i = 0; i < Model.ReleaseNotes.Count; i++ )
+        @for (int i = 0; i < Model.ReleaseNotes.Count; i++)
         {
             rn = Model.ReleaseNotes[i];
         <div class="release-note-container">
             <div class="release-note-title-container">
+                @if(@rn.Version == @lastRoadmapDownloadableVersion){
+                    <div class="release-note-download-link-container">
+                        <div class="release-note-download-link-inner-container">
+                            <a class="btn btn-large btn-primary" id="download-page-btn-download" href="@lastRoadmapDownloadFilePath"><i class="icon-thumbs-up icon-white" style="margin-right: 5px;"></i>Télécharger pour Windows</a>
+                        </div>
+                    </div>
+                }
                 <h3 class="release-note-title">Version @rn.Version</h3>
                 <p class="release-note-release-info">Mise en ligne le @rn.ReleaseDate.ToShortDateString()</p>
             </div>
             <div class="release-note-content">
                 <div class="release-note-description-wrapper">
-                    <p>
-                        @Html.Raw( rn.HtmlContent )
-                    </p>
+                        @Html.Raw(rn.HtmlContent)
                 </div>
             </div>
         </div>
         }  
-    </div>  
+    </div> 
+</div> 
 }
 
 
