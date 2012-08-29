@@ -41,8 +41,9 @@
     </div>
     <div class="feature-info">
         <div class="content-before-video">
-            <a href="https://twitter.com/share" class="twitter-share-button" data-url="@Url.RouteUrl("Feature", new { version = Model.RoadMapVersion, name = Model.Title }, Request.Url.Scheme)" data-lang="fr">Tweeter</a>
             <div class="fb-like" data-href="@Url.RouteUrl("Feature", new { version = Model.RoadMapVersion, name = Model.Title }, Request.Url.Scheme)" data-send="false" data-layout="button_count" data-width="0" data-show-faces="false"></div>
+            <a href="https://twitter.com/share" class="twitter-share-button" data-url="@Url.RouteUrl("Feature", new { version = Model.RoadMapVersion, name = Model.Title }, Request.Url.Scheme)" data-lang="fr">Tweeter</a>
+            <div style=" clear:both;"></div>
             <h1 class="feature-section-title" >Description</h1>
             <div class="feature-description-text">@Html.Raw( Model.Description )</div>
             <h1 class="feature-section-title">Categories</h1>
