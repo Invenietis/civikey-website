@@ -419,8 +419,6 @@ ul
 
 .home-slider-left-container
 {
-    width: 560px;
-    margin: 0px auto;
     height: 325px;
     position: relative;
     transition: top 0.5s;
@@ -1985,15 +1983,9 @@ input[type="radio"], input[type="checkbox"]
 
 .slider-image
 {
-    width: 560px;
     height: 325px;
     padding: 0;
     margin: 0;
-}
-
-    .slider-image img
-    {
-        margin-top: 71px;
 }
 
 .home-slider-shadow-top
