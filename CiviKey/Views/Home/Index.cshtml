@@ -29,27 +29,31 @@
     }
 </script>
 <div class="home-slider">
+    <div class="home-slider-shadow-top"></div>
+    <div class="home-slider-shadow-bottom"></div>
+    <div class="home-slider-shadow-left"></div>
+    <div class="home-slider-shadow-right"></div>
     <div class="home-slider-right">
     <ul class="slider-menu-block">
-        <li class="selected slider-menu-elem" data-id="0"><a href="#">Test 1</a></li>
-        <li class="slider-menu-elem" data-id="1"><a href="#">Test 2</a></li>
-        <li class="slider-menu-elem" data-id="2"><a href="#">Test 3</a></li>
-        <li class="slider-menu-elem" data-id="3"><a href="#">Test 4</a></li>
+        <li class="selected slider-menu-elem" data-id="0" id="slide-clavier"><a href="#">Clavier virtuel</a></li>
+        <li class="slider-menu-elem" data-id="1" id="slide-autoclick"><a href="#">Autoclick</a></li>
     </ul>
     </div>
     <div class="home-slider-left">
         <div class="home-slider-left-container">
-            <div class="slider-image" data-slide="0"> 
-                <img src="@Url.Content("~/Content/images/skinErgo.PNG")"/>
+            <div class="slider-image" data-slide="0">
+                <div class="slide-text">
+                    <div class="slide-text-top"><p class="slide-text-clavier">Clavier virtuel</p></div>
+                    <div class="slide-text-bottom clavier"><p>Testez le clavier virtuel hautement configurable de CiviKey.</p></div>
+                </div>
+                <img src="@Url.Content("~/Content/images/home-slide/claviervirtuel.PNG")"/>
             </div>
             <div class="slider-image" data-slide="1">
-                <img src="@Url.Content("~/Content/images/skinErgo.PNG")"/>
-            </div>
-            <div class="slider-image" data-slide="2">
-                <img src="@Url.Content("~/Content/images/skinErgo.PNG")"/>
-            </div>
-            <div class="slider-image" data-slide="3">
-                <img src="@Url.Content("~/Content/images/skinErgo.PNG")"/>
+                <div class="slide-text">
+                    <div class="slide-text-top"><p class="slide-text-autoclick">Autoclick</p></div>
+                    <div class="slide-text-bottom autoclick"><p>Simulez clic gauche, clic droit, double clic et glisser-déposer sans utiliser les boutons de la souris !</p></div>
+                </div>
+                <img src="@Url.Content("~/Content/images/home-slide/autoclick.PNG")"/>
             </div>
         </div>
     </div>

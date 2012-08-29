@@ -28,30 +28,44 @@
 
         moElem.css('width', width);
         moElem.css('left', left);
-        moElem.css('display', 'block');
+        moElem.css('opacity', '1');
+        //moElem.css('display', 'block');
     }
-    else moElem.css('display', 'none');
+    else {
+        moElem.css('opacity', '0');
+        //moElem.css('display', 'none');
+    }
 
     $('.menuelem').mouseover(function () {
         var left = $(this).position().left;
         var width = $(this).width() + 40;
-
         moElem.css('width', width);
         moElem.css('left', left);
-        moElem.css('display', 'block');
+        moElem.css('opacity', '1');
 
+        //moElem.css('display', 'block');
+
+    });
+    $('#menu').mouseover(function () {
+        if ($('.moving-elem').css('opacity') != 0) {
+            moElem.addClass('moving-elem-all');
+        } else {
+            moElem.removeClass('moving-elem-all');
+        }
     });
 
     $('.header-menu-container').mouseleave(function () {
-        if (selectedItem.length == 0) {
-            moElem.css('display', 'none');
+        if (selectedItem.length<0.2) {
+            moElem.css('opacity', '0');
+            //moElem.css('display', 'none');
         } else {
             var left = selectedItem.position().left;
             var width = selectedItem.width() + 40;
 
             moElem.css('width', width);
             moElem.css('left', left);
-            moElem.css('display', 'block');
+            moElem.css('opacity', '1');
+            //moElem.css('display', 'block');
         }
     });
 });
