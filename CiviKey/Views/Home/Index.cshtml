@@ -1,6 +1,6 @@
 ﻿@model CiviKey.ViewModel.HomeViewModel
 @section Description{
-    Page d'accueil
+    Page d'accueil du projet CiviKey.
 }
 @{
     Html.CK().Scripts.ByName().IncludeJS( "home.js" );
@@ -61,7 +61,7 @@
 <div class="home-download-container-top">
 </div>
 <div class="home-download-container-bottom">
-    <a class="btn btn-large btn-primary" href="@lastRoadmapDownloadFilePath"><i class="icon-thumbs-up icon-white" style="margin-right:5px;"></i>Télécharger pour Windows</a>
+    <a class="btn btn-large btn-primary" href="@Url.Action("Index", "DownloadPage")"><i class="icon-thumbs-up icon-white" style="margin-right:5px;"></i>Télécharger pour Windows</a>
     <p>Version @lastRoadmapDownloadableVersion</p>
 </div>
 <div class="home-main-container">
