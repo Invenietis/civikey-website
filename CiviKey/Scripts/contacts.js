@@ -49,19 +49,22 @@
 
 
     $(".contact-mailType").change(function (value) {
+        jQuery.validator.unobtrusive.parseElement($("#form0")[0], false);
         if (value) {
             if ($(this).attr("id") == "tech") {
-                $.get(Civi.globalUrl+"/Contact/GetMailForm?type=tech", function (data) {
+                $.get(Civi.globalUrl + "/Contact/GetMailForm?type=tech", function (data) {
                     $(".contact-form").html(data);
                     $("#techQuestion").attr("value", true);
                     ContactMap.map.setCenter(ContactMap.invLatlng);
+                    jQuery.validator.unobtrusive.parse($('#form0'));
                 })
             }
             else if ($(this).attr("id") == "func") {
-                $.get(Civi.globalUrl+"/Contact/GetMailForm?type=func", function (data) {
+                $.get(Civi.globalUrl + "/Contact/GetMailForm?type=func", function (data) {
                     $(".contact-form").html(data);
                     $("#techQuestion").attr("value", false);
                     ContactMap.map.setCenter(ContactMap.pfntLatlng);
+                    jQuery.validator.unobtrusive.parse($('#form0'));
                 })
             }
         }
@@ -69,17 +72,21 @@
 
 });
 
-function mailSent(e) {
-    $('.validation-summary-errors li').html('');
-    $('#From').val('');
-    $('#Subject').val('');
-    $('#Message').val('');
-    $('.mailsent-dialog').html('<p>Message envoyé avec succès!</p>');
-    $('.mailsent-dialog').fadeIn().delay(800).fadeOut();
+function mailSent(data) {
+    if (data.succes == true) {
+        $('.validation-summary-errors li').html('');
+        $('#From').val('');
+        $('#Subject').val('');
+        $('#Message').val('');
+        $('.mailsent-dialog').html('<p>Message envoyé avec succès!</p>');
+        $('.mailsent-dialog').fadeIn().delay(800).fadeOut();
+    } else {
+        mailFailed();
+    }
 }
 
 
-function mailFailed(e) {
+function mailFailed() {
     $('.mailsent-dialog').html('<p>Vérifiez votre adresse mail</p>');
     $('.mailsent-dialog').fadeIn().delay(1000).fadeOut();
 }
@@ -87,4 +94,3 @@ function mailFailed(e) {
 $('.page').click(function () {
     $('.mailsent-dialog').css('display', 'none');
 });
-

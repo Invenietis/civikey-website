@@ -38,11 +38,11 @@ namespace CiviKey.Controllers
             MailMessage mail = new MailMessage();
             mail.To.Add( contactMail );
 
+            if (String.IsNullOrWhiteSpace(contact.Message) 
+                || String.IsNullOrWhiteSpace(contact.Subject)
+                || String.IsNullOrWhiteSpace(contact.From)) return Json(new { success = false });
             mail.Subject = contact.Subject;
-            if( !String.IsNullOrWhiteSpace( contact.Message ) )
-            {
-                mail.Body = "Message venant de l'adresse : " + contact.From + "<br/><br/>" + contact.Message.Replace( "\r\n", "<br/>" );
-            }
+            mail.Body = "Message venant de l'adresse : " + contact.From + "<br/><br/>" + contact.Message.Replace("\r\n", "<br/>");
             mail.IsBodyHtml = true;
 
             SmtpClient smtp = new SmtpClient();
