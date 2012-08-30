@@ -358,6 +358,7 @@ ul
         display: inline;
         margin: 0;
         height: 25px;
+        font-size:10px;
     }
 
     .footer-menu li
@@ -507,7 +508,7 @@ ul
 
 #home-carousel .carousel-control
 {
-    font-size: 25px;
+    font-size: 21px;
     line-height: 18px;
     width: 20px;
     height: 20px;
@@ -517,7 +518,7 @@ ul
 
 .news-title, #testimony-title
 {
-    font-size: 25px;
+    font-size: 22px;
     font-weight: bold;
     margin: 0px;
     color: #4b4b4b;
@@ -526,7 +527,7 @@ ul
 
 .news-content
 {
-    font-size: 15px;
+    font-size: 12px;
     margin: 0px;
     color: #4b4b4b;
     line-height: 18px;
@@ -542,7 +543,7 @@ ul
 
 .testimony-content
 {
-    font-size: 11px;
+    font-size: 9px;
     margin-top: 3px;
     color: #4b4b4b;
     line-height: 18px;
@@ -555,7 +556,7 @@ ul
 {
     color: #4b4b4b;
     text-align: right;
-    font-size: 12px;
+    font-size: 11px;
     margin: 0px;
 }
 
@@ -1201,7 +1202,7 @@ a.timeline-unselected
 
 .partners-title-name
 {
-    color: Black;
+    color: #4B4B4B;
     float: left;
     margin: 40px 0px 0px 30px;
     font-family: Verdana;
@@ -1436,7 +1437,7 @@ label
 {
     width: 602px;
     height: 60px;
-    margin: 10px 0px 0px 10px;
+    margin: 1px 0px 0px 10px;
     background-image: url('images/feature-title-back.png');
 }
 
@@ -1817,7 +1818,7 @@ ul#menu li.menuelem.selected a
     top: 47%;
 }
 
-.fb-like
+.fb-like.feature-facebook
 {
     float:left;
     margin-right: 5px;
@@ -1825,9 +1826,24 @@ ul#menu li.menuelem.selected a
     margin-bottom:15px;
 }
 
-.twitter-share-button
+.twitter-share-button.feature-twitter
 {
     float:left;
+    margin-top: 2px;
+}
+
+.fb-like
+{
+    float:right;
+    margin-right: 5px;
+    margin-left:15px;
+    margin-bottom:15px;
+    margin-top:2px;
+}
+
+.twitter-share-button
+{
+    float:right;
     margin-top: 2px;
 }
 
@@ -1910,6 +1926,7 @@ input[type="radio"], input[type="checkbox"]
     border-left: 1px solid rgba(0,0,0,0.1);
     border-right: 1px solid rgba(0,0,0,0.1);
     border-top: 1px solid rgba(255,255,255,0.2);
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
     .home-download-container-bottom p, .release-note-download-link-container p
@@ -1921,6 +1938,7 @@ input[type="radio"], input[type="checkbox"]
         color: #4B4B4B;
         margin: 7px 0 0 0;
         padding: 0;
+        font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
     }
 
 .slider-menu-block
@@ -1932,6 +1950,7 @@ input[type="radio"], input[type="checkbox"]
     font-size: 100%;
     vertical-align: baseline;
     background: transparent;
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .slider-menu-elem
@@ -2135,23 +2154,26 @@ input[type="radio"], input[type="checkbox"]
 
 .release-note-list
 {
-    margin-top: 50px;
+    margin-top: 35px;
 }
 
     .release-note-list .release-note-list-description
     {
         background-color: #4B4B4B;
-        color: #EEEEEE;
-        -webkit-border-radius: 4px 4px 4px 4px;
+        -webkit-border-radius: 4px 4px 0px 0px;
         -moz-border-radius: 4px 4px 0px 0px;
         border-radius: 4px 4px 0px 0px;
+        height: 25px;
     }
 
     .release-note-list .release-note-list-description p
     {
-        margin-left: 2px;
+        color: #E4E4E4;
         font-size: 14px;
-        font-weight: bold;
+        margin: 0px;
+        font-size: 13px;
+        padding-top: 2px;
+        padding-left: 6px;
     }
 
 .release-note-container
@@ -2173,35 +2195,81 @@ input[type="radio"], input[type="checkbox"]
 
 .release-note-content
 {
-    margin-left: 40px;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #EEE;
+    -moz-border-radius-bottomleft: 4px;
+    -moz-border-radius-bottomright: 4px;
+    -webkit-border-bottom-left-radius:4px; 
+    -webkit-border-bottom-right-radius:4px; 
+    -o-border-bottom-left-radius: 4px;
+    -o-border-bottom-right-radius:4px; 
 }
 
     .release-note-content li
     {
+        font-size:14px;
         line-height: 22px;
+        list-style:none;
+    }
+    
+    .release-note-content ul
+    {
+        margin:0;
     }
 
 .release-note-title-container
 {
     background-color: #eee;
     padding-left: 10px;
+    padding-top:10px;
+    padding-bottom:10px;
+    color:#4B4B4B;
 }
 
 .release-note-download-link-container
 {
-    margin: 0;
-    padding: 10px;
-    margin-top: 20px;
-    margin-right: 50px;
-    margin-bottom: 20px;
-    text-align: center;
+    float:right;
+    margin-right:10px;
 }
 
 #download-page-btn-download
 {
-    padding: 28px 14px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.windows-compatibility
+{
+    float:right;
+    margin-right:10px;
+    margin-top:-13px;
 }
 
 
 
 /*----------------------------------End DownloadPage------------------------------*/
+
+.feature-dialog .ui-dialog-titlebar 
+{
+    background:#E4E4E4;
+    moz-border-radius-bottomright: 0px/*{cornerRadius}*/;
+    -webkit-border-bottom-right-radius: 0px/*{cornerRadius}*/;
+    -khtml-border-bottom-right-radius: 0px/*{cornerRadius}*/;
+    border-bottom-right-radius: 0px/*{cornerRadius}*/;
+    -moz-border-radius-bottomleft: 0px/*{cornerRadius}*/;
+    -webkit-border-bottom-left-radius: 0px/*{cornerRadius}*/;
+    -khtml-border-bottom-left-radius: 0px/*{cornerRadius}*/;
+    border-bottom-left-radius: 0px/*{cornerRadius}*/;
+    border:0;
+}
+
+.feature-dialog
+{
+    background:#E4E4E4;
+}
+
+.feature-dialog .ui-dialog-title
+{
+    height:23px;
+}
