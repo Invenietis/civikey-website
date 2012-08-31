@@ -179,6 +179,7 @@
     <Compile Include="Repositories\PartnerRepository.cs" />
     <Compile Include="Repositories\FeatureRepository.cs" />
     <Compile Include="ViewModel\CategoryViewModel.cs" />
+    <Compile Include="ViewModel\CompanyParticipationViewModel.cs" />
     <Compile Include="ViewModel\ContactRelationViewModel.cs" />
     <Compile Include="ViewModel\ContactViewModel.cs" />
     <Compile Include="ViewModel\CategorizedRoadmapViewModel.cs" />

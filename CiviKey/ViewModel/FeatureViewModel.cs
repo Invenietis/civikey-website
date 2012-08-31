@@ -47,6 +47,7 @@ namespace CiviKey.ViewModel
         public IList<ParticipationViewModel> Developers { get { return _developers; } }
 
         public IDictionary<ContactViewModel, IList<ParticipationViewModel>> Participations { get; private set; }
+        public IList<CompanyParticipationViewModel> DeveloppingCompanies { get; private set; }
 
         IList<ParticipationViewModel> _sponsors;
         public IList<ParticipationViewModel> Sponsors { get { return _sponsors; } }
@@ -76,6 +77,17 @@ namespace CiviKey.ViewModel
 
                 var existings = FindOrCreateCompany( new ContactViewModel(participation.tContactRelation.tOrganization, _partnerRepo, _contactRepo, _contactRelationRepo) );
                 existings.Add( vm );
+            }
+
+            DeveloppingCompanies = new List<CompanyParticipationViewModel>();
+            foreach( var item in Participations )
+            {
+                int percent = 0;
+                for( int i = 0; i < item.Value.Count; i++ )
+                {
+                    percent += item.Value[i].Percentage;
+                }
+                DeveloppingCompanies.Add( new CompanyParticipationViewModel(item.Key.Name, percent) );
             }
 
             //Getting the company of the person that has participated the most in the project.

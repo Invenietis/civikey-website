@@ -33,18 +33,18 @@ $(function () {
         for (var i = 0; i < param.length; i++) {
             newWidth = (options.width * (param[i].Percentage / totalPercentage * 100)) / 100;
             if (i % 2 == 0) {
-                $('.jsponsor-first-lvl').append('<div style="float:left; width:' + newWidth + 'px; color:' + colors[i] + ';" >' + param[i].Name + '</div>');
-                $('.jsponsor-bar').append('<div style="float:left; width:' + newWidth + 'px; height:' + options.height + 'px; background-color:' + colors[i] + '"></div>');
-                $('.jsponsor-second-lvl').append('<div style="float:left; width:' + newWidth + 'px; color:' + colors[i] + '"><span class="sponsor-percent">' + ((param[i].Percentage / totalPercentage * 100) | 0) + '%</span></div>');
+                $('.jsponsor-first-lvl', $(options.parent)).append('<div style="float:left; width:' + newWidth + 'px; color:' + colors[i] + ';" >' + param[i].Name + '</div>');
+                $('.jsponsor-bar', $(options.parent)).append('<div style="float:left; width:' + newWidth + 'px; height:' + options.height + 'px; background-color:' + colors[i] + '"></div>');
+                $('.jsponsor-second-lvl', $(options.parent)).append('<div style="float:left; width:' + newWidth + 'px; color:' + colors[i] + '"><span class="sponsor-percent">' + ((param[i].Percentage / totalPercentage * 100) | 0) + '%</span></div>');
             } else {
-                $('.jsponsor-first-lvl').append('<div style="float:left; width:' + newWidth + 'px; color:' + colors[i] + '"> <span class="sponsor-percent">' + ((param[i].Percentage / totalPercentage * 100) | 0) + '%</span></div>');
-                $('.jsponsor-bar').append('<div style="float:left; width:' + newWidth + 'px; height:' + options.height + 'px; background-color:' + colors[i] + '"></div>');
-                $('.jsponsor-second-lvl').append('<div style="float:left; width:' + newWidth + 'px; color:' + colors[i] + '">' + param[i].Name + '</div>');
+                $('.jsponsor-first-lvl', $(options.parent)).append('<div style="float:left; width:' + newWidth + 'px; color:' + colors[i] + '"> <span class="sponsor-percent">' + ((param[i].Percentage / totalPercentage * 100) | 0) + '%</span></div>');
+                $('.jsponsor-bar', $(options.parent)).append('<div style="float:left; width:' + newWidth + 'px; height:' + options.height + 'px; background-color:' + colors[i] + '"></div>');
+                $('.jsponsor-second-lvl', $(options.parent)).append('<div style="float:left; width:' + newWidth + 'px; color:' + colors[i] + '">' + param[i].Name + '</div>');
             }
         }
 
-        $('.jsponsor-first-lvl').append('<div style="clear:both;"></div>');
-        $('.jsponsor-bar').append('<div style="clear:both;"></div>');
-        $('.jsponsor-second-lvl').append('<div style="clear:both;"></div>');
+        $('.jsponsor-first-lvl', $(options.parent)).append('<div style="clear:both;"></div>');
+        $('.jsponsor-bar', $(options.parent)).append('<div style="clear:both;"></div>');
+        $('.jsponsor-second-lvl', $(options.parent)).append('<div style="clear:both;"></div>');
     }
 });

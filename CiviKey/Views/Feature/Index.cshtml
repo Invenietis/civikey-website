@@ -3,20 +3,34 @@
     Page décrivant une fonctionnalité de CiviKey.
 }
 @Html.CK().Scripts.ByName().IncludeJS( "setSponsor-1.0.0" ).IncludeJS( "feature.js" )
+
 <div id="fb-root"></div>
 <script type="text/javascript">
     $(function () {
-        var param = window.JSON.parse('@Html.Raw( Json.Encode( Model.Sponsors ) )');
+        var participations = {};
+        
+
+        var sponsors = window.JSON.parse('@Html.Raw( Json.Encode( Model.Sponsors ) )');
+        var participations = window.JSON.parse('@Html.Raw( Json.Encode( Model.DeveloppingCompanies ) )');
+        
+
         var videoSource = window.JSON.parse('@Html.Raw( Json.Encode( Model.Videos ) )');
 
-        var options = {
+        var sponsorsOptions = {
             width: 520,
             height: 4,
-            parent: ".js-sponsor"
+            parent: ".feature-sponsors"
+        }
+
+        var participationsOptions = {
+            width: 520,
+            height: 4,
+            parent: ".feature-participations"
         }
 
         document.CK.setVideoSlider(videoSource);
-        document.CK.setSponsorHtml(param, options);
+        document.CK.setSponsorHtml(sponsors, sponsorsOptions);
+        document.CK.setSponsorHtml(participations, participationsOptions);
 
         //facebook
         (function (d, s, id) {
@@ -44,8 +58,8 @@
     </div>
     <div class="feature-info">
         <div class="content-before-video">
-            <div class="fb-like feature-facebook" data-href="@Url.RouteUrl("Feature", new { version = Model.RoadMapVersion, name = Model.Title }, Request.Url.Scheme)" data-send="false" data-layout="button_count" data-width="0" data-show-faces="false"></div>
-            <a href="https://twitter.com/share" class="twitter-share-button feature-twitter" data-url="@Url.RouteUrl("Feature", new { version = Model.RoadMapVersion, name = Model.Title }, Request.Url.Scheme)" data-lang="fr">Tweeter</a>
+            <div class="fb-like feature-facebook" data-href="@Url.RouteUrl( "Feature", new { version = Model.RoadMapVersion, name = Model.Title }, Request.Url.Scheme )" data-send="false" data-layout="button_count" data-width="0" data-show-faces="false"></div>
+            <a href="https://twitter.com/share" class="twitter-share-button feature-twitter" data-url="@Url.RouteUrl( "Feature", new { version = Model.RoadMapVersion, name = Model.Title }, Request.Url.Scheme )" data-lang="fr">Tweeter</a>
             <div style=" clear:both;"></div>
             <h1 class="feature-section-title" >Description</h1>
             <div class="feature-description-text">@Html.Raw( Model.Description )</div>
@@ -54,7 +68,7 @@
                 @string.Join( ", ", Model.Categories.Select( c => c.Name ) )
             </div>
         </div>
-        @if(Model.Videos.Count > 0)
+        @if( Model.Videos.Count > 0 )
         {
         <h1 class="feature-section-title">Demo</h1>
         <div class="feature-description-text demovideo">
@@ -76,49 +90,19 @@
         </div>
         }
          @{
-            if( Model.Sponsors.Count > 0)
-            {
+             if( Model.Sponsors.Count > 0 )
+             {
                 <h1 class="feature-section-title">Sponsorisé par</h1>
-                <div class="feature-description-text js-sponsor">
+                <div class="feature-description-text feature-sponsors">
                 </div>
-            }
-             
-            if( Model.Participations.Count > 0)
-            {
+             }
+
+             if( Model.Participations.Count > 0 )
+             {
                 <h1 class="feature-section-title">Developpé par</h1>
-                <div class="feature-description-text development">
-                    @foreach( var participation in Model.Participations )
-                    {
-                        <div class="development-company">
-                          @*  @if(!participation.Key.IsOrganization) {@participation.Key.Name @(" :") }
-                            @for( int i = 0; i < participation.Value.Count; i++ )
-                            {
-                                @participation.Value[i].Name 
-                                @String.Format( " ({0}%)", participation.Value[i].Percentage.ToString() )
-                                if( i != participation.Value.Count - 1 )
-                                {
-                                    <text>
-                                    -
-                                    </text>
-                                }
-                            }*@
-
-                            @participation.Key.Name @(" :")
-                            @{
-                                int percent = 0;
-                            
-                                for( int i = 0; i < participation.Value.Count; i++ )
-                                {
-
-                                    percent += participation.Value[i].Percentage;
-                                
-                                }
-                                @String.Format( " {0}%", percent )
-                            }
-                        </div>
-                    }
+                <div class="feature-description-text feature-participations">
                 </div>
-            }
+             }
         }
     </div>
 </div>
