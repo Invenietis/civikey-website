@@ -13,6 +13,7 @@ drop table tContact;
 drop table tCategoryFeature;
 drop table tCategory;
 drop table tFeature;
+drop table tReleaseNote;
 drop table tRoadMap;
 --Stored procedures
 if exists (select * from dbo.sysobjects where id = object_id(N'dbo.GetContactIdFromSafeName') and OBJECTPROPERTY(id, N'IsProcedure') = 1)

@@ -47,7 +47,7 @@ insert into dbo.tContactRelation(ContactId,EntityId,StartDate,EndDate)values(15,
 																									--TODO : handle dates
 --- Creating RoadMap
 insert into dbo.tRoadMap(Name, HasRelease)values('2.5.1', 1);
-insert into dbo.tRoadMap(Name, HasRelease)values('2.5.2', 0);
+insert into dbo.tRoadMap(Name, HasRelease)values('2.5.2', 1);
 insert into dbo.tRoadMap(Name, HasRelease)values('2.5.X', 0); --futur
 
 --Creating features
@@ -78,7 +78,7 @@ insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Descripti
 --13
 insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type, LogoPath) values('Object Explorer','1.0.0',100,DATEADD(year,-1,GetDate()),3,'<p>Outil de configuration de CiviKey, reservé aux utilisateurs confirmés, il permet de décider du lancement automatique d''une fonctionnalité, et de visualiser l''état du système.</p>', 1,'')
 --14
-insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type, LogoPath) values('Automatic update','1.0.0',100,DATEADD(year,-1,GetDate()),3,'<p>Mise à jour automatique de CiviKey.</p>', 1)
+insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type, LogoPath) values('Automatic update','1.0.0',100,DATEADD(year,-1,GetDate()),3,'<p>Mise à jour automatique de CiviKey.</p>', 1, '')
 --15
 insert into dbo.tFeature(Title,Version,Progress,CreationDate,IdRoadMap,Description, Type, LogoPath) values('Noyau','1.0.0',100,DATEADD(year,-1,GetDate()),3,'<p>Le noyau de CiviKey. C''est lui qui assure la modularité de CiviKey en gérant le lancement et l''arret des différentes fonctionnalités. <br/> Cette nouvelle version utilise le framework .NET 4.0</p>', 1,'')
 --16
