@@ -89,6 +89,7 @@ create table tFeature
 	CreationDate smalldatetime not null,
 	IdRoadMap int not null,
 	Type int not null,
+	LogoPath varchar(256) not null,
 	constraint FK_IdRoadMap foreign key (IdRoadMap)
 	references tRoadMap(Id)
 );

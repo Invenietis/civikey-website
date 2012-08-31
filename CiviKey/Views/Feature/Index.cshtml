@@ -51,6 +51,9 @@
 <div class="feature-content">
     <div class="feature-title">
         <div class="feature-title-logo">
+            @if(!String.IsNullOrWhiteSpace(Model.LogoPath)){
+                <img src="@Url.Content(String.Format("~/Content/images/FeatureIcon/{0}", Model.LogoPath))" />
+            }
         </div>
         <div class="feature-title-text" data-title="@Model.Title" data-version="@Model.RoadMapVersion">@Model.Title</div>
         <div style="clear: both;">

@@ -30,6 +30,7 @@ namespace CiviKey.Models
         public System.DateTime CreationDate { get; set; }
         public int IdRoadMap { get; set; }
         public int Type { get; set; }
+        public string LogoPath { get; set; }
     
         public virtual ICollection<tSection> tSections { get; set; }
         public virtual ICollection<tVideo> tVideos { get; set; }
