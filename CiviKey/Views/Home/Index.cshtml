@@ -4,30 +4,25 @@
 }
 @{
     Html.CK().Scripts.ByName().IncludeJS( "home.js" );
+    Html.CK().Css.ByName().IncludeCss("Home");
 
     string lastRoadmapDownloadableVersion;
     string lastRoadmapDownloadFilePath;
-    
-    if( String.IsNullOrWhiteSpace( Model.LastRoadmap.DownloadFileName ) )
+
+    if (String.IsNullOrWhiteSpace(Model.LastRoadmap.DownloadFileName))
     {
         lastRoadmapDownloadableVersion = Model.LastRoadmap.Name;
         lastRoadmapDownloadFilePath = "#";
     }
     else
     {
-        lastRoadmapDownloadableVersion = CiviKey.Models.Helpers.GetVersionFromFileName( Model.LastRoadmap.DownloadFileName ).ToString();
-        lastRoadmapDownloadFilePath = Url.Content( "~/Content/downloads/" + Model.LastRoadmap.DownloadFileName );
+        lastRoadmapDownloadableVersion = CiviKey.Models.Helpers.GetVersionFromFileName(Model.LastRoadmap.DownloadFileName).ToString();
+        lastRoadmapDownloadFilePath = Url.Content("~/Content/downloads/" + Model.LastRoadmap.DownloadFileName);
     }
     
     
 }
-<script>
-    function addGaqPush() {
-        if (typeof _gaq === "object") {
-            _gaq.push(['_trackEvent', 'Download', 'zip', '@lastRoadmapDownloadFilePath']);
-        }
-    }
-</script>
+
 <div class="home-slider">
     <div class="home-slider-shadow-top"></div>
     <div class="home-slider-shadow-bottom"></div>
@@ -82,10 +77,10 @@
             <!-- Carousel items -->
             <div class="carousel-inner">
                 @{
-                    for( int i = 0; i < @Model.News.Count; i++ )
+                    for (int i = 0; i < @Model.News.Count; i++)
                     {
-                    <div class="item @if( i == 0 )
-                                     {@("active")}">@Html.Partial( "_NewsView", Model.News.ElementAt( i ) )</div>
+                    <div class="item @if (i == 0)
+                                     {@("active")}">@Html.Partial("_NewsView", Model.News.ElementAt(i))</div>
                     }
                 }
             </div>

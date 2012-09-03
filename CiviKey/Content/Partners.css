@@ -1,0 +1,173 @@
+﻿.partners-elem
+{
+    margin:0 auto 0 auto;
+    float: left;
+}
+
+.partner-list-container
+{
+    margin:0 auto 0 auto;
+}
+
+.partners-content
+{
+    width: 1024px;
+    position: relative;
+}
+
+.partners-begin-back
+{
+    width: 978px;
+    /*height:8px;*/
+    height: 10px;
+    /*background-color: #4C4C4C;*/
+    /*background-image:url('images/partners-begin-back.png');*/
+}
+
+.partners-end-back
+{
+    width: 709px;
+    height: 8px;
+    /*background-image:url('images/partners-end-back.png');*/
+}
+
+.partners-elem-title
+{
+    float: left;
+    width: 469px;
+    height: 114px;
+    background-image: url('images/partner-back-simple.png');
+    position: relative;
+}
+
+.partners-elem-link
+{
+    float: left;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+    .partners-elem-link.logo
+    {
+        position: absolute;
+        right: 0;
+        width: auto;
+        margin-right: 40px;
+    }
+
+.partners-elem-content
+{
+    /*padding-left: 10px;*/
+    padding:0 10px 10px 0;
+    /*background-color:#4c4c4c;*/
+    float: left;
+    /*background-image:  url('images/partner-content-back.png');*/
+    /*background-repeat:repeat-y;*/
+    /*background-position: top right;*/
+    /*min-height:129px;*/
+}
+
+.partners-elem-text
+{
+    display: none;
+    float: left;
+    width: 440px;
+    font-family: Verdana;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 22px 20px 20px;
+    text-align: justify;
+    line-height: 15px;
+}
+
+.partners-sep.vis
+{
+    display: none;
+    /*background-image: url('images/partner-sep.png');*/
+    /*background-repeat: no-repeat;*/
+    background-position: right;
+    height: 1px;
+    clear: both;
+    margin: 5px 0px 5px 0px;
+}
+
+.partners-sep.invis
+{
+    clear: both;
+}
+
+.partners-title-logo
+{
+    /*display: none;*/
+    float: right;
+    margin-right: 40px;
+}
+
+    .partners-title-logo img
+    {
+    }
+
+.partners-title-name
+{
+    color: #4B4B4B;
+    float: left;
+    margin: 40px 0px 0px 30px;
+    font-family: Verdana;
+    font-size: 30px;
+}
+
+.partners-elem-text p
+{
+    margin: 0px;
+}
+
+.partner-page-left
+{
+    font-family: Verdana;
+    color: #4B4B4B;
+    width: 20%;
+    float: left;
+    padding-right: 30px;
+    font-size: 15px;
+}
+
+.partner-page-right
+{
+    font-size: 15px;
+    font-family: Verdana;
+    padding-left: 30px;
+    color: #4B4B4B;
+    width: 70%;
+    float: left;
+    text-align: justify;
+    border-left: 1px solid #E4E4E4;
+}
+
+.partner-page-image
+{
+    width: 100%;
+}
+
+.partner-page-info p
+{
+    margin: 0px;
+}
+
+.partner-page-info
+{
+    padding-bottom: 20px;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+#pratners-logo .carousel-control.left
+{
+    left: -2px;
+    top: 47%;
+}
+
+#pratners-logo .carousel-control.right
+{
+    right: -2px;
+    top: 47%;
+}
