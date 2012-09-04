@@ -10,35 +10,12 @@
     <link rel="SHORTCUT ICON" href="@Url.Action("Index", "Home", null, Request.Url.Scheme)@Url.Content("Content/images/favicon.ico")"/>
     <meta name="description" content="@description" />
     <meta name="keywords" content="todo : find some keywords to add" />
-
     <meta property="og:description" content="@description" />
     <meta property="og:title" content="@ViewBag.Title" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="@Url.Action("Index", "Home", null, Request.Url.Scheme)" />
     <meta property="og:image" content="@Url.Action("Index", "Home", null, Request.Url.Scheme)@Url.Content("Content/images/logo.png")" />
     <meta property="og:site_name" content="CiviKey"/>
-    <script type="text/javascript">
-        Civi = window.Civi || {
-            globalUrl: '@Url.Action("Index", "Home", null, Request.Url.Scheme)',
-            addGaqPush: function (category, action, label) {
-                if (typeof _gaq === "object") {
-                    _gaq.push(['_trackEvent', category, action, label]);
-                }
-            }
-        };
-
-        if (typeof _gaq === 'object') {
-            //Analytics for search engines
-            _gaq.push(['_addOrganic', 'fr.search.yahoo.com', 'p']); //Yahoo
-            _gaq.push(['_addOrganic', 'recherche.aol.fr/', 'q']); //AOL
-
-            //Analytics for blog search
-            _gaq.push(['_addOrganic', 'blogsearch.google.fr', 'q']);
-
-            _gaq, push(['_trackPageview']);
-        }
-    </script>
-
     @{
         Html.CK().Css.ByName()
             .IncludeCss("Site")
@@ -50,25 +27,61 @@
             IncludeJS("bootstrap-collapse.js").
             IncludeJS("bootstrap.js");
     }
-    
+
     @Html.CK().Scripts.RenderJS()
     @Html.CK().Css.RenderCss()
+
+     <script type="text/javascript">
+         Civi = window.Civi || {
+             globalUrl: '@Url.Action("Index", "Home", null, Request.Url.Scheme)',
+             addGaqPush: function (category, action, label) {
+                 if (typeof _gaq === "object") {
+                     _gaq.push(['_trackEvent', category, action, label]);
+                 }
+             }
+         };
+
+         if (typeof _gaq === 'object') {
+             //Analytics for search engines
+             _gaq.push(['_addOrganic', 'fr.search.yahoo.com', 'p']); //Yahoo
+             _gaq.push(['_addOrganic', 'recherche.aol.fr/', 'q']); //AOL
+
+             //Analytics for blog search
+             _gaq.push(['_addOrganic', 'blogsearch.google.fr', 'q']);
+
+             _gaq, push(['_trackPageview']);
+         }
+
+         $(function () {
+             //Facebook like button
+             (function (d, s, id) {
+                 var js, fjs = d.getElementsByTagName(s)[0];
+                 if (d.getElementById(id)) return;
+                 js = d.createElement(s); js.id = id;
+                 js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1";
+                 fjs.parentNode.insertBefore(js, fjs);
+             } (document, 'script', 'facebook-jssdk'));
+
+             //Twitter share button
+             !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } } (document, "script", "twitter-wjs");
+         });
+    </script>
 </head>
 <body>
     @helper IsSelected(Sections section)
         {
-        @(section == (ViewBag.Section ?? Sections.Default) ? "selected" : string.Empty)
-    }
-
+            @(section == (ViewBag.Section ?? Sections.Default) ? "selected" : string.Empty)
+        }
     <div class="page">
         <div id="header">
-       @*     <div class="beta-disclaimer"></div>*@
             <div class="header-container">
-                <a href="@Url.Action("Index", "Home")"><img class="header-logo" alt="Logo Civikey" src="@Url.Content("~/Content/images/logo.png")" /></a>
+                <a href="@Url.Action("Index", "Home")">
+                    <img class="header-logo" alt="Logo Civikey" src="@Url.Content("~/Content/images/logo.png")" />
+                </a>
                 <div class="header-menu-container">
-                <div class="moving-element-container">
-                    <div class="moving-elem @ViewBag.Section"></div>
-                </div>
+                    <div class="moving-element-container">
+                        <div class="moving-elem @ViewBag.Section"></div>
+                    </div>
                     <ul id="menu">
                         <li class="@IsSelected(Sections.Project) menuelem"><a href="@Url.Action("Index", "Project")">Le projet</a></li>
                         <li class="@IsSelected(Sections.Progress) menuelem"><a href="@Url.Action("Index", "Progress")">Roadmaps</a></li>
@@ -106,20 +119,5 @@
         </div>
     </div>
     <div id="fb-root"></div>
-    <script>
-        $(function () {
-            //Facebook like button
-            (function (d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s); js.id = id;
-                js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1";
-                fjs.parentNode.insertBefore(js, fjs);
-            } (document, 'script', 'facebook-jssdk'));
-
-            //Twitter share button
-            !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } } (document, "script", "twitter-wjs");
-        });
-    </script>
 </body>
 </html>

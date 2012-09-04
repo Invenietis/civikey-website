@@ -36,8 +36,7 @@
         });
     </script>
 }
-<div id="dialog-container">
-</div>
+<div id="dialog-container"></div>
 <div class="progress-content">
     <div class="progress-title">
         Cette page présente les versions disponibles et à venir de CiviKey. La colonne de gauche vous permet de naviguer entre les différentes versions.
@@ -45,7 +44,7 @@
 
     <div class="progress-timebar">
         <div class="progress-bar-begin">
-        <p>Versions</p>
+            <p>Versions</p>
         </div>
         <div class="progress-timebar-container">
             <div class="timeline-container">
@@ -56,11 +55,11 @@
                         additionalClass += item.HasRelease ? "roadmap-hasrelease " : " "; 
                         <li>
                             @Ajax.ActionLink(item.Name, "GetFeatureView", new { version = @item.Name, type = ViewBag.RoadmapViewType }, new AjaxOptions
-                       {
-                           InsertionMode = InsertionMode.Replace,
-                           UpdateTargetId = "featureList",
-                           OnSuccess = "document.CK.AjaxCallbacks.onProgressGetFeatureViewSuccess"
-                       }, new { @class = string.Format("timeline-feature-link roadmap-{0} {1}", item.Id, additionalClass) })
+                            {
+                                InsertionMode = InsertionMode.Replace,
+                                UpdateTargetId = "featureList",
+                                OnSuccess = "document.CK.AjaxCallbacks.onProgressGetFeatureViewSuccess"
+                            }, new { @class = string.Format("timeline-feature-link roadmap-{0} {1}", item.Id, additionalClass) })
                             @if (!item.HasRelease)
                             {
                                 <img class="roadmap-in-progress-img" src="@Url.Content("~/Content/images/in-progress.png")" title="en cours de développement" alt="roadmap en cours de développement"  rel="inprocess"/>
@@ -70,9 +69,7 @@
                 </ul>
             </div>
         </div>
-        
-        <div style="clear: both;">
-        </div>
+        <div style="clear: both;"></div>
     </div>
     <div id="featureList">
     @if (ViewBag.RoadmapViewType == "classic")

@@ -1,30 +1,206 @@
-﻿.accordion-body
+﻿#dialog-container
+{
+    padding: 0px 5px 0px 0px;
+    height: auto;
+}
+
+.progress-content
+{
+    width: 1024px;
+    position: relative;
+}
+
+.progress-timebar
+{
+    float: left;
+    margin-right: 30px;
+    width: 11%;
+}
+
+.progress-bar-begin
+{
+    background-color: #4B4B4B;
+    -webkit-border-radius: 4px 4px 0px 0px;
+    -moz-border-radius: 4px 4px 0px 0px;
+    border-radius: 4px 4px 0px 0px;
+    height: 25px;
+}
+
+    .progress-bar-begin p
+    {
+        color: #E4E4E4;
+        font-size: 14px;
+        margin: 0px;
+        font-size: 13px;
+        padding-top: 2px;
+        font-family: Verdana;
+        text-align: center;
+    }
+    
+.progress-bar-end
+{
+    float: left;
+    width: 18px;
+    height: 50px;
+    background-image: url('images/progresstimelinearrow.png');
+}
+
+.progress-timebar-container
+{
+    background-color: #e4e4e4;
+    text-align: center;
+    font-family: Verdana;
+    -webkit-border-radius: 0px 0px 4px 4px;
+    -moz-border-radius: 0px 0px 4px 4px;
+    border-radius: 0px 0px 4px 4px;
+}
+
+.timeline-container
+{
+    padding: 0px 5px 0px 0px;
+    height: auto;
+    overflow: hidden;
+}
+
+ul#timeline-buttons li
+{
+    list-style: none;
+    font-size: 20px;
+    color: #4f4f4f;
+    text-align: left;
+    padding:0 0 15px 25px;
+}
+
+ul#timeline-buttons
+{
+    padding-top: 10px;
+    margin: 0px;
+    line-height: 20px;
+}
+
+    ul#timeline-buttons a:hover
+    {
+        color: #4b8fd1;
+    }
+
+ul#timeline-buttons li a
+{
+    color: #4f4f4f;
+}
+
+    ul#timeline-buttons li a.timeline-selected
+    {
+        color: #509ae3;
+    }
+
+a.timeline-unselected
+{
+    color: #4d4d4d;
+}
+
+.roadmap-in-progress-img
+{
+    width: 15px;
+    margin-bottom: 5px;
+}
+
+#featureList
+{
+    width: 86%;
+    float: left;
+}
+
+.progress-list-of-features
+{
+    width: 690px;
+    float: left;
+}
+
+    .progress-list-of-features a
+    {
+        margin:20px 0 0 0;
+        padding: 0px;
+    }
+    
+.roadmap-sponsors-div
+{
+    font-family: Verdana;
+    font-weight: normal;
+    background-color: #E4E4E4;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+}
+
+    .roadmap-sponsors-div span
+    {
+        margin:8px 10px 0 0;
+        padding: 0px;
+        font-size: 13px;
+    }
+
+.road-map-sponsors-title
+{
+    background-color: #4B4B4B;
+    -webkit-border-radius: 4px 4px 0px 0px;
+    -moz-border-radius: 4px 4px 0px 0px;
+    border-radius: 4px 4px 0px 0px;
+    height: 25px;
+    margin-bottom: 5px;
+}
+
+    .road-map-sponsors-title p
+    {
+        color: #E4E4E4;
+        font-size: 14px;
+        margin: 0px;
+        font-size: 13px;
+        padding:2px 0 0 6px;
+    }
+
+.accordion-heading img
+{
+    float: left;
+    margin: 9px 9px 0px 9px;
+}
+ 
+    .accordion-heading h2.accordion-toggle
+    {
+        font-size: 20px;
+        padding:8px 0 12px 0;
+    }
+    
+.accordion-body
 {
     width: 100%;
 }
+
 
 .category-img, .collapse-image
 {
     cursor: pointer;
 }
 
-.mode-toggle-img
+
+.collapse-image
 {
-    background-repeat: no-repeat;
+    margin:12px 10px 0 0;
     width: 24px;
     height: 24px;
-    display: block;
-    margin:5px 0 0 67px;
+    float: right;
 }
 
-#mode-toggle-classic
+.colapsed
 {
-    background-image: url(images/CategoryIcon/tag_24x24.png);
+    background-image: url('images/expander-arrow.png');
+    background-repeat: no-repeat;
 }
 
-#mode-toggle-category
+.expended
 {
-    background: url(images/CategoryIcon/file_24x24.png);
+    background-image: url('images/expander-arrow-turned.png');
+    background-repeat: no-repeat;
 }
 
 .release-info-main-container
@@ -61,125 +237,46 @@
             font-size: 9px;
         }
 
-.progress-content
+.mode-toggle-img
 {
-    width: 1024px;
-    position: relative;
+    background-repeat: no-repeat;
+    width: 24px;
+    height: 24px;
+    display: block;
+    margin:5px 0 0 67px;
 }
 
-#featureList
+#mode-toggle-classic
 {
-    width: 86%;
-    float: left;
+    background-image: url(images/CategoryIcon/tag_24x24.png);
 }
 
-.progress-list-of-features
+#mode-toggle-category
 {
-    width: 690px;
-    float: left;
+    background: url(images/CategoryIcon/file_24x24.png);
 }
 
-.categorized-progress-list
+.progress-list-of-features > .roadmap-sponsors-div > p
 {
-    width: 100%;
+    font-size: 11px;
+    padding: 0;
+    margin:0 0 0 5px;
 }
 
-.progress-list-of-features a
-{
-    margin:20px 0 0 0;
-    padding: 0px;
-}
-
-.feature-seperator
-{
-    margin-bottom: 10px;
-}
-
-.progress-timebar
+.roadmap-sponsors-div .roadmap-sponsor
 {
     float: left;
-    margin-right: 30px;
-    width: 11%;
+    margin:5px 15px 5px 0;
 }
 
-.progress-timebar-container
+.progress-list-of-features h2
 {
     background-color: #e4e4e4;
-    text-align: center;
+    color: #4b4b4b;
+    padding: 5px 0px 0px 5px;
     font-family: Verdana;
-    -webkit-border-radius: 0px 0px 4px 4px;
-    -moz-border-radius: 0px 0px 4px 4px;
-    border-radius: 0px 0px 4px 4px;
-}
-
-.progress-bar-begin
-{
-    background-color: #4B4B4B;
-    -webkit-border-radius: 4px 4px 0px 0px;
-    -moz-border-radius: 4px 4px 0px 0px;
-    border-radius: 4px 4px 0px 0px;
-    height: 25px;
-}
-
-    .progress-bar-begin p
-    {
-        color: #E4E4E4;
-        font-size: 14px;
-        margin: 0px;
-        font-size: 13px;
-        padding-top: 2px;
-        font-family: Verdana;
-        text-align: center;
-    }
-
-.roadmap-in-progress-img
-{
-    width: 15px;
-    margin-bottom: 5px;
-}
-
-ul#timeline-buttons li
-{
-    list-style: none;
-    font-size: 20px;
-    color: #4f4f4f;
-    text-align: left;
-    padding:0 0 15px 25px;
-}
-
-ul#timeline-buttons
-{
-    padding-top: 10px;
-    margin: 0px;
-    line-height: 20px;
-}
-
-    ul#timeline-buttons a:hover
-    {
-        color: #4b8fd1;
-    }
-
-.progress-bar-end
-{
-    float: left;
-    width: 18px;
-    height: 50px;
-    background-image: url('images/progresstimelinearrow.png');
-}
-
-ul#timeline-buttons li a
-{
-    color: #4f4f4f;
-}
-
-    ul#timeline-buttons li a.timeline-selected
-    {
-        color: #509ae3;
-    }
-
-a.timeline-unselected
-{
-    color: #4d4d4d;
+    font-weight: normal;
+    cursor: pointer;
 }
 
 .progress-list-elem
@@ -207,22 +304,6 @@ a.timeline-unselected
         transition: border linear 0.2s, box-shadow linear 0.3s;
     }
 
-.progress-list-line
-{
-    margin: 20px 0px 20px 16px;
-    position: relative;
-}
-
-.last-feature
-{
-    margin-right: 0px !important;
-}
-
-.hidden-feature
-{
-    display: none;
-}
-
 .progress-elem-title-bar
 {
     font-family: Verdana;
@@ -230,14 +311,6 @@ a.timeline-unselected
     position: relative;
     height: 35px;
     min-width: 175px;
-}
-
-.progress-elem-progress-p
-{
-    padding: 0px;
-    margin: 0px;
-    font-size: 10px;
-    margin:2px 0 2px 0;
 }
 
 .progress-elem-title
@@ -261,6 +334,63 @@ a.timeline-unselected
     {
         vertical-align: top;
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.categorized-progress-list
+{
+    width: 100%;
+}
+
+
+
+.feature-seperator
+{
+    margin-bottom: 10px;
+}
+
+.progress-list-line
+{
+    margin: 20px 0px 20px 16px;
+    position: relative;
+}
+
+.last-feature
+{
+    margin-right: 0px !important;
+}
+
+.hidden-feature
+{
+    display: none;
+}
+
+
+.progress-elem-progress-p
+{
+    padding: 0px;
+    margin: 0px;
+    font-size: 10px;
+    margin:2px 0 2px 0;
+}
+
 
 .done-feature
 {
@@ -337,55 +467,6 @@ a.timeline-unselected
     font-family: Verdana;
 }
 
-.roadmap-sponsors-div
-{
-    font-family: Verdana;
-    font-weight: normal;
-    background-color: #E4E4E4;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    border-radius: 4px;
-    margin-bottom: 5px;
-}
-
-    .roadmap-sponsors-div img
-    {
-    }
-
-    .roadmap-sponsors-div span
-    {
-        margin:8px 10px 0 0;
-        padding: 0px;
-        font-size: 13px;
-    }
-
-.progress-list-of-features > .roadmap-sponsors-div > p
-{
-    font-size: 11px;
-    padding: 0;
-    margin:0 0 0 5px;
-}
-
-.roadmap-sponsors-div span.sponsor-p
-{
-}
-
-.roadmap-sponsors-div .roadmap-sponsor
-{
-    float: left;
-    margin:5px 15px 5px 0;
-}
-
-.progress-list-of-features h2
-{
-    background-color: #e4e4e4;
-    color: #4b4b4b;
-    padding: 5px 0px 0px 5px;
-    font-family: Verdana;
-    font-weight: normal;
-    cursor: pointer;
-}
-
 .feature-download-btn
 {
     width: 160px;
@@ -410,61 +491,6 @@ a.timeline-unselected
     background-color: #e4e4e4;
 }
 
-.accordion-heading img
-{
-    float: left;
-    margin: 9px 9px 0px 9px;
-}
-
-.accordion-heading
-{
-}
-
-    .accordion-heading h2.accordion-toggle
-    {
-        font-size: 20px;
-        padding:8px 0 12px 0;
-    }
-
-.collapse-image
-{
-    margin:12px 10px 0 0;
-    width: 24px;
-    height: 24px;
-    float: right;
-}
-
-.colapsed
-{
-    background-image: url('images/expander-arrow.png');
-    background-repeat: no-repeat;
-}
-
-.expended
-{
-    background-image: url('images/expander-arrow-turned.png');
-    background-repeat: no-repeat;
-}
-
-.road-map-sponsors-title
-{
-    background-color: #4B4B4B;
-    -webkit-border-radius: 4px 4px 0px 0px;
-    -moz-border-radius: 4px 4px 0px 0px;
-    border-radius: 4px 4px 0px 0px;
-    height: 25px;
-    margin-bottom: 5px;
-}
-
-    .road-map-sponsors-title p
-    {
-        color: #E4E4E4;
-        font-size: 14px;
-        margin: 0px;
-        font-size: 13px;
-        padding:2px 0 0 6px;
-    }
-    
 .feature-dialog .ui-dialog-titlebar 
 {
     background:#E4E4E4;
@@ -492,7 +518,6 @@ a.timeline-unselected
 .feature-content
 {
     width: 620px;
-    /*height:722px;*/
     padding-bottom: 10px;
     background-color: #e4e4e4;
     border: 1px solid #e4e4e4;
@@ -615,20 +640,6 @@ a.timeline-unselected
 {
     padding: 0;
 }
-
-#dialog-container
-{
-    padding: 0px 5px 0px 0px;
-    height: auto;
-}
-
-.timeline-container
-{
-    padding: 0px 5px 0px 0px;
-    height: auto;
-    overflow: hidden;
-}
-
 
 .video-bar
 {

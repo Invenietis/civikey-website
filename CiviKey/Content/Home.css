@@ -16,9 +16,6 @@
     z-index: 100;
     width: 1005px;
     height: 326px;
-    /*-moz-box-shadow: inset 0 0 7px 3px rgba(0,0,0,0.3);
-    -webkit-box-shadow: inset 0 0 7px 3px rgba(0,0,0,0.3);
-    box-shadow: inset 0 0 7px 3px rgba(0,0,0,0.3);*/
 }
 
 .home-slider-right
@@ -43,9 +40,9 @@
     height: 325px;
     position: relative;
     transition: top 0.5s;
-    -moz-transition: top 0.5s; /* Firefox 4 */
-    -webkit-transition: top 0.5s; /* Safari and Chrome */
-    -o-transition: top 0.5s; /* Opera */
+    -moz-transition: top 0.5s;
+    -webkit-transition: top 0.5s;
+    -o-transition: top 0.5s;
 }
 
 .home-slider-download
@@ -110,8 +107,6 @@
     padding-left: 50px;
 }
 
-
-/*----------------Home carousel-----------------------*/
 #home-carousel .carousel-control.right
 {
     top: 170px;
@@ -130,8 +125,6 @@
     width: 20px;
     height: 20px;
 }
-/*----------------Home carousel-----------------------*/
-
 
 .news-title, #testimony-title
 {
@@ -194,9 +187,6 @@
     background-repeat: no-repeat;
     height: 10px;
     background-color: #E4E4E4;
-    /*-webkit-border-radius: 0px 0px 4px 4px;
-    -moz-border-radius: 0px 0px 4px 4px;
-    border-radius: 0px 0px 4px 4px;*/
 }
 
 .download-btn
@@ -395,16 +385,6 @@
 .slide-text-background-bottom.ck-autoclick
 {
     background-color:rgb(80,155,228);
-}
-
-.slide-text-bottom p
-{
-    
-}
-
-.slide-text-top p
-{
-    
 }
 
 .slide-text-autoclick

@@ -1,4 +1,6 @@
-﻿#header
+﻿/* ------------------------ Header ------------------------ */
+
+#header
 {
     height: 100px;
     background-color: #4f4f4f;
@@ -9,7 +11,6 @@
     width: 1024px;
     margin:0 auto 0 auto;
     height: 100px;
-    /*position: relative;*/
 }
 
 .header-container > a
@@ -18,11 +19,6 @@
     height: 100px;
     width: 200px;
     float: left;
-}
-
-.footer-container
-{
-    padding-bottom: 12px;
 }
 
 .header-logo
@@ -37,6 +33,60 @@
     background-image: url(images/menu-back.png);
     background-repeat: repeat-x;
     margin-top: 37px;
+}
+
+.moving-element-container
+{
+    height: 3px;
+}
+
+.moving-elem
+{
+    height: 3px;
+    background-color: #fff;
+    opacity:0;
+    position: relative;
+    -moz-transition: opacity .5s ease 0s;
+    -webkit-transition: opacity .5s ease 0s;
+    -o-transition: opacity .5s ease 0s;
+    transition: opacity .5s ease 0s;
+}
+
+.moving-elem-all
+{
+    height: 3px;
+    background-color: #fff;
+    opacity:0;
+    position: relative;
+    -moz-transition: all .5s ease 0s;
+    -webkit-transition: all .5s ease 0s;
+    -o-transition: all .5s ease 0s;
+    transition: all .5s ease 0s;
+}
+
+.Project
+{
+    width: 147px;
+    left: 0px;
+    display: block;
+}
+
+.Progress
+{
+    width: 159px;
+    left: 151px;
+}
+
+.Partners
+{
+    width: 163px;
+    left: 314px;
+}
+
+.Contact
+{
+    width: 200px;
+    left: 481px;
 }
 
 ul#menu
@@ -63,27 +113,12 @@ ul#menu
             cursor: pointer;
         }
 
-ul
+ul#menu li.menuelem.selected a
 {
-    list-style: none;
-    margin-left: 0px;
-    padding: 0px;
+    color: #b7b7b7;
 }
 
-#footer
-{
-    background-color: #e4e4e4;
-}
-
-.beta-disclaimer
-{
-    background: url("images/beta-disclaimer.png");
-    height: 100px;
-    width: 100px;
-    position: absolute;
-    top: 0;
-    left: 0;
-}
+/* ------------------------ Main container -------------------- */
 
 #main
 {
@@ -92,16 +127,28 @@ ul
     position: relative;
 }
 
-.seperator
+/* -------------------------- Footer -------------------------- */
+
+#footer
 {
-    height: 1px;
-    background-color: #999999;
-    margin:8px 0 8px 0;
+    background-color: #e4e4e4;
+}
+
+.footer-container
+{
+    padding-bottom: 12px;
 }
 
 .footer-logo
 {
     margin-top: 12px;
+}
+
+.seperator
+{
+    height: 1px;
+    background-color: #999999;
+    margin:8px 0 8px 0;
 }
 
 .footer-menu
@@ -135,93 +182,32 @@ ul
         {
             text-decoration: underline;
         }
-        
-.moving-elem
+
+.fb-like.feature-facebook
 {
-    height: 3px;
-    background-color: #fff;
-    opacity:0;
-    position: relative;
-    -moz-transition-property: opacity;/* Firefox 4 */
-    -webkit-transition-property: opacity;/* Safari and Chrome */
-    -o-transition-property: opacity;/* Opera */
-    transition-property: opacity;
-    -moz-transition-duration: .5s;/* Firefox 4 */
-    -webkit-transition-duration: .5s;/* Safari and Chrome */
-    -o-transition-duration: .3s;/* Opera */
-    transition-duration: .3s;
-    -moz-transition-timing-function: ease;/* Firefox 4 */
-    -webkit-transition-timing-function: ease;/* Safari and Chrome */
-    -o-transition-timing-function: ease;/* Opera */
-    transition-timing-function: ease;
-    -moz-transition-delay: 0s;/* Firefox 4 */
-    -webkit-transition-delay: 0s;/* Safari and Chrome */
-    -o-transition-delay: 0s;/* Opera */
-    transition-delay: 0s;
-    
-    
+    float:left;
+    margin:0 5px 15px 15px;
 }
 
-.moving-elem-all
+.twitter-share-button.feature-twitter
 {
-    height: 3px;
-    background-color: #fff;
-    opacity:0;
-    position: relative;
-    -moz-transition-property: all; /* Firefox 4 */
-    -webkit-transition-property: all; /* Safari and Chrome */
-    -o-transition-property: all; /* Opera */
-    transition-property: opacity;
-    -moz-transition-duration: .5s; /* Firefox 4 */
-    -webkit-transition-duration: .5s; /* Safari and Chrome */
-    -o-transition-duration: .3s; /* Opera */
-    transition-duration: .3s;
-    -moz-transition-timing-function: ease; /* Firefox 4 */
-    -webkit-transition-timing-function: ease; /* Safari and Chrome */
-    -o-transition-timing-function: ease; /* Opera */
-    transition-timing-function: ease;
-    -moz-transition-delay: 0s; /* Firefox 4 */
-    -webkit-transition-delay: 0s; /* Safari and Chrome */
-    -o-transition-delay: 0s; /* Opera */
-    transition-delay: 0s;
-    
-    
+    float:left;
+    margin-top: 2px;
 }
 
-.Project
+.fb-like
 {
-    width: 147px;
-    left: 0px;
-    display: block;
+    float:right;
+    margin:2px 5px 15px 15px;
 }
 
-.Progress
+.twitter-share-button
 {
-    width: 159px;
-    left: 151px;
+    float:right;
+    margin-top: 2px;
 }
 
-.Partners
-{
-    width: 163px;
-    left: 314px;
-}
-
-.Contact
-{
-    width: 200px;
-    left: 481px;
-}
-
-.moving-element-container
-{
-    height: 3px;
-}
-
-ul#menu li.menuelem.selected a
-{
-    color: #b7b7b7;
-}
+/* -------------------------- Page descriptions -------------------------- */
 
 .partners-title, .project-title, .download-title
 {
@@ -250,29 +236,19 @@ ul#menu li.menuelem.selected a
 
 .item img
 {
-    
     margin:0 auto 0 auto;
 }
-.fb-like.feature-facebook
-{
-    float:left;
-    margin:0 5px 15px 15px;
-}
 
-.twitter-share-button.feature-twitter
-{
-    float:left;
-    margin-top: 2px;
-}
 
-.fb-like
-{
-    float:right;
-    margin:2px 5px 15px 15px;
-}
 
-.twitter-share-button
-{
-    float:right;
-    margin-top: 2px;
-}
+        
+
+
+
+
+
+
+
+
+
+

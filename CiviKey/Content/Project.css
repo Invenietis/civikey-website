@@ -5,11 +5,27 @@
     width: 1024px;
 }
 
+.project-slider
+{
+    overflow: hidden;
+    height: 620px;
+    background-image: url('images/project-repeat-bar.png');
+    background-position: right;
+    background-repeat: repeat-y;
+    border-right: 1px solid #858585;
+    border-bottom: 1px solid #858585;
+    border-left: 1px solid #858585;
+    background-color: #f4f4f4;
+    transition: height 2s;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
 .project-leftblock
 {
     float: left;
     width: 656px;
-    /*height:330px;*/
     background-color: #f4f4f4;
     border-top: 1px solid #858585;
     font-family: Verdana;
@@ -18,17 +34,21 @@
     padding:0 40px 0 40px;
 }
 
+.project-leftblock-content
+{
+    display: table-cell;
+    padding:20px 0 20px 0;
+}
+
+.project-civikey-architecture
+{
+    padding-bottom: 20px;
+}
 .project-rightblock
 {
     border-top: 1px solid #858585;
     float: right;
     width: 286px;
-}
-
-.project-leftblock-content
-{
-    display: table-cell;
-    padding:20px 0 20px 0;
 }
 
 .project-menuelem
@@ -54,14 +74,6 @@
     border-right: 1px solid #858585;
 }
 
-.aide
-{
-}
-
-
-
-
-/*---------------------Page le projet - carousel--------------------*/
 .project-content .active-proj
 {
     background-image: url('images/project-activeelem.png');
@@ -76,35 +88,10 @@
 {
     background-image: url('images/preject-inactivelem.png');
 }
-/*---------------------Page le projet - carousel--------------------*/
 
 .passiveslide
 {
     display: none;
-}
-
-
-
-.project-slider
-{
-    overflow: hidden;
-    height: 620px;
-    background-image: url('images/project-repeat-bar.png');
-    background-position: right;
-    background-repeat: repeat-y;
-    border-right: 1px solid #858585;
-    border-bottom: 1px solid #858585;
-    border-left: 1px solid #858585;
-    background-color: #f4f4f4;
-    transition: height 2s;
-    -webkit-transition: all .5s ease;
-    -moz-transition: all .5s ease;
-    transition: all .5s ease;
-}
-
-.project-civikey-architecture
-{
-    padding-bottom: 20px;
 }
 
 .project-images

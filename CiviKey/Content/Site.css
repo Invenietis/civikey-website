@@ -43,6 +43,13 @@ a:active
     text-decoration: none;
 }
 
+ul
+{
+    list-style: none;
+    margin-left: 0px;
+    padding: 0px;
+}
+
 p, ul
 {
     margin-bottom: 18px;
