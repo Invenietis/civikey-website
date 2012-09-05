@@ -137,6 +137,7 @@ ul#menu li.menuelem.selected a
 .footer-container
 {
     padding-bottom: 12px;
+    position: relative;
 }
 
 .footer-logo
@@ -242,8 +243,10 @@ ul#menu li.menuelem.selected a
 
 .footer-container > .footer-fork-me
 {
-   margin-top: 15px;
-   float: right;
+   margin-top: 19px;
+   position: absolute;
+   top: 0;
+   right: 0;
    font-size: 9px;
    height: 16px;
    padding-top: 1px;

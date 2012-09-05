@@ -1,6 +1,6 @@
 ﻿@using CiviKey.Models
 <!DOCTYPE html>
-<html xmlns:fb="http://ogp.me/ns/fb#">
+<html xmlns:fb="http://ogp.me/ns/fb#" xmlns:og="http://opengraphprotocol.org/schema/">
 <head>
     @{
         string description = RenderSection("Description", required: true).ToHtmlString();
@@ -41,30 +41,41 @@
              }
          };
 
-         if (typeof _gaq === 'object') {
-             //Analytics for search engines
-             _gaq.push(['_addOrganic', 'fr.search.yahoo.com', 'p']); //Yahoo
-             _gaq.push(['_addOrganic', 'recherche.aol.fr/', 'q']); //AOL
-
-             //Analytics for blog search
-             _gaq.push(['_addOrganic', 'blogsearch.google.fr', 'q']);
-
-             _gaq, push(['_trackPageview']);
+         var date;
+         function getDate()
+         {
+             if (!date) {
+                date = new Date();
+             }
+             var currentDate = date.getDate() + '/' + (date.getMonth()+1) + '/' + date.getFullYear();
+             return currentDate;
          }
+             
 
-         $(function () {
-             //Facebook like button
-             (function (d, s, id) {
-                 var js, fjs = d.getElementsByTagName(s)[0];
-                 if (d.getElementById(id)) return;
-                 js = d.createElement(s); js.id = id;
-                 js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1";
-                 fjs.parentNode.insertBefore(js, fjs);
-             } (document, 'script', 'facebook-jssdk'));
+             if (typeof _gaq === 'object') {
+                 //Analytics for search engines
+                 _gaq.push(['_addOrganic', 'fr.search.yahoo.com', 'p']); //Yahoo
+                 _gaq.push(['_addOrganic', 'recherche.aol.fr/', 'q']); //AOL
 
-             //Twitter share button
-             !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } } (document, "script", "twitter-wjs");
-         });
+                 //Analytics for blog search
+                 _gaq.push(['_addOrganic', 'blogsearch.google.fr', 'q']);
+
+                 _gaq, push(['_trackPageview']);
+             }
+
+             $(function () {
+                 //Facebook like button
+                 (function (d, s, id) {
+                     var js, fjs = d.getElementsByTagName(s)[0];
+                     if (d.getElementById(id)) return;
+                     js = d.createElement(s); js.id = id;
+                     js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1";
+                     fjs.parentNode.insertBefore(js, fjs);
+                 } (document, 'script', 'facebook-jssdk'));
+
+                 //Twitter share button
+                 !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } } (document, "script", "twitter-wjs");
+             });
     </script>
 </head>
 <body>
@@ -101,7 +112,7 @@
         <div id="footer">
             <div class="footer-container">
                 <img class="footer-logo" alt="Logo Invenietis" src="@Url.Content("~/Content/images/logo-invenietis.png")" />
-                <a class="btn btn-info footer-fork-me" target="_blank" href="https://github.com/Invenietis/ck-certified"><i class="icon-random icon-white" style="margin-right:5px;"></i>Fork on GitHub</a>
+                <a class="btn btn-info footer-fork-me" onclick="Civi.addGaqPush('_trackEvent', 'Fork', getDate() )" target="_blank" href="https://github.com/Invenietis/ck-certified"><i class="icon-random icon-white" style="margin-right:5px;"></i>Fork on GitHub</a>
                 <div class="seperator"></div>
                 <div class="footer-menu">
                     <ul>
