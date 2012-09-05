@@ -1,10 +1,11 @@
-﻿@model CiviKey.ViewModel.DownloadPageViewModel
+﻿@using CiviKey.Models
+@model CiviKey.ViewModel.DownloadPageViewModel
 @section Description{
     Page de téléchargement du projet CiviKey.
     Liste l'ensemble des release notes du projet.
 }
 @{
-    Html.CK().Css.ByName().IncludeCss("Download");
+    Html.CK().Css.WithCiviKeyConvention().IncludeCss("Download");
     string lastRoadmapDownloadableVersion;
     string lastRoadmapDownloadFilePath;
 

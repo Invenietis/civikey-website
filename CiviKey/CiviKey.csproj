@@ -110,8 +110,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CivikeyEntities.cs" />
+    <Compile Include="Models\Helpers\HtmlStylesheetResourceHelper.Extensions.cs" />
     <Compile Include="Models\Contact.cs" />
-    <Compile Include="Models\ContactExtentions.cs" />
+    <Compile Include="Models\Helpers\ContactExtentions.cs" />
     <Compile Include="Models\Context.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -122,15 +123,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\FeatureType.cs" />
-    <Compile Include="Models\Helpers.cs" />
+    <Compile Include="Models\Helpers\FeatureType.cs" />
+    <Compile Include="Models\Helpers\Helpers.cs" />
     <Compile Include="Models\Model.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Model.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\ParticipationType.cs" />
-    <Compile Include="Models\RoadmapExtensions.cs" />
+    <Compile Include="Models\Helpers\ParticipationType.cs" />
+    <Compile Include="Models\Helpers\RoadmapExtensions.cs" />
     <Compile Include="Models\Sections.cs" />
     <Compile Include="Models\tCategory.cs">
       <DependentUpon>Context.tt</DependentUpon>
@@ -196,10 +197,10 @@
     <Compile Include="ViewModel\VideoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Contact.css" />
-    <Content Include="Content\Download.css" />
-    <Content Include="Content\Home.css" />
+    <Content Include="Content\css\bootstrap.min.css" />
+    <Content Include="Content\css\Contact.css" />
+    <Content Include="Content\css\Download.css" />
+    <Content Include="Content\css\Home.css" />
     <Content Include="Content\images\avancement.png" />
     <Content Include="Content\images\contactez-nous.png" />
     <Content Include="Content\images\download-btn.png" />
@@ -210,10 +211,10 @@
     <Content Include="Content\images\partenaires.png" />
     <Content Include="Content\images\slider-back.png" />
     <Content Include="Content\images\slider-download-info.png" />
-    <Content Include="Content\Layout.css" />
-    <Content Include="Content\Partners.css" />
-    <Content Include="Content\Project.css" />
-    <Content Include="Content\RoadMaps.css" />
+    <Content Include="Content\css\Layout.css" />
+    <Content Include="Content\css\Partners.css" />
+    <Content Include="Content\css\Project.css" />
+    <Content Include="Content\css\RoadMaps.css" />
     <Content Include="Content\themes\base\bootstrap.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
@@ -302,7 +303,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Content\Site.css" />
+    <Content Include="Content\css\Site.css" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -353,7 +354,7 @@
     <Content Include="Views\Home\_NewsView.cshtml" />
     <Content Include="Views\Contact\_MailView.cshtml" />
     <Content Include="Views\DownloadPage\Index.cshtml" />
-    <Compile Include="Models\tReleaseNote.Extensions.cs" />
+    <Compile Include="Models\Helpers\tReleaseNote.Extensions.cs" />
     <None Include="Web.config.tpl" />
   </ItemGroup>
   <PropertyGroup>

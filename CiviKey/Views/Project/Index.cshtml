@@ -1,10 +1,11 @@
-﻿@model IList<CiviKey.ViewModel.ContactViewModel>
+﻿@using CiviKey.Models
+@model IList<CiviKey.ViewModel.ContactViewModel>
 @section Description{
     Page décrivant le projet CiviKey.
     Son but, son architecture et ses partenaires.
 }
 @Html.CK().Scripts.ByName().IncludeJS( "project.js" )
-@Html.CK().Css.ByName().IncludeCss("Project")
+@Html.CK().Css.WithCiviKeyConvention().IncludeCss("Project")
 <div class="project-content">
     <div class="project-title">
         Cette page décrit le but du projet CiviKey.

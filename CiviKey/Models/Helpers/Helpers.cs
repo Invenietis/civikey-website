@@ -14,13 +14,26 @@ namespace CiviKey.Models
             return ViewEngines.Engines.FindView( ctx, Path.Combine( "Views", safeName ), null );
         }
 
-
+        /// <summary>
+        /// gets a roadmap version (ex : "2.5.1" or "2.5.X") and returns the corresponding Version object.
+        /// returns null if the version is invalid or has an "X" in it. (i.e. "2.5.X")
+        /// </summary>
+        /// <param name="name">The roadmap version</param>
+        /// <returns>The corresponding Version Object</returns>
         public static Version GetVersionFromRoadmapName( string name )
         {
             bool isTrimmed;
             return GetVersionFromRoadmapName( name, out isTrimmed );
         }
 
+        /// <summary>
+        /// gets a roadmap version (ex : "2.5.1" or "2.5.X") and returns the corresponding Version object.
+        /// returns null if the version is invalid.
+        /// If the version is like "3.5.XXXX", the last .XXX is trimmed and the version corresponding to 3.5 is returned. isTrimmed is therefor set to true. 
+        /// </summary>
+        /// <param name="name">the version of the roadmap</param>
+        /// <param name="isTrimmed">This "out" parameter says whether the last version's ".X" has been trimmed</param>
+        /// <returns>the Version object corresponding to the name set as parameter</returns>
         public static Version GetVersionFromRoadmapName( string name, out bool isTrimmed )
         {
             Version version = null;

@@ -1,9 +1,10 @@
-﻿@model IList<CiviKey.ViewModel.ContactViewModel>
+﻿@using CiviKey.Models
+@model IList<CiviKey.ViewModel.ContactViewModel>
 
 @section Description{
     Page listant les partenaires du projet CiviKey.
 }
-@Html.CK().Css.ByName().IncludeCss("Partners")
+@Html.CK().Css.WithCiviKeyConvention().IncludeCss("Partners")
 <div class="partners-content">
     <div class="partners-title">
         Le projet CiviKey rassemble de nombreux acteurs : ergothérapeutes, grandes entreprises,
@@ -33,7 +34,7 @@
                 </div>
                 if( i % 2 != 0 )
                 {
-                    <div class="youpiyaaa" style="clear:both;"></div>
+                    <div style="clear:both;"></div>
                 }
             }
             <div style="clear:both;"></div>

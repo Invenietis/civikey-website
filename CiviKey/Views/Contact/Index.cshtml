@@ -1,4 +1,5 @@
-﻿@model CiviKey.Models.Contact
+﻿@using CiviKey.Models
+@model CiviKey.Models.Contact
 
 @section Description{
     Page de contact du projet CiviKey
@@ -10,7 +11,7 @@
                                 IncludeJS("jquery.validate.js").
                                 IncludeJS("jquery.validate.unobtrusive.js").
                                 IncludeJS("contacts.js");
-    Html.CK().Css.ByName().IncludeCss("Contact");
+    Html.CK().Css.WithCiviKeyConvention().IncludeCss("Contact");
 }
 
 <!--[if (gte IE 6)&(lte IE 8)]>
