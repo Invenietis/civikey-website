@@ -118,13 +118,6 @@ ul#menu li.menuelem.selected a
     color: #b7b7b7;
 }
 
-.header-forkme
-{
-    float: right; 
-    height:100px; 
-    width: 100px;
-}
-
 /* ------------------------ Main container -------------------- */
 
 #main
@@ -212,6 +205,7 @@ ul#menu li.menuelem.selected a
 {
     float:right;
     margin-top: 2px;
+    width: 100px !important;
 }
 
 /* -------------------------- Page descriptions -------------------------- */
@@ -246,16 +240,12 @@ ul#menu li.menuelem.selected a
     margin:0 auto 0 auto;
 }
 
-
-
-        
-
-
-
-
-
-
-
-
-
-
+.footer-container > .footer-fork-me
+{
+   margin-top: 15px;
+   float: right;
+   font-size: 9px;
+   height: 16px;
+   padding-top: 1px;
+   margin-right:10px;
+}
