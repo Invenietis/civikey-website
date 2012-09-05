@@ -1,0 +1,96 @@
+﻿@using CiviKey.Models
+@model CiviKey.ViewModel.HomeViewModel
+@section Description{Page d'accueil du projet CiviKey.}
+@{
+    Html.CK().Scripts.ByName().IncludeJS( "home.js" );
+    Html.CK().Css.WithCiviKeyConvention().IncludeCss("Home");
+
+    string lastRoadmapDownloadableVersion;
+    string lastRoadmapDownloadFilePath;
+
+    if (String.IsNullOrWhiteSpace(Model.LastRoadmap.DownloadFileName))
+    {
+        lastRoadmapDownloadableVersion = Model.LastRoadmap.Name;
+        lastRoadmapDownloadFilePath = "#";
+    }
+    else
+    {
+        lastRoadmapDownloadableVersion = CiviKey.Models.Helpers.GetVersionFromFileName(Model.LastRoadmap.DownloadFileName).ToString();
+        lastRoadmapDownloadFilePath = Url.Content("~/Content/downloads/" + Model.LastRoadmap.DownloadFileName);
+    }
+    
+    
+}
+
+<div class="home-slider">
+    <div class="home-slider-shadow-top"></div>
+    <div class="home-slider-shadow-bottom"></div>
+    <div class="home-slider-shadow-left"></div>
+    <div class="home-slider-shadow-right"></div>
+    <div class="home-slider-right">
+    <ul class="slider-menu-block">
+        <li class="selected slider-menu-elem" data-id="0" id="slide-clavier"><a href="#">Clavier virtuel</a></li>
+        <li class="slider-menu-elem" data-id="1" id="slide-autoclick"><a href="#">Autoclick</a></li>
+    </ul>
+    </div>
+    <div class="home-slider-left">
+        <div class="home-slider-left-container">
+            <div class="slider-image" data-slide="0">
+                <div class="slide-text">
+                    <div class="slide-text-top">
+                        <p class="slide-text-content-top slide-text-clavier">Clavier virtuel</p>
+                        <div class="slide-text-background-top"></div>
+                    </div>
+                    <div class="slide-text-bottom">
+                        <p class="slide-text-content slide-text-content-bottom">Testez le clavier virtuel hautement configurable de CiviKey !</p>
+                        <div class="slide-text-background-bottom ck-clavier"></div>
+                    </div>
+                </div>
+                <img src="@Url.Content("~/Content/images/home-slide/claviervirtuel.PNG")"/>
+            </div>
+            <div class="slider-image" data-slide="1">
+                <div class="slide-text">
+                    <div class="slide-text-top">
+                        <p class="slide-text-content-top slide-text-autoclick">Autoclick</p>
+                        <div class="slide-text-background-top"></div>
+                    </div>
+                    <div class="slide-text-bottom ">
+                        <p class="slide-text-content slide-text-content-bottom">Simulez clic gauche, clic droit, double clic et glisser-déposer sans utiliser les boutons de la souris !</p>
+                        <div class="slide-text-background-bottom ck-autoclick"></div>
+                    </div>
+                </div>
+                <img src="@Url.Content("~/Content/images/home-slide/autoclick.PNG")"/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="home-download-container-top">
+</div>
+<div class="home-download-container-bottom">
+    <a class="btn btn-large btn-primary" href="@Url.Action("Index", "DownloadPage")"><i class="icon-thumbs-up icon-white" style="margin-right:5px;"></i>Télécharger pour Windows</a>
+    <p>Version @lastRoadmapDownloadableVersion</p>
+</div>
+<div class="home-main-container">
+    <div class="home-main-news">
+        <div id="home-carousel" class="carousel slide">
+            <!-- Carousel items -->
+            <div class="carousel-inner">
+                @{
+                    for (int i = 0; i < @Model.News.Count; i++)
+                    {
+                    <div class="item @if (i == 0)
+                                     {@("active")}">@Html.Partial("_NewsView", Model.News.ElementAt(i))</div>
+                    }
+                }
+            </div>
+            <!-- Carousel nav -->
+            <a class="carousel-control left" href="#home-carousel" data-slide="prev">&lsaquo;</a>
+            <a class="carousel-control right" href="#home-carousel" data-slide="next">&rsaquo;</a>
+        </div>
+    </div>
+    <div id="home-main-testimony">
+        <div id="testimony-container">
+        </div>
+    </div>
+    <div style="clear:both"></div>
+</div>

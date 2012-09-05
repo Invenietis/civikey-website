@@ -1,0 +1,980 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="CiviKeyModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="CiviKeyModelStoreContainer">
+          <EntitySet Name="tCategory" EntityType="CiviKeyModel.Store.tCategory" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tCategoryFeature" EntityType="CiviKeyModel.Store.tCategoryFeature" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tContact" EntityType="CiviKeyModel.Store.tContact" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tContactRelation" EntityType="CiviKeyModel.Store.tContactRelation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tFeature" EntityType="CiviKeyModel.Store.tFeature" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tNews" EntityType="CiviKeyModel.Store.tNews" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tParticipation" EntityType="CiviKeyModel.Store.tParticipation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tParticipationFeature" EntityType="CiviKeyModel.Store.tParticipationFeature" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tParticipationRoadmap" EntityType="CiviKeyModel.Store.tParticipationRoadmap" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tPlugin" EntityType="CiviKeyModel.Store.tPlugin" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tReleaseNote" EntityType="CiviKeyModel.Store.tReleaseNote" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tRoadMap" EntityType="CiviKeyModel.Store.tRoadMap" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tSection" EntityType="CiviKeyModel.Store.tSection" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tSectionPlugin" EntityType="CiviKeyModel.Store.tSectionPlugin" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tTestimony" EntityType="CiviKeyModel.Store.tTestimony" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="tVideo" EntityType="CiviKeyModel.Store.tVideo" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_ContactId" Association="CiviKeyModel.Store.FK_ContactId">
+            <End Role="tContact" EntitySet="tContact" />
+            <End Role="tContactRelation" EntitySet="tContactRelation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ContactIdParticipation" Association="CiviKeyModel.Store.FK_ContactIdParticipation">
+            <End Role="tContactRelation" EntitySet="tContactRelation" />
+            <End Role="tParticipation" EntitySet="tParticipation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntityId" Association="CiviKeyModel.Store.FK_EntityId">
+            <End Role="tContact" EntitySet="tContact" />
+            <End Role="tContactRelation" EntitySet="tContactRelation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FeatureId" Association="CiviKeyModel.Store.FK_FeatureId">
+            <End Role="tFeature" EntitySet="tFeature" />
+            <End Role="tSection" EntitySet="tSection" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FeatureIdPart" Association="CiviKeyModel.Store.FK_FeatureIdPart">
+            <End Role="tFeature" EntitySet="tFeature" />
+            <End Role="tParticipationFeature" EntitySet="tParticipationFeature" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FeatureIdVideo" Association="CiviKeyModel.Store.FK_FeatureIdVideo">
+            <End Role="tFeature" EntitySet="tFeature" />
+            <End Role="tVideo" EntitySet="tVideo" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IdCategory" Association="CiviKeyModel.Store.FK_IdCategory">
+            <End Role="tCategory" EntitySet="tCategory" />
+            <End Role="tCategoryFeature" EntitySet="tCategoryFeature" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IdFeature" Association="CiviKeyModel.Store.FK_IdFeature">
+            <End Role="tFeature" EntitySet="tFeature" />
+            <End Role="tCategoryFeature" EntitySet="tCategoryFeature" />
+          </AssociationSet>
+          <AssociationSet Name="FK_IdRoadMap" Association="CiviKeyModel.Store.FK_IdRoadMap">
+            <End Role="tRoadMap" EntitySet="tRoadMap" />
+            <End Role="tFeature" EntitySet="tFeature" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ParticipationId" Association="CiviKeyModel.Store.FK_ParticipationId">
+            <End Role="tParticipation" EntitySet="tParticipation" />
+            <End Role="tParticipationFeature" EntitySet="tParticipationFeature" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ParticipationRoadmapId" Association="CiviKeyModel.Store.FK_ParticipationRoadmapId">
+            <End Role="tParticipation" EntitySet="tParticipation" />
+            <End Role="tParticipationRoadmap" EntitySet="tParticipationRoadmap" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PluginId" Association="CiviKeyModel.Store.FK_PluginId">
+            <End Role="tPlugin" EntitySet="tPlugin" />
+            <End Role="tSectionPlugin" EntitySet="tSectionPlugin" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ReleaseNoteRoadmapID" Association="CiviKeyModel.Store.FK_ReleaseNoteRoadmapID">
+            <End Role="tRoadMap" EntitySet="tRoadMap" />
+            <End Role="tReleaseNote" EntitySet="tReleaseNote" />
+          </AssociationSet>
+          <AssociationSet Name="FK_RoadmapIdPart" Association="CiviKeyModel.Store.FK_RoadmapIdPart">
+            <End Role="tRoadMap" EntitySet="tRoadMap" />
+            <End Role="tParticipationRoadmap" EntitySet="tParticipationRoadmap" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SectionId" Association="CiviKeyModel.Store.FK_SectionId">
+            <End Role="tSection" EntitySet="tSection" />
+            <End Role="tSectionPlugin" EntitySet="tSectionPlugin" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="tCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="IconName" Type="varchar" MaxLength="128" />
+        </EntityType>
+        <EntityType Name="tCategoryFeature">
+          <Key>
+            <PropertyRef Name="IdCategory" />
+            <PropertyRef Name="IdFeature" />
+          </Key>
+          <Property Name="IdCategory" Type="int" Nullable="false" />
+          <Property Name="IdFeature" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tContact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="LogoPath" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="WebsiteUrl" Type="nvarchar" Nullable="false" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="tContactRelation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ContactId" Type="int" Nullable="false" />
+          <Property Name="EntityId" Type="int" Nullable="false" />
+          <Property Name="StartDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="EndDate" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="tFeature">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="Description" Type="varchar(max)" Nullable="false" />
+          <Property Name="Version" Type="varchar" Nullable="false" MaxLength="12" />
+          <Property Name="Progress" Type="int" Nullable="false" />
+          <Property Name="CreationDate" Type="smalldatetime" Nullable="false" />
+          <Property Name="IdRoadMap" Type="int" Nullable="false" />
+          <Property Name="Type" Type="int" Nullable="false" />
+          <Property Name="LogoPath" Type="varchar" Nullable="false" MaxLength="256" />
+        </EntityType>
+        <EntityType Name="tNews">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CreationDate" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tParticipation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ContactRelationId" Type="int" Nullable="false" />
+          <Property Name="PartType" Type="varchar(max)" Nullable="false" />
+          <Property Name="Percentage" Type="int" Nullable="false" />
+          <Property Name="ParticipationDate" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tParticipationFeature">
+          <Key>
+            <PropertyRef Name="ParticipationId" />
+          </Key>
+          <Property Name="ParticipationId" Type="int" Nullable="false" />
+          <Property Name="FeatureId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tParticipationRoadmap">
+          <Key>
+            <PropertyRef Name="ParticipationId" />
+          </Key>
+          <Property Name="ParticipationId" Type="int" Nullable="false" />
+          <Property Name="RoadmapId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tPlugin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Title" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="Version" Type="varchar" Nullable="false" MaxLength="12" />
+          <Property Name="Description" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CreationDate" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tReleaseNote">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="RoadmapId" Type="int" Nullable="false" />
+          <Property Name="RevisionNumber" Type="int" Nullable="false" />
+          <Property Name="HtmlContent" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ReleaseDate" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tRoadMap">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="32" />
+          <Property Name="HasRelease" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tSection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="FeatureId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tSectionPlugin">
+          <Key>
+            <PropertyRef Name="SectionId" />
+            <PropertyRef Name="PluginId" />
+          </Key>
+          <Property Name="SectionId" Type="int" Nullable="false" />
+          <Property Name="PluginId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tTestimony">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Author" Type="varchar(max)" Nullable="false" />
+          <Property Name="Title" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="Content" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="CreationDate" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="tVideo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="varchar" Nullable="false" MaxLength="128" />
+          <Property Name="VideoSource" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FeatureId" Type="int" Nullable="false" />
+          <Property Name="CreationDate" Type="smalldatetime" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ContactId">
+          <End Role="tContact" Type="CiviKeyModel.Store.tContact" Multiplicity="1" />
+          <End Role="tContactRelation" Type="CiviKeyModel.Store.tContactRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tContact">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tContactRelation">
+              <PropertyRef Name="ContactId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ContactIdParticipation">
+          <End Role="tContactRelation" Type="CiviKeyModel.Store.tContactRelation" Multiplicity="1" />
+          <End Role="tParticipation" Type="CiviKeyModel.Store.tParticipation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tContactRelation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tParticipation">
+              <PropertyRef Name="ContactRelationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntityId">
+          <End Role="tContact" Type="CiviKeyModel.Store.tContact" Multiplicity="1" />
+          <End Role="tContactRelation" Type="CiviKeyModel.Store.tContactRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tContact">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tContactRelation">
+              <PropertyRef Name="EntityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FeatureId">
+          <End Role="tFeature" Type="CiviKeyModel.Store.tFeature" Multiplicity="1" />
+          <End Role="tSection" Type="CiviKeyModel.Store.tSection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tFeature">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tSection">
+              <PropertyRef Name="FeatureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FeatureIdPart">
+          <End Role="tFeature" Type="CiviKeyModel.Store.tFeature" Multiplicity="1" />
+          <End Role="tParticipationFeature" Type="CiviKeyModel.Store.tParticipationFeature" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tFeature">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tParticipationFeature">
+              <PropertyRef Name="FeatureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FeatureIdVideo">
+          <End Role="tFeature" Type="CiviKeyModel.Store.tFeature" Multiplicity="1" />
+          <End Role="tVideo" Type="CiviKeyModel.Store.tVideo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tFeature">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tVideo">
+              <PropertyRef Name="FeatureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IdCategory">
+          <End Role="tCategory" Type="CiviKeyModel.Store.tCategory" Multiplicity="1" />
+          <End Role="tCategoryFeature" Type="CiviKeyModel.Store.tCategoryFeature" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tCategory">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tCategoryFeature">
+              <PropertyRef Name="IdCategory" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IdFeature">
+          <End Role="tFeature" Type="CiviKeyModel.Store.tFeature" Multiplicity="1" />
+          <End Role="tCategoryFeature" Type="CiviKeyModel.Store.tCategoryFeature" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tFeature">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tCategoryFeature">
+              <PropertyRef Name="IdFeature" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_IdRoadMap">
+          <End Role="tRoadMap" Type="CiviKeyModel.Store.tRoadMap" Multiplicity="1" />
+          <End Role="tFeature" Type="CiviKeyModel.Store.tFeature" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tRoadMap">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tFeature">
+              <PropertyRef Name="IdRoadMap" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ParticipationId">
+          <End Role="tParticipation" Type="CiviKeyModel.Store.tParticipation" Multiplicity="1" />
+          <End Role="tParticipationFeature" Type="CiviKeyModel.Store.tParticipationFeature" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tParticipation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tParticipationFeature">
+              <PropertyRef Name="ParticipationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ParticipationRoadmapId">
+          <End Role="tParticipation" Type="CiviKeyModel.Store.tParticipation" Multiplicity="1" />
+          <End Role="tParticipationRoadmap" Type="CiviKeyModel.Store.tParticipationRoadmap" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="tParticipation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tParticipationRoadmap">
+              <PropertyRef Name="ParticipationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PluginId">
+          <End Role="tPlugin" Type="CiviKeyModel.Store.tPlugin" Multiplicity="1" />
+          <End Role="tSectionPlugin" Type="CiviKeyModel.Store.tSectionPlugin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tPlugin">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tSectionPlugin">
+              <PropertyRef Name="PluginId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ReleaseNoteRoadmapID">
+          <End Role="tRoadMap" Type="CiviKeyModel.Store.tRoadMap" Multiplicity="1" />
+          <End Role="tReleaseNote" Type="CiviKeyModel.Store.tReleaseNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tRoadMap">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tReleaseNote">
+              <PropertyRef Name="RoadmapId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_RoadmapIdPart">
+          <End Role="tRoadMap" Type="CiviKeyModel.Store.tRoadMap" Multiplicity="1" />
+          <End Role="tParticipationRoadmap" Type="CiviKeyModel.Store.tParticipationRoadmap" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tRoadMap">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tParticipationRoadmap">
+              <PropertyRef Name="RoadmapId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SectionId">
+          <End Role="tSection" Type="CiviKeyModel.Store.tSection" Multiplicity="1" />
+          <End Role="tSectionPlugin" Type="CiviKeyModel.Store.tSectionPlugin" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tSection">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tSectionPlugin">
+              <PropertyRef Name="SectionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="GetContactIdFromSafeName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="safeName" Type="nvarchar" Mode="In" />
+        </Function>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="CiviKeyModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="CiviKeyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="tCategories" EntityType="CiviKeyModel.tCategory" />
+          <EntitySet Name="tContactRelations" EntityType="CiviKeyModel.tContactRelation" />
+          <EntitySet Name="tNews" EntityType="CiviKeyModel.tNew" />
+          <EntitySet Name="tParticipations" EntityType="CiviKeyModel.tParticipation" />
+          <EntitySet Name="tPlugins" EntityType="CiviKeyModel.tPlugin" />
+          <EntitySet Name="tSections" EntityType="CiviKeyModel.tSection" />
+          <EntitySet Name="tTestimonies" EntityType="CiviKeyModel.tTestimony" />
+          <EntitySet Name="tVideos" EntityType="CiviKeyModel.tVideo" />
+          <AssociationSet Name="FK_ContactIdParticipation" Association="CiviKeyModel.FK_ContactIdParticipation">
+            <End Role="tContactRelation" EntitySet="tContactRelations" />
+            <End Role="tParticipation" EntitySet="tParticipations" />
+          </AssociationSet>
+          <AssociationSet Name="tSectionPlugin" Association="CiviKeyModel.tSectionPlugin">
+            <End Role="tPlugin" EntitySet="tPlugins" />
+            <End Role="tSection" EntitySet="tSections" />
+          </AssociationSet>
+          <EntitySet Name="tFeatures" EntityType="CiviKeyModel.tFeature" />
+          <AssociationSet Name="FK_FeatureId" Association="CiviKeyModel.FK_FeatureId">
+            <End Role="tFeature" EntitySet="tFeatures" />
+            <End Role="tSection" EntitySet="tSections" />
+          </AssociationSet>
+          <AssociationSet Name="FK_FeatureIdVideo" Association="CiviKeyModel.FK_FeatureIdVideo">
+            <End Role="tFeature" EntitySet="tFeatures" />
+            <End Role="tVideo" EntitySet="tVideos" />
+          </AssociationSet>
+          <AssociationSet Name="tCategoryFeature" Association="CiviKeyModel.tCategoryFeature">
+            <End Role="tCategory" EntitySet="tCategories" />
+            <End Role="tFeature" EntitySet="tFeatures" />
+          </AssociationSet>
+          <AssociationSet Name="tParticipationFeature" Association="CiviKeyModel.tParticipationFeature">
+            <End Role="tFeature" EntitySet="tFeatures" />
+            <End Role="tParticipation" EntitySet="tParticipations" />
+          </AssociationSet>
+          <EntitySet Name="tRoadMaps" EntityType="CiviKeyModel.tRoadMap" />
+          <AssociationSet Name="FK_IdRoadMap" Association="CiviKeyModel.FK_IdRoadMap">
+            <End Role="tRoadMap" EntitySet="tRoadMaps" />
+            <End Role="tFeature" EntitySet="tFeatures" />
+          </AssociationSet>
+          <EntitySet Name="tContacts" EntityType="CiviKeyModel.tContact" />
+          <AssociationSet Name="FK_ContactId" Association="CiviKeyModel.FK_ContactId">
+            <End Role="tContact" EntitySet="tContacts" />
+            <End Role="tContactRelation" EntitySet="tContactRelations" />
+          </AssociationSet>
+          <AssociationSet Name="FK_EntityId" Association="CiviKeyModel.FK_EntityId">
+            <End Role="tContact" EntitySet="tContacts" />
+            <End Role="tContactRelation" EntitySet="tContactRelations" />
+          </AssociationSet>
+          <FunctionImport Name="GetContactIdFromSafeName" ReturnType="Collection(Int32)">
+          <Parameter Name="safeName" Mode="In" Type="String" />
+          </FunctionImport>
+          <AssociationSet Name="tParticipationRoadmap" Association="CiviKeyModel.tParticipationRoadmap">
+            <End Role="tParticipation" EntitySet="tParticipations" />
+            <End Role="tRoadMap" EntitySet="tRoadMaps" />
+          </AssociationSet>
+          <EntitySet Name="tReleaseNotes" EntityType="CiviKeyModel.tReleaseNote" />
+          <AssociationSet Name="FK_ReleaseNoteRoadmapID" Association="CiviKeyModel.FK_ReleaseNoteRoadmapID">
+            <End Role="tRoadMap" EntitySet="tRoadMaps" />
+            <End Role="tReleaseNote" EntitySet="tReleaseNotes" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="tCategory">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="tFeatures" Relationship="CiviKeyModel.tCategoryFeature" FromRole="tCategory" ToRole="tFeature" />
+          <Property Type="String" Name="IconName" MaxLength="128" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tContactRelation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ContactId" Nullable="false" />
+          <Property Type="Int32" Name="EntityId" Nullable="false" />
+          <Property Type="DateTime" Name="StartDate" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="EndDate" Precision="0" />
+          <NavigationProperty Name="tParticipations" Relationship="CiviKeyModel.FK_ContactIdParticipation" FromRole="tContactRelation" ToRole="tParticipation" />
+          <NavigationProperty Name="tContact" Relationship="CiviKeyModel.FK_ContactId" FromRole="tContactRelation" ToRole="tContact" />
+          <NavigationProperty Name="tOrganization" Relationship="CiviKeyModel.FK_EntityId" FromRole="tContactRelation" ToRole="tContact" />
+          </EntityType>
+        <EntityType Name="tNew">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Content" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="tParticipation">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="ContactRelationId" Nullable="false" />
+          <Property Type="String" Name="PartType" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Percentage" Nullable="false" />
+          <Property Type="DateTime" Name="ParticipationDate" Nullable="false" Precision="0" />
+          <NavigationProperty Name="tContactRelation" Relationship="CiviKeyModel.FK_ContactIdParticipation" FromRole="tParticipation" ToRole="tContactRelation" />
+          <NavigationProperty Name="tFeature" Relationship="CiviKeyModel.tParticipationFeature" FromRole="tParticipation" ToRole="tFeature" />
+          <NavigationProperty Name="tRoadMap" Relationship="CiviKeyModel.tParticipationRoadmap" FromRole="tParticipation" ToRole="tRoadMap" />
+        </EntityType>
+        <EntityType Name="tPlugin">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Version" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="0" />
+          <NavigationProperty Name="tSections" Relationship="CiviKeyModel.tSectionPlugin" FromRole="tPlugin" ToRole="tSection" />
+        </EntityType>
+        <EntityType Name="tSection">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="FeatureId" Nullable="false" />
+          <NavigationProperty Name="tPlugins" Relationship="CiviKeyModel.tSectionPlugin" FromRole="tSection" ToRole="tPlugin" />
+          <NavigationProperty Name="tFeature" Relationship="CiviKeyModel.FK_FeatureId" FromRole="tSection" ToRole="tFeature" />
+        </EntityType>
+        <EntityType Name="tTestimony">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Author" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Content" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="0" />
+        </EntityType>
+        <EntityType Name="tVideo">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="VideoSource" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="FeatureId" Nullable="false" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="0" />
+          <NavigationProperty Name="tFeature" Relationship="CiviKeyModel.FK_FeatureIdVideo" FromRole="tVideo" ToRole="tFeature" />
+        </EntityType>
+        <Association Name="FK_ContactIdParticipation">
+          <End Type="CiviKeyModel.tContactRelation" Role="tContactRelation" Multiplicity="1" />
+          <End Type="CiviKeyModel.tParticipation" Role="tParticipation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tContactRelation">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tParticipation">
+              <PropertyRef Name="ContactRelationId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tSectionPlugin">
+          <End Type="CiviKeyModel.tPlugin" Role="tPlugin" Multiplicity="*" />
+          <End Type="CiviKeyModel.tSection" Role="tSection" Multiplicity="*" />
+        </Association>
+        <EntityType Name="tFeature">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Title" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Version" Nullable="false" MaxLength="12" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Progress" Nullable="false" />
+          <Property Type="DateTime" Name="CreationDate" Nullable="false" Precision="0" />
+          <Property Type="Int32" Name="IdRoadMap" Nullable="false" />
+          <Property Type="Int32" Name="Type" Nullable="false" />
+          <NavigationProperty Name="tSections" Relationship="CiviKeyModel.FK_FeatureId" FromRole="tFeature" ToRole="tSection" />
+          <NavigationProperty Name="tVideos" Relationship="CiviKeyModel.FK_FeatureIdVideo" FromRole="tFeature" ToRole="tVideo" />
+          <NavigationProperty Name="tCategories" Relationship="CiviKeyModel.tCategoryFeature" FromRole="tFeature" ToRole="tCategory" />
+          <NavigationProperty Name="tParticipations" Relationship="CiviKeyModel.tParticipationFeature" FromRole="tFeature" ToRole="tParticipation" />
+          <NavigationProperty Name="tRoadMap" Relationship="CiviKeyModel.FK_IdRoadMap" FromRole="tFeature" ToRole="tRoadMap" />
+          <Property Type="String" Name="LogoPath" Nullable="false" MaxLength="256" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <Association Name="FK_FeatureId">
+          <End Type="CiviKeyModel.tFeature" Role="tFeature" Multiplicity="1" />
+          <End Type="CiviKeyModel.tSection" Role="tSection" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tFeature">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tSection">
+              <PropertyRef Name="FeatureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_FeatureIdVideo">
+          <End Type="CiviKeyModel.tFeature" Role="tFeature" Multiplicity="1" />
+          <End Type="CiviKeyModel.tVideo" Role="tVideo" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tFeature">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tVideo">
+              <PropertyRef Name="FeatureId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tCategoryFeature">
+          <End Type="CiviKeyModel.tCategory" Role="tCategory" Multiplicity="*" />
+          <End Type="CiviKeyModel.tFeature" Role="tFeature" Multiplicity="*" />
+        </Association>
+        <Association Name="tParticipationFeature">
+          <End Type="CiviKeyModel.tFeature" Role="tFeature" Multiplicity="0..1" />
+          <End Type="CiviKeyModel.tParticipation" Role="tParticipation" Multiplicity="*" />
+        </Association>
+        <EntityType Name="tRoadMap">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="HasRelease" Nullable="false" />
+          <NavigationProperty Name="tFeatures" Relationship="CiviKeyModel.FK_IdRoadMap" FromRole="tRoadMap" ToRole="tFeature" />
+          <NavigationProperty Name="tParticipations" Relationship="CiviKeyModel.tParticipationRoadmap" FromRole="tRoadMap" ToRole="tParticipation" />
+          <NavigationProperty Name="tReleaseNotes" Relationship="CiviKeyModel.FK_ReleaseNoteRoadmapID" FromRole="tRoadMap" ToRole="tReleaseNote" />
+        </EntityType>
+        <Association Name="FK_IdRoadMap">
+          <End Type="CiviKeyModel.tRoadMap" Role="tRoadMap" Multiplicity="1" />
+          <End Type="CiviKeyModel.tFeature" Role="tFeature" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tRoadMap">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tFeature">
+              <PropertyRef Name="IdRoadMap" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="tContact">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="128" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Description" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="LogoPath" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="WebsiteUrl" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="tContactRelations" Relationship="CiviKeyModel.FK_ContactId" FromRole="tContact" ToRole="tContactRelation" />
+          <NavigationProperty Name="tContactRelations1" Relationship="CiviKeyModel.FK_EntityId" FromRole="tContact" ToRole="tContactRelation" />
+        </EntityType>
+        <Association Name="FK_ContactId">
+          <End Type="CiviKeyModel.tContact" Role="tContact" Multiplicity="1" />
+          <End Type="CiviKeyModel.tContactRelation" Role="tContactRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tContact">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tContactRelation">
+              <PropertyRef Name="ContactId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_EntityId">
+          <End Type="CiviKeyModel.tContact" Role="tContact" Multiplicity="1" />
+          <End Type="CiviKeyModel.tContactRelation" Role="tContactRelation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tContact">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tContactRelation">
+              <PropertyRef Name="EntityId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="tParticipationRoadmap">
+          <End Type="CiviKeyModel.tParticipation" Role="tParticipation" Multiplicity="*" />
+          <End Type="CiviKeyModel.tRoadMap" Role="tRoadMap" Multiplicity="0..1" />
+        </Association>
+        <EntityType Name="tReleaseNote">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="RoadmapId" Nullable="false" />
+          <Property Type="Int32" Name="RevisionNumber" Nullable="false" />
+          <NavigationProperty Name="tRoadMap" Relationship="CiviKeyModel.FK_ReleaseNoteRoadmapID" FromRole="tReleaseNote" ToRole="tRoadMap" />
+          <Property Type="String" Name="HtmlContent" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="ReleaseDate" Nullable="false" Precision="0" />
+        </EntityType>
+        <Association Name="FK_ReleaseNoteRoadmapID">
+          <End Type="CiviKeyModel.tRoadMap" Role="tRoadMap" Multiplicity="1" />
+          <End Type="CiviKeyModel.tReleaseNote" Role="tReleaseNote" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tRoadMap">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="tReleaseNote">
+              <PropertyRef Name="RoadmapId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="CiviKeyModelStoreContainer" CdmEntityContainer="CiviKeyEntities">
+          <EntitySetMapping Name="tCategories">
+            <EntityTypeMapping TypeName="CiviKeyModel.tCategory">
+              <MappingFragment StoreEntitySet="tCategory">
+                <ScalarProperty Name="IconName" ColumnName="IconName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tContactRelations">
+            <EntityTypeMapping TypeName="CiviKeyModel.tContactRelation">
+              <MappingFragment StoreEntitySet="tContactRelation">
+                <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+                <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+                <ScalarProperty Name="EntityId" ColumnName="EntityId" />
+                <ScalarProperty Name="ContactId" ColumnName="ContactId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tNews">
+            <EntityTypeMapping TypeName="CiviKeyModel.tNew">
+              <MappingFragment StoreEntitySet="tNews">
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tParticipations">
+            <EntityTypeMapping TypeName="CiviKeyModel.tParticipation">
+              <MappingFragment StoreEntitySet="tParticipation">
+                <ScalarProperty Name="ParticipationDate" ColumnName="ParticipationDate" />
+                <ScalarProperty Name="Percentage" ColumnName="Percentage" />
+                <ScalarProperty Name="PartType" ColumnName="PartType" />
+                <ScalarProperty Name="ContactRelationId" ColumnName="ContactRelationId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tPlugins">
+            <EntityTypeMapping TypeName="CiviKeyModel.tPlugin">
+              <MappingFragment StoreEntitySet="tPlugin">
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tSections">
+            <EntityTypeMapping TypeName="CiviKeyModel.tSection">
+              <MappingFragment StoreEntitySet="tSection">
+                <ScalarProperty Name="FeatureId" ColumnName="FeatureId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tTestimonies">
+            <EntityTypeMapping TypeName="CiviKeyModel.tTestimony">
+              <MappingFragment StoreEntitySet="tTestimony">
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="Content" ColumnName="Content" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Author" ColumnName="Author" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tVideos">
+            <EntityTypeMapping TypeName="CiviKeyModel.tVideo">
+              <MappingFragment StoreEntitySet="tVideo">
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="FeatureId" ColumnName="FeatureId" />
+                <ScalarProperty Name="VideoSource" ColumnName="VideoSource" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="tSectionPlugin" TypeName="CiviKeyModel.tSectionPlugin" StoreEntitySet="tSectionPlugin">
+            <EndProperty Name="tSection">
+              <ScalarProperty Name="Id" ColumnName="SectionId" />
+            </EndProperty>
+            <EndProperty Name="tPlugin">
+              <ScalarProperty Name="Id" ColumnName="PluginId" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="tFeatures">
+            <EntityTypeMapping TypeName="CiviKeyModel.tFeature">
+              <MappingFragment StoreEntitySet="tFeature">
+                <ScalarProperty Name="LogoPath" ColumnName="LogoPath" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="IdRoadMap" ColumnName="IdRoadMap" />
+                <ScalarProperty Name="CreationDate" ColumnName="CreationDate" />
+                <ScalarProperty Name="Progress" ColumnName="Progress" />
+                <ScalarProperty Name="Version" ColumnName="Version" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="tCategoryFeature" TypeName="CiviKeyModel.tCategoryFeature" StoreEntitySet="tCategoryFeature">
+            <EndProperty Name="tFeature">
+              <ScalarProperty Name="Id" ColumnName="IdFeature" />
+            </EndProperty>
+            <EndProperty Name="tCategory">
+              <ScalarProperty Name="Id" ColumnName="IdCategory" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="tParticipationFeature" TypeName="CiviKeyModel.tParticipationFeature" StoreEntitySet="tParticipationFeature">
+            <EndProperty Name="tParticipation">
+              <ScalarProperty Name="Id" ColumnName="ParticipationId" />
+            </EndProperty>
+            <EndProperty Name="tFeature">
+              <ScalarProperty Name="Id" ColumnName="FeatureId" />
+            </EndProperty>
+            <Condition ColumnName="FeatureId" IsNull="false" />
+          </AssociationSetMapping>
+          <EntitySetMapping Name="tRoadMaps">
+            <EntityTypeMapping TypeName="CiviKeyModel.tRoadMap">
+              <MappingFragment StoreEntitySet="tRoadMap">
+                <ScalarProperty Name="HasRelease" ColumnName="HasRelease" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tContacts">
+            <EntityTypeMapping TypeName="CiviKeyModel.tContact">
+              <MappingFragment StoreEntitySet="tContact">
+                <ScalarProperty Name="WebsiteUrl" ColumnName="WebsiteUrl" />
+                <ScalarProperty Name="LogoPath" ColumnName="LogoPath" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetContactIdFromSafeName" FunctionName="CiviKeyModel.Store.GetContactIdFromSafeName" />
+          <AssociationSetMapping Name="tParticipationRoadmap" TypeName="CiviKeyModel.tParticipationRoadmap" StoreEntitySet="tParticipationRoadmap">
+            <EndProperty Name="tRoadMap">
+              <ScalarProperty Name="Id" ColumnName="RoadmapId" />
+            </EndProperty>
+            <EndProperty Name="tParticipation">
+              <ScalarProperty Name="Id" ColumnName="ParticipationId" />
+            </EndProperty>
+            <Condition ColumnName="RoadmapId" IsNull="false" />
+          </AssociationSetMapping>
+          <EntitySetMapping Name="tReleaseNotes">
+            <EntityTypeMapping TypeName="CiviKeyModel.tReleaseNote">
+              <MappingFragment StoreEntitySet="tReleaseNote">
+                <ScalarProperty Name="ReleaseDate" ColumnName="ReleaseDate" />
+                <ScalarProperty Name="HtmlContent" ColumnName="HtmlContent" />
+                <ScalarProperty Name="RevisionNumber" ColumnName="RevisionNumber" />
+                <ScalarProperty Name="RoadmapId" ColumnName="RoadmapId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams>
+      <Diagram Name="Model">
+        <EntityTypeShape EntityType="CiviKeyModel.tCategory" Width="1.5" PointX="0.75" PointY="5" Height="1.5956835937500031" />
+        <EntityTypeShape EntityType="CiviKeyModel.tContactRelation" Width="1.5" PointX="3" PointY="8.5" Height="2.5571907552083388" />
+        <EntityTypeShape EntityType="CiviKeyModel.tNew" Width="1.5" PointX="7.75" PointY="1.375" Height="1.7879850260416674" IsExpanded="true" />
+        <EntityTypeShape EntityType="CiviKeyModel.tParticipation" Width="1.5" PointX="5.25" PointY="4.625" Height="2.3648893229166674" />
+        <EntityTypeShape EntityType="CiviKeyModel.tPlugin" Width="1.5" PointX="3" PointY="0.75" Height="2.1725878906250031" />
+        <EntityTypeShape EntityType="CiviKeyModel.tSection" Width="1.5" PointX="5.25" PointY="1.875" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="CiviKeyModel.tTestimony" Width="1.5" PointX="7.75" PointY="4.375" Height="1.9802864583333388" />
+        <EntityTypeShape EntityType="CiviKeyModel.tVideo" Width="1.5" PointX="5.25" PointY="10.625" Height="2.172587890624996" />
+        <AssociationConnector Association="CiviKeyModel.FK_ContactIdParticipation" >
+          <ConnectorPoint PointX="3.75" PointY="8.5" />
+          <ConnectorPoint PointX="3.75" PointY="5.353204831380209" />
+          <ConnectorPoint PointX="5.25" PointY="5.353204831380209" />
+        </AssociationConnector>
+        <AssociationConnector Association="CiviKeyModel.tSectionPlugin" >
+          <ConnectorPoint PointX="4.5" PointY="2.3987939453125016" />
+          <ConnectorPoint PointX="5.25" PointY="2.3987939453125016" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="CiviKeyModel.tFeature" Width="1.5" PointX="8" PointY="7.5" Height="3.5186979166666674" />
+        <AssociationConnector Association="CiviKeyModel.FK_FeatureId" >
+          <ConnectorPoint PointX="9.4062495000000013" PointY="7.5" />
+          <ConnectorPoint PointX="9.4062495000000013" PointY="3.5403857421875031" />
+          <ConnectorPoint PointX="6.75" PointY="3.5403857421875031" />
+        </AssociationConnector>
+        <AssociationConnector Association="CiviKeyModel.FK_FeatureIdVideo" >
+          <ConnectorPoint PointX="8" PointY="10.821848958333334" />
+          <ConnectorPoint PointX="6.75" PointY="10.821848958333334" />
+        </AssociationConnector>
+        <AssociationConnector Association="CiviKeyModel.tCategoryFeature" >
+          <ConnectorPoint PointX="2.25" PointY="6.0814096627604171" />
+          <ConnectorPoint PointX="3.6666666666666665" PointY="6.0814096627604162" />
+          <ConnectorPoint PointX="3.8333333333333335" PointY="6.0814096627604171" />
+          <ConnectorPoint PointX="5" PointY="6.0814096627604171" />
+          <ConnectorPoint PointX="5" PointY="7.2398893229166674" />
+          <ConnectorPoint PointX="8.75" PointY="7.2398893229166674" />
+          <ConnectorPoint PointX="8.75" PointY="7.5" />
+        </AssociationConnector>
+        <AssociationConnector Association="CiviKeyModel.tParticipationFeature" >
+          <ConnectorPoint PointX="9.374997" PointY="7.5" />
+          <ConnectorPoint PointX="9.374997" PointY="6.7999886067708353" />
+          <ConnectorPoint PointX="6.75" PointY="6.7999886067708353" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="CiviKeyModel.tRoadMap" Width="1.5" PointX="10.375" PointY="0.875" Height="1.7879850260416674" />
+        <AssociationConnector Association="CiviKeyModel.FK_IdRoadMap" >
+          <ConnectorPoint PointX="11.125" PointY="2.8552864583333331" />
+          <ConnectorPoint PointX="11.125" PointY="9.2593489583333337" />
+          <ConnectorPoint PointX="9.5" PointY="9.2593489583333337" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="CiviKeyModel.tContact" Width="1.5" PointX="0.75" PointY="8.625" Height="2.3648893229166674" />
+        <AssociationConnector Association="CiviKeyModel.FK_ContactId" >
+          <ConnectorPoint PointX="2.25" PointY="9.8074446614583337" />
+          <ConnectorPoint PointX="3" PointY="9.8074446614583337" />
+        </AssociationConnector>
+        <AssociationConnector Association="CiviKeyModel.FK_EntityId" >
+          <ConnectorPoint PointX="2.25" PointY="9.1537223307291669" />
+          <ConnectorPoint PointX="3" PointY="9.1537223307291669" />
+        </AssociationConnector>
+        <AssociationConnector Association="CiviKeyModel.tParticipationRoadmap" >
+          <ConnectorPoint PointX="6.75" PointY="6.5776350325520863" />
+          <ConnectorPoint PointX="9.3229161666666673" PointY="6.5776350325520854" />
+          <ConnectorPoint PointX="9.4895828333333352" PointY="6.5776350325520863" />
+          <ConnectorPoint PointX="10.7187475" PointY="6.5776350325520863" />
+          <ConnectorPoint PointX="10.7187475" PointY="2.8552864583333331" />
+        </AssociationConnector>
+        <EntityTypeShape EntityType="CiviKeyModel.tReleaseNote" Width="1.5" PointX="12.25" PointY="5" />
+        <AssociationConnector Association="CiviKeyModel.FK_ReleaseNoteRoadmapID" />
+        </Diagram>
+    </Diagrams>
+  </Designer>
+</edmx:Edmx>

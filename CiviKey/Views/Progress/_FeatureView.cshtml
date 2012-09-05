@@ -1,0 +1,45 @@
+﻿@model CiviKey.ViewModel.FeatureViewModel
+@helper GetProgress()
+    {
+        string output;
+        if( Model.Progress == 100 )
+        {
+            output = Model.Version.ToString();
+        }
+        else
+        {
+            output = Model.Progress + "%";
+        }
+    @:@output
+}
+@helper GetProgressImagePath()
+    {
+        string output;
+        if( Model.Progress == 0 )
+        {
+            output = Url.Content("~/Content/images/empty-progressbar.png");
+        }
+        else
+        {
+            output = Url.Content("~/Content/images/progressbar.png");
+        }
+    @:@output
+}
+<div class="progress-elem-title-bar">
+    <div style="clear:both;"></div>
+    <div class="progress-elem-title">@Model.Title</div>
+   @if( Model.Progress == 100 )
+    {
+        <div class="progress-elem-type done-feature">
+        </div> 
+    }
+    else 
+    {
+        <div class="progress-elem-type">
+            <p class="progress-elem-progress-p">@Model.Progress%</p>
+            <img src="@GetProgressImagePath()" alt="progression" />
+        </div>
+    }   
+    <div style="clear: both;">
+    </div>
+</div>

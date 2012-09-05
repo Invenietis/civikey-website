@@ -1,0 +1,141 @@
+﻿@using CiviKey.Models
+@model IList<CiviKey.ViewModel.ContactViewModel>
+@section Description{
+    Page décrivant le projet CiviKey.
+    Son but, son architecture et ses partenaires.
+}
+@Html.CK().Scripts.ByName().IncludeJS( "project.js" )
+@Html.CK().Css.WithCiviKeyConvention().IncludeCss("Project")
+<div class="project-content">
+    <div class="project-title">
+        Cette page décrit le but du projet CiviKey.
+        <br />
+        Très bientôt, elle décrira également son historique, ses partenaires et son avenir.
+        @*: son architecture, son but, ses acteurs et son historique.*@
+    </div>
+    <div class="project-slider">
+        <div class="project-leftblock">
+            <div class="project-leftblock-content">
+                <div class="project-slide0 activeslide">
+                    <p>
+                        Civikey est un <span class="bold">ensemble de solutions logicielles</span> qui a
+                        pour but d’aider les personnes en situation de handicap à utiliser un ordinateur.<br />
+                        Suite à un état de l’art effectué depuis 2004 et mis à jour régulièrement, nous
+                        avons remarqué qu’aucun clavier existant ne permettait une modularité importante
+                        de leurs paramétrages pouvant s’adapter aux besoins des utilisateurs et de suivre
+                        les régulières avancées technologiques utilisables dans le cadre de l’aide au handicap.<br />
+                        C’est pourquoi ce projet <span class="bold">open-source (LGPL v3)</span> est développé
+                        dans l’optique de proposer un clavier virtuel, gratuitement, fonctionnel et adapté
+                        au plus grand nombre de handicaps, et permettant l’<span class="bold">ajout de nouvelles
+                            fonctionnalités facilement et rapidement</span>. Cette modularité est permise
+                        grâce à une <span class="bold">architecture par plugins</span>. Chaque plugin s’intègre
+                        à CiviKey, pour fournir à l’utilisateur l’aide dont il a besoin.<br />
+                        Ce projet a pour objectif de regrouper utilisateurs, développeurs et professionnels
+                        du monde du handicap afin d’œuvrer ensemble vers de nouvelles fonctionnalités de
+                        Civikey.
+                    </p>
+                    <div style="height: 267px;" class="project-images">
+                        <img class="project-civikey-architecture" alt="" src="@Url.Content( "~/Content/images/civikey-architecture.png" )" />
+                    </div>
+                </div>
+                @*<div class="project-slide1 passiveslide">
+                    <p>
+                        La première version de CiviKey date de 2004, il s’appelait alors CVK et était développé
+                        en C++. Il s’est agi dès le début d’un <span class="bold">projet partenarial</span>,
+                        mêlant des expertises de différents secteurs.
+                    </p>
+                    <p>
+                        CVK est issu de l’implication de trois contributeurs historiques : <span class="bold">
+                            l'hôpital Raymond Poincaré</span> de Garches (Hauts-de-Seine), spécialisé dans
+                        la rééducation des personnes handicapées motrices, l'école d'ingénierie informatique
+                        <span class="bold">IN'TECH INFO</span> (Groupe ESIEA), et la <span class="bold">Fondation
+                            Steria - Institut de France</span>, qui agit en faveur de la réduction de la
+                        fracture numérique.</p>
+                    <p>
+                        D’un côté, l’équipe d’ergothérapeutes de la Plate Forme Nouvelles Technologies de
+                        l’hôpital, initiatrice du projet, a élaboré le cahier des charges du clavier selon
+                        les besoins des utilisateurs. Elle a également fourni un retour d’expérience concret
+                        sur l’utilisabilité du clavier et contribué ainsi activement au projet.</p>
+                    <p>
+                        De l’autre, les élèves d’IN’TECH INFO ont pensé et développé le clavier, avec l’aide
+                        de leur professeur référent.</p>
+                    <p>
+                        Enfin, la Fondation Steria – Institut de France a attribué un prix à l’équipe d’étudiants
+                        d’IN’TECH INFO et a mobilisé deux parrains pour les accompagner dans le développement
+                        de la première version du clavier virtuel.
+                    </p>
+                    <div id="pratners-logo" class="carousel slide">
+                        <div class="carousel-inner">
+                            @for( int i = 0; i < Model.Count; i = i + 3 )
+                            {   
+                                <div class="@if( i == 0 )
+                                            {@("active")} item">
+                                    <div style="text-align: center; height: 130px;">
+                                        <img src="@Url.Content( "~/Content/images/project-partner-separator.png" )"/>
+                                        <img src="/Content/images/PartnerProjectPage/@Model[i].LogoPath" alt="Logo" style="margin-right:20px;" />
+                                        @if( ( i + 1 ) < Model.Count )
+                                        {
+                                            <img src="/Content/images/PartnerProjectPage/@Model[i + 1].LogoPath" alt="Logo" />
+                                        }
+                                        @if( ( i + 2 ) < Model.Count )
+                                        {
+                                            <img src="/Content/images/PartnerProjectPage/@Model[i + 2].LogoPath" style="margin-left:20px;" alt="Logo" />
+                                        }
+                                        <img src="@Url.Content( "~/Content/images/project-partner-separator.png" )"/>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        <a class="carousel-control left" href="#pratners-logo" data-slide="prev">&lsaquo;</a>
+                        <a class="carousel-control right" href="#pratners-logo" data-slide="next">&rsaquo;</a>
+                    </div>
+                </div>
+                <div class="project-slide2 passiveslide">
+                    <p>
+                        CiviKey, depuis 2004 jusqu’à aujourd’hui, a beaucoup évolué. Si les partenaires
+                        historiques ont depuis son lancement démontré une implication sans faille dans son
+                        développement, de nouveaux contributeurs se sont mobilisés autour du projet. Le
+                        <span class="bold">Laboratoire de Tours</span> a développé un moteur de prédiction de mots innovant, Sybille,
+                        qui est intégré au clavier. L’<span class="bold">AFM</span>, qui a contribué financièrement à la refonte de
+                        l’architecture, a également apporté son expertise technique en matière d’aides techniques
+                        autour du handicap.
+                    </p>
+                    <p>
+                        C’est dans le cadre de cette évolution que <span class="bold">la Fondation Garches</span>, reconnue d’utilité
+                        publique, s’est intéressée, dès l’année 2008, au projet civikey. Elle a proposé
+                        à l’un de ses partenaires, <span class="bold">Alcatel-Lucent</span>, d’aider au financement des développements
+                        du projet. En effet Alcatel-Lucent, dans le cadre de son accord d’entreprise pour
+                        l’insertion professionnelle des personnes handicapées, souhaite adapter le clavier
+                        aux spécificités de certains postes de travail de l’entreprise et compléter ainsi
+                        les adaptations déjà effectuées pour d’autres types de handicap dans le domaine
+                        de l’accessibilité numérique de ses solutions de communication d’entreprise. La
+                        Fondation Garches, grâce au soutien d’Alcatel-Lucent, coordonne et finance les développements
+                        assurés par <span class="bold">Invenietis</span> et les tests cliniques d’évaluation effectués par la <span class="bold">PFNT</span>.</p>
+                    <p>
+                        <span class="bold">La Fondation Steria – Institut de France</span> s’est engagée,
+                        se son côté, à accompagner les différents contributeurs dans l’animation d’une communauté
+                        Open source pour assurer à la fois l’évolutivité et la pérennité du projet.
+                    </p>
+                </div>*@
+            </div>
+        </div>
+        <div class="project-rightblock">
+            <div class="project-menuelem active-proj" id="project">
+                <p>
+                    CiviKey, un clavier virtuel personnalisable et gratuit
+                </p>
+            </div>
+            @* <div class="project-menuelem inactive" id="contributors">
+                <p>
+                    Les contributeurs<br /> historiques
+                </p>
+            </div>
+            <div class="project-menuelem inactive" id="partners">
+                <p>
+                    Des partenaires toujours plus nombreux
+                </p>
+            </div>*@
+        </div>
+        <div style="clear: both"></div>
+    </div>
+</div>

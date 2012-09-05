@@ -1,0 +1,112 @@
+﻿@using CiviKey.Models
+@model CiviKey.ViewModel.FeatureViewModel
+@section Description{
+    Page décrivant une fonctionnalité de CiviKey.
+}
+@Html.CK().Scripts.ByName().IncludeJS( "setSponsor-1.0.0" ).IncludeJS( "feature.js" )
+
+<div id="fb-root"></div>
+<script type="text/javascript">
+    $(function () {
+        var participations = {};
+        
+
+        var sponsors = window.JSON.parse('@Html.Raw( Json.Encode( Model.Sponsors ) )');
+        var participations = window.JSON.parse('@Html.Raw( Json.Encode( Model.DeveloppingCompanies ) )');
+        
+
+        var videoSource = window.JSON.parse('@Html.Raw( Json.Encode( Model.Videos ) )');
+
+        var sponsorsOptions = {
+            width: 520,
+            height: 4,
+            parent: ".feature-sponsors"
+        }
+
+        var participationsOptions = {
+            width: 520,
+            height: 4,
+            parent: ".feature-participations"
+        }
+
+        document.CK.setVideoSlider(videoSource);
+        document.CK.setSponsorHtml(sponsors, sponsorsOptions);
+        document.CK.setSponsorHtml(participations, participationsOptions);
+
+        //facebook
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1";
+            fjs.parentNode.insertBefore(js, fjs);
+        } (document, 'script', 'facebook-jssdk'));
+
+        //twitter
+        !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } } (document, "script", "twitter-wjs");
+    });
+
+    
+
+</script>
+<div class="feature-content">
+    <div class="feature-title">
+        <div class="feature-title-logo">
+            @if(!String.IsNullOrWhiteSpace(Model.LogoPath)){
+                <img src="@Url.Content(String.Format("~/Content/images/FeatureIcon/{0}", Model.LogoPath))" />
+            }
+        </div>
+        <div class="feature-title-text" data-title="@Model.Title" data-version="@Model.RoadMapVersion">@Model.Title</div>
+        <div style="clear: both;">
+        </div>
+    </div>
+    <div class="feature-info">
+        <div class="content-before-video">
+            <div class="fb-like feature-facebook" data-href="@Url.RouteUrl( "Feature", new { version = Model.RoadMapVersion, name = Model.Title }, Request.Url.Scheme )" data-send="false" data-layout="button_count" data-width="0" data-show-faces="false"></div>
+            <a href="https://twitter.com/share" class="twitter-share-button feature-twitter" data-url="@Url.RouteUrl( "Feature", new { version = Model.RoadMapVersion, name = Model.Title }, Request.Url.Scheme )" data-lang="fr">Tweeter</a>
+            <div style=" clear:both;"></div>
+            <h1 class="feature-section-title" >Description</h1>
+            <div class="feature-description-text">@Html.Raw( Model.Description )</div>
+            <h1 class="feature-section-title">Categories</h1>
+            <div class="feature-description-text category">
+                @string.Join( ", ", Model.Categories.Select( c => c.Name ) )
+            </div>
+        </div>
+        @if( Model.Videos.Count > 0 )
+        {
+        <h1 class="feature-section-title">Demo</h1>
+        <div class="feature-description-text demovideo">
+            @for( int i = 0; i < Model.Videos.Count; i++ )
+            {
+                <div class="feature-demo"  id="b@(i)">
+                    <img alt="video de démonstration" class="feature-demo-image"src="http://img.youtube.com/vi/@Model.Videos.ElementAt( i ).VideoSource/mqdefault.jpg" />
+                </div>
+            }
+            <div style="clear: both">
+            </div>
+            <div id="video">
+                <div class="video-bar">
+                    <div class="close">
+                    </div>
+                </div>
+                <iframe width="520" height="390" src="" frameborder="0"></iframe>
+            </div>
+        </div>
+        }
+         @{
+             if( Model.Sponsors.Count > 0 )
+             {
+                <h1 class="feature-section-title">Sponsorisé par</h1>
+                <div class="feature-description-text feature-sponsors">
+                </div>
+             }
+
+             if( Model.Participations.Count > 0 )
+             {
+                <h1 class="feature-section-title">Developpé par</h1>
+                <div class="feature-description-text feature-participations">
+                </div>
+             }
+        }
+    </div>
+</div>

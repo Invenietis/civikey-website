@@ -1,0 +1,17 @@
+
+bin/
+obj/
+*.user
+*.suo
+CiviKey/Web.config
+**/bin/*
+**/obj/*
+CiviKey/Web.config
+CiviKey/Web.config
+**/packages/*
+packages/*
+**/bin/*
+.nuget/*
+*/obj/**
+CiviKey/CiviKey.zip
+CiviKey/obj*

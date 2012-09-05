@@ -1,0 +1,11 @@
+﻿@model ICollection<CiviKey.ViewModel.FeatureViewModel>
+@{
+}
+@foreach( var item in Model )
+{
+    <div class="progress-list-elem" data-requestroute="@Url.Action( "Index", "Feature", new { id = item.Id } )" data-title="@item.Title">
+        @Html.Partial( "_FeatureView", item )
+    </div>
+}
+<div style="clear: both;">
+</div>

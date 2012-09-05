@@ -1,0 +1,5 @@
+﻿@model CiviKey.ViewModel.TestimonyViewModel
+
+<p id="testimony-title" data-id="@Model.Id">@Model.Title</p>
+<p class="testimony-content">@Html.Raw(Model.Content)</p>
+<p class="testimony-author">@Html.Raw(Model.Author)</p>

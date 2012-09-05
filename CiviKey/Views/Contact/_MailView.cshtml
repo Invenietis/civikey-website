@@ -1,0 +1,43 @@
+﻿@model CiviKey.Models.Contact
+@{
+    AjaxOptions option = new AjaxOptions
+    {
+        OnSuccess = "mailSent(data)",
+        OnFailure = "mailFailed()"
+    };
+}
+
+<script>
+    function addGaqPush() {
+        if (typeof _gaq === "object") {
+            _gaq.push(['_trackEvent', 'Mail', 'MailSent']);
+        }
+    }
+</script>
+
+@using( Ajax.BeginForm( "Send", "Contact", option ) )
+{
+    <input type="hidden" id="techQuestion" name="techQuestion" value="false" />
+    <div class="contact-form-elem">
+        <label>
+            A :</label>
+        @ViewBag.Email
+    </div>
+    <div class="contact-form-elem">
+        @Html.LabelFor( m => m.From )
+        @Html.EditorFor( m => m.From, new { title = "test" } )
+    </div>
+    <div class="contact-form-elem">
+        @Html.LabelFor( m => m.Subject )
+        @Html.EditorFor( m => m.Subject )
+    </div>
+    <div class="contact-form-elem">
+        @Html.LabelFor( m => m.Message )
+        @Html.EditorFor( m => m.Message )
+    </div>
+    <div class="contact-form-elem-btn">
+        @*@Html.ValidationMessageFor(m => m.From) @Html.ValidationMessageFor(m => m.Subject) @Html.ValidationMessageFor(m => m.Message)*@
+        @Html.ValidationSummary()
+        <input type="submit" value="Envoyer" class="send-btn" onclick="Civi.addGaqPush('Mail', 'MailSent','Done')" />
+    </div>
+}

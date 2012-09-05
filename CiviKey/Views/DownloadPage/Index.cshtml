@@ -1,0 +1,77 @@
+﻿@using CiviKey.Models
+@model CiviKey.ViewModel.DownloadPageViewModel
+@section Description{
+    Page de téléchargement du projet CiviKey.
+    Liste l'ensemble des release notes du projet.
+}
+@{
+    Html.CK().Css.WithCiviKeyConvention().IncludeCss("Download");
+    string lastRoadmapDownloadableVersion;
+    string lastRoadmapDownloadFilePath;
+
+    if (String.IsNullOrWhiteSpace(Model.LastRoadmap.DownloadFileName))
+    {
+        lastRoadmapDownloadableVersion = Model.LastRoadmap.Name;
+        lastRoadmapDownloadFilePath = "#";
+    }
+    else
+    {
+        lastRoadmapDownloadableVersion = CiviKey.Models.Helpers.GetVersionFromFileName(Model.LastRoadmap.DownloadFileName).ToString();
+        lastRoadmapDownloadFilePath = Url.Content("~/Content/downloads/" + Model.LastRoadmap.DownloadFileName);
+    }
+
+    CiviKey.ViewModel.ReleaseNoteViewModel rn;
+    ViewBag.Title = "CiviKey - Téléchargement";
+
+    <script>
+        function addGaqPush() {
+            if (typeof _gaq === "object") {
+                _gaq.push(['_trackEvent', 'Download', 'zip', '@lastRoadmapDownloadFilePath']);
+            }
+        }
+
+        $(function(){
+            $('.release-note-description-wrapper li').prepend('<i class="icon-ok" style="margin-right:5px;"></i>');
+        });
+    </script>
+<div class="download-content">
+    <img class="windows-compatibility" src="@Url.Content("~/Content/images/FR-w7-comp_rgb_S.png")"> 
+    <div class="project-title">
+        Sur cette page vous retrouverez les différentes "release notes" du projet.
+        <br />
+        Grâce à elle vous pourrez suivre très simplement les améliorations apportées au CiviKey à chaque mise à jour.
+    </div>
+    
+    <div style="clear: both;"></div>
+    <div class="release-note-list">
+        <div class="release-note-list-description">
+            <p>Liste des améliorations apportées à CiviKey : </p>
+        </div>
+        @for (int i = 0; i < Model.ReleaseNotes.Count; i++)
+        {
+            rn = Model.ReleaseNotes[i];
+        <div class="release-note-container">
+            <div class="release-note-title-container">
+                @if (@rn.Version == @lastRoadmapDownloadableVersion)
+                {
+                    <div class="release-note-download-link-container">
+                        <div class="release-note-download-link-inner-container">
+                            <a onclick="addGaqPush()" class="btn btn-large btn-primary" id="download-page-btn-download" href="@lastRoadmapDownloadFilePath"><i class="icon-thumbs-up icon-white" style="margin-right: 5px;"></i>Télécharger pour Windows</a>
+                        </div>
+                    </div>
+                }
+                <h3 class="release-note-title">Version @rn.Version</h3>
+                <p class="release-note-release-info">Mise en ligne le @rn.ReleaseDate.ToShortDateString()</p>
+            </div>
+            <div class="release-note-content">
+                <div class="release-note-description-wrapper">
+                        @Html.Raw(rn.HtmlContent)
+                </div>
+            </div>
+        </div>
+        }  
+    </div> 
+</div> 
+}
+
+

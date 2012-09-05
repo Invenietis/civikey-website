@@ -1,0 +1,87 @@
+﻿@using CiviKey.Models
+@model CiviKey.ViewModel.RoadmapViewModel
+@Html.CK().Scripts.ByName().IncludeJS("json2.js").IncludeJS("history.js").IncludeJS("history.adapter.jquery.js").IncludeJS("history.html4.js").IncludeJS("progress.js").IncludeJS("jquery.unobtrusive-ajax.js").IncludeJS("jquery-ui-1.8.19.min.js").IncludeJS("setSponsor-1.0.0.js").IncludeJS("feature.js").IncludeJS("bootstrap.js")
+@Html.CK().Css.WithCiviKeyConvention().IncludeCss("themes/base/jquery.ui.dialog.css").IncludeCss("themes/base/jquery.ui.core.css").IncludeCss("themes/base/jquery.ui.theme.css").IncludeCss("RoadMaps")
+
+@section Description{
+    Page décrivant la roadmap du projet CiviKey.
+    Liste les prochaines fonctionnalités à developper.
+}
+
+<script type="text/javascript">
+
+    Civi.getFeatureUrl = function (featureTitle, roadmapVersion) {
+        var roadmapUrl = '@Url.RouteUrl("Progress", new {}, Request.Url.Scheme)';
+        var featureUrl = '@Url.RouteUrl("Feature", new { version = "version", name = "title" }, Request.Url.Scheme)';
+
+        if (typeof featureTitle !== 'undefined') {
+            if (typeof roadmapVersion === 'undefined') {
+                roadmapVersion = $('.timeline-selected').text();
+            }
+            return featureUrl.replace('version', roadmapVersion).replace('title', featureTitle);
+        }
+        return roadmapUrl;
+    };
+
+</script>
+@if (Model.SelectedFeature != null)
+{
+    <script type="text/javascript">
+        $(function () {
+            state = {
+                type: 'feature',
+                route: '@Url.Action( "Index", "Feature", new { id = Model.SelectedFeature.Id } )'
+            };
+            History.pushState(state, "", Civi.getFeatureUrl('@Model.SelectedFeature.Title', '@Model.SelectedFeature.RoadMapVersion'));
+            Civi.addGaqPush('Feature', 'Feature-open', '@Model.SelectedFeature.Title');
+        });
+    </script>
+}
+<div id="dialog-container"></div>
+<div class="progress-content">
+    <div class="progress-title">
+        Cette page présente les versions disponibles et à venir de CiviKey. La colonne de gauche vous permet de naviguer entre les différentes versions.
+    </div>
+
+    <div class="progress-timebar">
+        <div class="progress-bar-begin">
+            <p>Versions</p>
+        </div>
+        <div class="progress-timebar-container">
+            <div class="timeline-container">
+                <ul id="timeline-buttons">
+                    @foreach (CiviKey.Models.tRoadMap item in ViewBag.Roadmaps)
+                    {
+                        string additionalClass = item.Id == Model.Id ? "timeline-selected " : " ";
+                        additionalClass += item.HasRelease ? "roadmap-hasrelease " : " "; 
+                        <li>
+                            @Ajax.ActionLink(item.Name, "GetFeatureView", new { version = @item.Name, type = ViewBag.RoadmapViewType }, new AjaxOptions
+                            {
+                                InsertionMode = InsertionMode.Replace,
+                                UpdateTargetId = "featureList",
+                                OnSuccess = "document.CK.AjaxCallbacks.onProgressGetFeatureViewSuccess"
+                            }, new { @class = string.Format("timeline-feature-link roadmap-{0} {1}", item.Id, additionalClass) })
+                            @if (!item.HasRelease)
+                            {
+                                <img class="roadmap-in-progress-img" src="@Url.Content("~/Content/images/in-progress.png")" title="en cours de développement" alt="roadmap en cours de développement"  rel="inprocess"/>
+                            }
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+    <div id="featureList">
+    @if (ViewBag.RoadmapViewType == "classic")
+    {
+        @Html.Partial("_RoadmapView", Model)
+    }
+    else
+    {
+        @Html.Partial("_CategorizedRoadmapView", Model)
+    }
+    </div>
+    <div style="clear: both;">
+    </div>
+</div>
