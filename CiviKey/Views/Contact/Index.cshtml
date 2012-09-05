@@ -6,11 +6,16 @@
 
 @{
     
-    Html.CK().Scripts.ByName().IncludeJS( "jquery.unobtrusive-ajax.js" ).
-                                IncludeJS( "jquery.validate.js" ).
-                                IncludeJS( "jquery.validate.unobtrusive.js" ).
-                                IncludeJS( "contacts.js" );
+    Html.CK().Scripts.ByName().IncludeJS("jquery.unobtrusive-ajax.js").
+                                IncludeJS("jquery.validate.js").
+                                IncludeJS("jquery.validate.unobtrusive.js").
+                                IncludeJS("contacts.js");
+    Html.CK().Css.ByName().IncludeCss("Contact");
 }
+
+<!--[if (gte IE 6)&(lte IE 8)]>
+  <script type="text/javascript" src="@Url.Content("~/Scripts/selectivizr-min.js")"></script>
+<![endif]-->
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCDAqSfJYM4GCTbN-dl-JLE4ux3XP7FdHs&sensor=true"></script>
 <div class="mailsent-dialog">
 </div>
@@ -43,7 +48,7 @@
         <div class="contact-main-content">
             <div class="contact-form-map-container">
                 <div class="contact-form">
-                    @Html.Partial( "_MailView", Model )
+                    @Html.Partial("_MailView", Model)
                 </div>
                 <div class="contact-map">
                     <div id="map_canvas">

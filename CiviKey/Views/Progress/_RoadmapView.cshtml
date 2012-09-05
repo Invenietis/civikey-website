@@ -5,16 +5,19 @@
         @if( Model.Sponsors.Count > 0 )
         {
             <div class="roadmap-sponsors-div">
-                <div class="road-map-sponsors-title"><p> Entités participant à cette roadmap : </p></div>
+                <div class="road-map-sponsors-title">
+                    <p> 
+                        Entités participant à cette roadmap : 
+                    </p>
+                </div>
                 <div style="padding-top:5px; padding-bottom:10px;width:100%; margin-left: 10px; margin-right:10px;">
                     @foreach( var participation in Model.Sponsors )
                     {
                             <img src="@Url.Content("~/Content/images/PartnerLogo/small/" + participation.ContactRelation.Contact.LogoPath)" style="height: 32px; " alt="logo-@participation.ContactRelation.Contact.Name" title="@participation.ContactRelation.Contact.Name" />
-                            <span class="sponsor-p">@participation.ContactRelation.Contact.Name</span>
+                            <span>@participation.ContactRelation.Contact.Name</span>
                     }
                 </div>
-                <div style="clear: both;">
-                </div>
+                <div style="clear: both;"></div>
             </div>
         }
         <div class="accordion" id="accordion2">
@@ -22,8 +25,7 @@
             {
                 <div class="accordion-group">
                     <div class="accordion-heading">
-                        <div class="collapse-image colapsed">
-                        </div>
+                        <div class="collapse-image colapsed"></div>
                         <img class="category-img" src="@Url.Content( "~/Content/images/CategoryIcon/add_24x24.png" )" alt="nouvelles fonctionnalités" />
                         <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
                             Nouvelles fonctionnalités (@Model.NewFeatures.Count)
@@ -31,7 +33,8 @@
                     </div>
                     <div id="collapseOne" class="accordion-body collapse">
                         <div class="accordion-inner">
-                            @Html.Partial( "_FeatureCategoryView", Model.NewFeatures )</div>
+                            @Html.Partial( "_FeatureCategoryView", Model.NewFeatures )
+                        </div>
                     </div>
                 </div>
             }
@@ -39,8 +42,7 @@
             {
                 <div class="accordion-group">
                     <div class="accordion-heading">
-                        <div class="collapse-image colapsed">
-                        </div>
+                        <div class="collapse-image colapsed"></div>
                         <img class="category-img" src="@Url.Content( "~/Content/images/CategoryIcon/up_arrow_24x24.png" )" alt="fonctionnalités améliorées" />
                         <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
                             Fonctionnalités améliorées (@Model.UpdatedFeatures.Count)
@@ -57,8 +59,7 @@
             {
                 <div class="accordion-group">
                     <div class="accordion-heading">
-                        <div class="collapse-image colapsed">
-                        </div>
+                        <div class="collapse-image colapsed"></div>
                         <img class="category-img" src="@Url.Content( "~/Content/images/CategoryIcon/check_mark_24x24.png" )" alt="fonctionnalités portées sur cette version" />
                         <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseThree">
                             Fonctionnalités disponibles (@Model.AvailableFeatures.Count)
@@ -91,14 +92,12 @@
             }
         </div>
     </div>
-
-@* Version Download part *@
     <div class="release-info-main-container">
         <div class="mode-toggle-container release-info-container">
             <p>
-                Changer de vue</p>
-            <a href="#" title="Classer par type d'aide" id="mode-toggle-category" class="mode-toggle-img" rel="byHelpType">
-                &nbsp;</a>
+                Changer de vue
+            </p>
+            <a href="#" title="Classer par type d'aide" id="mode-toggle-category" class="mode-toggle-img" rel="byHelpType">&nbsp;</a>
         </div>
     </div>
 }

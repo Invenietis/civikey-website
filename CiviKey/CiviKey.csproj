@@ -196,6 +196,10 @@
     <Compile Include="ViewModel\VideoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Contact.css" />
+    <Content Include="Content\Download.css" />
+    <Content Include="Content\Home.css" />
     <Content Include="Content\images\avancement.png" />
     <Content Include="Content\images\contactez-nous.png" />
     <Content Include="Content\images\download-btn.png" />
@@ -206,6 +210,10 @@
     <Content Include="Content\images\partenaires.png" />
     <Content Include="Content\images\slider-back.png" />
     <Content Include="Content\images\slider-download-info.png" />
+    <Content Include="Content\Layout.css" />
+    <Content Include="Content\Partners.css" />
+    <Content Include="Content\Project.css" />
+    <Content Include="Content\RoadMaps.css" />
     <Content Include="Content\themes\base\bootstrap.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
