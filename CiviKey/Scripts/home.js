@@ -23,10 +23,27 @@
     }
     getTestimony();
 
+
+    $('.left.carousel-control', '.carousel').hide();
     $('.carousel').carousel({
         interval: 2000
     })
     $('.carousel').carousel('pause');
+
+    $('.carousel').on('slid', '', function () {
+        var $this = $(this);
+
+        if ($('.carousel-inner .item:first').hasClass('active')) {
+            $this.children('.left.carousel-control').hide();
+            $this.children('.right.carousel-control').show();
+        } else if ($('.carousel-inner .item:last').hasClass('active')) {
+            $this.children('.right.carousel-control').hide();
+            $this.children('.left.carousel-control').show();
+        } else {
+            $this.children('.carousel-control').show();
+        }
+
+    });
 
 
     var selectedSlideId;
