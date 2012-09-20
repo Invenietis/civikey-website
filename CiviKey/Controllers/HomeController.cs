@@ -33,7 +33,7 @@ namespace CiviKey.Controllers
         public ActionResult Index()
         {
             ViewBag.Section = Sections.Default;
-            ViewBag.Title = "CiviKey - Accueil";
+            ViewBag.Title = "CiviKey";
             IList<tNew> news = _newsRepo.All;
             IList<NewsViewModel> newsVms = new List<NewsViewModel>();
             for( int i = 0; i < news.Count; i++ )

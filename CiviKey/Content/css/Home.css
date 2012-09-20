@@ -121,7 +121,7 @@
 #home-carousel .carousel-control
 {
     font-size: 21px;
-    line-height: 18px;
+    line-height: 16px;
     width: 20px;
     height: 20px;
 }
@@ -131,7 +131,8 @@
     font-size: 22px;
     font-weight: bold;
     color: #4b4b4b;
-    margin:5px 0 0 0;
+    margin:5px 0 9px 0;
+    line-height: 25px;
 }
 
 .news-content
