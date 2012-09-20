@@ -1,7 +1,7 @@
 ﻿$(function () {
     setInterval(function () {
         getTestimony();
-    }, 20000);
+    }, 10000);
 
     var getTestimony = function () {
         $.ajax({

@@ -1,11 +1,14 @@
 ﻿--Creating contacts
 
 insert into dbo.tTestimony (Author,Title,Content,CreationDate ) values('Dominique Lambert <br/> Déléguée Générale de la Fondation Steria - Institut de France', 'A la pointe de l''innovation', '"La Fondation Steria est fière d''accompagner le civikey, depuis l''attribution en 2004 du prix de la bourse de la Fondation à l''équipe étudiante d''Intech Info, jusqu''à l''animation de la communauté Open source aux côtés d''Invenietis et la plate-forme nouvelles technologies de l''hôpital de Garches.  Beaucoup plus qu''un simple clavier virtuel, le civikey est à la pointe de l''innovation  pour venir en aide aux personnes en situation de handicap grâce à la puissance de la technologie et l''esprit communautaire de l''Open Source"', GetDate());
+insert into dbo.tTestimony (Author,Title,Content,CreationDate ) values('Professeur Philippe Gajdos <br/> Président de la Fondation Garches', 'Au plus près des besoins de personne handicapée', '"La Fondation Garches, reconnue d’utilité publique, créée par les médecins de l’hôpital Raymond Poincaré, a pour objectif de concevoir des programmes qui répondent au plus près des besoins des personnes en situation de handicap. <br/>Nous le faisons, depuis l’origine, avec le soutien de nos partenaires, et avons ainsi proposé à Alcatel-Lucent d’être associés au projet CIVIKEY, qui reste un programme exemplaire d’aide technique pour des personnes atteintes de déficientes motrices."', GetDate()); 
 
 insert into dbo.tNews (Title,Content,CreationDate ) values('Le site CiviKey est en ligne !', 'Une première version du site CiviKey est maintenant en ligne !<br/>Celui-ci sera amélioré au fur et à mesure de l''avancement de ce projet open-source et gratuit. <br/>N''hésitez pas a parcourir ses différentes pages pour vous informer sur les développements en cours.', '2012-07-12');
 insert into dbo.tNews (Title,Content,CreationDate ) values('La Roadmap 2012 est lancée', 'Notre partenariat avec Alcatel-Lucent nous a permis de nous lancer sur le développement de la roadmap 2012, qui se terminera avec la mise à disposition de la version 2.5.3 de CiviKey <br/> détails sur la page Roadmaps.', '2012-07-13');
 insert into dbo.tNews (Title,Content,CreationDate ) values('Version corrective', 'Une erreur s''est glissée dans le module de mise à jour automatique dans la version mise en téléchargement sur le site. Téléchargez cette nouvelle version pour pouvoir mettre à jour CiviKey à nouveau ! <br/> <br/> plus d''informations sur <a target="_blank" href="http://blog.invenietis.com/post/2012/08/21/La-faute-de-frappe.aspx">le blog d''Invenietis</a>.', '2012-08-23');
 insert into dbo.tNews (Title,Content,CreationDate ) values('Peau neuve', 'Le site de CiviKey a été amélioré ! Il vous permet maintenant de consulter facilement les "release notes" du projet. <br/>Pour cela, cliquez sur le bouton "Télécharger pour Windows" : vous trouverez une liste qui vous renseignera sur les améliorations apportées au CiviKey au fur et à mesure de ses montées de version.', '2012-09-05');
+insert into dbo.tNews (Title,Content,CreationDate ) values('Version 2.5.2.1', 'CiviKey passe en version 2.5.2.1.<br/>Cette nouvelle version contient quelques améliorations d''ergonomie pour le clavier, dont vous pouvez voir la liste <a href="./DownloadPage">ici</a>.<br/>Prochaine étape : terminer la version 2.5.X que vous pouvez consulter sur la page <a href="./roadmaps">roadmaps</a>.', '2012-09-13');
+
 
 insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('Vlad Sargu','','','');--1
 insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('Jean-Loup Kahloun','','','');
@@ -562,9 +565,9 @@ insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (5,21) --Aide en
 
 
 --v2
--- wait until release is done (remember to update the date a the end of the line)insert into dbo.tReleaseNote values(2,1,'<ul><li>Possibilité d''afficher ou de cacher la fenêtre de configuration directement depuis le clavier virtuel</li><li>Possibilité de lancer le clavier directement au premier niveau de la fenêtre de configuration</li></ul>', cast('20120827' as smalldatetime))
-insert into dbo.tReleaseNote values(2,0,'<ul><li>Passage sur le framework .NET 4.0</li><li>Réparation du mécanisme de mise à jour automatique</li><li>L''intégralité de l''application est maintenant en Français</li></ul>', cast('20120817' as smalldatetime))
 
+insert into dbo.tReleaseNote values(2,0,'<ul><li>Passage sur le framework .NET 4.0</li><li>Réparation du mécanisme de mise à jour automatique</li><li>L''intégralité de l''application est maintenant en Français</li></ul>', cast('20120817' as smalldatetime))
+insert into dbo.tReleaseNote values(2,1,'<ul><li>Possibilité d''afficher ou de cacher la fenêtre de configuration directement depuis le clavier virtuel</li><li>Ajout d''explications pour certaines touches du clavier au survol de la souris</li><li>Patchs de stabilité pour Windows XP</li><li>Modification du splash screen au lancement de l''application</li></ul>', cast('20120913' as smalldatetime))
 
 
 

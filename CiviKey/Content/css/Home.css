@@ -131,7 +131,8 @@
     font-size: 22px;
     font-weight: bold;
     color: #4b4b4b;
-    margin:5px 0 0 0;
+    margin:5px 0 9px 0;
+    line-height: 25px;
 }
 
 .news-content
