@@ -82,13 +82,17 @@ namespace CiviKey.Controllers
 
         public ActionResult GetFeatureView( string version, string type )
         {
-            RoadmapViewModel rvm = new RoadmapViewModel( _roadmapRepo.GetRoadmapFromVersion( version ), _partnerRepo, _contactRepo, _contactRelationRepo );
-            if( rvm == null ) return Index( null, null, null );
+            if( !string.IsNullOrEmpty( version ) && !string.IsNullOrEmpty( type ) )
+            {
+                RoadmapViewModel rvm = new RoadmapViewModel( _roadmapRepo.GetRoadmapFromVersion( version ), _partnerRepo, _contactRepo, _contactRelationRepo );
+                if( rvm == null ) return Index( null, null, null );
 
-            ConfigureViewBag( rvm.Id, type );
+                ConfigureViewBag( rvm.Id, type );
 
-            if( type == "categorized" ) return PartialView( "_CategorizedRoadmapView", rvm );
-            return PartialView( "_RoadmapView", rvm );
+                if( type == "categorized" ) return PartialView( "_CategorizedRoadmapView", rvm );
+                return PartialView( "_RoadmapView", rvm );
+            }
+            return RedirectToAction( "Index" );
         }
 
         protected override void OnActionExecuting( ActionExecutingContext filterContext )
