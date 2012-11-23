@@ -140,11 +140,6 @@ ul#menu li.menuelem.selected a
     position: relative;
 }
 
-.footer-logo
-{
-    margin-top: 12px;
-}
-
 .seperator
 {
     height: 1px;
@@ -157,6 +152,7 @@ ul#menu li.menuelem.selected a
     font-family: Sakkal Majalla, Verdana;
     font-size: 16px;
     color: #4f4f4f;
+	height: 30px;
 }
 
     .footer-menu ul
@@ -240,10 +236,13 @@ ul#menu li.menuelem.selected a
 {
     margin:0 auto 0 auto;
 }
-
+.footer-container
+{
+	padding-top: 10px;
+}
 .footer-container > .footer-fork-me
 {
-   margin-top: 19px;
+   margin-top: 39px;
    position: absolute;
    top: 0;
    right: 0;
