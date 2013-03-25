@@ -1,14 +1,14 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{6A2D9FC0-BEEA-4F6A-B2F8-FD0859DE40BC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CiviKey", "CiviKey\CiviKey.csproj", "{A6601716-C516-4E24-909B-7E1C2E7B0693}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{1ECEE28B-2520-4219-9D00-956301DD416F}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
-		.nuget\nuget.exe = .nuget\nuget.exe
+		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CiviKey", "CiviKey\CiviKey.csproj", "{A6601716-C516-4E24-909B-7E1C2E7B0693}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
