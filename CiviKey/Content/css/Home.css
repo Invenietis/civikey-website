@@ -317,16 +317,8 @@
     background-position: 20px -40px;
 }
 
-#slide-clavier.selected {
-    background-position: 20px 0px;
-}
-
 #slide-autoclick {
     background-position: 20px -120px;
-}
-
-#slide-autoclick.selected {
-    background-position: 20px -80px;
 }
 
 #slide-prediction {
@@ -385,11 +377,11 @@
 }
 
 .slide-text-background-bottom.ck-mousekeyboard {
-    background-color: rgb(153, 44, 200);
+    background-color: rgb(133, 39, 173);
 }
 
 .slide-text-mousekeyboard {
-    color: rgb(153, 44, 200);
+    color: rgb(133, 39, 173);
 }
 
 .slide-text-background-bottom.ck-scrolling {
