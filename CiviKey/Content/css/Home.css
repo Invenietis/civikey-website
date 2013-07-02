@@ -216,7 +216,7 @@
     outline: 0;
     cursor: pointer;
     background-repeat: no-repeat;
-    background-image: url('../images/home-slider-icons.png');
+    background-image: url('../images/home-slide/home-slider-icons.png');
     background-position: 20px 0px;
 }
 
@@ -322,20 +322,21 @@
 }
 
 #slide-prediction {
-    background-position: 20px -40px;
+    background-image:url(../images/home-slide/crystalball_small.png);
 }
 
 #slide-scrolling {
-    background-position: 20px -40px;
+   background-image:url(../images/home-slide/scrolling_small.png);
 }
 
 #slide-mousekeyboard {
-    background-position: 20px -40px;
+    background-image:url(../images/home-slide/Compass.png);
 }
 
 #slide-editor {
     background-position: 20px -40px;
 }
+
 
 .slide-text {
     margin-top: 40px;
@@ -385,19 +386,19 @@
 }
 
 .slide-text-background-bottom.ck-scrolling {
-    background-color: #2e5377;
+    background-color: #71bf44;
 }
 
 .slide-text-scrolling {
-    color: #2e5377;
+    color: #71bf44;
 }
 
 .slide-text-background-bottom.ck-editor {
-    background-color: #db7024;
+    background-color: #2e5377;
 }
 
 .slide-text-editor {
-    color: #db7024;
+    color: #2e5377;
 }
 
 .slide-text-content-top {
