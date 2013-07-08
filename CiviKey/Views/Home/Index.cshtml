@@ -7,7 +7,8 @@
 
     string lastRoadmapDownloadableVersion;
     string lastRoadmapDownloadFilePath;
-
+    string lastRoadmapDownloadDocumentation;
+    
     if (String.IsNullOrWhiteSpace(Model.LastRoadmap.DownloadFileName))
     {
         lastRoadmapDownloadableVersion = Model.LastRoadmap.Name;
@@ -18,8 +19,8 @@
         lastRoadmapDownloadableVersion = CiviKey.Models.Helpers.GetVersionFromFileName(Model.LastRoadmap.DownloadFileName).ToString();
         lastRoadmapDownloadFilePath = Url.Content("~/Content/downloads/" + Model.LastRoadmap.DownloadFileName);
     }
-    
-    
+
+    lastRoadmapDownloadDocumentation = Url.Content( "~/Content/downloads/CiviKey-Documentation.pdf" );
 }
 
 <div class="home-slider">
@@ -32,9 +33,9 @@
         <li class="selected slider-menu-elem" data-id="0" id="slide-clavier"><a href="#">Clavier virtuel</a></li>
         <li class="slider-menu-elem" data-id="1" id="slide-autoclick"><a href="#">Autoclick</a></li>
         <li class="slider-menu-elem" data-id="2" id="slide-prediction"><a href="#">Prédiction</a></li>
-        <li class="slider-menu-elem" data-id="3" id="slide-scrolling"><a href="#">Scrolling</a></li>
-        <li class="slider-menu-elem" data-id="4" id="slide-mousekeyboard"><a href="#">Clavier-souris</a></li>
-        <li class="slider-menu-elem" data-id="5" id="slide-editor"><a href="#">Editeur</a></li>
+        <li class="slider-menu-elem" data-id="3" id="slide-scrolling"><a href="#">Défilement</a></li>
+        <li class="slider-menu-elem" data-id="4" id="slide-editor"><a href="#">Editeur</a></li>
+        <li class="slider-menu-elem" data-id="5" id="slide-mousekeyboard"><a href="#">Clavier-souris</a></li>
     </ul>
     </div>
     <div class="home-slider-left">
@@ -76,7 +77,7 @@
                         <div class="slide-text-background-bottom ck-prediction"></div>
                     </div>
                 </div>
-                <img src="@Url.Content("~/Content/images/home-slide/crystalball.png")"/>
+                <img src="@Url.Content("~/Content/images/home-slide/crystalball2.png")"/>
             </div>
              <div class="slider-image" data-slide="3">
                 <div class="slide-text">
@@ -94,6 +95,19 @@
             <div class="slider-image" data-slide="4">
                 <div class="slide-text">
                     <div class="slide-text-top">
+                        <p class="slide-text-content-top slide-text-editor">Editeur</p>
+                        <div class="slide-text-background-top"></div>
+                    </div>
+                    <div class="slide-text-bottom">
+                        <p class="slide-text-content slide-text-content-bottom">Fini l'écriture laborieuse lettre par lettre ! Créer des touches spécifiques pour les mots que vous utilisez régulièrement !</p>
+                        <div class="slide-text-background-bottom ck-editor"></div>
+                    </div>
+                </div>
+                <img src="@Url.Content("~/Content/images/home-slide/editor.png")"/>
+            </div>
+            <div class="slider-image" data-slide="5">
+                <div class="slide-text">
+                    <div class="slide-text-top">
                         <p class="slide-text-content-top slide-text-mousekeyboard">Clavier-souris</p>
                         <div class="slide-text-background-top"></div>
                     </div>
@@ -104,19 +118,7 @@
                 </div>
                 <img src="@Url.Content("~/Content/images/home-slide/mousekeyboard2.png")"/>
             </div>
-            <div class="slider-image" data-slide="5">
-                <div class="slide-text">
-                    <div class="slide-text-top">
-                        <p class="slide-text-content-top slide-text-editor">Editeur</p>
-                        <div class="slide-text-background-top"></div>
-                    </div>
-                    <div class="slide-text-bottom">
-                        <p class="slide-text-content slide-text-content-bottom">Fini l'ecriture laborieuse lettre par lettre ! Créer des touches spécifiques pour les mots que vous utilisez régulièrement !</p>
-                        <div class="slide-text-background-bottom ck-editor"></div>
-                    </div>
-                </div>
-                @*<img src="@Url.Content("~/Content/images/home-slide/placeholder.jpg")"/>*@
-            </div>
+            
         </div>
     </div>
 </div>
@@ -124,6 +126,7 @@
 </div>
 <div class="home-download-container-bottom">
     <a class="btn btn-large btn-primary" href="@Url.Action("Index", "DownloadPage")"><i class="icon-thumbs-up icon-white" style="margin-right:5px;"></i>Télécharger pour Windows</a>
+    <a class="btn btn-large btn-primary" target="_blank" href="@lastRoadmapDownloadDocumentation"><i class="icon-book icon-white" style="margin-right:5px;"></i>Documentation</a>
     <p>Version @lastRoadmapDownloadableVersion</p>
 </div>
 <div class="home-main-container">

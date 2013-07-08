@@ -39,7 +39,7 @@ namespace CiviKey.Repositories
 
         internal IList<tContact> GetOrganizationList()
         {
-            return All.Where( x => x.ContactId == x.EntityId ).Select( y => y.tContact ).OrderBy( z => z.Name ).ToList();
+            return All.Where( x => x.ContactId == x.EntityId && x.ContactId != 16).Select( y => y.tContact ).OrderBy( z => z.Name ).ToList();
         }
     }
 }

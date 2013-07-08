@@ -334,7 +334,7 @@
 }
 
 #slide-editor {
-    background-position: 20px -40px;
+    background-image:url(../images/home-slide/Gear.png);
 }
 
 
@@ -402,7 +402,7 @@
 }
 
 .slide-text-content-top {
-    padding: 10px 0 0 10px;
+    padding: 10px 0 0 15px;
     position: absolute;
     font-size: 40px;
     margin: 0;
