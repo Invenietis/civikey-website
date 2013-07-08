@@ -1,0 +1,12 @@
+
+insert into dbo.tContact(Name,Description,LogoPath,WebsiteUrl)values('Université de Tours','','tours.png', 'http://tln.li.univ-tours.fr/'); --16
+insert into dbo.tContactRelation(ContactId, EntityId, StartDate, EndDate) values(16,16,GETUTCDATE(), GETUTCDATE())
+
+update dbo.tFeature set Description = '<img width="100px" src="../../../Content/images/PartnerLogo/tours.png"/><p>Cette fonctionnalité affiche les mots les plus probables considérant les touches selectionnées précédemment via le clavier CiviKey. Cette prédiction s''adapte à l''utilisateur, en permettant d''enregistrer d''autres mots. Elle augmente automatiquement la pondération des mots les plus utilisés.<br/>Cette fonctionnalité est basée sur un moteur de prédiction développé par l''équipe BDTLN de Laboratoire d''Informatique deleted l''Université de Tours, qui fait partie d''un système d''aide à la communication nommé <a style="color:blue" target=_blank href="http://www.info.univ-tours.fr/~antoine/SIBYLLE/Sibylle_fr/index.html?Publications_fr">Sybille</a>.</p>' where Id = 16
+
+update dbo.tParticipation set ContactRelationId = 16, Percentage = 75 where Id = 52
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(5,'Development', 25, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationFeature(ParticipationId,FeatureId) values(77,16) --Invenietis has developed 25% of the Prediction
+
+insert into dbo.tParticipation(ContactRelationId,PartType,Percentage,ParticipationDate) values(16,'Sponsoring', 0, DateAdd(month,-5,GetDate()))
+insert into dbo.tParticipationRoadmap(ParticipationId,RoadmapId) values(78,3) --Tours has sponsored 0% of the 2.6.0 roadmap
