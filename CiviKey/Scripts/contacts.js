@@ -73,7 +73,7 @@
 });
 
 function mailSent(data) {
-    if (data.succes == true) {
+    if (data.success == true) {
         $('.validation-summary-errors li').html('');
         $('#From').val('');
         $('#Subject').val('');
