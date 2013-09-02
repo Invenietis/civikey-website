@@ -8,7 +8,8 @@
     Html.CK().Css.WithCiviKeyConvention().IncludeCss("Download");
     string lastRoadmapDownloadableVersion;
     string lastRoadmapDownloadFilePath;
-
+     string lastRoadmapDownloadDocumentation;
+     
     if (String.IsNullOrWhiteSpace(Model.LastRoadmap.DownloadFileName))
     {
         lastRoadmapDownloadableVersion = Model.LastRoadmap.Name;
@@ -20,13 +21,18 @@
         lastRoadmapDownloadFilePath = Url.Content("~/Content/downloads/" + Model.LastRoadmap.DownloadFileName);
     }
 
+    lastRoadmapDownloadDocumentation = Url.Content( "~/Content/downloads/CiviKey-Documentation.pdf" );
+    
     CiviKey.ViewModel.ReleaseNoteViewModel rn;
     ViewBag.Title = "CiviKey - Téléchargement";
 
     <script>
-        function addGaqPush() {
+        function addGaqPush(target) {
             if (typeof _gaq === "object") {
-                _gaq.push(['_trackEvent', 'Download', 'zip', '@lastRoadmapDownloadFilePath']);
+                if(target == 'zip')
+                    _gaq.push(['_trackEvent', 'Download', 'zip', '@lastRoadmapDownloadFilePath']);
+                else if (target == 'pdf')
+                    _gaq.push(['_trackEvent', 'Download-doc', 'pdf', '@lastRoadmapDownloadDocumentation']);
             }
         }
 
@@ -56,7 +62,8 @@
                 {
                     <div class="release-note-download-link-container">
                         <div class="release-note-download-link-inner-container">
-                            <a onclick="addGaqPush()" class="btn btn-large btn-primary" id="download-page-btn-download" href="@lastRoadmapDownloadFilePath"><i class="icon-thumbs-up icon-white" style="margin-right: 5px;"></i>Télécharger pour Windows</a>
+                            <a onclick="addGaqPush('pdf')" class="btn btn-large btn-primary download-btn" target="_blank" id="download-page-btn-download-doc" href="@lastRoadmapDownloadDocumentation"><i class="icon-book icon-white" style="margin-right: 5px;"></i>Documentation (pdf)</a>
+                            <a onclick="addGaqPush('zip')" class="btn btn-large btn-primary download-btn" id="download-page-btn-download" href="@lastRoadmapDownloadFilePath"><i class="icon-thumbs-up icon-white" style="margin-right: 5px;"></i>Télécharger pour Windows</a>
                         </div>
                     </div>
                 }

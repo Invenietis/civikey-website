@@ -52,7 +52,7 @@ insert into dbo.tContactRelation(ContactId,EntityId,StartDate,EndDate)values(15,
 --- Creating RoadMap
 insert into dbo.tRoadMap(Name, HasRelease)values('2.5.1', 1);
 insert into dbo.tRoadMap(Name, HasRelease)values('2.5.2', 1);
-insert into dbo.tRoadMap(Name, HasRelease)values('2.5.X', 0); --futur
+insert into dbo.tRoadMap(Name, HasRelease)values('2.6.X', 0); --futur
 
 --Creating features
 --2.5.1
@@ -569,8 +569,15 @@ insert into dbo.tCategoryFeature (IdCategory, IdFeature) values (5,21) --Aide en
 insert into dbo.tReleaseNote values(2,0,'<ul><li>Passage sur le framework .NET 4.0</li><li>Réparation du mécanisme de mise à jour automatique</li><li>L''intégralité de l''application est maintenant en Français</li></ul>', cast('20120817' as smalldatetime))
 insert into dbo.tReleaseNote values(2,1,'<ul><li>Possibilité d''afficher ou de cacher la fenêtre de configuration directement depuis le clavier virtuel</li><li>Ajout d''explications pour certaines touches du clavier au survol de la souris</li><li>Patchs de stabilité pour Windows XP</li><li>Modification du splash screen au lancement de l''application</li></ul>', cast('20120913' as smalldatetime))
 
+--2.6.0 out
 
+--The roadmap has a release.
+update dbo.tRoadMap set HasRelease = 1, Name = '2.6.0' where Id = 3;
 
+--All features are completed
+update dbo.tFeature set Progress = 100 where Id in (16,19,20,21);
+
+insert into dbo.tReleaseNote values(3,0,'<ul><li>Ajout de la fonctionnalité de <span class="bold">prédiction</span> basée sur le moteur Sybille, développé par l''université de Tours</li><li>Ajout du <span class="bold">défilement</span> sur le clavier, permettant d''écrire n''importe quel texte à l''aide d''un simple contacteur</li><li>Ajout d''un clavier spécifique, le clavier-souris, permettant de <span class="bold">déplacer le pointeur</span> a l''aide d''un simple contacteur</li><li>Ajout de boutons d''<span class="bold">aide</span> sur les différentes fonctionnalités de CiviKey</li><li>Ajout d''un <span class="bold">éditeur de clavier</span>, permettant d''ajouter de nouvelles touches à un clavier CiviKey. Une touche peut également écrire une phrase complète</li><li>Amélioration de la stabilité</li><li>Amélioration des performances</li><li>Le clavier est maintenant activé lors du glisser-déposer et permet d''écrire du texte à l''interieur des autres fenêtres de CiviKey (configuration)</li></ul>', cast('20130710' as smalldatetime)) --UPDATE DATE
 
 
 

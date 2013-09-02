@@ -3,37 +3,37 @@
 <html xmlns:fb="http://ogp.me/ns/fb#" xmlns:og="http://opengraphprotocol.org/schema/">
 <head>
     @{
-        string description = RenderSection("Description", required: true).ToHtmlString();
+        string description = RenderSection( "Description", required: true ).ToHtmlString();
     }
 
     <title>@ViewBag.Title</title>
-    <link rel="SHORTCUT ICON" href="@Url.Action("Index", "Home", null, Request.Url.Scheme)@Url.Content("Content/images/favicon.ico")"/>
+    <link rel="SHORTCUT ICON" href="@Url.Action( "Index", "Home", null, Request.Url.Scheme )@Url.Content( "Content/images/favicon.ico" )"/>
     <meta name="description" content="@description" />
     <meta name="keywords" content="civikey, virtual keyboard, visual keyboard, open source, invenietis" />
     <meta property="og:description" content="CiviKey est un clavier virtuel open-source developpé par Invenietis pour l'hôpital Raymond Poincarré, en partenariat avec Stéria, Alcatel-Lucent, la fondation Garches et la PFNT." />
     <meta property="og:title" content="CiviKey" />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="@Url.Action("Index", "Home", null, Request.Url.Scheme)" />
-    <meta property="og:image" content="@Url.Action("Index", "Home", null, Request.Url.Scheme)@Url.Content("Content/images/logo-square.png")" />
-    <meta property="og:site_name" content="CiviKey"/>
+    <meta property="og:url" content="@Url.Action( "Index", "Home", null, Request.Url.Scheme )" />
+    <meta property="og:image" content="@Url.Action( "Index", "Home", null, Request.Url.Scheme )@Url.Content( "Content/images/logo-square.png" )" />
+    <meta property="og:site_name" content="CiviKey" />
     @{
         Html.CK().Css.WithCiviKeyConvention()
-            .IncludeCss("Site")
-            .IncludeCss("Layout")
-            .IncludeCss("themes/base/bootstrap.css");
+            .IncludeCss( "Site" )
+            .IncludeCss( "Layout" )
+            .IncludeCss( "themes/base/bootstrap.css" );
         Html.CK().Scripts.ByName().
-            IncludeJS("jquery-1.7.2.min.js", 0).
-            IncludeJS("layout.js", 1).
-            IncludeJS("bootstrap-collapse.js").
-            IncludeJS("bootstrap.js");
+            IncludeJS( "jquery-1.7.2.min.js", 0 ).
+            IncludeJS( "layout.js", 1 ).
+            IncludeJS( "bootstrap-collapse.js" ).
+            IncludeJS( "bootstrap.js" );
     }
 
     @Html.CK().Scripts.RenderJS()
     @Html.CK().Css.RenderCss()
 
-     <script type="text/javascript">
-         Civi = window.Civi || {
-             globalUrl: '@Url.Action("Index", "Home", null, Request.Url.Scheme)',
+    <script type="text/javascript">
+        Civi = window.Civi || {
+            globalUrl: '@Url.Action( "Index", "Home", null, Request.Url.Scheme )',
              addGaqPush: function (category, action, label) {
                  if (typeof _gaq === "object") {
                      _gaq.push(['_trackEvent', category, action, label]);
@@ -42,63 +42,62 @@
          };
 
          var date;
-         function getDate()
-         {
+         function getDate() {
              if (!date) {
-                date = new Date();
+                 date = new Date();
              }
-             var currentDate = date.getDate() + '/' + (date.getMonth()+1) + '/' + date.getFullYear();
+             var currentDate = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
              return currentDate;
          }
-             
 
-             if (typeof _gaq === 'object') {
-                 //Analytics for search engines
-                 _gaq.push(['_addOrganic', 'fr.search.yahoo.com', 'p']); //Yahoo
-                 _gaq.push(['_addOrganic', 'recherche.aol.fr/', 'q']); //AOL
 
-                 //Analytics for blog search
-                 _gaq.push(['_addOrganic', 'blogsearch.google.fr', 'q']);
+         if (typeof _gaq === 'object') {
+             //Analytics for search engines
+             _gaq.push(['_addOrganic', 'fr.search.yahoo.com', 'p']); //Yahoo
+             _gaq.push(['_addOrganic', 'recherche.aol.fr/', 'q']); //AOL
 
-                 _gaq, push(['_trackPageview']);
-             }
+             //Analytics for blog search
+             _gaq.push(['_addOrganic', 'blogsearch.google.fr', 'q']);
 
-             $(function () {
-                 //Facebook like button
-                 (function (d, s, id) {
-                     var js, fjs = d.getElementsByTagName(s)[0];
-                     if (d.getElementById(id)) return;
-                     js = d.createElement(s); js.id = id;
-                     js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1";
-                     fjs.parentNode.insertBefore(js, fjs);
-                 } (document, 'script', 'facebook-jssdk'));
+             _gaq, push(['_trackPageview']);
+         }
 
-                 //Twitter share button
-                 !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } } (document, "script", "twitter-wjs");
-             });
+         $(function () {
+             //Facebook like button
+             (function (d, s, id) {
+                 var js, fjs = d.getElementsByTagName(s)[0];
+                 if (d.getElementById(id)) return;
+                 js = d.createElement(s); js.id = id;
+                 js.src = "//connect.facebook.net/fr_FR/all.js#xfbml=1";
+                 fjs.parentNode.insertBefore(js, fjs);
+             }(document, 'script', 'facebook-jssdk'));
+
+             //Twitter share button
+             !function (d, s, id) { var js, fjs = d.getElementsByTagName(s)[0]; if (!d.getElementById(id)) { js = d.createElement(s); js.id = id; js.src = "//platform.twitter.com/widgets.js"; fjs.parentNode.insertBefore(js, fjs); } }(document, "script", "twitter-wjs");
+         });
     </script>
 </head>
 <body>
-    @helper IsSelected(Sections section)
-        {
-            @(section == (ViewBag.Section ?? Sections.Default) ? "selected" : string.Empty)
-        }
+    @helper IsSelected( Sections section )
+{
+        @(section == ( ViewBag.Section ?? Sections.Default ) ? "selected" : string.Empty)
+    }
     <div class="page">
-        
+
         <div id="header">
             <div class="header-container">
-                <a href="@Url.Action("Index", "Home")">
-                    <img class="header-logo" alt="Logo Civikey" src="@Url.Content("~/Content/images/logo.png")" />
+                <a href="@Url.Action( "Index", "Home" )">
+                    <img class="header-logo" alt="Logo Civikey" src="@Url.Content( "~/Content/images/logo.png" )" />
                 </a>
                 <div class="header-menu-container">
                     <div class="moving-element-container">
                         <div class="moving-elem @ViewBag.Section"></div>
                     </div>
                     <ul id="menu">
-                        <li class="@IsSelected(Sections.Project) menuelem"><a href="@Url.Action("Index", "Project")">Le projet</a></li>
-                        <li class="@IsSelected(Sections.Progress) menuelem"><a href="@Url.Action("Index", "Progress")">Roadmaps</a></li>
-                        <li class="@IsSelected(Sections.Partners) menuelem"><a href="@Url.Action("Index", "Partners")">Partenaires</a></li>
-                        <li class="@IsSelected(Sections.Contact) menuelem"><a href="@Url.Action("Index", "Contact")">Contactez-nous</a></li>
+                        <li class="@IsSelected( Sections.Project ) menuelem"><a href="@Url.Action( "Index", "Project" )">Le projet</a></li>
+                        <li class="@IsSelected( Sections.Progress ) menuelem"><a href="@Url.Action( "Index", "Progress" )">Roadmaps</a></li>
+                        <li class="@IsSelected( Sections.Partners ) menuelem"><a href="@Url.Action( "Index", "Partners" )">Partenaires</a></li>
+                        <li class="@IsSelected( Sections.Contact ) menuelem"><a href="@Url.Action( "Index", "Contact" )">Contactez-nous</a></li>
                     </ul>
                 </div>
             </div>
@@ -111,22 +110,24 @@
         <div style="clear: both"></div>
         <div id="footer">
             <div class="footer-container">
-                <a class="btn btn-info footer-fork-me" onclick="Civi.addGaqPush('Fork-Me', 'Fork', getDate() )" target="_blank" href="https://github.com/Invenietis/ck-certified"><i class="icon-random icon-white" style="margin-right:5px;"></i>Fork on GitHub</a>
+                <a class="btn btn-info footer-fork-me" onclick="Civi.addGaqPush('Fork-Me', 'Fork', getDate() )" target="_blank" href="https://github.com/Invenietis/ck-certified"><i class="icon-random icon-white" style="margin-right: 5px;"></i>Fork on GitHub</a>
                 <div class="footer-menu">
                     <ul>
-                        <li><a href="@Url.Action("Index", "Project")">Le Projet</a></li>
+                        <li><a href="@Url.Action( "Index", "Project" )">Le Projet</a></li>
                         <li>|</li>
-                        <li><a href="@Url.Action("Index", "Progress")">Roadmaps</a></li>
+                        <li><a href="@Url.Action( "Index", "Progress" )">Roadmaps</a></li>
                         <li>|</li>
-                        <li><a href="@Url.Action("Index", "Partners")">Partenaires</a></li>
+                        <li><a href="@Url.Action( "Index", "Partners" )">Partenaires</a></li>
                         <li>|</li>
-                        <li><a href="@Url.Action("Index", "Contact")">Contactez-nous</a></li>
+                        <li><a href="@Url.Action( "Index", "Contact" )">Contactez-nous</a></li>
                     </ul>
                     <a href="https://twitter.com/share" class="twitter-share-button" data-text="CiviKey" data-lang="fr">Tweeter</a>
-                    <div class="fb-like" data-href="@Url.Action("Index","Home",null, Request.Url.Scheme)" data-send="false" data-width="0" data-show-faces="false" layout="button_count"></div>
-                    <div style="clear:both"></div>
+                    <div class="fb-like" data-href="@Url.Action( "Index", "Home", null, Request.Url.Scheme )" data-send="false" data-width="0" data-show-faces="false" layout="button_count"></div>
+                    <div style="clear: both"></div>
                 </div>
-                <img alt="Invenietis" src="@Url.Content("~/Content/images/logo-invenietis.png")" />
+                <a href="http://www.invenietis.com">
+                    <img alt="Invenietis" src="@Url.Content( "~/Content/images/logo-invenietis.png" )" />
+                </a>
             </div>
         </div>
     </div>

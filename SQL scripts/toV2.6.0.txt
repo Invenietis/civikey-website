@@ -1,0 +1,9 @@
+--The roadmap has a release.
+update dbo.tRoadMap set HasRelease = 1, Name = '2.6.0' where Id = 3;
+
+--All features are completed
+update dbo.tFeature set Progress = 100 where Id in (16,19,20,21);
+
+insert into dbo.tReleaseNote values(3,0,'<ul><li>Ajout de la fonctionnalité de <span class="bold">prédiction</span> basé sur le moteur Sybille, développé par l''université de Tours</li><li>Ajout du <span class="bold">défilement</span> sur le clavier, permettant d''écrire n''importe quel texte à l''aide d''un simple contacteur</li><li>Ajout d''un clavier spécifique, le clavier-souris, permettant de <span class="bold">déplacer le pointeur</span> a l''aide d''un simple contacteur</li><li>Ajout de boutons d''<span class="bold">aide</span> sur les différentes fonctionnalités de CiviKey</li><li>Ajout d''un <span class="bold">éditeur de clavier</span>, permettant d''ajouter de nouvelles touches à un clavier CiviKey. Une otuch epeut également écrire une phrase complète.</li><li>Amélioration de la stabilité</li><li>Amélioration des performances</li><li>Le clavier est maintenant activé lors du glisser-déposer et permet d''écrire du texte à l''interieur des autres fenetres de CiviKey (configuration)</li></ul>', cast('20130710' as smalldatetime)) --UPDATE DATE
+
+insert into dbo.tNews (Title, Content, CreationDate) values ('Mise en ligne de la version 2.6.0 !', 'La nouvelle version de CiviKey, financée par Alcatel-Lucent en collaboration avec la Fondation Garches, est enfin en ligne !<br/>CiviKey comporte maintenant un moteur de prédiction de mots, un système de défilement, un clavier-souris et un éditeur de clavier.<br/> Pour plus d''informations, consultez la "Release note" en cliquant sur le bouton "Télécharger pour Windows".', GETUTCDATE())
