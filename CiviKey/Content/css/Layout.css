@@ -1,50 +1,43 @@
 ﻿/* ------------------------ Header ------------------------ */
 
-#header
-{
+#header {
     height: 100px;
     background-color: #4f4f4f;
 }
 
-.header-container, .footer-container
-{
+.header-container, .footer-container {
     width: 1024px;
-    margin:0 auto 0 auto;
+    margin: 0 auto 0 auto;
     height: 100px;
 }
 
-.header-container > a
-{
-    display: block;
-    height: 100px;
-    width: 200px;
-    float: left;
-}
+    .header-container > a {
+        display: block;
+        height: 100px;
+        width: 200px;
+        float: left;
+    }
 
-.header-logo
-{
-    margin:22px 0 0 10px;
+.header-logo {
+    margin: 22px 0 0 10px;
     border: 0px;
 }
 
-.header-menu-container
-{
+.header-menu-container {
     float: right;
     background-image: url('../images/menu-back.png');
     background-repeat: repeat-x;
     margin-top: 37px;
 }
 
-.moving-element-container
-{
+.moving-element-container {
     height: 3px;
 }
 
-.moving-elem
-{
+.moving-elem {
     height: 3px;
     background-color: #fff;
-    opacity:0;
+    opacity: 0;
     position: relative;
     -moz-transition: opacity .5s ease 0s;
     -webkit-transition: opacity .5s ease 0s;
@@ -52,11 +45,10 @@
     transition: opacity .5s ease 0s;
 }
 
-.moving-elem-all
-{
+.moving-elem-all {
     height: 3px;
     background-color: #fff;
-    opacity:0;
+    opacity: 0;
     position: relative;
     -moz-transition: all .5s ease 0s;
     -webkit-transition: all .5s ease 0s;
@@ -64,39 +56,33 @@
     transition: all .5s ease 0s;
 }
 
-.Project
-{
+.Project {
     width: 147px;
     left: 0px;
     display: block;
 }
 
-.Progress
-{
+.Progress {
     width: 159px;
     left: 151px;
 }
 
-.Partners
-{
+.Partners {
     width: 163px;
     left: 314px;
 }
 
-.Contact
-{
+.Contact {
     width: 200px;
     left: 481px;
 }
 
-ul#menu
-{
+ul#menu {
     position: relative;
     margin-top: 18px;
 }
 
-    ul#menu li
-    {
+    ul#menu li {
         font-family: Verdana;
         display: inline;
         list-style: none;
@@ -104,8 +90,7 @@ ul#menu
         cursor: pointer;
     }
 
-        ul#menu li a
-        {
+        ul#menu li a {
             font-family: Verdana;
             font-size: 15px;
             color: #fff;
@@ -113,141 +98,131 @@ ul#menu
             cursor: pointer;
         }
 
-ul#menu li.menuelem.selected a
-{
-    color: #b7b7b7;
-}
+        ul#menu li.menuelem.selected a {
+            color: #b7b7b7;
+        }
 
 /* ------------------------ Main container -------------------- */
 
-#main
-{
+#main {
     width: 1024px;
-    margin:0 auto 0 auto;
+    margin: 0 auto 0 auto;
     position: relative;
 }
 
 /* -------------------------- Footer -------------------------- */
 
-#footer
-{
+#footer {
     background-color: #e4e4e4;
 }
 
-.footer-container
-{
+.footer-container {
     padding-bottom: 12px;
     position: relative;
 }
 
-.seperator
-{
+.seperator {
     height: 1px;
     background-color: #999999;
-    margin:8px 0 8px 0;
+    margin: 8px 0 8px 0;
 }
 
-.footer-menu
-{
+.footer-menu {
     font-family: Sakkal Majalla, Verdana;
     font-size: 16px;
     color: #4f4f4f;
-	height: 30px;
+    height: 30px;
 }
 
-    .footer-menu ul
-    {
+    .footer-menu ul {
         display: inline;
         margin: 0;
         height: 25px;
-        font-size:10px;
+        font-size: 10px;
     }
 
-    .footer-menu li
-    {
+    .footer-menu li {
         float: left;
         list-style-type: none;
         margin-right: 3px;
     }
 
-    .footer-menu a
-    {
+    .footer-menu a {
         color: #000;
     }
 
-        .footer-menu a:hover
-        {
+        .footer-menu a:hover {
             text-decoration: underline;
         }
 
-.fb-like.feature-facebook
-{
-    float:left;
-    margin:0 5px 15px 15px;
+.fb-like.feature-facebook {
+    float: left;
+    margin: 0 5px 15px 15px;
 }
 
-.twitter-share-button.feature-twitter
-{
-    float:left;
+.twitter-share-button.feature-twitter {
+    float: left;
     margin-top: 2px;
 }
 
-.fb-like
-{
-    float:right;
-    margin:2px 5px 15px 15px;
+.fb-like {
+    float: right;
+    margin: 2px 5px 15px 15px;
 }
 
-.twitter-share-button
-{
-    float:right;
+.twitter-share-button {
+    float: right;
     margin-top: 2px;
     width: 100px !important;
 }
 
-/* -------------------------- Page descriptions -------------------------- */
+.muted-version {
+    margin-top: 55px;
+    font-size: 8px;
+    text-align: right;
+    margin-right: 10px;
+}
 
-.partners-title, .project-title, .download-title
-{
+*
+/* -------------------------- Page descriptions -------------------------- */
+.partners-title, .project-title, .download-title {
     font-family: Verdana;
     background-image: url('../images/contact-title-back.png');
     background-repeat: repeat-y;
     font-size: 14px;
-    margin:0 auto 30px auto;
+    margin: 0 auto 30px auto;
     padding-left: 30px;
     background-position: 0 3px;
     line-height: 20px;
 }
 
-.progress-title
-{
+.progress-title {
     font-family: Verdana;
     width: 1000px;
     background-image: url('../images/contact-title-back.png');
     background-repeat: repeat-y;
     font-size: 14px;
-    margin:0 auto 35px auto;
+    margin: 0 auto 35px auto;
     padding-left: 30px;
     background-position: 0 2px;
     line-height: 18px;
 }
 
-.item img
-{
-    margin:0 auto 0 auto;
+.item img {
+    margin: 0 auto 0 auto;
 }
-.footer-container
-{
-	padding-top: 10px;
+
+.footer-container {
+    padding-top: 10px;
 }
-.footer-container > .footer-fork-me
-{
-   margin-top: 39px;
-   position: absolute;
-   top: 0;
-   right: 0;
-   font-size: 9px;
-   height: 16px;
-   padding-top: 1px;
-   margin-right:10px;
-}
+
+    .footer-container > .footer-fork-me {
+        margin-top: 39px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        font-size: 9px;
+        height: 16px;
+        padding-top: 1px;
+        margin-right: 10px;
+    }
