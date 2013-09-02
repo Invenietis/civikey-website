@@ -6,7 +6,9 @@
         {
             <div class="roadmap-sponsors-div">
                 <div class="road-map-sponsors-title">
-                    <p>Entités participant à cette roadmap : </p>
+                    <p>
+                        Entités participant à cette roadmap : 
+                    </p>
                 </div>
                 <div style="padding-top: 5px; padding-bottom: 10px; width: 100%; margin-left: 10px; margin-right: 10px;">
                     @foreach( var participation in Model.Sponsors )
@@ -15,8 +17,7 @@
                         <span class="sponsor-p">@participation.ContactRelation.Contact.Name</span>
                     }
                 </div>
-                <div style="clear: both;">
-                </div>
+                <div style="clear: both;"></div>
             </div>
         }
         <div class="accordion" id="accordion2">
@@ -30,7 +31,7 @@
                         <div class="collapse-image colapsed">
                         </div>
                         <img class="category-img" src="@Url.Content( "~/Content/images/CategoryIcon/" + category.IconName )" alt="@category.IconName"/>
-                        <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" data-target="#collapse@(i)">
+                        <h2 class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse@(i)">
                             @category.Name (@Model.CategorizedFeatures[category].Count)
                         </h2>
                     </div>
