@@ -20,6 +20,9 @@ namespace CivikeyWebsite
             bundles.Add( new CustomScriptBundle( "~/bundles/scripts/prefix" ).Include(
                       "~/Content/scripts/prefixfree.min.js" ) );
 
+            bundles.Add( new CustomScriptBundle( "~/bundles/scripts/localScroll" ).Include(
+                     "~/Content/scripts/jquery.scrollTo-1.4.3.1-min.js", "~/Content/scripts/jquery.localscroll-1.2.7-min.js" ) );
+
             bundles.Add( new CustomStyleBundle( "~/bundles/styles/bootstrap" ).Include(
                       "~/Content/styles/bootstrap/bootstrap.less" ) );
 

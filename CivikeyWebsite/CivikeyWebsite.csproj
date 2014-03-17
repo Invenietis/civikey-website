@@ -232,6 +232,7 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\quicksand-regular.svg" />
     <Content Include="Content\images\adaptive.png" />
+    <Content Include="Content\images\civikey_running.png" />
     <Content Include="Content\images\click.png" />
     <Content Include="Content\images\contact.png" />
     <Content Include="Content\images\editor.png" />
@@ -266,6 +267,8 @@
     <Content Include="Content\fonts\quicksand-regular.ttf" />
     <Content Include="Content\fonts\quicksand-regular.woff" />
     <None Include="Content\scripts\_references.js" />
+    <Content Include="Content\scripts\jquery.localscroll-1.2.7-min.js" />
+    <Content Include="Content\scripts\jquery.scrollTo-1.4.3.1-min.js" />
     <Content Include="Content\scripts\prefixfree.min.js" />
     <Content Include="Content\styles\hover-effects.css" />
     <Content Include="favicon.ico" />

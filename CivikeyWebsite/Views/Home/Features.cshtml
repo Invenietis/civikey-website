@@ -1,1 +1,89 @@
-﻿
+﻿@section scripts{
+    @Scripts.Render( "~/bundles/scripts/localScroll" )
+    <script>
+        $('.feature-menu').localScroll().affix({
+            offset: {
+                top:168
+            }
+        });
+    </script>
+}
+<div id="top-features">
+    <div class="container">
+        <h1>Les fonctionnalités de Civikey</h1>
+        <ul class="feature-menu">
+            <li>
+                <a href="#auto-click">
+                    <img src="@Url.Content("~/Content/images/adaptive.png")" width="64" />
+                    Auto-Click
+                </a>
+            </li>
+            <li>
+                <a href="#editor">
+                    <img src="@Url.Content("~/Content/images/adaptive.png")" width="64" />
+                    Editeur
+                </a>
+            </li>
+            <li>
+                <a href="#editor">
+                    <img src="@Url.Content("~/Content/images/adaptive.png")" width="64" />
+                    Editeur
+                </a>
+            </li>
+            <li>
+                <a href="#editor">
+                    <img src="@Url.Content("~/Content/images/adaptive.png")" width="64" />
+                    Editeur
+                </a>
+            </li>
+            <li>
+                <a href="#editor">
+                    <img src="@Url.Content("~/Content/images/adaptive.png")" width="64" />
+                    Editeur
+                </a>
+            </li>
+            <li>
+                <a href="#editor">
+                    <img src="@Url.Content("~/Content/images/adaptive.png")" width="64" />
+                    Editeur
+                </a>
+            </li>
+            <li>
+                <a href="#editor">
+                    <img src="@Url.Content("~/Content/images/adaptive.png")" width="64" />
+                    Editeur
+                </a>
+            </li>
+            <li>
+                <a href="#editor">
+                    <img src="@Url.Content("~/Content/images/adaptive.png")" width="64" />
+                    Editeur
+                </a>
+            </li>
+            <li class="clearfix"></li>
+        </ul>
+        <div id="auto-click" class="row">
+            <div class="col-md-6 col-sm-6">
+                <img src="@Url.Content( "~/Content/images/civikey_running.png" )" width="455" />
+            </div>
+            <div class="col-md-5 col-sm-6 col-md-offset-1">
+                <h3>
+                    Auto-Click
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris gravida, dui vel egestas pretium, nunc nibh facilisis justo, a blandit ligula metus vel nisl. Fusce.</p>
+            </div>
+        </div>
+        <hr />
+        <div id="editor" class="row">
+            <div class="col-md-5 col-sm-6 col-md-offset-1">
+                <h3>
+                    Editeur de clavier
+                </h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris gravida, dui vel egestas pretium, nunc nibh facilisis justo, a blandit ligula metus vel nisl. Fusce.</p>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <img src="@Url.Content( "~/Content/images/civikey_running.png" )" width="455" />
+            </div>
+        </div>
+    </div>
+</div>

@@ -64,6 +64,10 @@ ul.center-nav{
     display: block;
     margin: auto;
     font-size: 24px;
+    outline: none;
+    &:active{
+        outline: none;
+    }
     &:hover{
         background-color: white;
         color: @partners-bg;
@@ -74,7 +78,7 @@ ul.center-nav{
 }
 .body-content{
     font-family: 'quicksand';
-    background: url( '../images/handicap.jpg') fixed;
+    
     background-size: cover;
 }
 section > .container{
@@ -95,7 +99,7 @@ section > .container{
 }
 #presentation{
     color: white;
-    background:  @presentation-bg;
+    background: url( '../images/handicap.jpg') fixed @presentation-bg;
     text-shadow: 1px 0px black;
 
     h1{
@@ -170,6 +174,7 @@ footer{
         height: 100%;
         background: white;
         padding: 0 10px;
+        width: 175px;
     }
     .partner-info{
         padding: 20px;
@@ -196,4 +201,79 @@ footer{
         }
     }
 
+}
+#get-started, #top-features{
+    background: @contact-bg;
+    h1{
+        font-family: Rambla;
+        font-size: 42px;
+        text-align: center;
+        margin-bottom: 40px;
+        color: #509be4;
+
+    }
+    h3{
+        color:#509be4;
+        font-weight: bold;
+    }
+    hr{
+        border: none;
+        height: 13px;
+        width: 980px;
+        margin: 40px auto;
+        background: url('../images/divider.png');
+    }
+    p{
+        font-size: 16px;
+    }
+}
+footer{
+    margin-top: 45px;
+}
+#top-features{
+    hr{
+        border: none;
+        height: 13px;
+        width: 980px;
+        margin: 40px auto;
+        background: none;
+    }
+    ul.feature-menu{
+        list-style: none;
+        margin: 0 auto;
+        margin-bottom: 45px;
+        background: #f8f8f8;
+        padding: 10px 0;
+        box-shadow: 0px 2px 10px  #f8f8f8;
+        top: 0;
+        z-index: 2;
+        width: 100%;
+        &.affix ~ #auto-click{
+            margin-top: 215px;
+        }
+        li{
+            float: left;
+            width: 110px;
+            height: 110px;
+            margin: 0 4px;
+            border: 1px dashed #4f4f4f ;
+            border-radius: 90px;
+
+            a{
+                display: block;
+                text-align:center;
+            }
+            img{
+                display: block;
+                margin:auto;
+            }
+            &.clearfix{
+                float:none;
+                clear: both;
+                width:0;
+                height:0;
+                border: none;
+            }
+        }
+    }
 }
