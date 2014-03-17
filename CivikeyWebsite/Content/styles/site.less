@@ -1,0 +1,198 @@
+﻿@presentation-bg: transparent;
+@description-bg:  #4F4F4F;
+@partners-bg: #509be4;
+@contact-bg: #f8f8f8;
+@font-face{
+font-family: 'quicksand';
+  src: url('../fonts/quicksand-regular.eot');
+  src: url('../fonts/quicksand-regular.eot?#iefix') format('embedded-opentype'),
+       url('../fonts/quicksand-regular.woff') format('woff'),
+       url('../fonts/quicksand-regular.ttf') format('truetype'),
+       url('../fonts/quicksand-regular.svg#quicksanditalic') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+.navbar{
+    margin-bottom: 0;
+}
+.container{
+    width: 980px !important;
+}
+#partners-baner{
+    background: #f8f8f8;
+    padding: 5px 0;
+    text-align:center;
+    & > .container{
+        opacity: 0.8;
+    }
+    img{
+        display: inline-block;
+        margin: 0 14px;
+    }
+}
+ul.center-nav{
+    float: right;
+    margin: auto;
+
+    text-align:center;
+    li > a {
+        line-height: 30px;
+        font-size: 18px;
+        font-family: 'quicksand';
+        font-weight: bold;
+    }
+    li:hover{
+        background: #509be4;
+        & > a {
+            color:white !important;
+        }
+    }
+}
+.navbar > .container .navbar-brand{
+    margin: 5px 0;
+    width: 171px;
+    height: 50px;
+    background: url('../images/logo.png') center no-repeat;
+}
+.btn.btn-cvk{
+    position:relative;
+    background-color: @partners-bg;
+    color: white;
+    font-weight:bold;
+    border: 1px solid darken(@partners-bg, 5%);
+    display: block;
+    margin: auto;
+    font-size: 24px;
+    &:hover{
+        background-color: white;
+        color: @partners-bg;
+    }
+    .glyphicon{
+        margin-right: 10px;
+    }
+}
+.body-content{
+    font-family: 'quicksand';
+    background: url( '../images/handicap.jpg') fixed;
+    background-size: cover;
+}
+section > .container{
+    padding: 60px 0px;
+    h1{
+        font-size: 36px;
+        text-align: center;
+        margin-top: 0;
+        margin-bottom: 60px;
+        font-weight: normal;
+        font-family: Rambla;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    p{
+        font-size: 18px;
+    }
+}
+#presentation{
+    color: white;
+    background:  @presentation-bg;
+    text-shadow: 1px 0px black;
+
+    h1{
+        font-size: 60px !important;
+        font-weight: normal;
+        margin: 5px auto 35px;
+        font-family: Rambla
+    }
+    h2{
+        font-size: 30px;
+        margin: auto;
+        font-weight: bold;
+        margin-bottom: 25px;
+        width: 880px;
+    }
+}
+
+#description{
+    color: white;
+    background-color: @partners-bg;
+   
+}
+
+#features{
+    color: #333;
+    background-color: @contact-bg;
+}
+
+#contact{
+    background: url('../images/handshake.jpg') fixed;
+    background-size:cover;
+    background-color: @contact-bg;
+    color: white;
+}
+section > .container .feature{
+    width: 305px;
+    float: left;
+    margin: 0 10px;
+
+    & > img{
+        width: 128px;
+        display: block;
+        margin: auto;
+    }
+    & > h1{
+
+        font-size: 26px;
+        height: 56px;
+        text-align: center;
+        font-weight:bold;
+        margin: 15px 0;
+    }
+    & > p{
+        text-align: center;
+    }
+}
+footer{
+    background : #4F4F4F;
+    height: 100px;
+}
+.partner{
+    width: 480px;
+
+    height: 129px;
+    background : #4F4F4F;
+    background: rgba(79, 79, 79, 0.6);
+    float:left;
+    margin: 5px;
+
+    .partner-logo{
+        float: right;
+        height: 100%;
+        background: white;
+        padding: 0 10px;
+    }
+    .partner-info{
+        padding: 20px;
+        float: left;
+        height: 100%;
+        text-align:left;
+
+        h2
+        {
+            margin-top: 0;
+            font-size: 26px;
+            font-family: Rambla;
+        }
+        i{
+            color: #98C6F3;
+            vertical-align: text-top;
+            margin-right: 5px;
+        }
+        a{
+            color: white;
+            &:hover{
+                color: #98C6F3;
+            }
+        }
+    }
+
+}
