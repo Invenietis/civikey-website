@@ -230,9 +230,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\fonts\quicksand-regular.svg" />
+    <Content Include="Content\images\adaptive.png" />
     <Content Include="Content\images\click.png" />
     <Content Include="Content\images\contact.png" />
     <Content Include="Content\images\editor.png" />
+    <Content Include="Content\images\free.png" />
     <Content Include="Content\images\handicap.jpg" />
     <Content Include="Content\images\handshake.jpg" />
     <Content Include="Content\images\headphone.png" />
@@ -252,10 +255,16 @@
     <Content Include="Content\images\partners\intech-info.png" />
     <Content Include="Content\images\partners\invenietis.png" />
     <Content Include="Content\images\partners\logo.png" />
+    <Content Include="Content\images\partners\objectif-aide.png" />
     <Content Include="Content\images\partners\pfnt.png" />
     <Content Include="Content\images\puzzle.png" />
+    <Content Include="Content\images\therapist.png" />
     <Content Include="Content\scripts\bootstrap.js" />
     <Content Include="Content\scripts\jquery-1.10.2.js" />
+    <Content Include="Content\fonts\quicksand-regular.eot" />
+    <Content Include="Content\fonts\quicksand-Regular.otf" />
+    <Content Include="Content\fonts\quicksand-regular.ttf" />
+    <Content Include="Content\fonts\quicksand-regular.woff" />
     <None Include="Content\scripts\_references.js" />
     <Content Include="Content\scripts\prefixfree.min.js" />
     <Content Include="Content\styles\hover-effects.css" />
