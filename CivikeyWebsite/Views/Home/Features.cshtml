@@ -1,7 +1,7 @@
 ﻿@section scripts{
     @Scripts.Render( "~/bundles/scripts/localScroll" )
     <script>
-        $('.feature-menu').localScroll().affix({
+        $('.feature-menu').localScroll({offset:-215}).affix({
             offset: {
                 top:168
             }
@@ -13,76 +13,141 @@
         <h1>Les fonctionnalités de Civikey</h1>
         <ul class="feature-menu">
             <li>
-                <a href="#auto-click">
+                <a href="#click">
                     <img src="@Url.Content("~/Content/images/adaptive.png")" width="64" />
-                    Auto-Click
+                    Clics et déplacements
+                </a>
+            </li>
+            <li>
+                <a href="#keyboard">
+                    <img src="@Url.Content("~/Content/images/adaptive.png")" width="64" />
+                    Le clavier
+                </a>
+            </li>
+            <li>
+                <a href="#scrolling">
+                    <img src="@Url.Content("~/Content/images/adaptive.png")" width="64" />
+                    Le défilement
+                </a>
+            </li>
+            <li>
+                <a href="#librari">
+                    <img src="@Url.Content("~/Content/images/adaptive.png")" width="64" />
+                    La biblihothèque
                 </a>
             </li>
             <li>
                 <a href="#editor">
                     <img src="@Url.Content("~/Content/images/adaptive.png")" width="64" />
-                    Editeur
+                    L'éditeur
                 </a>
             </li>
             <li>
-                <a href="#editor">
+                <a href="#export">
                     <img src="@Url.Content("~/Content/images/adaptive.png")" width="64" />
-                    Editeur
+                    Imports et exports
                 </a>
             </li>
-            <li>
-                <a href="#editor">
-                    <img src="@Url.Content("~/Content/images/adaptive.png")" width="64" />
-                    Editeur
-                </a>
-            </li>
-            <li>
-                <a href="#editor">
-                    <img src="@Url.Content("~/Content/images/adaptive.png")" width="64" />
-                    Editeur
-                </a>
-            </li>
-            <li>
-                <a href="#editor">
-                    <img src="@Url.Content("~/Content/images/adaptive.png")" width="64" />
-                    Editeur
-                </a>
-            </li>
-            <li>
-                <a href="#editor">
-                    <img src="@Url.Content("~/Content/images/adaptive.png")" width="64" />
-                    Editeur
-                </a>
-            </li>
-            <li>
-                <a href="#editor">
-                    <img src="@Url.Content("~/Content/images/adaptive.png")" width="64" />
-                    Editeur
-                </a>
-            </li>
+
             <li class="clearfix"></li>
         </ul>
-        <div id="auto-click" class="row">
+        <div id="click" class="row">
             <div class="col-md-6 col-sm-6">
                 <img src="@Url.Content( "~/Content/images/civikey_running.png" )" width="455" />
             </div>
             <div class="col-md-5 col-sm-6 col-md-offset-1">
                 <h3>
-                    Auto-Click
+                    Déplacements et clics souris sans efforts
                 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris gravida, dui vel egestas pretium, nunc nibh facilisis justo, a blandit ligula metus vel nisl. Fusce.</p>
+                <p>
+                    CiviKey intègre une méthode unique de pointage de la souris, basée sur un système de défilement.
+                    Ceci, lié à un système de clic automatique, réduit considérablement
+                    la fatigue liée à l’utilisation d’une souris classique
+                </p>
+            </div>
+        </div>
+        <hr />
+        <div id="keyboard" class="row">
+            <div class="col-md-5 col-sm-6 col-md-offset-1">
+                <h3>
+                    Un clavier complet et multilingue
+                </h3>
+                <p>
+                    Le clavier CiviKey s’adapte à toutes les langues : caractères latins,
+                    cyrilliques, chinois, arabes, tous sont directement accessibles
+                    sur n’importequel clavier CiviKey.<br />
+                    En plus de proposer la saisie de texte efficace, le clavier contient des touches configurables permettant de :
+
+                    <ul>
+                        <li>Lancer vos applications</li>
+                        <li>Ouvrir un fichier de votre choix</li>
+                        <li>Ouvrir vos pages internet préférées</li>
+                    </ul>
+                </p>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <img src="@Url.Content( "~/Content/images/civikey_running.png" )" width="455" />
+            </div>
+        </div>
+        <hr />
+        <div id="scrolling" class="row">
+            <div class="col-md-5 col-sm-6 col-md-offset-1">
+                <h3>
+                    Le défilement
+                </h3>
+                <p>
+                    Le défilement permet de bénéficier des deux fonctionnalités ci-dessus à l'aide de n'importe quel contacteur ce qui rend Civikey adapté à des pathologies liées à la motricité telles que la tétraplégie.
+                </p>
+            </div>
+            <div class="col-md-6 col-sm-6">
+                <img src="@Url.Content( "~/Content/images/civikey_running.png" )" width="455" />
+            </div>
+        </div>
+        <hr />
+        <div id="librari" class="row">
+            <div class="col-md-6 col-sm-6">
+                <img src="@Url.Content( "~/Content/images/civikey_running.png" )" width="455" />
+            </div>
+            <div class="col-md-5 col-sm-6 col-md-offset-1">
+                <h3>
+                    Une biblihothèque de claviers
+                </h3>
+                <p>
+                    Les ergothérapeutes partenaires de Civikey mettent à disposition une biblihothèque de claviers.
+                    Chacun d'eux est adapté spécifiquement à une application et à une pathologie. 
+                    Passer de l'un à l'autre simplement pour tirer pleinement parti de votre ordinateur
+
+                    CiviKey vous permet de changer de clavier en fonction de l'application que 
+                </p>
             </div>
         </div>
         <hr />
         <div id="editor" class="row">
             <div class="col-md-5 col-sm-6 col-md-offset-1">
                 <h3>
-                    Editeur de clavier
+                    L'éditeur de clavier
                 </h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris gravida, dui vel egestas pretium, nunc nibh facilisis justo, a blandit ligula metus vel nisl. Fusce.</p>
+                <p>
+                    Adaptez les claviers existants à vos besoins en leur rajoutant ou en leur supprimant des touches.
+                    Vous pouvez même enregistrer des combinaisons de touches (CTRL + S, CTRL + V ...) pour les rejouer à l'indentique en un seul clic !
+                </p>
             </div>
             <div class="col-md-6 col-sm-6">
                 <img src="@Url.Content( "~/Content/images/civikey_running.png" )" width="455" />
+            </div>
+        </div>
+        <hr />
+        <div id="export" class="row">
+            <div class="col-md-6 col-sm-6">
+                <img src="@Url.Content( "~/Content/images/civikey_running.png" )" width="455" />
+            </div>
+            <div class="col-md-5 col-sm-6 col-md-offset-1">
+                <h3>
+                    Import et export de clavier
+                </h3>
+                <p>
+                    Partagez vos claviers sur plusieurs ordinateurs pour que celui-ci vous suive partout.
+                </p>
             </div>
         </div>
     </div>

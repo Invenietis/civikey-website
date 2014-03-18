@@ -235,6 +235,7 @@
     <Content Include="Content\images\civikey_running.png" />
     <Content Include="Content\images\click.png" />
     <Content Include="Content\images\contact.png" />
+    <Content Include="Content\images\divider.png" />
     <Content Include="Content\images\editor.png" />
     <Content Include="Content\images\free.png" />
     <Content Include="Content\images\handicap.jpg" />

@@ -158,7 +158,9 @@ section > .container .feature{
 }
 footer{
     background : #4F4F4F;
+    color: white;
     height: 100px;
+    text-align: center;
 }
 .partner{
     width: 480px;
@@ -248,9 +250,11 @@ footer{
         top: 0;
         z-index: 2;
         width: 100%;
-        &.affix ~ #auto-click{
+
+        &.affix ~ #click{
             margin-top: 215px;
         }
+
         li{
             float: left;
             width: 110px;
@@ -276,4 +280,11 @@ footer{
             }
         }
     }
+}
+a.github{
+    width: 32px;
+    height: 32px;
+    background: url('../images/octocat.png');
+    display: inline-block;
+
 }
