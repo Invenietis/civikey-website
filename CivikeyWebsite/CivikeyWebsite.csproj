@@ -237,6 +237,12 @@
     <Content Include="Content\images\contact.png" />
     <Content Include="Content\images\divider.png" />
     <Content Include="Content\images\editor.png" />
+    <Content Include="Content\images\features\editor.png" />
+    <Content Include="Content\images\features\import.png" />
+    <Content Include="Content\images\features\keyboard.png" />
+    <Content Include="Content\images\features\library.png" />
+    <Content Include="Content\images\features\mouse.png" />
+    <Content Include="Content\images\features\scrolling.png" />
     <Content Include="Content\images\free.png" />
     <Content Include="Content\images\handicap.jpg" />
     <Content Include="Content\images\handshake.jpg" />
@@ -245,6 +251,7 @@
     <Content Include="Content\images\logo intech.png" />
     <Content Include="Content\images\mouse.png" />
     <Content Include="Content\images\logo.png" />
+    <Content Include="Content\images\octocat.png" />
     <Content Include="Content\images\partners\alcatel-lucent.png" />
     <Content Include="Content\images\partners\fondation-garches.png" />
     <Content Include="Content\images\partners\fondation-steria.png" />
@@ -260,6 +267,10 @@
     <Content Include="Content\images\partners\objectif-aide.png" />
     <Content Include="Content\images\partners\pfnt.png" />
     <Content Include="Content\images\puzzle.png" />
+    <Content Include="Content\images\screen\screen_1.png" />
+    <Content Include="Content\images\screen\screen_2.png" />
+    <Content Include="Content\images\screen\screen_3.png" />
+    <Content Include="Content\images\screen\screen_4.png" />
     <Content Include="Content\images\therapist.png" />
     <Content Include="Content\scripts\bootstrap.js" />
     <Content Include="Content\scripts\jquery-1.10.2.js" />

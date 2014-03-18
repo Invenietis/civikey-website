@@ -78,7 +78,6 @@ ul.center-nav{
 }
 .body-content{
     font-family: 'quicksand';
-    
     background-size: cover;
 }
 section > .container{
@@ -205,6 +204,7 @@ footer{
 
 }
 #get-started, #top-features{
+    padding-bottom: 65px;
     background: @contact-bg;
     h1{
         font-family: Rambla;
@@ -212,7 +212,6 @@ footer{
         text-align: center;
         margin-bottom: 40px;
         color: #509be4;
-
     }
     h3{
         color:#509be4;
@@ -229,15 +228,12 @@ footer{
         font-size: 16px;
     }
 }
-footer{
-    margin-top: 45px;
-}
 #top-features{
     hr{
         border: none;
         height: 13px;
         width: 980px;
-        margin: 40px auto;
+        margin: 60px auto;
         background: none;
     }
     ul.feature-menu{
@@ -257,19 +253,39 @@ footer{
 
         li{
             float: left;
-            width: 110px;
-            height: 110px;
-            margin: 0 4px;
-            border: 1px dashed #4f4f4f ;
+            width: 145px;
+            height: 145px;
+            margin: 0 6px;
+            border: 1px solid #4f4f4f ;
             border-radius: 90px;
+            opacity: 0.8;
+            transition: all 0.5s;
+
+            &:hover{
+                opacity: 1;
+                border: 1px solid #509be4;
+                background: white;
+            }
 
             a{
                 display: block;
                 text-align:center;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                color: #509be4;
+
+                &:hover{
+                    text-decoration:none;
+                }
+                &.single-line{
+                    line-height: 45px;
+                }
             }
             img{
+                
                 display: block;
-                margin:auto;
+                margin: 10px auto 5px auto;
             }
             &.clearfix{
                 float:none;
