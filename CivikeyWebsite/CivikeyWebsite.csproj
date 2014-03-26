@@ -271,6 +271,8 @@
     <Content Include="Content\images\screen\screen_2.png" />
     <Content Include="Content\images\screen\screen_3.png" />
     <Content Include="Content\images\screen\screen_4.png" />
+    <Content Include="Content\images\screen\screen_5.png" />
+    <Content Include="Content\images\screen\screen_6.png" />
     <Content Include="Content\images\therapist.png" />
     <Content Include="Content\scripts\bootstrap.js" />
     <Content Include="Content\scripts\jquery-1.10.2.js" />

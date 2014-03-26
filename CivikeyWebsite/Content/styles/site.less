@@ -13,6 +13,9 @@ font-family: 'quicksand';
   font-weight: normal;
   font-style: normal;
 }
+body{
+    -webkit-text-stroke: 0.3px;
+}
 .navbar{
     margin-bottom: 0;
 }
@@ -65,6 +68,7 @@ ul.center-nav{
     margin: auto;
     font-size: 24px;
     outline: none;
+    transition: all 0.3s;
     &:active{
         outline: none;
     }
@@ -216,6 +220,7 @@ footer{
     h3{
         color:#509be4;
         font-weight: bold;
+        margin-bottom: 15px;
     }
     hr{
         border: none;
@@ -239,13 +244,14 @@ footer{
     ul.feature-menu{
         list-style: none;
         margin: 0 auto;
-        margin-bottom: 45px;
+        margin-bottom: 60px;
         background: #f8f8f8;
         padding: 10px 0;
         box-shadow: 0px 2px 10px  #f8f8f8;
         top: 0;
         z-index: 2;
         width: 100%;
+        height: 155px;
 
         &.affix ~ #click{
             margin-top: 215px;
@@ -253,10 +259,10 @@ footer{
 
         li{
             float: left;
-            width: 145px;
-            height: 145px;
-            margin: 0 6px;
-            border: 1px solid #4f4f4f ;
+            width: 110px;
+            height: 110px;
+            margin: 0 24px;
+            border: 1px solid #4f4f4f;
             border-radius: 90px;
             opacity: 0.8;
             transition: all 0.5s;
@@ -272,20 +278,18 @@ footer{
                 text-align:center;
                 width: 100%;
                 height: 100%;
-                overflow: hidden;
+                overflow: visible;
                 color: #509be4;
-
+                line-height: 75px;
+                outline: none;
                 &:hover{
                     text-decoration:none;
-                }
-                &.single-line{
-                    line-height: 45px;
                 }
             }
             img{
                 
                 display: block;
-                margin: 10px auto 5px auto;
+                margin: 21px auto 5px auto;
             }
             &.clearfix{
                 float:none;
