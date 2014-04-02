@@ -2,6 +2,7 @@
 @description-bg:  #4F4F4F;
 @partners-bg: #509be4;
 @contact-bg: #f8f8f8;
+
 @import url(http://fonts.googleapis.com/css?family=Rambla);
 @font-face{
 font-family: 'quicksand';
@@ -13,6 +14,7 @@ font-family: 'quicksand';
   font-weight: normal;
   font-style: normal;
 }
+
 body{
     -webkit-text-stroke: 0.3px;
 }
@@ -21,6 +23,7 @@ body{
 }
 .container{
     width: 980px !important;
+    position: relative;
 }
 #partners-baner{
     background: #f8f8f8;
@@ -33,6 +36,15 @@ body{
         display: inline-block;
         margin: 0 14px;
     }
+}
+.hide-intersection{
+    left: 384px;
+    top: 225px;
+    width: 37px;
+    height: 157px;
+    background: #509be4;
+    position: absolute;
+
 }
 ul.center-nav{
     float: right;
@@ -52,32 +64,51 @@ ul.center-nav{
         }
     }
 }
+
 .navbar > .container .navbar-brand{
     margin: 5px 0;
     width: 171px;
     height: 50px;
     background: url('../images/logo.png') center no-repeat;
 }
+
 .btn.btn-cvk{
-    position:relative;
-    background-color: @partners-bg;
-    color: white;
+    position: absolute;
     font-weight:bold;
-    border: 1px solid darken(@partners-bg, 5%);
+    background-color: white;
+    color: @partners-bg;
     display: block;
     margin: auto;
-    font-size: 24px;
+    font-size: 22px;
     outline: none;
     transition: all 0.3s;
+    right: 0;
+    top: 445px;
+    height: 185px;
+    width: 185px;
+    white-space: normal;
+    border-radius: 150px;
+    border: 2px solid white;
+
+    &.doc{
+        font-size: 18px;
+        top: 7px;
+        right: 45px;
+        margin: 0;
+        height: 100px;
+        width: 100px;
+        vertical-align: middle;
+    }
     &:active{
         outline: none;
     }
     &:hover{
-        background-color: white;
-        color: @partners-bg;
+        background-color: @partners-bg;
+        color: white;
+        border: 2px solid white;
     }
-    .glyphicon{
-        margin-right: 10px;
+    .glyphicon-save{
+        font-size: 36px;
     }
 }
 .body-content{
@@ -100,23 +131,50 @@ section > .container{
         font-size: 18px;
     }
 }
+
 #presentation{
     color: white;
-    background: url( '../images/handicap.jpg') fixed @presentation-bg;
-    text-shadow: 1px 0px black;
-
+    background: url('../images/handicap.jpg') fixed  #f8f8f8;
+    background-size: cover;
+    .container{
+        padding: 40px 0 60px;
+    }
+    .illustration{
+        border-radius: 500px;
+        overflow: hidden;
+        padding: 20px;
+        background: #509be4;
+        float: left;
+        display: block;
+        margin-top: -20px;
+        margin-left:30px;
+    }
+    .round-content{
+        background: #509be4;
+        float: left;
+        width: 550px;
+        height: 550px;
+        border-radius: 500px;
+        padding-top: 40px;
+        margin-left: -48px;
+    }
     h1{
-        font-size: 60px !important;
+
+        font-size: 50px !important;
         font-weight: normal;
-        margin: 5px auto 35px;
-        font-family: Rambla
+        margin: 5px auto 50px;
+        width: 400px;
+        font-family: Rambla;
     }
     h2{
-        font-size: 30px;
+        font-size: 28px;
+        line-height: 36px;
         margin: auto;
-        font-weight: bold;
         margin-bottom: 25px;
         width: 880px;
+        width: 470px;
+        position: relative;
+        z-index: 2;
     }
 }
 
@@ -129,6 +187,19 @@ section > .container{
 #features{
     color: #333;
     background-color: @contact-bg;
+    .btn{
+        background: #509be4;
+        color: white;
+        border: 2px solid #509be4;
+        margin-right: 13px;
+        margin-top: 45px;
+        outline: none;
+        transition: all .3s;
+        &:hover{
+            background: white;
+            color: #509be4;
+        }
+    }
 }
 
 #contact{
@@ -159,15 +230,42 @@ section > .container .feature{
         text-align: center;
     }
 }
+.align-left{
+    text-align: left !important;
+}
 footer{
+    padding: 10px 0;
     background : #4F4F4F;
     color: white;
-    height: 100px;
+    height: 130px;
     text-align: center;
+    font-family: Quicksand;
+    p{
+        padding: 0 15px;
+        img{
+            margin-left: 10px;
+        }
+    }
+    ul{
+        margin: 0;
+        margin-bottom: 35px;
+        padding: 0;
+        list-style: none;
+
+        li{
+            float: left;
+            padding: 0 15px;
+            a{
+                color: #DEDEDE;
+                &:hover{
+                    color: #FFF;
+                }
+            }
+        }
+    }
 }
 .partner{
     width: 480px;
-
     height: 129px;
     background : #4F4F4F;
     background: rgba(79, 79, 79, 0.6);
@@ -205,8 +303,8 @@ footer{
             }
         }
     }
-
 }
+
 #get-started, #top-features{
     padding-bottom: 65px;
     background: @contact-bg;
@@ -241,16 +339,17 @@ footer{
         margin: 60px auto;
         background: none;
     }
+
     ul.feature-menu{
         list-style: none;
         margin: 0 auto;
         margin-bottom: 60px;
         background: #f8f8f8;
-        padding: 10px 0;
-        box-shadow: 0px 2px 10px  #f8f8f8;
+        padding: 0px 0 20px 0;
+        border-bottom: 2px solid #6F6F6F;
         top: 0;
         z-index: 2;
-        width: 100%;
+        width: 950px;
         height: 155px;
 
         &.affix ~ #click{
@@ -306,5 +405,4 @@ a.github{
     height: 32px;
     background: url('../images/octocat.png');
     display: inline-block;
-
 }
