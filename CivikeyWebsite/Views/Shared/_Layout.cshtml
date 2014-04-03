@@ -8,8 +8,8 @@
     @Styles.Render( "~/bundles/styles/bootstrap" )
     @Styles.Render( "~/bundles/styles/site" )
     <!--[if lt IE 9]> <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script> <![endif]-->
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script> 
-    @Scripts.Render( "~/bundles/scripts/prefix" )
+    @*@Scripts.Render( "~/bundles/scripts/prefix" )*@
+    @RenderSection( "styles", required: false )
 </head>
 <body>
     <div class="navbar navbar-default">
@@ -27,6 +27,7 @@
                     <li>@Html.ActionLink( "Découvrir", "Index", "Home" )</li>
                     @*<li>@Html.ActionLink( "Premiers pas", "GetStarted", "Home" )</li>*@
                     <li>@Html.ActionLink("Fonctionnalités", "Features", "Home")</li>
+                    <li>@Html.ActionLink( "Bibliothèque de claviers", "Keyboards", "Home" )</li>
                 </ul>
             </div>
         </div>

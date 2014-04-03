@@ -1,0 +1,99 @@
+﻿@section styles{
+    @Styles.Render( "~/bundles/styles/lightbox" )
+}
+<div id="keyboards">
+    <div class="container">
+        <h1>Bibliothèque de claviers Civikey</h1>
+        <div class="keyboard">
+            <div class="actions">
+                <a title="Télécharger" href="@Url.Action( "Keyboard", "Home", new { name = "Azerty.xml" } )" class="btn"><i class="glyphicon glyphicon-save"></i></a>
+                <a title="Visualiser le clavier" href="@Url.Content("~/Content/images/keyboards/azerty.png")" data-title="Azerty" data-lightbox="azerty" class="btn">
+                    <i class="glyphicon glyphicon-picture"></i>
+                </a>
+            </div>
+            <div class="content">
+                <h1>Azerty</h1>
+                <p>
+                    Clavier Azerty par défaut.
+                </p>
+            </div>
+            <div class="content-footer">
+                <p class="author">
+                    Par Invenietis
+                </p>
+                <p class="date">
+                    03/04/14
+                </p>
+            </div>
+        </div>
+        <div class="keyboard">
+            <div class="actions">
+                <a title="Télécharger"  href="@Url.Action( "Keyboard", "Home", new { name = "Ergonomique.xml" } )" class="btn"><i class="glyphicon glyphicon-save"></i></a>
+                <a title="Visualiser le clavier" href="@Url.Content("~/Content/images/keyboards/ergonomique.png")" data-title="Ergonomique" data-lightbox="ergonomique" class="btn">
+                    <i class="glyphicon glyphicon-picture"></i>
+                </a>
+            </div>
+            <div class="content">
+                <h1>Clavier ergonomique</h1>
+                <p>
+                    C'est un clavier avec un énorme potentiel de rédaction. Ce dernier se décline en 3 coloris : rouge, vert et noir !
+                </p>
+            </div>
+            <div class="content-footer">
+                <p class="author">
+                    Par Invenietis
+                </p>
+                <p class="date">
+                    03/04/14
+                </p>
+            </div>
+        </div>
+        <div class="keyboard">
+            <div class="actions">
+                <a title="Télécharger"  href="@Url.Action( "Keyboard", "Home", new { name = "ClavierSouris.xml" } )" class="btn"><i class="glyphicon glyphicon-save"></i></a>
+                <a title="Visualiser le clavier" href="@Url.Content("~/Content/images/keyboards/clavier-souris.png")" data-title="Clavier - Souris" data-lightbox="clavier-souris" class="btn">
+                    <i class="glyphicon glyphicon-picture"></i>
+                </a>
+            </div>
+            <div class="content">
+                <h1>Clavier - Souris</h1>
+                <p>
+                    Un clavire disposant de touches permettant de cliquer et de déplacer la souris.
+                </p>
+            </div>
+            <div class="content-footer">
+                <p class="author">
+                    Par Invenietis
+                </p>
+                <p class="date">
+                    03/04/14
+                </p>
+            </div>
+        </div>
+        <div class="keyboard">
+            <div class="actions">
+                <a href="" class="btn"><i class="glyphicon glyphicon-save"></i></a>
+                <a href="" class="btn"><i class="glyphicon glyphicon-picture"></i></a>
+            </div>
+            <div class="content">
+                <h1>Clavier Excel</h1>
+                <p>
+                    Un clavier disposant de touches programmées pour Excel.
+                </p>
+            </div>
+            <div class="content-footer">
+                <p class="author">
+                    Par Invenietis
+                </p>
+                <p class="date">
+                    03/04/14
+                </p>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+
+@section scripts{
+    @Scripts.Render( "~/bundles/scripts/lightbox" )
+}

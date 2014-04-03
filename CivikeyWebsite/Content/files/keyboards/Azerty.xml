@@ -1,0 +1,3889 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CK-Structured version="2.5.5">
+  <Keyboard Name="Azerty" IsCurrent="1" IsActive="True">
+    <RequirementLayer Name="Keyboard">
+      <PluginRequirements></PluginRequirements>
+      <ServiceRequirements>
+        <ServiceRequirement AssemblyQualifiedName="CommonServices.IFileLauncherCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
+        <ServiceRequirement AssemblyQualifiedName="CommonServices.IChangeKeyboardCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
+        <ServiceRequirement AssemblyQualifiedName="CommonServices.IMonitorOnceCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
+        <ServiceRequirement AssemblyQualifiedName="CommonServices.ISendKeyCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
+        <ServiceRequirement AssemblyQualifiedName="CommonServices.IModeCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
+        <ServiceRequirement AssemblyQualifiedName="CommonServices.IDynCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
+        <ServiceRequirement AssemblyQualifiedName="CommonServices.IHelpCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
+        <ServiceRequirement AssemblyQualifiedName="CK.Plugins.SendInputDriver.ISendStringService, SendInputDriver, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
+        <ServiceRequirement AssemblyQualifiedName="CommonServices.ITextTemplateCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
+      </ServiceRequirements>
+    </RequirementLayer>
+    <Modes Current="">
+      <Mode>agrave</Mode>
+      <Mode>alt</Mode>
+      <Mode>circonflexe</Mode>
+      <Mode>ctrl</Mode>
+      <Mode>fn</Mode>
+      <Mode>shift</Mode>
+      <Mode>tilde</Mode>
+      <Mode>trema</Mode>
+    </Modes>
+    <Zones>
+      <Zone Name="" Index="0">
+        <PluginsData>
+          <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+            <data key="Index" type="Int32">-1</data>
+          </p>
+        </PluginsData>
+      </Zone>
+      <Zone Name="Numéros" Index="1">
+        <Keys>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="Échap" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendKey:Escape</Cmd>
+                    <Cmd>launch:bonjourmadame.fr,8,http://bonjourmadame.fr</Cmd>
+                    <Cmd>launch:swagg.jpg,4,\Downloads\swagg.jpg,40</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Image</data>
+                    <data key="Image" type="Structured" typeName="System.Windows.Media.Imaging.BitmapImage, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">Qk02EAAAAAAAADYAAAAoAAAAIAAAACAAAAABACAAAAAAAAAAAADDDgAAww4AAAAAAAAAAAAAyMjI/7CwsP+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/7CwsP/IyMj/AAAAAAAAAACwsLD/c3Nz/15eXv9eXl7/Xl5e/15eXv9eXl7/Xl5e/15eXv9eXl7/Xl5e/15eXv9eXl7/Xl5e/15eXv9eXl7/Xl5e/15eXv9eXl7/Xl5e/15eXv9eXl7/Xl5e/15eXv9eXl7/Xl5e/15eXv9eXl7/c3Nz/7CwsP8AAAAAAAAAAKWlpf/19fX/9PT0//Pz8//z8/P/8vLy//Hx8f/w8PD/8PDw/+/v7//u7u7/7u7u/+3t7f/t7e3/7Ozs/+vr6//r6+v/6urq/+rq6v/p6en/6enp/+jo6P/o6Oj/5+fn/+fn5//n5+f/5ubm/+bm5v/m5ub/paWl/wAAAAAAAAAApaWl//X19f/19fX/9PT0//Pz8//z8/P/8vLy//Hx8f/x8fH/8PDw/+/v7//v7+//7u7u/+3t7f/t7e3/7Ozs/+vr6//r6+v/6urq/+rq6v/p6en/6enp/+jo6P/o6Oj/5+fn/+fn5//n5+f/5ubm/+bm5v+lpaX/AAAAAAAAAAClpaX/9vb2//X19f/Igyr/yIQp/8iEKv/LiTH/zIw2/8qJMv/Njzv/zZA7/82QO//Ok0D/0JVE/9CWRf/Ql0f/0JZF/9CaSf/SnE3/1KFT/9SjWP/YrGX/16ld/9muaP/asWz/16ph/9y1eP/n5+f/5ubm/6Wlpf8AAAAAAAAAAKWlpf/39/f/9vb2/8Z8I//QiST/0Ywr/9OPLv/TkS//1pc4/9eZO//Zmzz/15w9/9meQ//aokf/2qBH/9qiSv/aokn/2qNJ/92nT//gsVz/47hp/+fBfP/px4j/6MSC/+jCgf/mvHL/27Nu/+fn5//n5+f/paWl/wAAAAAAAAAApaWl//f39//39/f/wm8d/82BIf/NhSX/zokn/9CMLP/TkzL/1pc1/9eZPP/an0P/2qFH/9ykS//dp0//3adP/92qVP/dqVP/4K9a/+KzYf/jtmf/5bxy/+jEg//px4v/68qS//DXq//kyJr/6Ojo/+fn5/+lpaX/AAAAAAAAAAClpaX/+Pj4//f39/++ayH/yHon/8mAK//Kgy3/yoUv/82JMv/QjjX/05M6/9aYPf/Zn0f/2qNN/9ykTP/dqU//4K9U/+GwVf/jtVz/5rde/+e8Z//qxn3/7c6T/+3Lk//w1aP/9eG9/+jPrP/o6Oj/6Ojo/6Wlpf8AAAAAAAAAAKWlpf/5+fn/+Pj4/6deHf+3ayH/uGsj/7ltJf+7cCn/u3Qs/7x2Lv+/ejH/wYEz/8KDNf/FiDr/xYo6/8mUQ//LmEX/zZxH/86fTf/QplP/06tV/9axW//au2X/38Ry/+HKgv/j0ZH/2cSJ/+np6f/o6Oj/paWl/wAAAAAAAAAApaWl//n5+f/5+fn/P0Qc/0pRIv9JUCH/SlEj/01WJv9PWif/Xmow/2p3N/9qeDn/aHg5/2+CQP9ziUX/do1I/3WOSP9riEP/Xnw9/2iNSP9ulk7/b5dO/26ZT/96o1f/g6lb/4iwZ/+Rrnj/6enp/+np6f+lpaX/AAAAAAAAAAClpaX/+vr6//n5+f9BTSL/UWMr/1BjK/9MXir/TWEs/1BoMP9dfT3/YYVG/2mOUP9rkk7/ZZJK/2qaUf9lmVD/bqFY/3WhW/+Bp2P/r7Z6/6mvcP+brWn/p7Fx/828h//k17D/+/7u/+Xl5f/q6ur/6enp/6Wlpf8AAAAAAAAAAKWlpf/7+/v/+vr6/01sNP9Xej3/SWk0/0lqM/9OdDn/YY5N/3yZXv+PmWX/k5ln/5ahcP/Gz6P/xsCJ/726ff/bxY7/88ya//XMmv/6xpT/9sWT//bQpf//9tv////1/////f//////5eXi/+rq6v/q6ur/paWl/wAAAAAAAAAApaWl//v7+//7+/v/ZHVH/1t1Qv9OcT7/VoFG/2uYW/+KoWr/mJ5t/5+hcP+ytor/6+zL////9v///97///bQ///zzP//8cf///XN///rw///9tP////s////8////+/////w////8//l5dz/6+vr/+rq6v+lpaX/AAAAAAAAAAClpaX//Pz8//v7+/+AflT/kpNj/42WZ/+Onm7/lKd2/7C4iv/Kz6H/5+e9////3////+n////m////6v///+7////p////4v///+b////q////6f///+b////m////5v///+r////s/+Xl2f/r6+v/6+vr/6Wlpf8AAAAAAAAAAKWlpf/8/Pz//Pz8/4OFWP+PlGL/ipZn/4qcbv+6zJ7//vvN////1////9n////W////1f///9X////Y////5////+b////c////3f///97////e////3////+D////h////4v///+T/5eXW/+zs7P/r6+v/paWl/wAAAAAAAAAApaWl//39/f/8/Pz/qql+/8bClP+gpnf/v8qb////1f///9X///7R///6yv//+sj///rL///6y////NX////l////7f///+b////e///90P///dH///7V////2f///9f///3V////2P/l5c7/7e3t/+zs7P+lpaX/AAAAAAAAAAClpaX//f39//39/f/l4bf///rL///1xv//+s////3V////2v///+L///7a///5zP//88P///bL///60v//+tX///zW///60P///tr///vR///91f///+H////b////8f///+b////p/+Xl1P/t7e3/7e3t/6Wlpf8AAAAAAAAAAKWlpf/+/v7//f39/+XixP//+ND///G9///zwv//9s3////h////5////+z///va///1zP//8Mj//+q9///ksf//6rL//+uy///uuP///t7///zb///61////Nn////q////6////uH/5eG//+7u7v/t7e3/paWl/wAAAAAAAAAApaWl//7+/v/+/v7/5d28///40v//8MH///DB///61///+9n///XN///sw///5rv//+a8///bq///1qH//9ih///epP//7r////nR///+3///9Mf///DC///50///88f//+av///ipv/ly5P/7+/v/+7u7v+lpaX/AAAAAAAAAAClpaX///////7+/v/lu4P//+Co///zy///8Mb///TN///mt///0JP//8yS///Sm///0pr//8+U///Nk///0JT//96j///qtf//8MH///jQ////7f///Nz///jR///82v//4qT//+Wq/+XPmv/w8PD/7+/v/6Wlpf8AAAAAAAAAAKWlpf///////////+WoZ///vXb//8aD///Cff//wX3//7tz//+6c///u3X//794///CgP//wXz//8B6///Ih///4af//+Cc///io///88P////i///4y///7LX//+Kk///Viv//67X/5dis//Dw8P/w8PD/paWl/wAAAAAAAAAApaWl////////////5Z9X//+wYP//r17//7Be//+wXv//sGD//7Fh//+yYv//tWf//7pu//+2a///tWX//7do///Yof//9cj//+qv///wuv///+f////k///rr///4Zn//9WB///inP/lz5b/8fHx//Dw8P+lpaX/AAAAAAAAAAClpaX////////////ll0b//6hO//+oTv//qE7//6hO//+oTv//qE7//6hP//+sVf//r1r//6tT//+pUP//rFb//8aD///mtf//9cj///jI////3P///tb///K8///utf//5qH//+Sf/+XGg//y8vL/8fHx/6Wlpf8AAAAAAAAAAKWlpf///////////+WVQf/llUH/5ZVB/+WVQf/llUH/5ZVB/+WUQf/llEH/5ZVB/+WVQf/llUH/5ZRB/+WUQf/ll0T/5Z9K/+WsW//lvHX/5c+c/+XFgP/kvXH/5NOe/+Tivf/k5Mz/5OG+//Pz8//y8vL/paWl/wAAAAAAAAAApaWl//////////////////////////////////7+/v/+/v7//v7+//39/f/9/f3//Pz8//z8/P/7+/v/+/v7//r6+v/6+vr/+fn5//j4+P/4+Pj/9/f3//f39//29vb/9fX1//X19f/09PT/8/Pz//Pz8/+lpaX/AAAAAAAAAAClpaX///////////////////////////////////////7+/v/+/v7//v7+//39/f/9/f3//Pz8//z8/P/7+/v/+/v7//r6+v/6+vr/+fn5//n5+f/4+Pj/9/f3//f39//29vb/9fX1//X19f/09PT/8/Pz/6Wlpf8AAAAAAAAAAKWlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="²" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:²</Cmd>
+                    <Cmd>placeholder:hefoize {{nom}} elfkzelf efzzef f
+{{nom}}
+efkzepf
+{{prenom}} </Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="alt+fn" Enabled="true" Description="">
+                <KeyUp Label="F1" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:%{F1}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="fn+shift" Enabled="true" Description="">
+                <KeyUp Label="F1" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:+{F1}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="fn" Enabled="true" Description="">
+                <KeyUp Label="F1" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendKey:F1</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="1" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:1</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="&amp;" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:&amp;</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="alt+fn" Enabled="true" Description="">
+                <KeyUp Label="F2" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:%{F2}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="fn+shift" Enabled="true" Description="">
+                <KeyUp Label="F2" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:+{F2}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="alt" Enabled="true" Description="">
+                <KeyUp Label="~" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>mode:toggle,tilde</Cmd>
+                    <Cmd>monitoronce:sendkey,autoclose-tilde,mode:remove,tilde</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="fn" Enabled="true" Description="">
+                <KeyUp Label="F2" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendKey:F2</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="2" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:2</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="é" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:é</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="alt+fn" Enabled="true" Description="">
+                <KeyUp Label="F3" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:%{F3}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="fn+shift" Enabled="true" Description="">
+                <KeyUp Label="F3" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:+{F3}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="alt" Enabled="true" Description="">
+                <KeyUp Label="#" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:#</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="fn" Enabled="true" Description="">
+                <KeyUp Label="F3" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendKey:F3</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="3" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:3</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="&quot;" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:"</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="alt+fn" Enabled="true" Description="">
+                <KeyUp Label="F4" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:%{F4}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="fn+shift" Enabled="true" Description="">
+                <KeyUp Label="F4" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:+{F4}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="alt" Enabled="true" Description="">
+                <KeyUp Label="{" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:{</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="fn" Enabled="true" Description="">
+                <KeyUp Label="F4" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendKey:F4</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="4" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:4</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="'" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:'</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="alt+fn" Enabled="true" Description="">
+                <KeyUp Label="F5" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:%{F5}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="fn+shift" Enabled="true" Description="">
+                <KeyUp Label="F5" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:+{F5}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="alt" Enabled="true" Description="">
+                <KeyUp Label="[" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:[</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="fn" Enabled="true" Description="">
+                <KeyUp Label="F5" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendKey:F5</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="5" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:5</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="(" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:(</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="alt+fn" Enabled="true" Description="">
+                <KeyUp Label="F6" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:%{F6}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="fn+shift" Enabled="true" Description="">
+                <KeyUp Label="F6" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:+{F6}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="alt" Enabled="true" Description="">
+                <KeyUp Label="|" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:|</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="fn" Enabled="true" Description="">
+                <KeyUp Label="F6" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendKey:F6</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="6" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:6</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="-" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:-</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="alt+fn" Enabled="true" Description="">
+                <KeyUp Label="F7" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:%{F7}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="fn+shift" Enabled="true" Description="">
+                <KeyUp Label="F7" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:+{F7}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="alt" Enabled="true" Description="">
+                <KeyUp Label="`" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>mode:toggle,agrave</Cmd>
+                    <Cmd>monitoronce:sendkey,autoclose-agrave,mode:remove,agrave</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="fn" Enabled="true" Description="">
+                <KeyUp Label="F7" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendKey:F7</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="7" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:7</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="è" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:è</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="alt+fn" Enabled="true" Description="">
+                <KeyUp Label="F8" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:%{F8}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="fn+shift" Enabled="true" Description="">
+                <KeyUp Label="F8" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:+{F8}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="alt" Enabled="true" Description="">
+                <KeyUp Label="\" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:\</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="fn" Enabled="true" Description="">
+                <KeyUp Label="F8" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendKey:F8</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="8" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:8</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="_" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:_</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="alt+fn" Enabled="true" Description="">
+                <KeyUp Label="F9" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:%{F9}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="fn+shift" Enabled="true" Description="">
+                <KeyUp Label="F9" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:+{F9}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="alt" Enabled="true" Description="">
+                <KeyUp Label="^" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:^</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="fn" Enabled="true" Description="">
+                <KeyUp Label="F9" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendKey:F9</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="9" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:9</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="ç" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:ç</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="alt+fn" Enabled="true" Description="">
+                <KeyUp Label="F10" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:%{F10}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="fn+shift" Enabled="true" Description="">
+                <KeyUp Label="F10" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:+{F10}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="alt" Enabled="true" Description="">
+                <KeyUp Label="@" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:@</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="fn" Enabled="true" Description="">
+                <KeyUp Label="F10" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendKey:F10</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="0" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:0</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="à" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:à</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="alt+fn" Enabled="true" Description="">
+                <KeyUp Label="F11" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:%{F11}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="fn+shift" Enabled="true" Description="">
+                <KeyUp Label="F11" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:+{F11}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="alt" Enabled="true" Description="">
+                <KeyUp Label="]" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:]</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="fn" Enabled="true" Description="">
+                <KeyUp Label="F11" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendKey:F11</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="°" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:°</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label=")" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:)</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="alt+fn" Enabled="true" Description="">
+                <KeyUp Label="F12" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:%{F12}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="fn+shift" Enabled="true" Description="">
+                <KeyUp Label="F12" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:+{F12}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="alt" Enabled="true" Description="">
+                <KeyUp Label="}" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="fn" Enabled="true" Description="">
+                <KeyUp Label="F12" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendKey:F12</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="+" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:+</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="=" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:=</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="←" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendKey:Back</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+        </Keys>
+        <PluginsData>
+          <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+            <data key="Index" type="Int32">-1</data>
+          </p>
+        </PluginsData>
+      </Zone>
+      <Zone Name="{Tab}azertyuiop{enter}" Index="2">
+        <Keys>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="↹" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendKey:Tab</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="agrave+shift" Enabled="true" Description="">
+                <KeyUp Label="À" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:À</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="circonflexe+shift" Enabled="true" Description="">
+                <KeyUp Label="Â" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:Â</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift+tilde" Enabled="true" Description="">
+                <KeyUp Label="Ã" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:Ã</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift+trema" Enabled="true" Description="">
+                <KeyUp Label="Ä" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:Ä</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="agrave" Enabled="true" Description="">
+                <KeyUp Label="à" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:à</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="circonflexe" Enabled="true" Description="">
+                <KeyUp Label="â" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:â</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="a" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^a</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="A" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:A</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="tilde" Enabled="true" Description="">
+                <KeyUp Label="ã" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:ã</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="trema" Enabled="true" Description="">
+                <KeyUp Label="ä" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:ä</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="a" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:a</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="z" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^z</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="Z" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:Z</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="z" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:z</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="agrave+shift" Enabled="true" Description="">
+                <KeyUp Label="È" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:È</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="alt+circonflexe" Enabled="true" Description="">
+                <KeyUp Label="ê" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:ê</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="circonflexe+shift" Enabled="true" Description="">
+                <KeyUp Label="Ê" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:Ê</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift+trema" Enabled="true" Description="">
+                <KeyUp Label="Ë" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:Ë</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="agrave" Enabled="true" Description="">
+                <KeyUp Label="è" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:è</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="alt" Enabled="true" Description="">
+                <KeyUp Label="€" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:€</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="circonflexe" Enabled="true" Description="">
+                <KeyUp Label="ê" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:ê</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="e" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^e</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="E" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:E</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="trema" Enabled="true" Description="">
+                <KeyUp Label="ë" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:ë</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="e" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:e</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="r" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^r</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="R" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:R</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="r" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:r</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="t" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^t</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="T" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:T</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="t" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:t</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="y" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^y</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="Y" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:Y</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="y" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:y</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="agrave+shift" Enabled="true" Description="">
+                <KeyUp Label="Ù" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:Ù</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="circonflexe+shift" Enabled="true" Description="">
+                <KeyUp Label="Û" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:Û</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift+trema" Enabled="true" Description="">
+                <KeyUp Label="Ü" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:Ü</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="agrave" Enabled="true" Description="">
+                <KeyUp Label="ù" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:ù</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="circonflexe" Enabled="true" Description="">
+                <KeyUp Label="û" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:û</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="u" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^u</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="U" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:U</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="trema" Enabled="true" Description="">
+                <KeyUp Label="ü" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:ü</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="u" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:u</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="agrave+shift" Enabled="true" Description="">
+                <KeyUp Label="Ì" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:Ì</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="circonflexe+shift" Enabled="true" Description="">
+                <KeyUp Label="Î" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:Î</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift+trema" Enabled="true" Description="">
+                <KeyUp Label="Ï" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:Ï</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="agrave" Enabled="true" Description="">
+                <KeyUp Label="ì" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:ì</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="circonflexe" Enabled="true" Description="">
+                <KeyUp Label="î" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:î</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="i" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^i</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="I" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:I</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="trema" Enabled="true" Description="">
+                <KeyUp Label="ï" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:ï</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="i" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:i</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="agrave+shift" Enabled="true" Description="">
+                <KeyUp Label="Ò" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:Ò</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="circonflexe+shift" Enabled="true" Description="">
+                <KeyUp Label="Ô" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:Ô</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift+tilde" Enabled="true" Description="">
+                <KeyUp Label="Õ" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:Õ</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift+trema" Enabled="true" Description="">
+                <KeyUp Label="Ö" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:Ö</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="agrave" Enabled="true" Description="">
+                <KeyUp Label="ò" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:ò</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="circonflexe" Enabled="true" Description="">
+                <KeyUp Label="ô" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:ô</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="o" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^o</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="O" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:O</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="tilde" Enabled="true" Description="">
+                <KeyUp Label="õ" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:õ</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="trema" Enabled="true" Description="">
+                <KeyUp Label="ö" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:ö</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="o" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:o</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="p" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^p</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="P" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:P</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="p" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:p</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="¨" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>mode:remove,shift</Cmd>
+                    <Cmd>monitoronce:sendkey,autoclose-shift,mode:remove,shiftÑ</Cmd>
+                    <Cmd>mode:toggle,trema</Cmd>
+                    <Cmd>monitoronce:sendkey,autoclose-trema,mode:remove,trema</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="^" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>mode:toggle,circonflexe</Cmd>
+                    <Cmd>monitoronce:sendkey,autoclose-circonflexe,mode:remove,circonflexe</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="alt" Enabled="true" Description="">
+                <KeyUp Label="¤" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:¤</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="£" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:£</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="$" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:$</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="↵" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendKey:Return</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+        </Keys>
+        <PluginsData>
+          <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+            <data key="Index" type="Int32">-1</data>
+          </p>
+        </PluginsData>
+      </Zone>
+      <Zone Name="{Lock}qsdfghjklmù*" Index="3">
+        <Keys>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="🔒" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>mode:toggle,shift</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Image</data>
+                    <data key="Image" type="String">pack://application:,,,/SimpleSkin;component/Images/padlock.png</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="q" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^q</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="Q" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:Q</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="q" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:q</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="s" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^s</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="S" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:S</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="s" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:s</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="d" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^d</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="D" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:D</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="d" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:d</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="f" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^f</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="F" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:F</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="f" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:f</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="g" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^g</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="G" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:G</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="g" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:g</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="h" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^j</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="H" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:H</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="h" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:h</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="j" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^j</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="J" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:J</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="j" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:j</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="k" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^k</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="K" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:K</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="k" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:k</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="l" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^l</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="L" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:L</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="l" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:l</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="m" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^m</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="M" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:M</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="m" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:m</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="%" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:%</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="ù" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:ù</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="µ" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:µ</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="*" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:*</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+        </Keys>
+        <PluginsData>
+          <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+            <data key="Index" type="Int32">-1</data>
+          </p>
+        </PluginsData>
+      </Zone>
+      <Zone Name="wxcvbn,;" Index="4">
+        <Keys>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="⇧" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>mode:toggle,shift</Cmd>
+                    <Cmd>monitoronce:sendkey,autoclose-shift,mode:remove,shift</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="&gt;" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:&gt;</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="&lt;" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:&lt;</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="w" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^w</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="W" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:W</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="w" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:w</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="x" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^x</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="X" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:X</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="x" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:x</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="c" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^c</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="C" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:C</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="c" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:c</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="v" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^v</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="V" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:V</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="v" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:v</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="b" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^b</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="B" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:B</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="b" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:b</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="shift+tilde" Enabled="true" Description="">
+                <KeyUp Label="Ñ" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:Ñ</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="n" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^n</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="N" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:N</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="tilde" Enabled="true" Description="">
+                <KeyUp Label="ñ" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:ñ</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="n" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:n</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="?" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:?</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="," />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:,</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="." />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:.</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label=";" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:;</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="/" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:/</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label=":" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString::</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="§" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:§</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="!" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:!</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="⇧" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>mode:toggle,shift</Cmd>
+                    <Cmd>monitoronce:sendkey,autoclose-shift,mode:remove,shift</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="Suppr" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendKey:Delete</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+        </Keys>
+        <PluginsData>
+          <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+            <data key="Index" type="Int32">-1</data>
+          </p>
+        </PluginsData>
+      </Zone>
+      <Zone Name="ctrl, win, etc.." Index="5">
+        <Keys>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="Ctrl" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>mode:toggle,ctrl</Cmd>
+                    <Cmd>monitoronce:sendkey,autoclose-ctrl,mode:remove,ctrl</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="Win" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>dyncommand:windowskey</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Image</data>
+                    <data key="Image" type="Structured" typeName="System.Windows.Controls.Image, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                      <Image Source="pack://application:,,,/SimpleSkin;component/Images/windows.png" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" />
+                    </data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="Alt" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>mode:toggle,alt</Cmd>
+                    <Cmd>monitoronce:sendkey,autoclose-alt,mode:remove,alt</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="agrave" Enabled="true" Description="">
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:`</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="circonflexe" Enabled="true" Description="">
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:^</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="tilde" Enabled="true" Description="">
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:~</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="trema" Enabled="true" Description="">
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString:¨</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="CtxMenu" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>dyncommand:contextmenu</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Image</data>
+                    <data key="Image" type="Structured" typeName="System.Windows.Controls.Image, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                      <Image Source="pack://application:,,,/SimpleSkin;component/Images/menu.png" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" />
+                    </data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="Alt" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>mode:toggle,alt</Cmd>
+                    <Cmd>monitoronce:sendkey,autoclose-alt,mode:remove,alt</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="Ctrl" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>mode:toggle,ctrl</Cmd>
+                    <Cmd>monitoronce:sendkey,autoclose-ctrl,mode:remove,ctrl</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+        </Keys>
+        <PluginsData>
+          <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+            <data key="Index" type="Int32">-1</data>
+          </p>
+        </PluginsData>
+      </Zone>
+      <Zone Name="Fleches" Index="6">
+        <Keys>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="ctrl+shift" Enabled="true" Description="">
+                <KeyUp Label="↑" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^+{UP}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="↑" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^{UP}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="↑" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:+{UP}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="↑" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendKey:Up</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="ctrl+shift" Enabled="true" Description="">
+                <KeyUp Label="←" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^+{LEFT}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="←" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^{LEFT}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="←" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:+{LEFT}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="←" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendKey:Left</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="ctrl+shift" Enabled="true" Description="">
+                <KeyUp Label="↓" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^+{DOWN}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="↓" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^{DOWN}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="↓" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:+{DOWN}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="↓" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendKey:Down</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="ctrl+shift" Enabled="true" Description="">
+                <KeyUp Label="→" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^+{RIGHT}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="ctrl" Enabled="true" Description="">
+                <KeyUp Label="→" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:^{RIGHT}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="shift" Enabled="true" Description="">
+                <KeyUp Label="→" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendkeyold:+{RIGHT}</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="→" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendKey:Right</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+        </Keys>
+        <PluginsData>
+          <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+            <data key="Index" type="Int32">-1</data>
+          </p>
+        </PluginsData>
+      </Zone>
+      <Zone Name="Fonctions" Index="7">
+        <Keys>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="" Enabled="true" Description="Afficher l'aide du clavier">
+                <KeyUp Label="Help" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>help:show</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Image</data>
+                    <data key="Image" type="Structured" typeName="System.Windows.Controls.Image, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                      <Image Source="pack://application:,,,/SimpleSkin;component/Images/help.png" Width="16" Height="16" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" />
+                    </data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="" Enabled="true" Description="">
+                <KeyUp Label="Fn" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>mode:toggle,fn</Cmd>
+                    <Cmd>monitoronce:sendkey,autoclose-fn,mode:remove,fn</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Label</data>
+                    <data key="Image" type="null" />
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="" Enabled="true" Description="Afficher le clavier souris">
+                <KeyUp Label="Clavier souris" />
+                <KeyPressed>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>keyboardswitch:Clavier-souris</Cmd>
+                  </KeyProgram>
+                </KeyPressed>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Image</data>
+                    <data key="Image" type="Structured" typeName="System.Windows.Controls.Image, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                      <Image Source="pack://application:,,,/SimpleSkin;component/Images/mousekb.png" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" />
+                    </data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="" Enabled="true" Description="Minimiser le clavier">
+                <KeyUp Label="Hide" />
+                <KeyPressed>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>dyncommand:hideskin</Cmd>
+                  </KeyProgram>
+                </KeyPressed>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Image</data>
+                    <data key="Image" type="Structured" typeName="System.Windows.Controls.Image, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                      <Image Source="pack://application:,,,/SimpleSkin;component/Images/eye.png" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" />
+                    </data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="" Enabled="true" Description="Fermer CiviKey">
+                <KeyUp Label="Exit">
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>dyncommand:shutdown</Cmd>
+                  </KeyProgram>
+                </KeyUp>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Image</data>
+                    <data key="Image" type="Structured" typeName="System.Windows.Controls.Image, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                      <Image Source="pack://application:,,,/SimpleSkin;component/Images/exit.png" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" />
+                    </data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+          <Key>
+            <KeyModes>
+              <KeyMode Mode="" Enabled="true" Description="Afficher la fenêtre de configuration">
+                <KeyUp Label="MinimizeHost" />
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>dyncommand:togglehostminimized</Cmd>
+                  </KeyProgram>
+                </KeyDown>
+                <PluginsData>
+                  <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                    <data key="DisplayType" type="String">Image</data>
+                    <data key="Image" type="Structured" typeName="System.Windows.Controls.Image, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                      <Image Source="pack://application:,,,/SimpleSkin;component/Images/EditorLogo.png" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" />
+                    </data>
+                  </p>
+                </PluginsData>
+              </KeyMode>
+            </KeyModes>
+          </Key>
+        </Keys>
+        <PluginsData>
+          <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+            <data key="Index" type="Int32">-1</data>
+          </p>
+        </PluginsData>
+      </Zone>
+    </Zones>
+    <Layouts>
+      <Layout IsCurrent="true" Name="" Width="955" Height="295">
+        <RequirementLayer Name="Layout">
+          <PluginRequirements></PluginRequirements>
+          <ServiceRequirements></ServiceRequirements>
+        </RequirementLayer>
+        <Zones>
+          <Zone Name="">
+            <LayoutKeys />
+          </Zone>
+          <Zone Name="Numéros">
+            <LayoutKeys>
+              <LayoutKey Index="0">
+                <LayoutKeyMode Mode="" X="15" Y="15" W="75" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="1">
+                <LayoutKeyMode Mode="" X="95" Y="15" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="2">
+                <LayoutKeyMode Mode="" X="150" Y="15" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="3">
+                <LayoutKeyMode Mode="" X="205" Y="15" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="4">
+                <LayoutKeyMode Mode="" X="260" Y="15" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="5">
+                <LayoutKeyMode Mode="" X="315" Y="15" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="6">
+                <LayoutKeyMode Mode="" X="370" Y="15" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="7">
+                <LayoutKeyMode Mode="" X="425" Y="15" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="8">
+                <LayoutKeyMode Mode="" X="480" Y="15" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="9">
+                <LayoutKeyMode Mode="" X="535" Y="15" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="10">
+                <LayoutKeyMode Mode="" X="590" Y="15" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="11">
+                <LayoutKeyMode Mode="" X="645" Y="15" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="12">
+                <LayoutKeyMode Mode="" X="700" Y="15" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="13">
+                <LayoutKeyMode Mode="" X="755" Y="15" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="14">
+                <LayoutKeyMode Mode="" X="810" Y="15" W="75" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="FontSize" type="Double">45</data>
+                      <data key="FontWeight" type="Structured" typeName="System.Windows.FontWeight, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <FontWeight xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">Normal</FontWeight>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+              </LayoutKey>
+            </LayoutKeys>
+          </Zone>
+          <Zone Name="{Tab}azertyuiop{enter}">
+            <LayoutKeys>
+              <LayoutKey Index="0">
+                <LayoutKeyMode Mode="" X="15" Y="70" W="100" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="FontSize" type="Double">35</data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+              </LayoutKey>
+              <LayoutKey Index="1">
+                <LayoutKeyMode Mode="agrave" X="120" Y="70" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="Background" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA2BDF2</Color>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+                <LayoutKeyMode Mode="circonflexe" X="120" Y="70" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="Background" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA2BDF2</Color>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+                <LayoutKeyMode Mode="tilde" X="120" Y="70" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="Background" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA2BDF2</Color>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+                <LayoutKeyMode Mode="trema" X="120" Y="70" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="Background" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA2BDF2</Color>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+                <LayoutKeyMode Mode="" X="120" Y="70" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="2">
+                <LayoutKeyMode Mode="" X="175" Y="70" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="3">
+                <LayoutKeyMode Mode="agrave" X="230" Y="70" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="Background" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA2BDF2</Color>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+                <LayoutKeyMode Mode="circonflexe" X="230" Y="70" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="Background" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA2BDF2</Color>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+                <LayoutKeyMode Mode="trema" X="230" Y="70" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="Background" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA2BDF2</Color>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+                <LayoutKeyMode Mode="" X="230" Y="70" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="4">
+                <LayoutKeyMode Mode="" X="285" Y="70" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="5">
+                <LayoutKeyMode Mode="" X="340" Y="70" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="6">
+                <LayoutKeyMode Mode="" X="395" Y="70" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="7">
+                <LayoutKeyMode Mode="agrave" X="450" Y="70" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="Background" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA2BDF2</Color>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+                <LayoutKeyMode Mode="circonflexe" X="450" Y="70" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="Background" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA2BDF2</Color>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+                <LayoutKeyMode Mode="trema" X="450" Y="70" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="Background" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA2BDF2</Color>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+                <LayoutKeyMode Mode="" X="450" Y="70" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="8">
+                <LayoutKeyMode Mode="agrave" X="505" Y="70" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="Background" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA2BDF2</Color>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+                <LayoutKeyMode Mode="circonflexe" X="505" Y="70" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="Background" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA2BDF2</Color>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+                <LayoutKeyMode Mode="trema" X="505" Y="70" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="Background" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA2BDF2</Color>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+                <LayoutKeyMode Mode="" X="505" Y="70" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="9">
+                <LayoutKeyMode Mode="agrave" X="560" Y="70" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="Background" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA2BDF2</Color>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+                <LayoutKeyMode Mode="circonflexe" X="560" Y="70" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="Background" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA2BDF2</Color>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+                <LayoutKeyMode Mode="tilde" X="560" Y="70" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="Background" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA2BDF2</Color>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+                <LayoutKeyMode Mode="trema" X="560" Y="70" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="Background" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA2BDF2</Color>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+                <LayoutKeyMode Mode="" X="560" Y="70" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="10">
+                <LayoutKeyMode Mode="" X="615" Y="70" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="11">
+                <LayoutKeyMode Mode="" X="670" Y="70" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="12">
+                <LayoutKeyMode Mode="" X="725" Y="70" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="13">
+                <LayoutKeyMode Mode="" X="800" Y="70" W="85" H="105" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="FontSize" type="Double">50</data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+              </LayoutKey>
+            </LayoutKeys>
+          </Zone>
+          <Zone Name="{Lock}qsdfghjklmù*">
+            <LayoutKeys>
+              <LayoutKey Index="0">
+                <LayoutKeyMode Mode="shift" X="15" Y="125" W="120" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="Background" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA2BDF2</Color>
+                      </data>
+                      <data key="LetterColor" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFFFFFFF</Color>
+                      </data>
+                      <data key="FontSize" type="Double">25</data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+                <LayoutKeyMode Mode="" X="15" Y="125" W="120" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="FontSize" type="Double">25</data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+              </LayoutKey>
+              <LayoutKey Index="1">
+                <LayoutKeyMode Mode="" X="140" Y="125" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="2">
+                <LayoutKeyMode Mode="" X="195" Y="125" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="3">
+                <LayoutKeyMode Mode="" X="250" Y="125" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="4">
+                <LayoutKeyMode Mode="" X="305" Y="125" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="5">
+                <LayoutKeyMode Mode="" X="360" Y="125" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="6">
+                <LayoutKeyMode Mode="" X="415" Y="125" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="7">
+                <LayoutKeyMode Mode="" X="470" Y="125" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="8">
+                <LayoutKeyMode Mode="" X="525" Y="125" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="9">
+                <LayoutKeyMode Mode="" X="580" Y="125" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="10">
+                <LayoutKeyMode Mode="" X="635" Y="125" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="11">
+                <LayoutKeyMode Mode="" X="690" Y="125" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="12">
+                <LayoutKeyMode Mode="" X="745" Y="125" W="50" H="50" Visible="true" />
+              </LayoutKey>
+            </LayoutKeys>
+          </Zone>
+          <Zone Name="wxcvbn,;">
+            <LayoutKeys>
+              <LayoutKey Index="0">
+                <LayoutKeyMode Mode="shift" X="15" Y="180" W="100" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="Background" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA2BDF2</Color>
+                      </data>
+                      <data key="FontSize" type="Double">40</data>
+                      <data key="FontWeight" type="Structured" typeName="System.Windows.FontWeight, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <FontWeight xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">Bold</FontWeight>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+                <LayoutKeyMode Mode="" X="15" Y="180" W="100" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="FontSize" type="Double">40</data>
+                      <data key="FontWeight" type="Structured" typeName="System.Windows.FontWeight, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <FontWeight xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">Bold</FontWeight>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+              </LayoutKey>
+              <LayoutKey Index="1">
+                <LayoutKeyMode Mode="" X="120" Y="180" W="50" H="25" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="2">
+                <LayoutKeyMode Mode="" X="120" Y="205" W="50" H="25" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="3">
+                <LayoutKeyMode Mode="" X="175" Y="180" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="4">
+                <LayoutKeyMode Mode="" X="230" Y="180" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="5">
+                <LayoutKeyMode Mode="" X="285" Y="180" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="6">
+                <LayoutKeyMode Mode="" X="340" Y="180" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="7">
+                <LayoutKeyMode Mode="" X="395" Y="180" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="8">
+                <LayoutKeyMode Mode="tilde" X="450" Y="180" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="Background" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA2BDF2</Color>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+                <LayoutKeyMode Mode="" X="450" Y="180" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="9">
+                <LayoutKeyMode Mode="" X="505" Y="180" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="10">
+                <LayoutKeyMode Mode="" X="560" Y="180" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="11">
+                <LayoutKeyMode Mode="" X="615" Y="180" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="12">
+                <LayoutKeyMode Mode="" X="670" Y="180" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="13">
+                <LayoutKeyMode Mode="shift" X="725" Y="180" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="Background" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA2BDF2</Color>
+                      </data>
+                      <data key="FontSize" type="Double">40</data>
+                      <data key="FontWeight" type="Structured" typeName="System.Windows.FontWeight, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <FontWeight xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">Bold</FontWeight>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+                <LayoutKeyMode Mode="" X="725" Y="180" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="FontSize" type="Double">40</data>
+                      <data key="FontWeight" type="Structured" typeName="System.Windows.FontWeight, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <FontWeight xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">Bold</FontWeight>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+              </LayoutKey>
+              <LayoutKey Index="14">
+                <LayoutKeyMode Mode="" X="835" Y="180" W="50" H="50" Visible="true" />
+              </LayoutKey>
+            </LayoutKeys>
+          </Zone>
+          <Zone Name="ctrl, win, etc..">
+            <LayoutKeys>
+              <LayoutKey Index="0">
+                <LayoutKeyMode Mode="ctrl" X="15" Y="235" W="75" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="Background" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA2BDF2</Color>
+                      </data>
+                      <data key="LetterColor" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFFFFFFF</Color>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+                <LayoutKeyMode Mode="" X="15" Y="235" W="75" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="1">
+                <LayoutKeyMode Mode="" X="95" Y="235" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="2">
+                <LayoutKeyMode Mode="alt" X="150" Y="235" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="Background" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA2BDF2</Color>
+                      </data>
+                      <data key="LetterColor" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFFFFFFF</Color>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+                <LayoutKeyMode Mode="" X="150" Y="235" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="3">
+                <LayoutKeyMode Mode="" X="205" Y="235" W="350" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="4">
+                <LayoutKeyMode Mode="" X="560" Y="235" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="5">
+                <LayoutKeyMode Mode="alt" X="615" Y="235" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="Background" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA2BDF2</Color>
+                      </data>
+                      <data key="LetterColor" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFFFFFFF</Color>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+                <LayoutKeyMode Mode="" X="615" Y="235" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="6">
+                <LayoutKeyMode Mode="ctrl" X="670" Y="235" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="Background" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA2BDF2</Color>
+                      </data>
+                      <data key="LetterColor" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFFFFFFF</Color>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+                <LayoutKeyMode Mode="" X="670" Y="235" W="50" H="50" Visible="true" />
+              </LayoutKey>
+            </LayoutKeys>
+          </Zone>
+          <Zone Name="Fleches">
+            <LayoutKeys>
+              <LayoutKey Index="0">
+                <LayoutKeyMode Mode="" X="780" Y="180" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="FontSize" type="Double">30</data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+              </LayoutKey>
+              <LayoutKey Index="1">
+                <LayoutKeyMode Mode="" X="725" Y="235" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="FontSize" type="Double">30</data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+              </LayoutKey>
+              <LayoutKey Index="2">
+                <LayoutKeyMode Mode="" X="780" Y="235" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="FontSize" type="Double">30</data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+              </LayoutKey>
+              <LayoutKey Index="3">
+                <LayoutKeyMode Mode="" X="835" Y="235" W="50" H="50" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="FontSize" type="Double">30</data>
+                      <data key="FontWeight" type="Structured" typeName="System.Windows.FontWeight, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <FontWeight xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">Normal</FontWeight>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+              </LayoutKey>
+            </LayoutKeys>
+          </Zone>
+          <Zone Name="Fonctions">
+            <LayoutKeys>
+              <LayoutKey Index="0">
+                <LayoutKeyMode Mode="" X="895" Y="15" W="50" H="25" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="1">
+                <LayoutKeyMode Mode="fn" X="895" Y="40" W="50" H="25" Visible="true">
+                  <PluginsData>
+                    <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+                      <data key="Background" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFA2BDF2</Color>
+                      </data>
+                      <data key="LetterColor" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+                        <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFFFFFFF</Color>
+                      </data>
+                    </p>
+                  </PluginsData>
+                </LayoutKeyMode>
+                <LayoutKeyMode Mode="" X="895" Y="40" W="50" H="25" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="2">
+                <LayoutKeyMode Mode="" X="895" Y="70" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="3">
+                <LayoutKeyMode Mode="" X="895" Y="125" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="4">
+                <LayoutKeyMode Mode="" X="895" Y="180" W="50" H="50" Visible="true" />
+              </LayoutKey>
+              <LayoutKey Index="5">
+                <LayoutKeyMode Mode="" X="895" Y="235" W="50" H="50" Visible="true" />
+              </LayoutKey>
+            </LayoutKeys>
+          </Zone>
+        </Zones>
+        <PluginsData>
+          <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
+            <data key="HighlightBackground" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+              <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFBDCFF4</Color>
+            </data>
+            <data key="ViewPortSize" type="Structured" typeName="System.Windows.Size, WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+              <Size xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">1000,310</Size>
+            </data>
+            <data key="InsideBorderColor" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+              <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FF66AC1B</Color>
+            </data>
+            <data key="KeyboardBackground" type="String">pack://application:,,,/SimpleSkin;component/Images/skinBackground.png</data>
+            <data key="PositionX" type="Int32">115</data>
+            <data key="PositionY" type="Int32">456</data>
+            <data key="KeyboardBackgroundType" type="String">path</data>
+          </p><p guid="66ad1d1c-bf19-405d-93d3-30ca39b9e52f" version="1.0.0" name="Keyboard editor"><data key="KeyboardBackground" type="String">pack://application:,,,/SimpleSkin;component/Images/skinBackground.png</data></p></PluginsData>
+      </Layout>
+    </Layouts>
+  </Keyboard>
+</CK-Structured>
