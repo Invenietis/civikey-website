@@ -36,7 +36,7 @@
             <div class="content">
                 <h1>Clavier ergonomique</h1>
                 <p>
-                    C'est un clavier avec un énorme potentiel de rédaction. Ce dernier se décline en 3 coloris : rouge, vert et noir !
+                    Le clavier ergonomique est optimisé pour une utilisation avec le défilement.
                 </p>
             </div>
             <div class="content-footer">
@@ -58,7 +58,7 @@
             <div class="content">
                 <h1>Clavier - Souris</h1>
                 <p>
-                    Un clavire disposant de touches permettant de cliquer et de déplacer la souris.
+                    Un clavier disposant de touches permettant de cliquer et de déplacer la souris.
                 </p>
             </div>
             <div class="content-footer">
@@ -72,8 +72,10 @@
         </div>
         <div class="keyboard">
             <div class="actions">
-                <a href="" class="btn"><i class="glyphicon glyphicon-save"></i></a>
-                <a href="" class="btn"><i class="glyphicon glyphicon-picture"></i></a>
+                <a title="Télécharger" href="@Url.Action( "Keyboard", "Home", new { name = "Excel.xml" } )" class="btn"><i class="glyphicon glyphicon-save"></i></a>
+                <a title="Visualiser le clavier" href="@Url.Content("~/Content/images/keyboards/clavier-souris.png")" data-title="Clavier Excel" data-lightbox="excel" class="btn">
+                    <i class="glyphicon glyphicon-picture"></i>
+                </a>
             </div>
             <div class="content">
                 <h1>Clavier Excel</h1>
