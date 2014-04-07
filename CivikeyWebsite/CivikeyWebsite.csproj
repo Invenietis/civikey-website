@@ -199,6 +199,11 @@
     <Content Include="Content\images\keyboards\azerty.png" />
     <Content Include="Content\images\keyboards\clavier-souris.png" />
     <Content Include="Content\images\keyboards\ergonomique.png" />
+    <Content Include="Content\images\keyboards\excel.png" />
+    <Content Include="Content\images\lightbox\close.png" />
+    <Content Include="Content\images\lightbox\loading.gif" />
+    <Content Include="Content\images\lightbox\next.png" />
+    <Content Include="Content\images\lightbox\prev.png" />
     <Content Include="Content\images\logo intech.png" />
     <Content Include="Content\images\logo_icon.png" />
     <Content Include="Content\images\mouse.png" />
@@ -212,6 +217,7 @@
     <Content Include="Content\images\partners\grayscale\fondation-steria.png" />
     <Content Include="Content\images\partners\grayscale\intech-info.png" />
     <Content Include="Content\images\partners\grayscale\logo-small.png" />
+    <Content Include="Content\images\partners\grayscale\logo-small_white.png" />
     <Content Include="Content\images\partners\grayscale\pfnt.png" />
     <Content Include="Content\images\partners\intech-info.png" />
     <Content Include="Content\images\partners\invenietis.png" />
