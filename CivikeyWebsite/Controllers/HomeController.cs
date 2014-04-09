@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web.Mvc;
+using CivikeyWebsite.Models;
+using CK.Mailer;
 
 namespace CivikeyWebsite.Controllers
 {
@@ -46,6 +48,38 @@ namespace CivikeyWebsite.Controllers
 
             Response.WriteFile( Server.MapPath( "~/Content/files/keyboards/" + name ) );
             Response.End();
+        }
+
+        public ActionResult AddKeyboard( KeyboardModel keyboard )
+        {
+            KeyboardPostError err = KeyboardPostError.None;
+            IMailerService mailer = new DefaultMailerService();
+            mailer.SendMail( new KeyboardSubmittedMailModel() {
+                Name = keyboard.Name,
+                Description = keyboard.Description,
+                Email = keyboard.Email,
+                Author = keyboard.Author
+            },
+                new RazorMailTemplateKey( "KeyboardSubmitted" ), 
+                new Recipient[] { new Recipient( "jeanloup.kahloun@invenietis.com" ) } );
+
+            if(ModelState.IsValid)
+            {
+                if( Request.Files.Count > 0 )
+                {
+                    //Request.Files[0].SaveAs( "" );
+                }
+                else
+                {
+                    err = KeyboardPostError.MissingPicutre;
+                }
+            }
+            else
+            {
+                err = KeyboardPostError.InvalidForm;
+            }
+
+            return Json( new { valid = false, error = err, keyboard = keyboard } );
         }
     }
 }
