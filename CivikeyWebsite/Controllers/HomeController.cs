@@ -28,9 +28,26 @@ namespace CivikeyWebsite.Controllers
             return View();
         }
 
-        public void Keyboard(string name)
+        public void Documentation( string version )
+        {
+            string path =  Server.MapPath( "~/Content/files/documentation/" + version + ".docx" );
+            ReturnFileStream( "Civikey-documentation-v" + version + ".docx", path );
+        }
+
+        public void Application( string version )
+        {
+            string path =  Server.MapPath( "~/Content/files/application/" + version + ".exe" );
+            ReturnFileStream( "Civikey-v" + version + ".exe", path );
+        }
+
+        public void Keyboard( string name )
         {
             string path =  Server.MapPath( "~/Content/files/keyboards/" + name );
+            ReturnFileStream( name + "xml", path );
+        }
+
+        private void ReturnFileStream( string name, string path )
+        {
             if( !System.IO.File.Exists( path ) )
             {
                 Response.StatusCode = 404;
@@ -44,7 +61,7 @@ namespace CivikeyWebsite.Controllers
 
             Response.ContentType = "application/octet-stream";
 
-            Response.WriteFile( Server.MapPath( "~/Content/files/keyboards/" + name ) );
+            Response.WriteFile( path );
             Response.End();
         }
     }
