@@ -1,80 +1,86 @@
 ﻿@presentation-bg: transparent;
-@description-bg:  #4F4F4F;
+@description-bg: #4F4F4F;
 @partners-bg: #509be4;
 @contact-bg: #f8f8f8;
 
 @import url(http://fonts.googleapis.com/css?family=Rambla);
-@font-face{
-font-family: 'quicksand';
-  src: url('../fonts/quicksand-regular.eot');
-  src: url('../fonts/quicksand-regular.eot?#iefix') format('embedded-opentype'),
-       url('../fonts/quicksand-regular.woff') format('woff'),
-       url('../fonts/quicksand-regular.ttf') format('truetype'),
-       url('../fonts/quicksand-regular.svg#quicksanditalic') format('svg');
-  font-weight: normal;
-  font-style: normal;
+
+@font-face {
+    font-family: 'quicksand';
+    src: url('../fonts/quicksand-regular.eot');
+    src: url('../fonts/quicksand-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/quicksand-regular.woff') format('woff'), url('../fonts/quicksand-regular.ttf') format('truetype'), url('../fonts/quicksand-regular.svg#quicksanditalic') format('svg');
+    font-weight: normal;
+    font-style: normal;
 }
 
-body{
+body {
     -webkit-text-stroke: 0.3px;
 }
-.navbar{
+
+.navbar {
     margin-bottom: 0;
 }
-.container{
+
+.container {
     width: 980px !important;
     position: relative;
 }
-#partners-baner{
+
+#partners-baner {
     background: #f8f8f8;
     padding: 5px 0;
-    text-align:center;
-    & > .container{
+    text-align: center;
+
+    & > .container {
         opacity: 0.8;
     }
-    img{
+
+    img {
         display: inline-block;
         margin: 0 14px;
     }
 }
-.hide-intersection{
+
+.hide-intersection {
     left: 384px;
     top: 225px;
     width: 37px;
     height: 157px;
     background: #509be4;
     position: absolute;
-
 }
-ul.center-nav{
+
+ul.center-nav {
     float: right;
     margin: auto;
+    text-align: center;
 
-    text-align:center;
     li > a {
         line-height: 30px;
         font-size: 18px;
         font-family: 'quicksand';
         font-weight: bold;
     }
-    li:hover{
+
+    li:hover {
         background: #509be4;
+
         & > a {
-            color:white !important;
+            color: white !important;
         }
     }
 }
 
-.navbar > .container .navbar-brand{
+.navbar > .container .navbar-brand {
     margin: 5px 0;
     width: 171px;
     height: 50px;
     background: url('../images/logo.png') center no-repeat;
 }
 
-.btn.btn-cvk{
+.btn.btn-cvk {
     position: absolute;
-    font-weight:bold;
+    font-weight: bold;
     background-color: white;
     color: @partners-bg;
     display: block;
@@ -90,7 +96,7 @@ ul.center-nav{
     border-radius: 150px;
     border: 2px solid white;
 
-    &.doc{
+    &.doc {
         font-size: 18px;
         top: 15px;
         right: 85px;
@@ -99,25 +105,31 @@ ul.center-nav{
         width: 100px;
         vertical-align: middle;
     }
-    &:active{
+
+    &:active {
         outline: none;
     }
-    &:hover{
+
+    &:hover {
         background-color: @partners-bg;
         color: white;
         border: 2px solid white;
     }
-    .glyphicon-save{
+
+    .glyphicon-save {
         font-size: 36px;
     }
 }
-.body-content{
+
+.body-content {
     font-family: 'quicksand';
     background-size: cover;
 }
-section > .container{
+
+section > .container {
     padding: 60px 0px;
-    h1{
+
+    h1 {
         font-size: 36px;
         text-align: center;
         margin-top: 0;
@@ -127,19 +139,22 @@ section > .container{
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
     }
-    p{
+
+    p {
         font-size: 18px;
     }
 }
 
-#presentation{
+#presentation {
     color: white;
-    background: url('../images/handicap.jpg') fixed  #f8f8f8;
+    background: url('../images/handicap.jpg') fixed #f8f8f8;
     background-size: cover;
-    .container{
+
+    .container {
         padding: 40px 0 60px;
     }
-    .illustration{
+
+    .illustration {
         border-radius: 500px;
         overflow: hidden;
         padding: 20px;
@@ -147,9 +162,10 @@ section > .container{
         float: left;
         display: block;
         margin-top: -20px;
-        margin-left:40px;
+        margin-left: 40px;
     }
-    .round-content{
+
+    .round-content {
         background: #509be4;
         float: left;
         width: 550px;
@@ -158,15 +174,16 @@ section > .container{
         padding-top: 40px;
         margin-left: -40px;
     }
-    h1{
 
+    h1 {
         font-size: 50px !important;
         font-weight: normal;
         margin: 5px auto 50px;
         width: 400px;
         font-family: Rambla;
     }
-    h2{
+
+    h2 {
         font-size: 28px;
         line-height: 36px;
         margin: auto;
@@ -178,16 +195,16 @@ section > .container{
     }
 }
 
-#description{
+#description {
     color: white;
     background-color: @partners-bg;
-   
 }
 
-#features{
+#features {
     color: #333;
     background-color: @contact-bg;
-    .btn{
+
+    .btn {
         background: #509be4;
         color: white;
         border: 2px solid #509be4;
@@ -195,151 +212,170 @@ section > .container{
         margin-top: 45px;
         outline: none;
         transition: all .3s;
-        &:hover{
+
+        &:hover {
             background: white;
             color: #509be4;
         }
     }
 }
 
-#contact{
+#contact {
     background: url('../images/handshake.jpg') fixed;
-    background-size:cover;
+    background-size: cover;
     background-color: @contact-bg;
     color: white;
 }
-section > .container .feature{
+
+section > .container .feature {
     width: 305px;
     float: left;
     margin: 0 10px;
 
-    & > img{
+    & > img {
         width: 128px;
         display: block;
         margin: auto;
     }
-    & > h1{
 
+    & > h1 {
         font-size: 26px;
         height: 56px;
         text-align: center;
-        font-weight:bold;
+        font-weight: bold;
         margin: 15px 0;
     }
-    & > p{
+
+    & > p {
         text-align: center;
     }
 }
-.align-left{
+
+.align-left {
     text-align: left !important;
 }
-footer{
+
+footer {
     padding: 10px 0;
-    background : #4F4F4F;
+    background: #4F4F4F;
     color: white;
     height: 130px;
     text-align: center;
     font-family: Quicksand;
-    p{
+
+    p {
         padding: 0 15px;
-        img{
+
+        img {
             margin-left: 10px;
         }
     }
-    ul{
+
+    ul {
         margin: 0;
         margin-bottom: 40px;
         padding: 0;
         list-style: none;
 
-        li{
+        li {
             float: left;
             padding: 0 15px;
-            a{
+
+            a {
                 color: #DEDEDE;
-                &:hover{
+
+                &:hover {
                     color: #FFF;
                 }
             }
         }
     }
 }
-.partner{
+
+.partner {
     width: 480px;
     height: 129px;
-    background : #4F4F4F;
+    background: #4F4F4F;
     background: rgba(79, 79, 79, 0.6);
-    float:left;
+    float: left;
     margin: 5px;
 
-    .partner-logo{
+    .partner-logo {
         float: right;
         height: 100%;
         background: white;
         padding: 0 10px;
         width: 175px;
     }
-    .partner-info{
+
+    .partner-info {
         padding: 20px;
         float: left;
         height: 100%;
-        text-align:left;
+        text-align: left;
 
-        h2
-        {
+        h2 {
             margin-top: 0;
             font-size: 26px;
             font-family: Rambla;
         }
-        i{
+
+        i {
             color: #98C6F3;
             vertical-align: text-top;
             margin-right: 5px;
         }
-        a{
+
+        a {
             color: white;
-            &:hover{
+
+            &:hover {
                 color: #98C6F3;
             }
         }
     }
 }
 
-#get-started, #top-features{
+#get-started, #top-features {
     padding-bottom: 65px;
     background: @contact-bg;
-    h1{
+
+    h1 {
         font-family: Rambla;
         font-size: 42px;
         text-align: center;
         margin-bottom: 40px;
         color: #509be4;
     }
-    h3{
-        color:#509be4;
+
+    h3 {
+        color: #509be4;
         font-weight: bold;
         margin-bottom: 15px;
     }
-    hr{
+
+    hr {
         border: none;
         height: 13px;
         width: 980px;
         margin: 40px auto;
         background: url('../images/divider.png');
     }
-    p{
+
+    p {
         font-size: 16px;
     }
 }
-#top-features{
-    hr{
+
+#top-features {
+    hr {
         border: none;
         height: 13px;
         width: 950px;
         margin: 60px auto;
     }
 
-    ul.feature-menu{
+    ul.feature-menu {
         list-style: none;
         margin: 0 auto;
         margin-bottom: 60px;
@@ -351,55 +387,60 @@ footer{
         width: 950px;
         height: 155px;
 
-        &.affix ~ #click{
+        &.affix ~ #click {
             margin-top: 215px;
         }
 
-        li{
+        li {
             float: left;
             width: 110px;
             height: 110px;
-            margin: 0 24px;
+            margin: 10px 24px 0 24px;
             border: 1px solid #4f4f4f;
             border-radius: 90px;
             opacity: 0.8;
             transition: all 0.5s;
 
-            &:hover{
+            &:hover {
                 opacity: 1;
                 border: 1px solid #509be4;
                 background: white;
             }
 
-            a{
+            a {
                 display: block;
-                text-align:center;
+                text-align: center;
                 width: 100%;
                 height: 100%;
                 overflow: visible;
                 color: #509be4;
                 line-height: 75px;
                 outline: none;
-                &:hover{
-                    text-decoration:none;
+
+                &:hover {
+                    text-decoration: none;
                 }
-            }
-            img{
+
                 
-                display: block;
+            }
+
+            img {
+                /*display: block;*/
                 margin: 21px auto 5px auto;
             }
-            &.clearfix{
-                float:none;
+
+            &.clearfix {
+                float: none;
                 clear: both;
-                width:0;
-                height:0;
+                width: 0;
+                height: 0;
                 border: none;
             }
         }
     }
 }
-a.github{
+
+a.github {
     width: 32px;
     height: 32px;
     background: url('../images/octocat.png');
@@ -408,20 +449,22 @@ a.github{
 
 /*  Keyboards   */
 
-#keyboards{
-    .container{
+#keyboards {
+    .container {
         padding: 0 0 60px;
     }
-    h1{
+
+    h1 {
         font-size: 42px;
         text-align: center;
-        color:#509be4;
+        color: #509be4;
         font-family: 'Rambla';
         margin-bottom: 50px;
     }
+
     background: #f8f8f8;
 
-    .keyboard{
+    .keyboard {
         box-sizing: border-box;
         width: 450px;
         height: 175px;
@@ -432,62 +475,64 @@ a.github{
         border: 2px solid #509be4;
         border-radius: 5px;
 
-        .content{
+        .content {
             padding: 10px;
             height: 141px;
             float: right;
             width: 386px;
             box-sizing: border-box;
 
-            h1{
+            h1 {
                 margin-top: 0px;
                 margin-bottom: 10px;
                 font-size: 24px;
                 font-family: Quicksand;
-
             }
-            p{
+
+            p {
                 font-size: 16px;
             }
         }
 
-        .content-footer{
+        .content-footer {
             padding: 0 10px;
             height: 20px;
             float: left;
             width: 386px;
-            .author, .date{
+
+            .author, .date {
                 box-sizing: border-box;
                 width: 180px;
                 display: inline-block;
                 color: #509be4;
-                font-size:14px;
+                font-size: 14px;
             }
 
-            .date{
-                text-align:right;
+            .date {
+                text-align: right;
             }
         }
 
-        .actions{
+        .actions {
             box-sizing: border-box;
             height: 100%;
             float: right;
             background: #509be4;
             width: 60px;
 
-            .btn{
+            .btn {
                 background: white;
                 color: #509be4;
                 display: block;
                 width: 50px;
                 height: 50px;
                 border-radius: 50px;
-                border:  2px solid white;
+                border: 2px solid white;
                 margin: 25px auto;
                 font-size: 22px;
                 line-height: 36px;
-                &:hover{
+
+                &:hover {
                     background: #509be4;
                     color: #FFF;
                 }
