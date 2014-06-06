@@ -1,5 +1,18 @@
 ﻿<section id="presentation">
-    @Html.Partial("_Presentation")
+    @Html.Partial( "_Presentation" )
+    @section Scripts {
+        <script>
+            $(function () {
+                $('#btn-download-application').click(function () {
+                    ga('send', 'event', 'button', 'click', 'application', 1);
+                });
+
+                $('#btn-download-documentation').click(function () {
+                    ga('send', 'event', 'button', 'click', 'documentation', 1);
+                });
+            });
+        </script>
+    }
 </section>
 <div id="partners-baner">
     <div class="container">
