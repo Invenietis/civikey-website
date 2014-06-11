@@ -49,7 +49,7 @@ namespace CivikeyWebsite.Controllers
                     recipients[0] = new Recipient( "contact@invenietis.com" );
 
                     IMailerService mailer = new CK.Mailer.DefaultMailerService();
-                    mailer.SendMail( model, new RazorMailTemplateKey( "SuppsortEmail" ), recipients );
+                    mailer.SendMail( model, new RazorMailTemplateKey( "SupportEmail" ), recipients );
                 }
                 catch( Exception ex )
                 {
