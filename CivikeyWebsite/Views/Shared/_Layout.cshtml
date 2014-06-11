@@ -43,6 +43,7 @@
                     @*<li>@Html.ActionLink( "Premiers pas", "GetStarted", "Home" )</li>*@
                     <li>@Html.ActionLink( "Fonctionnalités", "Features", "Home" )</li>
                     <li>@Html.ActionLink( "Bibliothèque de claviers", "Keyboards", "Home" )</li>
+                    <li>@Html.ActionLink( "Support", "Support", "Home" )</li>
                 </ul>
             </div>
         </div>
@@ -58,6 +59,7 @@
                         <li>@Html.ActionLink( "Découvrir", "Index", "Home" )</li>
                         <li>@Html.ActionLink( "Les fonctionnalités", "Features", "Home" )</li>
                         <li>@Html.ActionLink( "Les claviers", "Keyboards", "Home" )</li>
+                        <li>@Html.ActionLink( "Support", "Support", "Home" )</li>
                     </ul>
                     <div class="clearfix"></div>
                     <p class="align-left">
@@ -76,6 +78,7 @@
 
     @Scripts.Render( "~/bundles/jquery" )
     @Scripts.Render( "~/bundles/scripts/bootstrap" )
+    @Scripts.Render( "~/bundles/ajax" )
     @RenderSection( "Scripts", required: false )
 
 </body>

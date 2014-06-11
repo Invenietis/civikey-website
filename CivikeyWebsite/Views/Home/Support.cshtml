@@ -1,0 +1,30 @@
+﻿@model CivikeyWebsite.Controllers.SupportEmailViewModel
+<div id="support">
+    <div class="container">
+        <h1>Support utilisateur</h1>
+        <h2>Un problème ? Une idée de nouvelle fonctionnalité ? Utilisez le formulaire ci-dessous pour nous contacter.</h2>
+        <hr style="margin-bottom:0;" />
+        <div class="row">
+            <div class="col-md-6 col-sm-6">
+                <figure>
+                    <figcaption>
+                        <h3 style="margin-bottom:0">Le support proposé est basé sur le volontariat</h3><br />
+                        <span>Nous faisons tout notre possible pour répondre rapidement à vos questions pour que Civikey puisse vous aider au mieux, vous et vos proches.</span>
+                    </figcaption>
+                    <div class="img-wraper" style="background-color: #865b73">
+                        <img src="@Url.Content("~/Content/images/headphone.png")" alt="support utilisateur">
+                    </div>
+                </figure>
+            </div>
+            <div class="col-md-5 col-sm-6 col-md-offset-1">
+                @using( Ajax.BeginForm( new AjaxOptions() { HttpMethod = "POST", UpdateTargetId = "form", InsertionMode = InsertionMode.Replace } ) )
+                {
+                    <div id="form">
+                        @Html.Partial( "_Form", Model )
+                    </div>
+                }
+            </div>
+        </div>
+        <hr />
+    </div>
+</div>

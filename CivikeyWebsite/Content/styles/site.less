@@ -155,6 +155,14 @@ section > .container {
     }
 }
 
+hr {
+    border: none;
+    height: 13px;
+    width: 980px;
+    margin: 40px auto;
+    background: url('../images/divider.png');
+}
+
 #presentation {
     color: white;
     background: url('../images/handicap.jpg') fixed #f8f8f8;
@@ -346,7 +354,7 @@ footer {
     }
 }
 
-#get-started, #top-features {
+#get-started, #top-features, #support {
     padding-bottom: 65px;
     background: @contact-bg;
 
@@ -364,13 +372,7 @@ footer {
         margin-bottom: 15px;
     }
 
-    hr {
-        border: none;
-        height: 13px;
-        width: 980px;
-        margin: 40px auto;
-        background: url('../images/divider.png');
-    }
+
 
     p {
         font-size: 16px;
@@ -545,6 +547,33 @@ a.github {
                     color: #FFF;
                 }
             }
+        }
+    }
+}
+
+/* Support */
+#support {
+    .field-validation-error{
+        color: red;
+    }
+
+    form {
+        margin-top: 20px;
+    }
+
+    figcaption {
+        margin-bottom: 30px;
+    }
+
+    hr {
+        margin: 20px 0;
+    }
+
+    .mail-sent {
+        padding: 10px;
+        h3{
+            margin-top:0;
+            border-radius:5px;
         }
     }
 }

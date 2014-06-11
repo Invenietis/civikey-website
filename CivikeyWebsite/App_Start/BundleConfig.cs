@@ -14,6 +14,9 @@ namespace CivikeyWebsite
             bundles.Add( new CustomScriptBundle( "~/bundles/jquery" ).Include(
                          "~/Content/scripts/jquery-1.10.2.js" ) );
 
+            bundles.Add( new CustomScriptBundle( "~/bundles/ajax" ).Include(
+                         "~/Content/scripts/jquery.unobtrusive-ajax.min.js" ) );
+
             bundles.Add( new CustomScriptBundle( "~/bundles/scripts/bootstrap" ).Include(
                       "~/Content/scripts/bootstrap.js" ) );
 
