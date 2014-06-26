@@ -114,7 +114,7 @@ namespace CivikeyWebsite.Controllers
                 Author = keyboard.Author
             },
                 new RazorMailTemplateKey( "KeyboardSubmitted" ),
-                new Recipient[] { new Recipient( "jeanloup.kahloun@invenietis.com" ) } );
+                new Recipient[] { new Recipient( ConfigurationManager.AppSettings.Get( "DestinationEmail" ) ) } );
 
             if( ModelState.IsValid )
             {

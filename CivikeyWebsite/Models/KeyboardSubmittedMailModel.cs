@@ -15,7 +15,7 @@ namespace CivikeyWebsite.Models
 
         public string Author { get; set; }
 
-        public string Subject { get; set; }
+        public string Subject { get { return "A new keyboard has been uploaded."; } }
 
         #region IMailConfigurator<KeyboardSubmittedMailModel> Members
 
