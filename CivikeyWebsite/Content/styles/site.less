@@ -163,6 +163,11 @@ hr {
     background: url('../images/divider.png');
 }
 
+.small{
+    font-size: 11px;
+    font-style: italic;
+}
+
 #presentation {
     color: white;
     background: url('../images/handicap.jpg') fixed #f8f8f8;
@@ -469,7 +474,7 @@ a.github {
         text-align: center;
         color: #509be4;
         font-family: 'Rambla';
-        margin-bottom: 50px;
+        margin-bottom: 20px;
     }
 
     background: #f8f8f8;
@@ -479,7 +484,7 @@ a.github {
         width: 450px;
         height: 175px;
         float: left;
-        margin: 15px 10px;
+        margin: 12px 18px;
         background: white;
         color: #333;
         border: 2px solid #509be4;
@@ -495,7 +500,7 @@ a.github {
             h1 {
                 margin-top: 0px;
                 margin-bottom: 10px;
-                font-size: 24px;
+                font-size: 20px;
                 font-family: Quicksand;
             }
 
@@ -549,6 +554,164 @@ a.github {
             }
         }
     }
+}
+
+.panel-cvk{
+    border: 1px solid #DDD;
+    .panel-heading{
+        background: white;
+        color: #509be4;
+        border-bottom: 1px solid #DDD;
+        height: 57px;
+       h3{
+            line-height: 36px;
+            font-size: 22px;
+       }
+    }
+    .btn-cvk{
+        border-radius: 5px;
+        top: 0;
+        left: 0;
+        position: relative;
+        height: auto;
+        width: auto;
+        font-size: 16px;
+        font-weight: normal;
+        background: #509be4;
+        color: white;
+        border: 1px solid #509be4;
+        &:hover{
+            background:white;
+            color: #509be4;
+            border: 1px solid #509be4;
+        }
+    }
+}
+#keyboards {
+    .btn-cvk {
+        border-radius: 5px;
+        display: inline-block;
+        top: 0;
+        left: 0;
+        position: relative;
+        height: auto;
+        width: auto;
+        font-size: 16px;
+        font-weight: normal;
+        background: #509be4;
+        color: white;
+        border: 1px solid #509be4;
+
+        &:hover {
+            background: white;
+            color: #509be4;
+            border: 1px solid #509be4;
+        }
+    }
+
+    
+}
+.modal.modal-cvk {
+    .text-counter {
+        float: right;
+        background: #509be4;
+        margin-bottom: -18px;
+        display: block;
+        height: 25px;
+        color: white;
+        border-radius: 5px 5px 0 0;
+        padding: 5px;
+        line-height: 16px;
+
+        & + input, & + textarea {
+            border-radius: 5px 0px 5px 5px;
+        }
+    }
+
+    .modal-header {
+        background-color: #509be4;
+        color: white;
+       
+        border-radius: 5px 5px 0 0;
+        h3{
+            font-size: 20px;
+        }
+    }
+
+    .btn-cvk {
+        margin-top: 25px;
+        width: 100%;
+
+        &.btn-send {
+            float: right;
+        }
+    }
+
+    .validate {
+        input, textarea {
+             &.ng-invalid {
+                border-color: #E45050;
+            }
+        }
+    }
+
+    input, textarea {
+        border-color: #509be4;
+        border-radius: 0px;
+        box-shadow: none;
+        border-radius: 5px;
+
+       
+
+        &:focus {
+            box-shadow: none;
+        }
+    }
+
+    textarea {
+        height: 95px;
+    }
+
+    label {
+        color: #509be4;
+    }
+
+    .close {
+        opacity: 0.5;
+        margin-top: -8px;
+        font-size: 38px;
+        color: white;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+    img.thumb{
+        height: 175px;
+        max-width: 558px;
+        display: block;
+        margin: auto;
+        padding: 5px;
+        border: 2px solid #509be4;
+        border-radius: 4px;
+    }
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 999px;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    cursor: inherit;
+    display: block;
 }
 
 /* Support */

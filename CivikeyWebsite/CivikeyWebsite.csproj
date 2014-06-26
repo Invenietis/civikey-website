@@ -99,6 +99,9 @@
     <Reference Include="RazorEngine">
       <HintPath>..\packages\RazorEngine.3.4.1\lib\net45\RazorEngine.dll</HintPath>
     </Reference>
+    <Reference Include="RazorEngine">
+      <HintPath>..\packages\RazorEngine.3.4.1\lib\net45\RazorEngine.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -175,8 +178,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountBindingModels.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\KeyboardModel.cs" />
+    <Compile Include="Models\KeyboardSubmittedMailModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -253,6 +256,12 @@
     <Content Include="Content\images\screen\screen_5.png" />
     <Content Include="Content\images\screen\screen_6.png" />
     <Content Include="Content\images\therapist.png" />
+    <Content Include="Content\scripts\angular-file-upload-html5-shim.js" />
+    <Content Include="Content\scripts\angular-file-upload-shim.js" />
+    <Content Include="Content\scripts\angular-file-upload.js" />
+    <Content Include="Content\scripts\angular.js" />
+    <Content Include="Content\scripts\app\app.js" />
+    <Content Include="Content\scripts\app\controllers\KeyboardsController.js" />
     <Content Include="Content\scripts\bootstrap.js" />
     <Content Include="Content\scripts\jquery-1.10.2.js" />
     <Content Include="Content\fonts\quicksand-regular.eot" />
@@ -343,6 +352,7 @@
     <Content Include="Views\Home\GetStarted.cshtml" />
     <Content Include="Views\Home\Keyboards.cshtml" />
     <Content Include="Views\Home\Support.cshtml" />
+    <Content Include="Views\Email\KeyboardSubmitted.cshtml" />
     <Content Include="Views\Home\_EmailSent.cshtml" />
     <Content Include="Views\Home\_Form.cshtml" />
     <Content Include="Views\Home\_EmailNotSent.cshtml" />

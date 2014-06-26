@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Web.Mvc;
 using CK.Core;
+using CivikeyWebsite.Models;
 using CK.Mailer;
 
 namespace CivikeyWebsite.Controllers
@@ -79,7 +80,7 @@ namespace CivikeyWebsite.Controllers
         public void Keyboard( string name )
         {
             string path =  Server.MapPath( "~/Content/files/keyboards/" + name );
-            ReturnFileStream( name + "xml", path );
+            ReturnFileStream( name, path );
         }
 
         private void ReturnFileStream( string name, string path )
@@ -99,6 +100,54 @@ namespace CivikeyWebsite.Controllers
 
             Response.WriteFile( path );
             Response.End();
+        }
+
+        public ActionResult AddKeyboard( KeyboardModel keyboard )
+        {
+            KeyboardPostError err = KeyboardPostError.None;
+            IMailerService mailer = new DefaultMailerService();
+            mailer.SendMail( new KeyboardSubmittedMailModel()
+            {
+                Name = keyboard.Name,
+                Description = keyboard.Description,
+                Email = keyboard.Email,
+                Author = keyboard.Author
+            },
+                new RazorMailTemplateKey( "KeyboardSubmitted" ),
+                new Recipient[] { new Recipient( "jeanloup.kahloun@invenietis.com" ) } );
+
+            if( ModelState.IsValid )
+            {
+                if( Request.Files.Count > 0 )
+                {
+                    using( StreamReader sr = new StreamReader( Request.Files[0].InputStream ) )
+                    {
+                        string filePath = Path.Combine( ConfigurationManager.AppSettings.Get( "UploadFolderPath" ), String.Format( "{0}-{1}", keyboard.Name, Guid.NewGuid() ) );
+                        using( FileStream s = new FileStream( filePath, FileMode.CreateNew ) )
+                        {
+                            using( StreamWriter sw = new StreamWriter( s ) )
+                            {
+                                string line = String.Empty;
+                                while( (line = sr.ReadLine()) != null )
+                                {
+                                    sw.WriteLine( line );
+                                }
+
+                            }
+                        }
+                    }
+                }
+                else
+                {
+                    err = KeyboardPostError.MissingPicture;
+                }
+            }
+            else
+            {
+                err = KeyboardPostError.InvalidForm;
+            }
+
+            return Json( new { valid = false, error = err, keyboard = keyboard } );
         }
     }
 

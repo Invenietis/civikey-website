@@ -1,101 +1,172 @@
 ﻿@section styles{
     @Styles.Render( "~/bundles/styles/lightbox" )
 }
-<div id="keyboards">
+<div id="keyboards" ng-controller="KeyboardsController">
     <div class="container">
         <h1>Bibliothèque de claviers Civikey</h1>
-        <div class="keyboard">
-            <div class="actions">
-                <a title="Télécharger" href="@Url.Action( "Keyboard", "Home", new { name = "Azerty.xml" } )" class="btn"><i class="glyphicon glyphicon-save"></i></a>
-                <a title="Visualiser le clavier" href="@Url.Content("~/Content/images/keyboards/azerty.png")" data-title="Azerty" data-lightbox="azerty" class="btn">
-                    <i class="glyphicon glyphicon-picture"></i>
-                </a>
+        <p>
+            Civikey dispose d'un outil de création et de personnalisation de claviers ainsi que la possibilité de les importer et exporter.<br />
+            Vous trouverez ci-dessous une liste <b>des claviers Civikey proposés par la communauté</b>.<br />
+            Vous pouvez les télécharger <b>gratuitement</b> et les installer dans votre Civikey en seulement quelques clics.<br />
+            <span class="small">Pour plus d'informations sur les mécanismes d'import et d'export, veuillez consulter la section <b>"Import &amp; Export "</b> de la documentation. Cette dernière est disponible en téléchargement sur la page d'accueil.</span>
+        </p>
+
+        <p style="margin-bottom:25px;">
+            Vous avez créé un clavier qui pourrait être utile à d'autres ? <b>Partagez-le !</b><br />
+            Utilisez le bouton <b>"Proposer un clavier"</b> pour nous envoyer votre clavier. Après vérification par l'équipe Civikey nous l'ajouterons à cette page : il sera lui aussi disponible en téléchargement gratuit pour tous les autres utilisateurs de Civikey.
+        </p>
+
+        <div class="panel panel-cvk">
+            <div class="panel-heading">
+                <h3 class="panel-title">4 claviers disponibles <button data-toggle="modal" data-target="#import" class="btn btn-cvk pull-right">Proposer un clavier</button></h3>
             </div>
-            <div class="content">
-                <h1>Azerty</h1>
-                <p>
-                    Clavier Azerty par défaut.
-                </p>
+            <div class="keyboard">
+                <div class="actions">
+                    <a title="Télécharger" href="@Url.Action( "Keyboard", "Home", new { name = "Azerty.xml" } )" class="btn"><i class="glyphicon glyphicon-save"></i></a>
+                    <a title="Visualiser le clavier" href="@Url.Content("~/Content/images/keyboards/azerty.png")" data-title="Azerty" data-lightbox="azerty" class="btn">
+                        <i class="glyphicon glyphicon-picture"></i>
+                    </a>
+                </div>
+                <div class="content">
+                    <h1>Azerty</h1>
+                    <p>
+                        Clavier Azerty par défaut.
+                    </p>
+                </div>
+                <div class="content-footer">
+                    <p class="author">
+                        Par Invenietis
+                    </p>
+                    <p class="date">
+                        03/04/14
+                    </p>
+                </div>
             </div>
-            <div class="content-footer">
-                <p class="author">
-                    Par Invenietis
-                </p>
-                <p class="date">
-                    03/04/14
-                </p>
+            <div class="keyboard">
+                <div class="actions">
+                    <a title="Télécharger" href="@Url.Action( "Keyboard", "Home", new { name = "Ergonomique.xml" } )" class="btn"><i class="glyphicon glyphicon-save"></i></a>
+                    <a title="Visualiser le clavier" href="@Url.Content("~/Content/images/keyboards/ergonomique.png")" data-title="Ergonomique" data-lightbox="ergonomique" class="btn">
+                        <i class="glyphicon glyphicon-picture"></i>
+                    </a>
+                </div>
+                <div class="content">
+                    <h1>Clavier ergonomique</h1>
+                    <p>
+                        Le clavier ergonomique est optimisé pour une utilisation avec le défilement.
+                    </p>
+                </div>
+                <div class="content-footer">
+                    <p class="author">
+                        Par Invenietis
+                    </p>
+                    <p class="date">
+                        03/04/14
+                    </p>
+                </div>
+            </div>
+            <div class="keyboard">
+                <div class="actions">
+                    <a title="Télécharger" href="@Url.Action( "Keyboard", "Home", new { name = "ClavierSouris.xml" } )" class="btn"><i class="glyphicon glyphicon-save"></i></a>
+                    <a title="Visualiser le clavier" href="@Url.Content("~/Content/images/keyboards/clavier-souris.png")" data-title="Clavier - Souris" data-lightbox="clavier-souris" class="btn">
+                        <i class="glyphicon glyphicon-picture"></i>
+                    </a>
+                </div>
+                <div class="content">
+                    <h1>Clavier - Souris</h1>
+                    <p>
+                        Un clavier disposant de touches permettant de cliquer et de déplacer la souris.
+                    </p>
+                </div>
+                <div class="content-footer">
+                    <p class="author">
+                        Par Invenietis
+                    </p>
+                    <p class="date">
+                        03/04/14
+                    </p>
+                </div>
+            </div>
+            <div class="keyboard">
+                <div class="actions">
+                    <a title="Télécharger" href="@Url.Action( "Keyboard", "Home", new { name = "Excel.xml" } )" class="btn"><i class="glyphicon glyphicon-save"></i></a>
+                    <a title="Visualiser le clavier" href="@Url.Content("~/Content/images/keyboards/excel.png")" data-title="Clavier Excel" data-lightbox="excel" class="btn">
+                        <i class="glyphicon glyphicon-picture"></i>
+                    </a>
+                </div>
+                <div class="content">
+                    <h1>Clavier Excel</h1>
+                    <p>
+                        Un clavier disposant de touches programmées pour Excel.
+                    </p>
+                </div>
+                <div class="content-footer">
+                    <p class="author">
+                        Par Invenietis
+                    </p>
+                    <p class="date">
+                        03/04/14
+                    </p>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+        <div id="import" class="modal modal-cvk fade">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true" ng-click="resetForm()">&times;</button>
+                        <h3 class="modal-title">Proposer votre clavier pour l'inclure à la blibliothèque</h3>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form" ng-class="{ 'validate' : submitted  }" name="form">
+                            <div class="form-group">
+                                <label>Nom du clavier</label>
+                                <span class="text-counter">{{ newKeyboard.name.length  || 0 }} / 30</span>
+                                <input name="name" class="form-control" type="text" required ng-maxlength="30" maxlength="30" ng-model="newKeyboard.name" />
+                            </div>
+                            <div class="form-group">
+                                <label>Descriptif du clavier</label>
+                                <span class="text-counter">{{ newKeyboard.description.length  || 0 }} / 165</span>
+                                <textarea name="description" class="form-control" ng-maxlength="165" maxlength="165" required ng-model="newKeyboard.description"></textarea>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Nom de l'auteur</label>
+                                        <input class="form-control" type="text" required ng-model="newKeyboard.author" />
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Email</label>
+                                        <input name="email" class="form-control" required ng-validate type="email" ng-model="newKeyboard.email" />
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <p>Clavier choisi (.xml): <b>{{keyboard.name}}</b></p>
+                            
+                            @*<img class="thumb" ng-src="{{thumbnail}}" ng-show="thumbnail" />*@
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <span class="btn btn-cvk btn-file">
+                                        <i class="glyphicon glyphicon-picture"></i> Choisir le clavier a envoyer
+                                        <input name="picture" type="file" class="btn btn-info" required ng-file-select="onFileSelect($files)">
+                                    </span>
+                                </div>
+                                <div class="col-md-6">
+                                    <button class="btn btn-cvk pull-right" ng-disabled="isDisabled()" ng-click="submitKeyboard()"> Envoyer le clavier</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="keyboard">
-            <div class="actions">
-                <a title="Télécharger"  href="@Url.Action( "Keyboard", "Home", new { name = "Ergonomique.xml" } )" class="btn"><i class="glyphicon glyphicon-save"></i></a>
-                <a title="Visualiser le clavier" href="@Url.Content("~/Content/images/keyboards/ergonomique.png")" data-title="Ergonomique" data-lightbox="ergonomique" class="btn">
-                    <i class="glyphicon glyphicon-picture"></i>
-                </a>
-            </div>
-            <div class="content">
-                <h1>Clavier ergonomique</h1>
-                <p>
-                    Le clavier ergonomique est optimisé pour une utilisation avec le défilement.
-                </p>
-            </div>
-            <div class="content-footer">
-                <p class="author">
-                    Par Invenietis
-                </p>
-                <p class="date">
-                    03/04/14
-                </p>
-            </div>
-        </div>
-        <div class="keyboard">
-            <div class="actions">
-                <a title="Télécharger" href="@Url.Action( "Keyboard", "Home", new { name = "ClavierSouris.xml" } )" class="btn"><i class="glyphicon glyphicon-save"></i></a>
-                <a title="Visualiser le clavier" href="@Url.Content("~/Content/images/keyboards/clavier-souris.png")" data-title="Clavier - Souris" data-lightbox="clavier-souris" class="btn">
-                    <i class="glyphicon glyphicon-picture"></i>
-                </a>
-            </div>
-            <div class="content">
-                <h1>Clavier - Souris</h1>
-                <p>
-                    Un clavier disposant de touches permettant de cliquer et de déplacer la souris.
-                </p>
-            </div>
-            <div class="content-footer">
-                <p class="author">
-                    Par Invenietis
-                </p>
-                <p class="date">
-                    03/04/14
-                </p>
-            </div>
-        </div>
-        <div class="keyboard">
-            <div class="actions">
-                <a title="Télécharger" href="@Url.Action( "Keyboard", "Home", new { name = "Excel.xml" } )" class="btn"><i class="glyphicon glyphicon-save"></i></a>
-                <a title="Visualiser le clavier" href="@Url.Content("~/Content/images/keyboards/excel.png")" data-title="Clavier Excel" data-lightbox="excel" class="btn">
-                    <i class="glyphicon glyphicon-picture"></i>
-                </a>
-            </div>
-            <div class="content">
-                <h1>Clavier Excel</h1>
-                <p>
-                    Un clavier disposant de touches programmées pour Excel.
-                </p>
-            </div>
-            <div class="content-footer">
-                <p class="author">
-                    Par Invenietis
-                </p>
-                <p class="date">
-                    03/04/14
-                </p>
-            </div>
-        </div>
-        <div class="clearfix"></div>
     </div>
 </div>
-
 @section scripts{
+    @Scripts.Render( "~/bundles/scripts/angular" )
+    @Scripts.Render( "~/bundles/scripts/upload" )
     @Scripts.Render( "~/bundles/scripts/lightbox" )
 }
