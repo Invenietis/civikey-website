@@ -4,15 +4,13 @@
     <RequirementLayer Name="Keyboard">
       <PluginRequirements></PluginRequirements>
       <ServiceRequirements>
-        <ServiceRequirement AssemblyQualifiedName="CommonServices.IFileLauncherCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
-        <ServiceRequirement AssemblyQualifiedName="CommonServices.IChangeKeyboardCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
-        <ServiceRequirement AssemblyQualifiedName="CommonServices.IMonitorOnceCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
-        <ServiceRequirement AssemblyQualifiedName="CommonServices.ISendKeyCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
-        <ServiceRequirement AssemblyQualifiedName="CommonServices.IModeCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
-        <ServiceRequirement AssemblyQualifiedName="CommonServices.IDynCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
-        <ServiceRequirement AssemblyQualifiedName="CommonServices.IHelpCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
         <ServiceRequirement AssemblyQualifiedName="CK.Plugins.SendInputDriver.ISendStringService, SendInputDriver, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
-        <ServiceRequirement AssemblyQualifiedName="CommonServices.ITextTemplateCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
+        <ServiceRequirement AssemblyQualifiedName="CommonServices.IHelpCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
+        <ServiceRequirement AssemblyQualifiedName="CommonServices.IDynCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
+        <ServiceRequirement AssemblyQualifiedName="CommonServices.IModeCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
+        <ServiceRequirement AssemblyQualifiedName="CommonServices.ISendKeyCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
+        <ServiceRequirement AssemblyQualifiedName="CommonServices.IMonitorOnceCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
+        <ServiceRequirement AssemblyQualifiedName="CommonServices.IChangeKeyboardCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
       </ServiceRequirements>
     </RequirementLayer>
     <Modes Current="">
@@ -42,14 +40,12 @@
                 <KeyDown>
                   <KeyProgram xml:space="preserve">
                     <Cmd>sendKey:Escape</Cmd>
-                    <Cmd>launch:bonjourmadame.fr,8,http://bonjourmadame.fr</Cmd>
-                    <Cmd>launch:swagg.jpg,4,\Downloads\swagg.jpg,40</Cmd>
                   </KeyProgram>
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Image</data>
-                    <data key="Image" type="Structured" typeName="System.Windows.Media.Imaging.BitmapImage, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">Qk02EAAAAAAAADYAAAAoAAAAIAAAACAAAAABACAAAAAAAAAAAADDDgAAww4AAAAAAAAAAAAAyMjI/7CwsP+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/7CwsP/IyMj/AAAAAAAAAACwsLD/c3Nz/15eXv9eXl7/Xl5e/15eXv9eXl7/Xl5e/15eXv9eXl7/Xl5e/15eXv9eXl7/Xl5e/15eXv9eXl7/Xl5e/15eXv9eXl7/Xl5e/15eXv9eXl7/Xl5e/15eXv9eXl7/Xl5e/15eXv9eXl7/c3Nz/7CwsP8AAAAAAAAAAKWlpf/19fX/9PT0//Pz8//z8/P/8vLy//Hx8f/w8PD/8PDw/+/v7//u7u7/7u7u/+3t7f/t7e3/7Ozs/+vr6//r6+v/6urq/+rq6v/p6en/6enp/+jo6P/o6Oj/5+fn/+fn5//n5+f/5ubm/+bm5v/m5ub/paWl/wAAAAAAAAAApaWl//X19f/19fX/9PT0//Pz8//z8/P/8vLy//Hx8f/x8fH/8PDw/+/v7//v7+//7u7u/+3t7f/t7e3/7Ozs/+vr6//r6+v/6urq/+rq6v/p6en/6enp/+jo6P/o6Oj/5+fn/+fn5//n5+f/5ubm/+bm5v+lpaX/AAAAAAAAAAClpaX/9vb2//X19f/Igyr/yIQp/8iEKv/LiTH/zIw2/8qJMv/Njzv/zZA7/82QO//Ok0D/0JVE/9CWRf/Ql0f/0JZF/9CaSf/SnE3/1KFT/9SjWP/YrGX/16ld/9muaP/asWz/16ph/9y1eP/n5+f/5ubm/6Wlpf8AAAAAAAAAAKWlpf/39/f/9vb2/8Z8I//QiST/0Ywr/9OPLv/TkS//1pc4/9eZO//Zmzz/15w9/9meQ//aokf/2qBH/9qiSv/aokn/2qNJ/92nT//gsVz/47hp/+fBfP/px4j/6MSC/+jCgf/mvHL/27Nu/+fn5//n5+f/paWl/wAAAAAAAAAApaWl//f39//39/f/wm8d/82BIf/NhSX/zokn/9CMLP/TkzL/1pc1/9eZPP/an0P/2qFH/9ykS//dp0//3adP/92qVP/dqVP/4K9a/+KzYf/jtmf/5bxy/+jEg//px4v/68qS//DXq//kyJr/6Ojo/+fn5/+lpaX/AAAAAAAAAAClpaX/+Pj4//f39/++ayH/yHon/8mAK//Kgy3/yoUv/82JMv/QjjX/05M6/9aYPf/Zn0f/2qNN/9ykTP/dqU//4K9U/+GwVf/jtVz/5rde/+e8Z//qxn3/7c6T/+3Lk//w1aP/9eG9/+jPrP/o6Oj/6Ojo/6Wlpf8AAAAAAAAAAKWlpf/5+fn/+Pj4/6deHf+3ayH/uGsj/7ltJf+7cCn/u3Qs/7x2Lv+/ejH/wYEz/8KDNf/FiDr/xYo6/8mUQ//LmEX/zZxH/86fTf/QplP/06tV/9axW//au2X/38Ry/+HKgv/j0ZH/2cSJ/+np6f/o6Oj/paWl/wAAAAAAAAAApaWl//n5+f/5+fn/P0Qc/0pRIv9JUCH/SlEj/01WJv9PWif/Xmow/2p3N/9qeDn/aHg5/2+CQP9ziUX/do1I/3WOSP9riEP/Xnw9/2iNSP9ulk7/b5dO/26ZT/96o1f/g6lb/4iwZ/+Rrnj/6enp/+np6f+lpaX/AAAAAAAAAAClpaX/+vr6//n5+f9BTSL/UWMr/1BjK/9MXir/TWEs/1BoMP9dfT3/YYVG/2mOUP9rkk7/ZZJK/2qaUf9lmVD/bqFY/3WhW/+Bp2P/r7Z6/6mvcP+brWn/p7Fx/828h//k17D/+/7u/+Xl5f/q6ur/6enp/6Wlpf8AAAAAAAAAAKWlpf/7+/v/+vr6/01sNP9Xej3/SWk0/0lqM/9OdDn/YY5N/3yZXv+PmWX/k5ln/5ahcP/Gz6P/xsCJ/726ff/bxY7/88ya//XMmv/6xpT/9sWT//bQpf//9tv////1/////f//////5eXi/+rq6v/q6ur/paWl/wAAAAAAAAAApaWl//v7+//7+/v/ZHVH/1t1Qv9OcT7/VoFG/2uYW/+KoWr/mJ5t/5+hcP+ytor/6+zL////9v///97///bQ///zzP//8cf///XN///rw///9tP////s////8////+/////w////8//l5dz/6+vr/+rq6v+lpaX/AAAAAAAAAAClpaX//Pz8//v7+/+AflT/kpNj/42WZ/+Onm7/lKd2/7C4iv/Kz6H/5+e9////3////+n////m////6v///+7////p////4v///+b////q////6f///+b////m////5v///+r////s/+Xl2f/r6+v/6+vr/6Wlpf8AAAAAAAAAAKWlpf/8/Pz//Pz8/4OFWP+PlGL/ipZn/4qcbv+6zJ7//vvN////1////9n////W////1f///9X////Y////5////+b////c////3f///97////e////3////+D////h////4v///+T/5eXW/+zs7P/r6+v/paWl/wAAAAAAAAAApaWl//39/f/8/Pz/qql+/8bClP+gpnf/v8qb////1f///9X///7R///6yv//+sj///rL///6y////NX////l////7f///+b////e///90P///dH///7V////2f///9f///3V////2P/l5c7/7e3t/+zs7P+lpaX/AAAAAAAAAAClpaX//f39//39/f/l4bf///rL///1xv//+s////3V////2v///+L///7a///5zP//88P///bL///60v//+tX///zW///60P///tr///vR///91f///+H////b////8f///+b////p/+Xl1P/t7e3/7e3t/6Wlpf8AAAAAAAAAAKWlpf/+/v7//f39/+XixP//+ND///G9///zwv//9s3////h////5////+z///va///1zP//8Mj//+q9///ksf//6rL//+uy///uuP///t7///zb///61////Nn////q////6////uH/5eG//+7u7v/t7e3/paWl/wAAAAAAAAAApaWl//7+/v/+/v7/5d28///40v//8MH///DB///61///+9n///XN///sw///5rv//+a8///bq///1qH//9ih///epP//7r////nR///+3///9Mf///DC///50///88f//+av///ipv/ly5P/7+/v/+7u7v+lpaX/AAAAAAAAAAClpaX///////7+/v/lu4P//+Co///zy///8Mb///TN///mt///0JP//8yS///Sm///0pr//8+U///Nk///0JT//96j///qtf//8MH///jQ////7f///Nz///jR///82v//4qT//+Wq/+XPmv/w8PD/7+/v/6Wlpf8AAAAAAAAAAKWlpf///////////+WoZ///vXb//8aD///Cff//wX3//7tz//+6c///u3X//794///CgP//wXz//8B6///Ih///4af//+Cc///io///88P////i///4y///7LX//+Kk///Viv//67X/5dis//Dw8P/w8PD/paWl/wAAAAAAAAAApaWl////////////5Z9X//+wYP//r17//7Be//+wXv//sGD//7Fh//+yYv//tWf//7pu//+2a///tWX//7do///Yof//9cj//+qv///wuv///+f////k///rr///4Zn//9WB///inP/lz5b/8fHx//Dw8P+lpaX/AAAAAAAAAAClpaX////////////ll0b//6hO//+oTv//qE7//6hO//+oTv//qE7//6hP//+sVf//r1r//6tT//+pUP//rFb//8aD///mtf//9cj///jI////3P///tb///K8///utf//5qH//+Sf/+XGg//y8vL/8fHx/6Wlpf8AAAAAAAAAAKWlpf///////////+WVQf/llUH/5ZVB/+WVQf/llUH/5ZVB/+WUQf/llEH/5ZVB/+WVQf/llUH/5ZRB/+WUQf/ll0T/5Z9K/+WsW//lvHX/5c+c/+XFgP/kvXH/5NOe/+Tivf/k5Mz/5OG+//Pz8//y8vL/paWl/wAAAAAAAAAApaWl//////////////////////////////////7+/v/+/v7//v7+//39/f/9/f3//Pz8//z8/P/7+/v/+/v7//r6+v/6+vr/+fn5//j4+P/4+Pj/9/f3//f39//29vb/9fX1//X19f/09PT/8/Pz//Pz8/+lpaX/AAAAAAAAAAClpaX///////////////////////////////////////7+/v/+/v7//v7+//39/f/9/f3//Pz8//z8/P/7+/v/+/v7//r6+v/6+vr/+fn5//n5+f/4+Pj/9/f3//f39//29vb/9fX1//X19f/09PT/8/Pz/6Wlpf8AAAAAAAAAAKWlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/6Wlpf+lpaX/paWl/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==</data>
+                    <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -62,16 +58,12 @@
                 <KeyDown>
                   <KeyProgram xml:space="preserve">
                     <Cmd>sendString:²</Cmd>
-                    <Cmd>placeholder:hefoize {{nom}} elfkzelf efzzef f
-{{nom}}
-efkzepf
-{{prenom}} </Cmd>
                   </KeyProgram>
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -126,8 +118,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -191,8 +183,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -255,8 +247,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -319,8 +311,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -383,8 +375,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -447,8 +439,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -512,8 +504,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -576,8 +568,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -640,8 +632,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -704,8 +696,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -768,8 +760,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -832,8 +824,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -1001,8 +993,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -1041,8 +1033,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -1160,8 +1152,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -1200,8 +1192,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -1240,8 +1232,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -1280,8 +1272,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -1383,8 +1375,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -1486,8 +1478,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -1610,8 +1602,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -1650,8 +1642,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -1686,8 +1678,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -1726,8 +1718,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -1811,8 +1803,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -1851,8 +1843,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -1891,8 +1883,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -1931,8 +1923,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -1971,8 +1963,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2011,8 +2003,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2051,8 +2043,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2091,8 +2083,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2131,8 +2123,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2171,8 +2163,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2203,8 +2195,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2235,8 +2227,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2281,8 +2273,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2299,8 +2291,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2339,8 +2331,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2379,8 +2371,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2419,8 +2411,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2459,8 +2451,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2499,8 +2491,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2560,8 +2552,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2592,8 +2584,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2624,8 +2616,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2656,8 +2648,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2688,8 +2680,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2725,8 +2717,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2753,8 +2745,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2771,10 +2763,10 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Image</data>
                     <data key="Image" type="Structured" typeName="System.Windows.Controls.Image, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
                       <Image Source="pack://application:,,,/SimpleSkin;component/Images/windows.png" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" />
                     </data>
+                    <data key="DisplayType" type="String">Image</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2792,8 +2784,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2830,10 +2822,15 @@ efkzepf
                 </KeyDown>
               </KeyMode>
               <KeyMode Mode="" Enabled="true" Description="">
+                <KeyDown>
+                  <KeyProgram xml:space="preserve">
+                    <Cmd>sendString: </Cmd>
+                  </KeyProgram>
+                </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2850,10 +2847,10 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Image</data>
                     <data key="Image" type="Structured" typeName="System.Windows.Controls.Image, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
                       <Image Source="pack://application:,,,/SimpleSkin;component/Images/menu.png" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" />
                     </data>
+                    <data key="DisplayType" type="String">Image</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2871,8 +2868,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -2890,8 +2887,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -3158,10 +3155,10 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Image</data>
                     <data key="Image" type="Structured" typeName="System.Windows.Controls.Image, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
                       <Image Source="pack://application:,,,/SimpleSkin;component/Images/help.png" Width="16" Height="16" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" />
                     </data>
+                    <data key="DisplayType" type="String">Image</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -3179,8 +3176,8 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Label</data>
                     <data key="Image" type="null" />
+                    <data key="DisplayType" type="String">Label</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -3197,10 +3194,10 @@ efkzepf
                 </KeyPressed>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Image</data>
                     <data key="Image" type="Structured" typeName="System.Windows.Controls.Image, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
                       <Image Source="pack://application:,,,/SimpleSkin;component/Images/mousekb.png" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" />
                     </data>
+                    <data key="DisplayType" type="String">Image</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -3217,10 +3214,10 @@ efkzepf
                 </KeyPressed>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Image</data>
                     <data key="Image" type="Structured" typeName="System.Windows.Controls.Image, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
                       <Image Source="pack://application:,,,/SimpleSkin;component/Images/eye.png" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" />
                     </data>
+                    <data key="DisplayType" type="String">Image</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -3236,10 +3233,10 @@ efkzepf
                 </KeyUp>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Image</data>
                     <data key="Image" type="Structured" typeName="System.Windows.Controls.Image, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
                       <Image Source="pack://application:,,,/SimpleSkin;component/Images/exit.png" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" />
                     </data>
+                    <data key="DisplayType" type="String">Image</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -3256,10 +3253,10 @@ efkzepf
                 </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-                    <data key="DisplayType" type="String">Image</data>
                     <data key="Image" type="Structured" typeName="System.Windows.Controls.Image, PresentationFramework, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
                       <Image Source="pack://application:,,,/SimpleSkin;component/Images/EditorLogo.png" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" />
                     </data>
+                    <data key="DisplayType" type="String">Image</data>
                   </p>
                 </PluginsData>
               </KeyMode>
@@ -3869,9 +3866,6 @@ efkzepf
         </Zones>
         <PluginsData>
           <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
-            <data key="HighlightBackground" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
-              <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFBDCFF4</Color>
-            </data>
             <data key="ViewPortSize" type="Structured" typeName="System.Windows.Size, WindowsBase, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
               <Size xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">1000,310</Size>
             </data>
@@ -3882,6 +3876,12 @@ efkzepf
             <data key="PositionX" type="Int32">115</data>
             <data key="PositionY" type="Int32">456</data>
             <data key="KeyboardBackgroundType" type="String">path</data>
+            <data key="HighlightBackground" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+              <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FFBDCFF4</Color>
+            </data>
+            <data key="HighlightFontColor" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+              <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FF000000</Color>
+            </data>
           </p><p guid="66ad1d1c-bf19-405d-93d3-30ca39b9e52f" version="1.0.0" name="Keyboard editor"><data key="KeyboardBackground" type="String">pack://application:,,,/SimpleSkin;component/Images/skinBackground.png</data></p></PluginsData>
       </Layout>
     </Layouts>

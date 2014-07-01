@@ -47,7 +47,7 @@ namespace CivikeyWebsite.Controllers
                 try
                 {
                     Recipient[] recipients = new Recipient[1];
-                    recipients[0] = new Recipient( "contact@invenietis.com" );
+                    recipients[0] = new Recipient( ConfigurationManager.AppSettings.Get( "DestinationEmail" ) );
 
                     IMailerService mailer = new CK.Mailer.DefaultMailerService();
                     mailer.SendMail( model, new RazorMailTemplateKey( "SupportEmail" ), recipients );
@@ -67,8 +67,8 @@ namespace CivikeyWebsite.Controllers
 
         public void Documentation( string version )
         {
-            string path =  Server.MapPath( "~/Content/files/documentation/" + version + ".docx" );
-            ReturnFileStream( "Civikey-documentation-v" + version + ".docx", path );
+            string path =  Server.MapPath( "~/Content/files/documentation/" + version + ".pdf" );
+            ReturnFileStream( "Civikey-documentation-v" + version + ".pdf", path );
         }
 
         public void Application( string version )

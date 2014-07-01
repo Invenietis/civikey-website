@@ -4,10 +4,10 @@
     <RequirementLayer Name="Keyboard">
       <PluginRequirements></PluginRequirements>
       <ServiceRequirements>
-        <ServiceRequirement AssemblyQualifiedName="CommonServices.IMonitorOnceCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
-        <ServiceRequirement AssemblyQualifiedName="CommonServices.IModeCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
-        <ServiceRequirement AssemblyQualifiedName="CommonServices.ISendKeyCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
         <ServiceRequirement AssemblyQualifiedName="CK.Plugins.SendInputDriver.ISendStringService, SendInputDriver, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
+        <ServiceRequirement AssemblyQualifiedName="CommonServices.ISendKeyCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
+        <ServiceRequirement AssemblyQualifiedName="CommonServices.IModeCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
+        <ServiceRequirement AssemblyQualifiedName="CommonServices.IMonitorOnceCommandHandlerService, CommonServices, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" Requirement="OptionalTryStart"></ServiceRequirement>
       </ServiceRequirements>
     </RequirementLayer>
     <Modes Current="">
@@ -1425,6 +1425,9 @@
               <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#00000000</Color>
             </data>
             <data key="KeyboardBackground" type="String">pack://application:,,,/SimpleSkin;component/Images/skinBackground.png</data>
+            <data key="HighlightFontColor" type="Structured" typeName="System.Windows.Media.Color, PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+              <Color xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation">#FF000000</Color>
+            </data>
           </p><p guid="66ad1d1c-bf19-405d-93d3-30ca39b9e52f" version="1.0.0" name="Keyboard editor"><data key="KeyboardBackground" type="String">pack://application:,,,/SimpleSkin;component/Images/skinBackground.png</data></p></PluginsData>
       </Layout>
     </Layouts>

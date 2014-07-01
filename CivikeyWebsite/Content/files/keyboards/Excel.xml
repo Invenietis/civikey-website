@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <CK-Structured version="2.5.5">
-  <Keyboard Name="Excel">
+  <Keyboard Name="Excel" IsCurrent="1" IsActive="True">
     <RequirementLayer Name="Keyboard">
       <PluginRequirements></PluginRequirements>
       <ServiceRequirements>
@@ -30,11 +30,6 @@
             <KeyModes>
               <KeyMode Mode="" Enabled="false" Description="">
                 <KeyUp Label="→" />
-                <KeyDown>
-                  <KeyProgram xml:space="preserve">
-                    <Cmd>sendKey:Right</Cmd>
-                  </KeyProgram>
-                </KeyDown>
                 <PluginsData>
                   <p guid="36c4764a-111c-45e4-83d6-e38fc1df5979" version="1.6.0" name="MainKeyboardManager">
                     <data key="DisplayType" type="String">Label</data>
@@ -569,7 +564,7 @@
                 <KeyUp Label="SOMME" />
                 <KeyDown>
                   <KeyProgram xml:space="preserve">
-                    <Cmd>placeholder:=SOMME({{n1}}{{opérateur : ';' ou ':'}}{{n2}})
+                    <Cmd>placeholder:=SOMME({{n1}}:{{n2}})
 </Cmd>
                   </KeyProgram>
                 </KeyDown>
