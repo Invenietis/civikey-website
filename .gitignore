@@ -156,3 +156,5 @@ $RECYCLE.BIN/
 .DS_Store
 packages/*
 CivikeyWebsite/Private/Mails/*
+CivikeyWebsite.sln.ide
+Private
