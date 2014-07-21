@@ -1,8 +1,11 @@
-﻿using System.Web;
+﻿using System.Configuration;
+using System.Web;
 using System.Web.Http;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using CK.Core;
+using CK.Monitoring;
 using CK.Web;
 
 namespace CivikeyWebsite
@@ -16,6 +19,11 @@ namespace CivikeyWebsite
             FilterConfig.RegisterGlobalFilters( GlobalFilters.Filters );
             RouteConfig.RegisterRoutes( RouteTable.Routes );
             BundleConfig.RegisterBundles( BundleTable.Bundles );
+
+
+            SystemActivityMonitor.RootLogPath = ConfigurationManager.AppSettings.Get( "LogFolderPath" ); //"~/Private/Logs" 
+            GrandOutput.EnsureActiveDefaultWithDefaultSettings();
+
         }
     }
 }
