@@ -17,7 +17,7 @@
     $scope.keyboard = null;
     $scope.submitted = false;
     $scope.submitKeyboard = function () {
-        console.log($scope.form.$valid);
+
         $scope.submitted = true;
         if (!$scope.form.$valid) return;
 
