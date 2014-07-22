@@ -13,6 +13,11 @@ namespace CivikeyWebsite.Controllers
 {
     public class HomeController : Controller
     {
+        protected string DestinationEmail
+        {
+            get { return AppSettings.Default.GetRequired<string>( "DestinationEmail" ); }
+        }
+
         public ActionResult Index()
         {
             return View();
@@ -45,14 +50,14 @@ namespace CivikeyWebsite.Controllers
             IActivityMonitor m = new ActivityMonitor();
             if( ModelState.IsValid )
             {
-                using (m.OpenInfo().Send( "Sending Support mail to {0}", ConfigurationManager.AppSettings.Get( "DestinationEmail" ) ))
+                using( m.OpenInfo().Send( "Sending Support mail to {0}", DestinationEmail ) )
                 {
                     try
                     {
-                        IMailerService mailer = new CK.Mailer.DefaultMailerService();
-                        mailer.SendMail( model, new RazorMailTemplateKey( "SupportEmail" ), new Recipient( ConfigurationManager.AppSettings.Get( "DestinationEmail" ) ) );
+                        IMailerService mailer = new CK.Mailer.DefaultMailerService( m );
+                        mailer.SendMail( model, new RazorMailTemplateKey( "SupportEmail" ), new Recipient( DestinationEmail ) );
                     }
-                    catch (Exception ex)
+                    catch( Exception ex )
                     {
                         m.Error().Send( ex, "Email : {0}, Subject : {1}, Body : {2}", model.Email, model.Subject, model.Body );
                         return PartialView( "_EmailNotSent", model );
@@ -107,50 +112,38 @@ namespace CivikeyWebsite.Controllers
 
             KeyboardPostError err = KeyboardPostError.None;
 
-            using (m.OpenInfo().Send( "Try AddKeyboard" ))
+            string uploadedFolderPath = AppSettings.Default.GetRequired<string>( "UploadFolderPath" );
+       
+            using( m.OpenInfo().Send( "Try AddKeyboard" ) )
             {
                 if( ModelState.IsValid )
                 {
                     if( Request.Files.Count > 0 )
                     {
-                        using (StreamReader sr = new StreamReader( Request.Files[0].InputStream ))
+                        string filePath = Path.Combine( uploadedFolderPath, String.Format( "{0}-{1}", keyboard.Name, Guid.NewGuid() ) );
+                        Request.Files[0].SaveAs( filePath );
+
+                        using( m.OpenInfo().Send( "Sending Keyboard submitted mail to {0}", DestinationEmail ) )
                         {
-                            string filePath = Path.Combine( ConfigurationManager.AppSettings.Get( "UploadFolderPath" ), String.Format( "{0}-{1}", keyboard.Name, Guid.NewGuid() ) );
-                            using (FileStream s = new FileStream( filePath, FileMode.CreateNew ))
+                            var model = new KeyboardSubmittedMailModel()
                             {
-                                using (StreamWriter sw = new StreamWriter( s ))
-                                {
-                                    string line = String.Empty;
-                                    while( (line = sr.ReadLine()) != null )
-                                    {
-                                        sw.WriteLine( line );
-                                    }
-
-                                }
-                            }
-
-                            using (m.OpenInfo().Send( "Sending Keyboard submitted mail to {0}", ConfigurationManager.AppSettings.Get( "DestinationEmail" ) ))
+                                Name = keyboard.Name,
+                                Description = keyboard.Description,
+                                Email = keyboard.Email,
+                                Author = keyboard.Author
+                            };
+                            try
                             {
-                                var model = new KeyboardSubmittedMailModel()
-                                {
-                                    Name = keyboard.Name,
-                                    Description = keyboard.Description,
-                                    Email = keyboard.Email,
-                                    Author = keyboard.Author
-                                };
-                                try
-                                {
-                                    IMailerService mailer = new CK.Mailer.DefaultMailerService();
-                                    mailer.SendMail( model, new RazorMailTemplateKey( "KeyboardSubmitted" ), new Recipient( ConfigurationManager.AppSettings.Get( "DestinationEmail" ) ) );
-                                }
-                                catch (Exception ex)
-                                {
-                                    m.Error().Send( ex, "Email : {0}, Subject : {1}, Name : {2}, Description : {3}, Author : {4}", 
-                                        model.Email, model.Subject, model.Name, model.Description, model.Author );
-                                }
+                                IMailerService mailer = new CK.Mailer.DefaultMailerService( activityLogger: m );
+                                mailer.SendMail( model, new RazorMailTemplateKey( "KeyboardSubmitted" ), new Recipient( DestinationEmail ) );
                             }
-
+                            catch( Exception ex )
+                            {
+                                m.Error().Send( ex, "Email : {0}, Subject : {1}, Name : {2}, Description : {3}, Author : {4}",
+                                    model.Email, model.Subject, model.Name, model.Description, model.Author );
+                            }
                         }
+
                     }
                     else
                     {
@@ -163,7 +156,6 @@ namespace CivikeyWebsite.Controllers
                     err = KeyboardPostError.InvalidForm;
                     m.Error().Send( "InvalidForm" );
                 }
-
                 return Json( new { valid = false, error = err, keyboard = keyboard } );
             }
         }

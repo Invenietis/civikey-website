@@ -21,7 +21,7 @@ namespace CivikeyWebsite
             BundleConfig.RegisterBundles( BundleTable.Bundles );
 
 
-            SystemActivityMonitor.RootLogPath = ConfigurationManager.AppSettings.Get( "LogFolderPath" ); //"~/Private/Logs" 
+            SystemActivityMonitor.RootLogPath = AppSettings.Default.GetRequired<string>( "LogFolderPath" ); //"~/Private/Logs" 
             GrandOutput.EnsureActiveDefaultWithDefaultSettings();
 
         }
