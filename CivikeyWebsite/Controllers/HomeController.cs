@@ -49,6 +49,7 @@ namespace CivikeyWebsite.Controllers
         }
 
         [HttpPost]
+        [Route( "support-utilisateur" )]
         public ActionResult Support( SupportEmailViewModel model )
         {
             IActivityMonitor m = new ActivityMonitor();

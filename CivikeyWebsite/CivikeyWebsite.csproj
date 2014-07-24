@@ -264,7 +264,6 @@
     <Content Include="Content\styles\hover-effects.css" />
     <Content Include="Content\styles\lightbox.css" />
     <Content Include="favicon.ico" />
-    <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <None Include="BundleTransformer.Configuration.xsd">
       <SubType>Designer</SubType>
@@ -351,9 +350,6 @@
     <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="fonts\glyphicons-halflings-regular.woff" />
-    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
-    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
   </ItemGroup>
   <PropertyGroup>

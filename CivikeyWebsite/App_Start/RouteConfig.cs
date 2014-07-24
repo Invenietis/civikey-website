@@ -15,7 +15,7 @@ namespace CivikeyWebsite
 
             routes.MapMvcAttributeRoutes();
             routes.MapRoute(
-                name: "Default",
+                name: "Default_MVC",
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
