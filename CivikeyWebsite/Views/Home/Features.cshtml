@@ -1,4 +1,7 @@
-﻿@section scripts{
+﻿@{
+    ViewBag.Title = "Les fonctionnalités de Civikey";    
+}
+@section scripts{
     @Scripts.Render( "~/bundles/scripts/localScroll" )
     <script>
         $('.feature-menu').localScroll({offset:-215}).affix({

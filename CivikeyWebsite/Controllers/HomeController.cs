@@ -23,22 +23,26 @@ namespace CivikeyWebsite.Controllers
             return View();
         }
 
+        [Route( "comment-utiliser-Civikey" )]
         public ActionResult GetStarted()
         {
             return View();
         }
 
+        [Route( "les-fonctionnalites-de-Civikey" )]
         public ActionResult Features()
         {
             return View();
         }
 
+        [Route( "bibliotheque-de-claviers-Civikey" )]
         public ActionResult Keyboards()
         {
             return View();
         }
 
         [HttpGet]
+        [Route( "support-utilisateur" )]
         public ActionResult Support()
         {
             return View();
@@ -113,7 +117,7 @@ namespace CivikeyWebsite.Controllers
             KeyboardPostError err = KeyboardPostError.None;
 
             string uploadedFolderPath = AppSettings.Default.GetRequired<string>( "UploadFolderPath" );
-       
+
             using( m.OpenInfo().Send( "Try AddKeyboard" ) )
             {
                 if( ModelState.IsValid )
