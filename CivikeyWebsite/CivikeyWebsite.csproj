@@ -189,6 +189,8 @@
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\quicksand-regular.svg" />
     <Content Include="Content\images\adaptive.png" />
+    <Content Include="Content\images\civikey-big.png" />
+    <Content Include="Content\images\civikey-small.png" />
     <Content Include="Content\images\civikey.png" />
     <Content Include="Content\images\civikey_running.png" />
     <Content Include="Content\images\click.png" />
