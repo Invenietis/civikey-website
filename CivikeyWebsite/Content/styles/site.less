@@ -26,7 +26,7 @@ body {
 }
 
 .container {
-    width: 980px !important;
+    max-width: 980px;
     position: relative;
 }
 
@@ -162,9 +162,9 @@ section > .container {
 hr {
     border: none;
     height: 13px;
-    width: 980px;
+    width: 90%;
     margin: 40px auto;
-    background: url('../images/divider.png');
+    background: url('../images/divider.png') center;
 }
 
 .small{
@@ -286,7 +286,6 @@ footer {
     padding: 10px 0;
     background: #4F4F4F;
     color: white;
-    height: 130px;
     text-align: center;
     font-family: Quicksand;
 
@@ -392,7 +391,7 @@ footer {
     hr {
         border: none;
         height: 13px;
-        width: 950px;
+        width: 90%;
         margin: 60px auto;
     }
 
@@ -498,7 +497,7 @@ a.github {
             padding: 10px;
             height: 141px;
             float: right;
-            width: 386px;
+            width: ~"calc(100% - 60px)";
             box-sizing: border-box;
 
             h1 {
@@ -517,11 +516,11 @@ a.github {
             padding: 0 10px;
             height: 20px;
             float: left;
-            width: 386px;
+            width: ~"calc(100% - 60px)";
 
             .author, .date {
                 box-sizing: border-box;
-                width: 180px;
+                width: 49%;
                 display: inline-block;
                 color: #509be4;
                 font-size: 14px;
@@ -543,7 +542,7 @@ a.github {
                 background: white;
                 color: #509be4;
                 display: block;
-                width: 50px;
+               
                 height: 50px;
                 border-radius: 50px;
                 border: 2px solid white;
@@ -744,3 +743,4 @@ a.github {
         }
     }
 }
+@import "responsive.less";
