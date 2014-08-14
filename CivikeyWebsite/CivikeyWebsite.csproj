@@ -237,6 +237,7 @@
     <Content Include="Content\images\partners\logo.png" />
     <Content Include="Content\images\partners\objectif-aide.png" />
     <Content Include="Content\images\partners\pfnt.png" />
+    <Content Include="Content\images\partners\tours.png" />
     <Content Include="Content\images\puzzle.png" />
     <Content Include="Content\images\screen\screen_1.png" />
     <Content Include="Content\images\screen\screen_2.png" />
