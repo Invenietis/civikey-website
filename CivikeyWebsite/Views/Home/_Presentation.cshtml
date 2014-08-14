@@ -1,4 +1,5 @@
-﻿<div class="container">
+﻿
+<div class="container">
     <a href="@Url.Action( "Documentation", "Home", new { version = "2.7.0" } )" id="btn-download-documentation" class="btn btn-cvk doc">
         <span class="text-container">
             Guide
@@ -19,11 +20,11 @@
                 <i class="glyphicon glyphicon-play-circle"></i>
             </p>*@
     </div>
-    <a href="@Url.Action( "Application", "Home", new { version = "2.7.0" } )" id="btn-download-application" class="btn btn-cvk btn-lg">
+    <button id="btn-download-application" class="btn btn-cvk btn-lg" data-toggle="modal" data-target="#myModal">
         <span class="text-container application">
             <i class="glyphicon glyphicon-save"></i>
             Télécharger Civikey
         </span>
-    </a>
+    </button>
 
 </div>

@@ -346,6 +346,8 @@
     <Content Include="Views\Home\_EmailNotSent.cshtml" />
     <Content Include="Views\Email\SupportEmail.cshtml" />
     <Content Include="Content\styles\responsive.less" />
+    <Content Include="Views\Home\_DownloadModal.cshtml" />
+    <Content Include="Views\Home\_Thanks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
