@@ -99,13 +99,12 @@ namespace CivikeyWebsite.Controllers
             {
                 IActivityMonitor m = new ActivityMonitor();
                 CKTrait trait = ActivityMonitor.Tags.Register( "downloadSubscripter" );
-                m.OpenInfo().Send( trait, "Download: Email: {0}", model.Email );
-                return PartialView( "_Thanks" );
+                using( m.OpenInfo().Send( trait, "Download: Email: {0}", model.Email ) )
+                {
+                    return PartialView( "_Thanks" );
+                }
             }
             return PartialView( "_DownloadModal", model );
-            //string version = ConfigurationManager.AppSettings["CivikeyLastVersion"];
-            //string path =  Server.MapPath( "~/Content/files/application/" + version + ".exe" );
-            //ReturnFileStream( "Civikey-v" + version + ".exe", path );
         }
 
         public void Keyboard( string name )
