@@ -1,6 +1,12 @@
 ﻿@{
     ViewBag.Title = "Civikey";
 }
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog" id="modal-content-download">
+        @Html.Partial( "_DownloadModal" )
+    </div>
+</div>
 <section id="presentation">
     @Html.Partial( "_Presentation" )
     @section Scripts {
