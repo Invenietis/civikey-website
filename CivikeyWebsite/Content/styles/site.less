@@ -20,13 +20,13 @@ body {
 .navbar {
     margin-bottom: 0;
 
-    &.navbar-borderless{
+    &.navbar-borderless {
         border: none;
     }
 }
 
 .container {
-    width: 980px !important;
+    max-width: 980px;
     position: relative;
 }
 
@@ -99,6 +99,7 @@ ul.center-nav {
     white-space: normal;
     border-radius: 150px;
     border: 2px solid white;
+    z-index: 100;
 
     &.doc {
         font-size: 18px;
@@ -130,7 +131,7 @@ ul.center-nav {
         margin-left: 4px;
 
         &.application {
-            margin-top: 27px;
+            margin-top: 0px;
         }
     }
 }
@@ -162,12 +163,12 @@ section > .container {
 hr {
     border: none;
     height: 13px;
-    width: 980px;
+    width: 90%;
     margin: 40px auto;
-    background: url('../images/divider.png');
+    background: url('../images/divider.png') center;
 }
 
-.small{
+.small {
     font-size: 11px;
     font-style: italic;
 }
@@ -286,7 +287,6 @@ footer {
     padding: 10px 0;
     background: #4F4F4F;
     color: white;
-    height: 130px;
     text-align: center;
     font-family: Quicksand;
 
@@ -392,7 +392,7 @@ footer {
     hr {
         border: none;
         height: 13px;
-        width: 950px;
+        width: 90%;
         margin: 60px auto;
     }
 
@@ -498,7 +498,7 @@ a.github {
             padding: 10px;
             height: 141px;
             float: right;
-            width: 386px;
+            width: ~"calc(100% - 60px)";
             box-sizing: border-box;
 
             h1 {
@@ -517,11 +517,11 @@ a.github {
             padding: 0 10px;
             height: 20px;
             float: left;
-            width: 386px;
+            width: ~"calc(100% - 60px)";
 
             .author, .date {
                 box-sizing: border-box;
-                width: 180px;
+                width: 49%;
                 display: inline-block;
                 color: #509be4;
                 font-size: 14px;
@@ -543,7 +543,6 @@ a.github {
                 background: white;
                 color: #509be4;
                 display: block;
-                width: 50px;
                 height: 50px;
                 border-radius: 50px;
                 border: 2px solid white;
@@ -560,19 +559,22 @@ a.github {
     }
 }
 
-.panel-cvk{
+.panel-cvk {
     border: 1px solid #DDD;
-    .panel-heading{
+
+    .panel-heading {
         background: white;
         color: #509be4;
         border-bottom: 1px solid #DDD;
         height: 57px;
-       h3{
+
+        h3 {
             line-height: 36px;
             font-size: 22px;
-       }
+        }
     }
-    .btn-cvk{
+
+    .btn-cvk {
         border-radius: 5px;
         top: 0;
         left: 0;
@@ -584,13 +586,15 @@ a.github {
         background: #509be4;
         color: white;
         border: 1px solid #509be4;
-        &:hover{
-            background:white;
+
+        &:hover {
+            background: white;
             color: #509be4;
             border: 1px solid #509be4;
         }
     }
 }
+
 #keyboards {
     .btn-cvk {
         border-radius: 5px;
@@ -612,9 +616,8 @@ a.github {
             border: 1px solid #509be4;
         }
     }
-
-    
 }
+
 .modal.modal-cvk {
     .text-counter {
         float: right;
@@ -635,9 +638,9 @@ a.github {
     .modal-header {
         background-color: #509be4;
         color: white;
-       
         border-radius: 5px 5px 0 0;
-        h3{
+
+        h3 {
             font-size: 20px;
         }
     }
@@ -653,7 +656,7 @@ a.github {
 
     .validate {
         input, textarea {
-             &.ng-invalid {
+            &.ng-invalid {
                 border-color: #E45050;
             }
         }
@@ -665,7 +668,7 @@ a.github {
         box-shadow: none;
         border-radius: 5px;
 
-       
+
 
         &:focus {
             box-shadow: none;
@@ -690,7 +693,8 @@ a.github {
             opacity: 0.8;
         }
     }
-    img.thumb{
+
+    img.thumb {
         height: 175px;
         max-width: 558px;
         display: block;
@@ -705,6 +709,7 @@ a.github {
     position: relative;
     overflow: hidden;
 }
+
 .btn-file input[type=file] {
     position: absolute;
     top: 0;
@@ -718,11 +723,12 @@ a.github {
     display: block;
 }
 
+.field-validation-error {
+    color: red;
+}
+
 /* Support */
 #support {
-    .field-validation-error{
-        color: red;
-    }
 
     form {
         margin-top: 20px;
@@ -738,9 +744,12 @@ a.github {
 
     .mail-sent {
         padding: 10px;
-        h3{
-            margin-top:0;
-            border-radius:5px;
+
+        h3 {
+            margin-top: 0;
+            border-radius: 5px;
         }
     }
 }
+
+@import "responsive.less";

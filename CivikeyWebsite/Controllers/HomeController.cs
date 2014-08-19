@@ -86,10 +86,36 @@ namespace CivikeyWebsite.Controllers
             ReturnFileStream( "Civikey-v" + version + ".exe", path );
         }
 
+        public class DownloadFormViewModel
+        {
+            [Display( Name = "Votre adresse e-mail (facultatif)" ), EmailAddress( ErrorMessage = "L'adresse saisie ne semble pas valide." )]
+            public string Email { get; set; }
+        }
+
+        [HttpPost]
+        public ActionResult DownloadSubscription( DownloadFormViewModel model )
+        {
+            if( ModelState.IsValid )
+            {
+                IActivityMonitor m = new ActivityMonitor();
+                CKTrait trait = ActivityMonitor.Tags.Register( "downloadSubscriber" );
+                using( m.OpenInfo().Send( trait, "Download: Email: {0}", model.Email ) )
+                {
+                    return PartialView( "_Thanks" );
+                }
+            }
+            return PartialView( "_DownloadModal", model );
+        }
+
         public void Keyboard( string name )
         {
             string path =  Server.MapPath( "~/Content/files/keyboards/" + name );
             ReturnFileStream( name, path );
+        }
+
+        public ActionResult Thanks()
+        {
+            return PartialView( "_Thanks" );
         }
 
         private void ReturnFileStream( string name, string path )
