@@ -88,7 +88,7 @@ namespace CivikeyWebsite.Controllers
 
         public class DownloadFormViewModel
         {
-            [Display( Name = "Votre adresse e-mail" ), EmailAddress]
+            [Display( Name = "Votre adresse e-mail (facultatif)" ), EmailAddress( ErrorMessage = "L'adresse saisie ne semble pas valide." )]
             public string Email { get; set; }
         }
 
@@ -98,7 +98,7 @@ namespace CivikeyWebsite.Controllers
             if( ModelState.IsValid )
             {
                 IActivityMonitor m = new ActivityMonitor();
-                CKTrait trait = ActivityMonitor.Tags.Register( "downloadSubscripter" );
+                CKTrait trait = ActivityMonitor.Tags.Register( "downloadSubscriber" );
                 using( m.OpenInfo().Send( trait, "Download: Email: {0}", model.Email ) )
                 {
                     return PartialView( "_Thanks" );
