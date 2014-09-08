@@ -13,7 +13,7 @@
 <div class="form-group">
     <div class="textarea">
         <label for="exampleInputFile">Rédigez ici votre question : </label><br />
-        @Html.TextAreaFor( m => m.Body, new { rows = 8, cols = 49 } )
+        @Html.TextAreaFor( m => m.Body, new { rows = 8, cols = 49, @class = "form-control" } )
         @Html.ValidationMessageFor( m => m.Body )
     </div>
 </div>
