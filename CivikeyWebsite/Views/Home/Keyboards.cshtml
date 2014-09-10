@@ -21,7 +21,7 @@
 
         <div class="panel panel-cvk">
             <div class="panel-heading">
-                <h3 class="panel-title">4 claviers disponibles <button data-toggle="modal" data-target="#import" class="btn btn-cvk pull-right">Proposer un clavier</button></h3>
+                <h3 class="panel-title">6 claviers disponibles <button data-toggle="modal" data-target="#import" class="btn btn-cvk pull-right">Proposer un clavier</button></h3>
             </div>
             <div class="keyboard">
                 <div class="actions">
@@ -110,9 +110,60 @@
                         03/04/14
                     </p>
                 </div>
-            </div>
+
+          
             <div class="clearfix"></div>
         </div>
+
+            <div class="keyboard">
+                <div class="actions">
+                    <a title="Télécharger" href="@Url.Action( "Keyboard", "Home", new { name = "Clavier-demi-zone.xml" } )" class="btn"><i class="glyphicon glyphicon-save"></i></a>
+                    <a title="Visualiser le clavier" href="@Url.Content("~/Content/images/keyboards/demi-zone.png")" data-title="Clavier pour défilement mode 'demi-zone'" data-lightbox="demi-zone" class="btn">
+                        <i class="glyphicon glyphicon-picture"></i>
+                    </a>
+                </div>
+                <div class="content">
+                    <h1>Clavier pour défilement mode 'demi-zone'</h1>
+                    <p>
+                        Un clavier adapté pour accélérer la saisie avec un un mécanisme de défilement en mode "demi-zone".
+                    </p>
+                </div>
+                <div class="content-footer">
+                    <p class="author">
+                        Par Sarah COLMON
+                    </p>
+                    <p class="date">
+                        10/09/14
+                    </p>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+
+            <div class="keyboard">
+                <div class="actions">
+                    <a title="Télécharger" href="@Url.Action( "Keyboard", "Home", new { name = "Qwerty.xml" } )" class="btn"><i class="glyphicon glyphicon-save"></i></a>
+                    <a title="Visualiser le clavier" href="@Url.Content("~/Content/images/keyboards/Qwerty.png")" data-title="Clavier Qwerty" data-lightbox="demi-zone" class="btn">
+                        <i class="glyphicon glyphicon-picture"></i>
+                    </a>
+                </div>
+                <div class="content">
+                    <h1>Clavier Qwerty</h1>
+                    <p>
+                        Un clavier Qwerty.
+                    </p>
+                </div>
+                <div class="content-footer">
+                    <p class="author">
+                        Par Sarah COLMON
+                    </p>
+                    <p class="date">
+                        10/09/14
+                    </p>
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
         <div id="import" class="modal modal-cvk fade">
             <div class="modal-dialog">
                 <div class="modal-content">
