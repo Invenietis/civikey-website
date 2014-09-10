@@ -183,9 +183,11 @@
     </None>
     <Content Include="Content\files\application\2.7.0.exe" />
     <Content Include="Content\files\keyboards\Azerty.xml" />
+    <Content Include="Content\files\keyboards\Clavier-demi-zone.xml" />
     <Content Include="Content\files\keyboards\ClavierSouris.xml" />
     <Content Include="Content\files\keyboards\Ergonomique.xml" />
     <Content Include="Content\files\keyboards\Excel.xml" />
+    <Content Include="Content\files\keyboards\Qwerty.xml" />
     <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\fonts\quicksand-regular.svg" />
     <Content Include="Content\images\adaptive.png" />
@@ -211,8 +213,10 @@
     <Content Include="Content\images\keyboard.png" />
     <Content Include="Content\images\keyboards\azerty.png" />
     <Content Include="Content\images\keyboards\clavier-souris.png" />
+    <Content Include="Content\images\keyboards\demi-zone.png" />
     <Content Include="Content\images\keyboards\ergonomique.png" />
     <Content Include="Content\images\keyboards\excel.png" />
+    <Content Include="Content\images\keyboards\Qwerty.png" />
     <Content Include="Content\images\lightbox\close.png" />
     <Content Include="Content\images\lightbox\loading.gif" />
     <Content Include="Content\images\lightbox\next.png" />
