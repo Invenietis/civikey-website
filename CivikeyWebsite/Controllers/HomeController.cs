@@ -137,6 +137,8 @@ namespace CivikeyWebsite.Controllers
             Response.End();
         }
 
+        [HttpPost]
+        [Route("addkeyboard")]
         public ActionResult AddKeyboard( KeyboardModel keyboard )
         {
             IActivityMonitor m = new ActivityMonitor();
