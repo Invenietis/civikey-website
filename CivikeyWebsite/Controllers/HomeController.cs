@@ -153,14 +153,15 @@ namespace CivikeyWebsite.Controllers
                 {
                     if( Request.Files.Count > 0 )
                     {
-                        string filePath = Path.Combine( uploadedFolderPath, String.Format( "{0}-{1}", keyboard.Name, Guid.NewGuid() ) );
+                        string filename = Path.GetFileName(keyboard.Name);
+                        string filePath = Path.Combine( uploadedFolderPath, String.Format( "{0}-{1}", filename, Guid.NewGuid() ) );
                         Request.Files[0].SaveAs( filePath );
 
                         using( m.OpenInfo().Send( "Sending Keyboard submitted mail to {0}", DestinationEmail ) )
                         {
                             var model = new KeyboardSubmittedMailModel()
                             {
-                                Name = keyboard.Name,
+                                Name = filename,
                                 Description = keyboard.Description,
                                 Email = keyboard.Email,
                                 Author = keyboard.Author
